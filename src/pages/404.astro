@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page introuvable — Les Éclairés">
+<style>
+  :root{--c-bg:#F8F6F1;--c-ink:#111110;--c-muted:#888884;--c-vert:#00A96E;--ff-h:'Bricolage Grotesque',sans-serif;--ff-b:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--c-bg);font-family:var(--ff-b);-webkit-font-smoothing:antialiased}
+  main{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+  .tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:16px}
+  h1{font-family:var(--ff-h);font-size:clamp(60px,12vw,120px);font-weight:800;color:var(--c-ink);letter-spacing:-0.05em;line-height:1;margin-bottom:16px}
+  p{font-size:17px;color:var(--c-muted);font-weight:300;margin-bottom:40px;max-width:400px}
+  a{font-family:var(--ff-h);font-weight:700;background:var(--c-ink);color:#fff;padding:14px 28px;border-radius:999px;font-size:15px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all .2s}
+  a:hover{background:#2a2a26;transform:translateY(-2px)}
+</style>
+<main>
+  <p class="tag">Erreur 404</p>
+  <h1>Oops.</h1>
+  <p>Cette page n'existe pas (encore). Revenez à l'accueil pour continuer.</p>
+  <a href="/">
+    Retour à l'accueil
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
+</main>
+</Base>

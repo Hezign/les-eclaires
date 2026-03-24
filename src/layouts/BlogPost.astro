@@ -1,0 +1,95 @@
+---
+import Base from './Base.astro';
+const { frontmatter } = Astro.props;
+---
+<Base title={`${frontmatter.title} — Les Éclairés`} description={frontmatter.excerpt}>
+
+<style>
+  :root {
+    --c-bg:#F8F6F1; --c-bg2:#FFFFFF;
+    --c-border:rgba(0,0,0,0.07); --c-border2:rgba(0,0,0,0.13);
+    --c-ink:#111110; --c-muted:#888884; --c-mid:#55554F; --c-text:#2C2C28;
+    --c-vert:#00A96E;
+    --c-vert-bg:rgba(0,169,110,.08); --c-vert-br:rgba(0,169,110,.22);
+    --ff-h:'Bricolage Grotesque',sans-serif; --ff-b:'Inter',sans-serif;
+    --r-full:999px;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased}
+  body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff-b);font-size:16px;line-height:1.6}
+  h1,h2,h3,h4{font-family:var(--ff-h);color:var(--c-ink);letter-spacing:-0.04em}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;height:56px;width:calc(100% - 48px);max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(248,246,241,0.96);backdrop-filter:blur(24px);border:1px solid var(--c-border2);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+  .nav-logo{display:flex;align-items:center;gap:10px}
+  .nav-logo img{height:28px;width:auto}
+  .nav-logo span{font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--c-ink);letter-spacing:-0.03em}
+  .nav-back{font-family:var(--ff-h);font-size:13.5px;font-weight:500;color:var(--c-muted);display:flex;align-items:center;gap:6px;transition:color .18s}
+  .nav-back:hover{color:var(--c-ink)}
+
+  /* Article */
+  .article-wrap{max-width:720px;margin:0 auto;padding:120px 48px 80px}
+
+  .article-meta{margin-bottom:40px}
+  .article-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:16px}
+  .article-tag::before{content:'';display:inline-block;width:14px;height:1px;background:var(--c-vert)}
+  .article-title{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
+  .article-date{font-size:13px;color:var(--c-muted);font-weight:300}
+
+  .article-hero{height:280px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:80px;margin-bottom:48px}
+
+  /* Markdown content */
+  .prose{color:var(--c-text);line-height:1.8}
+  .prose h2{font-family:var(--ff-h);font-size:clamp(22px,3vw,30px);font-weight:800;margin:48px 0 16px;letter-spacing:-0.04em}
+  .prose h3{font-family:var(--ff-h);font-size:20px;font-weight:700;margin:32px 0 12px;letter-spacing:-0.03em}
+  .prose p{margin-bottom:20px;font-size:16px;font-weight:300;color:var(--c-mid)}
+  .prose strong{font-weight:600;color:var(--c-ink)}
+  .prose ul,.prose ol{margin:0 0 20px 24px}
+  .prose li{margin-bottom:8px;font-weight:300;color:var(--c-mid)}
+  .prose a{color:var(--c-vert);text-decoration:underline;text-decoration-color:var(--c-vert-br)}
+  .prose a:hover{text-decoration-color:var(--c-vert)}
+  .prose blockquote{border-left:3px solid var(--c-vert);margin:32px 0;padding:16px 24px;background:var(--c-vert-bg);border-radius:0 12px 12px 0}
+  .prose blockquote p{margin:0;color:var(--c-mid);font-style:italic}
+  .prose hr{border:none;border-top:1px solid var(--c-border);margin:40px 0}
+
+  /* CTA box */
+  .article-cta{margin-top:64px;background:var(--c-ink);border-radius:20px;padding:40px;text-align:center}
+  .article-cta h3{font-family:var(--ff-h);font-size:22px;font-weight:800;color:#fff;margin-bottom:10px}
+  .article-cta p{font-size:15px;color:rgba(255,255,255,.55);font-weight:300;margin-bottom:24px}
+  .btn-cta{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-vert);color:#0a0a09;padding:14px 28px;border-radius:var(--r-full);display:inline-block;text-decoration:none;transition:all .2s}
+  .btn-cta:hover{background:#00C97F;transform:translateY(-2px)}
+
+  @media(max-width:640px){nav{width:calc(100% - 24px);top:10px;padding:0 20px}.article-wrap{padding:100px 20px 60px}}
+</style>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/images/logo-le.png" alt="Les Éclairés" />
+    <span>Les Éclairés</span>
+  </a>
+  <a class="nav-back" href="/blog">← Blog</a>
+</nav>
+
+<div class="article-wrap">
+  <div class="article-meta">
+    <div class="article-tag">{frontmatter.tag}</div>
+    <h1 class="article-title">{frontmatter.title}</h1>
+    <p class="article-date">{frontmatter.dateLabel}</p>
+  </div>
+
+  <div class="article-hero" style={`background:${frontmatter.thumbBg || 'linear-gradient(135deg,#d4f0e4,#e8f8f0)'}`}>
+    {frontmatter.emoji}
+  </div>
+
+  <div class="prose">
+    <slot />
+  </div>
+
+  <div class="article-cta">
+    <h3>Votre projet de borne, en clair.</h3>
+    <p>Répondez à 6 questions et obtenez une recommandation personnalisée gratuite.</p>
+    <a href="/#simulateur" class="btn-cta">Simuler mon projet →</a>
+  </div>
+</div>
+
+</Base>
