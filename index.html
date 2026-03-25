@@ -72,7 +72,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
 /* Hero layout: text left, visuals right */
-.hero-layout{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:40px 40px 80px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center;overflow:hidden}
+.hero-layout{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:40px 40px 80px;display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center;overflow:hidden}
 
 .hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:24px;text-align:left}
 
@@ -102,7 +102,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .proof-sep{color:rgba(0,0,0,.15);font-size:18px}
 
 /* ── HERO VISUALS (right column) ── */
-.hero-visuals{position:relative;animation:fadeUp .7s .12s var(--ease-out) both;padding:20px 0 20px 0;overflow:hidden;min-width:0;width:100%}
+.hero-visuals{position:relative;animation:fadeUp .7s .12s var(--ease-out) both;padding:24px 12px 24px 12px;min-width:0;width:100%}
 
 /* Main card */
 .hv-card-main{background:#000000;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;box-shadow:0 8px 40px rgba(0,0,0,.18);position:relative;overflow:hidden}
@@ -125,8 +125,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .hv-meta-pill-val{font-family:var(--ff-h);font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.03em}
 
 /* Floating mini-cards */
-.hv-float1{position:absolute;top:8px;right:8px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard1 4s ease-in-out infinite 1.5s}
-.hv-float2{position:absolute;bottom:8px;left:8px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard2 4.5s ease-in-out infinite 2s}
+.hv-float1{position:absolute;top:4px;right:4px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard1 4s ease-in-out infinite 1.5s}
+.hv-float2{position:absolute;bottom:4px;left:4px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard2 4.5s ease-in-out infinite 2s}
 @keyframes floatCard1{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes floatCard2{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 .hv-float-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -404,7 +404,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .cookie-banner{left:12px;right:12px;max-width:none;bottom:12px}
   .btt{bottom:12px;right:12px}
   .hv-float1,.hv-float2{display:none}
-  .hero-visuals{overflow:hidden;max-width:100%;width:100%}
+  .hero-visuals{max-width:100%;width:100%}
   .hero-layout{padding:40px 16px 60px;overflow:hidden;width:100%}
   .hv-card-main{margin:0}
 }
