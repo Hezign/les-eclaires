@@ -61,8 +61,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .nav-links{display:flex;align-items:center;gap:40px;list-style:none}
 .nav-links a{font-size:14px;font-weight:400;color:var(--c-muted);transition:color .18s}
 .nav-links a:hover{color:var(--c-ink)}
-.btn-nav{font-family:var(--ff-h);font-size:13.5px;font-weight:600;background:var(--c-ink);color:#fff;padding:9px 20px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;transition:background .2s,transform .15s var(--ease-spring),box-shadow .2s;white-space:nowrap}
-.btn-nav:hover{background:#2a2a26;transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.btn-nav{font-family:var(--ff-h);font-size:13.5px;font-weight:600;background:var(--c-vert);color:#0a0a09;padding:9px 20px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;transition:background .2s,transform .15s var(--ease-spring),box-shadow .2s;white-space:nowrap}
+.btn-nav:hover{background:var(--c-vert-lt);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,169,110,.28)}
 
 /* ── HERO ── */
 .hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:88px;position:relative;overflow:hidden;background:var(--c-bg)}
@@ -351,6 +351,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
 @media(max-width:1024px){
   .hero-layout{grid-template-columns:1fr;gap:48px}
   .hero-text{align-items:center;text-align:center}
+  .proof-strip{justify-content:center}
   .hero-sub{max-width:520px}
   .hero-visuals{max-width:440px;margin:0 auto}
 }
@@ -371,17 +372,23 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .blog-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
-  nav{width:calc(100% - 24px);top:10px;padding:0 20px;border-radius:100px}
+  nav{width:calc(100% - 24px);top:10px;padding:0 16px;border-radius:100px}
   .nav-links{display:none}
+  .nav-logo-text{font-size:14px}
+  .btn-nav{font-size:12px;padding:8px 14px}
   .reviews-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:1fr}
   .review-wrap{padding:48px 20px}
   .sw{padding:64px 20px 48px}
   .hero-layout{padding:48px 20px 64px}
   .review-inner{padding:48px 20px}
-  .stats-inner{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr;padding:0 20px}
   .stat-item{border-right:none;border-bottom:1px solid var(--c-border)}
   .stat-item:last-child{border-bottom:none}
+  .sim-prog{padding:20px 16px 0}
+  .sim-opts{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .partner-card{padding:32px 20px}
   .why-grid,.process-grid{grid-template-columns:1fr}
   .p-step{border-right:none;border-bottom:1px solid var(--c-border)}
   .p-step:last-child{border-bottom:none}
@@ -389,7 +396,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .form-row .btn-sub{grid-column:auto}
   footer{flex-direction:column;padding:32px 20px}
   .partner-card{padding:48px 24px}
-  .partner-wrap{padding:64px 20px}
+  .partner-wrap{padding:48px 20px}
   .sim-body{padding:24px 20px}
   .sim-bar-top{padding:16px 20px}
   .sim-prog{padding:24px 20px 0}
@@ -426,14 +433,14 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="hero-layout">
     <!-- LEFT: text -->
     <div class="hero-text">
-      <div class="hero-badge"><span class="badge-dot"></span>Guide indépendant IRVE 100% gratuit</div>
+      <div class="hero-badge"><span class="badge-dot"></span>Guide indépendant IRVE · 100 % gratuit</div>
 
       <h1 class="hero-h1">
-        Le marché des<br>
-        <span class="line2">bornes est <span class="ac-black">opaque.</span><br><span class="ac-vert">On s'en occupe.</span></span>
+        Installer une borne<br>
+        <span class="line2">de recharge <span class="ac-black">simplement.</span><br><span class="ac-vert">On vous guide.</span></span>
       </h1>
 
-      <p class="hero-sub">Les installateurs parlent en kW. Les devis sont incompréhensibles. Les aides changent tous les 3 mois. Devenez Éclairé en 3 minutes et installez sans vous faire avoir.</p>
+      <p class="hero-sub">Choisir et installer une borne de recharge peut sembler compliqué. Notre simulateur gratuit vous donne en 3 minutes une recommandation claire, adaptée à votre situation et à votre budget.</p>
 
       <div class="hero-actions">
         <a href="#simulateur" class="btn-primary">
@@ -522,19 +529,19 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
         <div class="review-avatar" style="background:linear-gradient(135deg,#d4f0e4,#a8dfc7);color:#00A96E">TM</div>
         <div class="review-author-info">
           <div class="review-name">Thomas M.</div>
-          <div class="review-role">Propriétaire · Installation résidentielle, Lyon</div>
+          <div class="review-role">Propriétaire · Installation résidentielle, Lyon (69)</div>
         </div>
       </div>
     </div>
 
     <div class="review-card reveal rd2">
       <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <p class="review-quote">&#171;&nbsp;Notre syndic bloquait le projet depuis des mois. Le simulateur m'a sorti le bon argumentaire légal en 3 minutes. Deux semaines plus tard, la borne était installée dans mon parking.&nbsp;&#187;</p>
+      <p class="review-quote">&#171;&nbsp;Notre syndic bloquait le projet depuis des mois. Le simulateur m'a sorti le bon argumentaire légal en 3 minutes. Deux semaines plus tard, la borne était installée dans mon parking de résidence.&nbsp;&#187;</p>
       <div class="review-author">
         <div class="review-avatar" style="background:linear-gradient(135deg,#dce8fd,#b3ccf7);color:#2563eb">SL</div>
         <div class="review-author-info">
           <div class="review-name">Sophie L.</div>
-          <div class="review-role">Copropriétaire · Droit à la prise, Paris 15e</div>
+          <div class="review-role">Copropriétaire · Droit à la prise, Saint-Étienne (42)</div>
         </div>
       </div>
     </div>
@@ -545,8 +552,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
       <div class="review-author">
         <div class="review-avatar" style="background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e">FR</div>
         <div class="review-author-info">
-          <div class="review-name">François R.</div>
-          <div class="review-role">Directeur opérations · Infrastructure entreprise, Bordeaux</div>
+          <div class="review-name">Marc T.</div>
+          <div class="review-role">Gérant · Infrastructure entreprise, Villeurbanne (69)</div>
         </div>
       </div>
     </div>
@@ -559,15 +566,15 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="stats-inner">
     <div class="stat-item reveal">
       <span class="stat-num">85%</span>
-      <span class="stat-label">des porteurs de projet se disent perdus face aux devis IRVE</span>
+      <span class="stat-label">des particuliers se disent perdus face aux devis d'installation de borne</span>
     </div>
     <div class="stat-item reveal rd1">
       <span class="stat-num jaune">3 min</span>
-      <span class="stat-label">pour passer de je ne comprends rien à je sais exactement quoi faire</span>
+      <span class="stat-label">pour obtenir une recommandation complète et personnalisée</span>
     </div>
     <div class="stat-item reveal rd2">
       <span class="stat-num">0 €</span>
-      <span class="stat-label">on ne vend pas de bornes, on vend de la clarté. Et ça, c'est gratuit</span>
+      <span class="stat-label">notre simulateur est entièrement gratuit, sans inscription ni engagement</span>
     </div>
   </div>
 </div>
@@ -577,8 +584,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Notre approche</span>
-      <h2 class="section-h2">On n'est pas là pour vous vendre une borne.</h2>
-      <p class="section-lead">Le marché IRVE adore le jargon parce que la confusion, ça se monnaie. Nous, on fait l'inverse : on vous donne les clés pour décider par vous-même.</p>
+      <h2 class="section-h2">Un accompagnement indépendant, de A à Z.</h2>
+      <p class="section-lead">Installer une borne de recharge implique des choix techniques, administratifs et financiers. Nous vous aidons à y voir clair, sans conflit d'intérêts, pour prendre la bonne décision.</p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal rd1">
@@ -586,24 +593,24 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
         <div class="why-icon ic-v">
           <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
         </div>
-        <h4>Décision en 3 minutes</h4>
-        <p>Pas de formulaire à rallonge, pas de commercial qui rappelle. 6 questions, une recommandation concrète. Immédiatement.</p>
+        <h4>Une réponse claire en 3 minutes</h4>
+        <p>Répondez à 6 questions sur votre situation. Vous recevez immédiatement une recommandation personnalisée : puissance, budget, aides disponibles.</p>
       </div>
       <div class="why-card reveal rd2">
         <div class="why-num">02</div>
         <div class="why-icon ic-j">
           <svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-        <h4>La clarté avant tout</h4>
-        <p>On traduit chaque concept technique en langage humain. OCPP, ADVENIR, droit à la prise : on vous explique ce qui vous concerne, rien de plus.</p>
+        <h4>Des explications accessibles à tous</h4>
+        <p>Pas de jargon inutile. Chaque notion technique est expliquée simplement, avec uniquement les informations utiles à votre projet.</p>
       </div>
       <div class="why-card reveal rd3">
         <div class="why-num">03</div>
         <div class="why-icon ic-c">
           <svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h4>Zéro conflit d'intérêts</h4>
-        <p>Aucune marque, aucun installateur ne nous finance en amont. On est rémunérés par les pros qu'on recommande, uniquement si vous êtes satisfait.</p>
+        <h4>Un conseil véritablement indépendant</h4>
+        <p>Nous ne sommes liés à aucune marque ni aucun fabricant. Nous percevons une commission auprès de l'installateur uniquement en cas de mise en relation réussie.</p>
       </div>
     </div>
   </div>
@@ -614,7 +621,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Le processus</span>
-      <h2 class="section-h2">De "je ne sais pas par où commencer" à "c'est installé".</h2>
+      <h2 class="section-h2">De la question au branchement, étape par étape.</h2>
     </div>
     <div class="process-grid reveal">
       <div class="p-step">
@@ -622,32 +629,32 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
         <div class="p-icon pi-v">
           <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         </div>
-        <h4>Vous répondez à 6 questions</h4>
-        <p>Type de site, véhicules, urgence, installation, budget. 6 questions, 3 minutes.</p>
+        <h4>Vous décrivez votre projet</h4>
+        <p>Type de logement, nombre de véhicules, urgence, installation électrique, budget. 6 questions, moins de 3 minutes.</p>
       </div>
       <div class="p-step">
         <div class="p-num nj">Étape 02</div>
         <div class="p-icon pi-j">
           <svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h4>Vous recevez votre profil</h4>
-        <p>Puissance adaptée, budget réaliste, aides éligibles, délai estimé. Du concret, pas du rêve.</p>
+        <h4>Vous recevez votre recommandation</h4>
+        <p>Puissance adaptée à votre véhicule, budget réaliste, aides auxquelles vous êtes éligible et délai estimé.</p>
       </div>
       <div class="p-step">
         <div class="p-num nv">Étape 03</div>
         <div class="p-icon pi-v">
           <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h4>On vous met en relation</h4>
-        <p>Un installateur certifié IRVE, sélectionné pour votre projet précis. Pas une liste, une recommandation.</p>
+        <h4>Nous vous mettons en relation</h4>
+        <p>Un installateur certifié IRVE, sélectionné selon votre localisation et votre type de projet. Un seul contact qualifié, pas une liste.</p>
       </div>
       <div class="p-step">
         <div class="p-num nm">Étape 04</div>
         <div class="p-icon pi-m">
           <svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
         </div>
-        <h4>Vous installez en confiance</h4>
-        <p>Vous savez ce que vous payez, pourquoi, et comment vérifier que c'est bien fait.</p>
+        <h4>Vous installez sereinement</h4>
+        <p>Vous connaissez le coût, les aides mobilisables et les points de vérification. L'installation se déroule sans mauvaise surprise.</p>
       </div>
     </div>
   </div>
@@ -658,8 +665,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Simulateur</span>
-      <h2 class="section-h2">Quel est votre projet ?</h2>
-      <p class="section-lead">6 questions pour une recommandation sur-mesure. Résultat immédiat, sans inscription, sans engagement.</p>
+      <h2 class="section-h2">Quel type d'installation vous convient ?</h2>
+      <p class="section-lead">Répondez à 6 questions pour obtenir une recommandation adaptée à votre situation. Gratuit, immédiat, sans inscription.</p>
     </div>
     <div class="sim-card reveal">
       <div class="sim-bar-top">
@@ -783,8 +790,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Le blog</span>
-      <h2 class="section-h2">Tout comprendre sur l'IRVE</h2>
-      <p class="section-lead">Guides pratiques, décryptages réglementaires et conseils d'installation. Sans jargon.</p>
+      <h2 class="section-h2">Guides pratiques sur les bornes de recharge</h2>
+      <p class="section-lead">Tout ce que vous devez savoir avant d'installer une borne de recharge : aides disponibles, démarches administratives, choix techniques.</p>
     </div>
     <div class="blog-grid">
 
@@ -837,8 +844,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
     <div class="partner-card reveal">
       <div class="partner-left">
         <div class="partner-eyebrow">Installateurs IRVE</div>
-        <h2>Vous installez des bornes ?<br>On a des projets pour vous.</h2>
-        <p class="partner-desc">Leads préqualifiés, contextualisés, prêts à décider. Pas de volume, pas de chasseurs de prime des vrais projets bien cadrés.</p>
+        <h2>Vous installez des bornes de recharge ?<br>Nous avons des projets qualifiés pour vous.</h2>
+        <p class="partner-desc">Chaque contact que nous transmettons a déjà décrit son projet, son budget et son calendrier. Vous intervenez sur des projets réels, sérieux et bien documentés.</p>
         <div class="p-feats">
           <span class="p-feat">100 € / lead qualifié</span>
           <span class="p-feat">Commission sur projet signé</span>
@@ -867,7 +874,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="f-links">
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
-    <a href="/cdn-cgi/l/email-protection#ef8c80819b8e8c9baf838a9c8a8c838e869d8a9cc1899d">Nous écrire</a>
+    <a href="mailto:contact@leseclaires.fr">Nous écrire</a>
     <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Convention%20Advenir%20sign%C3%A9e.pdf" target="_blank" rel="noopener">Prime ADVENIR ↗</a>
   </div>
 </footer>
