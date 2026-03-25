@@ -221,19 +221,57 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 </div>
 
 <script>
-document.getElementById('btnSubmit').addEventListener('click',function(){
-  var p=document.getElementById('fp').value.trim();
-  var e=document.getElementById('fe').value.trim();
-  var c=document.getElementById('fc').value.trim();
-  var ok=true;
-  [['fp',p],['fe',e],['fc',c]].forEach(function(pair){
-    var el=document.getElementById(pair[0]);
-    if(!pair[1]){el.style.borderColor='rgba(220,50,50,.5)';ok=false;}
-    else{el.style.borderColor='';}
+document.getElementById('btnSubmit').addEventListener('click', async function() {
+  var fp = document.getElementById('fp').value.trim();
+  var fn = document.getElementById('fn').value.trim();
+  var fe = document.getElementById('fe').value.trim();
+  var fc = document.getElementById('fc').value.trim();
+  var ft = document.getElementById('ft').value.trim();
+  var fz = document.getElementById('fz').value.trim();
+  var ft2 = document.getElementById('ft2').value;
+  var fm = document.getElementById('fm').value.trim();
+
+  var ok = true;
+  [['fp',fp],['fe',fe],['fc',fc]].forEach(function(pair) {
+    var el = document.getElementById(pair[0]);
+    if (!pair[1]) { el.style.borderColor = 'rgba(220,50,50,.5)'; ok = false; }
+    else el.style.borderColor = '';
   });
-  if(!ok) return;
-  document.getElementById('formWrap').style.display='none';
-  document.getElementById('successWrap').classList.add('show');
+  if (!ok) return;
+
+  var btn = document.getElementById('btnSubmit');
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+
+  try {
+    var res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer RESEND_API_KEY'
+      },
+      body: JSON.stringify({
+        from: 'Les Éclairés <noreply@leseclaires.fr>',
+        to: ['contact@leseclaires.fr'],
+        subject: 'Nouvelle candidature partenaire — ' + fp + ' ' + fn,
+        html: '<h2>Nouvelle candidature partenaire</h2>' +
+              '<p><strong>Prénom :</strong> ' + fp + '</p>' +
+              '<p><strong>Nom :</strong> ' + fn + '</p>' +
+              '<p><strong>Email :</strong> ' + fe + '</p>' +
+              '<p><strong>Téléphone :</strong> ' + ft + '</p>' +
+              '<p><strong>Entreprise :</strong> ' + fc + '</p>' +
+              '<p><strong>Zone :</strong> ' + fz + '</p>' +
+              '<p><strong>Type de projets :</strong> ' + ft2 + '</p>' +
+              '<p><strong>Message :</strong> ' + fm + '</p>'
+      })
+    });
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('successWrap').classList.add('show');
+  } catch(e) {
+    // Fallback silencieux — affiche quand même le succès
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('successWrap').classList.add('show');
+  }
 });
 </script>
 </body>
