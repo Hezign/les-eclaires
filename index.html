@@ -65,14 +65,14 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .btn-nav:hover{background:var(--c-vert-lt);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,169,110,.28)}
 
 /* ── HERO ── */
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:88px;position:relative;overflow:hidden;background:var(--c-bg);width:100%}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:88px;position:relative;overflow:hidden;background:var(--c-bg);width:100%;box-sizing:border-box}
 .hero-grain{position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
 .hero-circle1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,169,110,.07) 0%,transparent 64%);top:-140px;left:50%;transform:translateX(-50%);pointer-events:none}
 .hero-circle2{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,0,.05) 0%,transparent 64%);bottom:-80px;right:-80px;pointer-events:none}
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
 /* Hero layout: text left, visuals right */
-.hero-layout{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:40px 40px 80px;display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center;overflow:hidden}
+.hero-layout{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:40px 40px 80px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:center}
 
 .hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:24px;text-align:left}
 
@@ -102,7 +102,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .proof-sep{color:rgba(0,0,0,.15);font-size:18px}
 
 /* ── HERO VISUALS (right column) ── */
-.hero-visuals{position:relative;animation:fadeUp .7s .12s var(--ease-out) both;padding:24px 12px 24px 12px;min-width:0;width:100%}
+.hero-visuals{position:relative;animation:fadeUp .7s .12s var(--ease-out) both;padding:20px 0 20px 0;min-width:0;width:100%;max-width:340px}
 
 /* Main card */
 .hv-card-main{background:#000000;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;box-shadow:0 8px 40px rgba(0,0,0,.18);position:relative;overflow:hidden}
@@ -125,8 +125,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .hv-meta-pill-val{font-family:var(--ff-h);font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.03em}
 
 /* Floating mini-cards */
-.hv-float1{position:absolute;top:4px;right:4px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard1 4s ease-in-out infinite 1.5s}
-.hv-float2{position:absolute;bottom:4px;left:4px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard2 4.5s ease-in-out infinite 2s}
+.hv-float1{position:absolute;top:-12px;right:12px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard1 4s ease-in-out infinite 1.5s}
+.hv-float2{position:absolute;bottom:-12px;left:12px;z-index:20;background:#1A1A1A;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;white-space:nowrap;animation:floatCard2 4.5s ease-in-out infinite 2s}
 @keyframes floatCard1{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes floatCard2{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 .hv-float-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -354,7 +354,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .hero-text{align-items:center;text-align:center}
   .proof-strip{justify-content:center}
   .hero-sub{max-width:520px}
-  .hero-visuals{max-width:420px;margin:0 auto;padding:20px 0}
+  .hero-visuals{max-width:340px;margin:0 auto;padding:20px 0}
 }
 @media(max-width:900px){
   .why-grid{grid-template-columns:1fr 1fr}
@@ -404,7 +404,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .cookie-banner{left:12px;right:12px;max-width:none;bottom:12px}
   .btt{bottom:12px;right:12px}
   .hv-float1,.hv-float2{display:none}
-  .hero-visuals{max-width:100%;width:100%}
+  .hero-visuals{max-width:100%!important;width:100%;padding:20px 0}
   .hero-layout{padding:40px 16px 60px;overflow:hidden;width:100%}
   .hv-card-main{margin:0}
 }
@@ -878,7 +878,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="f-links">
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
-    <a href="/cdn-cgi/l/email-protection#dab9b5b4aebbb9ae9ab6bfa9bfb9b6bbb3a8bfa9f4bca8">Nous écrire</a>
+    <a href="mailto:contact@leseclaires.fr">Nous écrire</a>
     <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Convention%20Advenir%20sign%C3%A9e.pdf" target="_blank" rel="noopener">Prime ADVENIR ↗</a>
   </div>
 </footer>
