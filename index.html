@@ -416,7 +416,145 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
 </style>
 </head>
 <body>
-<script>function pick(e,s,v){if(window._pick)window._pick(e,s,v);}function submitForm(){if(window._sf)window._sf();}</script>
+<script>
+!function(){
+/* ── DATA ── */
+var D={
+  'Maison individuelle':{title:'Profil : Installation résidentielle',sub:'Une borne 7,4 kW wallbox est la solution optimale pour votre usage à domicile.',pow:'7,4 kW',budget:'600 – 1 400 €',aide:'Crédit impôt 75%',delai:'2 à 4 semaines'},
+  'Copropriété':{title:'Profil : Droit à la prise',sub:'Vous avez un droit légal à installer votre borne. La procédure est encadrée par la loi ELAN.',pow:'7,4 kW',budget:'1 200 – 2 500 €',aide:'ADVENIR éligible',delai:'6 à 12 semaines'},
+  'Entreprise':{title:"Profil : Infrastructure d\'entreprise",sub:'Une infrastructure collective avec pilotage intelligent (smart charging) est recommandée.',pow:'22 kW / point',budget:'2 000 – 8 000 €',aide:'TVA récupérable',delai:'4 à 8 semaines'},
+  'Parking public':{title:'Profil : Infrastructure publique',sub:"Ce projet nécessite une étude de puissance, une gestion d\'itinérance et un appel d\'offres.",pow:'22 – 50 kW',budget:'5 000 – 30 000 €',aide:'AMI / FEDER',delai:'3 à 6 mois'}
+};
+var A={};
+
+/* ── SIMULATOR ── */
+function gId(id){return document.getElementById(id);}
+function pick(el,step,val){
+  var all=document.querySelectorAll('#q'+step+' .sim-opt');
+  for(var i=0;i<all.length;i++) all[i].classList.remove('sel');
+  el.classList.add('sel');
+  A[step]=val;
+  setTimeout(function(){advance(step);},350);
+}
+function advance(s){
+  var bar=gId('p'+s);
+  if(bar){bar.classList.remove('active');bar.classList.add('done');}
+  var q=gId('q'+s);
+  if(q) q.classList.remove('active');
+  if(s<5){
+    var nq=gId('q'+(s+1)), nb=gId('p'+(s+1));
+    if(nq) nq.classList.add('active');
+    if(nb) nb.classList.add('active');
+  } else { showResult(); }
+}
+function showResult(){
+  var bars=document.querySelectorAll('#pgBar .sim-pb');
+  for(var i=0;i<bars.length;i++){bars[i].classList.remove('active');bars[i].classList.add('done');}
+  var r=D[A[0]]||D['Maison individuelle'];
+  gId('rTitle').textContent=r.title;
+  gId('rSub').textContent=r.sub;
+  gId('rPow').textContent=r.pow;
+  gId('rBudget').textContent=r.budget;
+  gId('rAide').textContent=r.aide;
+  gId('rDelai').textContent=r.delai;
+  var el=gId('simRes');
+  el.classList.add('active');
+  setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
+}
+function submitForm(){
+  var p=gId('fP').value.trim(), e=gId('fE').value.trim();
+  if(!p){gId('fP').style.borderColor='rgba(220,50,50,.5)';return;}
+  if(!e){gId('fE').style.borderColor='rgba(220,50,50,.5)';return;}
+  gId('fBox').style.display='none';
+  gId('okMsg').classList.add('show');
+}
+
+/* ── BIND CLICKS ── */
+function bindSim(){
+  document.querySelectorAll('.sim-opt').forEach(function(el){
+    el.addEventListener('click',function(){
+      var step=null,val=null;
+      var parent=el.closest('.sim-q');
+      if(parent){
+        var id=parent.id;
+        step=parseInt(id.replace('q',''));
+      }
+      var title=el.querySelector('.opt-title');
+      if(title) val=title.textContent.trim();
+      // fallback: get from data or text
+      if(step!==null && val) pick(el,step,val);
+    });
+  });
+  // Also bind via onclick attributes as fallback
+  document.querySelectorAll('[onclick]').forEach(function(el){
+    var oc=el.getAttribute('onclick');
+    if(oc && oc.indexOf('pick(')>=0){
+      el.removeAttribute('onclick');
+      el.addEventListener('click',function(){
+        var m=oc.match(/pick\(this,(\d+),'([^']+)'\)/);
+        if(m) pick(el,parseInt(m[1]),m[2]);
+      });
+    }
+  });
+  var sb=document.querySelector('.btn-sub');
+  if(sb){
+    sb.removeAttribute('onclick');
+    sb.addEventListener('click',submitForm);
+  }
+}
+
+/* ── EXPOSE GLOBALS (Cloudflare shim compatibility) ── */
+window._pick=pick;
+window._sf=submitForm;
+
+/* ── COOKIE ── */
+var CK='les-eclaires-cookie';
+function closeCookie(ok){
+  var b=gId('cookieBanner');if(b) b.classList.remove('show');
+  try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}
+}
+var ba=gId('btnAccept'),bd=gId('btnDecline');
+if(ba) ba.addEventListener('click',function(){closeCookie(true);});
+if(bd) bd.addEventListener('click',function(){closeCookie(false);});
+
+/* ── BTT ── */
+var btt=gId('btt');
+if(btt){
+  btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  window.addEventListener('scroll',function(){btt.classList.toggle('show',window.scrollY>400);},{passive:true});
+}
+
+/* ── REVEAL ── */
+function initReveal(){
+  var els=document.querySelectorAll('.reveal');
+  els.forEach(function(el){el.classList.add('will-animate');});
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+    },{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){obs.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('visible');});
+  }
+}
+
+/* ── COOKIE INIT ── */
+function initCookie(){
+  try{
+    if(!localStorage.getItem(CK)){
+      setTimeout(function(){var b=gId('cookieBanner');if(b) b.classList.add('show');},1400);
+    }
+  }catch(e){
+    setTimeout(function(){var b=gId('cookieBanner');if(b) b.classList.add('show');},1400);
+  }
+}
+
+/* ── BOOT ── */
+function boot(){bindSim();initReveal();initCookie();}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
+else{boot();}
+}();
+</script>
 
 <!-- NAV -->
 <nav>
@@ -883,7 +1021,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <div class="f-links">
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
-    <a href="/cdn-cgi/l/email-protection#fa9995948e9b998eba969f899f99969b93889f89d49c88">Nous écrire</a>
+    <a href="mailto:contact@leseclaires.fr">Nous écrire</a>
     <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Convention%20Advenir%20sign%C3%A9e.pdf" target="_blank" rel="noopener">Prime ADVENIR ↗</a>
   </div>
 </footer>
@@ -902,7 +1040,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 !function(){
 /* ── DATA ── */
 var D={
