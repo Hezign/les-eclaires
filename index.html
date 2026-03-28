@@ -72,9 +72,9 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
 /* Hero layout: text left, visuals right */
-.hero-layout{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:40px 40px 80px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-layout{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:40px 48px 80px;display:grid;grid-template-columns:1fr 480px;gap:48px;align-items:center}
 
-.hero-text{display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;max-width:760px}
+.hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:24px;text-align:left}
 
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:var(--c-vert);animation:fadeUp .7s var(--ease-out) both}
 .badge-dot{width:6px;height:6px;background:var(--c-vert);border-radius:50%;flex-shrink:0;animation:livePulse 2.4s ease-in-out infinite}
@@ -86,7 +86,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .ac-vert{color:var(--c-vert)}
 .ac-black{color:var(--c-ink)}
 
-.hero-sub{font-size:clamp(15px,1.8vw,17px);font-weight:300;color:var(--c-mid);max-width:560px;line-height:1.78;animation:fadeUp .7s .16s var(--ease-out) both}
+.hero-sub{font-size:clamp(15px,1.8vw,17px);font-weight:300;color:var(--c-mid);max-width:480px;line-height:1.78;animation:fadeUp .7s .16s var(--ease-out) both}
 
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .22s var(--ease-out) both}
 .btn-primary{font-family:var(--ff-h);font-size:15px;font-weight:600;background:var(--c-ink);color:#fff;padding:14px 28px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s var(--ease-spring),box-shadow .2s}
@@ -102,8 +102,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .proof-sep{color:rgba(0,0,0,.15);font-size:18px}
 
 /* ── HERO IMAGE ── */
-.hero-img-wrap{width:100%;max-width:900px;margin-top:40px;border-radius:24px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.18);animation:fadeUp .7s .35s var(--ease-out) both;position:relative}
-.hero-img-wrap img{width:100%;height:auto;display:block;border-radius:24px}
+.hero-img-wrap{width:100%;border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.18);animation:fadeUp .7s .12s var(--ease-out) both;position:relative;height:480px}
+.hero-img-wrap img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 .hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45) 100%);border-radius:24px}
 .hero-img-badge{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 16px;display:flex;align-items:center;gap:10px}
 .hero-img-badge-dot{width:8px;height:8px;background:var(--c-vert);border-radius:50%;animation:livePulse 2.4s ease-in-out infinite;flex-shrink:0}
@@ -356,8 +356,11 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
-  .hero-layout{padding:32px 20px 48px}
-  .hv-float1,.hv-float2{display:none}
+  .hero-layout{grid-template-columns:1fr;gap:32px;padding:32px 24px 48px}
+  .hero-text{align-items:center;text-align:center}
+  .hero-sub{max-width:100%}
+  .proof-strip{justify-content:center}
+  .hero-img-wrap{height:320px}
   .hero-text{align-items:center;text-align:center;width:100%}
   .proof-strip{justify-content:center}
   .hero-sub{max-width:100%}
@@ -393,7 +396,8 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .blog-grid{grid-template-columns:1fr}
   .review-wrap{padding:48px 20px}
   .sw{padding:64px 20px 48px}
-  .hero-layout{padding:48px 16px 64px;overflow:hidden}
+  .hero-layout{padding:40px 16px 56px;grid-template-columns:1fr}
+  .hero-img-wrap{height:240px}
   .review-inner{padding:48px 20px}
   .stats-inner{grid-template-columns:1fr;padding:0 20px}
   .stat-item{border-right:none;border-bottom:1px solid var(--c-border)}
@@ -512,9 +516,11 @@ function initCookie(){
     setTimeout(function(){var b=gId('cookieBanner');if(b){b.style.display='';b.classList.add('show');}},1800);
   }
 }
-var ba=gId('btnAccept'),bd=gId('btnDecline');
-if(ba) ba.addEventListener('click',function(){closeCookie(true);});
-if(bd) bd.addEventListener('click',function(){closeCookie(false);});
+function initCookieButtons(){
+  var ba=gId('btnAccept'),bd=gId('btnDecline');
+  if(ba) ba.addEventListener('click',function(){closeCookie(true);});
+  if(bd) bd.addEventListener('click',function(){closeCookie(false);});
+}
 function initBtt(){
   var btt=gId('btt');
   if(!btt) return;
@@ -532,7 +538,7 @@ function initReveal(){
     els.forEach(function(el){obs.observe(el);});
   } else { els.forEach(function(el){el.classList.add('visible');}); }
 }
-function boot(){bindSim();initReveal();initCookie();initBtt();}
+function boot(){bindSim();initReveal();initCookie();initCookieButtons();initBtt();}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
 else{boot();}
 }();
@@ -842,55 +848,55 @@ else{boot();}
         </div>
         <div class="sim-q" id="q2">
           <p class="q-step">Question 3 / 8</p>
-          <h3 class="q-label">Quelle urgence pour votre projet ?</h3>
-          <p class="q-sub">Certaines démarches et certaines aides ont des délais incompressibles à anticiper.</p>
+          <h3 class="q-label">Quelle est la marque de votre véhicule ?</h3>
+          <p class="q-sub">Chaque constructeur a des standards de charge différents, ce qui influence le type de borne recommandée.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,2,'Immédiat')"><span class="opt-emoji">⚡</span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">Sous 1 mois</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Ce trimestre')"><span class="opt-emoji">📅</span><div class="opt-title">Ce trimestre</div><div class="opt-desc">Dans 2 à 3 mois</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Dans 6 mois')"><span class="opt-emoji">🗓️</span><div class="opt-title">Dans 6 mois</div><div class="opt-desc">Le temps de bien faire</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Tesla')"><span class="opt-emoji">⚡</span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Renault / Dacia')"><span class="opt-emoji">🔌</span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Volkswagen / Audi / Skoda')"><span class="opt-emoji">🚗</span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'BMW / Mercedes / Stellantis')"><span class="opt-emoji">🏎️</span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Hyundai / Kia')"><span class="opt-emoji">🚙</span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Autre marque')"><span class="opt-emoji">🔋</span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
           </div>
         </div>
         <div class="sim-q" id="q3">
           <p class="q-step">Question 4 / 8</p>
-          <h3 class="q-label">Où en êtes-vous dans votre démarche ?</h3>
-          <p class="q-sub">Pour calibrer le niveau d'accompagnement dont vous avez vraiment besoin.</p>
+          <h3 class="q-label">Votre installation électrique actuelle ?</h3>
+          <p class="q-sub">La capacité de votre tableau électrique peut limiter ou simplifier l'installation.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,3,'Débutant')"><span class="opt-emoji">🗺️</span><div class="opt-title">Je débute</div><div class="opt-desc">Je commence à explorer</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Devis reçus')"><span class="opt-emoji">📄</span><div class="opt-title">J'ai des devis</div><div class="opt-desc">Mais je ne comprends pas tout</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Bloqué')"><span class="opt-emoji">🔀</span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">Trop de réponses contradictoires</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Tableau récent')"><span class="opt-emoji">⚡</span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, disjoncteurs</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Tableau ancien')"><span class="opt-emoji">🔌</span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, fusibles</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Je ne sais pas')"><span class="opt-emoji">❓</span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">À vérifier avec un pro</div></div>
           </div>
         </div>
         <div class="sim-q" id="q4">
           <p class="q-step">Question 5 / 8</p>
-          <h3 class="q-label">Votre installation électrique actuelle ?</h3>
-          <p class="q-sub">La capacité de votre tableau électrique peut limiter ou simplifier l'installation.</p>
+          <h3 class="q-label">Quelle urgence pour votre projet ?</h3>
+          <p class="q-sub">Certaines démarches et certaines aides ont des délais incompressibles à anticiper.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,4,'Tableau récent')"><span class="opt-emoji">⚡</span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, disjoncteurs</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'Tableau ancien')"><span class="opt-emoji">🔌</span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, fusibles</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'Je ne sais pas')"><span class="opt-emoji">❓</span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">À vérifier avec un pro</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Immédiat')"><span class="opt-emoji">⚡</span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">Sous 1 mois</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Ce trimestre')"><span class="opt-emoji">📅</span><div class="opt-title">Ce trimestre</div><div class="opt-desc">Dans 2 à 3 mois</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Dans 6 mois')"><span class="opt-emoji">🗓️</span><div class="opt-title">Dans 6 mois</div><div class="opt-desc">Le temps de bien faire</div></div>
           </div>
         </div>
         <div class="sim-q" id="q5">
           <p class="q-step">Question 6 / 8</p>
-          <h3 class="q-label">Quel est votre budget approximatif ?</h3>
-          <p class="q-sub">Pour vous orienter vers la solution la plus adaptée à votre situation.</p>
+          <h3 class="q-label">Où en êtes-vous dans votre démarche ?</h3>
+          <p class="q-sub">Pour calibrer le niveau d'accompagnement dont vous avez vraiment besoin.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,5,'Moins de 1 500€')"><span class="opt-emoji">💶</span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Solution essentielle</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'1 500 – 5 000€')"><span class="opt-emoji">💰</span><div class="opt-title">1 500 – 5 000 €</div><div class="opt-desc">Solution intermédiaire</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Plus de 5 000€')"><span class="opt-emoji">🏆</span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Infrastructure complète</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Débutant')"><span class="opt-emoji">🗺️</span><div class="opt-title">Je débute</div><div class="opt-desc">Je commence à explorer</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Devis reçus')"><span class="opt-emoji">📄</span><div class="opt-title">J'ai des devis</div><div class="opt-desc">Mais je ne comprends pas tout</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Bloqué')"><span class="opt-emoji">🔀</span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">Trop de réponses contradictoires</div></div>
           </div>
         </div>
         <div class="sim-q" id="q6">
           <p class="q-step">Question 7 / 8</p>
-          <h3 class="q-label">Quelle est la marque de votre véhicule ?</h3>
-          <p class="q-sub">Chaque constructeur a des standards de charge différents, ce qui influence le type de borne recommandée.</p>
+          <h3 class="q-label">Quel est votre budget approximatif ?</h3>
+          <p class="q-sub">Pour vous orienter vers la solution la plus adaptée à votre situation.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,6,'Tesla')"><span class="opt-emoji">⚡</span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Renault / Dacia')"><span class="opt-emoji">🔌</span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Volkswagen / Audi / Skoda')"><span class="opt-emoji">🚗</span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'BMW / Mercedes / Stellantis')"><span class="opt-emoji">🏎️</span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Hyundai / Kia')"><span class="opt-emoji">🚙</span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Autre marque')"><span class="opt-emoji">🔋</span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Moins de 1 500€')"><span class="opt-emoji">💶</span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Solution essentielle</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'1 500 – 5 000€')"><span class="opt-emoji">💰</span><div class="opt-title">1 500 – 5 000 €</div><div class="opt-desc">Solution intermédiaire</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Plus de 5 000€')"><span class="opt-emoji">🏆</span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Infrastructure complète</div></div>
           </div>
         </div>
         <div class="sim-q" id="q7">
@@ -904,7 +910,7 @@ else{boot();}
             <div class="sim-opt" onclick="pick(this,7,'Maximiser économies')"><span class="opt-emoji">💡</span><div class="opt-title">Maximiser les économies</div><div class="opt-desc">Borne avec smart charging et pilotage à distance</div></div>
           </div>
         </div>
-        <div class="sim-result" id="simRes">
+                <div class="sim-result" id="simRes">
           <div class="res-head">
             <div class="res-badge">✓ Analyse complète</div>
             <h3 class="res-title" id="rTitle">Profil : Installation résidentielle</h3>
@@ -1029,7 +1035,7 @@ else{boot();}
   <div class="f-links">
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
-    <a href="mailto:contact@leseclaires.fr">Nous écrire</a>
+    <a href="/cdn-cgi/l/email-protection#40232f2e34212334002c253325232c21293225336e2632">Nous écrire</a>
     <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Convention%20Advenir%20sign%C3%A9e.pdf" target="_blank" rel="noopener">Prime ADVENIR ↗</a>
   </div>
 </footer>
@@ -1048,7 +1054,7 @@ else{boot();}
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 !function(){
 /* ── DATA ── */
 var D={
@@ -1140,6 +1146,4 @@ function initReveal(){
   els.forEach(function(el){el.classList.add('will-animate');});
   if('IntersectionObserver' in window){
     var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-    },{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el){obs.observe(el);
+      entries.forEach(function(e){if(e.isIntersecting){e.target.cl
