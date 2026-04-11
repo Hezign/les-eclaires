@@ -1,0 +1,26 @@
+# Les Éclairés — Guide indépendant IRVE
+
+> Simulateur gratuit pour choisir et installer une borne de recharge électrique (IRVE) en France. Indépendant, sans conflit d'intérêts, mis en relation avec des installateurs certifiés.
+
+## À propos
+
+Les Éclairés est un guide indépendant dédié à l'installation de bornes de recharge pour véhicules électriques (IRVE) en France. Notre simulateur gratuit analyse votre situation en 8 questions et vous fournit une recommandation personnalisée : puissance adaptée, budget estimé, aides disponibles (ADVENIR, crédit d'impôt), délai d'installation.
+
+## Pages principales
+
+- [Accueil & Simulateur](https://leseclaires.fr/) : simulateur IRVE gratuit, 8 questions, résultat immédiat
+- [Partenaires installateurs](https://leseclaires.fr/partenaires.html) : rejoindre le réseau d'installateurs certifiés IRVE
+
+## Blog / Guides
+
+- [Prime ADVENIR 2026 — Guide complet](https://leseclaires.fr/blog/guide-prime-advenir-2026.html)
+- [Droit à la prise en copropriété](https://leseclaires.fr/blog/droit-prise-copropriete.html)
+- [7,4 kW ou 22 kW : quelle puissance choisir ?](https://leseclaires.fr/blog/7kw-ou-22kw-quelle-puissance.html)
+
+## Informations clés
+
+- Service 100 % gratuit pour les particuliers
+- Couverture : France entière
+- Indépendant : aucun lien commercial avec des fabricants de bornes
+- Modèle : commission sur mise en relation avec installateur certifié IRVE
+- Contact : contact@leseclaires.fr
