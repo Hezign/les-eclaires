@@ -223,7 +223,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .sim-opt{background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:20px;cursor:pointer;text-align:left;user-select:none;transition:border-color .2s,background .2s,transform .2s var(--ease-spring)}
 .sim-opt:hover{border-color:rgba(0,169,110,.4);background:rgba(0,169,110,.04);transform:translateY(-2px)}
 .sim-opt.sel{border-color:var(--c-vert);background:rgba(0,169,110,.06)}
-.opt-emoji{font-size:24px;display:block;margin-bottom:12px;line-height:1}
+.opt-emoji{display:block;margin-bottom:12px;line-height:1}
 .opt-title{font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-0.03em;margin-bottom:3px;color:var(--c-ink)}
 .opt-desc{font-size:12px;color:var(--c-muted);font-weight:300}
 
@@ -342,6 +342,21 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
 .cookie-accept:hover{background:var(--c-vert-lt)}
 .cookie-decline{font-family:var(--ff-h);font-size:13px;font-weight:500;background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-full);padding:8px 16px;cursor:pointer;transition:all .2s;letter-spacing:-0.01em}
 .cookie-decline:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.35)}
+
+
+/* ── FAQ ── */
+.faq-section{border-top:1px solid var(--c-border);background:var(--c-bg3)}
+.faq-grid{margin-top:48px;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);overflow:hidden;transition:border-color .2s}
+.faq-item:has(.faq-a.open){border-color:var(--c-vert-br)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--c-ink);letter-spacing:-0.025em;transition:color .18s}
+.faq-q:hover{color:var(--c-vert)}
+.faq-arrow{flex-shrink:0;transition:transform .25s var(--ease-out);color:var(--c-muted)}
+.faq-q.active .faq-arrow{transform:rotate(180deg);color:var(--c-vert)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease-out)}
+.faq-a.open{max-height:300px}
+.faq-a p{padding:0 24px 20px;font-size:15px;color:var(--c-mid);line-height:1.8;font-weight:300}
+.faq-a strong{color:var(--c-ink);font-weight:600}
 
 /* ── BACK TO TOP ── */
 .btt{position:fixed;bottom:24px;right:24px;z-index:500;width:44px;height:44px;background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.1);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s var(--ease-out),background .2s,box-shadow .2s;pointer-events:none;z-index:600}
@@ -654,6 +669,15 @@ function initReveal(){
     els.forEach(function(el){obs.observe(el);});
   } else { els.forEach(function(el){el.classList.add('visible');}); }
 }
+
+function toggleFaq(btn){
+  var a=btn.nextElementSibling;
+  var isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(el){el.classList.remove('open');});
+  document.querySelectorAll('.faq-q').forEach(function(el){el.classList.remove('active');});
+  if(!isOpen){a.classList.add('open');btn.classList.add('active');}
+}
+
 function boot(){bindSim();initReveal();initCookie();initCookieButtons();initBtt();}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
 else{boot();}
@@ -669,6 +693,7 @@ else{boot();}
   <ul class="nav-links">
     <li><a href="#pourquoi">Notre approche</a></li>
     <li><a href="#simulateur">Simulateur</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#partenaires">Installateurs</a></li>
   </ul>
   <a class="btn-nav" href="#simulateur">Simuler mon projet</a>
@@ -835,35 +860,16 @@ else{boot();}
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Notre approche</span>
-      <h2 class="section-h2">Un accompagnement indépendant, de A à Z.</h2>
-      <p class="section-lead">Installer une borne de recharge implique des choix techniques, administratifs et financiers. Nous vous aidons à y voir clair, sans conflit d'intérêts, pour prendre la bonne décision.</p>
+      <h2 class="section-h2">Pourquoi faire confiance aux Éclairés ?</h2>
+      <p class="section-lead">On sait que c'est compliqué. Des devis incompréhensibles, des termes techniques, des aides qui changent tous les 6 mois. Voilà pourquoi on existe.</p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal rd1">
         <div class="why-num">01</div>
-        <div class="why-icon ic-v">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
-        </div>
-        <h4>Une réponse claire en 3 minutes</h4>
-        <p>Répondez à 8 questions sur votre situation. Vous recevez immédiatement une recommandation personnalisée : puissance, borne adaptée, budget, aides disponibles.</p>
+        <div class="why-icon ic-v"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14.5"/></svg></div>
+        <h4>Un résultat en 5 minutes</h4>
+        <p>Répondez à 8 questions simples sur votre logement et votre voiture. Vous recevez aussitôt une recommandation claire : quelle borne choisir, combien ça coûte, et quelles aides vous pouvez toucher.</p>
       </div>
-      <div class="why-card reveal rd2">
-        <div class="why-num">02</div>
-        <div class="why-icon ic-j">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h4>Des explications accessibles à tous</h4>
-        <p>Pas de jargon inutile. Chaque notion technique est expliquée simplement, avec uniquement les informations utiles à votre projet.</p>
-      </div>
-      <div class="why-card reveal rd3">
-        <div class="why-num">03</div>
-        <div class="why-icon ic-c">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h4>Un conseil véritablement indépendant</h4>
-        <p>Nous ne sommes liés à aucune marque ni aucun fabricant. Nous percevons une commission auprès de l'installateur uniquement en cas de mise en relation réussie.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -872,44 +878,36 @@ else{boot();}
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Le processus</span>
-      <h2 class="section-h2">De la question au branchement, étape par étape.</h2>
+      <h2 class="section-h2">Comment ça se passe, concrètement ?</h2>
     </div>
-    <div class="process-grid reveal">
-      <div class="p-step">
-        <div class="p-num nv">Étape 01</div>
-        <div class="p-icon pi-v">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <div class="process-grid reveal">
+        <div class="p-step">
+          <div class="p-num nv">Étape 01</div>
+          <div class="p-icon pi-v"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h4>Vous répondez à 8 questions</h4>
+          <p>Type de logement, voiture, délai souhaité, budget. Simple et rapide — moins de 5 minutes.</p>
         </div>
-        <h4>Vous décrivez votre projet</h4>
-        <p>Type de logement, véhicule, urgence, installation, budget, économies. 8 questions, moins de 5 minutes.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num nj">Étape 02</div>
-        <div class="p-icon pi-j">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <div class="p-step">
+          <div class="p-num nj">Étape 02</div>
+          <div class="p-icon pi-j"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h4>On vous donne un résultat clair</h4>
+          <p>Quelle borne, quel prix, quelles aides, quel délai. Tout est expliqué sans jargon.</p>
         </div>
-        <h4>Vous recevez votre recommandation</h4>
-        <p>Puissance adaptée à votre véhicule, budget réaliste, aides auxquelles vous êtes éligible et délai estimé.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num nv">Étape 03</div>
-        <div class="p-icon pi-v">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="p-step">
+          <div class="p-num nv">Étape 03</div>
+          <div class="p-icon pi-v"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4>On vous met en contact</h4>
+          <p>Un professionnel certifié, sélectionné selon votre ville et votre type de projet. Un seul contact, pas une liste à éplucher.</p>
         </div>
-        <h4>Nous vous mettons en relation</h4>
-        <p>Un installateur certifié IRVE, sélectionné selon votre localisation et votre type de projet. Un seul contact qualifié, pas une liste.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num nm">Étape 04</div>
-        <div class="p-icon pi-m">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <div class="p-step">
+          <div class="p-num nm">Étape 04</div>
+          <div class="p-icon pi-m"><svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <h4>Vous installez sans stress</h4>
+          <p>Vous savez ce que vous payez, les aides que vous allez toucher, et comment vérifier que le travail est bien fait.</p>
         </div>
-        <h4>Vous installez sereinement</h4>
-        <p>Vous connaissez le coût, les aides mobilisables et les points de vérification. L'installation se déroule sans mauvaise surprise.</p>
       </div>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
 <!-- SIMULATEUR -->
 <section class="sim-section" id="simulateur">
@@ -925,7 +923,7 @@ else{boot();}
           <div class="sim-icon-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <div><h3>Simulateur IRVE</h3><p>Résultat personnalisé · Gratuit · Confidentiel</p></div>
+          <div><h3>Simulateur gratuit</h3><p>8 questions · Résultat immédiat · Sans inscription</p></div>
         </div>
         <span class="sim-badge">GRATUIT</span>
       </div>
@@ -942,30 +940,30 @@ else{boot();}
       <div class="sim-body">
         <div class="sim-q active" id="q0">
           <p class="q-step">Question 1 / 8</p>
-          <h3 class="q-label">Quel type de site ?</h3>
-          <p class="q-sub">Le contexte détermine les contraintes électriques, administratives et les aides disponibles.</p>
+          <h3 class="q-label">Vous vivez ou travaillez où ?</h3>
+          <p class="q-sub">Selon votre situation, les démarches et les aides ne sont pas les mêmes.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,0,'Maison individuelle')"><span class="opt-emoji">🏠</span><div class="opt-title">Maison individuelle</div><div class="opt-desc">Parking ou garage privatif</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Copropriété')"><span class="opt-emoji">🏢</span><div class="opt-title">Copropriété</div><div class="opt-desc">Immeuble collectif</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Entreprise')"><span class="opt-emoji">🏭</span><div class="opt-title">Entreprise / Commerce</div><div class="opt-desc">Usage professionnel</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Parking public')"><span class="opt-emoji">🅿️</span><div class="opt-title">Parking public</div><div class="opt-desc">Accès visiteurs ou clients</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Maison individuelle')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><div class="opt-title">Maison individuelle</div><div class="opt-desc">Vous avez un garage ou une place de parking privée</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Copropriété')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10M8 6h1M15 6h1M8 10h1M15 10h1"/></svg></span><div class="opt-title">Appartement en copropriété</div><div class="opt-desc">Vous habitez dans un immeuble avec d'autres résidents</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Entreprise')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="20" height="15" rx="1"/><path d="M16 7V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v3M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></span><div class="opt-title">Entreprise ou commerce</div><div class="opt-desc">Pour vos employés, clients ou livreurs</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Parking public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg></span><div class="opt-title">Parking accessible au public</div><div class="opt-desc">Ouvert aux visiteurs ou aux clients</div></div>
           </div>
         </div>
         <div class="sim-q" id="q1">
           <p class="q-step">Question 2 / 8</p>
-          <h3 class="q-label">Combien de véhicules à charger ?</h3>
-          <p class="q-sub">Ce chiffre définit la puissance totale et le nombre de points de charge nécessaires.</p>
+          <h3 class="q-label">Combien de voitures électriques avez-vous ?</h3>
+          <p class="q-sub">C'est important pour savoir quelle puissance installer et combien de prises prévoir.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,1,'1 véhicule')"><span class="opt-emoji">🚗</span><div class="opt-title">1 véhicule</div><div class="opt-desc">Usage personnel unique</div></div>
-            <div class="sim-opt" onclick="pick(this,1,'2 à 5')"><span class="opt-emoji">🚘</span><div class="opt-title">2 à 5 véhicules</div><div class="opt-desc">Famille ou petite flotte</div></div>
-            <div class="sim-opt" onclick="pick(this,1,'6 à 20')"><span class="opt-emoji">🚌</span><div class="opt-title">6 à 20 véhicules</div><div class="opt-desc">Flotte intermédiaire</div></div>
-            <div class="sim-opt" onclick="pick(this,1,'20+')"><span class="opt-emoji">🚛</span><div class="opt-title">Plus de 20</div><div class="opt-desc">Grande infrastructure</div></div>
+            <div class="sim-opt" onclick="pick(this,1,'1 véhicule')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="9" width="22" height="9" rx="2"/><path d="M5 18v2M19 18v2M1 13h22"/><path d="M5 9l2-4h10l2 4"/></svg></span><div class="opt-title">1 seule voiture</div><div class="opt-desc">Pour mon véhicule personnel</div></div>
+            <div class="sim-opt" onclick="pick(this,1,'2 à 5')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4v4a2 2 0 01-2 2h-1"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><div class="opt-title">2 à 5 voitures</div><div class="opt-desc">Famille ou petite flotte</div></div>
+            <div class="sim-opt" onclick="pick(this,1,'6 à 20')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20M7 18v2M17 18v2"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg></span><div class="opt-title">6 à 20 voitures</div><div class="opt-desc">Flotte d'entreprise de taille moyenne</div></div>
+            <div class="sim-opt" onclick="pick(this,1,'20+')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h5l2 4v4h-7V10z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg></span><div class="opt-title">Plus de 20 voitures</div><div class="opt-desc">Grande flotte ou infrastructure publique</div></div>
           </div>
         </div>
         <div class="sim-q" id="q2">
           <p class="q-step">Question 3 / 8</p>
-          <h3 class="q-label">Quelle est la marque de votre véhicule ?</h3>
-          <p class="q-sub">Chaque constructeur a des standards de charge différents, ce qui influence le type de borne recommandée.</p>
+          <h3 class="q-label">Quelle est la marque de votre voiture électrique ?</h3>
+          <p class="q-sub">Chaque marque a ses propres caractéristiques de charge — ça nous aide à trouver la borne la plus compatible.</p>
           <div class="sim-opts">
             <div class="sim-opt" onclick="pick(this,2,'Tesla')"><span class="opt-emoji">⚡</span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
             <div class="sim-opt" onclick="pick(this,2,'Renault / Dacia')"><span class="opt-emoji">🔌</span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
@@ -977,53 +975,53 @@ else{boot();}
         </div>
         <div class="sim-q" id="q3">
           <p class="q-step">Question 4 / 8</p>
-          <h3 class="q-label">Votre installation électrique actuelle ?</h3>
-          <p class="q-sub">La capacité de votre tableau électrique peut limiter ou simplifier l'installation.</p>
+          <h3 class="q-label">Comment est votre tableau électrique ?</h3>
+          <p class="q-sub">L'état de votre installation électrique peut changer le coût et la durée des travaux.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,3,'Tableau récent')"><span class="opt-emoji">⚡</span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, disjoncteurs</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Tableau ancien')"><span class="opt-emoji">🔌</span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, fusibles</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Je ne sais pas')"><span class="opt-emoji">❓</span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">À vérifier avec un pro</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Tableau récent')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, avec des disjoncteurs</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Tableau ancien')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, avec des fusibles à vis</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Je ne sais pas')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00A96E"/></svg></span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">Un professionnel pourra vérifier ça gratuitement</div></div>
           </div>
         </div>
         <div class="sim-q" id="q4">
           <p class="q-step">Question 5 / 8</p>
-          <h3 class="q-label">Quelle urgence pour votre projet ?</h3>
-          <p class="q-sub">Certaines démarches et certaines aides ont des délais incompressibles à anticiper.</p>
+          <h3 class="q-label">Quand voulez-vous installer votre borne ?</h3>
+          <p class="q-sub">Certaines aides financières demandent du temps à obtenir — mieux vaut le savoir dès le départ.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,4,'Immédiat')"><span class="opt-emoji">⚡</span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">Sous 1 mois</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'Ce trimestre')"><span class="opt-emoji">📅</span><div class="opt-title">Ce trimestre</div><div class="opt-desc">Dans 2 à 3 mois</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'Dans 6 mois')"><span class="opt-emoji">🗓️</span><div class="opt-title">Dans 6 mois</div><div class="opt-desc">Le temps de bien faire</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Immédiat')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">J'en ai besoin dans moins d'un mois</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Ce trimestre')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans les 3 prochains mois</div><div class="opt-desc">Je n'ai pas d'urgence immédiate</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'Dans 6 mois')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans 6 mois ou plus</div><div class="opt-desc">Je prépare mon projet à l'avance</div></div>
           </div>
         </div>
         <div class="sim-q" id="q5">
           <p class="q-step">Question 6 / 8</p>
-          <h3 class="q-label">Où en êtes-vous dans votre démarche ?</h3>
-          <p class="q-sub">Pour calibrer le niveau d'accompagnement dont vous avez vraiment besoin.</p>
+          <h3 class="q-label">Où en êtes-vous dans votre projet ?</h3>
+          <p class="q-sub">On s'adapte à votre situation pour vous aider exactement là où vous en avez besoin.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,5,'Débutant')"><span class="opt-emoji">🗺️</span><div class="opt-title">Je débute</div><div class="opt-desc">Je commence à explorer</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Devis reçus')"><span class="opt-emoji">📄</span><div class="opt-title">J'ai des devis</div><div class="opt-desc">Mais je ne comprends pas tout</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Bloqué')"><span class="opt-emoji">🔀</span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">Trop de réponses contradictoires</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Débutant')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/></svg></span><div class="opt-title">Je débute</div><div class="opt-desc">Je n'ai encore rien fait, je découvre le sujet</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Devis reçus')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div class="opt-title">J'ai reçu des devis</div><div class="opt-desc">Mais je ne comprends pas bien ce qui est proposé</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Bloqué')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00A96E"/></svg></span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">J'ai eu trop de réponses différentes et je ne sais plus quoi faire</div></div>
           </div>
         </div>
         <div class="sim-q" id="q6">
           <p class="q-step">Question 7 / 8</p>
-          <h3 class="q-label">Quel est votre budget approximatif ?</h3>
-          <p class="q-sub">Pour vous orienter vers la solution la plus adaptée à votre situation.</p>
+          <h3 class="q-label">Quel budget avez-vous prévu ?</h3>
+          <p class="q-sub">Pas d'inquiétude — il existe des aides qui réduisent souvent le coût de moitié.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,6,'Moins de 1 500€')"><span class="opt-emoji">💶</span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Solution essentielle</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'1 500 – 5 000€')"><span class="opt-emoji">💰</span><div class="opt-title">1 500 – 5 000 €</div><div class="opt-desc">Solution intermédiaire</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Plus de 5 000€')"><span class="opt-emoji">🏆</span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Infrastructure complète</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Moins de 1 500€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Je cherche la solution la plus abordable</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'1 500 – 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Entre 1 500 € et 5 000 €</div><div class="opt-desc">Je suis prêt à investir pour une bonne solution</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Plus de 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Je veux une installation complète et durable</div></div>
           </div>
         </div>
         <div class="sim-q" id="q7">
           <p class="q-step">Question 8 / 8</p>
-          <h3 class="q-label">Quelle économie visez-vous sur votre facture énergie ?</h3>
-          <p class="q-sub">Certaines bornes intelligentes permettent de charger en heures creuses ou avec l'énergie solaire — réduisant sensiblement le coût de recharge.</p>
+          <h3 class="q-label">Voulez-vous réduire votre facture d'électricité ?</h3>
+          <p class="q-sub">Certaines bornes se programment automatiquement pour recharger quand l'électricité coûte le moins cher.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,7,'Recharge simple')"><span class="opt-emoji">🔌</span><div class="opt-title">Recharge simple</div><div class="opt-desc">Je veux juste recharger, sans optimisation</div></div>
-            <div class="sim-opt" onclick="pick(this,7,'Heures creuses')"><span class="opt-emoji">🌙</span><div class="opt-title">Profiter des heures creuses</div><div class="opt-desc">Recharge programmée la nuit pour réduire la facture</div></div>
-            <div class="sim-opt" onclick="pick(this,7,'Solaire')"><span class="opt-emoji">☀️</span><div class="opt-title">Autoconsommation solaire</div><div class="opt-desc">J'ai ou je prévois des panneaux photovoltaïques</div></div>
-            <div class="sim-opt" onclick="pick(this,7,'Maximiser économies')"><span class="opt-emoji">💡</span><div class="opt-title">Maximiser les économies</div><div class="opt-desc">Borne avec smart charging et pilotage à distance</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Recharge simple')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Juste recharger ma voiture</div><div class="opt-desc">Sans chercher à optimiser ma consommation</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Heures creuses')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><div class="opt-title">Recharger la nuit, moins cher</div><div class="opt-desc">Les heures creuses coûtent 2x moins cher — la borne se programme automatiquement</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Solaire')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></span><div class="opt-title">Utiliser mes panneaux solaires</div><div class="opt-desc">Je veux recharger avec l'énergie que je produis moi-même</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Maximiser économies')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.5-1.5 4.5-3 6H8c-1.5-1.5-3-3.5-3-6a7 7 0 017-7z"/></svg></span><div class="opt-title">Économiser au maximum</div><div class="opt-desc">Borne intelligente qui choisit le meilleur moment pour recharger et coûte le moins cher</div></div>
           </div>
         </div>
                 <div class="sim-result" id="simRes">
@@ -1139,6 +1137,81 @@ else{boot();}
     </div>
   </div>
 </div>
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="sw">
+    <div class="reveal">
+      <span class="section-tag">Questions fréquentes</span>
+      <h2 class="section-h2">Tout ce que vous voulez savoir avant de commencer</h2>
+      <p class="section-lead">Les vraies questions que tout le monde se pose — avec des vraies réponses.</p>
+    </div>
+    <div class="faq-grid reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Combien coûte vraiment l'installation d'une borne chez moi ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Pour une maison individuelle, comptez entre <strong>600 € et 1 400 €</strong> tout compris (borne + installation + mise en service). Après le crédit d'impôt de 75 % — qui peut aller jusqu'à 500 € — votre reste à charge est souvent inférieur à 500 €. En copropriété, des aides supplémentaires existent via le programme ADVENIR.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Est-ce que je peux avoir une borne si j'habite en appartement ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Oui. La loi vous y autorise — c'est ce qu'on appelle le <strong>droit à la prise</strong>. Vous pouvez demander l'installation d'une borne dans votre place de parking, même si vous êtes locataire. Le syndic ou le propriétaire ne peut pas s'y opposer sauf dans des cas très précis.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>C'est quoi la différence entre une borne 7 kW et une borne 22 kW ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>C'est simplement la vitesse de charge. Une borne 7 kW charge une batterie de 60 kWh en environ <strong>8 heures</strong> — parfait pour la nuit. Une borne 22 kW fait la même chose en 3 heures. Mais attention : votre voiture a une limite de charge intégrée. Si elle accepte 7 kW max, une borne 22 kW ne vous apportera rien de plus.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Qu'est-ce que la prime ADVENIR ? Est-ce que j'y ai droit ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>ADVENIR est une aide de l'État pour financer l'installation de bornes de recharge. Elle est réservée aux <strong>copropriétés et aux entreprises</strong> — pas aux maisons individuelles. Elle peut couvrir jusqu'à <strong>960 € par borne</strong> en copropriété. La demande se fait avant le début des travaux, via votre installateur certifié.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Combien de temps dure l'installation ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Pour une maison individuelle avec un tableau électrique récent, l'installation prend généralement <strong>une demi-journée</strong>. En copropriété, les démarches administratives prennent plus de temps (6 à 12 semaines) mais les travaux en eux-mêmes restent rapides.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Est-ce que Les Éclairés est vraiment gratuit ? Quel est votre modèle ?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Oui, le simulateur et les conseils sont <strong>100 % gratuits</strong> pour vous. Nous sommes rémunérés par l'installateur si et seulement si une mise en relation aboutit à un projet concret. Vous ne payez jamais rien de plus — notre rémunération vient du professionnel, pas de vous.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <footer>
   <div>
@@ -1271,6 +1344,15 @@ function initReveal(){
     els.forEach(function(el){obs.observe(el);});
   } else { els.forEach(function(el){el.classList.add('visible');}); }
 }
+
+function toggleFaq(btn){
+  var a=btn.nextElementSibling;
+  var isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(el){el.classList.remove('open');});
+  document.querySelectorAll('.faq-q').forEach(function(el){el.classList.remove('active');});
+  if(!isOpen){a.classList.add('open');btn.classList.add('active');}
+}
+
 function boot(){bindSim();initReveal();initCookie();initCookieButtons();initBtt();}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
 else{boot();}
