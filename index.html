@@ -74,7 +74,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
 /* Hero layout: text left, visuals right */
-.hero-layout{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:40px 48px 80px;display:grid;grid-template-columns:1fr 480px;gap:48px;align-items:center}
+.hero-layout{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:40px 48px 80px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:56px;align-items:center}
 
 .hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:24px;text-align:left}
 
@@ -83,12 +83,12 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.65)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-.hero-h1{font-size:clamp(36px,5.5vw,80px);font-weight:800;letter-spacing:-0.055em;line-height:1.05;color:var(--c-ink);animation:fadeUp .7s .08s var(--ease-out) both}
+.hero-h1{font-size:clamp(32px,3.8vw,58px);font-weight:800;letter-spacing:-0.045em;line-height:1.08;color:var(--c-ink);animation:fadeUp .7s .08s var(--ease-out) both}
 .hero-h1 .line2{display:block;white-space:normal;line-height:1.05}
 .ac-vert{color:var(--c-vert)}
 .ac-black{color:var(--c-ink)}
 
-.hero-sub{font-size:clamp(15px,1.8vw,17px);font-weight:300;color:var(--c-mid);max-width:480px;line-height:1.78;animation:fadeUp .7s .16s var(--ease-out) both}
+.hero-sub{font-size:15px;font-weight:300;color:var(--c-mid);max-width:420px;line-height:1.75;animation:fadeUp .7s .16s var(--ease-out) both}
 
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .22s var(--ease-out) both}
 .btn-primary{font-family:var(--ff-h);font-size:15px;font-weight:600;background:var(--c-ink);color:#fff;padding:14px 28px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s var(--ease-spring),box-shadow .2s}
@@ -404,7 +404,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 48px;display:flex;align
   .nav-links{display:none}
   .nav-logo-text{font-size:14px}
   .btn-nav{font-size:12px;padding:8px 14px}
-  .hero-h1{font-size:clamp(30px,9vw,44px);word-break:break-word}
+  .hero-h1{font-size:clamp(28px,8vw,38px);word-break:break-word}
   .hero-h1 .line2{white-space:normal}
   .hero-sub{font-size:15px;max-width:100%}
   .hero-actions{flex-direction:column;width:100%}
@@ -712,7 +712,7 @@ else{boot();}
       <div class="hero-badge"><span class="badge-dot"></span>Guide indépendant · 100 % gratuit</div>
 
       <h1 class="hero-h1">
-        Votre borne de recharge,<br><span class="line2"><span class="ac-black">sans prise de tête.</span><br><span class="ac-vert">On s'occupe de tout.</span></span>
+        Votre borne de&nbsp;recharge,<br><span class="line2"><span class="ac-black">sans prise&nbsp;de&nbsp;tête.</span><br><span class="ac-vert">On s'occupe&nbsp;de&nbsp;tout.</span></span>
       </h1>
 
       <p class="hero-sub">Vous voulez recharger votre voiture chez vous, mais vous ne savez pas par où commencer ? Notre simulateur gratuit vous guide en quelques minutes — sans jargon, sans engagement.</p>
