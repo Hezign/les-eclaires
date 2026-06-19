@@ -66,7 +66,7 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
 
   /* Footer bas réorganisé */
   footer .footer-top{grid-template-columns:1fr}
-  footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--c-vert);border-radius:16px;padding:16px 24px;margin:8px auto 28px}
+  footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--c-vert);border-radius:16px;padding:16px 24px;margin:8px auto 0}
   footer .footer-bottom .f-brand-name{font-family:var(--ff-h);font-size:16px;font-weight:800;color:#fff;letter-spacing:-0.04em}
   footer .footer-bottom .footer-legal{font-size:12px;color:rgba(255,255,255,.9);font-weight:300;margin:0}
 
@@ -200,70 +200,39 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
 </footer>
 
 <script>
-document.getElementById('btnSubmit').addEventListener('click', async function() {
-  var fp = document.getElementById('fp').value.trim();
-  var fn = document.getElementById('fn').value.trim();
-  var fe = document.getElementById('fe').value.trim();
-  var fc = document.getElementById('fc').value.trim();
-  var ft = document.getElementById('ft').value.trim();
-  var fz = document.getElementById('fz').value.trim();
-  var ft2 = document.getElementById('ft2').value;
-  var fm = document.getElementById('fm').value.trim();
-
-  var ok = true;
-  [['fp',fp],['fe',fe],['fc',fc]].forEach(function(pair) {
-    var el = document.getElementById(pair[0]);
-    if (!pair[1]) { el.style.borderColor = 'rgba(220,50,50,.5)'; ok = false; }
-    else el.style.borderColor = '';
+document.getElementById('btnSubmit').addEventListener('click', async function () {
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+  var fp=v('fp'),fn=v('fn'),fe=v('fe'),fc=v('fc'),ft=v('ft'),fz=v('fz'),fm=v('fm');
+  var ft2el=document.getElementById('ft2'); var ft2=ft2el?ft2el.value:'';
+  var ok=true;
+  [['fp',fp],['fe',fe],['fc',fc]].forEach(function(p){
+    var el=document.getElementById(p[0]);
+    if(!p[1]){el.style.borderColor='rgba(220,50,50,.5)';ok=false;} else el.style.borderColor='';
   });
-  if (!ok) return;
-
-  var btn = document.getElementById('btnSubmit');
-  btn.textContent = 'Envoi en cours...';
-  btn.disabled = true;
-  document.getElementById('errMsg').classList.remove('show');
-
-  try {
-    var res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer re_JQ5Zvfjf_pa9BiGb2cpB8rPPcNQexYBbi'
-      },
-      body: JSON.stringify({
-        from: 'Les Éclairés <onboarding@resend.dev>',
-        to: ['contact@leseclaires.fr'],
-        reply_to: fe,
-        subject: 'Candidature partenaire ' + fp + ' ' + fn + ' (' + fc + ')',
-        html: '<h2 style="font-family:sans-serif">Nouvelle candidature partenaire</h2>' +
-              '<table style="font-family:sans-serif;font-size:14px;border-collapse:collapse">' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Prénom</td><td>' + fp + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Nom</td><td>' + fn + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Email</td><td><a href="mailto:' + fe + '">' + fe + '</a></td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Téléphone</td><td>' + (ft||'') + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Entreprise</td><td>' + fc + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Zone</td><td>' + (fz||'') + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600">Type</td><td>' + (ft2||'') + '</td></tr>' +
-              '<tr><td style="padding:6px 16px 6px 0;color:#888;font-weight:600;vertical-align:top">Message</td><td>' + (fm||'') + '</td></tr>' +
-              '</table>'
+  if(!ok) return;
+  var btn=document.getElementById('btnSubmit');
+  btn.textContent='Envoi en cours...'; btn.disabled=true;
+  var err=document.getElementById('errMsg'); if(err) err.classList.remove('show');
+  try{
+    var res=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        access_key:'1109c206-cadd-4010-a0c1-cf832975b2fa',
+        subject:'Candidature partenaire '+fp+' '+fn+' ('+fc+')',
+        from_name:'Site Les Éclairés',
+        name:fp+' '+fn, email:fe, replyto:fe,
+        'Téléphone':ft, 'Entreprise':fc, 'Zone':fz, 'Type':ft2, 'Message':fm
       })
     });
-
-    if (res.ok) {
-      document.getElementById('formWrap').style.display = 'none';
+    var data=await res.json();
+    if(data && data.success){
+      document.getElementById('formWrap').style.display='none';
       document.getElementById('successWrap').classList.add('show');
-    } else {
-      var err = await res.json();
-      console.error('Resend error:', err);
-      btn.textContent = 'Envoyer ma candidature';
-      btn.disabled = false;
-      document.getElementById('errMsg').classList.add('show');
-    }
-  } catch(e) {
-    console.error('Network error:', e);
-    btn.textContent = 'Envoyer ma candidature';
-    btn.disabled = false;
-    document.getElementById('errMsg').classList.add('show');
+    } else { throw new Error('web3forms'); }
+  }catch(e){
+    btn.textContent='Envoyer ma candidature'; btn.disabled=false;
+    if(err) err.classList.add('show');
   }
 });
 </script>

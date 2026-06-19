@@ -461,7 +461,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg2);padding:48px
 .why-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.why-card .why-num{margin-bottom:0}.why-card .why-icon{margin-bottom:0}.story-roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}.story-role{background:var(--c-bg2);border:1.5px solid var(--c-vert);border-radius:var(--r-xl);padding:32px 28px;box-shadow:var(--shadow-card)}.story-role-icon{width:48px;height:48px;border-radius:var(--r-md);background:rgba(0,169,110,.1);display:flex;align-items:center;justify-content:center;color:var(--c-vert);margin-bottom:20px}.story-role-icon svg{width:24px;height:24px}.story-role h4{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-0.035em;margin-bottom:12px}.story-role p{font-size:14px;color:var(--c-muted);line-height:1.75;font-weight:300}@media(max-width:760px){.story-roles{grid-template-columns:1fr}}.story-photo{margin:48px auto 0;max-width:440px}.story-photo img{width:100%;height:auto;display:block;border-radius:var(--r-xl);border:1.5px solid var(--c-vert);box-shadow:var(--shadow-card)}
   /* Footer bas réorganisé */
   footer .footer-top{grid-template-columns:1fr}
-  footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--c-vert);border-radius:16px;padding:16px 24px;margin:8px auto 28px}
+  footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--c-vert);border-radius:16px;padding:16px 24px;margin:8px auto 0}
   footer .footer-bottom .f-brand-name{font-family:var(--ff-h);font-size:16px;font-weight:800;color:#fff;letter-spacing:-0.04em}
   footer .footer-bottom .footer-legal{font-size:12px;color:rgba(255,255,255,.9);font-weight:300;margin:0}
 .story-main{display:grid;grid-template-columns:.85fr 1fr;gap:44px;align-items:center;margin-top:48px}.story-main .story-photo{margin:0;max-width:none}.story-side .story-roles{grid-template-columns:1fr;margin-top:0}.story-side>p{margin-top:24px}@media(max-width:860px){.story-main{grid-template-columns:1fr;gap:28px}.story-main .story-photo{max-width:440px;margin:0 auto}}
@@ -1556,5 +1556,61 @@ else{boot();}
   <li>Installateurs certifies IRVE dans toute la France</li>
 </ul>
   <script src="/cursor.js" defer></script>
+<script>
+/* Simulateur -> Web3Forms : rapport détaillé envoyé par email. Lit le DOM, rebinde
+   proprement le bouton (clone) pour éviter le double envoi dû aux scripts dupliqués. */
+(function(){
+  var KEY='1109c206-cadd-4010-a0c1-cf832975b2fa';
+  function gid(id){return document.getElementById(id);}
+  function txt(id){var e=gid(id);return e?(e.textContent||'').trim():'';}
+  function val(id){var e=gid(id);return e?(e.value||'').trim():'';}
+  function setup(){
+    var btn=document.querySelector('.btn-sub'); if(!btn) return;
+    var b=btn.cloneNode(true); b.removeAttribute('onclick'); btn.parentNode.replaceChild(b,btn);
+    var sent=false;
+    b.addEventListener('click', async function(){
+      var p=val('fP'), e=val('fE'), t=val('fT');
+      if(!p){gid('fP').style.borderColor='rgba(220,50,50,.5)';return;}
+      if(!e){gid('fE').style.borderColor='rgba(220,50,50,.5)';return;}
+      if(sent) return; sent=true;
+      var label=b.textContent; b.textContent='Envoi...'; b.disabled=true;
+      var qa=[];
+      document.querySelectorAll('.sim-q').forEach(function(q){
+        var sel=q.querySelector('.sim-opt.sel'); if(!sel) return;
+        var l=q.querySelector('.q-label'); var o=sel.querySelector('.opt-title');
+        qa.push('• '+(l?l.textContent.trim():'?')+' : '+(o?o.textContent.trim():sel.textContent.trim()));
+      });
+      var report='NOUVEAU LEAD — Simulateur IRVE\n\n'+
+        '— CONTACT —\n'+'Prénom : '+p+'\nEmail : '+e+'\nTéléphone : '+(t||'(non renseigné)')+'\n\n'+
+        '— RECOMMANDATION —\n'+
+        'Profil : '+txt('rTitle')+'\nDétail : '+txt('rSub')+'\n'+
+        'Puissance conseillée : '+txt('rPow')+'\nBudget estimé : '+txt('rBudget')+'\n'+
+        'Aide mobilisable : '+txt('rAide')+'\nDélai : '+txt('rDelai')+'\n\n'+
+        '— RÉPONSES DU QUESTIONNAIRE —\n'+(qa.length?qa.join('\n'):'(non capturées)');
+      try{
+        var res=await fetch('https://api.web3forms.com/submit',{
+          method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
+          body:JSON.stringify({
+            access_key:KEY, subject:'Lead simulateur IRVE — '+p, from_name:'Simulateur Les Éclairés',
+            name:p, email:e, replyto:e, 'Téléphone':t,
+            'Profil':txt('rTitle'),'Puissance':txt('rPow'),'Budget':txt('rBudget'),
+            'Aide':txt('rAide'),'Délai':txt('rDelai'), message:report
+          })
+        });
+        var data=await res.json();
+        if(data && data.success){
+          if(gid('fBox')) gid('fBox').style.display='none';
+          if(gid('okMsg')) gid('okMsg').classList.add('show');
+        } else { throw new Error('w3f'); }
+      }catch(err){
+        sent=false; b.disabled=false; b.textContent=label||'Recevoir →';
+        alert("Une erreur est survenue. Réessayez ou écrivez-nous à contact@leseclaires.fr.");
+      }
+    });
+  }
+  if(document.readyState==='complete') setup();
+  else window.addEventListener('load', setup);
+})();
+</script>
 </body>
 </html>
