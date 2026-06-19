@@ -324,7 +324,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 /* ── FOOTER ── */
 
 /* ── FOOTER ── */
-footer{border-top:1px solid var(--c-border);background:var(--c-bg2);padding:48px 48px 0}
+footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 48px 0}
 .footer-top{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--c-border)}
 .footer-brand{display:flex;flex-direction:column;gap:10px}
 .footer-brand img{height:28px;width:auto;border-radius:8px}
@@ -503,6 +503,14 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg2);padding:48px
   .stats-band .stat-label{color:rgba(255,255,255,.88)}
   .stats-band .stat-item{border-right-color:rgba(255,255,255,.20)}
   .stats-band .stat-item:last-child{border-right:none}
+
+  /* Affinages responsive */
+  @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){
+    .stats-band .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.20);padding:34px 24px}
+    .stats-band .stat-item:last-child{border-bottom:none}
+  }
+  @media(max-width:480px){.sim-opts{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 {
