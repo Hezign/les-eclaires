@@ -43,7 +43,23 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
   .nf-btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,169,110,.35)}
   .nf-btn.ghost{background:transparent;color:var(--c-ink);border:1px solid var(--c-border2)}
   .nf-btn.ghost:hover{border-color:var(--c-vert);color:var(--c-vert)}
-body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}</style>
+body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
+  /* Footer riche (harmonisé sur tout le site) */
+  footer{border-top:1px solid var(--c-border);background:var(--c-bg2);padding:48px 48px 0;margin-top:auto;display:block}
+  .footer-top{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--c-border)}
+  .footer-brand{display:flex;flex-direction:column;gap:10px}
+  .f-brand-name{font-family:var(--ff-h);font-size:16px;font-weight:800;color:var(--c-ink);letter-spacing:-0.04em}
+  .f-tagline{font-size:12px;color:var(--c-muted);font-style:italic;margin-top:2px}
+  .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .footer-col h4{font-family:var(--ff-h);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:14px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0}
+  .footer-col li a{font-size:13px;color:var(--c-mid);font-weight:300;transition:color .18s;text-decoration:none}
+  .footer-col li a:hover{color:var(--c-vert)}
+  .footer-bottom{max-width:1080px;margin:0 auto;padding:20px 0 32px}
+  .footer-legal{font-size:11px;color:var(--c-muted);line-height:1.7;font-weight:300}
+  @media(max-width:860px){footer{padding:40px 20px 0}.footer-top{grid-template-columns:1fr;gap:32px}.footer-cols{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.footer-cols{grid-template-columns:1fr}}
+</style>
 <link rel="canonical" href="https://leseclaires.fr/404.html">
 <meta name="description" content="Cette page n\'existe pas ou a été déplacée. Retournez à l\'accueil ou lancez le simulateur IRVE gratuit.">
 </head>
@@ -65,11 +81,49 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
   </div>
 
   <footer>
-  <div class="f-brand"><span>Les Éclairés</span></div>
-  <div class="f-links">
-    <a href="/mentions-legales.html">Mentions légales</a>
-    <a href="/confidentialite.html">Confidentialité</a>
-    <a href="mailto:contact@leseclaires.fr">Nous écrire</a>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div>
+        <span class="f-brand-name">Les Éclairés</span>
+        <p class="f-tagline">Comprendre. Choisir. Installer.</p>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Guides par ville</h4>
+        <ul>
+          <li><a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon</a></li>
+          <li><a href="/villes/borne-recharge-saint-etienne.html">Borne de recharge Saint-Étienne</a></li>
+          <li><a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy</a></li>
+          <li><a href="/villes/borne-recharge-paris.html">Borne de recharge Paris</a></li>
+          <li><a href="/villes/borne-recharge-marseille.html">Borne de recharge Marseille</a></li>
+          <li><a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier</a></li>
+          <li><a href="/villes/borne-recharge-strasbourg.html">Borne de recharge Strasbourg</a></li>
+          <li><a href="/villes/borne-recharge-corse.html">Borne de recharge Corse</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="/blog/">Blog IRVE</a></li>
+          <li><a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Convention%20Advenir%20sign%C3%A9e.pdf" target="_blank" rel="noopener">Prime ADVENIR ↗</a></li>
+          <li><a href="https://www.avere-france.org/" target="_blank" rel="noopener">AVERE-France ↗</a></li>
+          <li><a href="https://www.irve.gouv.fr/" target="_blank" rel="noopener">IRVE.gouv.fr ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/partenaires.html">Devenir partenaire</a></li>
+          <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 Les Éclairés. Les informations relatives aux aides de l'État (crédit d'impôt, prime ADVENIR, etc.) sont communiquées à titre informatif uniquement, sur la base des dispositions en vigueur au moment de la rédaction. Les montants, conditions et modalités peuvent évoluer. Les Éclairés ne saurait être tenu responsable d'erreurs, d'omissions ou de modifications postérieures à la publication.</p>
   </div>
 </footer>
   <script src="/cursor.js" defer></script>
