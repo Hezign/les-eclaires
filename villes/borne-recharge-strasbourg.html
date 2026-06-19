@@ -74,6 +74,12 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
   .footer-legal{font-size:11px;color:var(--c-muted);line-height:1.7;font-weight:300}
   @media(max-width:860px){footer{padding:40px 20px 0}.footer-top{grid-template-columns:1fr;gap:32px}.footer-cols{grid-template-columns:1fr 1fr}}
   @media(max-width:520px){.footer-cols{grid-template-columns:1fr}}
+
+  /* Footer bas réorganisé */
+  footer .footer-top{grid-template-columns:1fr}
+  footer .footer-bottom{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  footer .footer-bottom .f-brand-name{font-family:var(--ff-h);font-size:16px;font-weight:800;color:var(--c-ink);letter-spacing:-0.04em}
+  footer .footer-bottom .footer-legal{font-size:12px;color:var(--c-muted);font-weight:300;margin:0}
 </style>
 </head>
 <body>
@@ -165,12 +171,6 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <div>
-        <span class="f-brand-name">Les Éclairés</span>
-        <p class="f-tagline">Comprendre. Choisir. Installer.</p>
-      </div>
-    </div>
     <div class="footer-cols">
       <div class="footer-col">
         <h4>Guides par ville</h4>
@@ -206,7 +206,8 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-legal">© 2026 Les Éclairés. Les informations relatives aux aides de l'État (crédit d'impôt, prime ADVENIR, etc.) sont communiquées à titre informatif uniquement, sur la base des dispositions en vigueur au moment de la rédaction. Les montants, conditions et modalités peuvent évoluer. Les Éclairés ne saurait être tenu responsable d'erreurs, d'omissions ou de modifications postérieures à la publication.</p>
+    <span class="f-brand-name">Les Éclairés</span>
+    <span class="footer-legal">© 2026 Les Éclairés · Comprendre, choisir, installer.</span>
   </div>
 </footer>
   <script src="/cursor.js" defer></script>
