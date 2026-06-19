@@ -476,6 +476,34 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg2);padding:48px
   @keyframes plPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.14);opacity:.65}}
   @keyframes plBar{0%{transform:translateX(-110%)}100%{transform:translateX(330%)}}
   @media(prefers-reduced-motion:reduce){#preloader .pl-logo,#preloader .pl-bar i{animation:none}}
+
+  /* ===== Notre histoire (redesign UX/UI) ===== */
+  #histoire .story-hero{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:60px;align-items:center}
+  #histoire .story-photo{position:relative;margin:0;order:-1}
+  #histoire .story-photo img{width:100%;height:auto;display:block;border-radius:24px;border:1px solid rgba(0,0,0,.06);box-shadow:0 24px 60px rgba(0,0,0,.13);position:relative;z-index:1}
+  #histoire .story-photo::before{content:"";position:absolute;inset:0;transform:translate(20px,20px);border-radius:24px;background:var(--c-vert-bg);border:1.5px solid var(--c-vert-br);z-index:0}
+  #histoire .story-intro{max-width:520px}
+  #histoire .story-intro .section-h2{margin:14px 0 18px}
+  #histoire .story-intro .section-lead{margin-bottom:14px}
+  #histoire .story-p{color:var(--c-mid);font-weight:300;line-height:1.75;font-size:16px}
+  #histoire .story-team{margin-top:68px;padding-top:48px;border-top:1px solid var(--c-border)}
+  #histoire .story-team-head{max-width:640px;margin-bottom:28px}
+  #histoire .story-kicker{display:inline-block;font-family:var(--ff-h);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:10px}
+  #histoire .story-team-head p{font-size:19px;color:var(--c-mid);font-weight:300;line-height:1.6}
+  #histoire .story-roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0}
+  #histoire .story-role{display:flex;gap:18px;align-items:flex-start;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:26px 28px;box-shadow:var(--shadow-card);transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out),border-color .25s}
+  #histoire .story-role:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:var(--c-vert-br)}
+  #histoire .story-role-icon{flex-shrink:0;width:46px;height:46px;border-radius:var(--r-md);background:var(--c-vert-bg);display:flex;align-items:center;justify-content:center;color:var(--c-vert);margin:0}
+  #histoire .story-role-icon svg{width:22px;height:22px}
+  #histoire .story-role-body h4{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-.03em;margin-bottom:6px}
+  #histoire .story-role-body p{font-size:14px;color:var(--c-muted);line-height:1.7;font-weight:300}
+  @media(max-width:860px){
+    #histoire .story-hero{grid-template-columns:1fr;gap:30px}
+    #histoire .story-photo{order:0}
+    #histoire .story-photo::before{transform:translate(12px,12px)}
+    #histoire .story-roles{grid-template-columns:1fr}
+    #histoire .story-team{margin-top:48px;padding-top:36px}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -934,30 +962,39 @@ else{boot();}
 
   <section id="histoire">
     <div class="sw">
-      <div class="reveal">
-        <span class="section-tag">Notre histoire</span>
-        <h2 class="section-h2">Né d'une insomnie,<br>porté par une conviction</h2>
-        <p class="section-lead">Les Éclairés est né une nuit, d'une insomnie et d'une <strong>énergie surpuissante entre nous deux</strong>. Une de ces idées qui refusent de vous laisser dormir. Notre but est clair&nbsp;: <strong>simplifier l'accès à l'électrique et aux bornes de recharge, pour toute personne</strong>.</p>
-      </div>
-      <div class="story-main">
-      <figure class="story-photo reveal">
-        <img src="/nous-les-eclaires.jpg" alt="Les fondateurs de Les Éclairés" width="1000" height="1000" loading="lazy">
-      </figure>
-      <div class="story-side">
-      <div class="story-roles">
-        <div class="story-role reveal rd1">
-          <div class="story-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg></div>
-          <h4>Le web &amp; l'acquisition</h4>
-          <p>Un web designer spécialisé dans la création de sites, le SEO et l'acquisition client pour rendre l'information limpide et la faire trouver par ceux qui en ont besoin.</p>
-        </div>
-        <div class="story-role reveal rd2">
-          <div class="story-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-          <h4>La stratégie &amp; le commerce</h4>
-          <p>Une spécialiste de la stratégie d'entreprise et du développement commercial pour structurer le projet et créer des liens de confiance durables.</p>
+      <div class="story-hero">
+        <figure class="story-photo reveal">
+          <img src="/nous-les-eclaires.jpg" alt="Les fondateurs de Les Éclairés" width="1000" height="1000" loading="lazy">
+        </figure>
+        <div class="story-intro reveal">
+          <span class="section-tag">Notre histoire</span>
+          <h2 class="section-h2">Né d'une insomnie,<br>porté par une conviction</h2>
+          <p class="section-lead">Les Éclairés est né une nuit, d'une insomnie et d'une <strong>énergie surpuissante entre nous deux</strong>. Une de ces idées qui refusent de vous laisser dormir.</p>
+          <p class="story-p">Notre but est clair&nbsp;: <strong>simplifier l'accès à l'électrique et aux bornes de recharge, pour toute personne</strong>. Rendre limpide ce qui paraît compliqué.</p>
         </div>
       </div>
-      <p class="section-lead" style="margin-top:32px">Deux profils complémentaires qui ont décidé d'<strong>unir leurs talents et de les mettre à contribution de l'IRVE</strong>.</p>
-      </div>
+
+      <div class="story-team">
+        <div class="story-team-head reveal">
+          <span class="story-kicker">À deux mains</span>
+          <p>Deux profils complémentaires qui ont décidé d'unir leurs talents au service de l'IRVE.</p>
+        </div>
+        <div class="story-roles">
+          <div class="story-role reveal rd1">
+            <div class="story-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg></div>
+            <div class="story-role-body">
+              <h4>Le web &amp; l'acquisition</h4>
+              <p>Web designer spécialisé dans la création de sites, le SEO et l'acquisition client.</p>
+            </div>
+          </div>
+          <div class="story-role reveal rd2">
+            <div class="story-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <div class="story-role-body">
+              <h4>La stratégie &amp; le commerce</h4>
+              <p>Spécialiste de la stratégie d'entreprise et du développement commercial.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
