@@ -253,7 +253,7 @@ html = f'''<!DOCTYPE html>
 {favicon}
 {fonts}
 {jsonld}
-<style>{css}</style>
+{css}
 {page_css}
 </head>
 <body>
