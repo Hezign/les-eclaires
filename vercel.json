@@ -3,7 +3,17 @@
   "buildCommand": null,
   "installCommand": null,
   "rewrites": [
-    { "source": "/simulateur", "destination": "/simulateur.html" },
-    { "source": "/copropriete", "destination": "/copropriete.html" }
+    {
+      "source": "/simulateur",
+      "destination": "/simulateur.html"
+    },
+    {
+      "source": "/copropriete",
+      "destination": "/copropriete.html"
+    },
+    {
+      "source": "/villes",
+      "destination": "/villes.html"
+    }
   ]
 }

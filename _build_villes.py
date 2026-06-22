@@ -75,15 +75,28 @@ REGION = {
  'strasbourg':'Grand Est','paris':'Île-de-France','corse':'Corse',
 }
 LABEL = dict(ALL_CITIES)
+CODE = {
+ 'aix-en-provence':'13','annecy':'74','lyon':'69','nantes':'44','bordeaux':'33',
+ 'montpellier':'34','toulouse':'31','rennes':'35','la-rochelle':'17','chambery':'73',
+ 'valence':'26','grenoble':'38','angers':'49','poitiers':'86','vannes':'56','pau':'64',
+ 'niort':'79','clermont-ferrand':'63','tours':'37','metz':'57','paris':'75',
+ 'marseille':'13','strasbourg':'67','saint-etienne':'42','corse':'2A/2B',
+}
+# Villes phares affichées dans le footer (le reste via la page hub /villes)
+FLAGSHIP = ['aix-en-provence','annecy','lyon','nantes','bordeaux','montpellier','toulouse','rennes']
+REGION_ORDER = ["Auvergne-Rhône-Alpes","Nouvelle-Aquitaine","Occitanie",
+  "Provence-Alpes-Côte d'Azur","Pays de la Loire","Bretagne","Grand Est",
+  "Centre-Val de Loire","Île-de-France","Corse"]
 
 def footer_cities():
     lis = '\n'.join(
-      f'          <li><a href="/villes/borne-recharge-{sl}.html">Borne de recharge {lb}</a></li>'
-      for sl, lb in ALL_CITIES)
+      f'          <li><a href="/villes/borne-recharge-{sl}.html">Borne de recharge {LABEL[sl]}</a></li>'
+      for sl in FLAGSHIP)
     return f'''    <div class="footer-cities">
       <h4>Guides par ville</h4>
       <ul class="footer-cities-list">
 {lis}
+          <li><a href="/villes"><strong>Toutes les villes →</strong></a></li>
       </ul>
     </div>'''
 
@@ -274,7 +287,7 @@ def build_city(c):
          "url":url},
         {"@type":"BreadcrumbList","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Accueil","item":"https://leseclaires.fr/"},
-          {"@type":"ListItem","position":2,"name":"Bornes par ville","item":"https://leseclaires.fr/#villes"},
+          {"@type":"ListItem","position":2,"name":"Bornes par ville","item":"https://leseclaires.fr/villes"},
           {"@type":"ListItem","position":3,"name":name,"item":url}]},
         {"@type":"FAQPage","mainEntity":faq_ld},
       ]}
@@ -313,7 +326,7 @@ def build_city(c):
 </nav>
 
 <div class="hero-city">
-  <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/simulateur">Bornes par ville</a> › <span>{name}</span></div>
+  <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>{name}</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Guide gratuit · {dept} ({code})</div>
   <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">à {name}</span></h1>
   <p class="city-sub">{c['sub']}</p>
@@ -378,8 +391,104 @@ def copro_box(name):
 
 '''
 
+HUB_CSS = '''<style>
+.villes-region{margin-bottom:44px}
+.villes-region h2{font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;margin:0 0 18px;color:var(--c-ink)}
+.villes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.villes-grid a{display:block;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:16px 18px;text-decoration:none;color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:15px;letter-spacing:-.02em;transition:border-color .2s,transform .2s,box-shadow .2s}
+.villes-grid a:hover{border-color:var(--c-vert-br);transform:translateY(-2px);box-shadow:var(--shadow-card)}
+.villes-grid a span{display:block;font-size:12.5px;color:var(--c-muted);font-weight:400;font-family:var(--ff-b);margin-top:3px}
+@media(max-width:700px){.villes-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.villes-grid{grid-template-columns:1fr}}
+</style>'''
+
+def build_hub():
+    url="https://leseclaires.fr/villes"
+    desc=("Bornes de recharge par ville : nos guides locaux IRVE en France. Aides, prix, "
+          "installateurs certifiés et simulateur gratuit, ville par ville.")
+    # regrouper par région
+    bygroup={}
+    for sl,lb in ALL_CITIES: bygroup.setdefault(REGION[sl],[]).append((sl,lb))
+    sections=''
+    item_ld=[]; pos=0
+    for reg in REGION_ORDER:
+        if reg not in bygroup: continue
+        cards=''
+        for sl,lb in sorted(bygroup[reg], key=lambda x:x[1]):
+            pos+=1
+            item_ld.append({"@type":"ListItem","position":pos,"name":f"Borne de recharge {lb}",
+                            "url":f"https://leseclaires.fr/villes/borne-recharge-{sl}.html"})
+            cards+=f'      <a href="/villes/borne-recharge-{sl}.html">Borne de recharge {lb}<span>{reg} · {CODE[sl]}</span></a>\n'
+        sections+=f'  <div class="villes-region">\n    <h2>{reg}</h2>\n    <div class="villes-grid">\n{cards}    </div>\n  </div>\n\n'
+    graph={"@context":"https://schema.org","@graph":[
+      {"@type":"CollectionPage","name":"Bornes de recharge par ville","description":desc,"url":url},
+      {"@type":"ItemList","itemListElement":item_ld},
+      {"@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Accueil","item":"https://leseclaires.fr/"},
+        {"@type":"ListItem","position":2,"name":"Bornes par ville","item":url}]},
+    ]}
+    jsonld='<script type="application/ld+json">\n'+json.dumps(graph,ensure_ascii=False,indent=2)+'\n</script>'
+    html=f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+{GA}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bornes de recharge par ville : nos guides locaux IRVE | Les Éclairés</title>
+<meta name="description" content="{desc}">
+<meta name="keywords" content="borne de recharge par ville, IRVE par ville, installation borne ville, guide local borne recharge">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{url}">
+<meta property="og:title" content="Bornes de recharge par ville | Les Éclairés">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="https://leseclaires.fr/nous-les-eclaires.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bornes de recharge par ville | Les Éclairés">
+<meta name="twitter:description" content="{desc}">
+{FAVICON}
+{FONTS}
+{jsonld}
+{CSS}
+{EXTRA_CSS}
+{HUB_CSS}
+<noscript><style>#preloader{{display:none!important}}</style></noscript>
+</head>
+<body>
+{PRELOADER}
+<nav>
+  <a class="nav-logo" href="/"><img src="{NAVLOGO}" alt="Les Éclairés"><span>Les Éclairés</span></a>
+  <a class="btn-nav" href="/simulateur">Simuler mon projet</a>
+</nav>
+
+<div class="hero-city">
+  <div class="breadcrumb"><a href="/">Accueil</a> › <span>Bornes par ville</span></div>
+  <div class="city-badge"><span class="badge-dot"></span>Guides locaux IRVE · France entière</div>
+  <h1 class="city-h1">Bornes de recharge,<br><span style="white-space:nowrap">ville par ville</span></h1>
+  <p class="city-sub">Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.</p>
+  <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit {ARROW}</a>
+</div>
+
+<div class="city-body">
+{sections}  <div class="cta-box">
+    <h3>Votre ville n'est pas listée ?</h3>
+    <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
+    <a href="/simulateur" class="btn-vert">Démarrer le simulateur {ARROW}</a>
+  </div>
+</div>
+
+{footer()}
+  <script src="/cursor.js" defer></script>
+</body>
+</html>
+'''
+    open('villes.html','w',encoding='utf-8').write(html)
+    return len(html)
+
 if __name__ == '__main__':
     total = 0
     for c in CITIES:
         build_city(c); total += 1
-    print(f"{total} pages villes générées.")
+    n = build_hub()
+    print(f"{total} pages villes générées + hub /villes ({n} o).")

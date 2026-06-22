@@ -21,6 +21,7 @@ Les Éclairés est un guide indépendant dédié à l'installation de bornes de 
 
 ## Guides par ville
 
+- [Toutes les villes (index)](https://leseclaires.fr/villes) : guides locaux IRVE regroupés par région
 - [Borne de recharge à Aix-en-Provence](https://leseclaires.fr/villes/borne-recharge-aix-en-provence.html)
 - [Borne de recharge à Annecy](https://leseclaires.fr/villes/borne-recharge-annecy.html)
 - [Borne de recharge à Lyon](https://leseclaires.fr/villes/borne-recharge-lyon.html)
