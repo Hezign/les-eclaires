@@ -1,5 +1,8 @@
 {
   "outputDirectory": ".",
   "buildCommand": null,
-  "installCommand": null
+  "installCommand": null,
+  "rewrites": [
+    { "source": "/simulateur", "destination": "/simulateur.html" }
+  ]
 }

@@ -1,17 +1,79 @@
+# Les Éclairés — robots.txt
+# Tout le monde est autorisé
 User-agent: *
 Allow: /
 
-# AI crawlers — allowed
+# ─────────────────────────────────────────────
+# Crawlers IA — explicitement autorisés (GEO)
+# On VEUT être lu, indexé et cité par les IA.
+# ─────────────────────────────────────────────
+
+# OpenAI (ChatGPT)
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google (Gemini / AI Overviews)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Googlebot
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft (Copilot / Bing)
+User-agent: Bingbot
+Allow: /
+
+# Apple (Apple Intelligence)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta (Meta AI)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl (alimente de nombreux modèles)
+User-agent: CCBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://leseclaires.fr/sitemap.xml
