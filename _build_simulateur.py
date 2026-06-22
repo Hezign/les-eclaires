@@ -105,7 +105,7 @@ hero = '''<section class="simp-hero">
   <div class="sw">
     <div class="simp-badge"><span class="badge-dot"></span>Gratuit · Sans inscription · Résultat immédiat</div>
     <h1>Simulateur IRVE&nbsp;: votre projet de <span class="hl">borne de recharge</span>, clair en 3 minutes.</h1>
-    <p class="lead">Répondez à 8 questions simples. On vous dit exactement quelle borne installer, combien ça coûte vraiment, les aides auxquelles vous avez droit et le délai d'installation. Sans jargon, sans engagement.</p>
+    <p class="lead">Répondez à quelques questions simples. On vous dit exactement quelle borne installer, combien ça coûte vraiment, les aides auxquelles vous avez droit et le délai d'installation. Sans jargon, sans engagement.</p>
     <ul class="simp-points">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Recommandation personnalisée</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Budget &amp; aides estimés</li>
@@ -126,7 +126,7 @@ steps = '''<section class="simp-steps">
       <div class="simp-step reveal">
         <div class="simp-step-n">1</div>
         <h3>Vous répondez</h3>
-        <p>8 questions sur votre logement, votre véhicule et vos habitudes de recharge. Trois minutes, montre en main.</p>
+        <p>quelques questions sur votre logement, votre véhicule et vos habitudes de recharge. Trois minutes, montre en main.</p>
       </div>
       <div class="simp-step reveal">
         <div class="simp-step-n">2</div>
@@ -163,7 +163,7 @@ faq_items = [
  ("Le simulateur est-il vraiment gratuit ?",
   "Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre modèle repose sur une commission versée par l'installateur lors de la mise en relation&nbsp;: cela ne change rien à votre prix."),
  ("Combien de temps prend la simulation ?",
-  "Environ 3 minutes. Ce sont 8 questions simples sur votre logement, votre véhicule et vos habitudes. Aucune connaissance technique n'est nécessaire&nbsp;: on traduit tout en langage clair."),
+  "Environ 3 minutes. Ce sont quelques questions simples sur votre logement, votre véhicule et vos habitudes. Aucune connaissance technique n'est nécessaire&nbsp;: on traduit tout en langage clair."),
  ("Dois-je créer un compte ?",
   "Non. Vous répondez aux questions directement, et vous renseignez seulement votre email (et éventuellement votre téléphone) à la fin pour recevoir votre récapitulatif détaillé."),
  ("Que se passe-t-il après la simulation ?",

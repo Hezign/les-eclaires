@@ -4,12 +4,13 @@
 
 ## À propos
 
-Les Éclairés est un guide indépendant dédié à l'installation de bornes de recharge pour véhicules électriques (IRVE) en France. Notre simulateur gratuit analyse votre situation en 8 questions et vous fournit une recommandation personnalisée : puissance adaptée, budget estimé, aides disponibles (ADVENIR, crédit d'impôt), délai d'installation. Le service est gratuit, sans inscription, et nous mettons en relation les particuliers et entreprises avec des installateurs certifiés IRVE.
+Les Éclairés est un guide indépendant dédié à l'installation de bornes de recharge pour véhicules électriques (IRVE) en France. Notre simulateur gratuit analyse votre situation en quelques questions et vous fournit une recommandation personnalisée : puissance adaptée, budget estimé, aides disponibles (ADVENIR, crédit d'impôt), délai d'installation. Le service est gratuit, sans inscription, et nous mettons en relation les particuliers et entreprises avec des installateurs certifiés IRVE.
 
 ## Pages principales
 
 - [Accueil](https://leseclaires.fr/) : présentation du guide indépendant IRVE et accès au simulateur
-- [Simulateur IRVE gratuit](https://leseclaires.fr/simulateur) : 8 questions, résultat immédiat (puissance, budget, aides, délai)
+- [Simulateur IRVE gratuit](https://leseclaires.fr/simulateur) : quelques questions, résultat immédiat (puissance, budget, aides, délai)
+- [Bornes de recharge en copropriété](https://leseclaires.fr/copropriete) : guide pour syndics et conseils syndicaux, droit à la prise, prime ADVENIR
 - [Partenaires installateurs](https://leseclaires.fr/partenaires.html) : rejoindre le réseau d'installateurs certifiés IRVE
 
 ## Blog / Guides
@@ -20,20 +21,37 @@ Les Éclairés est un guide indépendant dédié à l'installation de bornes de 
 
 ## Guides par ville
 
-- [Borne de recharge à Paris](https://leseclaires.fr/villes/borne-recharge-paris.html)
-- [Borne de recharge à Lyon](https://leseclaires.fr/villes/borne-recharge-lyon.html)
-- [Borne de recharge à Marseille](https://leseclaires.fr/villes/borne-recharge-marseille.html)
-- [Borne de recharge à Montpellier](https://leseclaires.fr/villes/borne-recharge-montpellier.html)
-- [Borne de recharge à Strasbourg](https://leseclaires.fr/villes/borne-recharge-strasbourg.html)
+- [Borne de recharge à Aix-en-Provence](https://leseclaires.fr/villes/borne-recharge-aix-en-provence.html)
 - [Borne de recharge à Annecy](https://leseclaires.fr/villes/borne-recharge-annecy.html)
+- [Borne de recharge à Lyon](https://leseclaires.fr/villes/borne-recharge-lyon.html)
+- [Borne de recharge à Nantes](https://leseclaires.fr/villes/borne-recharge-nantes.html)
+- [Borne de recharge à Bordeaux](https://leseclaires.fr/villes/borne-recharge-bordeaux.html)
+- [Borne de recharge à Montpellier](https://leseclaires.fr/villes/borne-recharge-montpellier.html)
+- [Borne de recharge à Toulouse](https://leseclaires.fr/villes/borne-recharge-toulouse.html)
+- [Borne de recharge à Rennes](https://leseclaires.fr/villes/borne-recharge-rennes.html)
+- [Borne de recharge à La Rochelle](https://leseclaires.fr/villes/borne-recharge-la-rochelle.html)
+- [Borne de recharge à Chambéry](https://leseclaires.fr/villes/borne-recharge-chambery.html)
+- [Borne de recharge à Valence](https://leseclaires.fr/villes/borne-recharge-valence.html)
+- [Borne de recharge à Grenoble](https://leseclaires.fr/villes/borne-recharge-grenoble.html)
+- [Borne de recharge à Angers](https://leseclaires.fr/villes/borne-recharge-angers.html)
+- [Borne de recharge à Poitiers](https://leseclaires.fr/villes/borne-recharge-poitiers.html)
+- [Borne de recharge à Vannes](https://leseclaires.fr/villes/borne-recharge-vannes.html)
+- [Borne de recharge à Pau](https://leseclaires.fr/villes/borne-recharge-pau.html)
+- [Borne de recharge à Niort](https://leseclaires.fr/villes/borne-recharge-niort.html)
+- [Borne de recharge à Clermont-Ferrand](https://leseclaires.fr/villes/borne-recharge-clermont-ferrand.html)
+- [Borne de recharge à Tours](https://leseclaires.fr/villes/borne-recharge-tours.html)
+- [Borne de recharge à Metz](https://leseclaires.fr/villes/borne-recharge-metz.html)
+- [Borne de recharge à Paris](https://leseclaires.fr/villes/borne-recharge-paris.html)
+- [Borne de recharge à Marseille](https://leseclaires.fr/villes/borne-recharge-marseille.html)
+- [Borne de recharge à Strasbourg](https://leseclaires.fr/villes/borne-recharge-strasbourg.html)
 - [Borne de recharge à Saint-Étienne](https://leseclaires.fr/villes/borne-recharge-saint-etienne.html)
-- [Borne de recharge en Corse](https://leseclaires.fr/villes/borne-recharge-corse.html)
+- [Borne de recharge à Corse](https://leseclaires.fr/villes/borne-recharge-corse.html)
 
 ## Faits clés (citables)
 
 - Nom : Les Éclairés
 - Activité : guide indépendant IRVE (Infrastructure de Recharge de Véhicule Électrique) et mise en relation avec des installateurs certifiés
-- Simulateur : 8 questions, résultat immédiat (puissance recommandée, budget estimé, aides mobilisables, délai)
+- Simulateur : quelques questions, résultat immédiat (puissance recommandée, budget estimé, aides mobilisables, délai)
 - Service : 100 % gratuit pour les particuliers, sans inscription
 - Couverture : France entière
 - Indépendance : aucun lien commercial avec des fabricants de bornes ; recommandations neutres
