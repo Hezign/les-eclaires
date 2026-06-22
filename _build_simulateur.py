@@ -26,7 +26,8 @@ nav = nav.replace('href="#pourquoi"', 'href="/#pourquoi"')
 nav = nav.replace('href="#histoire"', 'href="/#histoire"')
 nav = nav.replace('href="#partenaires"', 'href="/partenaires.html"')
 nav = nav.replace('href="#faq"', 'href="#faq"')                # FAQ locale
-nav = nav.replace('href="#simulateur-start"', 'href="#simulateur-start"')  # local
+# Sur la page dédiée, les liens "simulateur" scrollent vers la card (pas de rechargement)
+nav = nav.replace('href="/simulateur"', 'href="#simulateur-start"')
 nav = nav.replace('<a class="nav-logo" href="#">', '<a class="nav-logo" href="/">')
 
 # --- Section simulateur (intégrale) ---
