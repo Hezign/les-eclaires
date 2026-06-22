@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Génère la landing page /copropriete.html (SEO + formulaire de contact dédié)."""
 import json
-from _build_villes import (GA, FAVICON, FONTS, CSS, EXTRA_CSS, PRELOADER,
+from _build_villes import (GA, FAVICON, FONTS, CSS, EXTRA_CSS, UNIFORM, PRELOADER,
                            NAVLOGO, ARROW, footer)
 
 URL = "https://leseclaires.fr/copropriete"
@@ -79,6 +79,7 @@ html=f'''<!DOCTYPE html>
 {CSS}
 {EXTRA_CSS}
 {FORM_CSS}
+{UNIFORM}
 <noscript><style>#preloader{{display:none!important}}</style></noscript>
 </head>
 <body>

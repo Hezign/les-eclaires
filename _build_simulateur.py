@@ -64,6 +64,7 @@ btt = '''<button class="btt" id="btt" aria-label="Retour en haut">
 page_css = '''
 <style>
 /* ===== Page Simulateur (spécifique) ===== */
+.footer-top{grid-template-columns:1fr}
 .simp-hero{position:relative;padding:120px 0 40px;border-bottom:1px solid var(--c-border);overflow:hidden}
 .simp-hero .sw{position:relative;z-index:2}
 .simp-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:var(--c-vert);margin-bottom:22px}

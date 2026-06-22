@@ -53,6 +53,14 @@ EXTRA_CSS = '''<style>
 @media(max-width:520px){.footer-cities-list{column-count:1}}
 </style>'''
 
+# Uniformité site : même largeur de contenu (1080px), marges et footer que le reste du site
+UNIFORM = '''<style>
+.hero-city{max-width:1080px}
+.city-body{max-width:1080px}
+.city-body .section-lead{max-width:680px}
+.footer-top{grid-template-columns:1fr}
+</style>'''
+
 # ---- Liste complète des villes (maillage + footer) ----
 ALL_CITIES = [
  ('aix-en-provence','Aix-en-Provence'),('annecy','Annecy'),('lyon','Lyon'),
@@ -316,6 +324,7 @@ def build_city(c):
 {jsonld}
 {CSS}
 {EXTRA_CSS}
+{UNIFORM}
 <noscript><style>#preloader{{display:none!important}}</style></noscript>
 </head>
 <body>
@@ -453,6 +462,7 @@ def build_hub():
 {CSS}
 {EXTRA_CSS}
 {HUB_CSS}
+{UNIFORM}
 <noscript><style>#preloader{{display:none!important}}</style></noscript>
 </head>
 <body>
