@@ -1,4 +1,4 @@
-/* Les Éclairés — effets de site partagés : curseur éclair + préloader + animations d'entrée.
+/* Les Éclairés - effets de site partagés : curseur éclair + préloader + animations d'entrée.
    Tout est non bloquant (rAF / IntersectionObserver) et respecte prefers-reduced-motion. */
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

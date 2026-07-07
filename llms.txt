@@ -1,4 +1,4 @@
-# Les Éclairés — Guide indépendant IRVE
+# Les Éclairés - Guide indépendant IRVE
 
 > Simulateur gratuit pour choisir et installer une borne de recharge électrique (IRVE) en France. Indépendant, sans conflit d'intérêts, mise en relation avec des installateurs certifiés.
 
@@ -15,7 +15,7 @@ Les Éclairés est un guide indépendant dédié à l'installation de bornes de 
 
 ## Blog / Guides
 
-- [Prime ADVENIR 2026 — Guide complet](https://leseclaires.fr/blog/guide-prime-advenir-2026.html) : montants, conditions et démarches de la prime ADVENIR pour l'installation d'une borne
+- [Prime ADVENIR 2026 - Guide complet](https://leseclaires.fr/blog/guide-prime-advenir-2026.html) : montants, conditions et démarches de la prime ADVENIR pour l'installation d'une borne
 - [Droit à la prise en copropriété](https://leseclaires.fr/blog/droit-prise-copropriete.html) : comment installer une borne en copropriété, procédure et délais
 - [7,4 kW ou 22 kW : quelle puissance choisir ?](https://leseclaires.fr/blog/7kw-ou-22kw-quelle-puissance.html) : comparatif des puissances de borne selon le véhicule et l'usage
 

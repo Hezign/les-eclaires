@@ -209,7 +209,7 @@ jsonld = '''<script type="application/ld+json">
   "@graph":[
     {
       "@type":"WebApplication",
-      "name":"Simulateur IRVE — Les Éclairés",
+      "name":"Simulateur IRVE - Les Éclairés",
       "url":"https://leseclaires.fr/simulateur",
       "applicationCategory":"UtilityApplication",
       "operatingSystem":"Web",
@@ -237,7 +237,7 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulateur IRVE gratuit — Borne de recharge en 3 min | Les Éclairés</title>
+<title>Simulateur IRVE gratuit - Borne de recharge en 3 min | Les Éclairés</title>
 <meta name="description" content="Simulateur IRVE gratuit : trouvez la bonne borne de recharge en 3 minutes. Puissance, budget, aides ADVENIR et délai. Sans inscription, guide indépendant.">
 <meta name="keywords" content="simulateur IRVE, simulateur borne de recharge, borne recharge gratuit, prime ADVENIR, puissance borne, installateur IRVE">
 <link rel="canonical" href="https://leseclaires.fr/simulateur">
@@ -245,11 +245,11 @@ html = f'''<!DOCTYPE html>
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leseclaires.fr/simulateur">
-<meta property="og:title" content="Simulateur IRVE gratuit — Borne de recharge en 3 min | Les Éclairés">
+<meta property="og:title" content="Simulateur IRVE gratuit - Borne de recharge en 3 min | Les Éclairés">
 <meta property="og:description" content="Trouvez la bonne borne de recharge en 3 minutes : puissance, budget, aides et délai. Gratuit, sans inscription.">
 <meta property="og:image" content="https://leseclaires.fr/nous-les-eclaires.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Simulateur IRVE gratuit — Les Éclairés">
+<meta name="twitter:title" content="Simulateur IRVE gratuit - Les Éclairés">
 <meta name="twitter:description" content="Trouvez la bonne borne de recharge en 3 minutes : puissance, budget, aides et délai.">
 
 {favicon}

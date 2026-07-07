@@ -1,10 +1,10 @@
-# Les Éclairés — robots.txt
+# Les Éclairés - robots.txt
 # Tout le monde est autorisé
 User-agent: *
 Allow: /
 
 # ─────────────────────────────────────────────
-# Crawlers IA — explicitement autorisés (GEO)
+# Crawlers IA - explicitement autorisés (GEO)
 # On VEUT être lu, indexé et cité par les IA.
 # ─────────────────────────────────────────────
 

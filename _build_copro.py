@@ -93,7 +93,7 @@ html=f'''<!DOCTYPE html>
   <div class="breadcrumb"><a href="/">Accueil</a> › <span>Copropriété</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Syndics &amp; conseils syndicaux · Étude gratuite</div>
   <h1 class="city-h1">Des bornes de recharge<br><span style="white-space:nowrap">pour votre copropriété</span></h1>
-  <p class="city-sub">Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble — souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.</p>
+  <p class="city-sub">Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble - souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.</p>
   <a href="#contact-copro" class="btn-primary">Étudier mon projet copropriété {ARROW}</a>
 </div>
 
@@ -114,7 +114,7 @@ html=f'''<!DOCTYPE html>
   <p class="section-lead">Deux leviers majeurs facilitent l'installation de bornes en copropriété.</p>
   <div class="areas-section">
     <h4>Le droit à la prise</h4>
-    <p>Tout copropriétaire ou locataire peut faire installer une borne sur sa place de parking, à ses frais, sans accord préalable de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime. Pour un projet collectif couvrant tout le parking, un vote en AG est en revanche nécessaire — on vous aide à le préparer.</p>
+    <p>Tout copropriétaire ou locataire peut faire installer une borne sur sa place de parking, à ses frais, sans accord préalable de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime. Pour un projet collectif couvrant tout le parking, un vote en AG est en revanche nécessaire - on vous aide à le préparer.</p>
   </div>
 
   <span class="section-tag">Comment ça se passe</span>
@@ -170,14 +170,14 @@ html=f'''<!DOCTYPE html>
     if(!nom){{g('cNom').style.borderColor='rgba(220,50,50,.5)';return;}}
     if(!email){{g('cEmail').style.borderColor='rgba(220,50,50,.5)';return;}}
     if(sent) return; sent=true; b.textContent='Envoi…'; b.disabled=true;
-    var msg='NOUVEAU LEAD — Copropriété\\n\\n'+
+    var msg='NOUVEAU LEAD - Copropriété\\n\\n'+
       'Nom : '+nom+'\\nRôle : '+(v('cRole')||'(non précisé)')+'\\n'+
       'Copropriété : '+(v('cCopro')||'(non précisé)')+'\\nNombre de lots : '+(v('cLots')||'(non précisé)')+'\\n'+
       'Email : '+email+'\\nTéléphone : '+(v('cTel')||'(non renseigné)')+'\\n\\nProjet : '+(v('cMsg')||'(non précisé)');
     try{{
       var r=await fetch('https://api.web3forms.com/submit',{{method:'POST',
         headers:{{'Content-Type':'application/json',Accept:'application/json'}},
-        body:JSON.stringify({{access_key:KEY,subject:'Lead copropriété — '+nom,from_name:'Copropriété Les Éclairés',
+        body:JSON.stringify({{access_key:KEY,subject:'Lead copropriété - '+nom,from_name:'Copropriété Les Éclairés',
           name:nom,email:email,replyto:email,message:msg}})}});
       var d=await r.json();
       if(d&&d.success){{g('cBox').style.display='none';g('cOk').classList.add('show');}}
