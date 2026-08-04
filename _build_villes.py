@@ -71,6 +71,7 @@ ALL_CITIES = [
  ('niort','Niort'),('clermont-ferrand','Clermont-Ferrand'),('tours','Tours'),
  ('metz','Metz'),('paris','Paris'),('marseille','Marseille'),
  ('strasbourg','Strasbourg'),('saint-etienne','Saint-Étienne'),('corse','Corse'),
+ ('nice','Nice'),('lille','Lille'),
 ]
 REGION = {
  'aix-en-provence':"Provence-Alpes-Côte d'Azur",'marseille':"Provence-Alpes-Côte d'Azur",
@@ -81,6 +82,7 @@ REGION = {
  'pau':'Nouvelle-Aquitaine','niort':'Nouvelle-Aquitaine','toulouse':'Occitanie','montpellier':'Occitanie',
  'rennes':'Bretagne','vannes':'Bretagne','tours':'Centre-Val de Loire','metz':'Grand Est',
  'strasbourg':'Grand Est','paris':'Île-de-France','corse':'Corse',
+ 'nice':"Provence-Alpes-Côte d'Azur",'lille':'Hauts-de-France',
 }
 LABEL = dict(ALL_CITIES)
 CODE = {
@@ -89,12 +91,13 @@ CODE = {
  'valence':'26','grenoble':'38','angers':'49','poitiers':'86','vannes':'56','pau':'64',
  'niort':'79','clermont-ferrand':'63','tours':'37','metz':'57','paris':'75',
  'marseille':'13','strasbourg':'67','saint-etienne':'42','corse':'2A/2B',
+ 'nice':'06','lille':'59',
 }
 # Villes phares affichées dans le footer (le reste via la page hub /villes)
-FLAGSHIP = ['aix-en-provence','annecy','lyon','nantes','bordeaux','montpellier','toulouse','rennes']
+FLAGSHIP = ['aix-en-provence','lyon','nice','lille','nantes','bordeaux','toulouse','marseille']
 REGION_ORDER = ["Auvergne-Rhône-Alpes","Nouvelle-Aquitaine","Occitanie",
   "Provence-Alpes-Côte d'Azur","Pays de la Loire","Bretagne","Grand Est",
-  "Centre-Val de Loire","Île-de-France","Corse"]
+  "Centre-Val de Loire","Île-de-France","Hauts-de-France","Corse"]
 
 def footer_cities():
     lis = '\n'.join(
@@ -149,19 +152,19 @@ def footer(rel_root='/'):
 
 AIDE_CARDS = '''  <div class="info-grid">
     <div class="info-card">
-      <h4>Crédit d'impôt à domicile</h4>
-      <span class="amount">75 %</span>
-      <p>Pour les maisons individuelles. Jusqu'à 500 € remboursés sur votre installation. Valable pour les propriétaires et les locataires.</p>
+      <h4>TVA à taux réduit</h4>
+      <span class="amount">5,5 %</span>
+      <p>Au lieu de 20 %, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</p>
     </div>
     <div class="info-card">
       <h4>Prime ADVENIR (copropriété)</h4>
-      <span class="amount">960 €</span>
-      <p>Par point de charge en copropriété. Cette aide peut couvrir une grande partie du coût. La demande se fait avant les travaux.</p>
+      <span class="amount">1 000 € HT</span>
+      <p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1 660 € HT en borne partagée), depuis la revalorisation du 1er avril 2026. La demande se fait avant les travaux.</p>
     </div>
     <div class="info-card">
       <h4>Budget moyen constaté</h4>
-      <span class="amount">600 à 1 400 €</span>
-      <p>Pour une maison individuelle, tout compris. Après aides, votre reste à charge est souvent inférieur à 500 €.</p>
+      <span class="amount">1 200 à 2 000 €</span>
+      <p>Pour une borne 7,4 kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
     </div>
     <div class="info-card">
       <h4>Délai d'installation</h4>
@@ -180,9 +183,9 @@ STEPS = '''  <div class="info-grid">
 def faq_block(name, dept):
     qa = [
      (f"Combien coûte l'installation d'une borne de recharge à {name} ?",
-      f"Pour une maison individuelle à {name}, comptez en général entre 600 et 1&nbsp;400&nbsp;€ tout compris (matériel et pose). Après le crédit d'impôt (jusqu'à 500&nbsp;€), votre reste à charge descend souvent sous les 500&nbsp;€. En copropriété, le budget dépend du nombre de points de charge installés."),
+      f"Pour une maison individuelle à {name}, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie."),
      (f"Quelles aides puis-je obtenir à {name} ?",
-      f"À {name}, vous pouvez selon votre situation cumuler le crédit d'impôt de 75&nbsp;% (maison individuelle), la prime ADVENIR (copropriété et entreprise), une TVA réduite et d'éventuelles aides locales. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible."),
+      f"À {name}, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible."),
      (f"Puis-je installer une borne en copropriété à {name} ?",
       f"Oui. Que vous soyez propriétaire ou locataire à {name}, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href=\"/copropriete\">En savoir plus sur les bornes en copropriété</a>."),
      (f"Combien de temps prend l'installation à {name} ?",
@@ -277,13 +280,21 @@ CITIES = [
    sub="Vous habitez Metz ou son agglomération et vous envisagez une borne de recharge à domicile ? On vous accompagne gratuitement. Maison à Montigny-lès-Metz, appartement au centre ou pavillon à Marly : on adapte la recommandation à votre projet.",
    local="Metz, ville-jardin du Grand Est, conjugue habitat individuel important et engagement croissant dans la mobilité propre. Les installateurs certifiés IRVE de Moselle couvrent l'ensemble de l'agglomération messine avec des délais maîtrisés.",
    zones="Metz, Montigny-lès-Metz, Woippy, Marly, Le Ban-Saint-Martin, Longeville-lès-Metz, Saint-Julien-lès-Metz, Ars-sur-Moselle"),
+ dict(slug='nice', name='Nice', dept='Alpes-Maritimes', code='06', in_dept='dans les Alpes-Maritimes',
+   sub="Vous habitez Nice ou sa métropole et vous souhaitez installer une borne de recharge à domicile ? On vous accompagne gratuitement. Villa sur les hauteurs de Cimiez, appartement dans le Vieux-Nice ou maison à Saint-Isidore : on trouve la solution adaptée à votre logement et à votre véhicule.",
+   local="Nice, cœur de la Métropole Nice Côte d'Azur, conjugue un habitat collectif dense en bord de mer et des quartiers pavillonnaires sur les collines. La collectivité pousse fortement la mobilité électrique, avec une zone à faibles émissions et un réseau de bornes publiques en expansion. Les installateurs certifiés IRVE des Alpes-Maritimes couvrent aussi bien la ville que les communes de la plaine du Var.",
+   zones="Nice, Cagnes-sur-Mer, Saint-Laurent-du-Var, Cimiez, Saint-Isidore, La Trinité, Saint-André-de-la-Roche, Gairaut, Rimiez"),
+ dict(slug='lille', name='Lille', dept='Nord', code='59', in_dept='dans le Nord',
+   sub="Vous vivez à Lille ou dans la métropole et vous voulez recharger votre voiture électrique chez vous ? On vous guide gratuitement. Maison 1930 à Lambersart, appartement dans le Vieux-Lille ou pavillon à Villeneuve-d'Ascq : on adapte la recommandation à votre situation.",
+   local="La Métropole Européenne de Lille, l'une des plus peuplées de France, mêle un habitat de ville dense et de larges couronnes pavillonnaires très favorables à la recharge à domicile. La MEL soutient activement la transition vers l'électrique, et les installateurs certifiés IRVE du Nord interviennent rapidement sur l'ensemble de l'agglomération, y compris à Roubaix et Tourcoing.",
+   zones="Lille, Villeneuve-d'Ascq, Roubaix, Tourcoing, Lambersart, Marcq-en-Barœul, La Madeleine, Wattignies, Hellemmes"),
 ]
 
 def build_city(c):
     name, slug, dept, code = c['name'], c['slug'], c['dept'], c['code']
     region = REGION[slug]
     url = f"https://leseclaires.fr/villes/borne-recharge-{slug}.html"
-    desc = f"Installer une borne de recharge électrique à {name} ({code}) : aides ADVENIR, prix, crédit d'impôt et installateurs certifiés IRVE {c['in_dept']}. Simulateur gratuit."
+    desc = f"Installer une borne de recharge électrique à {name} ({code}) : aides ADVENIR, prix, TVA réduite 5,5 % et installateurs certifiés IRVE {c['in_dept']}. Simulateur gratuit."
     faq_html, faq_ld = faq_block(name, dept)
     graph = {
       "@context":"https://schema.org",

@@ -15,5 +15,27 @@
       "source": "/villes",
       "destination": "/villes.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/borne-de-recharge-a-la-maison-quel-prix-total-faut-il-vraime.html",
+      "destination": "/blog/prix-borne-de-recharge-maison-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-de-recharge-a-la-maison-combien-ca-coute-vraiment-en-2.html",
+      "destination": "/blog/prix-borne-de-recharge-maison-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-de-recharge-a-la-maison-quel-budget-prevoir-en-2026.html",
+      "destination": "/blog/prix-borne-de-recharge-maison-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recharge-electrique-a-domicile-combien-ca-coute-vraiment-en-.html",
+      "destination": "/blog/cout-recharge-electrique-domicile-2026.html",
+      "permanent": true
+    }
   ]
 }
