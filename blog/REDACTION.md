@@ -90,10 +90,62 @@ Tout JSON-LD doit être un JSON valide (à parser avant écriture).
 ## 6. Enregistrement apres generation (a automatiser aussi)
 
 Un article n'est pas fini tant qu'il n'est pas :
-1. Ajoute a `blog/index.html` (une carte `.blog-card`).
-2. Ajoute au carrousel de l'accueil `index.html` (`.blog-grid`) qui ne garde que
-   les 3 DERNIERS articles : inserer le nouveau en tete, retirer le plus ancien.
-3. Ajoute a `sitemap.xml` (`<loc>`, `<lastmod>`, `<priority>0.7`).
+1. Committe dans le repo (`blog/<slug>.html`) sur `main` (sinon Vercel ne le deploie jamais).
+2. Ajoute au carrousel de l'accueil `index.html` (voir 6.A) : garder les 3 DERNIERS
+   articles, inserer le nouveau en tete, retirer le plus ancien.
+3. Ajoute au listing `blog/index.html` (voir 6.B).
+4. Ajoute a `sitemap.xml` : `<url><loc>https://leseclaires.fr/blog/<slug>.html</loc><lastmod>AAAA-MM-JJ</lastmod><priority>0.7</priority></url>`
+   inseré avant `</urlset>`, avec garde anti-doublon (ne rien faire si l'URL existe deja).
+
+ATTENTION : `index.html` ET `blog/index.html` utilisent tous les deux un conteneur
+`<div class="blog-grid">`, mais le FORMAT DE CARTE est DIFFERENT. Ne pas confondre.
+Cibler le bon fichier.
+
+### 6.A Carte du carrousel accueil (`index.html`)
+
+Ancre : `<div class="blog-grid">` (inserer la carte juste apres l'ouverture = en tete).
+Format :
+
+```html
+<a href="blog/<slug>.html" class="blog-card reveal rd1">
+  <div class="blog-thumb blog-thumb-1">
+    <emoji>
+    <span class="blog-tag"><category></span>
+  </div>
+  <div class="blog-body">
+    <div class="blog-date"><Mois AAAA></div>
+    <div class="blog-title"><titre></div>
+    <div class="blog-excerpt"><desc courte></div>
+    <span class="blog-cta">Lire l article →</span>
+  </div>
+</a>
+```
+
+Emoji indicatif selon le sujet (prix -> maison, aides -> eclair, technique -> prise,
+copro -> immeuble). Ne garder que 3 cartes au total (retirer la plus ancienne).
+
+### 6.B Carte du listing blog (`blog/index.html`)
+
+Ancre (par ordre de priorite, la 1re trouvee) :
+`<div class="blog-grid">`, puis `<div class="blog-list">`, `<div class="articles">`,
+`<div id="articles">`, `<main`.
+Aujourd'hui seul `<div class="blog-grid">` existe : il DOIT etre en tete de la liste
+d'ancres. Inserer la carte juste apres l'ouverture du div (le plus recent en tete).
+Format :
+
+```html
+<a class="blog-card" href="/blog/<slug>.html">
+          <span class="bc-tag"><category></span>
+          <span class="bc-date"><Mois AAAA></span>
+          <h2><titre></h2>
+          <p><desc 160 car></p>
+          <span class="bc-more">Lire l'article →</span>
+        </a>
+```
+
+`bc-date` = texte lisible (« Août 2026 »), jamais une date ISO. `bc-tag` = meme valeur
+que le badge `%%CATEGORY%%`. Garde anti-doublon : ne pas inserer si `/blog/<slug>.html`
+est deja present.
 
 ## 7. Anti-cannibalisation (obligatoire avant de generer)
 
