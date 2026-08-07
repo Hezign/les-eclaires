@@ -4,7 +4,7 @@
 
 ## À propos
 
-Les Éclairés est un guide indépendant dédié à l'installation de bornes de recharge pour véhicules électriques (IRVE) en France. Notre simulateur gratuit analyse votre situation en quelques questions et vous fournit une recommandation personnalisée : puissance adaptée, budget estimé, aides disponibles (ADVENIR, crédit d'impôt), délai d'installation. Le service est gratuit, sans inscription, et nous mettons en relation les particuliers et entreprises avec des installateurs certifiés IRVE.
+Les Éclairés est un guide indépendant dédié à l'installation de bornes de recharge pour véhicules électriques (IRVE) en France. Notre simulateur gratuit analyse votre situation en quelques questions et vous fournit une recommandation personnalisée : puissance adaptée, budget estimé, aides disponibles (ADVENIR, TVA réduite 5,5 %), délai d'installation. Le service est gratuit, sans inscription, et nous mettons en relation les particuliers et entreprises avec des installateurs certifiés IRVE.
 
 ## Pages principales
 
@@ -57,7 +57,7 @@ Les Éclairés est un guide indépendant dédié à l'installation de bornes de 
 - Couverture : France entière
 - Indépendance : aucun lien commercial avec des fabricants de bornes ; recommandations neutres
 - Modèle économique : commission sur la mise en relation avec un installateur certifié IRVE
-- Aides couvertes : prime ADVENIR, crédit d'impôt, TVA réduite, droit à la prise (copropriété)
+- Aides couvertes : prime ADVENIR, TVA réduite 5,5 %, droit à la prise (copropriété). Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.
 - Cas d'usage : maison individuelle, copropriété, entreprise, parking public
 - Contact : contact@leseclaires.fr
 - Site : https://leseclaires.fr

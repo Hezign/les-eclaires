@@ -239,7 +239,10 @@ ga_head = '''<!-- Google tag (gtag.js) -->
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-ZXGFCVHHDM');
-  window.track = function(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} };
+  window.track = function(name, params){
+    try{ if(localStorage.getItem('les-eclaires-cookie-v2')==='n') return; }catch(e){}
+    try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){}
+  };
 </script>'''
 
 html = f'''<!DOCTYPE html>
