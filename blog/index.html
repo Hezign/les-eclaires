@@ -104,6 +104,14 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
   @keyframes plPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.14);opacity:.65}}
   @keyframes plBar{0%{transform:translateX(-110%)}100%{transform:translateX(330%)}}
   @media(prefers-reduced-motion:reduce){#preloader .pl-logo,#preloader .pl-bar i{animation:none}}
+.footer-cities{margin-top:40px;padding-top:32px;border-top:1px solid var(--c-border)}
+.footer-cities h4{font-family:var(--ff-h);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:16px}
+.footer-cities-list{list-style:none;margin:0;padding:0;column-count:4;column-gap:32px}
+.footer-cities-list li{margin-bottom:9px;break-inside:avoid}
+.footer-cities-list a{color:var(--c-mid);text-decoration:none;font-size:14px}
+.footer-cities-list a:hover{color:var(--c-vert)}
+@media(max-width:860px){.footer-cities-list{column-count:2}}
+@media(max-width:520px){.footer-cities-list{column-count:1}}
 </style>
 <noscript><style>#preloader{display:none!important}</style></noscript>
 <script type="application/ld+json">
@@ -186,16 +194,12 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
   <div class="footer-top">
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>Guides par ville</h4>
+        <h4>Le service</h4>
         <ul>
-          <li><a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon</a></li>
-          <li><a href="/villes/borne-recharge-saint-etienne.html">Borne de recharge Saint-Étienne</a></li>
-          <li><a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy</a></li>
-          <li><a href="/villes/borne-recharge-paris.html">Borne de recharge Paris</a></li>
-          <li><a href="/villes/borne-recharge-marseille.html">Borne de recharge Marseille</a></li>
-          <li><a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier</a></li>
-          <li><a href="/villes/borne-recharge-strasbourg.html">Borne de recharge Strasbourg</a></li>
-          <li><a href="/villes/borne-recharge-corse.html">Borne de recharge Corse</a></li>
+          <li><a href="/simulateur">Simulateur IRVE</a></li>
+          <li><a href="/copropriete">Bornes en copropriété</a></li>
+          <li><a href="/partenaires.html">Devenir partenaire</a></li>
+          <li><a href="/#histoire">Notre histoire</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -212,10 +216,23 @@ body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
-          <li><a href="/partenaires.html">Devenir partenaire</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
+    </div>
+    <div class="footer-cities">
+      <h4>Guides par ville</h4>
+      <ul class="footer-cities-list">
+          <li><a href="/villes/borne-recharge-aix-en-provence.html">Borne de recharge Aix-en-Provence</a></li>
+          <li><a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy</a></li>
+          <li><a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon</a></li>
+          <li><a href="/villes/borne-recharge-nantes.html">Borne de recharge Nantes</a></li>
+          <li><a href="/villes/borne-recharge-bordeaux.html">Borne de recharge Bordeaux</a></li>
+          <li><a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier</a></li>
+          <li><a href="/villes/borne-recharge-toulouse.html">Borne de recharge Toulouse</a></li>
+          <li><a href="/villes/borne-recharge-rennes.html">Borne de recharge Rennes</a></li>
+          <li><a href="/villes"><strong>Toutes les villes →</strong></a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">

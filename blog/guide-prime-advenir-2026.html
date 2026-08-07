@@ -31,7 +31,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .nav-logo{display:flex;align-items:center;gap:10px}.nav-logo img{height:28px;width:auto;border-radius:8px}.nav-logo span{font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--c-ink);letter-spacing:-0.03em}
 .nav-back{font-family:var(--ff-h);font-size:13.5px;font-weight:500;color:var(--c-muted);display:flex;align-items:center;gap:6px;transition:color .18s}.nav-back:hover{color:var(--c-ink)}
 .article-wrap{max-width:720px;margin:0 auto;padding:120px 48px 80px}
-.article-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:16px;display:flex;align-items:center;gap:8px}.article-tag::before{content:'';display:inline-block;width:14px;height:1px;background:var(--c-vert)}
+.article-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:16px;display:flex;align-items:center;gap:8px}.article-tag::before{content:'';display:inline-block;width:12px;height:12px;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
 .article-title{font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.1;margin-bottom:12px}
 .article-date{font-size:13px;color:var(--c-muted);margin-bottom:48px}
 .article-hero{height:200px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:72px;margin-bottom:48px}
@@ -88,6 +88,14 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
   @keyframes plPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.14);opacity:.65}}
   @keyframes plBar{0%{transform:translateX(-110%)}100%{transform:translateX(330%)}}
   @media(prefers-reduced-motion:reduce){#preloader .pl-logo,#preloader .pl-bar i{animation:none}}
+.footer-cities{margin-top:40px;padding-top:32px;border-top:1px solid var(--c-border)}
+.footer-cities h4{font-family:var(--ff-h);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:16px}
+.footer-cities-list{list-style:none;margin:0;padding:0;column-count:4;column-gap:32px}
+.footer-cities-list li{margin-bottom:9px;break-inside:avoid}
+.footer-cities-list a{color:var(--c-mid);text-decoration:none;font-size:14px}
+.footer-cities-list a:hover{color:var(--c-vert)}
+@media(max-width:860px){.footer-cities-list{column-count:2}}
+@media(max-width:520px){.footer-cities-list{column-count:1}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Qu'est-ce que la prime ADVENIR ? Le guide complet 2026", "description": "Montants, conditions d", "image": "https://leseclaires.fr/og-image.jpg", "url": "https://leseclaires.fr/blog/guide-prime-advenir-2026.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://leseclaires.fr/blog/guide-prime-advenir-2026.html"}, "datePublished": "2026-03-01", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "Les Éclairés", "url": "https://leseclaires.fr/"}, "publisher": {"@type": "Organization", "name": "Les Éclairés", "logo": {"@type": "ImageObject", "url": "https://leseclaires.fr/favicon.png"}}}</script>
 <meta property="og:image" content="https://leseclaires.fr/og-image.jpg">
@@ -154,16 +162,12 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
   <div class="footer-top">
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>Guides par ville</h4>
+        <h4>Le service</h4>
         <ul>
-          <li><a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon</a></li>
-          <li><a href="/villes/borne-recharge-saint-etienne.html">Borne de recharge Saint-Étienne</a></li>
-          <li><a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy</a></li>
-          <li><a href="/villes/borne-recharge-paris.html">Borne de recharge Paris</a></li>
-          <li><a href="/villes/borne-recharge-marseille.html">Borne de recharge Marseille</a></li>
-          <li><a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier</a></li>
-          <li><a href="/villes/borne-recharge-strasbourg.html">Borne de recharge Strasbourg</a></li>
-          <li><a href="/villes/borne-recharge-corse.html">Borne de recharge Corse</a></li>
+          <li><a href="/simulateur">Simulateur IRVE</a></li>
+          <li><a href="/copropriete">Bornes en copropriété</a></li>
+          <li><a href="/partenaires.html">Devenir partenaire</a></li>
+          <li><a href="/#histoire">Notre histoire</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -180,10 +184,23 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
-          <li><a href="/partenaires.html">Devenir partenaire</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
+    </div>
+    <div class="footer-cities">
+      <h4>Guides par ville</h4>
+      <ul class="footer-cities-list">
+          <li><a href="/villes/borne-recharge-aix-en-provence.html">Borne de recharge Aix-en-Provence</a></li>
+          <li><a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy</a></li>
+          <li><a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon</a></li>
+          <li><a href="/villes/borne-recharge-nantes.html">Borne de recharge Nantes</a></li>
+          <li><a href="/villes/borne-recharge-bordeaux.html">Borne de recharge Bordeaux</a></li>
+          <li><a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier</a></li>
+          <li><a href="/villes/borne-recharge-toulouse.html">Borne de recharge Toulouse</a></li>
+          <li><a href="/villes/borne-recharge-rennes.html">Borne de recharge Rennes</a></li>
+          <li><a href="/villes"><strong>Toutes les villes →</strong></a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">
