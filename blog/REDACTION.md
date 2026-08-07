@@ -86,6 +86,9 @@ Tout JSON-LD doit être un JSON valide (à parser avant écriture).
 - Aucune donnee inventee (pas de faux chiffres, avis ou notes).
 - Slug propre, jamais tronque. Mots-cles lisibles, ex. `prix-borne-de-recharge-maison-2026`.
   Interdiction des slugs coupes type `...-quel-prix-total-faut-il-vraime`.
+- Sortie = HTML brut UNIQUEMENT. Ne JAMAIS entourer le corps de l'article de
+  balises Markdown ` ```html ` ou ` ``` ` : le contenu est injecte tel quel dans
+  le template, une cloture de code laisse le texte `\`\`\`html` visible sur la page.
 
 ## 6. Enregistrement apres generation (a automatiser aussi)
 
