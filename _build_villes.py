@@ -57,6 +57,7 @@ EXTRA_CSS = '''<style>
 UNIFORM = '''<style>
 .hero-city{max-width:1080px}
 .city-body{max-width:1080px}
+.hero-city,.city-body{width:100%}
 .city-body .section-lead{max-width:680px}
 .footer-top{grid-template-columns:1fr}
 </style>'''
@@ -180,20 +181,20 @@ STEPS = '''  <div class="info-grid">
     <div class="info-card"><h4>100 % gratuit pour vous</h4><p>Le simulateur et les conseils sont entièrement gratuits. On est rémunérés par l'installateur, pas par vous.</p></div>
   </div>'''
 
-def faq_block(name, dept):
+def faq_block(name, dept, loc):
     qa = [
-     (f"Combien coûte l'installation d'une borne de recharge à {name} ?",
-      f"Pour une maison individuelle à {name}, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie."),
-     (f"Quelles aides puis-je obtenir à {name} ?",
+     (f"Combien coûte l'installation d'une borne de recharge {loc} ?",
+      f"Pour une maison individuelle {loc}, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie."),
+     (f"Quelles aides puis-je obtenir {loc} ?",
       f"À {name}, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible."),
-     (f"Puis-je installer une borne en copropriété à {name} ?",
-      f"Oui. Que vous soyez propriétaire ou locataire à {name}, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href=\"/copropriete\">En savoir plus sur les bornes en copropriété</a>."),
-     (f"Combien de temps prend l'installation à {name} ?",
-      f"Pour une maison avec un tableau électrique récent à {name}, comptez 2 à 4 semaines entre la prise de contact et l'installation. En copropriété, les démarches administratives rallongent un peu le délai."),
+     (f"Puis-je installer une borne en copropriété {loc} ?",
+      f"Oui. Que vous soyez propriétaire ou locataire {loc}, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href=\"/copropriete\">En savoir plus sur les bornes en copropriété</a>."),
+     (f"Combien de temps prend l'installation {loc} ?",
+      f"Pour une maison avec un tableau électrique récent {loc}, comptez 2 à 4 semaines entre la prise de contact et l'installation. En copropriété, les démarches administratives rallongent un peu le délai."),
      ("Quelle puissance de borne choisir ?",
       "Une borne de 7,4&nbsp;kW suffit dans la grande majorité des cas : elle recharge votre véhicule en une nuit. Une puissance supérieure (11 ou 22&nbsp;kW) se justifie pour plusieurs véhicules ou un usage professionnel. Le simulateur vous recommande la puissance adaptée."),
      ("Le service Les Éclairés est-il gratuit ?",
-      f"Oui, à {name} comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous."),
+      f"Oui, {loc} comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous."),
     ]
     html = '\n'.join(
       f'    <details><summary>{q}</summary><div><p>{a}</p></div></details>' for q, a in qa)
@@ -288,14 +289,47 @@ CITIES = [
    sub="Vous vivez à Lille ou dans la métropole et vous voulez recharger votre voiture électrique chez vous ? On vous guide gratuitement. Maison 1930 à Lambersart, appartement dans le Vieux-Lille ou pavillon à Villeneuve-d'Ascq : on adapte la recommandation à votre situation.",
    local="La Métropole Européenne de Lille, l'une des plus peuplées de France, mêle un habitat de ville dense et de larges couronnes pavillonnaires très favorables à la recharge à domicile. La MEL soutient activement la transition vers l'électrique, et les installateurs certifiés IRVE du Nord interviennent rapidement sur l'ensemble de l'agglomération, y compris à Roubaix et Tourcoing.",
    zones="Lille, Villeneuve-d'Ascq, Roubaix, Tourcoing, Lambersart, Marcq-en-Barœul, La Madeleine, Wattignies, Hellemmes"),
+ dict(slug='lyon', name='Lyon', dept='Rhône', code='69', in_dept='dans le Rhône',
+   sub="Vous habitez Lyon ou dans la métropole du Rhône et vous voulez installer une borne de recharge chez vous ? On vous guide pas à pas, gratuitement. Que vous soyez en maison à Caluire, en appartement à la Part-Dieu ou en entreprise à Gerland, on trouve la bonne solution.",
+   local="Lyon compte parmi les villes françaises les plus engagées dans la mobilité électrique. La Métropole de Lyon propose des aides complémentaires aux dispositifs nationaux et déploie une zone à faibles émissions qui accélère le passage à l'électrique. Le réseau d'installateurs certifiés IRVE dans le Rhône est très dense, ce qui permet des délais d'intervention rapides. L'Ouest lyonnais (Tassin, Francheville, Chaponost, Brignais, Taluyers) concentre un habitat pavillonnaire particulièrement adapté à la recharge à domicile.",
+   zones="Lyon 1er à 9e, Villeurbanne, Caluire-et-Cuire, Vénissieux, Saint-Priest, Bron, Décines-Charpieu, Tassin-la-Demi-Lune, Francheville, Sainte-Foy-lès-Lyon, Écully, Chaponost"),
+ dict(slug='paris', name='Paris', dept='Paris', code='75', in_dept='à Paris et en petite couronne',
+   sub="Vous habitez Paris ou la petite couronne et vous voulez installer une borne de recharge chez vous ? On vous guide gratuitement. Appartement dans un immeuble haussmannien, place en parking souterrain ou pavillon en proche banlieue : on trouve la solution adaptée à votre copropriété comme à votre véhicule.",
+   local="À Paris, l'immense majorité des installations se fait en copropriété, sur des places de parking en sous-sol : le droit à la prise et la prime ADVENIR y prennent tout leur sens pour équiper une place individuelle sans attendre un vote en assemblée générale. La Ville de Paris et la Métropole du Grand Paris poussent fortement l'électromobilité, avec une zone à faibles émissions étendue. Le réseau d'installateurs certifiés IRVE d'Île-de-France, le plus dense de France, permet des interventions rapides intra-muros comme en proche banlieue.",
+   zones="Paris 1er à 20e, Boulogne-Billancourt, Neuilly-sur-Seine, Levallois-Perret, Issy-les-Moulineaux, Vincennes, Montreuil, Saint-Mandé, Charenton-le-Pont"),
+ dict(slug='marseille', name='Marseille', dept='Bouches-du-Rhône', code='13', in_dept='dans les Bouches-du-Rhône',
+   sub="Vous vivez à Marseille ou dans sa métropole et vous souhaitez recharger votre voiture électrique à domicile ? On vous accompagne gratuitement. Maison dans les quartiers sud, appartement en copropriété au centre ou villa à Allauch : on adapte la recommandation à votre logement.",
+   local="Marseille, deuxième ville de France, combine un habitat très contrasté : copropriétés denses en centre-ville et vastes secteurs pavillonnaires dans les arrondissements sud et est. La Métropole Aix-Marseille-Provence soutient le déploiement des bornes et déploie une zone à faibles émissions sur le centre. Les installateurs certifiés IRVE des Bouches-du-Rhône couvrent l'ensemble du territoire, du littoral aux communes de l'arrière-pays.",
+   zones="Marseille 1er à 16e, Aubagne, Allauch, Plan-de-Cuques, La Ciotat, Cassis, Marignane, Vitrolles, Aix-en-Provence"),
+ dict(slug='montpellier', name='Montpellier', dept='Hérault', code='34', in_dept="dans l'Hérault",
+   sub="Vous habitez Montpellier ou son agglomération et vous voulez installer une borne de recharge chez vous ? On vous guide gratuitement. Maison à Grabels, appartement à Port Marianne ou résidence à Castelnau-le-Lez : on trouve la borne adaptée à votre véhicule.",
+   local="Montpellier est l'une des métropoles françaises à la croissance la plus rapide, avec de nombreux quartiers récents et un ensoleillement idéal pour coupler la borne à des panneaux photovoltaïques. Montpellier Méditerranée Métropole encourage activement la mobilité électrique. Les installateurs certifiés IRVE de l'Hérault interviennent rapidement sur toute l'agglomération, du cœur de ville aux communes littorales.",
+   zones="Montpellier, Castelnau-le-Lez, Lattes, Pérols, Juvignac, Grabels, Saint-Jean-de-Védas, Clapiers, Le Crès"),
+ dict(slug='annecy', name='Annecy', dept='Haute-Savoie', code='74', in_dept='en Haute-Savoie',
+   sub="Vous habitez Annecy ou son bassin et vous souhaitez recharger votre voiture électrique à domicile ? On vous accompagne gratuitement. Maison à Seynod, appartement près du lac ou chalet à Veyrier-du-Lac : on trouve la solution adaptée à votre projet.",
+   local="Annecy bénéficie d'un pouvoir d'achat élevé et d'une population très sensible aux enjeux environnementaux, ce qui en fait un territoire pionnier de la mobilité électrique. L'habitat individuel y est répandu, du bassin annécien aux communes du tour du lac. Les installateurs certifiés IRVE de Haute-Savoie assurent des délais courts, y compris pour les logements en secteur de montagne.",
+   zones="Annecy, Seynod, Cran-Gevrier, Annecy-le-Vieux, Meythet, Épagny Metz-Tessy, Veyrier-du-Lac, Sevrier, Poisy"),
+ dict(slug='strasbourg', name='Strasbourg', dept='Bas-Rhin', code='67', in_dept='dans le Bas-Rhin',
+   sub="Vous vivez à Strasbourg ou dans l'Eurométropole et vous voulez installer une borne de recharge chez vous ? On vous guide gratuitement. Maison à la Robertsau, appartement en centre-ville ou pavillon à Illkirch : on adapte la recommandation à votre situation.",
+   local="Strasbourg, capitale européenne, mène une politique volontariste en faveur de la qualité de l'air, avec une zone à faibles émissions qui accélère le passage à l'électrique. L'Eurométropole compte de nombreux secteurs pavillonnaires propices à la recharge à domicile. Le réseau d'installateurs certifiés IRVE du Bas-Rhin couvre l'ensemble de l'agglomération, de la ville aux communes de la première couronne.",
+   zones="Strasbourg, Schiltigheim, Illkirch-Graffenstaden, Lingolsheim, Ostwald, Bischheim, Hœnheim, Eckbolsheim, La Wantzenau"),
+ dict(slug='saint-etienne', name='Saint-Étienne', dept='Loire', code='42', in_dept='dans la Loire',
+   sub="Vous habitez Saint-Étienne ou sa métropole et vous souhaitez recharger votre voiture électrique à domicile ? On vous accompagne gratuitement. Maison à Saint-Priest-en-Jarez, appartement en centre-ville ou pavillon à Saint-Chamond : on trouve la borne adaptée.",
+   local="Saint-Étienne Métropole conjugue un habitat individuel abordable et de vastes secteurs pavillonnaires, particulièrement adaptés à l'installation d'une borne à domicile. La collectivité accompagne la transition vers la mobilité propre. Les installateurs certifiés IRVE de la Loire interviennent rapidement sur l'ensemble du bassin stéphanois, de la vallée de l'Ondaine au Gier.",
+   zones="Saint-Étienne, Saint-Chamond, Firminy, Saint-Priest-en-Jarez, Villars, La Ricamarie, Le Chambon-Feugerolles, Roche-la-Molière, Andrézieux-Bouthéon"),
+ dict(slug='corse', name='Corse', dept='Corse', code='2A/2B', in_dept='en Corse', loc='en Corse',
+   sub="Vous vivez en Corse et vous voulez installer une borne de recharge chez vous ? On vous accompagne gratuitement. Maison à Ajaccio, appartement à Bastia ou villa en Balagne : on trouve la solution adaptée à votre véhicule et à votre logement.",
+   local="La Corse développe activement son maillage de recharge pour accompagner l'essor du véhicule électrique sur l'île, où l'habitat individuel domine largement. Entre le grand Ajaccio, l'agglomération bastiaise et les zones plus rurales, les besoins varient, mais la recharge à domicile reste la solution la plus simple et la plus économique. Les installateurs certifiés IRVE de Corse-du-Sud et de Haute-Corse couvrent l'ensemble du territoire.",
+   zones="Ajaccio, Bastia, Porto-Vecchio, Calvi, L'Île-Rousse, Corte, Sartène, Ghisonaccia, Propriano"),
 ]
 
 def build_city(c):
     name, slug, dept, code = c['name'], c['slug'], c['dept'], c['code']
+    loc = c.get('loc', f"à {name}")
     region = REGION[slug]
     url = f"https://leseclaires.fr/villes/borne-recharge-{slug}.html"
-    desc = f"Installer une borne de recharge électrique à {name} ({code}) : aides ADVENIR, prix, TVA réduite 5,5 % et installateurs certifiés IRVE {c['in_dept']}. Simulateur gratuit."
-    faq_html, faq_ld = faq_block(name, dept)
+    desc = f"Installer une borne de recharge électrique {loc} ({code}) : aides ADVENIR, prix, TVA réduite 5,5 % et installateurs certifiés IRVE {c['in_dept']}. Simulateur gratuit."
+    faq_html, faq_ld = faq_block(name, dept, loc)
     graph = {
       "@context":"https://schema.org",
       "@graph":[
@@ -317,18 +351,18 @@ def build_city(c):
 {GA}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Borne de recharge à {name} ({code}) : aides, prix &amp; simulateur | Les Éclairés</title>
+<title>Borne de recharge {loc} ({code}) : aides, prix &amp; simulateur | Les Éclairés</title>
 <meta name="description" content="{desc}">
 <meta name="keywords" content="borne de recharge {name}, installation borne {name}, IRVE {name}, prime ADVENIR {dept}, wallbox {name}, simulateur borne {name}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{url}">
-<meta property="og:title" content="Borne de recharge à {name} | Les Éclairés">
+<meta property="og:title" content="Borne de recharge {loc} | Les Éclairés">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="https://leseclaires.fr/nous-les-eclaires.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Borne de recharge à {name} | Les Éclairés">
+<meta name="twitter:title" content="Borne de recharge {loc} | Les Éclairés">
 <meta name="twitter:description" content="{desc}">
 {FAVICON}
 {FONTS}
@@ -348,7 +382,7 @@ def build_city(c):
 <div class="hero-city">
   <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>{name}</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Guide gratuit · {dept} ({code})</div>
-  <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">à {name}</span></h1>
+  <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">{loc}</span></h1>
   <p class="city-sub">{c['sub']}</p>
   <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit {ARROW}</a>
 </div>
@@ -356,12 +390,12 @@ def build_city(c):
 <div class="city-body">
 
   <span class="section-tag">Ce qu'il faut savoir</span>
-  <h2 class="section-h2">Les aides disponibles à {name}</h2>
+  <h2 class="section-h2">Les aides disponibles {loc}</h2>
   <p class="section-lead">Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.</p>
 {AIDE_CARDS}
 
   <span class="section-tag">Spécificités locales</span>
-  <h2 class="section-h2">L'installation de bornes à {name}</h2>
+  <h2 class="section-h2">L'installation de bornes {loc}</h2>
   <p class="section-lead">{c['local']}</p>
 
   <div class="areas-section">
@@ -370,7 +404,7 @@ def build_city(c):
   </div>
 
   <div class="copro-box">
-    <h3>Vous êtes en copropriété ou syndic à {name} ?</h3>
+    <h3>Vous êtes en copropriété ou syndic {loc} ?</h3>
     <p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes à installer. On accompagne les conseils syndicaux et les syndics de A à Z : droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>
     <a href="/copropriete" class="btn-vert">Bornes en copropriété {ARROW}</a>
   </div>
@@ -380,14 +414,14 @@ def build_city(c):
 {STEPS}
 
   <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Borne de recharge à {name} : vos questions</h2>
+  <h2 class="section-h2">Borne de recharge {loc} : vos questions</h2>
   <div class="faq-city">
 {faq_html}
   </div>
 
 {related(slug)}
   <div class="cta-box">
-    <h3>Prêt à installer votre borne à {name} ?</h3>
+    <h3>Prêt à installer votre borne {loc} ?</h3>
     <p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p>
     <a href="/simulateur" class="btn-vert">Démarrer le simulateur {ARROW}</a>
   </div>
