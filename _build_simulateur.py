@@ -232,9 +232,20 @@ jsonld = '''<script type="application/ld+json">
 </script>'''
 
 # ===== Assemblage =====
+ga_head = '''<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZXGFCVHHDM');
+  window.track = function(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} };
+</script>'''
+
 html = f'''<!DOCTYPE html>
 <html lang="fr">
 <head>
+{ga_head}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulateur IRVE gratuit - Borne de recharge en 3 min | Les Éclairés</title>

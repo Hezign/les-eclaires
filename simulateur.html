@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZXGFCVHHDM');
+  window.track = function(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} };
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulateur IRVE gratuit - Borne de recharge en 3 min | Les Éclairés</title>
@@ -1097,6 +1106,7 @@ var D={
 var A={};
 function gId(id){return document.getElementById(id);}
 function pick(el,step,val){
+  if(!window._simStarted){window._simStarted=true;window.track('simulateur_start');}
   var all=document.querySelectorAll('#q'+step+' .sim-opt');
   for(var i=0;i<all.length;i++) all[i].classList.remove('sel');
   el.classList.add('sel');
@@ -1124,6 +1134,7 @@ function advance(s){
   var q=gId('q'+s);
   if(q) q.classList.remove('active');
   var order=seq(), idx=order.indexOf(s);
+  if(idx>=0){ window.track('simulateur_step',{step_number:idx+1}); }
   if(idx<0 || idx>=order.length-1){ showResult(); return; }
   var next=order[idx+1];
   var nq=gId('q'+next),nb=gId('p'+next);
@@ -1142,6 +1153,7 @@ function showResult(){
   gId('rDelai').textContent=r.delai;
   var el=gId('simRes');
   el.classList.add('active');
+  window.track('simulateur_complete',{profil:r.title});
   setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
 }
 function submitForm(){
@@ -1339,6 +1351,7 @@ else{boot();}
         if(data && data.success){
           if(gid('fBox')) gid('fBox').style.display='none';
           if(gid('okMsg')) gid('okMsg').classList.add('show');
+          window.track('lead_submit',{profil:txt('rTitle')});
         } else { throw new Error('w3f'); }
       }catch(err){
         sent=false; b.disabled=false; b.textContent=label||'Recevoir →';
