@@ -34,7 +34,7 @@ FAQ = [
  ("Combien coûte l'installation de bornes en copropriété ?",
   "Cela dépend du nombre de points de charge et de l'infrastructure à poser. Le coût par borne baisse fortement quand on équipe plusieurs places en même temps, surtout en posant une infrastructure collective évolutive. La prime ADVENIR réduit nettement la facture."),
  ("Qu'est-ce que la prime ADVENIR en copropriété ?",
-  "ADVENIR est une aide qui finance l'installation de bornes en copropriété : jusqu'à 960 € par point de charge, et une part importante de l'infrastructure collective. La demande doit être faite avant le début des travaux."),
+  "ADVENIR est une aide qui finance l'installation de bornes en copropriété : jusqu'à 1 000 € HT par point de charge (borne individuelle) ou 1 660 € HT (borne partagée) depuis la revalorisation du 1er avril 2026, et une part importante de l'infrastructure collective. La demande doit être faite avant le début des travaux."),
  ("Faut-il un vote en assemblée générale ?",
   "Pour une installation individuelle au titre du droit à la prise, non. Pour une infrastructure collective (qui équipe l'ensemble du parking), oui : le projet est inscrit à l'ordre du jour et voté en assemblée générale."),
  ("Combien de temps prend un projet en copropriété ?",
@@ -105,7 +105,7 @@ html=f'''<!DOCTYPE html>
   <div class="info-grid">
     <div class="info-card"><h4>Valorisation des lots</h4><p>Une place équipée (ou pré-équipée) d'une borne devient un vrai argument à la vente comme à la location.</p></div>
     <div class="info-card"><h4>Une infrastructure mutualisée</h4><p>On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût.</p></div>
-    <div class="info-card"><h4>Jusqu'à 960 € / point</h4><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div>
+    <div class="info-card"><h4>Jusqu'à 1 000 € HT / point</h4><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div>
     <div class="info-card"><h4>Un seul interlocuteur</h4><p>On cadre le projet, on mobilise un installateur certifié IRVE et on vous accompagne jusqu'au vote en AG.</p></div>
   </div>
 
