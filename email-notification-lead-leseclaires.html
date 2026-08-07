@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════
+  Les Éclairés - Email de NOTIFICATION LEAD (reçu par l'équipe)
+  ════════════════════════════════════════════════════════════════
+  Cet email est celui QUE VOUS recevez à chaque nouvelle simulation.
+  Pour l'installer :
+    1. Web3Forms → tableau de bord → votre formulaire
+    2. Section « Email Template » (modèle d'email personnalisé)
+    3. Coller TOUT le code ci-dessous dans le champ HTML
+    4. Objet conseillé : « Nouveau lead IRVE - {{name}} »
+  Les variables {{...}} sont remplies automatiquement par Web3Forms
+  à partir des champs envoyés par le simulateur :
+    {{name}} {{email}} {{Téléphone}} {{Profil}} {{Synthèse}}
+    {{Puissance}} {{Budget}} {{Aide}} {{Délai}} {{Questionnaire}}
+  HTML « email-safe » : tableaux + styles inline (Gmail, Outlook,
+  Apple Mail). Largeur 600px. Même DA que l'autoresponder.
+  ════════════════════════════════════════════════════════════════
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="x-apple-disable-message-reformatting">
+<title>Nouveau lead - Les Éclairés</title>
+</head>
+<body style="margin:0;padding:0;background:#F5F4F0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <!-- préheader (caché) -->
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F5F4F0;font-size:1px;line-height:1px;">
+    Nouveau lead simulateur : {{name}} - {{Profil}}.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5F4F0;padding:32px 16px;">
+    <tr>
+      <td align="center">
+
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(17,17,16,.06);">
+
+          <!-- Bandeau / header -->
+          <tr>
+            <td style="background:#111110;padding:36px 40px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size:20px;font-weight:800;letter-spacing:-.5px;color:#FFFFFF;">
+                    Les&nbsp;Éclairés
+                  </td>
+                  <td align="right" style="font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#00C97F;">
+                    Nouveau&nbsp;lead
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Filet vert -->
+          <tr><td style="height:4px;background:#00A96E;line-height:4px;font-size:0;">&nbsp;</td></tr>
+
+          <!-- Titre -->
+          <tr>
+            <td style="padding:36px 40px 4px;">
+              <p style="margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:#00A96E;">
+                Simulateur IRVE
+              </p>
+              <h1 style="margin:0 0 8px;font-size:24px;line-height:1.25;font-weight:800;letter-spacing:-.6px;color:#111110;">
+                Nouveau projet à traiter
+              </h1>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#55554F;">
+                Profil détecté&nbsp;: <strong style="color:#111110;">{{Profil}}</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Contact -->
+          <tr>
+            <td style="padding:24px 40px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7FBF9;border:1px solid rgba(0,169,110,.22);border-radius:14px;">
+                <tr>
+                  <td style="padding:22px 24px;">
+                    <p style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#111110;">
+                      Contact
+                    </p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:110px;font-size:14px;color:#888884;padding:4px 0;">Prénom</td>
+                        <td style="font-size:15px;color:#111110;font-weight:600;padding:4px 0;">{{name}}</td>
+                      </tr>
+                      <tr>
+                        <td style="width:110px;font-size:14px;color:#888884;padding:4px 0;">Email</td>
+                        <td style="font-size:15px;padding:4px 0;"><a href="mailto:{{email}}" style="color:#00A96E;text-decoration:none;font-weight:600;">{{email}}</a></td>
+                      </tr>
+                      <tr>
+                        <td style="width:110px;font-size:14px;color:#888884;padding:4px 0;">Téléphone</td>
+                        <td style="font-size:15px;padding:4px 0;"><a href="tel:{{Téléphone}}" style="color:#00A96E;text-decoration:none;font-weight:600;">{{Téléphone}}</a></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Recommandation -->
+          <tr>
+            <td style="padding:20px 40px 0;">
+              <p style="margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#111110;">
+                Recommandation
+              </p>
+              <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#55554F;">{{Synthèse}}</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="50%" style="padding:0 6px 12px 0;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF9F6;border:1px solid #EDEBE5;border-radius:12px;">
+                      <tr><td style="padding:14px 16px;">
+                        <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#888884;">Puissance</p>
+                        <p style="margin:0;font-size:17px;font-weight:800;color:#00A96E;">{{Puissance}}</p>
+                      </td></tr>
+                    </table>
+                  </td>
+                  <td width="50%" style="padding:0 0 12px 6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF9F6;border:1px solid #EDEBE5;border-radius:12px;">
+                      <tr><td style="padding:14px 16px;">
+                        <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#888884;">Budget estimé</p>
+                        <p style="margin:0;font-size:17px;font-weight:800;color:#111110;">{{Budget}}</p>
+                      </td></tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="50%" style="padding:0 6px 0 0;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF9F6;border:1px solid #EDEBE5;border-radius:12px;">
+                      <tr><td style="padding:14px 16px;">
+                        <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#888884;">Aide mobilisable</p>
+                        <p style="margin:0;font-size:17px;font-weight:800;color:#00A96E;">{{Aide}}</p>
+                      </td></tr>
+                    </table>
+                  </td>
+                  <td width="50%" style="padding:0 0 0 6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF9F6;border:1px solid #EDEBE5;border-radius:12px;">
+                      <tr><td style="padding:14px 16px;">
+                        <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#888884;">Délai estimé</p>
+                        <p style="margin:0;font-size:17px;font-weight:800;color:#111110;">{{Délai}}</p>
+                      </td></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Questionnaire -->
+          <tr>
+            <td style="padding:24px 40px 0;">
+              <p style="margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#111110;">
+                Réponses au questionnaire
+              </p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#111110;border-radius:14px;">
+                <tr>
+                  <td style="padding:20px 22px;font-size:13px;line-height:1.7;color:#E8E8E4;white-space:pre-line;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;">{{Questionnaire}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Bouton -->
+          <tr>
+            <td align="center" style="padding:28px 40px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="border-radius:999px;background:#00A96E;">
+                    <a href="mailto:{{email}}" style="display:inline-block;padding:15px 34px;font-size:15px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:-.2px;border-radius:999px;">
+                      Répondre au prospect →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#FAF9F6;border-top:1px solid #EDEBE5;padding:24px 40px;">
+              <p style="margin:0;font-size:12px;line-height:1.6;color:#A8A8A2;">
+                Lead généré via le simulateur en ligne · <a href="https://leseclaires.fr/" style="color:#888884;text-decoration:none;">leseclaires.fr</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

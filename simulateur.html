@@ -196,7 +196,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 /* ── SECTION WRAPPER ── */
 .sw{max-width:1080px;margin:0 auto;padding:80px 48px 64px}
 .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:20px}
-.section-tag::before{content:'';display:inline-block;width:14px;height:1px;background:var(--c-vert)}
+.section-tag::before{content:'';display:inline-block;width:12px;height:12px;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
 .section-h2{font-size:clamp(32px,4.5vw,56px);font-weight:800;margin-bottom:16px;max-width:680px}
 .section-lead{font-size:17px;font-weight:300;color:var(--c-mid);line-height:1.8;max-width:520px}
 
@@ -296,7 +296,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .blog-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
 .blog-thumb-1{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
 .blog-thumb-2{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
-.blog-thumb-3{background:linear-gradient(135deg,#e0e7ff 0%,#eef2ff 100%)}
+.blog-thumb-3{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
 .blog-tag{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:var(--r-full);background:rgba(0,0,0,.06);color:var(--c-mid)}
 .blog-body{padding:20px;display:flex;flex-direction:column;flex:1}
 .blog-date{font-size:11px;color:var(--c-muted);font-weight:400;margin-bottom:8px}
@@ -314,7 +314,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .blog-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
 .blog-thumb-1{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
 .blog-thumb-2{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
-.blog-thumb-3{background:linear-gradient(135deg,#e0e7ff 0%,#eef2ff 100%)}
+.blog-thumb-3{background:linear-gradient(135deg,#d4f0e4 0%,#e8f8f0 100%)}
 .blog-tag{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:var(--r-full);background:rgba(0,0,0,.06);color:var(--c-mid)}
 .blog-body{padding:20px;display:flex;flex-direction:column;flex:1}
 .blog-date{font-size:11px;color:var(--c-muted);font-weight:400;margin-bottom:8px}
@@ -341,7 +341,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .partner-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,214,10,.35),transparent)}
 .partner-left{flex:1;min-width:0}
 .partner-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-jaune-lt);margin-bottom:20px}
-.partner-eyebrow::before{content:'';display:inline-block;width:14px;height:1px;background:var(--c-jaune-lt)}
+.partner-eyebrow::before{content:'';display:inline-block;width:12px;height:12px;background:var(--c-jaune-lt);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
 .partner-card h2{font-size:clamp(20px,2.4vw,32px);line-height:1.15;margin-bottom:16px;color:#fff;font-weight:800}
 .partner-card .partner-desc{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.75;margin-bottom:28px;max-width:520px}
 .p-feats{display:flex;gap:20px;flex-wrap:wrap}
@@ -796,10 +796,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quel est le type de parking ?</h3>
           <p class="q-sub">L'emplacement de l'installation influence le matériel et le coût des travaux.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,2,'Extérieur')"><span class="opt-emoji">🅿️</span><div class="opt-title">Extérieur</div><div class="opt-desc">Places en plein air</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Souterrain')"><span class="opt-emoji">🛗</span><div class="opt-title">Souterrain</div><div class="opt-desc">Parking en sous-sol</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Couvert hors sol (silo)')"><span class="opt-emoji">🏢</span><div class="opt-title">Couvert hors sol (silo)</div><div class="opt-desc">Parking en silo / étages</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Mixtes')"><span class="opt-emoji">🔀</span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs configurations</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Extérieur')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="9" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.2" y1="5.2" x2="5.6" y2="6.6"/><line x1="18.4" y1="5.2" x2="19.8" y2="6.6"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span><div class="opt-title">Extérieur</div><div class="opt-desc">Places en plein air</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Souterrain')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="12" y1="2" x2="12" y2="10"/><polyline points="8 6 12 10 16 6"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="4" y1="19" x2="20" y2="19"/></svg></span><div class="opt-title">Souterrain</div><div class="opt-desc">Parking en sous-sol</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Couvert hors sol (silo)')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Couvert hors sol (silo)</div><div class="opt-desc">Parking en silo / étages</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs configurations</div></div>
           </div>
         </div>
         <div class="sim-q" id="q3">
@@ -807,10 +807,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Qui sont les usagers finaux ?</h3>
           <p class="q-sub">On adapte la recommandation selon qui utilisera les bornes au quotidien.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,3,'Public')"><span class="opt-emoji">🌍</span><div class="opt-title">Public</div><div class="opt-desc">Ouvert à tous</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Privé')"><span class="opt-emoji">🔒</span><div class="opt-title">Privé</div><div class="opt-desc">Usage réservé</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Collectivités')"><span class="opt-emoji">🏛️</span><div class="opt-title">Collectivités</div><div class="opt-desc">Communes, administrations</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Mixtes')"><span class="opt-emoji">🔀</span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs profils</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg></span><div class="opt-title">Public</div><div class="opt-desc">Ouvert à tous</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Privé')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span><div class="opt-title">Privé</div><div class="opt-desc">Usage réservé</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Collectivités')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="12 3 21 8 3 8 12 3"/><line x1="5" y1="8" x2="5" y2="18"/><line x1="10" y1="8" x2="10" y2="18"/><line x1="14" y1="8" x2="14" y2="18"/><line x1="19" y1="8" x2="19" y2="18"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Collectivités</div><div class="opt-desc">Communes, administrations</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs profils</div></div>
           </div>
         </div>
         <div class="sim-q" id="q4">
@@ -829,13 +829,13 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quelle est la marque de votre voiture électrique ?</h3>
           <p class="q-sub">Chaque marque de voiture a une façon différente de se recharger. On s'en sert pour vous recommander la borne qui va le mieux.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,5,'Multi-marque')"><span class="opt-emoji">🚘</span><div class="opt-title">Multi-marque</div><div class="opt-desc">Plusieurs véhicules ou marque non décidée</div></div>
-              <div class="sim-opt" onclick="pick(this,5,'Tesla')"><span class="opt-emoji">⚡</span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Renault / Dacia')"><span class="opt-emoji">🔌</span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Volkswagen / Audi / Skoda')"><span class="opt-emoji">🚗</span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'BMW / Mercedes / Stellantis')"><span class="opt-emoji">🏎️</span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Hyundai / Kia')"><span class="opt-emoji">🚙</span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Autre marque')"><span class="opt-emoji">🔋</span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Multi-marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 17V12a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M6 10l1.5-4h9L18 10"/><path d="M3 14h18"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg></span><div class="opt-title">Multi-marque</div><div class="opt-desc">Plusieurs véhicules ou marque non décidée</div></div>
+              <div class="sim-opt" onclick="pick(this,5,'Tesla')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Renault / Dacia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M18 8v3a6 6 0 01-12 0V8z"/><line x1="9" y1="2" x2="9" y2="8"/><line x1="15" y1="2" x2="15" y2="8"/><line x1="12" y1="17" x2="12" y2="22"/></svg></span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Volkswagen / Audi / Skoda')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V11l3-5h9l4 5v5"/><line x1="2" y1="16" x2="22" y2="16"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'BMW / Mercedes / Stellantis')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M1 15v-3l4-1 3-4h9l5 4v4"/><line x1="1" y1="15" x2="23" y2="15"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Hyundai / Kia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V9l3-4h10l3 4v7"/><line x1="2" y1="16" x2="22" y2="16"/><line x1="5" y1="9" x2="19" y2="9"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Autre marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="9.5" y1="10" x2="9.5" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/></svg></span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
           </div>
         </div>
         <div class="sim-q" id="q6">
@@ -891,7 +891,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
         </div>
                 <div class="sim-result" id="simRes">
           <div class="res-head">
-            <div class="res-badge">✓ Analyse complète</div>
+            <div class="res-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M20 6L9 17l-5-5"/></svg>Analyse complète</div>
             <h3 class="res-title" id="rTitle">Profil : Installation résidentielle</h3>
             <p class="res-sub" id="rSub">Une borne 7,4 kW wallbox est la solution optimale pour votre usage.</p>
           </div>
@@ -1304,13 +1304,13 @@ else{boot();}
       });
       var sep='──────────────────────────────';
       var report=
-        '⚡ NOUVEAU LEAD - Simulateur IRVE - Les Éclairés\n'+sep+'\n\n'+
-        '👤 CONTACT\n'+
+        'NOUVEAU LEAD - Simulateur IRVE - Les Éclairés\n'+sep+'\n\n'+
+        'CONTACT\n'+
         '   • Prénom    : '+p+'\n'+
         '   • Email     : '+e+'\n'+
         '   • Téléphone : '+(t||'(non renseigné)')+'\n\n'+
         sep+'\n'+
-        '🎯 RECOMMANDATION PERSONNALISÉE\n'+
+        'RECOMMANDATION PERSONNALISÉE\n'+
         '   • Profil               : '+txt('rTitle')+'\n'+
         '   • Synthèse             : '+txt('rSub')+'\n'+
         '   • Puissance conseillée : '+txt('rPow')+'\n'+
@@ -1318,7 +1318,7 @@ else{boot();}
         '   • Aide mobilisable     : '+txt('rAide')+'\n'+
         '   • Délai estimé         : '+txt('rDelai')+'\n\n'+
         sep+'\n'+
-        '📋 RÉPONSES AU QUESTIONNAIRE ('+answered+' réponses)\n\n'+
+        'RÉPONSES AU QUESTIONNAIRE ('+answered+' réponses)\n\n'+
         (qa.length?qa.join('\n\n'):'(aucune réponse capturée)')+'\n\n'+
         sep+'\n'+
         'Lead généré via le simulateur en ligne · leseclaires.fr';
@@ -1328,8 +1328,11 @@ else{boot();}
           body:JSON.stringify({
             access_key:KEY, subject:'Lead simulateur IRVE - '+p, from_name:'Simulateur Les Éclairés',
             name:p, email:e, replyto:e, 'Téléphone':t,
-            'Profil':txt('rTitle'),'Puissance':txt('rPow'),'Budget':txt('rBudget'),
-            'Aide':txt('rAide'),'Délai':txt('rDelai'), message:report
+            'Profil':txt('rTitle'),'Synthèse':txt('rSub'),
+            'Puissance':txt('rPow'),'Budget':txt('rBudget'),
+            'Aide':txt('rAide'),'Délai':txt('rDelai'),
+            'Questionnaire':(qa.length?qa.join('\n\n'):'(aucune réponse capturée)'),
+            message:report
           })
         });
         var data=await res.json();
