@@ -292,6 +292,23 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .sim-next{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-vert);color:#fff;border:none;border-radius:var(--r-full);padding:15px 28px;cursor:pointer;white-space:nowrap;letter-spacing:-0.02em;transition:background .2s,transform .18s var(--ease-spring)}
 .sim-next:hover{background:#00935f;transform:translateY(-1px)}
 @media(max-width:480px){.sim-select,.sim-next{width:100%}}
+/* Navigation simulateur (retour + reprise) */
+.sim-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 32px 0;flex-wrap:wrap}
+.sim-back{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--c-border);color:var(--c-mid);font-family:var(--ff-b);font-size:13px;font-weight:500;border-radius:var(--r-full);padding:8px 16px 8px 12px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.sim-back:hover{border-color:var(--c-vert);color:var(--c-vert);background:rgba(0,169,110,.05)}
+.sim-reprise{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--c-muted);margin-left:auto}
+.sim-reprise-dot{width:7px;height:7px;border-radius:50%;background:var(--c-vert);flex-shrink:0}
+.sim-restart{background:none;border:none;color:var(--c-vert);font-family:var(--ff-b);font-size:12.5px;font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
+@media(max-width:480px){.sim-nav{padding:14px 20px 0}}
+/* Détail du résultat (aides + points d'attention) */
+.res-detail{display:grid;gap:14px;margin-bottom:28px}
+.res-list{background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-md);padding:18px 20px}
+.res-list h5{display:flex;align-items:center;gap:8px;font-family:var(--ff-h);font-size:13px;font-weight:700;letter-spacing:-.02em;color:var(--c-vert);margin:0 0 10px}
+.res-list.res-notes h5{color:var(--c-jaune)}
+.res-list ul{margin:0;padding-left:0;list-style:none;display:grid;gap:8px}
+.res-list li{position:relative;padding-left:18px;font-size:13.5px;line-height:1.55;color:var(--c-text);font-weight:300}
+.res-list li:before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--c-vert)}
+.res-list.res-notes li:before{background:var(--c-jaune)}
 .form-legal{font-size:11px;color:var(--c-muted);margin-top:12px}
 .success{display:none;text-align:center;padding:40px}
 .success.show{display:block;animation:fadeUp .4s var(--ease-out) both}
@@ -576,6 +593,13 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
     nav.open .nav-burger span:nth-child(2){opacity:0}
     nav.open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
+
+/* Vignettes articles accueil : systeme unifie + max 3 cartes visibles */
+.blog-grid .blog-thumb{height:172px;font-size:0;background:linear-gradient(150deg,#0c1a13 0%,#123326 55%,#0d251a 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.blog-grid .blog-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 74% 24%,rgba(0,169,110,.32),transparent 60%)}
+.blog-grid .blog-thumb svg{width:60px;height:60px;position:relative;z-index:1}
+.blog-grid .blog-tag{z-index:2;background:rgba(255,255,255,.12);color:#c8f5e2;border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.blog-grid a.blog-card:nth-of-type(n+4){display:none}
 </style>
 
 <style>
@@ -679,6 +703,16 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
         <div class="sim-pb" id="p9"></div>
         <div class="sim-pb" id="p10"></div>
       </div>
+      <div class="sim-nav">
+        <button class="sim-back" id="simBack" type="button" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Précédent
+        </button>
+        <div class="sim-reprise" id="simReprise" style="display:none">
+          <span class="sim-reprise-dot"></span>Simulation reprise là où vous en étiez
+          <button class="sim-restart" id="simRestart" type="button">Recommencer</button>
+        </div>
+      </div>
       <div class="sim-body">
         <div class="sim-q active" id="q0">
           <p class="q-step">Question 1 / 11</p>
@@ -696,8 +730,8 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Dans quel département se fait l'installation ?</h3>
           <p class="q-sub">Les aides, les délais et les installateurs certifiés disponibles varient selon votre département.</p>
           <div class="sim-select-wrap">
-            <select class="sim-select" id="depInstall" aria-label="Département de l'installation">
-              <option value="" disabled selected>Sélectionnez votre département…</option>
+            <input class="sim-select" id="depInstall" list="depOptions" autocomplete="off" placeholder="Tapez votre département ou son numéro…" aria-label="Département de l'installation">
+            <datalist id="depOptions">
               <option value="01 - Ain">01 - Ain</option>
               <option value="02 - Aisne">02 - Aisne</option>
               <option value="03 - Allier">03 - Allier</option>
@@ -799,7 +833,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
               <option value="973 - Guyane">973 - Guyane</option>
               <option value="974 - La Réunion">974 - La Réunion</option>
               <option value="976 - Mayotte">976 - Mayotte</option>
-            </select>
+            </datalist>
             <button class="sim-next" onclick="pickSelect(1,'depInstall')">Continuer →</button>
           </div>
         </div>
@@ -913,6 +947,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
             <div class="metric"><div class="m-label">Aide disponible</div><div class="m-val v" id="rAide">TVA réduite 5,5 %</div></div>
             <div class="metric"><div class="m-label">Délai estimé</div><div class="m-val" id="rDelai">2 à 4 semaines</div></div>
           </div>
+          <div class="res-detail" id="rDetail"></div>
           <div class="lead-block">
             <h4>Recevoir votre récapitulatif détaillé</h4>
             <p>Et être mis en relation avec un installateur certifié IRVE sélectionné pour votre projet.</p>
@@ -1099,15 +1134,106 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 
 <script>
 !function(){
-/* DATA */
-var D={
-  'Maison individuelle':{title:'Profil : Installation résidentielle',sub:'Une borne 7,4 kW wallbox est la solution optimale pour votre usage à domicile.',pow:'7,4 kW',budget:'600 à 1 400 €',aide:'TVA réduite 5,5 %',delai:'2 à 4 semaines'},
-  'Copropriété':{title:'Profil : Droit à la prise',sub:"Vous avez un droit légal d'installer votre borne. La procédure est encadrée par la loi ELAN.",pow:'7,4 kW',budget:'1 200 à 2 500 €',aide:'ADVENIR éligible',delai:'6 à 12 semaines'},
-  'Entreprise':{title:"Profil : Infrastructure d'entreprise",sub:'Une infrastructure collective avec pilotage intelligent est recommandée.',pow:'22 kW / point',budget:'2 000 à 8 000 €',aide:'TVA récupérable',delai:'4 à 8 semaines'},
-  'Parking public':{title:'Profil : Infrastructure publique',sub:"Ce projet nécessite une étude de puissance et un appel d'offres.",pow:'22 à 50 kW',budget:'5 000 à 30 000 €',aide:'AMI / FEDER',delai:'3 à 6 mois'}
-};
+/* ==== MOTEUR DE RECOMMANDATION ====
+   Calcule puissance / budget / aide / délai à partir de TOUTES les réponses,
+   pas seulement du profil. Produit aussi une synthèse et le détail des aides. */
 var A={};
+function fmtEur(n){
+  n=Math.round(n/50)*50; // arrondi propre à 50 €
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' €';
+}
+function fmtNum(n){ n=Math.round(n/50)*50; return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' '); }
+function range(lo,hi){ return lo>=hi ? fmtEur(lo) : fmtNum(lo)+' à '+fmtEur(hi); }
+function reco(){
+  var profil=A[0]||'Maison individuelle';
+  var nb=A[4], marque=A[5], tab=A[6], budg=A[7], wish=A[8], optim=A[10];
+  var park=A[2], usagers=A[3];
+  var pilot=(optim==='Heures creuses'||optim==='Solaire'||optim==='Maximiser économies');
+  var solaire=(optim==='Solaire'||optim==='Maximiser économies');
+  var tabAncien=(tab==='Tableau ancien'), tabInconnu=(tab==='Je ne sais pas');
+  var nbLo={'1 véhicule':1,'2 à 5':2,'6 à 20':6,'20+':20}[nb]||1;
+  var nbHi={'1 véhicule':1,'2 à 5':5,'6 à 20':20,'20+':40}[nb]||1;
+  var brand=(marque&&marque!=='Multi-marque'&&marque!=='Autre marque')?marque:null;
+  var r={aides:[],notes:[]};
+
+  if(profil==='Maison individuelle'){
+    r.title='Profil : installation résidentielle';
+    r.pow = nbLo>1 ? '7,4 à 11 kW' : '7,4 kW';
+    var lo=700, hi=1500;
+    if(nbLo>1){ lo+=500; hi+=1200; }
+    if(tabAncien){ lo+=250; hi+=750; r.notes.push('Tableau ancien : une mise aux normes du tableau électrique est à prévoir.'); }
+    else if(tabInconnu){ hi+=400; r.notes.push('État du tableau à confirmer : un installateur le vérifie gratuitement avant devis.'); }
+    if(pilot){ lo+=150; hi+=450; }
+    if(solaire){ lo+=300; hi+=800; }
+    r.budget=range(lo,hi);
+    r.aide='TVA 5,5 %';
+    r.aides.push('TVA réduite à 5,5 % sur le matériel et la pose (installation par un pro certifié IRVE).');
+    var dLo=2,dHi=4; if(tabAncien||tabInconnu){dLo=3;dHi=5;}
+    r.delai=dLo+' à '+dHi+' semaines';
+  }
+  else if(profil==='Copropriété'){
+    r.title='Profil : droit à la prise en copropriété';
+    r.pow='7,4 kW / point';
+    var lo=1200, hi=2500;
+    if(pilot){ lo+=150; hi+=500; }
+    r.budget=range(lo,hi);
+    r.aide='ADVENIR + droit à la prise';
+    r.aides.push('Prime ADVENIR : jusqu’à 960 € HT par point de charge en copropriété.');
+    r.aides.push('Droit à la prise : vous pouvez installer votre borne sans accord préalable de l’assemblée générale.');
+    r.notes.push('Le raccordement passe par la colonne montante de l’immeuble : le syndic doit être informé.');
+    r.delai='6 à 12 semaines';
+  }
+  else if(profil==='Entreprise'){
+    r.title='Profil : infrastructure d’entreprise';
+    if(nbLo>=20){ r.pow='22 kW/point · infra pilotée'; }
+    else if(nbLo>=6){ r.pow='11 à 22 kW pilotés'; }
+    else { r.pow='7,4 à 11 kW/point'; }
+    var pLo=1800, pHi=4000;
+    var lo=pLo*nbLo, hi=pHi*Math.min(nbHi, nbLo>=20?10:nbHi);
+    r.budget = nbLo>=6 ? ('à partir de '+fmtEur(pLo*nbLo)+' (sur étude)') : range(lo,hi);
+    r.aide='ADVENIR pro + TVA récupérable';
+    r.aides.push('Prime ADVENIR (bornes pour flotte, salariés ou clients).');
+    r.aides.push('TVA récupérable et installation amortissable comptablement.');
+    r.notes.push('Un pilotage de charge (load balancing) est recommandé pour éviter de renforcer l’abonnement électrique.');
+    r.delai = nbLo>=6 ? '8 à 16 semaines' : '4 à 8 semaines';
+  }
+  else { // Parking public
+    r.title='Profil : infrastructure ouverte au public';
+    r.pow='22 à 50 kW';
+    r.budget='Étude personnalisée (5 000 à 30 000 € indicatif)';
+    r.aide='ADVENIR ouvert au public';
+    r.aides.push('Prime ADVENIR « ouvert au public », montant selon la puissance et le nombre de points.');
+    r.aides.push('Programmes régionaux et appels à projets (AMI) selon la collectivité.');
+    r.notes.push('Une étude de puissance et un raccordement Enedis dédié sont généralement nécessaires.');
+    r.delai='3 à 6 mois';
+  }
+
+  // Pilotage énergie (tous profils)
+  if(optim==='Heures creuses'){ r.notes.push('Programmation en heures creuses : la borne recharge automatiquement quand l’électricité est la moins chère.'); }
+  if(optim==='Solaire'){ r.notes.push('Pilotage solaire : la borne module la charge sur votre production photovoltaïque (autoconsommation).'); }
+  if(optim==='Maximiser économies'){ r.notes.push('Borne intelligente : elle combine heures creuses et surplus solaire pour minimiser le coût de recharge.'); }
+  if(park==='Souterrain'){ r.notes.push('Parking souterrain : ventilation et cheminement des câbles à intégrer au chiffrage.'); }
+
+  // Synthèse personnalisée
+  var s='';
+  if(profil==='Maison individuelle'){
+    s='Pour recharger '+(brand?'votre '+brand:'votre véhicule')+' à domicile'+(nbLo>1?' ('+nb+' véhicules)':'')+', une borne '+r.pow+(pilot?' pilotable':'')+' est la solution la plus adaptée';
+    s+=solaire?', avec pilotage pour recharger sur vos panneaux solaires.':(optim==='Heures creuses'?', programmée en heures creuses pour réduire la facture.':'.');
+  } else if(profil==='Copropriété'){
+    s='Vous pouvez installer une borne '+r.pow+(brand?' pour votre '+brand:'')+' au titre du droit à la prise, sans attendre une décision collective. La prime ADVENIR réduit nettement la facture.';
+  } else if(profil==='Entreprise'){
+    var flotte = (nb==='1 véhicule')?'votre véhicule':('votre flotte'+(nb?' ('+nb+' véhicules)':''));
+    s='Pour '+flotte+', une infrastructure '+r.pow+' avec pilotage de charge est recommandée. La prime ADVENIR et la récupération de TVA allègent l’investissement.';
+  } else {
+    s='Ce projet d’infrastructure ouverte au public nécessite une étude de puissance dédiée. La borne '+r.pow+' est adaptée à cet usage, avec les aides ADVENIR correspondantes.';
+  }
+  r.sub=s;
+  return r;
+}
 function gId(id){return document.getElementById(id);}
+var SIM_STORE='les-eclaires-sim-v1', curStep=0;
+function saveState(){ try{ localStorage.setItem(SIM_STORE, JSON.stringify({A:A,cur:curStep})); }catch(e){} }
+function clearState(){ try{ localStorage.removeItem(SIM_STORE); }catch(e){} }
 function pick(el,step,val){
   if(!window._simStarted){window._simStarted=true;window.track('simulateur_start');}
   var all=document.querySelectorAll('#q'+step+' .sim-opt');
@@ -1115,12 +1241,13 @@ function pick(el,step,val){
   el.classList.add('sel');
   A[step]=val;
   if(step===0) applyProfile();
-  setTimeout(function(){advance(step);},350);
+  saveState();
+  setTimeout(function(){advance(step);},320);
 }
 function isPro(){ return A[0]==='Entreprise' || A[0]==='Parking public'; }
-// Séquence des questions affichées selon le profil (les q2/q3 = parking & usagers
-// finaux ne concernent que les profils pro).
-function seq(){ return isPro() ? [0,1,2,3,4,5,6,7,8,9,10] : [0,1,4,5,6,7,8,9,10]; }
+// Ordre logique des questions. Le département (1) est un champ cherchable placé en
+// fin de parcours (logistique). q2/q3 (parking & usagers) ne concernent que les pros.
+function seq(){ return isPro() ? [0,2,3,4,5,6,10,7,8,1,9] : [0,4,5,6,10,7,8,1,9]; }
 function syncFlow(q){
   var total=q.length, shown={};
   for(var i=0;i<q.length;i++) shown[q[i]]=i+1;
@@ -1131,32 +1258,48 @@ function syncFlow(q){
   }
 }
 function applyProfile(){ syncFlow(seq()); }
+function updateBack(){ var b=gId('simBack'); if(b){ b.style.display = seq().indexOf(curStep)>0 ? 'inline-flex':'none'; } }
+function showStep(s){
+  var order=seq(), idx=order.indexOf(s);
+  for(var i=0;i<order.length;i++){
+    var pb=gId('p'+order[i]); if(!pb) continue;
+    pb.classList.remove('active','done');
+    if(i<idx) pb.classList.add('done'); else if(i===idx) pb.classList.add('active');
+  }
+  for(var k=0;k<=10;k++){ var q=gId('q'+k); if(q) q.classList.remove('active'); }
+  var cq=gId('q'+s); if(cq) cq.classList.add('active');
+  curStep=s; updateBack();
+}
 function advance(s){
-  var bar=gId('p'+s);
-  if(bar){bar.classList.remove('active');bar.classList.add('done');}
-  var q=gId('q'+s);
-  if(q) q.classList.remove('active');
   var order=seq(), idx=order.indexOf(s);
   if(idx>=0){ window.track('simulateur_step',{step_number:idx+1}); }
-  if(idx<0 || idx>=order.length-1){ showResult(); return; }
-  var next=order[idx+1];
-  var nq=gId('q'+next),nb=gId('p'+next);
-  if(nq) nq.classList.add('active');
-  if(nb) nb.classList.add('active');
+  if(idx<0 || idx>=order.length-1){ saveState(); showResult(); return; }
+  showStep(order[idx+1]); saveState();
+}
+function goBack(){
+  var order=seq(), idx=order.indexOf(curStep);
+  if(idx>0){ showStep(order[idx-1]); saveState(); }
 }
 function showResult(){
-  var bars=document.querySelectorAll('#pgBar .sim-pb');
-  for(var i=0;i<bars.length;i++){bars[i].classList.remove('active');bars[i].classList.add('done');}
-  var r=D[A[0]]||D['Maison individuelle'];
+  document.querySelectorAll('#pgBar .sim-pb').forEach(function(b){b.classList.remove('active');b.classList.add('done');});
+  var r=reco();
   gId('rTitle').textContent=r.title;
   gId('rSub').textContent=r.sub;
   gId('rPow').textContent=r.pow;
   gId('rBudget').textContent=r.budget;
   gId('rAide').textContent=r.aide;
   gId('rDelai').textContent=r.delai;
-  var el=gId('simRes');
-  el.classList.add('active');
+  var det=gId('rDetail');
+  if(det){
+    var h='';
+    if(r.aides&&r.aides.length) h+='<div class="res-list"><h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg>Aides mobilisables</h5><ul>'+r.aides.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>';
+    if(r.notes&&r.notes.length) h+='<div class="res-list res-notes"><h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Points d’attention</h5><ul>'+r.notes.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>';
+    det.innerHTML=h;
+  }
+  var el=gId('simRes'); el.classList.add('active');
+  var bk=gId('simBack'); if(bk) bk.style.display='none';
   window.track('simulateur_complete',{profil:r.title});
+  clearState();
   setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
 }
 function submitForm(){
@@ -1168,35 +1311,67 @@ function submitForm(){
 }
 function bindSim(){
   document.querySelectorAll('.sim-opt').forEach(function(el){
-    var oc=el.getAttribute('onclick');
-    if(oc){
-      el.removeAttribute('onclick');
-      el.addEventListener('click',function(){
-        var m=oc.match(/pick.this,([0-9]+),'([^']+)'./);
-        if(m) pick(el,parseInt(m[1]),m[2]);
-      });
-    } else {
-      el.addEventListener('click',function(){
-        var parent=el.closest('.sim-q');
-        if(!parent) return;
-        var step=parseInt(parent.id.replace('q',''));
-        var title=el.querySelector('.opt-title');
-        if(title) pick(el,step,title.textContent.trim());
-      });
-    }
+    var oc=el.getAttribute('onclick'), val=null;
+    if(oc){ var m=oc.match(/pick.this,([0-9]+),'([^']+)'./); if(m) val=m[2]; el.removeAttribute('onclick'); }
+    if(val==null){ var t=el.querySelector('.opt-title'); val=t?t.textContent.trim():''; }
+    el.setAttribute('data-val',val);
+    el.addEventListener('click',function(){
+      var parent=el.closest('.sim-q'); if(!parent) return;
+      var step=parseInt(parent.id.replace('q',''));
+      pick(el,step,el.getAttribute('data-val'));
+    });
   });
   var sb=document.querySelector('.btn-sub');
   if(sb){sb.removeAttribute('onclick');sb.addEventListener('click',submitForm);}
 }
+function reapplySel(){
+  for(var s=0;s<=10;s++){
+    var v=A[s]; if(v==null) continue;
+    var q=gId('q'+s); if(!q) continue;
+    var inp=q.querySelector('input,select');
+    if(inp){ inp.value=v; continue; }
+    var opts=q.querySelectorAll('.sim-opt');
+    for(var i=0;i<opts.length;i++){ opts[i].classList.toggle('sel', opts[i].getAttribute('data-val')===v); }
+  }
+}
+function resetSim(){
+  clearState(); A={}; window._simStarted=false;
+  document.querySelectorAll('.sim-opt.sel').forEach(function(o){o.classList.remove('sel');});
+  var dep=gId('depInstall'); if(dep) dep.value='';
+  var res=gId('simRes'); if(res) res.classList.remove('active');
+  var fb=gId('fBox'); if(fb) fb.style.display='';
+  var ok=gId('okMsg'); if(ok) ok.classList.remove('show');
+  var rp=gId('simReprise'); if(rp) rp.style.display='none';
+  applyProfile(); showStep(0);
+  var card=gId('simulateur-start'); if(card) card.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function restoreSim(){
+  var raw; try{ raw=localStorage.getItem(SIM_STORE); }catch(e){ return false; }
+  if(!raw) return false;
+  try{
+    var d=JSON.parse(raw);
+    if(!d||!d.A||d.A[0]==null) return false;
+    A=d.A; window._simStarted=true;
+    applyProfile(); reapplySel();
+    var order=seq();
+    var target=(d.cur!=null && order.indexOf(d.cur)>=0)?d.cur:order[0];
+    showStep(target);
+    var rp=gId('simReprise'); if(rp) rp.style.display='flex';
+    return true;
+  }catch(e){ return false; }
+}
 function pickSelect(step,id){
   var sel=gId(id);
-  if(!sel||!sel.value){ if(sel){sel.style.borderColor='rgba(220,50,50,.5)';} return; }
+  var v=sel?(sel.value||'').trim():'';
+  if(!sel||!v){ if(sel){sel.style.borderColor='rgba(220,50,50,.5)';} return; }
   sel.style.borderColor='';
-  A[step]=sel.value;
+  A[step]=v; saveState();
   advance(step);
 }
 window.pickSelect=pickSelect;
 window._pick=pick;
+window._simBack=goBack;
+window._simReset=resetSim;
 window._sf=submitForm;
 var CK='les-eclaires-cookie-v2';
 function closeCookie(ok){
@@ -1270,7 +1445,12 @@ function initSmoothScroll(){
   });
 }
 
-function initSimFlow(){ syncFlow([0,1,4,5,6,7,8,9,10]); }
+function initSimFlow(){
+  applyProfile();
+  var bk=gId('simBack'); if(bk) bk.addEventListener('click',goBack);
+  var rs=gId('simRestart'); if(rs) rs.addEventListener('click',resetSim);
+  if(!restoreSim()) showStep(0);
+}
 function boot(){bindSim();initReveal();initCookie();initCookieButtons();initBtt();initFaq();initSmoothScroll();initSimFlow();}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
 else{boot();}
@@ -1302,9 +1482,10 @@ else{boot();}
         var num=qa.length+1;
         var l=q.querySelector('.q-label');
         var question=l?l.textContent.trim():('Question '+num);
-        var dd=q.querySelector('select');
+        var dd=q.querySelector('select,input[list]');
         if(dd){
-          if(dd.value){ answered++; qa.push('Q'+num+'. '+question+'\n      \u2192 '+dd.value); }
+          var dv=(dd.value||'').trim();
+          if(dv){ answered++; qa.push('Q'+num+'. '+question+'\n      \u2192 '+dv); }
           return;
         }
         var sel=q.querySelector('.sim-opt.sel');
