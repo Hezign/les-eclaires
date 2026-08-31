@@ -644,7 +644,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           "name": "Qu'est-ce que la prime ADVENIR et comment en bénéficier ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La prime ADVENIR est une aide financière pour l'installation de bornes de recharge IRVE, financée par EDF via les Certificats d'Économies d'Énergie. Elle couvre jusqu'à 960 € par point de charge en copropriété. La demande doit être faite avant le début des travaux, via un installateur certifié IRVE."
+            "text": "La prime ADVENIR est une aide financière pour l'installation de bornes de recharge IRVE, financée par EDF via les Certificats d'Économies d'Énergie. En copropriété (barème du 1er avril 2026), elle couvre 50 % du coût jusqu'à 1 000 € HT par point de charge pour une borne individuelle et 1 660 € HT pour une borne partagée, plus l'infrastructure collective. La demande doit être faite avant le début des travaux, via un installateur certifié IRVE."
           }
         },
         {
@@ -745,10 +745,10 @@ function reco(){
     if(pilot){ lo+=150; hi+=500; }
     r.budget=range(lo,hi);
     r.aide='ADVENIR + droit à la prise';
-    r.aides.push('Prime ADVENIR : jusqu’à 960 € HT par point de charge en copropriété.');
+    r.aides.push('Prime ADVENIR : 50 % du coût, jusqu’à 1 000 € HT par point (borne individuelle) ou 1 660 € HT (borne partagée), plus l’infrastructure collective (barème du 1er avril 2026).');
     r.aides.push('Droit à la prise : vous pouvez installer votre borne sans accord préalable de l’assemblée générale.');
     r.notes.push('Le raccordement passe par la colonne montante de l’immeuble : le syndic doit être informé.');
-    r.delai='6 à 12 semaines';
+    r.delai='2 à 4 mois';
   }
   else if(profil==='Entreprise'){
     r.title='Profil : infrastructure d’entreprise';
@@ -1125,7 +1125,7 @@ else{boot();}
         </div>
         <div>
           <div class="hv-float-text-top">Aide ADVENIR</div>
-          <div class="hv-float-text-bot">Éligible · jusqu'à 960 €</div>
+          <div class="hv-float-text-bot">Éligible · jusqu'à 1 660 €</div>
         </div>
       </div>
     </div>
@@ -1718,7 +1718,7 @@ else{boot();}
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
-          <p>ADVENIR est une aide financière de l'État pour installer des bornes de recharge. Elle est destinée aux <strong>copropriétés et aux entreprises</strong>, pas aux maisons individuelles. Elle peut financer jusqu'à <strong>960 € par borne</strong> en copropriété. La demande doit être faite avant de commencer les travaux, par votre installateur.</p>
+          <p>ADVENIR est une aide financière de l'État pour installer des bornes de recharge. Elle est destinée aux <strong>copropriétés et aux entreprises</strong>, pas aux maisons individuelles. Elle peut financer jusqu'à <strong>1 000 € HT par borne individuelle</strong> (1 660 € en borne partagée) en copropriété. La demande doit être faite avant de commencer les travaux, par votre installateur.</p>
         </div>
       </div>
 
@@ -1817,7 +1817,7 @@ else{boot();}
   <li>3 minutes pour obtenir une recommandation complete et personnalisee</li>
   <li>Simulateur IRVE gratuit sans inscription</li>
   <li>Installation borne maison : 600 a 1400 euros, TVA reduite 5,5% (credit impot particuliers supprime depuis 2026)</li>
-  <li>Prime ADVENIR copropriete : jusqu a 960 euros par point de charge</li>
+  <li>Prime ADVENIR copropriete (bareme 1er avril 2026) : 50% du cout, jusqu a 1 000 euros HT par point (borne individuelle) ou 1 660 euros HT (borne partagee), plus infrastructure collective</li>
   <li>Installateurs certifies IRVE dans toute la France</li>
 </ul>
   <script src="/cursor.js" defer></script>
