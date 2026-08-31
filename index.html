@@ -848,6 +848,7 @@ function goBack(){
   if(idx>0){ showStep(order[idx-1]); saveState(); }
 }
 function showResult(){
+  for(var k=0;k<=10;k++){ var q=gId('q'+k); if(q) q.classList.remove('active'); }
   document.querySelectorAll('#pgBar .sim-pb').forEach(function(b){b.classList.remove('active');b.classList.add('done');});
   var r=reco();
   gId('rTitle').textContent=r.title;
