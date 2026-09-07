@@ -32,6 +32,12 @@ nav = nav.replace('<a class="nav-logo" href="#">', '<a class="nav-logo" href="/"
 
 # --- Section simulateur (intégrale) ---
 sim = between('<section class="sim-section" id="simulateur">', '</section>', src)
+# Sur la page dédiée, on retire l'en-tête d'intro (doublon avec le hero) pour remonter le simulateur
+sim = re.sub(r'\s*<div class="reveal">\s*<span class="section-tag">Simulateur</span>.*?</div>',
+             '', sim, count=1, flags=re.S)
+
+# --- Topbar partenaire (identique à la home) ---
+topbar = between('<!-- TOPBAR PARTENAIRE -->', '</div>', src)
 
 # --- Footer (intégral) ---
 footer = between('<footer>', '</footer>', src)
@@ -54,7 +60,8 @@ cookie = '''<div class="cookie-banner" id="cookieBanner">
     <button class="cookie-accept" id="btnAccept">Accepter</button>
     <button class="cookie-decline" id="btnDecline">Refuser</button>
   </div>
-</div>'''
+</div>
+<button class="cookie-fab" id="cookieFab" aria-label="Préférences cookies" title="Préférences cookies">&#x1F36A;</button>'''
 
 btt = '''<button class="btt" id="btt" aria-label="Retour en haut">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -162,7 +169,7 @@ trust = '''<section class="simp-trust">
 # ---- FAQ propre au simulateur (contenu unique) ----
 faq_items = [
  ("Le simulateur est-il vraiment gratuit ?",
-  "Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre modèle repose sur une commission versée par l'installateur lors de la mise en relation&nbsp;: cela ne change rien à votre prix."),
+  "Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre service est financé par les installateurs partenaires, qui nous rémunèrent lorsqu'on leur transmet une demande qualifiée&nbsp;: cela ne change rien à votre prix."),
  ("Combien de temps prend la simulation ?",
   "Environ 3 minutes. Ce sont quelques questions simples sur votre logement, votre véhicule et vos habitudes. Aucune connaissance technique n'est nécessaire&nbsp;: on traduit tout en langage clair."),
  ("Dois-je créer un compte ?",
@@ -273,6 +280,8 @@ html = f'''<!DOCTYPE html>
 {page_css}
 </head>
 <body>
+
+{topbar}
 
 {nav}
 

@@ -15,7 +15,7 @@ FORM_CSS = '''<style>
 .copro-form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .copro-form label{display:block;font-size:13px;font-weight:600;color:var(--c-mid);margin-bottom:6px}
 .copro-form input,.copro-form select,.copro-form textarea{width:100%;background:var(--c-bg);border:1px solid var(--c-border2);border-radius:var(--r-sm);padding:13px 15px;font-size:15px;font-family:var(--ff-b);color:var(--c-text);outline:none;box-sizing:border-box;transition:border-color .2s,box-shadow .2s}
-.copro-form input:focus,.copro-form select:focus,.copro-form textarea:focus{border-color:rgba(0,169,110,.5);box-shadow:0 0 0 3px rgba(0,169,110,.1)}
+.copro-form input:focus,.copro-form select:focus,.copro-form textarea:focus{border-color:rgba(0,194,126,.5);box-shadow:0 0 0 3px rgba(0,194,126,.1)}
 .copro-form textarea{min-height:110px;resize:vertical}
 .copro-form .full{grid-column:1/-1}
 .copro-form .btn-vert{border:none;cursor:pointer;margin-top:4px}

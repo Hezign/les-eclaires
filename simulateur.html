@@ -34,7 +34,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -57,7 +57,7 @@
     },
     {
       "@type":"FAQPage",
-      "mainEntity":[{"@type":"Question","name":"Le simulateur est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre modèle repose sur une commission versée par l'installateur lors de la mise en relation&nbsp;: cela ne change rien à votre prix."}},
+      "mainEntity":[{"@type":"Question","name":"Le simulateur est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre service est financé par les installateurs partenaires, qui nous rémunèrent lorsqu'on leur transmet une demande qualifiée&nbsp;: cela ne change rien à votre prix."}},
 {"@type":"Question","name":"Combien de temps prend la simulation ?","acceptedAnswer":{"@type":"Answer","text":"Environ 3 minutes. Ce sont quelques questions simples sur votre logement, votre véhicule et vos habitudes. Aucune connaissance technique n'est nécessaire&nbsp;: on traduit tout en langage clair."}},
 {"@type":"Question","name":"Dois-je créer un compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Vous répondez aux questions directement, et vous renseignez seulement votre email (et éventuellement votre téléphone) à la fin pour recevoir votre récapitulatif détaillé."}},
 {"@type":"Question","name":"Que se passe-t-il après la simulation ?","acceptedAnswer":{"@type":"Answer","text":"Vous recevez par email un récapitulatif complet de votre projet&nbsp;: puissance conseillée, budget estimé, aides mobilisables et délai. Ensuite, on vous met en relation avec un installateur certifié IRVE sélectionné pour votre situation, sous 24&nbsp;à 48&nbsp;heures."}},
@@ -69,31 +69,45 @@
 </script>
 <style>
 :root{
-  --c-bg:#F8F6F1; --c-bg2:#FFFFFF; --c-bg3:#F0EDE6;
+  --c-bg:#F4F6F5; --c-bg2:#FFFFFF; --c-bg3:#E6FFF5;
   --c-border:rgba(0,0,0,0.07); --c-border2:rgba(0,0,0,0.13);
-  --c-ink:#111110; --c-muted:#888884; --c-mid:#55554F; --c-text:#2C2C28;
-  --c-vert:#00A96E; --c-vert-lt:#00C97F;
-  --c-vert-bg:rgba(0,169,110,.08); --c-vert-br:rgba(0,169,110,.22);
-  --c-jaune:#00A96E; --c-jaune-lt:#00C97F;
-  --c-jaune-bg:rgba(0,169,110,.08); --c-jaune-br:rgba(0,169,110,.22);
+  --c-ink:#000000; --c-muted:#5C6560; --c-mid:#454B48; --c-text:#1A1D1B; --topbar-h:40px;
+  --c-vert:#00C27E; --c-vert-lt:#00F5A0;
+  --c-vert-bg:rgba(0,194,126,.08); --c-vert-br:rgba(0,194,126,.22);
+  --c-jaune:#00C27E; --c-jaune-lt:#00F5A0;
+  --c-jaune-bg:rgba(0,194,126,.08); --c-jaune-br:rgba(0,194,126,.22);
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;
   --sp-6:24px;--sp-7:28px;--sp-8:32px;--sp-10:40px;--sp-12:48px;
   --sp-16:64px;--sp-20:80px;
   --r-sm:8px;--r-md:12px;--r-lg:18px;--r-xl:24px;--r-full:999px;
-  --ff-h:'Bricolage Grotesque',sans-serif;--ff-b:'Inter',sans-serif;
+  --ff-h:'Schibsted Grotesk',sans-serif;--ff-b:'Manrope',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
   --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
   --shadow-card:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);
   --shadow-hover:0 8px 32px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.06);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-padding-top:90px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+html{scroll-padding-top:calc(var(--topbar-h) + 90px);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
 body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff-b);font-size:16px;line-height:1.6;width:100%}
 h1,h2,h3,h4{font-family:var(--ff-h);color:var(--c-ink);letter-spacing:-0.04em;line-height:1.05}
 a{color:inherit;text-decoration:none}
 
+/* ── TOPBAR PARTENAIRE ── */
+.topbar{position:fixed;top:0;left:0;width:100%;height:var(--topbar-h);z-index:300;background:var(--c-ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 20px;font-size:13.5px;font-weight:400;transition:transform .35s var(--ease-out)}
+.topbar.hidden{transform:translateY(-100%)}
+.topbar .tb-bolt{width:14px;height:14px;color:var(--c-vert-lt);flex-shrink:0}
+.topbar .tb-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .tb-txt strong{font-weight:600;color:#fff}
+.topbar .tb-cta{font-family:var(--ff-h);font-weight:600;font-size:13px;color:#0a0a09;background:var(--c-vert-lt);padding:5px 14px;border-radius:var(--r-full);white-space:nowrap;transition:transform .15s var(--ease-spring),box-shadow .2s;flex-shrink:0}
+.topbar .tb-cta:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,201,127,.4)}
+.topbar .tb-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:none;background:transparent;color:rgba(255,255,255,.55);cursor:pointer;font-size:18px;line-height:1;border-radius:50%;transition:color .18s,background .18s}
+.topbar .tb-close:hover{color:#fff;background:rgba(255,255,255,.12)}
+@media(max-width:560px){.topbar .tb-txt strong{display:none}}
+@media(max-width:400px){.topbar{font-size:12.5px;gap:10px}}
+
 /* ── NAV ── */
-nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;height:56px;width:calc(100% - 48px);max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(248,246,241,0.96);backdrop-filter:blur(24px) saturate(1.4);border:1px solid var(--c-border2);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+nav{position:fixed;top:calc(var(--topbar-h) + 12px);left:50%;transform:translateX(-50%);z-index:200;height:56px;width:calc(100% - 48px);max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(248,246,241,0.96);backdrop-filter:blur(24px) saturate(1.4);border:1px solid var(--c-border2);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.07);transition:top .35s var(--ease-out)}
+body.tb-off nav{top:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo-img{height:30px;width:auto;display:block;flex-shrink:0;object-fit:contain;border-radius:8px}
 .nav-logo-text{font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--c-ink);letter-spacing:-0.03em;white-space:nowrap}
@@ -101,12 +115,12 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .nav-links a{font-size:14px;font-weight:400;color:var(--c-muted);transition:color .18s}
 .nav-links a:hover{color:var(--c-ink)}
 .btn-nav{font-family:var(--ff-h);font-size:13.5px;font-weight:600;background:var(--c-vert-lt);color:#0a0a09;padding:9px 20px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;transition:background .2s,transform .15s var(--ease-spring),box-shadow .2s;white-space:nowrap}
-.btn-nav:hover{background:var(--c-vert-lt);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,169,110,.28)}
+.btn-nav:hover{background:var(--c-vert-lt);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,194,126,.28)}
 
 /* ── HERO ── */
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:88px;position:relative;overflow:hidden;background:var(--c-bg);width:100%;box-sizing:border-box}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:calc(var(--topbar-h) + 88px);position:relative;overflow:hidden;background:var(--c-bg);width:100%;box-sizing:border-box}
 .hero-grain{position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
-.hero-circle1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,169,110,.07) 0%,transparent 64%);top:-140px;left:50%;transform:translateX(-50%);pointer-events:none}
+.hero-circle1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,126,.07) 0%,transparent 64%);top:-140px;left:50%;transform:translateX(-50%);pointer-events:none}
 .hero-circle2{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,0,.05) 0%,transparent 64%);bottom:-80px;right:-80px;pointer-events:none}
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
@@ -128,8 +142,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .hero-sub{font-size:15px;font-weight:300;color:var(--c-mid);max-width:420px;line-height:1.75;animation:fadeUp .7s .16s var(--ease-out) both}
 
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .22s var(--ease-out) both}
-.btn-primary{font-family:var(--ff-h);font-size:15px;font-weight:600;background:var(--c-vert);color:#fff;padding:14px 28px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s var(--ease-spring),box-shadow .2s}
-.btn-primary:hover{background:#00935f;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,169,110,.32)}
+.btn-primary{font-family:var(--ff-h);font-size:15px;font-weight:600;background:var(--c-vert-lt);color:#0a0a09;padding:14px 28px;border-radius:var(--r-full);border:none;cursor:pointer;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s var(--ease-spring),box-shadow .2s}
+.btn-primary:hover{background:var(--c-vert);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,194,126,.32)}
 .btn-primary svg{width:15px;height:15px;transition:transform .2s}
 .btn-primary:hover svg{transform:translateX(3px)}
 .btn-ghost{font-family:var(--ff-h);font-size:15px;font-weight:500;background:transparent;color:var(--c-text);padding:14px 28px;border-radius:var(--r-full);border:1px solid var(--c-border2);cursor:pointer;letter-spacing:-0.02em;transition:all .2s}
@@ -152,7 +166,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 
 /* Main card */
 .hv-card-main{background:#000000;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;box-shadow:0 8px 40px rgba(0,0,0,.18);position:relative;overflow:hidden}
-.hv-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00A96E,#00C97F);z-index:1}
+.hv-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00C27E,#00F5A0);z-index:1}
 
 /* Car image */
 .hv-car{width:62%;height:auto;display:block;margin:0 auto 16px;object-fit:contain}
@@ -162,7 +176,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .hv-charge-label{font-size:12px;font-weight:500;color:rgba(255,255,255,.6)}
 .hv-charge-pct{font-family:var(--ff-h);font-size:22px;font-weight:800;color:var(--c-vert);letter-spacing:-0.04em}
 .hv-bar-bg{height:8px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin-bottom:16px}
-.hv-bar-fill{height:8px;background:linear-gradient(90deg,#00A96E,#00D4A0);border-radius:4px;width:0;animation:fillBar 2s 1s var(--ease-out) forwards}
+.hv-bar-fill{height:8px;background:linear-gradient(90deg,#00C27E,#00D4A0);border-radius:4px;width:0;animation:fillBar 2s 1s var(--ease-out) forwards}
 @keyframes fillBar{from{width:0}to{width:73%}}
 
 .hv-meta{display:flex;gap:8px}
@@ -218,7 +232,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .why-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
 .why-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:32px}
 .why-icon{width:48px;height:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.ic-v{background:rgba(0,169,110,.1)} .ic-j{background:rgba(212,160,0,.1)} .ic-c{background:rgba(0,0,0,.05)}
+.ic-v{background:rgba(0,194,126,.1)} .ic-j{background:rgba(212,160,0,.1)} .ic-c{background:rgba(0,0,0,.05)}
 .why-icon svg{width:24px;height:24px}
 .why-card h4{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-0.035em;margin-bottom:12px}
 .why-card p{font-size:14px;color:var(--c-muted);line-height:1.75;font-weight:300}
@@ -233,7 +247,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .p-num.nv{color:var(--c-vert)} .p-num.nj{color:var(--c-jaune)} .p-num.nm{color:var(--c-muted)}
 .p-icon{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .p-icon svg{width:20px;height:20px}
-.pi-v{background:rgba(0,169,110,.1)} .pi-j{background:rgba(212,160,0,.1)} .pi-m{background:rgba(0,0,0,.05)}
+.pi-v{background:rgba(0,194,126,.1)} .pi-j{background:rgba(212,160,0,.1)} .pi-m{background:rgba(0,0,0,.05)}
 .p-step h4{font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-0.03em;margin-bottom:8px}
 .p-step p{font-size:13px;color:var(--c-muted);line-height:1.6;font-weight:300}
 
@@ -249,7 +263,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .sim-badge{font-size:11px;font-weight:600;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);color:var(--c-vert);padding:4px 12px;border-radius:var(--r-full);letter-spacing:.06em}
 .sim-prog{display:flex;gap:6px;padding:28px 32px 0}
 .sim-pb{flex:1;height:2px;border-radius:2px;background:rgba(0,0,0,.08);transition:background .4s var(--ease-out)}
-.sim-pb.active{background:var(--c-vert)} .sim-pb.done{background:rgba(0,169,110,.4)}
+.sim-pb.active{background:var(--c-vert)} .sim-pb.done{background:rgba(0,194,126,.4)}
 .sim-body{padding:32px}
 .sim-q{display:none}
 .sim-q.active{display:block;animation:fadeUp .4s var(--ease-out) both}
@@ -258,8 +272,8 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .q-sub{font-size:14px;color:var(--c-muted);font-weight:300;margin-bottom:28px}
 .sim-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}
 .sim-opt{background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:20px;cursor:pointer;text-align:left;user-select:none;transition:border-color .2s,background .2s,transform .2s var(--ease-spring)}
-.sim-opt:hover{border-color:rgba(0,169,110,.4);background:rgba(0,169,110,.04);transform:translateY(-2px)}
-.sim-opt.sel{border-color:var(--c-vert);background:rgba(0,169,110,.06)}
+.sim-opt:hover{border-color:rgba(0,194,126,.4);background:rgba(0,194,126,.04);transform:translateY(-2px)}
+.sim-opt.sel{border-color:var(--c-vert);background:rgba(0,194,126,.06)}
 .opt-emoji{display:block;margin-bottom:12px;line-height:1}
 .opt-title{font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-0.03em;margin-bottom:3px;color:var(--c-ink)}
 .opt-desc{font-size:12px;color:var(--c-muted);font-weight:300}
@@ -277,25 +291,25 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;heig
 .m-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:6px}
 .m-val{font-family:var(--ff-h);font-size:21px;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--c-ink)}
 .m-val.v{color:var(--c-vert)} .m-val.j{color:var(--c-jaune)}
-.lead-block{background:linear-gradient(135deg,rgba(0,169,110,.05) 0%,rgba(212,160,0,.04) 100%);border:1px solid rgba(0,169,110,.15);border-radius:var(--r-lg);padding:28px}
+.lead-block{background:linear-gradient(135deg,rgba(0,194,126,.05) 0%,rgba(212,160,0,.04) 100%);border:1px solid rgba(0,194,126,.15);border-radius:var(--r-lg);padding:28px}
 .lead-block h4{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-0.03em;margin-bottom:5px;color:var(--c-ink)}
 .lead-block>p{font-size:14px;color:var(--c-muted);font-weight:300;margin-bottom:20px}
 .form-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px}
 .form-in{background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:var(--r-sm);padding:12px 15px;font-size:14px;font-family:var(--ff-b);color:var(--c-text);outline:none;transition:border-color .2s,box-shadow .2s}
 .form-in::placeholder{color:rgba(0,0,0,.28)}
-.form-in:focus{border-color:rgba(0,169,110,.5);box-shadow:0 0 0 3px rgba(0,169,110,.1)}
+.form-in:focus{border-color:rgba(0,194,126,.5);box-shadow:0 0 0 3px rgba(0,194,126,.1)}
 .btn-sub{font-family:var(--ff-h);font-size:14px;font-weight:700;background:var(--c-ink);color:#fff;border:none;border-radius:var(--r-sm);padding:12px 22px;cursor:pointer;white-space:nowrap;letter-spacing:-0.02em;transition:background .2s,transform .18s var(--ease-spring)}
 .btn-sub:hover{background:#2a2a26;transform:translateY(-1px)}
 .sim-select-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .sim-select{flex:1;min-width:240px;background-color:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:16px 46px 16px 18px;font-size:15px;font-family:var(--ff-b);color:var(--c-text);outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2355554F' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 16px center;background-size:18px 18px;transition:border-color .2s,box-shadow .2s}
-.sim-select:focus{border-color:rgba(0,169,110,.5);box-shadow:0 0 0 3px rgba(0,169,110,.1)}
-.sim-next{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-vert);color:#fff;border:none;border-radius:var(--r-full);padding:15px 28px;cursor:pointer;white-space:nowrap;letter-spacing:-0.02em;transition:background .2s,transform .18s var(--ease-spring)}
-.sim-next:hover{background:#00935f;transform:translateY(-1px)}
+.sim-select:focus{border-color:rgba(0,194,126,.5);box-shadow:0 0 0 3px rgba(0,194,126,.1)}
+.sim-next{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-vert-lt);color:#0a0a09;border:none;border-radius:var(--r-full);padding:15px 28px;cursor:pointer;white-space:nowrap;letter-spacing:-0.02em;transition:background .2s,transform .18s var(--ease-spring)}
+.sim-next:hover{background:#00C27E;transform:translateY(-1px)}
 @media(max-width:480px){.sim-select,.sim-next{width:100%}}
 /* Navigation simulateur (retour + reprise) */
 .sim-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 32px 0;flex-wrap:wrap}
 .sim-back{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--c-border);color:var(--c-mid);font-family:var(--ff-b);font-size:13px;font-weight:500;border-radius:var(--r-full);padding:8px 16px 8px 12px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
-.sim-back:hover{border-color:var(--c-vert);color:var(--c-vert);background:rgba(0,169,110,.05)}
+.sim-back:hover{border-color:var(--c-vert);color:var(--c-vert);background:rgba(0,194,126,.05)}
 .sim-reprise{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--c-muted);margin-left:auto}
 .sim-reprise-dot{width:7px;height:7px;border-radius:50%;background:var(--c-vert);flex-shrink:0}
 .sim-restart{background:none;border:none;color:var(--c-vert);font-family:var(--ff-b);font-size:12.5px;font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
@@ -418,6 +432,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 .cookie-accept:hover{background:var(--c-vert-lt)}
 .cookie-decline{font-family:var(--ff-h);font-size:13px;font-weight:500;background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-full);padding:8px 16px;cursor:pointer;transition:all .2s;letter-spacing:-0.01em}
 .cookie-decline:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.35)}
+.cookie-fab{position:fixed;bottom:24px;left:24px;z-index:499;width:46px;height:46px;border-radius:50%;background:var(--c-ink);color:#fff;border:none;cursor:pointer;font-size:20px;line-height:1;display:none;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .2s var(--ease-spring),box-shadow .2s}
+.cookie-fab.show{display:flex}
+.cookie-fab:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 26px rgba(0,0,0,.28)}
+@media(max-width:640px){.cookie-fab{bottom:12px;left:12px}}
 
 /* ── FAQ ── */
 .faq-section{border-top:1px solid var(--c-border);background:var(--c-bg3)}
@@ -516,7 +534,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
   .hero-layout{padding:40px 16px 60px;overflow:hidden;width:100%}
   .hv-card-main{margin:0}
 }
-.why-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.why-card .why-num{margin-bottom:0}.why-card .why-icon{margin-bottom:0}.story-roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}.story-role{background:var(--c-bg2);border:1.5px solid var(--c-vert);border-radius:var(--r-xl);padding:32px 28px;box-shadow:var(--shadow-card)}.story-role-icon{width:48px;height:48px;border-radius:var(--r-md);background:rgba(0,169,110,.1);display:flex;align-items:center;justify-content:center;color:var(--c-vert);margin-bottom:20px}.story-role-icon svg{width:24px;height:24px}.story-role h4{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-0.035em;margin-bottom:12px}.story-role p{font-size:14px;color:var(--c-muted);line-height:1.75;font-weight:300}@media(max-width:760px){.story-roles{grid-template-columns:1fr}}.story-photo{margin:48px auto 0;max-width:440px}.story-photo img{width:100%;height:auto;display:block;border-radius:var(--r-xl);border:1.5px solid var(--c-vert);box-shadow:var(--shadow-card)}
+.why-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.why-card .why-num{margin-bottom:0}.why-card .why-icon{margin-bottom:0}.story-roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}.story-role{background:var(--c-bg2);border:1.5px solid var(--c-vert);border-radius:var(--r-xl);padding:32px 28px;box-shadow:var(--shadow-card)}.story-role-icon{width:48px;height:48px;border-radius:var(--r-md);background:rgba(0,194,126,.1);display:flex;align-items:center;justify-content:center;color:var(--c-vert);margin-bottom:20px}.story-role-icon svg{width:24px;height:24px}.story-role h4{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-0.035em;margin-bottom:12px}.story-role p{font-size:14px;color:var(--c-muted);line-height:1.75;font-weight:300}@media(max-width:760px){.story-roles{grid-template-columns:1fr}}.story-photo{margin:48px auto 0;max-width:440px}.story-photo img{width:100%;height:auto;display:block;border-radius:var(--r-xl);border:1.5px solid var(--c-vert);box-shadow:var(--shadow-card)}
   /* Footer bas réorganisé */
   footer .footer-top{grid-template-columns:1fr}
   footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--c-vert);border-radius:16px;padding:16px 24px;margin:8px auto 36px}
@@ -524,13 +542,13 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
   footer .footer-bottom .footer-legal{font-size:12px;color:rgba(255,255,255,.9);font-weight:300;margin:0}
 .story-main{display:grid;grid-template-columns:.85fr 1fr;gap:44px;align-items:center;margin-top:48px}.story-main .story-photo{margin:0;max-width:none}.story-side .story-roles{grid-template-columns:1fr;margin-top:0}.story-side>p{margin-top:24px}@media(max-width:860px){.story-main{grid-template-columns:1fr;gap:28px}.story-main .story-photo{max-width:440px;margin:0 auto}}
   /* Préloader */
-  #preloader{position:fixed;inset:0;z-index:100000;background:#F8F6F1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease}
+  #preloader{position:fixed;inset:0;z-index:100000;background:#F4F6F5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease}
   #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-  #preloader .pl-logo{width:60px;height:60px;color:#00A96E;filter:drop-shadow(0 6px 20px rgba(0,169,110,.4));animation:plPulse 1.1s ease-in-out infinite}
+  #preloader .pl-logo{width:60px;height:60px;color:#00C27E;filter:drop-shadow(0 6px 20px rgba(0,194,126,.4));animation:plPulse 1.1s ease-in-out infinite}
   #preloader .pl-logo svg{width:100%;height:100%;display:block}
-  #preloader .pl-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.03em;color:#111110}
+  #preloader .pl-name{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.03em;color:#000000}
   #preloader .pl-bar{width:120px;height:3px;border-radius:99px;background:rgba(0,0,0,.08);overflow:hidden}
-  #preloader .pl-bar i{display:block;height:100%;width:40%;border-radius:99px;background:#00A96E;animation:plBar 1.1s ease-in-out infinite}
+  #preloader .pl-bar i{display:block;height:100%;width:40%;border-radius:99px;background:#00C27E;animation:plBar 1.1s ease-in-out infinite}
   @keyframes plPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.14);opacity:.65}}
   @keyframes plBar{0%{transform:translateX(-110%)}100%{transform:translateX(330%)}}
   @media(prefers-reduced-motion:reduce){#preloader .pl-logo,#preloader .pl-bar i{animation:none}}
@@ -596,7 +614,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 
 /* Vignettes articles accueil : systeme unifie + max 3 cartes visibles */
 .blog-grid .blog-thumb{height:172px;font-size:0;background:linear-gradient(150deg,#0c1a13 0%,#123326 55%,#0d251a 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.blog-grid .blog-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 74% 24%,rgba(0,169,110,.32),transparent 60%)}
+.blog-grid .blog-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 74% 24%,rgba(0,194,126,.32),transparent 60%)}
 .blog-grid .blog-thumb svg{width:60px;height:60px;position:relative;z-index:1}
 .blog-grid .blog-tag{z-index:2;background:rgba(255,255,255,.12);color:#c8f5e2;border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 .blog-grid a.blog-card:nth-of-type(n+4){display:none}
@@ -642,6 +660,14 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 </head>
 <body>
 
+<!-- TOPBAR PARTENAIRE -->
+<div class="topbar" id="topbar">
+  <svg class="tb-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z"/></svg>
+  <span class="tb-txt"><strong>Vous êtes installateur IRVE&nbsp;?</strong> Recevez des demandes qualifiées, sans prospecter.</span>
+  <a class="tb-cta" href="/partenaires.html">Devenir partenaire</a>
+  <button class="tb-close" aria-label="Fermer le bandeau" onclick="this.closest('.topbar').classList.add('hidden');document.body.classList.add('tb-off')">&times;</button>
+</div>
+
 <nav>
   <a class="nav-logo" href="/">
     <img class="nav-logo-img" src="data:image/png;base64,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" alt="Les Éclairés logo">
@@ -654,7 +680,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
     <li><a href="#faq">FAQ</a></li>
     <li><a href="/partenaires.html">Installateurs</a></li>
   </ul>
-  <a class="btn-nav" href="#simulateur-start">Simuler mon projet</a>
+  <a class="btn-nav" href="#simulateur-start">Simuler mon besoin</a>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
@@ -675,16 +701,11 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 
 <section class="sim-section" id="simulateur">
   <div class="sw">
-    <div class="reveal">
-      <span class="section-tag">Simulateur</span>
-      <h2 class="section-h2">Trouvez la bonne borne en quelques clics</h2>
-      <p class="section-lead">Répondez à quelques questions simples sur votre situation. On vous dit exactement quoi installer, combien ça va vous coûter et comment toucher les aides.</p>
-    </div>
     <div class="sim-card reveal" id="simulateur-start">
       <div class="sim-bar-top">
         <div class="sim-bar-left">
           <div class="sim-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
           <div><h3>À vous de jouer</h3><p>Obtenez vos résultats en quelques clics · Gratuit · Sans inscription</p></div>
         </div>
@@ -719,10 +740,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Vous vivez ou travaillez où ?</h3>
           <p class="q-sub">Selon où vous habitez et votre situation, les aides et les démarches sont différentes.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,0,'Maison individuelle')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><div class="opt-title">Maison individuelle</div><div class="opt-desc">Vous avez un garage ou une place de parking privée</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Copropriété')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10M8 6h1M15 6h1M8 10h1M15 10h1"/></svg></span><div class="opt-title">Appartement en copropriété</div><div class="opt-desc">Vous habitez dans un immeuble avec d'autres résidents</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Entreprise')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="20" height="15" rx="1"/><path d="M16 7V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v3M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></span><div class="opt-title">Entreprise ou commerce</div><div class="opt-desc">Pour vos employés, clients ou livreurs</div></div>
-            <div class="sim-opt" onclick="pick(this,0,'Parking public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg></span><div class="opt-title">Parking accessible au public</div><div class="opt-desc">Ouvert aux visiteurs ou aux clients</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Maison individuelle')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><div class="opt-title">Maison individuelle</div><div class="opt-desc">Vous avez un garage ou une place de parking privée</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Copropriété')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10M8 6h1M15 6h1M8 10h1M15 10h1"/></svg></span><div class="opt-title">Appartement en copropriété</div><div class="opt-desc">Vous habitez dans un immeuble avec d'autres résidents</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Entreprise')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="20" height="15" rx="1"/><path d="M16 7V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v3M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></span><div class="opt-title">Entreprise ou commerce</div><div class="opt-desc">Pour vos employés, clients ou livreurs</div></div>
+            <div class="sim-opt" onclick="pick(this,0,'Parking public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg></span><div class="opt-title">Parking accessible au public</div><div class="opt-desc">Ouvert aux visiteurs ou aux clients</div></div>
           </div>
         </div>
         <div class="sim-q" id="q1">
@@ -842,10 +863,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quel est le type de parking ?</h3>
           <p class="q-sub">L'emplacement de l'installation influence le matériel et le coût des travaux.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,2,'Extérieur')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="9" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.2" y1="5.2" x2="5.6" y2="6.6"/><line x1="18.4" y1="5.2" x2="19.8" y2="6.6"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span><div class="opt-title">Extérieur</div><div class="opt-desc">Places en plein air</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Souterrain')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="12" y1="2" x2="12" y2="10"/><polyline points="8 6 12 10 16 6"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="4" y1="19" x2="20" y2="19"/></svg></span><div class="opt-title">Souterrain</div><div class="opt-desc">Parking en sous-sol</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Couvert hors sol (silo)')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Couvert hors sol (silo)</div><div class="opt-desc">Parking en silo / étages</div></div>
-            <div class="sim-opt" onclick="pick(this,2,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs configurations</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Extérieur')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="9" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.2" y1="5.2" x2="5.6" y2="6.6"/><line x1="18.4" y1="5.2" x2="19.8" y2="6.6"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span><div class="opt-title">Extérieur</div><div class="opt-desc">Places en plein air</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Souterrain')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><line x1="12" y1="2" x2="12" y2="10"/><polyline points="8 6 12 10 16 6"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="4" y1="19" x2="20" y2="19"/></svg></span><div class="opt-title">Souterrain</div><div class="opt-desc">Parking en sous-sol</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Couvert hors sol (silo)')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Couvert hors sol (silo)</div><div class="opt-desc">Parking en silo / étages</div></div>
+            <div class="sim-opt" onclick="pick(this,2,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs configurations</div></div>
           </div>
         </div>
         <div class="sim-q" id="q3">
@@ -853,10 +874,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Qui sont les usagers finaux ?</h3>
           <p class="q-sub">On adapte la recommandation selon qui utilisera les bornes au quotidien.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,3,'Public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg></span><div class="opt-title">Public</div><div class="opt-desc">Ouvert à tous</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Privé')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span><div class="opt-title">Privé</div><div class="opt-desc">Usage réservé</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Collectivités')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="12 3 21 8 3 8 12 3"/><line x1="5" y1="8" x2="5" y2="18"/><line x1="10" y1="8" x2="10" y2="18"/><line x1="14" y1="8" x2="14" y2="18"/><line x1="19" y1="8" x2="19" y2="18"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Collectivités</div><div class="opt-desc">Communes, administrations</div></div>
-            <div class="sim-opt" onclick="pick(this,3,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs profils</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Public')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg></span><div class="opt-title">Public</div><div class="opt-desc">Ouvert à tous</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Privé')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span><div class="opt-title">Privé</div><div class="opt-desc">Usage réservé</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Collectivités')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="12 3 21 8 3 8 12 3"/><line x1="5" y1="8" x2="5" y2="18"/><line x1="10" y1="8" x2="10" y2="18"/><line x1="14" y1="8" x2="14" y2="18"/><line x1="19" y1="8" x2="19" y2="18"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><div class="opt-title">Collectivités</div><div class="opt-desc">Communes, administrations</div></div>
+            <div class="sim-opt" onclick="pick(this,3,'Mixtes')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span><div class="opt-title">Mixtes</div><div class="opt-desc">Plusieurs profils</div></div>
           </div>
         </div>
         <div class="sim-q" id="q4">
@@ -864,10 +885,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Combien de voitures électriques avez-vous ?</h3>
           <p class="q-sub">Le nombre de voitures détermine la puissance à installer et le nombre de prises nécessaires.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,4,'1 véhicule')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="9" width="22" height="9" rx="2"/><path d="M5 18v2M19 18v2M1 13h22"/><path d="M5 9l2-4h10l2 4"/></svg></span><div class="opt-title">1 seule voiture</div><div class="opt-desc">Pour mon véhicule personnel</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'2 à 5')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4v4a2 2 0 01-2 2h-1"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><div class="opt-title">2 à 5 voitures</div><div class="opt-desc">Famille ou petite flotte</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'6 à 20')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20M7 18v2M17 18v2"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg></span><div class="opt-title">6 à 20 voitures</div><div class="opt-desc">Flotte d'entreprise de taille moyenne</div></div>
-            <div class="sim-opt" onclick="pick(this,4,'20+')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h5l2 4v4h-7V10z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg></span><div class="opt-title">Plus de 20 voitures</div><div class="opt-desc">Grande flotte ou infrastructure publique</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'1 véhicule')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="9" width="22" height="9" rx="2"/><path d="M5 18v2M19 18v2M1 13h22"/><path d="M5 9l2-4h10l2 4"/></svg></span><div class="opt-title">1 seule voiture</div><div class="opt-desc">Pour mon véhicule personnel</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'2 à 5')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4v4a2 2 0 01-2 2h-1"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><div class="opt-title">2 à 5 voitures</div><div class="opt-desc">Famille ou petite flotte</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'6 à 20')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20M7 18v2M17 18v2"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg></span><div class="opt-title">6 à 20 voitures</div><div class="opt-desc">Flotte d'entreprise de taille moyenne</div></div>
+            <div class="sim-opt" onclick="pick(this,4,'20+')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h5l2 4v4h-7V10z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg></span><div class="opt-title">Plus de 20 voitures</div><div class="opt-desc">Grande flotte ou infrastructure publique</div></div>
           </div>
         </div>
         <div class="sim-q" id="q5">
@@ -875,13 +896,13 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quelle est la marque de votre voiture électrique ?</h3>
           <p class="q-sub">Chaque marque de voiture a une façon différente de se recharger. On s'en sert pour vous recommander la borne qui va le mieux.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,5,'Multi-marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 17V12a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M6 10l1.5-4h9L18 10"/><path d="M3 14h18"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg></span><div class="opt-title">Multi-marque</div><div class="opt-desc">Plusieurs véhicules ou marque non décidée</div></div>
-              <div class="sim-opt" onclick="pick(this,5,'Tesla')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Renault / Dacia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M18 8v3a6 6 0 01-12 0V8z"/><line x1="9" y1="2" x2="9" y2="8"/><line x1="15" y1="2" x2="15" y2="8"/><line x1="12" y1="17" x2="12" y2="22"/></svg></span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Volkswagen / Audi / Skoda')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V11l3-5h9l4 5v5"/><line x1="2" y1="16" x2="22" y2="16"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'BMW / Mercedes / Stellantis')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M1 15v-3l4-1 3-4h9l5 4v4"/><line x1="1" y1="15" x2="23" y2="15"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Hyundai / Kia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V9l3-4h10l3 4v7"/><line x1="2" y1="16" x2="22" y2="16"/><line x1="5" y1="9" x2="19" y2="9"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
-            <div class="sim-opt" onclick="pick(this,5,'Autre marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="9.5" y1="10" x2="9.5" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/></svg></span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Multi-marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 17V12a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M6 10l1.5-4h9L18 10"/><path d="M3 14h18"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg></span><div class="opt-title">Multi-marque</div><div class="opt-desc">Plusieurs véhicules ou marque non décidée</div></div>
+              <div class="sim-opt" onclick="pick(this,5,'Tesla')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tesla</div><div class="opt-desc">Connecteur CCS2 / Type 2</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Renault / Dacia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M18 8v3a6 6 0 01-12 0V8z"/><line x1="9" y1="2" x2="9" y2="8"/><line x1="15" y1="2" x2="15" y2="8"/><line x1="12" y1="17" x2="12" y2="22"/></svg></span><div class="opt-title">Renault / Dacia</div><div class="opt-desc">Type 2 · jusqu'à 22 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Volkswagen / Audi / Skoda')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V11l3-5h9l4 5v5"/><line x1="2" y1="16" x2="22" y2="16"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">VW / Audi / Skoda</div><div class="opt-desc">CCS2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'BMW / Mercedes / Stellantis')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M1 15v-3l4-1 3-4h9l5 4v4"/><line x1="1" y1="15" x2="23" y2="15"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span><div class="opt-title">BMW / Mercedes / Stellantis</div><div class="opt-desc">Type 2 · 7,4 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Hyundai / Kia')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 16V9l3-4h10l3 4v7"/><line x1="2" y1="16" x2="22" y2="16"/><line x1="5" y1="9" x2="19" y2="9"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div class="opt-title">Hyundai / Kia</div><div class="opt-desc">CCS2 · 7,2 à 11 kW AC</div></div>
+            <div class="sim-opt" onclick="pick(this,5,'Autre marque')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="9.5" y1="10" x2="9.5" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/></svg></span><div class="opt-title">Autre marque</div><div class="opt-desc">Toyota, MG, BYD, Volvo…</div></div>
           </div>
         </div>
         <div class="sim-q" id="q6">
@@ -889,9 +910,9 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Comment est votre tableau électrique ?</h3>
           <p class="q-sub">L'état de votre tableau électrique peut influencer le prix et la durée des travaux. Pas de panique si vous ne savez pas.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,6,'Tableau récent')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, avec des disjoncteurs</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Tableau ancien')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, avec des fusibles à vis</div></div>
-            <div class="sim-opt" onclick="pick(this,6,'Je ne sais pas')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00A96E"/></svg></span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">Un professionnel pourra vérifier ça gratuitement</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Tableau récent')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Tableau récent</div><div class="opt-desc">Moins de 10 ans, avec des disjoncteurs</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Tableau ancien')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Tableau ancien</div><div class="opt-desc">Plus de 10 ans, avec des fusibles à vis</div></div>
+            <div class="sim-opt" onclick="pick(this,6,'Je ne sais pas')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00C27E"/></svg></span><div class="opt-title">Je ne sais pas</div><div class="opt-desc">Un professionnel pourra vérifier ça gratuitement</div></div>
           </div>
         </div>
         <div class="sim-q" id="q7">
@@ -899,9 +920,9 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quel budget avez-vous prévu ?</h3>
           <p class="q-sub">Bonne nouvelle : des aides existent et peuvent réduire votre coût de moitié, voire plus.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,7,'Moins de 1 500€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Je cherche la solution la plus abordable</div></div>
-            <div class="sim-opt" onclick="pick(this,7,'1 500 à 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Entre 1 500 € et 5 000 €</div><div class="opt-desc">Je suis prêt à investir pour une bonne solution</div></div>
-            <div class="sim-opt" onclick="pick(this,7,'Plus de 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Je veux une installation complète et durable</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Moins de 1 500€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Moins de 1 500 €</div><div class="opt-desc">Je cherche la solution la plus abordable</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'1 500 à 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Entre 1 500 € et 5 000 €</div><div class="opt-desc">Je suis prêt à investir pour une bonne solution</div></div>
+            <div class="sim-opt" onclick="pick(this,7,'Plus de 5 000€')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span><div class="opt-title">Plus de 5 000 €</div><div class="opt-desc">Je veux une installation complète et durable</div></div>
           </div>
         </div>
         <div class="sim-q" id="q8">
@@ -909,9 +930,9 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Quand voulez-vous installer votre borne ?</h3>
           <p class="q-sub">Certaines aides peuvent prendre du temps à obtenir. Mieux vaut anticiper pour ne pas attendre.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,8,'Immédiat')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">J'en ai besoin dans moins d'un mois</div></div>
-            <div class="sim-opt" onclick="pick(this,8,'Ce trimestre')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans les 3 prochains mois</div><div class="opt-desc">Je n'ai pas d'urgence immédiate</div></div>
-            <div class="sim-opt" onclick="pick(this,8,'Dans 6 mois')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans 6 mois ou plus</div><div class="opt-desc">Je prépare mon projet à l'avance</div></div>
+            <div class="sim-opt" onclick="pick(this,8,'Immédiat')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="opt-title">Le plus vite possible</div><div class="opt-desc">J'en ai besoin dans moins d'un mois</div></div>
+            <div class="sim-opt" onclick="pick(this,8,'Ce trimestre')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans les 3 prochains mois</div><div class="opt-desc">Je n'ai pas d'urgence immédiate</div></div>
+            <div class="sim-opt" onclick="pick(this,8,'Dans 6 mois')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#454B48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div class="opt-title">Dans 6 mois ou plus</div><div class="opt-desc">Je prépare mon projet à l'avance</div></div>
           </div>
         </div>
         <div class="sim-q" id="q9">
@@ -919,9 +940,9 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Où en êtes-vous dans votre projet ?</h3>
           <p class="q-sub">On adapte nos conseils à là où vous en êtes dans votre projet.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,9,'Débutant')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/></svg></span><div class="opt-title">Je débute</div><div class="opt-desc">Je n'ai encore rien fait, je découvre le sujet</div></div>
-            <div class="sim-opt" onclick="pick(this,9,'Devis reçus')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div class="opt-title">J'ai reçu des devis</div><div class="opt-desc">Mais je ne comprends pas bien ce qui est proposé</div></div>
-            <div class="sim-opt" onclick="pick(this,9,'Bloqué')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00A96E"/></svg></span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">J'ai eu trop de réponses différentes et je ne sais plus quoi faire</div></div>
+            <div class="sim-opt" onclick="pick(this,9,'Débutant')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/></svg></span><div class="opt-title">Je débute</div><div class="opt-desc">Je n'ai encore rien fait, je découvre le sujet</div></div>
+            <div class="sim-opt" onclick="pick(this,9,'Devis reçus')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div class="opt-title">J'ai reçu des devis</div><div class="opt-desc">Mais je ne comprends pas bien ce qui est proposé</div></div>
+            <div class="sim-opt" onclick="pick(this,9,'Bloqué')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 015.12 2.1c0 1.8-2.62 2.7-2.62 2.7"/><circle cx="12" cy="17" r=".5" fill="#00C27E"/></svg></span><div class="opt-title">Je suis bloqué</div><div class="opt-desc">J'ai eu trop de réponses différentes et je ne sais plus quoi faire</div></div>
           </div>
         </div>
         <div class="sim-q" id="q10">
@@ -929,10 +950,10 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <h3 class="q-label">Voulez-vous réduire votre facture d'électricité ?</h3>
           <p class="q-sub">Certaines bornes se programment automatiquement pour recharger quand l'électricité coûte le moins cher.</p>
           <div class="sim-opts">
-            <div class="sim-opt" onclick="pick(this,10,'Recharge simple')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#55554F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Juste recharger ma voiture</div><div class="opt-desc">Sans chercher à optimiser ma consommation</div></div>
-            <div class="sim-opt" onclick="pick(this,10,'Heures creuses')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><div class="opt-title">Recharger la nuit, moins cher</div><div class="opt-desc">Les heures creuses coûtent 2 fois moins cher. La borne se programme toute seule</div></div>
-            <div class="sim-opt" onclick="pick(this,10,'Solaire')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></span><div class="opt-title">Utiliser mes panneaux solaires</div><div class="opt-desc">Je veux recharger avec l'énergie que je produis moi-même</div></div>
-            <div class="sim-opt" onclick="pick(this,10,'Maximiser économies')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.5-1.5 4.5-3 6H8c-1.5-1.5-3-3.5-3-6a7 7 0 017-7z"/></svg></span><div class="opt-title">Économiser au maximum</div><div class="opt-desc">Borne intelligente qui choisit le meilleur moment pour recharger et coûte le moins cher</div></div>
+            <div class="sim-opt" onclick="pick(this,10,'Recharge simple')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#454B48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M8 2v4M7 6h10l1 6a5 5 0 01-10 0l1-6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span><div class="opt-title">Juste recharger ma voiture</div><div class="opt-desc">Sans chercher à optimiser ma consommation</div></div>
+            <div class="sim-opt" onclick="pick(this,10,'Heures creuses')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><div class="opt-title">Recharger la nuit, moins cher</div><div class="opt-desc">Les heures creuses coûtent 2 fois moins cher. La borne se programme toute seule</div></div>
+            <div class="sim-opt" onclick="pick(this,10,'Solaire')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></span><div class="opt-title">Utiliser mes panneaux solaires</div><div class="opt-desc">Je veux recharger avec l'énergie que je produis moi-même</div></div>
+            <div class="sim-opt" onclick="pick(this,10,'Maximiser économies')"><span class="opt-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.5-1.5 4.5-3 6H8c-1.5-1.5-3-3.5-3-6a7 7 0 017-7z"/></svg></span><div class="opt-title">Économiser au maximum</div><div class="opt-desc">Borne intelligente qui choisit le meilleur moment pour recharger et coûte le moins cher</div></div>
           </div>
         </div>
                 <div class="sim-result" id="simRes">
@@ -961,7 +982,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
               
             </div>
             <div class="success" id="okMsg">
-              <div class="s-check"><svg viewBox="0 0 24 24" fill="none" stroke="#00A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <div class="s-check"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
               <h4>Vous êtes désormais Éclairé !</h4>
               <p>Récapitulatif et mise en relation sous 24h ouvrées.</p>
             </div>
@@ -1027,7 +1048,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
           <span>Le simulateur est-il vraiment gratuit ?</span>
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-a"><p>Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre modèle repose sur une commission versée par l'installateur lors de la mise en relation&nbsp;: cela ne change rien à votre prix.</p></div>
+        <div class="faq-a"><p>Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre service est financé par les installateurs partenaires, qui nous rémunèrent lorsqu'on leur transmet une demande qualifiée&nbsp;: cela ne change rien à votre prix.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1127,6 +1148,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
     <button class="cookie-decline" id="btnDecline">Refuser</button>
   </div>
 </div>
+<button class="cookie-fab" id="cookieFab" aria-label="Préférences cookies" title="Préférences cookies">&#x1F36A;</button>
 
 <button class="btt" id="btt" aria-label="Retour en haut">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -1375,24 +1397,31 @@ window._simBack=goBack;
 window._simReset=resetSim;
 window._sf=submitForm;
 var CK='les-eclaires-cookie-v2';
+function showCookieFab(){var f=gId('cookieFab');if(f)f.classList.add('show');}
+function hideCookieFab(){var f=gId('cookieFab');if(f)f.classList.remove('show');}
+function openCookie(){var b=gId('cookieBanner');if(b){b.style.display='';b.classList.add('show');}hideCookieFab();}
 function closeCookie(ok){
   var b=gId('cookieBanner');
-  if(b){b.classList.remove('show');b.style.display='none';}
+  if(b){b.classList.remove('show');}
   try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}
+  showCookieFab();
 }
 function initCookie(){
   try{
     if(!localStorage.getItem(CK)){
-      setTimeout(function(){var b=gId('cookieBanner');if(b){b.style.display='';b.classList.add('show');}},1800);
+      setTimeout(openCookie,1800);
+    } else {
+      showCookieFab();
     }
   }catch(e){
-    setTimeout(function(){var b=gId('cookieBanner');if(b){b.style.display='';b.classList.add('show');}},1800);
+    setTimeout(openCookie,1800);
   }
 }
 function initCookieButtons(){
-  var ba=gId('btnAccept'),bd=gId('btnDecline');
+  var ba=gId('btnAccept'),bd=gId('btnDecline'),cf=gId('cookieFab');
   if(ba) ba.addEventListener('click',function(){closeCookie(true);});
   if(bd) bd.addEventListener('click',function(){closeCookie(false);});
+  if(cf) cf.addEventListener('click',openCookie);
 }
 function initBtt(){
   var btt=gId('btt');

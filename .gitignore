@@ -25,3 +25,11 @@ pnpm-debug.log*
 
 # python cache
 __pycache__/
+
+# fichiers internes (ne pas publier sur le site)
+contrat-partenaire-irve.md
+Contrat-partenaire.pdf
+signature-mail.html
+signature-mail-harry.html
+signature-mail-laetitia.html
+preview-header-partenaire.html
