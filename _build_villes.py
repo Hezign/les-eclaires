@@ -11,14 +11,15 @@ def _between(a, b, s=REF):
 CSS     = _between('<style>', '</style>')
 FAVICON = _between('<link rel="icon"', '>')
 FONTS   = _between('<link href="https://fonts.googleapis.com', '>')
-NAVLOGO = re.search(r'nav-logo[^>]*><img src="(data:[^"]+)"', REF).group(1)
-FOOTLOGO = re.search(r'footer-bottom-logo" src="(data:[^"]+)"', REF).group(1)
+NAVLOGO = '/logo-eclaires.svg'
+FOOTLOGO = '/logo-eclaires.svg'
 
 GA = '''<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
   gtag('js', new Date());
   gtag('config', 'G-ZXGFCVHHDM');
 </script>'''

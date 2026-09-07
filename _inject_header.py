@@ -96,7 +96,7 @@ JS_COOKIE = '''<script>
 (function(){var CK='les-eclaires-cookie-v2';function el(i){return document.getElementById(i);}
 function showFab(){var f=el('cookieFab');if(f)f.classList.add('show');}
 function openC(){var b=el('cookieBanner');if(b)b.classList.add('show');var f=el('cookieFab');if(f)f.classList.remove('show');}
-function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}showFab();}
+function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
 try{if(!localStorage.getItem(CK)){setTimeout(openC,1800);}else{showFab();}}catch(e){setTimeout(openC,1800);}
 var ba=el('btnAccept'),bd=el('btnDecline'),cf=el('cookieFab');
 if(ba)ba.addEventListener('click',function(){closeC(true);});

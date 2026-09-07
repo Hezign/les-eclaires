@@ -74,7 +74,7 @@ page_css = '''
 .footer-top{grid-template-columns:1fr}
 .simp-hero{position:relative;padding:120px 0 40px;border-bottom:1px solid var(--c-border);overflow:hidden}
 .simp-hero .sw{position:relative;z-index:2}
-.simp-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:var(--c-vert);margin-bottom:22px}
+.simp-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:#007A50;margin-bottom:22px}
 .simp-badge .badge-dot{width:6px;height:6px;background:var(--c-vert);border-radius:50%}
 .simp-hero h1{font-size:clamp(34px,5vw,62px);font-weight:800;letter-spacing:-.045em;line-height:1.06;color:var(--c-ink);max-width:760px;margin:0 0 20px}
 .simp-hero h1 .hl{color:var(--c-vert)}
@@ -244,6 +244,7 @@ ga_head = '''<!-- Google tag (gtag.js) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
   gtag('js', new Date());
   gtag('config', 'G-ZXGFCVHHDM');
   window.track = function(name, params){
