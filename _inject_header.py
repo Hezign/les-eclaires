@@ -36,12 +36,12 @@ COOKIE = '''<!-- COOKIE BANNER -->
 CSS_COMMON = '''<style>
 /* Topbar partenaire + cookies (injecté) */
 :root{--topbar-h:40px;--c-vert-lt:#00F5A0}
-.topbar{position:fixed;top:0;left:0;width:100%;height:var(--topbar-h);z-index:300;background:var(--c-ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 44px 0 20px;font-family:var(--ff-b);font-size:13.5px;font-weight:400;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
+.topbar{position:fixed;top:0;left:0;width:100%;height:var(--topbar-h);z-index:300;background:var(--c-ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;overflow:hidden;padding:0 44px 0 20px;font-family:var(--ff-b);font-size:13.5px;font-weight:400;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
 .topbar.hidden{transform:translateY(-100%)}
-.topbar .tb-link{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;overflow:hidden}
+.topbar .tb-link{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;overflow:hidden;min-width:0}
 .topbar .tb-link:hover .tb-txt{text-decoration:underline}
 .topbar .tb-bolt{width:14px;height:14px;color:var(--c-vert-lt);flex-shrink:0}
-.topbar .tb-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .tb-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .topbar .tb-txt strong{font-weight:600;color:#fff}
 .topbar .tb-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:none;background:transparent;color:rgba(255,255,255,.55);cursor:pointer;font-size:18px;line-height:1;border-radius:50%}
 .topbar .tb-close:hover{color:#fff;background:rgba(255,255,255,.12)}
@@ -111,35 +111,48 @@ document.addEventListener('click',function(e){if(nav.classList.contains('open')&
 </script>'''
 
 
-def inject_file(path, is_blog=False):
+def inject_file(path, is_blog=True):
+    """Injecte topbar + cookie + HEADER COMPLET du site (nav identique partout)."""
     try:
         s = open(path, encoding='utf-8').read()
     except FileNotFoundError:
         return False
     if 'class="topbar"' in s:
         return False  # déjà injecté
-    css = CSS_COMMON + ('\n' + CSS_BLOG if is_blog else '')
+    css = CSS_COMMON + '\n' + CSS_BLOG
     if '</head>' in s:
         s = s.replace('</head>', css + '\n</head>', 1)
-    if is_blog:
-        s = re.sub(r'<nav>.*?</nav>', lambda m: NAV_BLOG, s, count=1, flags=re.S)
+    s = re.sub(r'<nav>.*?</nav>', lambda m: NAV_BLOG, s, count=1, flags=re.S)
     s = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + TOPBAR, s, count=1)
-    tail = COOKIE + '\n' + (JS_BURGER + '\n' if is_blog else '') + JS_COOKIE
+    tail = COOKIE + '\n' + JS_BURGER + '\n' + JS_COOKIE
     s = s.replace('</body>', tail + '\n</body>', 1)
+    open(path, 'w', encoding='utf-8').write(s)
+    return True
+
+
+def upgrade_nav(path):
+    """Remplace un nav réduit/partiel par le header complet (pages déjà injectées)."""
+    try:
+        s = open(path, encoding='utf-8').read()
+    except FileNotFoundError:
+        return False
+    if 'class="nav-links"' in s:
+        return False  # déjà header complet
+    s = re.sub(r'<nav>.*?</nav>', lambda m: NAV_BLOG, s, count=1, flags=re.S)
+    if '</head>' in s and CSS_BLOG not in s:
+        s = s.replace('</head>', CSS_BLOG + '\n</head>', 1)
+    if 'navBurger' in s and JS_BURGER not in s:
+        s = s.replace('</body>', JS_BURGER + '\n</body>', 1)
     open(path, 'w', encoding='utf-8').write(s)
     return True
 
 
 if __name__ == '__main__':
     import glob
-    static = ['partenaires.html', 'confidentialite.html', 'mentions-legales.html',
-              '404.html', 'copropriete.html', 'villes.html'] + glob.glob('villes/*.html')
-    blog = glob.glob('blog/*.html')
+    pages = ['partenaires.html', 'confidentialite.html', 'mentions-legales.html',
+             '404.html', 'copropriete.html', 'villes.html'] + glob.glob('villes/*.html') + glob.glob('blog/*.html')
     n = 0
-    for f in static:
-        if inject_file(f, is_blog=False):
+    for f in pages:
+        if inject_file(f):
             n += 1
-    for f in blog:
-        if inject_file(f, is_blog=True):
-            n += 1
-    print(f"{n} pages injectées (topbar + cookie ; header complet pour le blog)")
+    print(f"{n} pages injectées (topbar + cookie + header complet)")
