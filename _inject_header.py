@@ -16,9 +16,10 @@ NAV_BLOG = (_NAV_FULL
 
 TOPBAR = '''<!-- TOPBAR PARTENAIRE -->
 <div class="topbar" id="topbar">
-  <svg class="tb-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z"/></svg>
-  <span class="tb-txt"><strong>Vous &#234;tes installateur IRVE&nbsp;?</strong> Recevez des demandes qualifi&#233;es, sans prospecter.</span>
-  <a class="tb-cta" href="/partenaires.html">Devenir partenaire</a>
+  <a class="tb-link" href="/partenaires.html">
+    <svg class="tb-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z"/></svg>
+    <span class="tb-txt"><strong>Vous &#234;tes installateur IRVE&nbsp;?</strong> Recevez des demandes qualifi&#233;es, sans prospecter.</span>
+  </a>
   <button class="tb-close" aria-label="Fermer le bandeau" onclick="this.closest('.topbar').classList.add('hidden');document.body.classList.add('tb-off')">&times;</button>
 </div>'''
 
@@ -34,13 +35,14 @@ COOKIE = '''<!-- COOKIE BANNER -->
 
 CSS_COMMON = '''<style>
 /* Topbar partenaire + cookies (injecté) */
-:root{--topbar-h:40px}
-.topbar{position:fixed;top:0;left:0;width:100%;height:var(--topbar-h);z-index:300;background:var(--c-ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 20px;font-family:var(--ff-b);font-size:13.5px;font-weight:400;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
+:root{--topbar-h:40px;--c-vert-lt:#00F5A0}
+.topbar{position:fixed;top:0;left:0;width:100%;height:var(--topbar-h);z-index:300;background:var(--c-ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 44px 0 20px;font-family:var(--ff-b);font-size:13.5px;font-weight:400;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
 .topbar.hidden{transform:translateY(-100%)}
+.topbar .tb-link{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;overflow:hidden}
+.topbar .tb-link:hover .tb-txt{text-decoration:underline}
 .topbar .tb-bolt{width:14px;height:14px;color:var(--c-vert-lt);flex-shrink:0}
 .topbar .tb-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topbar .tb-txt strong{font-weight:600;color:#fff}
-.topbar .tb-cta{font-family:var(--ff-h);font-weight:600;font-size:13px;color:#0a0a09;background:var(--c-vert-lt);padding:5px 14px;border-radius:999px;white-space:nowrap;text-decoration:none;flex-shrink:0}
 .topbar .tb-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:none;background:transparent;color:rgba(255,255,255,.55);cursor:pointer;font-size:18px;line-height:1;border-radius:50%}
 .topbar .tb-close:hover{color:#fff;background:rgba(255,255,255,.12)}
 nav{top:calc(var(--topbar-h) + 12px)!important;transition:top .35s cubic-bezier(0.16,1,0.3,1)}
@@ -57,6 +59,8 @@ html{scroll-padding-top:calc(var(--topbar-h) + 90px)}
 .cookie-fab.show{display:flex}
 @media(max-width:640px){.cookie-banner{left:12px;right:12px;max-width:none;bottom:12px}.cookie-fab{bottom:12px;left:12px}}
 @media(max-width:560px){.topbar .tb-txt strong{display:none}}
+/* dégage le contenu sous le header + topbar (mobile) */
+@media(max-width:640px){.page,.hero-city{padding-top:calc(var(--topbar-h) + 76px)!important}}
 </style>'''
 
 CSS_BLOG = '''<style>
