@@ -547,3 +547,9 @@ if __name__ == '__main__':
         build_city(c); total += 1
     n = build_hub()
     print(f"{total} pages villes générées + hub /villes ({n} o).")
+    # Topbar partenaire + bulle cookie (durable après rebuild)
+    import _inject_header, glob as _glob
+    _inject_header.inject_file('villes.html', is_blog=False)
+    for _f in _glob.glob('villes/*.html'):
+        _inject_header.inject_file(_f, is_blog=False)
+    print("topbar + cookie injectés sur villes.html + villes/*")

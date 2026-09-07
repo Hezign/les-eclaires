@@ -192,3 +192,7 @@ html=f'''<!DOCTYPE html>
 '''
 open('copropriete.html','w',encoding='utf-8').write(html)
 print("copropriete.html écrit :", len(html), "octets")
+
+# Topbar partenaire + bulle cookie (durable après rebuild)
+import _inject_header
+_inject_header.inject_file('copropriete.html', is_blog=False)
