@@ -72,6 +72,9 @@ def normalize(path):
         open(path, 'w', encoding='utf-8').write(s)
     # Header complet + topbar + cookie (idempotent)
     _inject_header.inject_file(path)
+    # Mode sombre (toggle + thème)
+    import _apply_dark
+    _apply_dark.apply(path)
     return True
 
 
