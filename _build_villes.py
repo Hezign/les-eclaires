@@ -555,3 +555,8 @@ if __name__ == '__main__':
     for _f in _glob.glob('villes/*.html'):
         _inject_header.inject_file(_f, is_blog=False)
     print("topbar + cookie injectés sur villes.html + villes/*")
+    import _apply_dark
+    _apply_dark.apply('villes.html')
+    for _f in _glob.glob('villes/*.html'):
+        _apply_dark.apply(_f)
+    print("mode sombre appliqué sur villes.html + villes/*")

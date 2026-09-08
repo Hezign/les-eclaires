@@ -196,3 +196,6 @@ print("copropriete.html écrit :", len(html), "octets")
 # Topbar partenaire + bulle cookie (durable après rebuild)
 import _inject_header
 _inject_header.inject_file('copropriete.html', is_blog=False)
+# Mode sombre (durable après rebuild)
+import _apply_dark
+_apply_dark.apply('copropriete.html')

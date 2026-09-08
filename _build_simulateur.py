@@ -330,6 +330,8 @@ html = f'''<!DOCTYPE html>
 '''
 
 open('simulateur.html', 'w', encoding='utf-8').write(html)
+import _apply_dark
+_apply_dark.apply('simulateur.html')
 print("simulateur.html écrit :", len(html), "octets")
 # sanity
 for tag in ['id="simulateur-start"','function pick','var KEY=','faq-q','simp-hero']:
