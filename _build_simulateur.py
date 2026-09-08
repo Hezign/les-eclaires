@@ -105,6 +105,20 @@ page_css = '''
 @media(max-width:520px){
   .simp-grid{grid-template-columns:1fr}
 }
+/* ===== Design v2 : cohérence avec l'accueil ===== */
+/* Étapes -> bande sombre + cartes translucides + pastilles vertes */
+.simp-steps{background:var(--c-ink)}
+.simp-steps .section-tag{color:var(--c-vert-lt)}
+.simp-steps .section-h2{color:#fff}
+.simp-steps .section-lead{color:rgba(255,255,255,.7)}
+.simp-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);box-shadow:none}
+.simp-step:hover{transform:translateY(-6px);box-shadow:none;border-color:rgba(255,255,255,.2)}
+.simp-step h3{color:#fff}
+.simp-step p{color:rgba(255,255,255,.68)}
+.simp-step-n{background:var(--c-vert);color:#05231a}
+/* FAQ -> 2 colonnes (titre à gauche, questions à droite) */
+.faq-section .sw{display:grid;grid-template-columns:330px 1fr;gap:56px;align-items:start}
+@media(max-width:860px){.faq-section .sw{grid-template-columns:1fr;gap:24px}}
 </style>'''
 
 # ---- Hero d'intro (contenu unique) ----

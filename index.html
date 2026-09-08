@@ -101,7 +101,7 @@ body.tb-off nav{top:16px}
 .hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:calc(var(--topbar-h) + 88px);position:relative;overflow:hidden;background:var(--c-bg);width:100%;box-sizing:border-box}
 .hero-grain{position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
 .hero-circle1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,126,.07) 0%,transparent 64%);top:-140px;left:50%;transform:translateX(-50%);pointer-events:none}
-.hero-circle2{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,0,.05) 0%,transparent 64%);bottom:-80px;right:-80px;pointer-events:none}
+.hero-circle2{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,126,.05) 0%,transparent 64%);bottom:-80px;right:-80px;pointer-events:none}
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,black 0%,transparent 100%)}
 
 /* Hero layout: text left, visuals right */
@@ -220,7 +220,7 @@ body.tb-off nav{top:16px}
 .why-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
 .why-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:32px}
 .why-icon{width:48px;height:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.ic-v{background:rgba(0,194,126,.1)} .ic-j{background:rgba(212,160,0,.1)} .ic-c{background:rgba(0,0,0,.05)}
+.ic-v{background:rgba(0,194,126,.1)} .ic-j{background:rgba(0,194,126,.1)} .ic-c{background:rgba(0,0,0,.05)}
 .why-icon svg{width:24px;height:24px}
 .why-card h4{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-0.035em;margin-bottom:12px}
 .why-card p{font-size:14px;color:var(--c-muted);line-height:1.75;font-weight:300}
@@ -235,7 +235,7 @@ body.tb-off nav{top:16px}
 .p-num.nv{color:var(--c-vert)} .p-num.nj{color:var(--c-jaune)} .p-num.nm{color:var(--c-muted)}
 .p-icon{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .p-icon svg{width:20px;height:20px}
-.pi-v{background:rgba(0,194,126,.1)} .pi-j{background:rgba(212,160,0,.1)} .pi-m{background:rgba(0,0,0,.05)}
+.pi-v{background:rgba(0,194,126,.1)} .pi-j{background:rgba(0,194,126,.1)} .pi-m{background:rgba(0,0,0,.05)}
 .p-step h4{font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-0.03em;margin-bottom:8px}
 .p-step p{font-size:13px;color:var(--c-muted);line-height:1.6;font-weight:300}
 
@@ -279,7 +279,7 @@ body.tb-off nav{top:16px}
 .m-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:6px}
 .m-val{font-family:var(--ff-h);font-size:21px;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--c-ink)}
 .m-val.v{color:var(--c-vert)} .m-val.j{color:var(--c-jaune)}
-.lead-block{background:linear-gradient(135deg,rgba(0,194,126,.05) 0%,rgba(212,160,0,.04) 100%);border:1px solid rgba(0,194,126,.15);border-radius:var(--r-lg);padding:28px}
+.lead-block{background:linear-gradient(135deg,rgba(0,194,126,.05) 0%,rgba(0,194,126,.04) 100%);border:1px solid rgba(0,194,126,.15);border-radius:var(--r-lg);padding:28px}
 .lead-block h4{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-0.03em;margin-bottom:5px;color:var(--c-ink)}
 .lead-block>p{font-size:14px;color:var(--c-muted);font-weight:300;margin-bottom:20px}
 .form-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px}
@@ -368,8 +368,8 @@ body.tb-off nav{top:16px}
   position:relative;
   overflow:hidden;
 }
-.partner-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 50%,rgba(255,214,10,.07) 0%,transparent 70%);pointer-events:none}
-.partner-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,214,10,.35),transparent)}
+.partner-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 50%,rgba(0,242,160,.07) 0%,transparent 70%);pointer-events:none}
+.partner-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,242,160,.35),transparent)}
 .partner-left{flex:1;min-width:0}
 .partner-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-jaune-lt);margin-bottom:20px}
 .partner-eyebrow::before{content:'';display:inline-block;width:12px;height:12px;background:var(--c-jaune-lt);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -380,7 +380,7 @@ body.tb-off nav{top:16px}
 .p-feat::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--c-jaune-lt);flex-shrink:0}
 .partner-right{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:12px;position:relative;z-index:1}
 .btn-jaune{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-jaune-lt);color:#0a0a09;padding:16px 32px;border-radius:var(--r-full);border:none;cursor:pointer;white-space:nowrap;letter-spacing:-0.02em;transition:all .22s;display:inline-flex;align-items:center;gap:8px}
-.btn-jaune:hover{background:#F0CA00;transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,214,10,.28)}
+.btn-jaune:hover{background:#00C27E;transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,242,160,.28)}
 .p-note{font-size:12px;color:rgba(255,255,255,.3);line-height:1.5;text-align:right;white-space:nowrap}
 
 /* ── FOOTER ── */
@@ -730,12 +730,12 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 <style>/* uniform-fix */.footer-top{grid-template-columns:1fr}</style>
 <style>
 /* Carte recommandation (hero v2) + segments */
-.reco{position:relative;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.12);padding:26px;width:100%}
+.reco{position:relative;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.12);padding:20px 22px;width:100%}
 .reco::before{content:"";position:absolute;inset:0;border-radius:24px;background:radial-gradient(120% 80% at 90% 0%,rgba(0,242,160,.13),transparent 60%);pointer-events:none}
 .reco-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .reco-head .t{font-family:var(--ff-h);font-weight:800;font-size:15px;color:var(--c-ink)}
 .reco-pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--c-vert-bg);color:#007A50;padding:5px 11px;border-radius:999px}
-.reco-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--c-border);text-align:left}
+.reco-row{display:flex;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--c-border);text-align:left}
 .reco-ico{width:42px;height:42px;border-radius:12px;background:var(--c-vert-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .reco-ico svg{width:22px;height:22px;color:var(--c-vert)}
 .reco-row .k{font-size:12px;color:var(--c-muted)}
@@ -1148,11 +1148,11 @@ else{boot();}
       </div>
 
       <div class="proof-strip">
-        <span class="proof-item"><span class="proof-hi">5 min</span> pour un résultat clair</span>
+        <span class="proof-item"><span class="proof-hi">48 h</span> pour être recontacté</span>
         <span class="proof-sep">·</span>
-        <span class="proof-item"><span class="proof-hi">0 €</span> aucune inscription</span>
+        <span class="proof-item"><span class="proof-hi">5,5 %</span> de TVA en maison</span>
         <span class="proof-sep">·</span>
-        <span class="proof-item"><span class="proof-hi">100%</span> indépendant</span>
+        <span class="proof-item"><span class="proof-hi">100 %</span> indépendant</span>
       </div>
     </div>
 
@@ -1295,22 +1295,22 @@ else{boot();}
           <div class="process-grid reveal">
         <div class="p-step">
           <div class="p-head"><div class="p-icon pi-v"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div class="p-num nv">Étape 01</div></div>
-          <h4>Vous répondez à quelques questions</h4>
+          <h4>Vous répondez à<br>quelques questions</h4>
           <p>Type de logement, marque de voiture, délai, budget. Des questions simples, pas de jargon. Ça prend moins de 5 minutes.</p>
         </div>
         <div class="p-step">
           <div class="p-head"><div class="p-icon pi-j"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="p-num nj">Étape 02</div></div>
-          <h4>On vous donne un résultat clair</h4>
+          <h4>On vous donne<br>un résultat clair</h4>
           <p>On vous dit quelle borne installer, combien ça coûte, quelles aides vous pouvez avoir et dans quel délai. En langage simple.</p>
         </div>
         <div class="p-step">
           <div class="p-head"><div class="p-icon pi-v"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="p-num nv">Étape 03</div></div>
-          <h4>On vous met en contact</h4>
+          <h4>On vous met<br>en contact</h4>
           <p>On vous met en contact avec un électricien qualifié pour votre type de projet, dans votre secteur. Un seul appel à passer, pas dix.</p>
         </div>
         <div class="p-step">
           <div class="p-head"><div class="p-icon pi-m"><svg viewBox="0 0 24 24" fill="none" stroke="#454B48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><div class="p-num nm">Étape 04</div></div>
-          <h4>Vous installez sans stress</h4>
+          <h4>Vous installez<br>sans stress</h4>
           <p>Vous savez exactement ce que vous allez payer, les aides que vous allez toucher, et comment vous assurer que le travail est bien fait.</p>
         </div>
       </div>
@@ -1698,7 +1698,7 @@ else{boot();}
   <div class="sw">
     <div class="reveal">
       <span class="section-tag">Questions fréquentes</span>
-      <h2 class="section-h2">Tout ce que vous voulez savoir avant de commencer</h2>
+      <h2 class="section-h2">Tout ce que vous voulez savoir</h2>
       <p class="section-lead">Les questions que tout le monde se pose avant d'installer une borne.</p>
     </div>
     <div class="faq-grid reveal">
