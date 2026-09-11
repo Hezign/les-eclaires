@@ -196,16 +196,104 @@ def inject_index(path='blog/index.html'):
     return False
 
 
+# ── HOME : cartes blog des 3 derniers articles (auto) ──────────────────────
+FR_MOIS = ['', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet',
+           'août', 'septembre', 'octobre', 'novembre', 'décembre']
+
+HOME_BLOG_CSS = """<style id="home-blog-css">
+.blog-grid .blog-thumb{background:#0d1a14}
+.blog-grid .blog-thumb::after{display:none}
+.blog-grid .blog-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.blog-grid .blog-tag{background:rgba(255,255,255,.92);color:#0d1a14;border:none;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+</style>"""
+
+
+def _find(s, pattern):
+    m = re.search(pattern, s, re.I | re.S)
+    return m.group(1).strip() if m else ''
+
+
+def article_info(slug):
+    path = f'blog/{slug}.html'
+    if not os.path.exists(path):
+        return None
+    s = open(path, encoding='utf-8').read()
+    date = _find(s, r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})')
+    title = _find(s, r'<title>(.*?)</title>')
+    title = re.sub(r'\s*[|·\-–—]?\s*Les [ÉEée]clair[ée]s\s*$', '', title).strip()
+    desc = (_find(s, r'<meta name="description" content="([^"]*)"')
+            or _find(s, r'<meta property="og:description" content="([^"]*)"'))
+    badge = _find(s, r'<div class="badge">([^<]*)</div>')
+    return {'slug': slug, 'date': date, 'title': title, 'desc': desc, 'badge': badge}
+
+
+def update_home(path='index.html'):
+    if not os.path.exists(path):
+        return False
+    s = open(path, encoding='utf-8').read()
+    o = s
+
+    # 3 articles les plus récents parmi ceux qui ont une photo (dans MAP)
+    infos = [i for i in (article_info(sl) for sl in MAP) if i and i['date']]
+    infos.sort(key=lambda i: i['date'], reverse=True)
+    top = infos[:3]
+    if len(top) < 3:
+        return False
+
+    # CSS (remplace ou insère)
+    if 'id="home-blog-css"' in s:
+        s = re.sub(r'<style id="home-blog-css">.*?</style>', lambda m: HOME_BLOG_CSS, s, count=1, flags=re.S)
+    elif '</head>' in s:
+        s = s.replace('</head>', HOME_BLOG_CSS + '\n</head>', 1)
+
+    def esc(t):
+        return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+    cards = []
+    for i, info in enumerate(top, start=1):
+        slug = info['slug']
+        alt = MAP[slug].replace('"', '&quot;')
+        y, m, _d = info['date'].split('-')
+        datefr = f"{FR_MOIS[int(m)].capitalize()} {y}"
+        cards.append(
+            f'<a href="blog/{slug}.html" class="blog-card reveal rd{i}">\n'
+            f'        <div class="blog-thumb"><img src="/blog/img/{slug}-card.jpg" '
+            f'alt="{alt}" loading="lazy" width="640" height="420"><span class="blog-tag">{esc(info["badge"])}</span></div>\n'
+            f'        <div class="blog-body">\n'
+            f'          <div class="blog-date">{datefr}</div>\n'
+            f'          <div class="blog-title">{esc(info["title"])}</div>\n'
+            f'          <div class="blog-excerpt">{esc(info["desc"])}</div>\n'
+            f'          <span class="blog-cta">Lire l\'article →</span>\n'
+            f'        </div>\n'
+            f'      </a>')
+    grid = '<div class="blog-grid">\n      ' + '\n      '.join(cards) + '\n    </div>'
+
+    s = re.sub(r'<div class="blog-grid">\s*(?:<a [^>]*class="blog-card[^"]*"[^>]*>.*?</a>\s*)+</div>',
+               lambda m: grid, s, count=1, flags=re.S)
+
+    if s != o:
+        open(path, 'w', encoding='utf-8').write(s)
+        return True
+    return False
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
     if args:
         for f in args:
-            ok = inject_index(f) if f.endswith('index.html') else inject_article(f)
+            if f.rstrip('/').endswith('blog/index.html'):
+                ok = inject_index(f)
+            elif os.path.basename(f) == 'index.html':
+                ok = update_home(f)
+            else:
+                ok = inject_article(f)
             print(('maj  ' if ok else 'skip ') + f)
     else:
         n = 0
         if inject_index():
             print('maj  blog/index.html'); n += 1
+        if update_home('index.html'):
+            print('maj  index.html (home)'); n += 1
         for f in sorted(glob.glob('blog/*.html')):
             if f.endswith(('index.html', 'template.html')):
                 continue
