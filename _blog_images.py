@@ -40,29 +40,29 @@ MAP = {
     "choisir-installateur-irve-certifie":
         "Installateur IRVE certifié raccordant une borne de recharge",
     "comparatif-marques-borne-recharge-2026":
-        "Borne de recharge murale à domicile, comparatif des marques",
+        "Borne de recharge murale affichant sa puissance, comparatif des marques",
     "cout-recharge-electrique-domicile-2026":
-        "Femme rechargeant sa voiture électrique à domicile pour maîtriser le coût",
+        "Voiture électrique en charge sur une borne murale à domicile",
     "droit-prise-copropriete":
-        "Recharge d'une voiture électrique dans un garage de copropriété",
+        "Places réservées et borne de recharge dans le parking d'une copropriété",
     "entretien-duree-vie-borne-recharge-domicile":
         "Main vérifiant l'écran d'une borne de recharge lors de son entretien",
     "financement-infrastructure-collective-copropriete-advenir-2026":
-        "Couple étudiant le financement d'une infrastructure de recharge en copropriété",
+        "Poignée de main scellant le financement d'une infrastructure de recharge en copropriété",
     "guide-prime-advenir-2026":
-        "Couple se renseignant sur la prime ADVENIR pour leur borne de recharge",
+        "Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)",
     "heures-creuses-recharge-voiture-electrique":
-        "Voiture électrique en charge à domicile pendant les heures creuses",
+        "Bornes de recharge illuminées la nuit, recharger en heures creuses",
     "installation-borne-recharge-locataire":
-        "Locataire rechargeant sa voiture électrique à son domicile",
+        "Personne rechargeant sa voiture électrique à une borne, en tant que locataire",
     "prise-renforcee-ou-borne-de-recharge":
         "Main tenant un câble de recharge : prise renforcée ou borne ?",
     "prix-borne-de-recharge-maison-2026":
         "Femme et sa voiture électrique devant une borne de recharge à la maison",
     "recharge-bidirectionnelle-v2g-voiture-maison":
-        "Maison à panneaux solaires et voiture électrique, recharge bidirectionnelle V2G",
+        "Voiture électrique devant une maison, recharge bidirectionnelle V2G",
     "recharge-immeuble-ancien-copropriete":
-        "Voiture électrique en recharge dans le parking d'un immeuble ancien",
+        "Voiture électrique stationnée devant un immeuble ancien en copropriété",
     "trouver-installateur-borne-recharge-pres-de-chez-soi":
         "Artisan installant un équipement mural, trouver un installateur près de chez soi",
 }
@@ -136,6 +136,12 @@ def inject_article(path):
         s = re.sub(r'<div class="article-hero"[^>]*>.*?</div>', img, s,
                    count=1, flags=re.DOTALL)
 
+    # Rafraîchit l'alt si la photo (donc le texte) a changé depuis une injection précédente
+    s = re.sub(r'(<img class="hero-bg" src="' + re.escape(hero_img) + r'" alt=")[^"]*(")',
+               lambda m: m.group(1) + alt_esc + m.group(2), s)
+    s = re.sub(r'(<div class="article-hero has-photo"><img src="' + re.escape(hero_img) + r'" alt=")[^"]*(")',
+               lambda m: m.group(1) + alt_esc + m.group(2), s)
+
     # Métadonnées image
     s = set_meta_image(s, f"{BASE}{hero_img}")
 
@@ -168,6 +174,17 @@ def inject_index(path='blog/index.html'):
     s = re.sub(
         r'(<a class="blog-card" href="/blog/([a-z0-9\-]+)\.html">)(\s*<div class="bc-media">)?',
         repl, s)
+
+    # Rafraîchit l'alt des vignettes déjà présentes si le texte a changé
+    def refresh_alt(m):
+        slug = m.group(1)
+        alt = MAP.get(slug)
+        if not alt:
+            return m.group(0)
+        return (f'<div class="bc-media"><img src="/blog/img/{slug}-card.jpg" alt="'
+                + alt.replace(chr(34), "&quot;") + '"')
+    s = re.sub(r'<div class="bc-media"><img src="/blog/img/([a-z0-9\-]+)-card\.jpg" alt="[^"]*"',
+               refresh_alt, s)
 
     if s != o:
         open(path, 'w', encoding='utf-8').write(s)
