@@ -33,6 +33,8 @@ MAP = {
         "Flotte de voitures électriques en recharge sur le parking d'une entreprise",
     "borne-recharge-nantes-installateur-aides-2026":
         "Technicien installant une borne de recharge, service disponible à Nantes",
+    "borne-recharge-poitiers-installateur-aides":
+        "Électricien raccordant une installation, installateur de borne à Poitiers",
     "borne-recharge-solaire-autoconsommation":
         "Voiture électrique rechargée sous des panneaux solaires en autoconsommation",
     "choisir-installateur-irve-certifie":
