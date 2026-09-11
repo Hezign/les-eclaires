@@ -32,7 +32,7 @@ MAP = {
     "borne-recharge-entreprise-loi-lom-2026":
         "Flotte de voitures électriques en recharge sur le parking d'une entreprise",
     "borne-recharge-nantes-installateur-aides-2026":
-        "Technicien installant une borne de recharge, service disponible à Nantes",
+        "Voiture électrique en recharge dans une rue, borne de recharge à Nantes",
     "borne-recharge-poitiers-installateur-aides":
         "Électricien intervenant sur un tableau électrique, installateur de borne à Poitiers",
     "borne-recharge-solaire-autoconsommation":
@@ -68,7 +68,7 @@ MAP = {
 }
 
 COVER_CSS = """<style id="cover-css">
-.hero.has-photo{position:relative;isolation:isolate}
+.hero.has-photo{position:relative;isolation:isolate;margin-top:var(--topbar-h)}
 .hero.has-photo .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero.has-photo .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,12,.42) 0%,rgba(8,16,12,.5) 45%,rgba(8,16,12,.8) 100%)}
 .hero.has-photo .hero-in{position:relative;z-index:2}
@@ -117,8 +117,10 @@ def inject_article(path):
     hero_img = f"/blog/img/{slug}.jpg"
     alt_esc = alt.replace('"', '&quot;')
 
-    # CSS (idempotent)
-    if 'id="cover-css"' not in s and '</head>' in s:
+    # CSS (remplace le bloc existant pour propager les corrections, sinon insère)
+    if 'id="cover-css"' in s:
+        s = re.sub(r'<style id="cover-css">.*?</style>', lambda m: COVER_CSS, s, count=1, flags=re.DOTALL)
+    elif '</head>' in s:
         s = s.replace('</head>', COVER_CSS + '\n</head>', 1)
 
     # Gabarit A : .hero -> photo plein cadre + voile
@@ -154,7 +156,9 @@ def inject_article(path):
 def inject_index(path='blog/index.html'):
     s = open(path, encoding='utf-8').read()
     o = s
-    if 'id="cover-css-index"' not in s and '</head>' in s:
+    if 'id="cover-css-index"' in s:
+        s = re.sub(r'<style id="cover-css-index">.*?</style>', lambda m: INDEX_CSS, s, count=1, flags=re.DOTALL)
+    elif '</head>' in s:
         s = s.replace('</head>', INDEX_CSS + '\n</head>', 1)
 
     # injecte la vignette juste après l'ouverture de carte, si pas déjà présente.
