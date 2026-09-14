@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "description": "Source unique de vérité des aides IRVE et données réglementaires du site Les Éclairés. Toute valeur affichée sur le site doit provenir d'ici (via balise data-aide) plutôt que d'être codée en dur.",
+    "derniere_verification": "2026-09-14",
+    "prochaine_verification_conseillee": "2026-12-15",
+    "responsable": "Hezign",
+    "note": "Montants ADVENIR en HT (programme destiné aux opérateurs/syndics qui récupèrent la TVA). Prix indicatifs installation en TTC."
+  },
+  "advenir": {
+    "programme": {
+      "nom": "ADVENIR",
+      "pilote": "Avere-France",
+      "financement": "Certificats d'Économies d'Énergie (CEE)",
+      "regle_cle": "Dossier validé AVANT le début des travaux. Mention IRVE sur le devis et la facture.",
+      "bareme_en_vigueur_depuis": "2026-04-01",
+      "source": "https://advenir.mobi"
+    },
+    "copropriete": {
+      "borne_individuelle": {
+        "libelle": "Borne individuelle en copropriété",
+        "montant_ht": 1000,
+        "unite": "EUR/point",
+        "taux_prise_en_charge": 0.5
+      },
+      "borne_partagee": {
+        "libelle": "Borne partagée entre résidents",
+        "montant_ht": 1660,
+        "unite": "EUR/point",
+        "taux_prise_en_charge": 0.5
+      },
+      "infrastructure_collective": {
+        "libelle": "Infrastructure collective (colonne électrique)",
+        "montant_ht": 12500,
+        "unite": "EUR",
+        "plafond_jusqu_a_places": 100,
+        "majoration_par_place_au_dela_ht": 125,
+        "taux_prise_en_charge": 0.5
+      },
+      "surprime_vrd": {
+        "libelle": "Surprime travaux de voirie et réseaux (parking extérieur)",
+        "montant_ht": 8000,
+        "unite": "EUR",
+        "majoration_par_place_ext_au_dela_de_100_ht": 80,
+        "taux_prise_en_charge": 0.5,
+        "nouveaute": "2026-04-01"
+      },
+      "surprime_point_livraison": {
+        "libelle": "Surprime création point de livraison dédié (bornes partagées)",
+        "montant_ht": 3000,
+        "unite": "EUR",
+        "taux_prise_en_charge": 0.5,
+        "nouveaute": "2026-04-01"
+      }
+    },
+    "non_eligible": ["Pavillons individuels (maison individuelle non copropriété)"]
+  },
+  "credit_impot_particuliers": {
+    "statut": "SUPPRIME",
+    "supprime_depuis": "2025-12-31",
+    "note": "Dispositif non reconduit. Ne jamais l'annoncer comme actif sur le site."
+  },
+  "tva": {
+    "borne_recharge": {
+      "taux": 0.055,
+      "conditions": "Pose par professionnel qualifié IRVE, logement de plus de 2 ans.",
+      "reference_cgi": "Article 278-0 bis N du CGI"
+    },
+    "prise_renforcee": {
+      "taux": 0.10,
+      "note": "La prise renforcée (type Green'Up) n'est pas une borne IRVE : taux intermédiaire de 10 % (travaux d'amélioration), pas 5,5 %."
+    },
+    "taux_normal": 0.20
+  },
+  "prix_indicatifs_ttc": {
+    "note": "Pose comprise, ordres de grandeur 2026, France.",
+    "borne_7_4_kw": {"min": 1200, "max": 2000, "unite": "EUR TTC"},
+    "borne_22_kw": {"min": 2500, "max": 3500, "unite": "EUR TTC"},
+    "prise_renforcee": {"min": 500, "max": 1000, "unite": "EUR TTC"}
+  },
+  "qualification_irve": {
+    "obligatoire_au_dela_de_kw": 3.7,
+    "organismes_accredites": ["Qualifelec", "AFNOR Certification"],
+    "niveaux": {
+      "P1": "Bornes sans supervision, jusqu'à 22 kW",
+      "P2": "Bornes communicantes et supervisées",
+      "P3": "Charge rapide en courant continu"
+    },
+    "mention": "La mention IRVE doit figurer sur le devis et la facture pour l'éligibilité aux aides."
+  },
+  "droit_a_la_prise": {
+    "textes_legislatifs": ["L. 113-16 CCH", "L. 113-17 CCH"],
+    "textes_reglementaires": ["R. 113-6 CCH", "R. 113-7 CCH", "R. 113-8 CCH", "R. 113-9 CCH", "R. 113-10 CCH"],
+    "note": "Depuis le décret 2021-872. Les anciennes références R. 136-1 et suivants sont obsolètes (disparues au 01/01/2021).",
+    "delai_reponse_syndic_mois": 3
+  }
+}
