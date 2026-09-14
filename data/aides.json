@@ -4,7 +4,8 @@
     "derniere_verification": "2026-09-14",
     "prochaine_verification_conseillee": "2026-12-15",
     "responsable": "Hezign",
-    "note": "Montants ADVENIR en HT (programme destiné aux opérateurs/syndics qui récupèrent la TVA). Prix indicatifs installation en TTC."
+    "note": "Montants ADVENIR en HT (programme destiné aux opérateurs/syndics qui récupèrent la TVA). Prix indicatifs installation en TTC.",
+    "convention_balisage": "Les valeurs affichées sur le site sont enveloppées d'un <span data-aide=\"chemin.dans.ce.json\">…</span> (texte visible = valeur, chemin = clé pointée). Brique 3 v1 : tableaux de barème ADVENIR de guide-prime-advenir-2026, financement-infrastructure-collective-copropriete-advenir-2026, devenir-installateur-agree-advenir (15 balises). À étendre aux mentions en prose et à TVA/prix. La propagation (workflow n8n via API GitHub) lit ce JSON et réécrit le contenu des span data-aide correspondants."
   },
   "advenir": {
     "programme": {
