@@ -1,0 +1,37 @@
+name: Propager les aides
+
+# Dès qu'un montant change dans data/aides.json (édité à la main ou via PR),
+# ce workflow réécrit toutes les valeurs <span data-aide> du site et recommit.
+# Vercel redéploie ensuite automatiquement. « Un seul endroit -> tout le site. »
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/aides.json'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  propager:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Propager aides.json vers le HTML
+        run: python3 _propager_aides.py
+      - name: Commit si des valeurs ont changé
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Propagation auto des aides depuis data/aides.json [skip ci]"
+            git push
+          else
+            echo "Aucune valeur à propager : le site est déjà cohérent."
+          fi
