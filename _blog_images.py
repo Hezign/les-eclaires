@@ -345,9 +345,13 @@ def _cover(src, dst, W, H):
     """Redimensionne + recadre au centre pour remplir WxH (comme object-fit:cover)."""
     shutil.copyfile(src, dst)
     ow, oh = _dims(dst)
-    scale = max(W / ow, H / oh)
-    nw, nh = max(W, round(ow * scale)), max(H, round(oh * scale))
-    _sips("--resampleWidth", str(nw), "--resampleHeight", str(nh), dst)
+    # Redimensionne sur UNE seule dimension (sinon sips combine mal les deux flags
+    # et sous-dimensionne, ce qui fait padder le crop en noir). On choisit la
+    # dimension qui garantit de couvrir WxH, puis on recadre au centre.
+    if W / ow >= H / oh:
+        _sips("--resampleWidth", str(W), dst)              # largeur=W, hauteur >= H
+    else:
+        _sips("--resampleHeight", str(H), dst)             # hauteur=H, largeur >= W
     _sips("-c", str(H), str(W), dst)                       # crop centré (hauteur largeur)
     _sips("-s", "format", "jpeg", "-s", "formatOptions", "82", dst)
 
