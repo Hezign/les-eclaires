@@ -32,10 +32,6 @@ MAP = {
         "Automobiliste rechargeant sa voiture à une borne publique en itinérance",
     "borne-recharge-entreprise-loi-lom-2026":
         "Flotte de voitures électriques en recharge sur le parking d'une entreprise",
-    "borne-recharge-nantes-installateur-aides-2026":
-        "Voiture électrique en recharge dans une rue, borne de recharge à Nantes",
-    "borne-recharge-poitiers-installateur-aides":
-        "Électricien intervenant sur un tableau électrique, installateur de borne à Poitiers",
     "borne-recharge-solaire-autoconsommation":
         "Voiture électrique rechargée sous des panneaux solaires en autoconsommation",
     "choisir-installateur-irve-certifie":
@@ -66,12 +62,6 @@ MAP = {
         "Voiture électrique stationnée devant un immeuble ancien en copropriété",
     "trouver-installateur-borne-recharge-pres-de-chez-soi":
         "Technicien souriant avec sa camionnette et sa caisse à outils, installateur près de chez soi",
-    "borne-recharge-chambery-installateur-aides-2026":
-        "Voiture électrique en recharge à Chambéry, borne installée par un professionnel certifié",
-    "borne-recharge-clermont-ferrand-installateur-aides-2026":
-        "Borne de recharge pour voiture électrique à Clermont-Ferrand, installateur certifié IRVE",
-    "borne-recharge-vannes-installateur-aides-2026":
-        "Borne de recharge pour voiture électrique à Vannes, installateur certifié IRVE",
     "devenir-installateur-agree-advenir":
         "Électricien installant une borne de recharge, parcours pour devenir installateur agréé ADVENIR",
     "logiciel-gestion-installateur-irve":
@@ -81,9 +71,6 @@ MAP = {
 # Requête Pexels par slug (en anglais = meilleurs résultats topiques).
 # Un article absent de QUERY reçoit une requête thématique par défaut (variée par slug).
 QUERY = {
-    "borne-recharge-chambery-installateur-aides-2026": "electric car charging station",
-    "borne-recharge-clermont-ferrand-installateur-aides-2026": "electric vehicle charging",
-    "borne-recharge-vannes-installateur-aides-2026": "electric car charging point",
     "devenir-installateur-agree-advenir": "electrician installing ev charger",
     "logiciel-gestion-installateur-irve": "technician using tablet worksite",
 }

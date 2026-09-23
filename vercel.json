@@ -31,6 +31,31 @@
   ],
   "redirects": [
     {
+      "source": "/blog/borne-recharge-chambery-installateur-aides-2026.html",
+      "destination": "/villes/borne-recharge-chambery.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-recharge-clermont-ferrand-installateur-aides-2026.html",
+      "destination": "/villes/borne-recharge-clermont-ferrand.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-recharge-nantes-installateur-aides-2026.html",
+      "destination": "/villes/borne-recharge-nantes.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-recharge-poitiers-installateur-aides.html",
+      "destination": "/villes/borne-recharge-poitiers.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/borne-recharge-vannes-installateur-aides-2026.html",
+      "destination": "/villes/borne-recharge-vannes.html",
+      "permanent": true
+    },
+    {
       "source": "/blog/borne-de-recharge-a-la-maison-quel-prix-total-faut-il-vraime.html",
       "destination": "/blog/prix-borne-de-recharge-maison-2026.html",
       "permanent": true
