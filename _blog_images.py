@@ -17,9 +17,10 @@ Crédit : photos Pexels (licence gratuite, usage commercial, sans attribution re
 Pour ajouter un article : ajouter son slug + texte alt dans MAP ci-dessous, déposer
 les 2 images dans blog/img/, relancer le script.
 """
-import re, sys, glob, os
+import re, sys, glob, os, json, hashlib, shutil, subprocess, urllib.request, urllib.parse
 
 BASE = "https://leseclaires.fr"
+IMG_DIR = "blog/img"
 
 # slug (= nom de fichier sans .html)  ->  texte alt (français, descriptif, honnête)
 MAP = {
@@ -65,7 +66,31 @@ MAP = {
         "Voiture électrique stationnée devant un immeuble ancien en copropriété",
     "trouver-installateur-borne-recharge-pres-de-chez-soi":
         "Technicien souriant avec sa camionnette et sa caisse à outils, installateur près de chez soi",
+    "borne-recharge-chambery-installateur-aides-2026":
+        "Voiture électrique en recharge à Chambéry, borne installée par un professionnel certifié",
+    "borne-recharge-clermont-ferrand-installateur-aides-2026":
+        "Borne de recharge pour voiture électrique à Clermont-Ferrand, installateur certifié IRVE",
+    "borne-recharge-vannes-installateur-aides-2026":
+        "Borne de recharge pour voiture électrique à Vannes, installateur certifié IRVE",
+    "devenir-installateur-agree-advenir":
+        "Électricien installant une borne de recharge, parcours pour devenir installateur agréé ADVENIR",
+    "logiciel-gestion-installateur-irve":
+        "Installateur IRVE consultant un logiciel de gestion de chantier sur tablette",
 }
+
+# Requête Pexels par slug (en anglais = meilleurs résultats topiques).
+# Un article absent de QUERY reçoit une requête thématique par défaut (variée par slug).
+QUERY = {
+    "borne-recharge-chambery-installateur-aides-2026": "electric car charging station",
+    "borne-recharge-clermont-ferrand-installateur-aides-2026": "electric vehicle charging",
+    "borne-recharge-vannes-installateur-aides-2026": "electric car charging point",
+    "devenir-installateur-agree-advenir": "electrician installing ev charger",
+    "logiciel-gestion-installateur-irve": "technician using tablet worksite",
+}
+DEFAULT_QUERIES = [
+    "electric car charging station", "ev charging at home", "electric vehicle charging",
+    "charging electric car", "ev charger wallbox garage",
+]
 
 COVER_CSS = """<style id="cover-css">
 .hero.has-photo{position:relative;isolation:isolate;margin-top:var(--topbar-h)}
@@ -109,9 +134,11 @@ def set_meta_image(s, url):
 
 def inject_article(path):
     slug = slug_of(path)
-    alt = MAP.get(slug)
+    if not os.path.exists(f"{IMG_DIR}/{slug}.jpg"):
+        return False  # pas de photo dispo : on ne référence pas une image manquante
+    alt = alt_for(slug)
     if not alt:
-        return False  # article non mappé : on ne touche pas
+        return False  # pas d'alt exploitable
     s = open(path, encoding='utf-8').read()
     o = s
     hero_img = f"/blog/img/{slug}.jpg"
@@ -167,7 +194,9 @@ def inject_index(path='blog/index.html'):
         head, slug, existing = m.group(1), m.group(2), m.group(3)
         if existing:                       # déjà injecté
             return m.group(0)
-        alt = MAP.get(slug)
+        if not os.path.exists(f"{IMG_DIR}/{slug}-card.jpg"):
+            return m.group(0)              # pas de vignette : on n'injecte rien
+        alt = alt_for(slug)
         if not alt:
             return m.group(0)
         media = (f'\n          <div class="bc-media"><img src="/blog/img/{slug}-card.jpg" '
@@ -182,7 +211,7 @@ def inject_index(path='blog/index.html'):
     # Rafraîchit l'alt des vignettes déjà présentes si le texte a changé
     def refresh_alt(m):
         slug = m.group(1)
-        alt = MAP.get(slug)
+        alt = alt_for(slug)
         if not alt:
             return m.group(0)
         return (f'<div class="bc-media"><img src="/blog/img/{slug}-card.jpg" alt="'
@@ -233,8 +262,11 @@ def update_home(path='index.html'):
     s = open(path, encoding='utf-8').read()
     o = s
 
-    # 3 articles les plus récents parmi ceux qui ont une photo (dans MAP)
-    infos = [i for i in (article_info(sl) for sl in MAP) if i and i['date']]
+    # 3 articles les plus récents parmi ceux qui ont réellement une photo
+    slugs = [slug_of(p) for p in glob.glob('blog/*.html')
+             if slug_of(p) not in ('index', 'template')]
+    infos = [i for i in (article_info(sl) for sl in slugs)
+             if i and i['date'] and os.path.exists(f"{IMG_DIR}/{i['slug']}-card.jpg")]
     infos.sort(key=lambda i: i['date'], reverse=True)
     top = infos[:3]
     if len(top) < 3:
@@ -252,7 +284,7 @@ def update_home(path='index.html'):
     cards = []
     for i, info in enumerate(top, start=1):
         slug = info['slug']
-        alt = MAP[slug].replace('"', '&quot;')
+        alt = (alt_for(slug) or info['title']).replace('"', '&quot;')
         y, m, _d = info['date'].split('-')
         datefr = f"{FR_MOIS[int(m)].capitalize()} {y}"
         cards.append(
@@ -277,6 +309,119 @@ def update_home(path='index.html'):
     return False
 
 
+# ── Récupération auto d'une photo Pexels (bannière + vignette) ─────────────
+def _pexels_key():
+    """Clé API Pexels depuis l'env PEXELS_API_KEY ou un fichier .pexels-key (hors git)."""
+    k = os.environ.get("PEXELS_API_KEY", "").strip()
+    if k:
+        return k
+    for p in (".pexels-key", os.path.expanduser("~/.pexels-key")):
+        try:
+            with open(p) as fh:
+                k = fh.read().strip()
+                if k:
+                    return k
+        except OSError:
+            pass
+    return ""
+
+
+def query_for(slug):
+    if slug in QUERY:
+        return QUERY[slug]
+    h = int(hashlib.md5(slug.encode()).hexdigest(), 16)
+    return DEFAULT_QUERIES[h % len(DEFAULT_QUERIES)]
+
+
+def alt_for(slug):
+    """Texte alt : override MAP, sinon dérivé du <title> de l'article."""
+    if slug in MAP:
+        return MAP[slug]
+    info = article_info(slug)
+    return info['title'] if info and info.get('title') else None
+
+
+def _sips(*args):
+    subprocess.run(["sips", *args], check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def _dims(path):
+    out = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", path],
+                         capture_output=True, text=True).stdout
+    w = int(re.search(r'pixelWidth:\s*(\d+)', out).group(1))
+    h = int(re.search(r'pixelHeight:\s*(\d+)', out).group(1))
+    return w, h
+
+
+def _cover(src, dst, W, H):
+    """Redimensionne + recadre au centre pour remplir WxH (comme object-fit:cover)."""
+    shutil.copyfile(src, dst)
+    ow, oh = _dims(dst)
+    scale = max(W / ow, H / oh)
+    nw, nh = max(W, round(ow * scale)), max(H, round(oh * scale))
+    _sips("--resampleWidth", str(nw), "--resampleHeight", str(nh), dst)
+    _sips("-c", str(H), str(W), dst)                       # crop centré (hauteur largeur)
+    _sips("-s", "format", "jpeg", "-s", "formatOptions", "82", dst)
+
+
+def fetch_photo(slug):
+    """Télécharge une photo Pexels topique -> <slug>.jpg (bannière) + <slug>-card.jpg.
+    Idempotent : ne fait rien si la bannière existe déjà. Renvoie True si téléchargé."""
+    banner = f"{IMG_DIR}/{slug}.jpg"
+    if os.path.exists(banner):
+        return False
+    key = _pexels_key()
+    if not key:
+        print(f"    ! pas de cle Pexels (PEXELS_API_KEY ou .pexels-key) -> {slug} sans photo")
+        return False
+    q = query_for(slug)
+    h = int(hashlib.md5(slug.encode()).hexdigest(), 16)
+    api = ("https://api.pexels.com/v1/search?orientation=landscape&per_page=15&query="
+           + urllib.parse.quote(q))
+    try:
+        req = urllib.request.Request(api, headers={"Authorization": key})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.load(r)
+    except Exception as e:
+        print(f"    ! echec API Pexels pour {slug} : {e}")
+        return False
+    photos = data.get("photos", [])
+    if not photos:
+        print(f"    ! aucun resultat Pexels pour «{q}» ({slug})")
+        return False
+    photo = photos[h % len(photos)]                        # varie selon le slug
+    src = photo["src"]
+    src_url = src.get("large2x") or src.get("large") or src.get("original")
+    os.makedirs(IMG_DIR, exist_ok=True)
+    tmp = f"{IMG_DIR}/.{slug}.src.jpg"
+    try:
+        dl = urllib.request.Request(src_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(dl, timeout=60) as r, open(tmp, "wb") as f:
+            f.write(r.read())
+        _cover(tmp, banner, 1600, 760)
+        _cover(tmp, f"{IMG_DIR}/{slug}-card.jpg", 800, 525)
+    except Exception as e:
+        print(f"    ! echec traitement image {slug} : {e}")
+        return False
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+    print(f"    + photo Pexels : {slug} (#{photo.get('id')}, «{q}»)")
+    return True
+
+
+def ensure_all_photos():
+    """Télécharge la photo de tout article de blog qui n'en a pas encore."""
+    n = 0
+    for f in sorted(glob.glob('blog/*.html')):
+        if f.endswith(('index.html', 'template.html')):
+            continue
+        if fetch_photo(slug_of(f)):
+            n += 1
+    return n
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
     if args:
@@ -286,10 +431,14 @@ if __name__ == '__main__':
             elif os.path.basename(f) == 'index.html':
                 ok = update_home(f)
             else:
+                fetch_photo(slug_of(f))        # récupère la photo si absente
                 ok = inject_article(f)
             print(('maj  ' if ok else 'skip ') + f)
     else:
         n = 0
+        got = ensure_all_photos()              # télécharge les photos manquantes
+        if got:
+            print(f'--- {got} photo(s) Pexels récupérée(s) ---')
         if inject_index():
             print('maj  blog/index.html'); n += 1
         if update_home('index.html'):

@@ -38,3 +38,6 @@ preview-header-partenaire.html
 landing-v2-preview.html
 index-v2-preview.html
 index-dark-preview.html
+
+# Clé API Pexels (récupération auto des photos de blog) - NE PAS committer
+.pexels-key
