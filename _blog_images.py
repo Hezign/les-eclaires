@@ -63,7 +63,7 @@ MAP = {
     "trouver-installateur-borne-recharge-pres-de-chez-soi":
         "Technicien souriant avec sa camionnette et sa caisse à outils, installateur près de chez soi",
     "devenir-installateur-agree-advenir":
-        "Électricien installant une borne de recharge, parcours pour devenir installateur agréé ADVENIR",
+        "Bornes de recharge pour voitures électriques sur un parking, le métier d'installateur agréé ADVENIR",
     "logiciel-gestion-installateur-irve":
         "Installateur IRVE consultant un logiciel de gestion de chantier sur tablette",
 }
