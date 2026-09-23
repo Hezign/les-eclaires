@@ -58,7 +58,9 @@
     },
     {
       "@type":"FAQPage",
-      "mainEntity":[{"@type":"Question","name":"Le simulateur est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre service est financé par les installateurs partenaires, qui nous rémunèrent lorsqu'on leur transmet une demande qualifiée&nbsp;: cela ne change rien à votre prix."}},
+      "mainEntity":[{"@type":"Question","name":"Qu'est-ce qu'un simulateur IRVE de borne de recharge&nbsp;?","acceptedAnswer":{"@type":"Answer","text":"Un simulateur IRVE est un outil en ligne qui détermine, à partir de votre situation, quelle borne de recharge électrique installer pour votre voiture&nbsp;: la puissance adaptée (3,7, 7,4, 11 ou 22&nbsp;kW), le budget réaliste pose comprise, les aides mobilisables (prime ADVENIR, TVA réduite) et le délai. Notre simulateur de charge est gratuit, indépendant et sans inscription."}},
+{"@type":"Question","name":"Sur quels critères le simulateur calcule-t-il ma recommandation&nbsp;?","acceptedAnswer":{"@type":"Answer","text":"Le simulateur de borne de recharge croise plusieurs critères&nbsp;: votre type de logement (maison, copropriété, locataire ou propriétaire), la puissance de votre compteur, le modèle et l'autonomie de votre véhicule électrique, vos habitudes de recharge (kilométrage, recharge de nuit en heures creuses) et votre zone géographique. Il en déduit la puissance de borne idéale, une fourchette de prix réaliste et les aides auxquelles vous pouvez prétendre."}},
+{"@type":"Question","name":"Le simulateur est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, totalement. Le simulateur et la recommandation sont 100&nbsp;% gratuits pour les particuliers, sans inscription ni carte bancaire. Notre service est financé par les installateurs partenaires, qui nous rémunèrent lorsqu'on leur transmet une demande qualifiée&nbsp;: cela ne change rien à votre prix."}},
 {"@type":"Question","name":"Combien de temps prend la simulation ?","acceptedAnswer":{"@type":"Answer","text":"Environ 3 minutes. Ce sont quelques questions simples sur votre logement, votre véhicule et vos habitudes. Aucune connaissance technique n'est nécessaire&nbsp;: on traduit tout en langage clair."}},
 {"@type":"Question","name":"Dois-je créer un compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Vous répondez aux questions directement, et vous renseignez seulement votre email (et éventuellement votre téléphone) à la fin pour recevoir votre récapitulatif détaillé."}},
 {"@type":"Question","name":"Que se passe-t-il après la simulation ?","acceptedAnswer":{"@type":"Answer","text":"Vous recevez par email un récapitulatif complet de votre projet&nbsp;: puissance conseillée, budget estimé, aides mobilisables et délai. Ensuite, on vous met en relation avec un installateur certifié IRVE sélectionné pour votre situation, sous 24&nbsp;à 48&nbsp;heures."}},
@@ -690,7 +692,7 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 .sim-card{margin-top:24px}
 </style>
 <style id="theme-tokens">
-:root{--c-band:#000000;--c-menthe:var(--c-menthe);--c-vert-txt:var(--c-vert-txt)}
+:root{--c-band:#000000;--c-menthe:#E6FFF5;--c-vert-txt:#007A50}
 html[data-theme="dark"]{
 --c-bg:#0B0F0D;--c-bg2:#151B18;--c-bg3:#0F1512;
 --c-ink:#EAF0EC;--c-text:#E3E9E5;--c-mid:#AEB6B1;--c-muted:#8A928D;
@@ -1099,6 +1101,20 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
       <p class="section-lead">Les réponses aux questions qu'on nous pose le plus souvent.</p>
     </div>
     <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Qu'est-ce qu'un simulateur IRVE de borne de recharge&nbsp;?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>Un simulateur IRVE est un outil en ligne qui détermine, à partir de votre situation, quelle borne de recharge électrique installer pour votre voiture&nbsp;: la puissance adaptée (3,7, 7,4, 11 ou 22&nbsp;kW), le budget réaliste pose comprise, les aides mobilisables (prime ADVENIR, TVA réduite) et le délai. Notre simulateur de charge est gratuit, indépendant et sans inscription.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Sur quels critères le simulateur calcule-t-il ma recommandation&nbsp;?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>Le simulateur de borne de recharge croise plusieurs critères&nbsp;: votre type de logement (maison, copropriété, locataire ou propriétaire), la puissance de votre compteur, le modèle et l'autonomie de votre véhicule électrique, vos habitudes de recharge (kilométrage, recharge de nuit en heures creuses) et votre zone géographique. Il en déduit la puissance de borne idéale, une fourchette de prix réaliste et les aides auxquelles vous pouvez prétendre.</p></div>
+      </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           <span>Le simulateur est-il vraiment gratuit ?</span>
