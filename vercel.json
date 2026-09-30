@@ -46,6 +46,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/borne-recharge-nantes-installateur-irve.html",
+      "destination": "/villes/borne-recharge-nantes.html",
+      "permanent": true
+    },
+    {
       "source": "/blog/borne-recharge-poitiers-installateur-aides.html",
       "destination": "/villes/borne-recharge-poitiers.html",
       "permanent": true
