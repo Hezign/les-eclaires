@@ -24,6 +24,10 @@ IMG_DIR = "blog/img"
 
 # slug (= nom de fichier sans .html)  ->  texte alt (français, descriptif, honnête)
 MAP = {
+    "zaptec-ou-hager-borne-copropriete":
+        "Voitures électriques en recharge dans le parking souterrain d'une copropriété",
+    "delestage-gestion-charge-borne-recharge":
+        "Tableau électrique et disjoncteurs protégeant une installation de recharge",
     "7kw-ou-22kw-quelle-puissance":
         "Recharge d'une voiture électrique sur une borne en garage : choisir la bonne puissance",
     "aides-regionales-borne-recharge-2026":
@@ -371,9 +375,12 @@ def fetch_photo(slug):
     api = ("https://api.pexels.com/v1/search?orientation=landscape&per_page=15&query="
            + urllib.parse.quote(q))
     try:
-        req = urllib.request.Request(api, headers={"Authorization": key})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            data = json.load(r)
+        # curl plutôt qu'urllib : le Python python.org n'a pas les certificats
+        # racine sur ce Mac (CERTIFICATE_VERIFY_FAILED -> article sans photo).
+        out = subprocess.run(["curl", "-sfL", "--max-time", "30",
+                              "-H", f"Authorization: {key}", api],
+                             capture_output=True, check=True).stdout
+        data = json.loads(out)
     except Exception as e:
         print(f"    ! echec API Pexels pour {slug} : {e}")
         return False
@@ -387,9 +394,8 @@ def fetch_photo(slug):
     os.makedirs(IMG_DIR, exist_ok=True)
     tmp = f"{IMG_DIR}/.{slug}.src.jpg"
     try:
-        dl = urllib.request.Request(src_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(dl, timeout=60) as r, open(tmp, "wb") as f:
-            f.write(r.read())
+        subprocess.run(["curl", "-sfL", "--max-time", "60", "-o", tmp, src_url],
+                       check=True)
         _cover(tmp, banner, 1600, 760)
         _cover(tmp, f"{IMG_DIR}/{slug}-card.jpg", 800, 525)
     except Exception as e:
