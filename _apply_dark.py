@@ -7,6 +7,7 @@ Appelé par les build scripts (durabilité) et exécutable en direct :
     python3 _apply_dark.py            # toutes les pages
 """
 import glob
+import re
 
 THEME_CSS = '''<style id="theme-tokens">
 :root{--c-band:#000000;--c-menthe:#E6FFF5;--c-vert-txt:#007A50}
@@ -43,10 +44,22 @@ def apply(path):
     except FileNotFoundError:
         return False
     o = s
-    # 1) Découplage tokens (nécessaire pour que le sombre fonctionne)
+    # 1) Découplage tokens (nécessaire pour que le sombre fonctionne).
+    # Jamais DANS le bloc theme-tokens : sinon --c-menthe:var(--c-menthe)
+    # (référence circulaire = valeur invalide, fonds menthe/kickers perdus).
+    m = re.search(r'<style id="theme-tokens">.*?</style>', s, re.S)
+    keep = m.group(0) if m else ''
+    if keep:
+        s = s.replace(keep, '\x00THEME\x00', 1)
     s = s.replace('background:var(--c-ink)', 'background:var(--c-band)')
     s = s.replace('#E6FFF5', 'var(--c-menthe)')
     s = s.replace('#007A50', 'var(--c-vert-txt)')
+    if keep:
+        s = s.replace('\x00THEME\x00', keep, 1)
+    # Réparer les références circulaires laissées par les anciennes versions
+    s = s.replace('--c-menthe:var(--c-menthe)', '--c-menthe:#E6FFF5')
+    s = s.replace('--c-vert-txt:var(--c-vert-txt)', '--c-vert-txt:#007A50')
+    s = s.replace('--c-band:var(--c-band)', '--c-band:#000000')
     # 2) Thème + init (avant </head>, après le CSS pour éviter le flash)
     if 'theme-tokens' not in s and '</head>' in s:
         s = s.replace('</head>', THEME_CSS + '\n' + THEME_INIT + '\n</head>', 1)

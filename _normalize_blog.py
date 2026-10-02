@@ -75,6 +75,9 @@ def normalize(path):
     # Mode sombre (toggle + thème)
     import _apply_dark
     _apply_dark.apply(path)
+    # Tokens DA + couleurs en tokens du gabarit .hero (sombre lisible, cookies, police)
+    import _article_da
+    _article_da.apply(path)
     return True
 
 
