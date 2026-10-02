@@ -71,6 +71,9 @@ def apply(path):
         s = s.replace('</body>', TOGGLE_JS + '\n</body>', 1)
     if s != o:
         open(path, 'w', encoding='utf-8').write(s)
+    # Composants partagés (bouton, kicker, FAQ, espacements) hors accueil
+    import _ds_shared
+    _ds_shared.apply(path)
     return True
 
 
