@@ -18,7 +18,7 @@ Catégories du blog : Choisir & installer, Aides & prix, Copropriété, Entrepri
 - entreprise | borne-recharge-flotte-vehicules-societe | Électrifier une flotte de véhicules de société : quelles bornes prévoir | borne de recharge flotte entreprise | Entreprise | /entreprise
 - copropriete | vote-assemblee-generale-borne-recharge-copropriete | Faire voter un projet de bornes de recharge en assemblée générale | vote ag borne recharge copropriété | Copropriété | /copropriete
 - particulier | devis-borne-de-recharge-points-a-verifier | Devis de borne de recharge : les lignes à vérifier avant de signer | devis borne de recharge | Choisir & installer | /simulateur
-- entreprise | pilotage-de-charge-parking-entreprise | Parking d'entreprise : combien de bornes sur la puissance existante (sans refaire le délestage particulier) | pilotage de charge entreprise | Entreprise | /entreprise
+- entreprise | pilotage-de-charge-parking-entreprise | Parking d'entreprise : combien de bornes sur la puissance électrique existante | pilotage de charge entreprise | Entreprise | /entreprise
 - copropriete | syndic-refuse-borne-recharge-que-faire | Le syndic refuse l'installation de ma borne : que faire | syndic refuse borne de recharge | Copropriété | /copropriete
 - particulier | etapes-installation-borne-recharge-maison | Installer une borne à la maison : les étapes, du devis à la mise en service | installation borne de recharge maison | Choisir & installer | /simulateur
 - entreprise | recharge-salaries-refacturation-entreprise | Recharge des salariés sur le parking : offrir ou refacturer l'électricité | refacturation recharge salariés | Entreprise | /entreprise
