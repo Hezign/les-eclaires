@@ -28,7 +28,7 @@ CSS = f'''<style id="ds-shared">
 /* Petit titre de section unique : ⚡ + capitales vertes */
 .section-tag,.page-tag,.pt-kicker{{display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert-txt);margin-bottom:16px}}
 .section-tag,.pt-kicker{{display:inline-flex}}
-.pt-kicker::before{{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:{BOLT};mask:{BOLT}}}
+.section-tag::before,.pt-kicker::before{{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:{BOLT};mask:{BOLT}}}
 .pt-sec.band .pt-kicker{{color:var(--c-vert-lt)}}
 /* FAQ unique : cartes blanches + chevron (comme l'accueil) */
 .faq-city details,.pt-faq details{{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:16px;margin-bottom:12px;transition:border-color .2s}}
@@ -46,6 +46,9 @@ CSS = f'''<style id="ds-shared">
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{{line-height:1.08}}
 .city-body h2{{line-height:1.15}}
+/* Sauts de ligne : titres équilibrés, paragraphes sans mot orphelin */
+h1,h2,h3,h4,.city-h1,.page-title{{text-wrap:balance}}
+p,li,.city-sub,.page-sub{{text-wrap:pretty}}
 /* Finitions */
 @media(min-width:861px){{footer .footer-cities-list{{column-count:3}}}}
 footer a[aria-current="page"]{{color:var(--c-ink);font-weight:600;pointer-events:none}}
@@ -75,7 +78,9 @@ def apply(path):
         return False
     o = s
     s = re.sub(r'<style id="ds-shared">.*?</style>\n?', '', s, flags=re.S)
-    s = s.replace('</head>', CSS + '\n</head>', 1)
+    s = re.sub(r'<style id="hs-css">.*?</style>\n?', '', s, flags=re.S)
+    import _home_sections
+    s = s.replace('</head>', CSS + '\n' + _home_sections.CSS + '\n</head>', 1)
     # La page courante n'est plus un lien vers elle-même dans le footer
     f = s.find('<footer')
     if f != -1:

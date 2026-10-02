@@ -334,6 +334,55 @@ CITIES = [
    zones="Ajaccio, Bastia, Porto-Vecchio, Calvi, L'Île-Rousse, Corte, Sartène, Ghisonaccia, Propriano"),
 ]
 
+def city_body(c, name, slug, dept, code, loc, faq_html):
+    """Corps d'une page ville composé avec les sections façon accueil (_home_sections)."""
+    import _home_sections as hs
+    card = hs.reco_card(
+        f"Votre borne {loc}", f"{dept} ({code})",
+        [("home", "Budget maison (pose incluse)", "1&nbsp;200 à 2&nbsp;000&nbsp;€", "TVA", "5,5&nbsp;%"),
+         ("calendar", "Délai d'installation", "2 à 4 semaines", "Copropriété", "ADVENIR"),
+         ("bolt", "Puissance la plus courante", "Borne 7,4&nbsp;kW", "Charge", "1 nuit")],
+        f"Un installateur certifié IRVE de votre secteur vous recontacte <b style=\"color:var(--c-vert-lt)\">sous 48&nbsp;h</b>")
+    crumbs = f'<a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>{name}</span>'
+    out = hs.hero(crumbs=crumbs, badge=f"Guide gratuit · {dept} ({code})",
+                  h1=f"Installer une borne de recharge <em>{loc}</em>", lead=c['sub'],
+                  ctas=[("/simulateur", "Démarrer le simulateur gratuit", "primary"),
+                        ("#aides", "Les aides " + loc, "ghost")],
+                  mini=[("48&nbsp;h", "pour être recontacté"), ("5,5&nbsp;%", "de TVA en maison"), ("100&nbsp;%", "indépendant")],
+                  card=card)
+    out += hs.section(hs.top_cards([
+        ("percent", "TVA à taux réduit", "5,5&nbsp;%", "Au lieu de 20&nbsp;%, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans."),
+        ("building", "Prime ADVENIR (copropriété)", "1&nbsp;000&nbsp;€&nbsp;HT", "Par point de charge pour une borne individuelle en copropriété (jusqu'à 1&nbsp;660&nbsp;€&nbsp;HT en borne partagée), depuis le 1er avril 2026. La demande se fait avant les travaux."),
+        ("euro", "Budget moyen constaté", "1&nbsp;200 à 2&nbsp;000&nbsp;€", "Pour une borne 7,4&nbsp;kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026."),
+        ("calendar", "Délai d'installation", "2 à 4 semaines", "Pour une maison avec tableau électrique récent. En copropriété, les démarches peuvent prendre un peu plus de temps."),
+      ]), tone='menthe', tag="Ce qu'il faut savoir", h2=f"Les aides disponibles {loc}",
+        lead="Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.", sid="aides")
+    side = (f'<div class="hs-box"><h3>{hs.icon("map", 20)}Zones couvertes</h3><p>{c["zones"]}</p></div>'
+            f'<div class="hs-box hs-box-dark"><h3>Vous êtes en copropriété ou syndic {loc}&nbsp;?</h3>'
+            f'<p>Équiper une copropriété, c\'est souvent plusieurs dizaines de bornes. On accompagne les conseils syndicaux et les syndics de A à Z&nbsp;: droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>'
+            f'<a href="/copropriete" class="btn-primary">Bornes en copropriété {hs.ARROW}</a></div>')
+    out += hs.section(f'<div class="hs-split"><div class="hs-prose"><p>{c["local"]}</p></div><div>{side}</div></div>',
+                      tone='white', tag="Spécificités locales", h2=f"L'installation de bornes {loc}")
+    out += hs.section(hs.steps([
+        ("Vous répondez au simulateur", "Quelques questions simples sur votre logement et votre véhicule. Vous recevez immédiatement une recommandation personnalisée."),
+        ("On vous met en relation", "Avec un électricien certifié IRVE de votre secteur. Un seul contact, pas une liste à éplucher."),
+        ("Vous installez sereinement", "Vous savez ce que vous allez payer et les aides que vous allez toucher avant que les travaux commencent."),
+      ]) + f'<p class="hs-note">{hs.icon("check", 18)}<span><b>100&nbsp;% gratuit pour vous.</b> On est rémunérés par l\'installateur, pas par vous.</span></p>',
+      tone='band', tag="Comment ça marche", h2="Trois étapes pour installer votre borne")
+    out += hs.faq_section("Questions fréquentes", f"Borne de recharge {loc}&nbsp;: vos questions",
+                          "Les réponses aux questions qu'on nous pose le plus souvent.", faq_html)
+    reg = REGION[slug]
+    sibs = [(sl, lb) for sl, lb in ALL_CITIES if sl != slug and REGION.get(sl) == reg][:4]
+    pills = ''
+    if sibs:
+        pills = (f'<div class="hs-pills"><span class="rl">Autres villes en {reg}</span>'
+                 + ''.join(f'<a href="/villes/borne-recharge-{sl}.html">{lb}</a>' for sl, lb in sibs) + '</div>')
+    out += (f'<section class="hs-sec hs-menthe hs-cta-sec"><div class="hs-wrap">{pills}<div class="hs-cta">'
+            f'<h2>Prêt à installer votre borne {loc}&nbsp;?</h2><p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p>'
+            f'<a href="/simulateur" class="btn-primary">Démarrer le simulateur {hs.ARROW}</a></div></div></section>')
+    return out
+
+
 def build_city(c):
     name, slug, dept, code = c['name'], c['slug'], c['dept'], c['code']
     loc = c.get('loc', f"à {name}")
@@ -341,6 +390,7 @@ def build_city(c):
     url = f"https://leseclaires.fr/villes/borne-recharge-{slug}.html"
     desc = f"Installer une borne de recharge électrique {loc} ({code}) : aides ADVENIR, prix, TVA réduite 5,5 % et installateurs certifiés IRVE {c['in_dept']}. Simulateur gratuit."
     faq_html, faq_ld = faq_block(name, dept, loc)
+    body = city_body(c, name, slug, dept, code, loc, faq_html)
     graph = {
       "@context":"https://schema.org",
       "@graph":[
@@ -390,54 +440,7 @@ def build_city(c):
   <a class="btn-nav" href="/simulateur">Simuler mon projet</a>
 </nav>
 
-<div class="hero-city">
-  <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>{name}</span></div>
-  <div class="city-badge"><span class="badge-dot"></span>Guide gratuit · {dept} ({code})</div>
-  <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">{loc}</span></h1>
-  <p class="city-sub">{c['sub']}</p>
-  <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit {ARROW}</a>
-</div>
-
-<div class="city-body">
-
-  <span class="section-tag">Ce qu'il faut savoir</span>
-  <h2 class="section-h2">Les aides disponibles {loc}</h2>
-  <p class="section-lead">Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.</p>
-{AIDE_CARDS}
-
-  <span class="section-tag">Spécificités locales</span>
-  <h2 class="section-h2">L'installation de bornes {loc}</h2>
-  <p class="section-lead">{c['local']}</p>
-
-  <div class="areas-section">
-    <h4>Zones couvertes</h4>
-    <p>{c['zones']}</p>
-  </div>
-
-  <div class="copro-box">
-    <h3>Vous êtes en copropriété ou syndic {loc} ?</h3>
-    <p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes à installer. On accompagne les conseils syndicaux et les syndics de A à Z : droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>
-    <a href="/copropriete" class="btn-vert">Bornes en copropriété {ARROW}</a>
-  </div>
-
-  <span class="section-tag">Comment ça marche</span>
-  <h2 class="section-h2">Trois étapes pour installer votre borne</h2>
-{STEPS}
-
-  <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Borne de recharge {loc} : vos questions</h2>
-  <div class="faq-city">
-{faq_html}
-  </div>
-
-{related(slug)}
-  <div class="cta-box">
-    <h3>Prêt à installer votre borne {loc} ?</h3>
-    <p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p>
-    <a href="/simulateur" class="btn-vert">Démarrer le simulateur {ARROW}</a>
-  </div>
-
-</div>
+{body}
 
 {footer()}
   <script src="/cursor.js" defer></script>
@@ -498,6 +501,18 @@ def build_hub():
         {"@type":"ListItem","position":2,"name":"Bornes par ville","item":url}]},
     ]}
     jsonld='<script type="application/ld+json">\n'+json.dumps(graph,ensure_ascii=False,indent=2)+'\n</script>'
+    import _home_sections as hs
+    hub_body = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Bornes par ville</span>',
+        badge="Guides locaux IRVE · France entière", h1="Bornes de recharge, <em>ville par ville</em>",
+        lead="Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.",
+        ctas=[("/simulateur", "Démarrer le simulateur gratuit", "primary"), ("#guides", "Trouver ma ville", "ghost")],
+        mini=[(str(pos), "guides locaux"), ("48&nbsp;h", "pour être recontacté"), ("100&nbsp;%", "indépendant")])
+    hub_body += hs.section(
+        '<label class="villes-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="villeQ" placeholder="Rechercher une ville ou un département" aria-label="Rechercher une ville ou un département"></label>'
+        f'<div class="villes-regions">\n{sections}  </div>'
+        '<p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>',
+        tone='menthe', tag=f"{pos} villes", h2="Trouvez le guide de votre ville", sid="guides")
+    hub_body += hs.cta_band("Votre ville n'est pas listée ?", "Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.", "/simulateur", "Démarrer le simulateur")
     html=f'''<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -533,27 +548,7 @@ def build_hub():
   <a class="btn-nav" href="/simulateur">Simuler mon projet</a>
 </nav>
 
-<div class="hero-city">
-  <div class="breadcrumb"><a href="/">Accueil</a> › <span>Bornes par ville</span></div>
-  <div class="city-badge"><span class="badge-dot"></span>Guides locaux IRVE · France entière</div>
-  <h1 class="city-h1">Bornes de recharge,<br><span style="white-space:nowrap">ville par ville</span></h1>
-  <p class="city-sub">Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.</p>
-  <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit {ARROW}</a>
-</div>
-
-<div class="city-body">
-  <span class="section-tag">{pos} villes</span>
-  <h2 class="section-h2">Trouvez le guide de votre ville</h2>
-  <label class="villes-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="villeQ" placeholder="Rechercher une ville ou un département" aria-label="Rechercher une ville ou un département"></label>
-  <div class="villes-regions">
-{sections}  </div>
-  <p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>
-  <div class="cta-box">
-    <h3>Votre ville n'est pas listée ?</h3>
-    <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
-    <a href="/simulateur" class="btn-vert">Démarrer le simulateur {ARROW}</a>
-  </div>
-</div>
+{hub_body}
 
 {footer()}
   <script src="/cursor.js" defer></script>

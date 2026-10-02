@@ -187,7 +187,7 @@ html[data-theme="dark"] .theme-toggle .moon{display:block}
 html[data-theme="dark"] .theme-toggle .sun{display:none}
 </style>
 <script>(function(){try{var K="les-eclaires-theme",t=localStorage.getItem(K);if(!t)t="light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<script type="application/ld+json" id="partner-faq-ld">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien coûte une demande ?", "acceptedAnswer": {"@type": "Answer", "text": "Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange."}}, {"@type": "Question", "name": "La même demande est-elle envoyée à d'autres installateurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux."}}, {"@type": "Question", "name": "Suis-je engagé sur un volume ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance."}}, {"@type": "Question", "name": "Que se passe-t-il si le client est injoignable ?", "acceptedAnswer": {"@type": "Answer", "text": "Une demande aux coordonnées fausses, injoignable après trois tentatives documentées, en doublon ou hors de votre zone n'est pas facturée. Il suffit de la contester par e-mail avant de régler la facture du mois : elle est remplacée ou fait l'objet d'un avoir."}}, {"@type": "Question", "name": "Les Éclairés intervient-il dans mes devis ou mes chantiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée."}}, {"@type": "Question", "name": "Faut-il être qualifié IRVE ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature."}}]}</script>
+<script type="application/ld+json" id="partner-faq-ld">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien coûte une demande ?", "acceptedAnswer": {"@type": "Answer", "text": "Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange."}}, {"@type": "Question", "name": "La même demande est-elle envoyée à d'autres installateurs ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux."}}, {"@type": "Question", "name": "Suis-je engagé sur un volume ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance."}}, {"@type": "Question", "name": "Quelles demandes me sont transmises ?", "acceptedAnswer": {"@type": "Answer", "text": "Uniquement des demandes situées dans votre zone, sur les types de projets que vous traitez, avec les coordonnées du client et son accord pour être recontacté. Une même demande ne vous est jamais transmise deux fois. Toute demande transmise est due, quelle que soit sa suite."}}, {"@type": "Question", "name": "Les Éclairés intervient-il dans mes devis ou mes chantiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée."}}, {"@type": "Question", "name": "Faut-il être qualifié IRVE ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature."}}]}</script>
 <style id="partner-css">
 .pt-wrap{max-width:1080px;margin:0 auto;padding:0 48px}
 .pt-hero{padding:150px 0 72px}
@@ -269,7 +269,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Petit titre de section unique : ⚡ + capitales vertes */
 .section-tag,.page-tag,.pt-kicker{display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert-txt);margin-bottom:16px}
 .section-tag,.pt-kicker{display:inline-flex}
-.pt-kicker::before{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
+.section-tag::before,.pt-kicker::before{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
 .pt-sec.band .pt-kicker{color:var(--c-vert-lt)}
 /* FAQ unique : cartes blanches + chevron (comme l'accueil) */
 .faq-city details,.pt-faq details{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:16px;margin-bottom:12px;transition:border-color .2s}
@@ -287,12 +287,145 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Sauts de ligne : titres équilibrés, paragraphes sans mot orphelin */
+h1,h2,h3,h4,.city-h1,.page-title{text-wrap:balance}
+p,li,.city-sub,.page-sub{text-wrap:pretty}
 /* Finitions */
 @media(min-width:861px){footer .footer-cities-list{column-count:3}}
 footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
 .btt{font-family:var(--ff-h)}
 .form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
+</style>
+<style id="hs-css">
+/* ===== Sections façon accueil (référence : index.html) ===== */
+.hs-wrap{max-width:1032px;margin:0 auto;padding:0 24px;width:100%;box-sizing:border-box}
+.hs-sec{padding:104px 0}
+.hs-white{background:var(--c-bg2)}
+.hs-grey{background:var(--c-bg)}
+.hs-menthe{background:var(--c-menthe)}
+.hs-band{background:var(--c-band);color:rgba(255,255,255,.72)}
+.hs-band .section-tag{color:var(--c-vert-lt)}
+.hs-band .section-tag::before{background:var(--c-vert-lt)}
+.hs-h2{font-family:var(--ff-h);font-size:clamp(30px,4.4vw,54px);font-weight:800;letter-spacing:-.045em;line-height:1.05;color:var(--c-ink);margin:0 0 20px;max-width:760px;text-wrap:balance}
+.hs-band .hs-h2{color:#fff}
+.hs-lead{font-size:17px;font-weight:300;color:var(--c-mid);line-height:1.8;max-width:620px;margin:0 0 52px;text-wrap:pretty}
+.hs-band .hs-lead{color:rgba(255,255,255,.68)}
+/* Bouton principal : base complète (certaines pages n'ont pas le CSS de l'accueil) */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-.02em;padding:14px 28px;border-radius:999px;border:none;text-decoration:none;cursor:pointer;background:var(--c-vert-lt);color:#0a0a09;transition:background .2s,transform .18s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px)}
+/* Hero */
+.hs-hero{position:relative;overflow:hidden;background:var(--c-bg);padding:calc(var(--topbar-h,40px) + 120px) 0 104px}
+.hs-hero-deco{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 0%,rgba(0,194,126,.08) 0,transparent 46%),radial-gradient(circle at 100% 100%,rgba(0,194,126,.06) 0,transparent 34%)}
+.hs-hero-deco::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0,transparent 100%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0,transparent 100%)}
+html[data-theme="dark"] .hs-hero-deco::after{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)}
+.hs-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:64px;align-items:center}
+.hs-hero.has-card .hs-hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+.hs-hero .breadcrumb{font-size:13px;color:var(--c-muted);margin:0 0 22px}
+.hs-hero .breadcrumb a{color:var(--c-muted);text-decoration:none}
+.hs-hero .breadcrumb a:hover{color:var(--c-vert-txt)}
+.hs-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:999px;font-size:12.5px;font-weight:500;color:var(--c-vert-txt);margin:0 0 26px}
+.hs-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--c-vert);flex-shrink:0}
+.hs-hero h1{font-family:var(--ff-h);font-size:clamp(38px,5.6vw,68px);font-weight:800;letter-spacing:-.05em;line-height:1.02;color:var(--c-ink);margin:0 0 26px;max-width:760px;text-wrap:balance}
+.hs-hero h1 em{font-style:normal;color:var(--c-vert)}
+.hs-hero.has-card h1{font-size:clamp(36px,4.5vw,58px)}
+.hs-hero-lead{font-size:17px;font-weight:300;line-height:1.75;color:var(--c-mid);max-width:560px;margin:0;text-wrap:pretty}
+.hs-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
+.hs-btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-h);font-size:15px;font-weight:600;letter-spacing:-.02em;color:var(--c-ink);padding:14px 28px;border-radius:999px;border:1px solid var(--c-border2);text-decoration:none;transition:border-color .2s}
+.hs-btn-ghost:hover{border-color:var(--c-ink)}
+.hs-mini{display:flex;flex-wrap:wrap;gap:8px 28px;margin:30px 0 0;font-size:13.5px;color:var(--c-mid)}
+.hs-mini b{color:var(--c-vert-txt);font-weight:700;margin-right:4px}
+/* Carte « recommandation » (hero de la home) */
+.hs-reco{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:24px;padding:24px;box-shadow:0 28px 70px rgba(0,0,0,.09)}
+.hs-reco-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}
+.hs-reco-head .t{font-family:var(--ff-h);font-weight:800;font-size:15px;color:var(--c-ink)}
+.hs-reco-pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--c-vert-bg);color:var(--c-vert-txt);padding:5px 11px;border-radius:999px;white-space:nowrap}
+.hs-reco-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--c-border)}
+.hs-reco-ico{width:42px;height:42px;border-radius:12px;background:var(--c-vert-bg);color:var(--c-vert);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hs-reco-row .k{font-size:12px;color:var(--c-muted)}
+.hs-reco-row .v{font-family:var(--ff-h);font-weight:700;font-size:16px;color:var(--c-ink);letter-spacing:-.02em}
+.hs-reco-row .r{margin-left:auto;text-align:right}
+.hs-reco-foot{margin:16px 0 0;background:var(--c-band);color:#fff;border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:9px;font-size:12px;line-height:1.45}
+.hs-reco-foot svg{color:var(--c-vert-lt);flex-shrink:0}
+html[data-theme="dark"] .hs-reco-foot{border:1px solid var(--c-border2)}
+/* Cartes à bord supérieur vert + tuile noire */
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px}
+.hs-card-top{background:var(--c-bg2);border-radius:20px;border-top:4px solid var(--c-vert);padding:30px 26px;box-shadow:0 10px 32px rgba(0,0,0,.05)}
+.hs-tile{width:54px;height:54px;border-radius:14px;background:#000;color:var(--c-vert-lt);display:flex;align-items:center;justify-content:center;margin:0 0 24px}
+html[data-theme="dark"] .hs-tile{border:1px solid var(--c-border2)}
+.hs-card-top h3,.hs-card-num h3{font-family:var(--ff-h);font-size:19px;font-weight:700;letter-spacing:-.03em;color:var(--c-ink);margin:0 0 10px;text-wrap:balance}
+.hs-card-top h3,.hs-card-num h3{min-height:2.5em}
+.hs-card-top .amt{display:block;font-family:var(--ff-h);font-size:26px;font-weight:800;letter-spacing:-.04em;color:var(--c-vert-txt);margin:0 0 10px}
+.hs-card-top p,.hs-card-num p{font-size:14.5px;line-height:1.7;color:var(--c-mid);margin:0;text-wrap:pretty}
+/* Cartes contour + gros numéro */
+.hs-card-num{border:1.5px solid var(--c-border2);border-radius:20px;padding:30px 28px;transition:border-color .25s,transform .25s}
+.hs-card-num:hover{border-color:var(--c-vert);transform:translateY(-4px)}
+.hs-card-num .hd{display:flex;align-items:center;justify-content:space-between;margin:0 0 30px}
+.hs-ico-o{width:50px;height:50px;border-radius:14px;border:1.6px solid var(--c-vert);color:var(--c-vert);display:flex;align-items:center;justify-content:center}
+.hs-num{font-family:var(--ff-h);font-size:38px;font-weight:800;letter-spacing:-.04em;color:rgba(0,194,126,.22);line-height:1}
+/* Étapes sur bande noire */
+.hs-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:20px}
+.hs-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 24px;transition:background .2s,transform .25s}
+.hs-step:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.hs-pill{display:inline-flex;font-family:var(--ff-h);font-size:12px;font-weight:800;letter-spacing:-.01em;background:var(--c-vert);color:#05231a;padding:7px 12px;border-radius:8px;margin:0 0 22px}
+.hs-step h3{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-.03em;color:#fff;margin:0 0 10px;text-wrap:balance}
+.hs-step p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.68);margin:0;text-wrap:pretty}
+.hs-note{display:flex;align-items:center;gap:10px;margin:32px 0 0;font-size:14.5px;color:rgba(255,255,255,.75)}
+.hs-note svg{color:var(--c-vert-lt);flex-shrink:0}
+.hs-note b{color:#fff}
+/* Bande de chiffres */
+.hs-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.hs-stat{text-align:center;padding:8px 28px;border-left:1px solid rgba(255,255,255,.12)}
+.hs-stat:first-child{border-left:none}
+.hs-stat .n{display:block;font-family:var(--ff-h);font-size:clamp(40px,4.4vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--c-vert-lt);margin:0 0 12px}
+.hs-stat p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.7);margin:0 auto;max-width:240px;text-wrap:balance}
+/* 2 colonnes texte / encadré */
+.hs-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:start}
+.hs-prose p{font-size:16.5px;line-height:1.85;color:var(--c-mid);margin:0 0 18px;text-wrap:pretty}
+.hs-box{background:var(--c-bg);border:1px solid var(--c-border);border-radius:20px;padding:28px}
+.hs-white .hs-box{background:var(--c-bg)}
+.hs-menthe .hs-box{background:var(--c-bg2)}
+.hs-box h3{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-.025em;color:var(--c-ink);margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.hs-box h3 svg{color:var(--c-vert)}
+.hs-box p{font-size:14.5px;line-height:1.75;color:var(--c-mid);margin:0}
+.hs-box-dark{background:var(--c-band)!important;border-color:transparent;margin-top:16px}
+.hs-box-dark h3{color:#fff}
+.hs-box-dark p{color:rgba(255,255,255,.7);margin:0 0 20px}
+/* FAQ 2 colonnes */
+.hs-faq-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:56px;align-items:start}
+.hs-faq-grid .hs-lead{margin-bottom:0}
+.hs-faq-grid .hs-h2{font-size:clamp(28px,3.2vw,40px)}
+.hs-faq-grid .faq-city{margin:0}
+.faq-city summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-city summary::-webkit-details-marker{display:none}
+.hs-sec a.pt-inline{color:var(--c-vert-txt);text-decoration:underline;text-underline-offset:3px}
+.faq-city details>p{margin:0;padding:0 24px 20px;font-size:15px;line-height:1.8;color:var(--c-mid)}
+.hs-sec .pt-note{margin-top:28px}
+/* CTA final */
+.hs-cta{background:var(--c-band);border-radius:28px;padding:64px 48px;text-align:center}
+.hs-cta h2{font-family:var(--ff-h);font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.1;color:#fff;margin:0 auto 14px;max-width:640px;text-wrap:balance}
+.hs-cta p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.68);margin:0 auto 30px;max-width:520px;text-wrap:pretty}
+html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
+.hs-pills{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 40px}
+.hs-pills .rl{font-size:14px;color:var(--c-mid);margin-right:4px}
+.hs-pills a{display:inline-flex;padding:9px 18px;border-radius:999px;background:var(--c-bg2);border:1px solid var(--c-border);color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:14px;text-decoration:none;transition:border-color .2s,color .2s}
+.hs-pills a:hover{border-color:var(--c-vert-br);color:var(--c-vert-txt)}
+@media(max-width:900px){
+  .hs-hero.has-card .hs-hero-grid,.hs-split,.hs-faq-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .hs-stats{grid-template-columns:minmax(0,1fr)}
+  .hs-stat{border-left:none;border-top:1px solid rgba(255,255,255,.12);padding:24px 0}
+  .hs-stat:first-child{border-top:none}
+}
+@media(max-width:640px){
+  .hs-sec{padding:72px 0}
+  .hs-wrap{padding:0 20px}
+  .hs-hero{padding:calc(var(--topbar-h,40px) + 100px) 0 72px}
+  .hs-hero h1{font-size:clamp(34px,10vw,44px)}
+  .hs-lead{margin-bottom:36px}
+  .hs-cta{padding:44px 24px;border-radius:22px}
+  .hs-ctas a{width:100%;justify-content:center}
+  .hs-reco{padding:18px}
+}
 </style>
 </head>
 <body>
@@ -323,34 +456,22 @@ footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:
 </nav>
 
 <!--partner-body-->
-<section class="pt-hero"><div class="pt-wrap">
-  <div class="page-tag">Réseau installateurs IRVE</div>
-  <h1 class="page-title">Devenir partenaire installateur IRVE</h1>
-  <p class="page-sub">Recevez des demandes de pose qualifiées sur votre zone, sans prospecter. Chaque demande vient d'un particulier, d'une copropriété, d'une entreprise ou d'une collectivité qui a déjà fait sa simulation, et elle n'est transmise qu'à vous.</p>
-  <div class="pt-ctas">
-    <a class="pt-btn pt-btn-main" href="#candidature">Candidater <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    <a class="pt-btn pt-btn-ghost" href="#prerequis">Voir les prérequis</a>
-  </div>
-  <ul class="pt-chips">
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>1 demande = 1 seul installateur</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Transmise sous 24 h</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Sans abonnement ni volume minimum</li>
-  </ul>
-</div></section>
-
-<section class="pt-sec alt">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Ce que vous recevez</span>
-    <h2 class="pt-h2">Des demandes prêtes à traiter</h2>
-    <p class="pt-lead">Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.</p>
-    <div class="pt-grid">
-      <div class="pt-card"><span class="n">01</span><h3>Un projet déjà cadré</h3><p>Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler.</p></div>
-      <div class="pt-card"><span class="n">02</span><h3>Une demande exclusive</h3><p>Chaque demande n'est transmise qu'à un seul installateur. Pas de mise en concurrence avec dix autres artisans sur le même contact.</p></div>
-      <div class="pt-card"><span class="n">03</span><h3>Transmise sous 24 h</h3><p>Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté.</p></div>
-      <div class="pt-card"><span class="n">04</span><h3>Votre zone, vos projets</h3><p>Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités.</p></div>
+<section class="hs-hero has-card">
+  <div class="hs-hero-deco" aria-hidden="true"></div>
+  <div class="hs-wrap hs-hero-grid">
+    <div class="hs-hero-text">
+      
+      <div class="hs-badge"><span class="badge-dot"></span>Réseau installateurs IRVE</div>
+      <h1>Devenir partenaire <em>installateur IRVE</em></h1>
+      <p class="hs-hero-lead">Recevez des demandes de pose qualifiées sur votre zone, sans prospecter. Chaque demande vient d'un particulier, d'une copropriété, d'une entreprise ou d'une collectivité qui a déjà fait sa simulation, et elle n'est transmise qu'à vous.</p>
+      <div class="hs-ctas"><a href="#candidature" class="btn-primary">Candidater <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="#prerequis" class="hs-btn-ghost">Voir les prérequis</a></div>
+      <div class="hs-mini"><span><b>1</b> demande = 1 seul installateur</span><span><b>24&nbsp;h</b> pour la transmission</span><span><b>0</b> abonnement</span></div>
     </div>
+    <div class="hs-hero-card"><div class="hs-reco"><div class="hs-reco-head"><span class="t">Exemple de demande reçue</span><span class="hs-reco-pill">Exclusive</span></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><div><div class="k">Projet</div><div class="v">Maison individuelle</div></div><div class="r"><div class="k">Zone</div><div class="v">Votre secteur</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 13.5h6.2L9 22l9-12.5h-6.2z"/></svg></span><div><div class="k">Puissance recommandée</div><div class="v">Borne 7,4&nbsp;kW</div></div><div class="r"><div class="k">Délai souhaité</div><div class="v">Indiqué</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/></svg></span><div><div class="k">Budget et aides</div><div class="v">Estimés</div></div><div class="r"><div class="k">Accord client</div><div class="v">Recueilli</div></div></div><div class="hs-reco-foot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 13.5h6.2L9 22l9-12.5h-6.2z"/></svg><span>Transmise <b style="color:var(--c-vert-lt)">à vous seul, sous 24&nbsp;h</b>, par e-mail</span></div></div></div>
   </div>
 </section>
+
+<section class="hs-sec hs-white"><div class="hs-wrap"><span class="section-tag">Ce que vous recevez</span><h2 class="hs-h2">Des demandes prêtes à traiter</h2><p class="hs-lead">Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.</p><div class="hs-cards"><div class="hs-card-num"><div class="hd"><span class="hs-ico-o"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><span class="hs-num">01</span></div><h3>Un projet déjà cadré</h3><p>Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler.</p></div><div class="hs-card-num"><div class="hd"><span class="hs-ico-o"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="hs-num">02</span></div><h3>Une demande exclusive</h3><p>Chaque demande n'est transmise qu'à un seul installateur. Pas de mise en concurrence avec dix autres artisans sur le même contact.</p></div><div class="hs-card-num"><div class="hd"><span class="hs-ico-o"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="hs-num">03</span></div><h3>Transmise sous 24&nbsp;h</h3><p>Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté.</p></div><div class="hs-card-num"><div class="hd"><span class="hs-ico-o"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="hs-num">04</span></div><h3>Votre zone, vos projets</h3><p>Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités.</p></div></div></div></section>
 
 <section class="pt-sec menthe">
   <div class="pt-wrap pt-split">
@@ -369,7 +490,7 @@ footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:
     <h2 class="pt-h2">Nous trouvons le client, vous faites le chantier</h2>
     <p class="pt-lead">Le périmètre est clair dès le départ.</p>
     <div class="pt-roles">
-      <div class="pt-role us"><h3>Les Éclairés</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Attire et informe les porteurs de projet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Qualifie la demande grâce au simulateur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recueille le consentement du client</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Vous transmet la demande sous 24 h</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Remplace ou rembourse une demande invalide</span></li></ul></div>
+      <div class="pt-role us"><h3>Les Éclairés</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Attire et informe les porteurs de projet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Qualifie la demande grâce au simulateur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recueille le consentement du client</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Vous transmet la demande sous 24 h</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Ne vous transmet que des demandes de votre zone</span></li></ul></div>
       <div class="pt-role you"><h3>Vous</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recontactez le client sous 48 h ouvrées</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Établissez votre devis, à vos prix</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Réalisez l'installation</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Gardez seul la relation commerciale</span></li></ul></div>
     </div>
     <p class="pt-note">Les Éclairés n'intervient ni dans le devis, ni dans le contrat, ni dans les travaux.</p>
@@ -384,39 +505,18 @@ footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:
       <p class="pt-lead" style="margin-bottom:0">Un forfait fixe par demande, selon le type de projet. Il ne dépend pas de la signature du chantier : aucune commission sur vos devis.</p>
     </div>
     <div class="pt-price">
-      <ul class="pt-list" style="margin-bottom:24px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Une facture récapitulative à la fin du mois, payable à 30 jours</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Aucun abonnement, aucun volume minimum</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Demande invalide non facturée : coordonnées fausses, injoignable après 3 tentatives, doublon ou hors zone</span></li></ul>
+      <ul class="pt-list" style="margin-bottom:24px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Une facture récapitulative à la fin du mois, payable à 30 jours</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Aucun abonnement, aucun volume minimum</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Uniquement des demandes de votre zone et de vos types de projets, jamais en double</span></li></ul>
       <p>La grille tarifaire vous est présentée lors du <strong>premier échange</strong>.</p>
       <a class="pt-btn pt-btn-main" href="#candidature">Demander la grille <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
 
-<section class="pt-sec alt" id="prerequis">
-  <div class="pt-wrap pt-split">
-    <div>
-      <span class="pt-kicker">Prérequis</span>
-      <h2 class="pt-h2">Qui peut rejoindre le réseau ?</h2>
-      <p class="pt-lead" style="margin-bottom:0">Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés. Pas encore qualifié ? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
-    </div>
-    <ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Qualification IRVE</strong> en cours de validité, obligatoire pour poser une borne de plus de 3,7 kW</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Assurance responsabilité civile professionnelle</strong> et, selon vos travaux, garantie décennale à jour</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Entreprise immatriculée</strong> (SIRET)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Engagement de réactivité</strong> : recontacter chaque client sous 48 h ouvrées</span></li></ul>
-  </div>
-</section>
+<section class="hs-sec hs-menthe" id="prerequis"><div class="hs-wrap"><span class="section-tag">Prérequis</span><h2 class="hs-h2">Qui peut rejoindre le réseau ?</h2><p class="hs-lead">Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés.</p><div class="hs-cards"><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3>Qualification IRVE</h3><p>En cours de validité, obligatoire pour poser une borne de plus de 3,7&nbsp;kW.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><h3>Assurances à jour</h3><p>Responsabilité civile professionnelle et, selon vos travaux, garantie décennale.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><h3>Entreprise immatriculée</h3><p>Un SIRET actif pour l'entreprise qui réalise les poses.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Réactivité</h3><p>Recontacter chaque client sous 48&nbsp;h ouvrées après réception de la demande.</p></div></div><p class="pt-note">Pas encore qualifié&nbsp;? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p></div></section>
 
-<section class="pt-sec">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Comment ça se passe</span>
-    <h2 class="pt-h2">De la candidature aux premières demandes</h2>
-    <p class="pt-lead">Quatre étapes, sans paperasse inutile.</p>
-    <ol class="pt-steps">
-      <li><span class="n">ÉTAPE 1</span><h3>Candidature</h3><p>Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification.</p></li>
-      <li><span class="n">ÉTAPE 2</span><h3>Premier échange</h3><p>On vous rappelle sous 48 h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire.</p></li>
-      <li><span class="n">ÉTAPE 3</span><h3>Contrat partenaire</h3><p>Un contrat simple fixe les règles : exclusivité de chaque demande, tarifs, facturation mensuelle, contestation.</p></li>
-      <li><span class="n">ÉTAPE 4</span><h3>Premières demandes</h3><p>Dès que votre zone est paramétrée, les demandes vous arrivent par e-mail.</p></li>
-    </ol>
-  </div>
-</section>
+<section class="hs-sec hs-band"><div class="hs-wrap"><span class="section-tag">Comment ça se passe</span><h2 class="hs-h2">De la candidature aux premières demandes</h2><div class="hs-steps"><div class="hs-step"><span class="hs-pill">ÉTAPE 01</span><h3>Candidature</h3><p>Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 02</span><h3>Premier échange</h3><p>On vous rappelle sous 48&nbsp;h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 03</span><h3>Contrat partenaire</h3><p>Un contrat simple fixe les règles : exclusivité de chaque demande, zone, tarifs, facturation mensuelle.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 04</span><h3>Premières demandes</h3><p>Dès que votre zone est paramétrée, les demandes vous arrivent par e-mail.</p></div></div></div></section>
 
-<section class="pt-form-sec alt pt-sec" id="candidature">
+<section class="pt-form-sec pt-sec menthe" id="candidature">
   <div class="pt-wrap">
     <span class="pt-kicker">Candidature</span>
     <h2 class="pt-h2">Candidater au réseau</h2>
@@ -491,18 +591,11 @@ footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:
   </div>
 </section>
 
-<section class="pt-sec">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Questions fréquentes</span>
-    <h2 class="pt-h2">Les questions des installateurs</h2>
-    <div class="pt-faq" style="margin-top:32px"><details><summary>Combien coûte une demande ?</summary><p>Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange.</p></details><details><summary>La même demande est-elle envoyée à d'autres installateurs ?</summary><p>Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux.</p></details><details><summary>Suis-je engagé sur un volume ?</summary><p>Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance.</p></details><details><summary>Que se passe-t-il si le client est injoignable ?</summary><p>Une demande aux coordonnées fausses, injoignable après trois tentatives documentées, en doublon ou hors de votre zone n'est pas facturée. Il suffit de la contester par e-mail avant de régler la facture du mois : elle est remplacée ou fait l'objet d'un avoir.</p></details><details><summary>Les Éclairés intervient-il dans mes devis ou mes chantiers ?</summary><p>Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée.</p></details><details><summary>Faut-il être qualifié IRVE ?</summary><p>Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature.</p></details></div>
-    <p class="pt-note">Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
-  </div>
-</section>
+<section class="hs-sec hs-white" id="faq"><div class="hs-wrap hs-faq-grid"><div><span class="section-tag">Questions fréquentes</span><h2 class="hs-h2">Les questions des installateurs</h2><p class="hs-lead">Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p></div><div class="faq-city"><details><summary>Combien coûte une demande ?</summary><p>Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange.</p></details><details><summary>La même demande est-elle envoyée à d'autres installateurs ?</summary><p>Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux.</p></details><details><summary>Suis-je engagé sur un volume ?</summary><p>Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance.</p></details><details><summary>Quelles demandes me sont transmises ?</summary><p>Uniquement des demandes situées dans votre zone, sur les types de projets que vous traitez, avec les coordonnées du client et son accord pour être recontacté. Une même demande ne vous est jamais transmise deux fois. Toute demande transmise est due, quelle que soit sa suite.</p></details><details><summary>Les Éclairés intervient-il dans mes devis ou mes chantiers ?</summary><p>Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée.</p></details><details><summary>Faut-il être qualifié IRVE ?</summary><p>Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature.</p></details></div></div></section>
 <!--/partner-body-->
 
 <!--partner-res-->
-<section class="pt-sec alt">
+<section class="pt-sec">
   <div class="pt-wrap">
     <span class="pt-kicker">Ressources installateurs</span>
     <h2 class="pt-h2">Pour aller plus loin</h2>

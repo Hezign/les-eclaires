@@ -6,7 +6,7 @@ Tout le contenu reflète le contrat partenaire (contrat-partenaire-irve.md) :
 1 demande = 1 seul installateur (art. 3.2/6.1), transmission sous 24 h (3.3),
 rappel client sous 48 h ouvrées (3.4), forfait fixe par demande indépendant de la
 signature (2, 7.2), facture mensuelle à 30 jours (7.3/7.4), aucun volume minimum
-(7.6), demandes invalides non facturées (8.2/8.3), contrat 12 mois préavis 30 j (9).
+(7.6), toute demande transmise est due, sans remboursement (8, décision Harry 02/10/2026), contrat 12 mois préavis 30 j (9).
 La grille de prix n'est PAS publiée (décision Harry 01/10/2026) : « sur demande ».
 
     python3 _build_partenaires.py
@@ -39,10 +39,10 @@ FAQ = [
      "Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. "
      "En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est "
      "conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance."),
-    ("Que se passe-t-il si le client est injoignable ?",
-     "Une demande aux coordonnées fausses, injoignable après trois tentatives documentées, "
-     "en doublon ou hors de votre zone n'est pas facturée. Il suffit de la contester par "
-     "e-mail avant de régler la facture du mois : elle est remplacée ou fait l'objet d'un avoir."),
+    ("Quelles demandes me sont transmises ?",
+     "Uniquement des demandes situées dans votre zone, sur les types de projets que vous traitez, "
+     "avec les coordonnées du client et son accord pour être recontacté. Une même demande ne vous "
+     "est jamais transmise deux fois. Toute demande transmise est due, quelle que soit sa suite."),
     ("Les Éclairés intervient-il dans mes devis ou mes chantiers ?",
      "Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. "
      "Notre rôle s'arrête à la transmission de la demande qualifiée."),
@@ -128,7 +128,7 @@ CSS = '''<style id="partner-css">
 
 
 RES = '''<!--partner-res-->
-<section class="pt-sec alt">
+<section class="pt-sec">
   <div class="pt-wrap">
     <span class="pt-kicker">Ressources installateurs</span>
     <h2 class="pt-h2">Pour aller plus loin</h2>
@@ -161,35 +161,45 @@ def faq_ld():
 
 
 def body(form_inner):
+    import _home_sections as hs
+    card = hs.reco_card("Exemple de demande reçue", "Exclusive",
+        [("home", "Projet", "Maison individuelle", "Zone", "Votre secteur"),
+         ("bolt", "Puissance recommandée", "Borne 7,4&nbsp;kW", "Délai souhaité", "Indiqué"),
+         ("euro", "Budget et aides", "Estimés", "Accord client", "Recueilli")],
+        'Transmise <b style="color:var(--c-vert-lt)">à vous seul, sous 24&nbsp;h</b>, par e-mail')
+    HERO = hs.hero(badge="Réseau installateurs IRVE",
+        h1="Devenir partenaire <em>installateur IRVE</em>",
+        lead="Recevez des demandes de pose qualifiées sur votre zone, sans prospecter. Chaque demande vient d'un particulier, d'une copropriété, d'une entreprise ou d'une collectivité qui a déjà fait sa simulation, et elle n'est transmise qu'à vous.",
+        ctas=[("#candidature", "Candidater", "primary"), ("#prerequis", "Voir les prérequis", "ghost")],
+        mini=[("1", "demande = 1 seul installateur"), ("24&nbsp;h", "pour la transmission"), ("0", "abonnement")],
+        card=card)
+    RECEVEZ = hs.section(hs.num_cards([
+        ("file", "Un projet déjà cadré", "Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler."),
+        ("shield", "Une demande exclusive", "Chaque demande n'est transmise qu'à un seul installateur. Pas de mise en concurrence avec dix autres artisans sur le même contact."),
+        ("clock", "Transmise sous 24&nbsp;h", "Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté."),
+        ("map", "Votre zone, vos projets", "Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités."),
+      ]), tone='white', tag="Ce que vous recevez", h2="Des demandes prêtes à traiter",
+      lead="Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.")
+    PREREQ = hs.section(hs.top_cards([
+        ("shield", "Qualification IRVE", "", "En cours de validité, obligatoire pour poser une borne de plus de 3,7&nbsp;kW."),
+        ("file", "Assurances à jour", "", "Responsabilité civile professionnelle et, selon vos travaux, garantie décennale."),
+        ("building", "Entreprise immatriculée", "", "Un SIRET actif pour l'entreprise qui réalise les poses."),
+        ("clock", "Réactivité", "", "Recontacter chaque client sous 48&nbsp;h ouvrées après réception de la demande."),
+      ]) + '<p class="pt-note">Pas encore qualifié&nbsp;? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>',
+      tone='menthe', tag="Prérequis", h2="Qui peut rejoindre le réseau ?",
+      lead="Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés.", sid="prerequis")
+    ETAPES = hs.section(hs.steps([
+        ("Candidature", "Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification."),
+        ("Premier échange", "On vous rappelle sous 48&nbsp;h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire."),
+        ("Contrat partenaire", "Un contrat simple fixe les règles : exclusivité de chaque demande, zone, tarifs, facturation mensuelle."),
+        ("Premières demandes", "Dès que votre zone est paramétrée, les demandes vous arrivent par e-mail."),
+      ]), tone='band', tag="Comment ça se passe", h2="De la candidature aux premières demandes")
+    FAQ = hs.faq_section("Questions fréquentes", "Les questions des installateurs",
+        'Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.', faq_html())
     return f'''<!--partner-body-->
-<section class="pt-hero"><div class="pt-wrap">
-  <div class="page-tag">Réseau installateurs IRVE</div>
-  <h1 class="page-title">Devenir partenaire installateur IRVE</h1>
-  <p class="page-sub">Recevez des demandes de pose qualifiées sur votre zone, sans prospecter. Chaque demande vient d'un particulier, d'une copropriété, d'une entreprise ou d'une collectivité qui a déjà fait sa simulation, et elle n'est transmise qu'à vous.</p>
-  <div class="pt-ctas">
-    <a class="pt-btn pt-btn-main" href="#candidature">Candidater {ARROW}</a>
-    <a class="pt-btn pt-btn-ghost" href="#prerequis">Voir les prérequis</a>
-  </div>
-  <ul class="pt-chips">
-    <li>{CHECK}1 demande = 1 seul installateur</li>
-    <li>{CHECK}Transmise sous 24 h</li>
-    <li>{CHECK}Sans abonnement ni volume minimum</li>
-  </ul>
-</div></section>
+{HERO}
 
-<section class="pt-sec alt">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Ce que vous recevez</span>
-    <h2 class="pt-h2">Des demandes prêtes à traiter</h2>
-    <p class="pt-lead">Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.</p>
-    <div class="pt-grid">
-      <div class="pt-card"><span class="n">01</span><h3>Un projet déjà cadré</h3><p>Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler.</p></div>
-      <div class="pt-card"><span class="n">02</span><h3>Une demande exclusive</h3><p>Chaque demande n'est transmise qu'à un seul installateur. Pas de mise en concurrence avec dix autres artisans sur le même contact.</p></div>
-      <div class="pt-card"><span class="n">03</span><h3>Transmise sous 24 h</h3><p>Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté.</p></div>
-      <div class="pt-card"><span class="n">04</span><h3>Votre zone, vos projets</h3><p>Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités.</p></div>
-    </div>
-  </div>
-</section>
+{RECEVEZ}
 
 <section class="pt-sec menthe">
   <div class="pt-wrap pt-split">
@@ -218,7 +228,7 @@ def body(form_inner):
           'Qualifie la demande grâce au simulateur',
           'Recueille le consentement du client',
           'Vous transmet la demande sous 24 h',
-          'Remplace ou rembourse une demande invalide',
+          'Ne vous transmet que des demandes de votre zone',
       ])}</ul></div>
       <div class="pt-role you"><h3>Vous</h3><ul class="pt-list">{li([
           'Recontactez le client sous 48 h ouvrées',
@@ -242,7 +252,7 @@ def body(form_inner):
       <ul class="pt-list" style="margin-bottom:24px">{li([
           'Une facture récapitulative à la fin du mois, payable à 30 jours',
           'Aucun abonnement, aucun volume minimum',
-          'Demande invalide non facturée : coordonnées fausses, injoignable après 3 tentatives, doublon ou hors zone',
+          'Uniquement des demandes de votre zone et de vos types de projets, jamais en double',
       ])}</ul>
       <p>La grille tarifaire vous est présentée lors du <strong>premier échange</strong>.</p>
       <a class="pt-btn pt-btn-main" href="#candidature">Demander la grille {ARROW}</a>
@@ -250,37 +260,11 @@ def body(form_inner):
   </div>
 </section>
 
-<section class="pt-sec alt" id="prerequis">
-  <div class="pt-wrap pt-split">
-    <div>
-      <span class="pt-kicker">Prérequis</span>
-      <h2 class="pt-h2">Qui peut rejoindre le réseau ?</h2>
-      <p class="pt-lead" style="margin-bottom:0">Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés. Pas encore qualifié ? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
-    </div>
-    <ul class="pt-list">{li([
-        '<strong>Qualification IRVE</strong> en cours de validité, obligatoire pour poser une borne de plus de 3,7 kW',
-        '<strong>Assurance responsabilité civile professionnelle</strong> et, selon vos travaux, garantie décennale à jour',
-        '<strong>Entreprise immatriculée</strong> (SIRET)',
-        '<strong>Engagement de réactivité</strong> : recontacter chaque client sous 48 h ouvrées',
-    ])}</ul>
-  </div>
-</section>
+{PREREQ}
 
-<section class="pt-sec">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Comment ça se passe</span>
-    <h2 class="pt-h2">De la candidature aux premières demandes</h2>
-    <p class="pt-lead">Quatre étapes, sans paperasse inutile.</p>
-    <ol class="pt-steps">
-      <li><span class="n">ÉTAPE 1</span><h3>Candidature</h3><p>Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification.</p></li>
-      <li><span class="n">ÉTAPE 2</span><h3>Premier échange</h3><p>On vous rappelle sous 48 h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire.</p></li>
-      <li><span class="n">ÉTAPE 3</span><h3>Contrat partenaire</h3><p>Un contrat simple fixe les règles : exclusivité de chaque demande, tarifs, facturation mensuelle, contestation.</p></li>
-      <li><span class="n">ÉTAPE 4</span><h3>Premières demandes</h3><p>Dès que votre zone est paramétrée, les demandes vous arrivent par e-mail.</p></li>
-    </ol>
-  </div>
-</section>
+{ETAPES}
 
-<section class="pt-form-sec alt pt-sec" id="candidature">
+<section class="pt-form-sec pt-sec menthe" id="candidature">
   <div class="pt-wrap">
     <span class="pt-kicker">Candidature</span>
     <h2 class="pt-h2">Candidater au réseau</h2>
@@ -289,14 +273,7 @@ def body(form_inner):
   </div>
 </section>
 
-<section class="pt-sec">
-  <div class="pt-wrap">
-    <span class="pt-kicker">Questions fréquentes</span>
-    <h2 class="pt-h2">Les questions des installateurs</h2>
-    <div class="pt-faq" style="margin-top:32px">{faq_html()}</div>
-    <p class="pt-note">Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
-  </div>
-</section>
+{FAQ}
 <!--/partner-body-->
 '''
 

@@ -54,6 +54,40 @@ graph = {"@context":"https://schema.org","@graph":[
 ]}
 jsonld='<script type="application/ld+json">\n'+json.dumps(graph,ensure_ascii=False,indent=2)+'\n</script>'
 
+import _home_sections as hs
+_card = hs.reco_card("Votre projet copropriété", "Étude gratuite",
+    [("building", "Prime ADVENIR (borne individuelle)", "1&nbsp;000&nbsp;€&nbsp;HT", "Borne partagée", "1&nbsp;660&nbsp;€&nbsp;HT"),
+     ("scale", "Droit à la prise", "Sans vote en AG", "Projet collectif", "Vote en AG"),
+     ("users", "Un seul interlocuteur", "Jusqu'à l'AG", "Installateur", "Certifié IRVE")],
+    'On revient vers vous <b style="color:var(--c-vert-lt)">sous 24 à 48&nbsp;h</b>, sans engagement')
+body = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Copropriété</span>',
+    badge="Syndics &amp; conseils syndicaux · Étude gratuite",
+    h1="Des bornes de recharge <em>pour votre copropriété</em>",
+    lead="Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble - souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.", ctas=[("#contact-copro", "Étudier mon projet", "primary"), ("#cadre", "Le droit à la prise", "ghost")],
+    mini=[("1&nbsp;000&nbsp;€&nbsp;HT", "par point (ADVENIR)"), ("24-48&nbsp;h", "pour une réponse"), ("100&nbsp;%", "indépendant")],
+    card=_card)
+body += hs.section(hs.top_cards([
+    ("home", "Valorisation des lots", "", "Une place équipée (ou pré-équipée) d'une borne devient un vrai argument à la vente comme à la location."),
+    ("bolt", "Une infrastructure mutualisée", "", "On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût."),
+    ("percent", "Jusqu'à 1&nbsp;000&nbsp;€&nbsp;HT par point", "", "La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective."),
+    ("users", "Un seul interlocuteur", "", "On cadre le projet, on mobilise un installateur certifié IRVE et on vous accompagne jusqu'au vote en AG."),
+  ]), tone='menthe', tag="Pourquoi maintenant", h2="Pourquoi équiper votre copropriété",
+  lead="La demande de recharge explose, et le cadre légal pousse les copropriétés à s'équiper. Anticiper, c'est éviter l'urgence et les surcoûts.")
+body += hs.section('<div class="hs-split"><div class="hs-prose"><p>' + "Tout copropriétaire ou locataire peut faire installer une borne sur sa place de parking, à ses frais, sans accord préalable de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime. Pour un projet collectif couvrant tout le parking, un vote en AG est en revanche nécessaire - on vous aide à le préparer." + '</p></div><div>'
+  + '<div class="hs-box"><h3>' + hs.icon("percent", 20) + 'Prime ADVENIR</h3><p>Jusqu\'à 1&nbsp;000&nbsp;€&nbsp;HT par point de charge pour une borne individuelle (1&nbsp;660&nbsp;€&nbsp;HT en borne partagée). La demande se fait avant les travaux.</p></div>'
+  + '<div class="hs-box hs-box-dark"><h3>Besoin d\'un argumentaire pour l\'AG&nbsp;?</h3><p>On cadre le projet collectif avec vous et on vous aide à préparer le vote.</p><a href="#contact-copro" class="btn-primary">Étudier mon projet ' + hs.ARROW + '</a></div>'
+  + '</div></div>', tone='white', tag="Le cadre légal", h2="Droit à la prise &amp; prime ADVENIR", sid="cadre")
+body += hs.section(hs.steps([
+    ("Vous nous décrivez la copro", "Nombre de lots, type de parking, année de construction, projet individuel ou collectif."),
+    ("On cadre le projet", "On définit l'infrastructure adaptée, le budget, les aides mobilisables et le déroulé jusqu'à l'AG."),
+    ("Mise en relation", "Avec un installateur certifié IRVE habitué aux copropriétés de votre taille."),
+    ("Installation", "L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins."),
+  ]), tone='band', tag="Comment ça se passe", h2="Votre projet copropriété en 4 étapes")
+body += hs.section('<div class="copro-form">\n    <div id="cBox">\n      <div class="row">\n        <div><label for="cNom">Nom et prénom</label><input type="text" id="cNom" placeholder="Votre nom"></div>\n        <div><label for="cRole">Vous êtes</label><select id="cRole"><option value="" disabled selected>Sélectionnez…</option><option>Syndic professionnel</option><option>Syndic bénévole</option><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Autre</option></select></div>\n      </div>\n      <div class="row">\n        <div><label for="cCopro">Nom / adresse de la copropriété</label><input type="text" id="cCopro" placeholder="Résidence, ville"></div>\n        <div><label for="cLots">Nombre de lots</label><select id="cLots"><option value="" disabled selected>Sélectionnez…</option><option>Moins de 20</option><option>20 à 50</option><option>50 à 100</option><option>Plus de 100</option></select></div>\n      </div>\n      <div class="row">\n        <div><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="vous@exemple.fr"></div>\n        <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06…"></div>\n      </div>\n      <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>\n      <button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande {ARROW}</button>\n    </div>\n    <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>\n  </div>', tone='menthe', tag="Parlons de votre copropriété", h2="Demander une étude gratuite",
+  lead="Décrivez votre copropriété en quelques lignes. On revient vers vous sous 24 à 48 heures, sans engagement.", sid="contact-copro")
+body += hs.faq_section("Questions fréquentes", "Bornes en copropriété&nbsp;: vos questions",
+  "Les réponses aux questions que se posent syndics et conseils syndicaux.", faq_html)
+
 html=f'''<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -89,74 +123,7 @@ html=f'''<!DOCTYPE html>
   <a class="btn-nav" href="#contact-copro">Étudier mon projet</a>
 </nav>
 
-<div class="hero-city">
-  <div class="breadcrumb"><a href="/">Accueil</a> › <span>Copropriété</span></div>
-  <div class="city-badge"><span class="badge-dot"></span>Syndics &amp; conseils syndicaux · Étude gratuite</div>
-  <h1 class="city-h1">Des bornes de recharge<br><span style="white-space:nowrap">pour votre copropriété</span></h1>
-  <p class="city-sub">Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble - souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.</p>
-  <a href="#contact-copro" class="btn-primary">Étudier mon projet copropriété {ARROW}</a>
-</div>
-
-<div class="city-body">
-
-  <span class="section-tag">Pourquoi maintenant</span>
-  <h2 class="section-h2">Pourquoi équiper votre copropriété</h2>
-  <p class="section-lead">La demande de recharge explose, et le cadre légal pousse les copropriétés à s'équiper. Anticiper, c'est éviter l'urgence et les surcoûts.</p>
-  <div class="info-grid">
-    <div class="info-card"><h4>Valorisation des lots</h4><p>Une place équipée (ou pré-équipée) d'une borne devient un vrai argument à la vente comme à la location.</p></div>
-    <div class="info-card"><h4>Une infrastructure mutualisée</h4><p>On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût.</p></div>
-    <div class="info-card"><h4>Jusqu'à 1 000 € HT / point</h4><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div>
-    <div class="info-card"><h4>Un seul interlocuteur</h4><p>On cadre le projet, on mobilise un installateur certifié IRVE et on vous accompagne jusqu'au vote en AG.</p></div>
-  </div>
-
-  <span class="section-tag">Le cadre légal</span>
-  <h2 class="section-h2">Droit à la prise &amp; prime ADVENIR</h2>
-  <p class="section-lead">Deux leviers majeurs facilitent l'installation de bornes en copropriété.</p>
-  <div class="areas-section">
-    <h4>Le droit à la prise</h4>
-    <p>Tout copropriétaire ou locataire peut faire installer une borne sur sa place de parking, à ses frais, sans accord préalable de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime. Pour un projet collectif couvrant tout le parking, un vote en AG est en revanche nécessaire - on vous aide à le préparer.</p>
-  </div>
-
-  <span class="section-tag">Comment ça se passe</span>
-  <h2 class="section-h2">Votre projet copropriété en 4 étapes</h2>
-  <div class="info-grid">
-    <div class="info-card"><h4>1. Vous nous décrivez la copro</h4><p>Nombre de lots, type de parking, année de construction, projet individuel ou collectif.</p></div>
-    <div class="info-card"><h4>2. On cadre le projet</h4><p>On définit l'infrastructure adaptée, le budget, les aides mobilisables et le déroulé jusqu'à l'AG.</p></div>
-    <div class="info-card"><h4>3. Mise en relation</h4><p>On vous met en relation avec un installateur certifié IRVE habitué aux copropriétés de votre taille.</p></div>
-    <div class="info-card"><h4>4. Installation</h4><p>L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins.</p></div>
-  </div>
-
-  <span class="section-tag" id="contact-copro">Parlons de votre copropriété</span>
-  <h2 class="section-h2">Demander une étude gratuite</h2>
-  <p class="section-lead">Décrivez votre copropriété en quelques lignes. On revient vers vous sous 24 à 48 heures, sans engagement.</p>
-  <div class="copro-form">
-    <div id="cBox">
-      <div class="row">
-        <div><label for="cNom">Nom et prénom</label><input type="text" id="cNom" placeholder="Votre nom"></div>
-        <div><label for="cRole">Vous êtes</label><select id="cRole"><option value="" disabled selected>Sélectionnez…</option><option>Syndic professionnel</option><option>Syndic bénévole</option><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Autre</option></select></div>
-      </div>
-      <div class="row">
-        <div><label for="cCopro">Nom / adresse de la copropriété</label><input type="text" id="cCopro" placeholder="Résidence, ville"></div>
-        <div><label for="cLots">Nombre de lots</label><select id="cLots"><option value="" disabled selected>Sélectionnez…</option><option>Moins de 20</option><option>20 à 50</option><option>50 à 100</option><option>Plus de 100</option></select></div>
-      </div>
-      <div class="row">
-        <div><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="vous@exemple.fr"></div>
-        <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06…"></div>
-      </div>
-      <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>
-      <button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande {ARROW}</button>
-    </div>
-    <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>
-  </div>
-
-  <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Bornes en copropriété : vos questions</h2>
-  <div class="faq-city">
-{faq_html}
-  </div>
-
-</div>
-
+{body}
 {footer()}
   <script src="/cursor.js" defer></script>
 <script>

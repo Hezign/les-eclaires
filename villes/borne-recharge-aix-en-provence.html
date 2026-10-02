@@ -331,7 +331,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Petit titre de section unique : ⚡ + capitales vertes */
 .section-tag,.page-tag,.pt-kicker{display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert-txt);margin-bottom:16px}
 .section-tag,.pt-kicker{display:inline-flex}
-.pt-kicker::before{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
+.section-tag::before,.pt-kicker::before{content:'';display:inline-block;width:12px;height:12px;flex-shrink:0;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
 .pt-sec.band .pt-kicker{color:var(--c-vert-lt)}
 /* FAQ unique : cartes blanches + chevron (comme l'accueil) */
 .faq-city details,.pt-faq details{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:16px;margin-bottom:12px;transition:border-color .2s}
@@ -349,12 +349,145 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Sauts de ligne : titres équilibrés, paragraphes sans mot orphelin */
+h1,h2,h3,h4,.city-h1,.page-title{text-wrap:balance}
+p,li,.city-sub,.page-sub{text-wrap:pretty}
 /* Finitions */
 @media(min-width:861px){footer .footer-cities-list{column-count:3}}
 footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
 .btt{font-family:var(--ff-h)}
 .form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
+</style>
+<style id="hs-css">
+/* ===== Sections façon accueil (référence : index.html) ===== */
+.hs-wrap{max-width:1032px;margin:0 auto;padding:0 24px;width:100%;box-sizing:border-box}
+.hs-sec{padding:104px 0}
+.hs-white{background:var(--c-bg2)}
+.hs-grey{background:var(--c-bg)}
+.hs-menthe{background:var(--c-menthe)}
+.hs-band{background:var(--c-band);color:rgba(255,255,255,.72)}
+.hs-band .section-tag{color:var(--c-vert-lt)}
+.hs-band .section-tag::before{background:var(--c-vert-lt)}
+.hs-h2{font-family:var(--ff-h);font-size:clamp(30px,4.4vw,54px);font-weight:800;letter-spacing:-.045em;line-height:1.05;color:var(--c-ink);margin:0 0 20px;max-width:760px;text-wrap:balance}
+.hs-band .hs-h2{color:#fff}
+.hs-lead{font-size:17px;font-weight:300;color:var(--c-mid);line-height:1.8;max-width:620px;margin:0 0 52px;text-wrap:pretty}
+.hs-band .hs-lead{color:rgba(255,255,255,.68)}
+/* Bouton principal : base complète (certaines pages n'ont pas le CSS de l'accueil) */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-.02em;padding:14px 28px;border-radius:999px;border:none;text-decoration:none;cursor:pointer;background:var(--c-vert-lt);color:#0a0a09;transition:background .2s,transform .18s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px)}
+/* Hero */
+.hs-hero{position:relative;overflow:hidden;background:var(--c-bg);padding:calc(var(--topbar-h,40px) + 120px) 0 104px}
+.hs-hero-deco{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 0%,rgba(0,194,126,.08) 0,transparent 46%),radial-gradient(circle at 100% 100%,rgba(0,194,126,.06) 0,transparent 34%)}
+.hs-hero-deco::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0,transparent 100%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0,transparent 100%)}
+html[data-theme="dark"] .hs-hero-deco::after{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)}
+.hs-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:64px;align-items:center}
+.hs-hero.has-card .hs-hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+.hs-hero .breadcrumb{font-size:13px;color:var(--c-muted);margin:0 0 22px}
+.hs-hero .breadcrumb a{color:var(--c-muted);text-decoration:none}
+.hs-hero .breadcrumb a:hover{color:var(--c-vert-txt)}
+.hs-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:999px;font-size:12.5px;font-weight:500;color:var(--c-vert-txt);margin:0 0 26px}
+.hs-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--c-vert);flex-shrink:0}
+.hs-hero h1{font-family:var(--ff-h);font-size:clamp(38px,5.6vw,68px);font-weight:800;letter-spacing:-.05em;line-height:1.02;color:var(--c-ink);margin:0 0 26px;max-width:760px;text-wrap:balance}
+.hs-hero h1 em{font-style:normal;color:var(--c-vert)}
+.hs-hero.has-card h1{font-size:clamp(36px,4.5vw,58px)}
+.hs-hero-lead{font-size:17px;font-weight:300;line-height:1.75;color:var(--c-mid);max-width:560px;margin:0;text-wrap:pretty}
+.hs-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
+.hs-btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-h);font-size:15px;font-weight:600;letter-spacing:-.02em;color:var(--c-ink);padding:14px 28px;border-radius:999px;border:1px solid var(--c-border2);text-decoration:none;transition:border-color .2s}
+.hs-btn-ghost:hover{border-color:var(--c-ink)}
+.hs-mini{display:flex;flex-wrap:wrap;gap:8px 28px;margin:30px 0 0;font-size:13.5px;color:var(--c-mid)}
+.hs-mini b{color:var(--c-vert-txt);font-weight:700;margin-right:4px}
+/* Carte « recommandation » (hero de la home) */
+.hs-reco{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:24px;padding:24px;box-shadow:0 28px 70px rgba(0,0,0,.09)}
+.hs-reco-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}
+.hs-reco-head .t{font-family:var(--ff-h);font-weight:800;font-size:15px;color:var(--c-ink)}
+.hs-reco-pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--c-vert-bg);color:var(--c-vert-txt);padding:5px 11px;border-radius:999px;white-space:nowrap}
+.hs-reco-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--c-border)}
+.hs-reco-ico{width:42px;height:42px;border-radius:12px;background:var(--c-vert-bg);color:var(--c-vert);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hs-reco-row .k{font-size:12px;color:var(--c-muted)}
+.hs-reco-row .v{font-family:var(--ff-h);font-weight:700;font-size:16px;color:var(--c-ink);letter-spacing:-.02em}
+.hs-reco-row .r{margin-left:auto;text-align:right}
+.hs-reco-foot{margin:16px 0 0;background:var(--c-band);color:#fff;border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:9px;font-size:12px;line-height:1.45}
+.hs-reco-foot svg{color:var(--c-vert-lt);flex-shrink:0}
+html[data-theme="dark"] .hs-reco-foot{border:1px solid var(--c-border2)}
+/* Cartes à bord supérieur vert + tuile noire */
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px}
+.hs-card-top{background:var(--c-bg2);border-radius:20px;border-top:4px solid var(--c-vert);padding:30px 26px;box-shadow:0 10px 32px rgba(0,0,0,.05)}
+.hs-tile{width:54px;height:54px;border-radius:14px;background:#000;color:var(--c-vert-lt);display:flex;align-items:center;justify-content:center;margin:0 0 24px}
+html[data-theme="dark"] .hs-tile{border:1px solid var(--c-border2)}
+.hs-card-top h3,.hs-card-num h3{font-family:var(--ff-h);font-size:19px;font-weight:700;letter-spacing:-.03em;color:var(--c-ink);margin:0 0 10px;text-wrap:balance}
+.hs-card-top h3,.hs-card-num h3{min-height:2.5em}
+.hs-card-top .amt{display:block;font-family:var(--ff-h);font-size:26px;font-weight:800;letter-spacing:-.04em;color:var(--c-vert-txt);margin:0 0 10px}
+.hs-card-top p,.hs-card-num p{font-size:14.5px;line-height:1.7;color:var(--c-mid);margin:0;text-wrap:pretty}
+/* Cartes contour + gros numéro */
+.hs-card-num{border:1.5px solid var(--c-border2);border-radius:20px;padding:30px 28px;transition:border-color .25s,transform .25s}
+.hs-card-num:hover{border-color:var(--c-vert);transform:translateY(-4px)}
+.hs-card-num .hd{display:flex;align-items:center;justify-content:space-between;margin:0 0 30px}
+.hs-ico-o{width:50px;height:50px;border-radius:14px;border:1.6px solid var(--c-vert);color:var(--c-vert);display:flex;align-items:center;justify-content:center}
+.hs-num{font-family:var(--ff-h);font-size:38px;font-weight:800;letter-spacing:-.04em;color:rgba(0,194,126,.22);line-height:1}
+/* Étapes sur bande noire */
+.hs-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:20px}
+.hs-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 24px;transition:background .2s,transform .25s}
+.hs-step:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.hs-pill{display:inline-flex;font-family:var(--ff-h);font-size:12px;font-weight:800;letter-spacing:-.01em;background:var(--c-vert);color:#05231a;padding:7px 12px;border-radius:8px;margin:0 0 22px}
+.hs-step h3{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-.03em;color:#fff;margin:0 0 10px;text-wrap:balance}
+.hs-step p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.68);margin:0;text-wrap:pretty}
+.hs-note{display:flex;align-items:center;gap:10px;margin:32px 0 0;font-size:14.5px;color:rgba(255,255,255,.75)}
+.hs-note svg{color:var(--c-vert-lt);flex-shrink:0}
+.hs-note b{color:#fff}
+/* Bande de chiffres */
+.hs-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.hs-stat{text-align:center;padding:8px 28px;border-left:1px solid rgba(255,255,255,.12)}
+.hs-stat:first-child{border-left:none}
+.hs-stat .n{display:block;font-family:var(--ff-h);font-size:clamp(40px,4.4vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--c-vert-lt);margin:0 0 12px}
+.hs-stat p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.7);margin:0 auto;max-width:240px;text-wrap:balance}
+/* 2 colonnes texte / encadré */
+.hs-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:start}
+.hs-prose p{font-size:16.5px;line-height:1.85;color:var(--c-mid);margin:0 0 18px;text-wrap:pretty}
+.hs-box{background:var(--c-bg);border:1px solid var(--c-border);border-radius:20px;padding:28px}
+.hs-white .hs-box{background:var(--c-bg)}
+.hs-menthe .hs-box{background:var(--c-bg2)}
+.hs-box h3{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-.025em;color:var(--c-ink);margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.hs-box h3 svg{color:var(--c-vert)}
+.hs-box p{font-size:14.5px;line-height:1.75;color:var(--c-mid);margin:0}
+.hs-box-dark{background:var(--c-band)!important;border-color:transparent;margin-top:16px}
+.hs-box-dark h3{color:#fff}
+.hs-box-dark p{color:rgba(255,255,255,.7);margin:0 0 20px}
+/* FAQ 2 colonnes */
+.hs-faq-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:56px;align-items:start}
+.hs-faq-grid .hs-lead{margin-bottom:0}
+.hs-faq-grid .hs-h2{font-size:clamp(28px,3.2vw,40px)}
+.hs-faq-grid .faq-city{margin:0}
+.faq-city summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-city summary::-webkit-details-marker{display:none}
+.hs-sec a.pt-inline{color:var(--c-vert-txt);text-decoration:underline;text-underline-offset:3px}
+.faq-city details>p{margin:0;padding:0 24px 20px;font-size:15px;line-height:1.8;color:var(--c-mid)}
+.hs-sec .pt-note{margin-top:28px}
+/* CTA final */
+.hs-cta{background:var(--c-band);border-radius:28px;padding:64px 48px;text-align:center}
+.hs-cta h2{font-family:var(--ff-h);font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.1;color:#fff;margin:0 auto 14px;max-width:640px;text-wrap:balance}
+.hs-cta p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.68);margin:0 auto 30px;max-width:520px;text-wrap:pretty}
+html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
+.hs-pills{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 40px}
+.hs-pills .rl{font-size:14px;color:var(--c-mid);margin-right:4px}
+.hs-pills a{display:inline-flex;padding:9px 18px;border-radius:999px;background:var(--c-bg2);border:1px solid var(--c-border);color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:14px;text-decoration:none;transition:border-color .2s,color .2s}
+.hs-pills a:hover{border-color:var(--c-vert-br);color:var(--c-vert-txt)}
+@media(max-width:900px){
+  .hs-hero.has-card .hs-hero-grid,.hs-split,.hs-faq-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .hs-stats{grid-template-columns:minmax(0,1fr)}
+  .hs-stat{border-left:none;border-top:1px solid rgba(255,255,255,.12);padding:24px 0}
+  .hs-stat:first-child{border-top:none}
+}
+@media(max-width:640px){
+  .hs-sec{padding:72px 0}
+  .hs-wrap{padding:0 20px}
+  .hs-hero{padding:calc(var(--topbar-h,40px) + 100px) 0 72px}
+  .hs-hero h1{font-size:clamp(34px,10vw,44px)}
+  .hs-lead{margin-bottom:36px}
+  .hs-cta{padding:44px 24px;border-radius:22px}
+  .hs-ctas a{width:100%;justify-content:center}
+  .hs-reco{padding:18px}
+}
 </style>
 </head>
 <body>
@@ -384,86 +517,25 @@ footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="hero-city">
-  <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>Aix-en-Provence</span></div>
-  <div class="city-badge"><span class="badge-dot"></span>Guide gratuit · Bouches-du-Rhône (13)</div>
-  <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">à Aix-en-Provence</span></h1>
-  <p class="city-sub">Vous habitez Aix-en-Provence et vous souhaitez installer une borne de recharge chez vous ? On vous accompagne pas à pas, gratuitement. Maison à Puyricard, appartement en centre-ville ou résidence au Tholonet : on trouve la solution adaptée à votre véhicule.</p>
-  <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-</div>
-
-<div class="city-body">
-
-  <span class="section-tag">Ce qu'il faut savoir</span>
-  <h2 class="section-h2">Les aides disponibles à Aix-en-Provence</h2>
-  <p class="section-lead">Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.</p>
-  <div class="info-grid">
-    <div class="info-card">
-      <h4>TVA à taux réduit</h4>
-      <span class="amount">5,5 %</span>
-      <p>Au lieu de 20 %, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</p>
+<section class="hs-hero has-card">
+  <div class="hs-hero-deco" aria-hidden="true"></div>
+  <div class="hs-wrap hs-hero-grid">
+    <div class="hs-hero-text">
+      <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>Aix-en-Provence</span></div>
+      <div class="hs-badge"><span class="badge-dot"></span>Guide gratuit · Bouches-du-Rhône (13)</div>
+      <h1>Installer une borne de recharge <em>à Aix-en-Provence</em></h1>
+      <p class="hs-hero-lead">Vous habitez Aix-en-Provence et vous souhaitez installer une borne de recharge chez vous ? On vous accompagne pas à pas, gratuitement. Maison à Puyricard, appartement en centre-ville ou résidence au Tholonet : on trouve la solution adaptée à votre véhicule.</p>
+      <div class="hs-ctas"><a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="#aides" class="hs-btn-ghost">Les aides à Aix-en-Provence</a></div>
+      <div class="hs-mini"><span><b>48&nbsp;h</b> pour être recontacté</span><span><b>5,5&nbsp;%</b> de TVA en maison</span><span><b>100&nbsp;%</b> indépendant</span></div>
     </div>
-    <div class="info-card">
-      <h4>Prime ADVENIR (copropriété)</h4>
-      <span class="amount">1 000 € HT</span>
-      <p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1 660 € HT en borne partagée), depuis la revalorisation du 1er avril 2026. La demande se fait avant les travaux.</p>
-    </div>
-    <div class="info-card">
-      <h4>Budget moyen constaté</h4>
-      <span class="amount">1 200 à 2 000 €</span>
-      <p>Pour une borne 7,4 kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
-    </div>
-    <div class="info-card">
-      <h4>Délai d'installation</h4>
-      <span class="amount">2 à 4 semaines</span>
-      <p>Pour une maison avec tableau électrique récent. En copropriété, les démarches peuvent prendre un peu plus de temps.</p>
-    </div>
+    <div class="hs-hero-card"><div class="hs-reco"><div class="hs-reco-head"><span class="t">Votre borne à Aix-en-Provence</span><span class="hs-reco-pill">Bouches-du-Rhône (13)</span></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><div><div class="k">Budget maison (pose incluse)</div><div class="v">1&nbsp;200 à 2&nbsp;000&nbsp;€</div></div><div class="r"><div class="k">TVA</div><div class="v">5,5&nbsp;%</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><div class="k">Délai d'installation</div><div class="v">2 à 4 semaines</div></div><div class="r"><div class="k">Copropriété</div><div class="v">ADVENIR</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 13.5h6.2L9 22l9-12.5h-6.2z"/></svg></span><div><div class="k">Puissance la plus courante</div><div class="v">Borne 7,4&nbsp;kW</div></div><div class="r"><div class="k">Charge</div><div class="v">1 nuit</div></div></div><div class="hs-reco-foot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 13.5h6.2L9 22l9-12.5h-6.2z"/></svg><span>Un installateur certifié IRVE de votre secteur vous recontacte <b style="color:var(--c-vert-lt)">sous 48&nbsp;h</b></span></div></div></div>
   </div>
-
-  <span class="section-tag">Spécificités locales</span>
-  <h2 class="section-h2">L'installation de bornes à Aix-en-Provence</h2>
-  <p class="section-lead">Aix-en-Provence est l'une des villes françaises où l'adoption du véhicule électrique progresse le plus vite, portée par un fort taux de propriétaires de maisons individuelles et une réelle sensibilité environnementale. Le réseau d'installateurs certifiés IRVE dans les Bouches-du-Rhône est dense, ce qui garantit des délais courts, y compris dans les communes périphériques.</p>
-
-  <div class="areas-section">
-    <h4>Zones couvertes</h4>
-    <p>Aix centre, Puyricard, Luynes, Les Milles, Le Tholonet, Venelles, Éguilles, Bouc-Bel-Air, Meyreuil</p>
-  </div>
-
-  <div class="copro-box">
-    <h3>Vous êtes en copropriété ou syndic à Aix-en-Provence ?</h3>
-    <p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes à installer. On accompagne les conseils syndicaux et les syndics de A à Z : droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>
-    <a href="/copropriete" class="btn-vert">Bornes en copropriété <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-  </div>
-
-  <span class="section-tag">Comment ça marche</span>
-  <h2 class="section-h2">Trois étapes pour installer votre borne</h2>
-  <div class="info-grid steps-3">
-    <div class="info-card"><h4>1. Simulateur gratuit</h4><p>Répondez à quelques questions simples sur votre logement et votre véhicule. Vous recevez immédiatement une recommandation personnalisée.</p></div>
-    <div class="info-card"><h4>2. Mise en relation</h4><p>On vous met en contact avec un électricien certifié IRVE dans votre secteur. Un seul contact, pas une liste à éplucher.</p></div>
-    <div class="info-card"><h4>3. Installation</h4><p>Vous savez exactement ce que vous allez payer et les aides que vous allez toucher avant que les travaux commencent.</p></div>
-  </div>
-  <p class="steps-free"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>100&nbsp;% gratuit pour vous.</strong> On est rémunérés par l'installateur, pas par vous.</span></p>
-
-  <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Borne de recharge à Aix-en-Provence : vos questions</h2>
-  <div class="faq-city">
-    <details><summary>Combien coûte l'installation d'une borne de recharge à Aix-en-Provence ?</summary><div><p>Pour une maison individuelle à Aix-en-Provence, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie.</p></div></details>
+</section><section class="hs-sec hs-menthe" id="aides"><div class="hs-wrap"><span class="section-tag">Ce qu'il faut savoir</span><h2 class="hs-h2">Les aides disponibles à Aix-en-Provence</h2><p class="hs-lead">Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.</p><div class="hs-cards"><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>TVA à taux réduit</h3><span class="amt">5,5&nbsp;%</span><p>Au lieu de 20&nbsp;%, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><h3>Prime ADVENIR (copropriété)</h3><span class="amt">1&nbsp;000&nbsp;€&nbsp;HT</span><p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1&nbsp;660&nbsp;€&nbsp;HT en borne partagée), depuis le 1er avril 2026. La demande se fait avant les travaux.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/></svg></span><h3>Budget moyen constaté</h3><span class="amt">1&nbsp;200 à 2&nbsp;000&nbsp;€</span><p>Pour une borne 7,4&nbsp;kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h3>Délai d'installation</h3><span class="amt">2 à 4 semaines</span><p>Pour une maison avec tableau électrique récent. En copropriété, les démarches peuvent prendre un peu plus de temps.</p></div></div></div></section><section class="hs-sec hs-white"><div class="hs-wrap"><span class="section-tag">Spécificités locales</span><h2 class="hs-h2">L'installation de bornes à Aix-en-Provence</h2><div class="hs-split"><div class="hs-prose"><p>Aix-en-Provence est l'une des villes françaises où l'adoption du véhicule électrique progresse le plus vite, portée par un fort taux de propriétaires de maisons individuelles et une réelle sensibilité environnementale. Le réseau d'installateurs certifiés IRVE dans les Bouches-du-Rhône est dense, ce qui garantit des délais courts, y compris dans les communes périphériques.</p></div><div><div class="hs-box"><h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Zones couvertes</h3><p>Aix centre, Puyricard, Luynes, Les Milles, Le Tholonet, Venelles, Éguilles, Bouc-Bel-Air, Meyreuil</p></div><div class="hs-box hs-box-dark"><h3>Vous êtes en copropriété ou syndic à Aix-en-Provence&nbsp;?</h3><p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes. On accompagne les conseils syndicaux et les syndics de A à Z&nbsp;: droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p><a href="/copropriete" class="btn-primary">Bornes en copropriété <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></div></div></div></section><section class="hs-sec hs-band"><div class="hs-wrap"><span class="section-tag">Comment ça marche</span><h2 class="hs-h2">Trois étapes pour installer votre borne</h2><div class="hs-steps"><div class="hs-step"><span class="hs-pill">ÉTAPE 01</span><h3>Vous répondez au simulateur</h3><p>Quelques questions simples sur votre logement et votre véhicule. Vous recevez immédiatement une recommandation personnalisée.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 02</span><h3>On vous met en relation</h3><p>Avec un électricien certifié IRVE de votre secteur. Un seul contact, pas une liste à éplucher.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 03</span><h3>Vous installez sereinement</h3><p>Vous savez ce que vous allez payer et les aides que vous allez toucher avant que les travaux commencent.</p></div></div><p class="hs-note"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>100&nbsp;% gratuit pour vous.</b> On est rémunérés par l'installateur, pas par vous.</span></p></div></section><section class="hs-sec hs-white" id="faq"><div class="hs-wrap hs-faq-grid"><div><span class="section-tag">Questions fréquentes</span><h2 class="hs-h2">Borne de recharge à Aix-en-Provence&nbsp;: vos questions</h2><p class="hs-lead">Les réponses aux questions qu'on nous pose le plus souvent.</p></div><div class="faq-city">    <details><summary>Combien coûte l'installation d'une borne de recharge à Aix-en-Provence ?</summary><div><p>Pour une maison individuelle à Aix-en-Provence, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie.</p></div></details>
     <details><summary>Quelles aides puis-je obtenir à Aix-en-Provence ?</summary><div><p>À Aix-en-Provence, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible.</p></div></details>
     <details><summary>Puis-je installer une borne en copropriété à Aix-en-Provence ?</summary><div><p>Oui. Que vous soyez propriétaire ou locataire à Aix-en-Provence, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href="/copropriete">En savoir plus sur les bornes en copropriété</a>.</p></div></details>
     <details><summary>Combien de temps prend l'installation à Aix-en-Provence ?</summary><div><p>Pour une maison avec un tableau électrique récent à Aix-en-Provence, comptez 2 à 4 semaines entre la prise de contact et l'installation. En copropriété, les démarches administratives rallongent un peu le délai.</p></div></details>
     <details><summary>Quelle puissance de borne choisir ?</summary><div><p>Une borne de 7,4&nbsp;kW suffit dans la grande majorité des cas : elle recharge votre véhicule en une nuit. Une puissance supérieure (11 ou 22&nbsp;kW) se justifie pour plusieurs véhicules ou un usage professionnel. Le simulateur vous recommande la puissance adaptée.</p></div></details>
-    <details><summary>Le service Les Éclairés est-il gratuit ?</summary><div><p>Oui, à Aix-en-Provence comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous.</p></div></details>
-  </div>
-
-  <div class="related"><span class="rl">Autres villes en Provence-Alpes-Côte d'Azur</span><a href="/villes/borne-recharge-marseille.html">Marseille</a><a href="/villes/borne-recharge-nice.html">Nice</a></div>
-
-  <div class="cta-box">
-    <h3>Prêt à installer votre borne à Aix-en-Provence ?</h3>
-    <p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p>
-    <a href="/simulateur" class="btn-vert">Démarrer le simulateur <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-  </div>
-
-</div>
+    <details><summary>Le service Les Éclairés est-il gratuit ?</summary><div><p>Oui, à Aix-en-Provence comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous.</p></div></details></div></div></section><section class="hs-sec hs-menthe hs-cta-sec"><div class="hs-wrap"><div class="hs-pills"><span class="rl">Autres villes en Provence-Alpes-Côte d'Azur</span><a href="/villes/borne-recharge-marseille.html">Marseille</a><a href="/villes/borne-recharge-nice.html">Nice</a></div><div class="hs-cta"><h2>Prêt à installer votre borne à Aix-en-Provence&nbsp;?</h2><p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p><a href="/simulateur" class="btn-primary">Démarrer le simulateur <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></div></section>
 
 <footer>
   <div class="footer-top">
