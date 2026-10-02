@@ -225,6 +225,11 @@ html,body{overflow-x:clip}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -257,36 +262,36 @@ html,body{overflow-x:clip}
 <div class="page has-toc">
   <div class="page-tag">Légal</div>
   <h1>Mentions légales</h1>
-  <p class="page-date">Dernière mise à jour : juin 2026</p>
+  <p class="page-date">Dernière mise à jour : juin 2026</p>
   <div class="legal-layout"><aside class="legal-toc" aria-label="Sommaire"><p class="legal-toc-title">Sommaire</p><ol><li><a href="#editeur-du-site"><span class="n">1</span><span>Éditeur du site</span></a></li><li><a href="#hebergement"><span class="n">2</span><span>Hébergement</span></a></li><li><a href="#conception-et-realisation"><span class="n">3</span><span>Conception et réalisation</span></a></li><li><a href="#propriete-intellectuelle"><span class="n">4</span><span>Propriété intellectuelle</span></a></li><li><a href="#donnees-personnelles-et-rgpd"><span class="n">5</span><span>Données personnelles et RGPD</span></a></li><li><a href="#responsabilite"><span class="n">6</span><span>Responsabilité</span></a></li><li><a href="#droit-applicable"><span class="n">7</span><span>Droit applicable</span></a></li><li><a href="#accessibilite-numerique"><span class="n">8</span><span>Accessibilité numérique</span></a></li></ol></aside>
   <div class="prose"><details class="legal-toc-mobile"><summary>Sommaire</summary><ol><li><a href="#editeur-du-site"><span class="n">1</span><span>Éditeur du site</span></a></li><li><a href="#hebergement"><span class="n">2</span><span>Hébergement</span></a></li><li><a href="#conception-et-realisation"><span class="n">3</span><span>Conception et réalisation</span></a></li><li><a href="#propriete-intellectuelle"><span class="n">4</span><span>Propriété intellectuelle</span></a></li><li><a href="#donnees-personnelles-et-rgpd"><span class="n">5</span><span>Données personnelles et RGPD</span></a></li><li><a href="#responsabilite"><span class="n">6</span><span>Responsabilité</span></a></li><li><a href="#droit-applicable"><span class="n">7</span><span>Droit applicable</span></a></li><li><a href="#accessibilite-numerique"><span class="n">8</span><span>Accessibilité numérique</span></a></li></ol></details>
   <h2 id="editeur-du-site">1. Éditeur du site</h2>
     <div class="info-box">
-      <p><strong>Raison sociale :</strong> ELOI LAETITIA</p>
-      <p><strong>Forme juridique :</strong> Entrepreneur individuel</p>
-      <p><strong>SIREN :</strong> 104 910 187</p>
-      <p><strong>SIRET (siège de l'entreprise) :</strong> 104 910 187 00012</p>
-      <p><strong>Greffe :</strong> RCS Saint-Étienne</p>
-      <p><strong>Code NAF / APE :</strong> 6312Z (Exploitation de portails internet)</p>
-      <p><strong>Date d'immatriculation :</strong> 11/05/2026</p>
-      <p><strong>Commune d'implantation :</strong> Saint-Étienne (Loire)</p>
-      <p><strong>Contact :</strong> <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a></p>
+      <p><strong>Raison sociale :</strong> ELOI LAETITIA</p>
+      <p><strong>Forme juridique :</strong> Entrepreneur individuel</p>
+      <p><strong>SIREN :</strong> 104 910 187</p>
+      <p><strong>SIRET (siège de l'entreprise) :</strong> 104 910 187 00012</p>
+      <p><strong>Greffe :</strong> RCS Saint-Étienne</p>
+      <p><strong>Code NAF / APE :</strong> 6312Z (Exploitation de portails internet)</p>
+      <p><strong>Date d'immatriculation :</strong> 11/05/2026</p>
+      <p><strong>Commune d'implantation :</strong> Saint-Étienne (Loire)</p>
+      <p><strong>Contact :</strong> <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a></p>
     </div>
     <h2 id="hebergement">2. Hébergement</h2>
     <div class="info-box">
       <p><strong>LWS (Ligne Web Services)</strong></p>
-      <p>Société par actions simplifiée au capital de 500 000 €</p>
-      <p><strong>Adresse :</strong> 10 rue Penthièvre, 75008 Paris, France</p>
-      <p><strong>RCS :</strong> Paris B 851 993 683</p>
-      <p><strong>Site web :</strong> <a href="https://www.lws.fr/" target="_blank" rel="noopener">www.lws.fr</a></p>
+      <p>Société par actions simplifiée au capital de 500 000 €</p>
+      <p><strong>Adresse :</strong> 10 rue Penthièvre, 75008 Paris, France</p>
+      <p><strong>RCS :</strong> Paris B 851 993 683</p>
+      <p><strong>Site web :</strong> <a href="https://www.lws.fr/" target="_blank" rel="noopener">www.lws.fr</a></p>
     </div>
     <p>Le déploiement et la diffusion du site sont assurés via la plateforme <strong>Vercel Inc.</strong> (340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis - <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>).</p>
     <h2 id="conception-et-realisation">3. Conception et réalisation</h2>
-    <p>Ce site a été entièrement conçu et réalisé par <strong>Hezign</strong> (<a href="https://hezign.fr" target="_blank" rel="noopener">hezign.fr</a>) : design, développement et intégration.</p>
+    <p>Ce site a été entièrement conçu et réalisé par <strong>Hezign</strong> (<a href="https://hezign.fr" target="_blank" rel="noopener">hezign.fr</a>) : design, développement et intégration.</p>
     <h2 id="propriete-intellectuelle">4. Propriété intellectuelle</h2>
     <p>Tous les contenus présents sur ce site (textes, images, logos, graphismes, code) sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou diffusion non autorisée est interdite sans accord écrit préalable.</p>
     <h2 id="donnees-personnelles-et-rgpd">5. Données personnelles et RGPD</h2>
-    <p>Ce site peut collecter des données personnelles via les formulaires et les cookies. Vous disposez des droits suivants :</p>
+    <p>Ce site peut collecter des données personnelles via les formulaires et les cookies. Vous disposez des droits suivants :</p>
     <ul>
       <li>Droit d'accès à vos données</li>
       <li>Droit de rectification</li>
@@ -328,7 +333,7 @@ html,body{overflow-x:clip}
       <div class="footer-col">
         <h4>Informations</h4>
         <ul>
-          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/mentions-legales.html" aria-current="page">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>

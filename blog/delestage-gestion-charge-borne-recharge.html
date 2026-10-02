@@ -264,6 +264,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -294,48 +299,48 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/delestage-gestion-charge-borne-recharge.jpg" alt="Tableau électrique et disjoncteurs protégeant une installation de recharge" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Choisir & installer</div>
-<h1 class="htitle">Délestage et gestion de charge : protéger son installation IRVE</h1>
-<div class="hmeta"><span>1 octobre 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Délestage et gestion de charge : protéger son installation IRVE</h1>
+<div class="hmeta"><span>1 octobre 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose"><section class="prose">
 
-<p>Vous branchez votre voiture électrique un soir d'hiver, le four est en marche, le lave-linge tourne en programme nuit et le chauffe-eau se déclenche en heures creuses. Sans système de gestion de charge, le disjoncteur principal saute ou, pire, le compteur Linky coupe l'alimentation générale. Ce scénario est plus fréquent qu'on ne le croit, surtout dans les foyers dont l'abonnement électrique oscille entre 6 et 9 kVA.</p>
+<p>Vous branchez votre voiture électrique un soir d'hiver, le four est en marche, le lave-linge tourne en programme nuit et le chauffe-eau se déclenche en heures creuses. Sans système de gestion de charge, le disjoncteur principal saute ou, pire, le compteur Linky coupe l'alimentation générale. Ce scénario est plus fréquent qu'on ne le croit, surtout dans les foyers dont l'abonnement électrique oscille entre 6 et 9 kVA.</p>
 
-<p>Le délestage dynamique est la réponse technique à ce problème : il module en temps réel la puissance envoyée à la borne de recharge pour que la somme des consommations domestiques ne dépasse jamais la puissance souscrite. Résultat, la voiture charge quand même, plus lentement si nécessaire, mais sans jamais provoquer de coupure.</p>
+<p>Le délestage dynamique est la réponse technique à ce problème : il module en temps réel la puissance envoyée à la borne de recharge pour que la somme des consommations domestiques ne dépasse jamais la puissance souscrite. Résultat, la voiture charge quand même, plus lentement si nécessaire, mais sans jamais provoquer de coupure.</p>
 
 <p>Dans cet article, Les Éclairés vous expliquent le fonctionnement du délestage, la différence avec la gestion de charge en copropriété, les équipements requis et ce que cela change concrètement sur votre facture et votre confort. Vous verrez aussi pourquoi la qualification IRVE de votre installateur est la clé d'un réglage fiable.</p>
 
-<h2 id="definition-delestage">Qu'est-ce que le délestage d'une borne de recharge, exactement ?</h2>
+<h2 id="definition-delestage">Qu'est-ce que le délestage d'une borne de recharge, exactement ?</h2>
 
 <p>Le délestage consiste à réduire automatiquement la puissance de charge de votre borne lorsque le reste de votre logement consomme trop, afin de ne pas dépasser la puissance de votre abonnement. C'est une fonction de protection électrique, pas une limitation arbitraire.</p>
 
-<p>Sur un abonnement 9 kVA (soit environ 9 000 watts disponibles), une borne 7,4 kW utilisée seule laisse moins de 2 kW pour tout le reste du foyer. Quand plusieurs appareils énergivores fonctionnent simultanément, le compteur Linky détecte le dépassement et coupe l'alimentation. Le délestage anticipe ce dépassement en abaissant dynamiquement le courant transmis à la borne, par paliers de 1 ampère par exemple, jusqu'à ce que la marge redevienne suffisante. Dès que la consommation globale redescend, la borne remonte progressivement en puissance.</p>
+<p>Sur un abonnement 9 kVA (soit environ 9 000 watts disponibles), une borne 7,4 kW utilisée seule laisse moins de 2 kW pour tout le reste du foyer. Quand plusieurs appareils énergivores fonctionnent simultanément, le compteur Linky détecte le dépassement et coupe l'alimentation. Le délestage anticipe ce dépassement en abaissant dynamiquement le courant transmis à la borne, par paliers de 1 ampère par exemple, jusqu'à ce que la marge redevienne suffisante. Dès que la consommation globale redescend, la borne remonte progressivement en puissance.</p>
 
-<p>Il existe deux grandes familles de délestage :</p>
+<p>Il existe deux grandes familles de délestage :</p>
 <ul>
-  <li><strong>Le délestage statique</strong> : la borne est bridée à une puissance fixe, définie une fois pour toutes lors de l'installation (par exemple 3,7 kW sur un abonnement 6 kVA). Simple, mais pas optimal puisque la borne ne profite jamais d'une maison vide.</li>
+  <li><strong>Le délestage statique</strong> : la borne est bridée à une puissance fixe, définie une fois pour toutes lors de l'installation (par exemple 3,7 kW sur un abonnement 6 kVA). Simple, mais pas optimal puisque la borne ne profite jamais d'une maison vide.</li>
   <li><strong>Le délestage dynamique</strong> : un capteur de courant (souvent appelé TIC ou pince ampèremétrique) mesure la consommation en temps réel sur le tableau électrique et communique avec la borne. La puissance de charge s'adapte seconde par seconde à la disponibilité réelle.</li>
 </ul>
 
-<h2 id="pourquoi-indispensable">Pourquoi le délestage est-il indispensable dans la majorité des foyers ?</h2>
+<h2 id="pourquoi-indispensable">Pourquoi le délestage est-il indispensable dans la majorité des foyers ?</h2>
 
-<p>Sans délestage, une borne 7,4 kW branché sur un abonnement 9 kVA ne laisse qu'une marge de 1,6 kW pour l'ensemble du logement, ce qui provoque des coupures dès qu'un four ou un sèche-cheveux s'allume. Le délestage dynamique est donc indispensable partout où la puissance souscrite est inférieure à la somme borne plus consommation de pointe.</p>
+<p>Sans délestage, une borne 7,4 kW branché sur un abonnement 9 kVA ne laisse qu'une marge de 1,6 kW pour l'ensemble du logement, ce qui provoque des coupures dès qu'un four ou un sèche-cheveux s'allume. Le délestage dynamique est donc indispensable partout où la puissance souscrite est inférieure à la somme borne plus consommation de pointe.</p>
 
-<p>Concrètement, voici les situations les plus à risque :</p>
+<p>Concrètement, voici les situations les plus à risque :</p>
 <ul>
-  <li>Abonnement 6 kVA avec une borne 7,4 kW (le dépassement est structurel dès le départ).</li>
-  <li>Abonnement 9 kVA avec chauffage électrique, cumulus et cuisson électrique coexistant avec la recharge.</li>
+  <li>Abonnement 6 kVA avec une borne 7,4 kW (le dépassement est structurel dès le départ).</li>
+  <li>Abonnement 9 kVA avec chauffage électrique, cumulus et cuisson électrique coexistant avec la recharge.</li>
   <li>Maisons ancienne dont l'installation électrique n'a pas été redimensionnée depuis l'arrivée d'un véhicule électrique.</li>
 </ul>
 
-<p>Augmenter son abonnement Enedis est une alternative, mais elle coûte entre 80 et 200 EUR TTC par an de surcoût fixe selon les niveaux. Le délestage dynamique, lui, est souvent intégré directement dans les bornes modernes (Wallbox, Zaptec, Hager) ou ajouté via un module externe, pour un investissement ponctuel. Si vous souhaitez comparer les puissances disponibles avant de choisir, notre article <a href="7kw-ou-22kw-quelle-puissance.html">7 kW ou 22 kW : quelle puissance choisir pour votre borne</a> détaille les critères de sélection.</p>
+<p>Augmenter son abonnement Enedis est une alternative, mais elle coûte entre 80 et 200 € TTC par an de surcoût fixe selon les niveaux. Le délestage dynamique, lui, est souvent intégré directement dans les bornes modernes (Wallbox, Zaptec, Hager) ou ajouté via un module externe, pour un investissement ponctuel. Si vous souhaitez comparer les puissances disponibles avant de choisir, notre article <a href="7kw-ou-22kw-quelle-puissance.html">7 kW ou 22 kW : quelle puissance choisir pour votre borne</a> détaille les critères de sélection.</p>
 
-<h2 id="fonctionnement-technique">Comment fonctionne concrètement le délestage dynamique ?</h2>
+<h2 id="fonctionnement-technique">Comment fonctionne concrètement le délestage dynamique ?</h2>
 
 <p>Le délestage dynamique repose sur une pince ampèremétrique installée sur le tableau électrique, qui envoie en temps réel la consommation globale du foyer à la borne via Wi-Fi, Ethernet ou fil pilote. La borne calcule alors la puissance disponible et ajuste son courant de charge en conséquence.</p>
 
-<p>Voici la chaîne technique, étape par étape :</p>
+<p>Voici la chaîne technique, étape par étape :</p>
 <ul>
   <li><strong>Mesure</strong> : une pince ampèremétrique sur chaque phase du tableau (ou sur le câble principal pour les monophasés) relève la consommation instantanée toutes les quelques secondes.</li>
   <li><strong>Communication</strong> : les données sont transmises à la borne via le protocole Modbus, OCPP ou un firmware propriétaire selon la marque.</li>
@@ -346,31 +351,31 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <p>Certaines bornes intègrent le module de mesure en natif (Zaptec Go, Wallbox Pulsar Plus avec Power Boost). D'autres, comme certains modèles Hager, nécessitent l'ajout d'un module externe. Dans tous les cas, l'installateur doit paramétrer la puissance d'abonnement dans l'interface de configuration, ce qui requiert des compétences IRVE spécifiques. Pour un comparatif des marques, consultez notre article <a href="comparatif-marques-borne-recharge-2026.html">comparatif des marques de bornes de recharge 2026</a>.</p>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
-<h2 id="delestage-copropriete">Comment la gestion de charge fonctionne-t-elle en copropriété ?</h2>
+<h2 id="delestage-copropriete">Comment la gestion de charge fonctionne-t-elle en copropriété ?</h2>
 
-<p>En copropriété, le défi est différent : plusieurs bornes partagent un même branchement collectif ou des compteurs individuels limités, et la puissance disponible doit être répartie dynamiquement entre tous les utilisateurs actifs. On parle alors de gestion de charge multi-points ou de load balancing collectif.</p>
+<p>En copropriété, le défi est différent : plusieurs bornes partagent un même branchement collectif ou des compteurs individuels limités, et la puissance disponible doit être répartie dynamiquement entre tous les utilisateurs actifs. On parle alors de gestion de charge multi-points ou de load balancing collectif.</p>
 
-<p>Un système de gestion de charge en copropriété comprend généralement :</p>
+<p>Un système de gestion de charge en copropriété comprend généralement :</p>
 <ul>
   <li>Un contrôleur centralisé (passerelle OCPP ou système de management de l'énergie) qui connaît la puissance totale autorisée sur le branchement collectif.</li>
   <li>Des bornes compatibles OCPP 1.6 ou 2.0 qui communiquent leur état de charge au contrôleur.</li>
   <li>Un algorithme de répartition qui distribue équitablement ou par priorité la puissance disponible entre les véhicules en charge simultanés.</li>
 </ul>
 
-<p>Exemple concret : un parking de 10 places avec un branchement collectif de 36 kVA et 10 bornes de 7,4 kW chacune. Si 8 véhicules sont branchés en même temps, chaque borne reçoit 4,5 kW au lieu de 7,4 kW, ce qui reste suffisant pour une charge nocturne complète. Sans gestion de charge, les 8 bornes consommeraient 59,2 kW, soit un dépassement massif. Notre guide <a href="financement-infrastructure-collective-copropriete-advenir-2026.html">financement d'infrastructure collective en copropriété avec ADVENIR</a> détaille les aides disponibles pour ce type de projet.</p>
+<p>Exemple concret : un parking de 10 places avec un branchement collectif de 36 kVA et 10 bornes de 7,4 kW chacune. Si 8 véhicules sont branchés en même temps, chaque borne reçoit 4,5 kW au lieu de 7,4 kW, ce qui reste suffisant pour une charge nocturne complète. Sans gestion de charge, les 8 bornes consommeraient 59,2 kW, soit un dépassement massif. Notre guide <a href="financement-infrastructure-collective-copropriete-advenir-2026.html">financement d'infrastructure collective en copropriété avec ADVENIR</a> détaille les aides disponibles pour ce type de projet.</p>
 
-<p>Pour les copropriétés éligibles, la prime ADVENIR (barème du 01/04/2026) peut couvrir jusqu'à 50 % du coût de l'infrastructure collective, avec un plafond de 12 500 EUR HT. Les bornes individuelles bénéficient quant à elles d'une aide allant jusqu'à 1 000 EUR HT, et les bornes partagées jusqu'à 1 660 EUR HT. Le dossier doit être validé avant le début des travaux, et les pavillons individuels ne sont pas éligibles.</p>
+<p>Pour les copropriétés éligibles, la prime ADVENIR (barème du 01/04/2026) peut couvrir jusqu'à 50 % du coût de l'infrastructure collective, avec un plafond de 12 500 € HT. Les bornes individuelles bénéficient quant à elles d'une aide allant jusqu'à 1 000 € HT, et les bornes partagées jusqu'à 1 660 € HT. Le dossier doit être validé avant le début des travaux, et les pavillons individuels ne sont pas éligibles.</p>
 
-<h2 id="installation-qualifications">Qui peut installer un système de délestage, et quelles qualifications sont requises ?</h2>
+<h2 id="installation-qualifications">Qui peut installer un système de délestage, et quelles qualifications sont requises ?</h2>
 
-<p>Toute installation d'une borne de recharge au-delà de 3,7 kW exige un installateur titulaire d'une qualification IRVE (Qualifelec, AFNOR ou Qualit'EnR), qui doit figurer explicitement sur le devis et la facture. Cette obligation légale s'applique aussi à l'ajout d'un module de délestage sur une borne existante.</p>
+<p>Toute installation d'une borne de recharge au-delà de 3,7 kW exige un installateur titulaire d'une qualification IRVE (Qualifelec, AFNOR ou Qualit'EnR), qui doit figurer explicitement sur le devis et la facture. Cette obligation légale s'applique aussi à l'ajout d'un module de délestage sur une borne existante.</p>
 
-<p>La qualification IRVE garantit que l'électricien maîtrise :</p>
+<p>La qualification IRVE garantit que l'électricien maîtrise :</p>
 <ul>
   <li>Le dimensionnement du circuit dédié (câble, disjoncteur, protection différentielle de type A ou B selon la borne).</li>
   <li>Le paramétrage du délestage et la vérification de la cohérence avec la puissance souscrite.</li>
@@ -378,13 +383,13 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <li>La conformité à la norme NF C 15-100 et au guide UTE C 15-722.</li>
 </ul>
 
-<p>Un électricien généraliste non qualifié IRVE peut poser une prise renforcée jusqu'à 3,7 kW, mais il ne peut légalement ni installer une borne 7,4 kW ni configurer un système de délestage dynamique associé. En cas de sinistre, votre assureur pourrait contester la prise en charge si la qualification n'est pas mentionnée sur la facture. Pour trouver un professionnel qualifié près de chez vous, consultez <a href="../partenaires.html">notre annuaire de partenaires installateurs IRVE</a>.</p>
+<p>Un électricien généraliste non qualifié IRVE peut poser une prise renforcée jusqu'à 3,7 kW, mais il ne peut légalement ni installer une borne 7,4 kW ni configurer un système de délestage dynamique associé. En cas de sinistre, votre assureur pourrait contester la prise en charge si la qualification n'est pas mentionnée sur la facture. Pour trouver un professionnel qualifié près de chez vous, consultez <a href="../partenaires.html">notre annuaire de partenaires installateurs IRVE</a>.</p>
 
-<h2 id="cout-et-tva">Quel est le coût d'un système de délestage et quelles aides s'appliquent ?</h2>
+<h2 id="cout-et-tva">Quel est le coût d'un système de délestage et quelles aides s'appliquent ?</h2>
 
-<p>Le surcoût d'un module de délestage dynamique par rapport à une borne standard est généralement compris entre 100 et 400 EUR TTC selon qu'il est intégré nativement ou ajouté en option. Il s'ajoute au prix de la borne elle-même, soit 1 200 à 2 000 EUR TTC pour une borne 7,4 kW pose comprise.</p>
+<p>Le surcoût d'un module de délestage dynamique par rapport à une borne standard est généralement compris entre 100 et 400 € TTC selon qu'il est intégré nativement ou ajouté en option. Il s'ajoute au prix de la borne elle-même, soit 1 200 à 2 000 € TTC pour une borne 7,4 kW pose comprise.</p>
 
-<p>Sur le plan fiscal, la TVA à 5,5 % s'applique à l'ensemble de la fourniture et de la pose si deux conditions sont réunies : l'installateur est qualifié IRVE et le logement a plus de deux ans. Cette TVA réduite s'applique aussi bien à la borne qu'au module de délestage et aux travaux d'adaptation du tableau électrique, ce qui représente une économie réelle sur un devis global.</p>
+<p>Sur le plan fiscal, la TVA à 5,5 % s'applique à l'ensemble de la fourniture et de la pose si deux conditions sont réunies : l'installateur est qualifié IRVE et le logement a plus de deux ans. Cette TVA réduite s'applique aussi bien à la borne qu'au module de délestage et aux travaux d'adaptation du tableau électrique, ce qui représente une économie réelle sur un devis global.</p>
 
 <p>Concernant le crédit d'impôt pour les particuliers, il a été supprimé et n'est plus reconductible depuis le 31 décembre 2026. Il ne faut donc pas compter sur cette aide dans votre plan de financement 2026.</p>
 
@@ -392,9 +397,9 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
-<p>Le délestage dynamique n'est pas un luxe réservé aux grandes installations : c'est une sécurité concrète pour tout foyer dont l'abonnement électrique est inférieur à 12 kVA et qui souhaite recharger une voiture électrique sans subir de coupures. Que vous soyez en maison individuelle ou en copropriété, un installateur qualifié IRVE peut évaluer votre situation en moins d'une heure et vous proposer la solution adaptée, qu'il s'agisse d'un simple bridage statique ou d'un système de load balancing multi-bornes.</p>
+<p>Le délestage dynamique n'est pas un luxe réservé aux grandes installations : c'est une sécurité concrète pour tout foyer dont l'abonnement électrique est inférieur à 12 kVA et qui souhaite recharger une voiture électrique sans subir de coupures. Que vous soyez en maison individuelle ou en copropriété, un installateur qualifié IRVE peut évaluer votre situation en moins d'une heure et vous proposer la solution adaptée, qu'il s'agisse d'un simple bridage statique ou d'un système de load balancing multi-bornes.</p>
 
-<p>Pour faire le bon choix, commencez par utiliser notre simulateur gratuit qui prend en compte votre puissance souscrite, votre type de logement et votre usage prévu, puis contactez un installateur partenaire pour obtenir un devis avec mention de la qualification IRVE et de la TVA à 5,5 % si applicable. La recharge sereine commence par une installation bien dimensionnée.</p>
+<p>Pour faire le bon choix, commencez par utiliser notre simulateur gratuit qui prend en compte votre puissance souscrite, votre type de logement et votre usage prévu, puis contactez un installateur partenaire pour obtenir un devis avec mention de la qualification IRVE et de la TVA à 5,5 % si applicable. La recharge sereine commence par une installation bien dimensionnée.</p>
 
 <ul>
   <li><a href="../index.html#simulateur">Utiliser le simulateur gratuit des Éclairés</a> pour connaître la solution adaptée à votre profil.</li>
@@ -403,12 +408,12 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </ul>
 
 </section></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#definition-delestage">Qu'est-ce que le délestage d'une borne de recharge, exactement ?</a></li><li><a href="#pourquoi-indispensable">Pourquoi le délestage est-il indispensable dans la majorité des foyers ?</a></li><li><a href="#fonctionnement-technique">Comment fonctionne concrètement le délestage dynamique ?</a></li><li><a href="#delestage-copropriete">Comment la gestion de charge fonctionne-t-elle en copropriété ?</a></li><li><a href="#installation-qualifications">Qui peut installer un système de délestage, et quelles qualifications sont requises ?</a></li><li><a href="#cout-et-tva">Quel est le coût d'un système de délestage et quelles aides s'appliquent ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#definition-delestage">Qu'est-ce que le délestage d'une borne de recharge, exactement ?</a></li><li><a href="#pourquoi-indispensable">Pourquoi le délestage est-il indispensable dans la majorité des foyers ?</a></li><li><a href="#fonctionnement-technique">Comment fonctionne concrètement le délestage dynamique ?</a></li><li><a href="#delestage-copropriete">Comment la gestion de charge fonctionne-t-elle en copropriété ?</a></li><li><a href="#installation-qualifications">Qui peut installer un système de délestage, et quelles qualifications sont requises ?</a></li><li><a href="#cout-et-tva">Quel est le coût d'un système de délestage et quelles aides s'appliquent ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

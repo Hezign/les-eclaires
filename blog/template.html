@@ -244,6 +244,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -279,12 +284,12 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </div></div>
 <div class="layout">
 <main><div class="prose">%%ARTICLE_HTML%%</div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
 <div class="toc"><h3>Sommaire</h3><ul id="tocl">%%TOC_ITEMS%%</ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

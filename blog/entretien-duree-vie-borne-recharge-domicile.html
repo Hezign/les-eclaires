@@ -259,6 +259,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -290,20 +295,20 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/entretien-duree-vie-borne-recharge-domicile.jpg" alt="Main vérifiant l'écran d'une borne de recharge lors de son entretien" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Choisir & installer</div>
 <h1 class="htitle">Entretien et durée de vie d'une borne de recharge à domicile</h1>
-<div class="hmeta"><span>20 aout 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<div class="hmeta"><span>20 aout 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
-<main><div class="prose"><p>Votre wallbox est branchée, chargée, et fonctionne depuis des mois sans que vous y pensiez. C'est précisément là que réside le risque : parce qu'une borne de recharge ressemble à un équipement passif, son entretien est souvent négligé, alors qu'elle gère des puissances de 7 à 22 kW en continu, parfois chaque nuit.</p>
+<main><div class="prose"><p>Votre wallbox est branchée, chargée, et fonctionne depuis des mois sans que vous y pensiez. C'est précisément là que réside le risque : parce qu'une borne de recharge ressemble à un équipement passif, son entretien est souvent négligé, alors qu'elle gère des puissances de 7 à 22 kW en continu, parfois chaque nuit.</p>
 
-<p>Bonne nouvelle : une borne bien installée et correctement entretenue dure entre 10 et 15 ans. Mauvaise nouvelle : sans attention minimale, elle peut tomber en panne, vieillir prématurément, ou dans les cas extrêmes, présenter un risque électrique. Cet article vous donne les repères concrets pour maximiser la durée de vie de votre installation, identifier les signes d'alerte et savoir quand appeler un professionnel.</p>
+<p>Bonne nouvelle : une borne bien installée et correctement entretenue dure entre 10 et 15 ans. Mauvaise nouvelle : sans attention minimale, elle peut tomber en panne, vieillir prématurément, ou dans les cas extrêmes, présenter un risque électrique. Cet article vous donne les repères concrets pour maximiser la durée de vie de votre installation, identifier les signes d'alerte et savoir quand appeler un professionnel.</p>
 
 <p>Nous aborderons successivement la durée de vie réelle d'une borne, les vérifications que vous pouvez faire vous-même, la maintenance à confier à un pro, les pannes les plus courantes, les garanties à connaître, et enfin les questions de mise à niveau ou de remplacement.</p>
 
-<h2 id="duree-vie">Combien de temps dure une borne de recharge à domicile ?</h2>
+<h2 id="duree-vie">Combien de temps dure une borne de recharge à domicile ?</h2>
 
-<p>Une borne de recharge domestique dure en moyenne 10 à 15 ans, à condition d'avoir été installée correctement par un professionnel qualifié IRVE et d'être soumise à une maintenance minimale.</p>
+<p>Une borne de recharge domestique dure en moyenne 10 à 15 ans, à condition d'avoir été installée correctement par un professionnel qualifié IRVE et d'être soumise à une maintenance minimale.</p>
 
-<p>Cette durée varie selon plusieurs facteurs. La qualité de fabrication joue un rôle majeur : les marques distribuées via des réseaux d'installateurs certifiés (Wallbox, Schneider Electric, Legrand, Hager, Delta Dore, etc.) proposent des composants plus robustes que les modèles d'entrée de gamme sans historique de fiabilité documenté. L'environnement d'installation compte autant : une borne exposée en extérieur sans protection contre les projections, la chaleur directe ou l'humidité vieillira plus vite qu'une borne installée dans un garage fermé.</p>
+<p>Cette durée varie selon plusieurs facteurs. La qualité de fabrication joue un rôle majeur : les marques distribuées via des réseaux d'installateurs certifiés (Wallbox, Schneider Electric, Legrand, Hager, Delta Dore, etc.) proposent des composants plus robustes que les modèles d'entrée de gamme sans historique de fiabilité documenté. L'environnement d'installation compte autant : une borne exposée en extérieur sans protection contre les projections, la chaleur directe ou l'humidité vieillira plus vite qu'une borne installée dans un garage fermé.</p>
 
 <p>Le nombre de cycles de charge n'est pas le facteur limitant principal côté borne (contrairement à la batterie du véhicule). Ce sont les connecteurs, les relais internes et les composants électroniques qui s'usent en premier. Un usage quotidien intensif, combiné à des variations de tension fréquentes sur le réseau, accélère cette usure.</p>
 
@@ -317,7 +322,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <tbody>
     <tr>
       <td>Installation par un professionnel qualifié IRVE</td>
-      <td>Fondamental : câblage adapté, protection différentielle correcte</td>
+      <td>Fondamental : câblage adapté, protection différentielle correcte</td>
     </tr>
     <tr>
       <td>Emplacement protégé (garage, auvent)</td>
@@ -325,7 +330,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     </tr>
     <tr>
       <td>Qualité de la borne</td>
-      <td>Marques reconnues : composants plus durables</td>
+      <td>Marques reconnues : composants plus durables</td>
     </tr>
     <tr>
       <td>Tension réseau stable</td>
@@ -338,101 +343,101 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   </tbody>
 </table></div>
 
-<h2 id="entretien-utilisateur">Que pouvez-vous vérifier vous-même et à quelle fréquence ?</h2>
+<h2 id="entretien-utilisateur">Que pouvez-vous vérifier vous-même et à quelle fréquence ?</h2>
 
 <p>Plusieurs vérifications simples, sans compétence électrique, permettent de détecter les signes d'usure prématurée. Un contrôle visuel tous les deux à trois mois suffit dans la plupart des cas.</p>
 
-<p>Voici ce que vous pouvez inspecter sans risque :</p>
+<p>Voici ce que vous pouvez inspecter sans risque :</p>
 
 <ul>
-  <li><strong>Le câble de charge (si borne avec câble attaché) :</strong> cherchez des craquelures, des aplatissements ou des zones où la gaine est abîmée. Un câble endommagé doit être remplacé, jamais réparé avec du ruban isolant.</li>
-  <li><strong>La prise ou le connecteur :</strong> elle ne doit pas présenter de traces noires, de brûlures ou de déformation. Ces signes indiquent un arc électrique passé.</li>
-  <li><strong>Le boîtier de la borne :</strong> vérifiez l'absence de fissures, d'infiltrations d'eau ou de condensation visible à l'intérieur (parfois visible par les aérations). Un indice IP insuffisant ou une borne mal fixée peut laisser entrer l'humidité.</li>
-  <li><strong>Les voyants et l'interface :</strong> une borne qui clignote de manière inhabituelle, affiche un code d'erreur répété ou refuse de démarrer une session communique quelque chose. Notez le code et consultez le manuel ou le service client du fabricant.</li>
-  <li><strong>La fixation murale :</strong> la borne ne doit pas bouger. Un support mal fixé crée des contraintes mécaniques sur les câbles et les connecteurs internes.</li>
+  <li><strong>Le câble de charge (si borne avec câble attaché) :</strong> cherchez des craquelures, des aplatissements ou des zones où la gaine est abîmée. Un câble endommagé doit être remplacé, jamais réparé avec du ruban isolant.</li>
+  <li><strong>La prise ou le connecteur :</strong> elle ne doit pas présenter de traces noires, de brûlures ou de déformation. Ces signes indiquent un arc électrique passé.</li>
+  <li><strong>Le boîtier de la borne :</strong> vérifiez l'absence de fissures, d'infiltrations d'eau ou de condensation visible à l'intérieur (parfois visible par les aérations). Un indice IP insuffisant ou une borne mal fixée peut laisser entrer l'humidité.</li>
+  <li><strong>Les voyants et l'interface :</strong> une borne qui clignote de manière inhabituelle, affiche un code d'erreur répété ou refuse de démarrer une session communique quelque chose. Notez le code et consultez le manuel ou le service client du fabricant.</li>
+  <li><strong>La fixation murale :</strong> la borne ne doit pas bouger. Un support mal fixé crée des contraintes mécaniques sur les câbles et les connecteurs internes.</li>
 </ul>
 
-<p>Nettoyez l'extérieur du boîtier avec un chiffon sec ou légèrement humide, sans produit chimique agressif. N'utilisez jamais de jet d'eau même si la borne affiche un indice IP élevé : les joints d'étanchéité vieillissent et la résistance aux projections diminue avec le temps.</p>
+<p>Nettoyez l'extérieur du boîtier avec un chiffon sec ou légèrement humide, sans produit chimique agressif. N'utilisez jamais de jet d'eau même si la borne affiche un indice IP élevé : les joints d'étanchéité vieillissent et la résistance aux projections diminue avec le temps.</p>
 
-<h2 id="maintenance-pro">Quelle maintenance confier à un électricien qualifié IRVE ?</h2>
+<h2 id="maintenance-pro">Quelle maintenance confier à un électricien qualifié IRVE ?</h2>
 
 <p>Au-delà des vérifications visuelles, une révision par un professionnel qualifié IRVE est recommandée tous les deux à trois ans, ou après tout événement électrique notable (surtension, foudre à proximité, déclenchement répété du différentiel).</p>
 
-<p>Cette intervention comprend des opérations que vous ne pouvez pas réaliser vous-même :</p>
+<p>Cette intervention comprend des opérations que vous ne pouvez pas réaliser vous-même :</p>
 
 <ul>
-  <li><strong>Serrage des bornes de connexion :</strong> les vibrations et les cycles thermiques desserrent progressivement les vis de connexion, ce qui crée des points de résistance, de chaleur et d'arcs. C'est l'une des causes de panne les plus fréquentes et les plus sous-estimées.</li>
-  <li><strong>Contrôle de la protection différentielle :</strong> le disjoncteur différentiel de type A ou B associé à votre borne doit être testé (bouton test + mesure). Un différentiel défaillant ne protège plus.</li>
-  <li><strong>Vérification du câble d'alimentation enterré ou en gaine :</strong> si le câble entre le tableau et la borne est enterré ou sous conduit, l'électricien vérifie l'absence d'humidité dans les conduits et la continuité de la mise à la terre.</li>
-  <li><strong>Mise à jour du firmware (si la borne est connectée) :</strong> les bornes communicantes reçoivent des mises à jour logicielles. Un firmware obsolète peut générer des bugs, des erreurs de communication OCPP ou des incompatibilités avec l'application de pilotage.</li>
-  <li><strong>Test de charge complète :</strong> l'électricien peut vérifier que la borne délivre bien la puissance nominale et que la charge s'arrête correctement en fin de cycle.</li>
+  <li><strong>Serrage des bornes de connexion :</strong> les vibrations et les cycles thermiques desserrent progressivement les vis de connexion, ce qui crée des points de résistance, de chaleur et d'arcs. C'est l'une des causes de panne les plus fréquentes et les plus sous-estimées.</li>
+  <li><strong>Contrôle de la protection différentielle :</strong> le disjoncteur différentiel de type A ou B associé à votre borne doit être testé (bouton test + mesure). Un différentiel défaillant ne protège plus.</li>
+  <li><strong>Vérification du câble d'alimentation enterré ou en gaine :</strong> si le câble entre le tableau et la borne est enterré ou sous conduit, l'électricien vérifie l'absence d'humidité dans les conduits et la continuité de la mise à la terre.</li>
+  <li><strong>Mise à jour du firmware (si la borne est connectée) :</strong> les bornes communicantes reçoivent des mises à jour logicielles. Un firmware obsolète peut générer des bugs, des erreurs de communication OCPP ou des incompatibilités avec l'application de pilotage.</li>
+  <li><strong>Test de charge complète :</strong> l'électricien peut vérifier que la borne délivre bien la puissance nominale et que la charge s'arrête correctement en fin de cycle.</li>
 </ul>
 
-<p>Rappel réglementaire : au-delà de 3,7 kW, seul un installateur titulaire d'une qualification IRVE (Qualifelec, AFNOR IRVE, ou Qualit'EnR) est habilité à intervenir sur votre installation. Cette obligation s'applique aussi aux interventions de maintenance sur le circuit d'alimentation. Retrouvez des professionnels certifiés sur notre page <a href="../partenaires.html">partenaires</a>.</p>
+<p>Rappel réglementaire : au-delà de 3,7 kW, seul un installateur titulaire d'une qualification IRVE (Qualifelec, AFNOR IRVE, ou Qualit'EnR) est habilité à intervenir sur votre installation. Cette obligation s'applique aussi aux interventions de maintenance sur le circuit d'alimentation. Retrouvez des professionnels certifiés sur notre page <a href="../partenaires.html">partenaires</a>.</p>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
-<h2 id="pannes-courantes">Quelles sont les pannes les plus fréquentes et leurs causes ?</h2>
+<h2 id="pannes-courantes">Quelles sont les pannes les plus fréquentes et leurs causes ?</h2>
 
 <p>La majorité des pannes de borne à domicile sont liées à l'installation initiale ou à l'absence de maintenance, rarement à un défaut du produit lui-même. Voici les situations les plus courantes.</p>
 
 <ul>
-  <li><strong>La borne ne démarre plus :</strong> première cause, le disjoncteur différentiel a disjoncté et personne ne l'a réarmé. Deuxième cause, une mise à jour de firmware a planté l'interface. Troisième cause, un relais interne est défaillant (nécessite remplacement du module ou de la borne).</li>
-  <li><strong>La charge s'interrompt en cours de session :</strong> souvent lié à une surtension réseau, à un câble véhicule endommagé côté voiture, ou à un problème de communication entre la borne et le véhicule (protocole IEC 61851). Vérifiez d'abord avec un autre câble si vous en avez un.</li>
-  <li><strong>La borne chauffe anormalement :</strong> signe d'une connexion mal serrée ou d'un câble sous-dimensionné. C'est une urgence : arrêtez d'utiliser la borne et appelez un électricien.</li>
-  <li><strong>La connexion Wi-Fi ou 4G est perdue (bornes connectées) :</strong> en général un simple redémarrage de la borne (coupure au disjoncteur pendant 30 secondes) suffit. Si le problème persiste, la carte réseau interne peut être défaillante.</li>
-  <li><strong>Le connecteur Type 2 rentre mal ou reste bloqué :</strong> les ergots de verrouillage s'usent. Un connecteur difficile à insérer ou à retirer doit être examiné par un technicien : forcer peut endommager le véhicule.</li>
+  <li><strong>La borne ne démarre plus :</strong> première cause, le disjoncteur différentiel a disjoncté et personne ne l'a réarmé. Deuxième cause, une mise à jour de firmware a planté l'interface. Troisième cause, un relais interne est défaillant (nécessite remplacement du module ou de la borne).</li>
+  <li><strong>La charge s'interrompt en cours de session :</strong> souvent lié à une surtension réseau, à un câble véhicule endommagé côté voiture, ou à un problème de communication entre la borne et le véhicule (protocole IEC 61851). Vérifiez d'abord avec un autre câble si vous en avez un.</li>
+  <li><strong>La borne chauffe anormalement :</strong> signe d'une connexion mal serrée ou d'un câble sous-dimensionné. C'est une urgence : arrêtez d'utiliser la borne et appelez un électricien.</li>
+  <li><strong>La connexion Wi-Fi ou 4G est perdue (bornes connectées) :</strong> en général un simple redémarrage de la borne (coupure au disjoncteur pendant 30 secondes) suffit. Si le problème persiste, la carte réseau interne peut être défaillante.</li>
+  <li><strong>Le connecteur Type 2 rentre mal ou reste bloqué :</strong> les ergots de verrouillage s'usent. Un connecteur difficile à insérer ou à retirer doit être examiné par un technicien : forcer peut endommager le véhicule.</li>
 </ul>
 
 <p>Dans tous les cas impliquant de la chaleur, une odeur de brûlé ou un disjoncteur qui redisjoncte immédiatement, ne réarmez pas et consultez un professionnel qualifié IRVE avant toute nouvelle utilisation.</p>
 
-<h2 id="garantie">Quelle garantie couvre votre borne de recharge ?</h2>
+<h2 id="garantie">Quelle garantie couvre votre borne de recharge ?</h2>
 
 <p>La plupart des bornes domestiques sont couvertes par une garantie fabricant de deux ans, parfois extensible à trois ou cinq ans selon les marques et les conditions d'achat. Cette garantie ne joue que si la borne a été installée conformément aux préconisations du fabricant, ce qui suppose généralement une installation par un professionnel qualifié.</p>
 
-<p>Points importants à connaître avant un achat ou une réclamation :</p>
+<p>Points importants à connaître avant un achat ou une réclamation :</p>
 
 <ul>
   <li><strong>La garantie légale de conformité</strong> (deux ans, obligatoire en France pour tout achat auprès d'un professionnel) couvre les défauts présents à la livraison ou apparaissant dans les deux ans.</li>
-  <li><strong>La garantie fabricant étendue</strong> est souvent conditionnée à l'enregistrement du produit en ligne dans un délai défini (30 à 90 jours selon les marques). Ne négligez pas cette étape.</li>
+  <li><strong>La garantie fabricant étendue</strong> est souvent conditionnée à l'enregistrement du produit en ligne dans un délai défini (30 à 90 jours selon les marques). Ne négligez pas cette étape.</li>
   <li><strong>L'installateur est responsable</strong> de la conformité de son installation pendant dix ans (garantie décennale) pour les dommages compromettant la solidité ou rendant l'ouvrage impropre à sa destination.</li>
-  <li><strong>Conservez votre facture</strong> mentionnant la qualification IRVE de l'installateur : c'est une pièce indispensable pour toute réclamation, qu'elle soit adressée au fabricant ou à un assureur.</li>
+  <li><strong>Conservez votre facture</strong> mentionnant la qualification IRVE de l'installateur : c'est une pièce indispensable pour toute réclamation, qu'elle soit adressée au fabricant ou à un assureur.</li>
 </ul>
 
-<p>Sur les aides financières : si vous êtes en copropriété, la prime ADVENIR reste accessible en 2026, jusqu'à 1 000 EUR HT pour une borne individuelle et 1 660 EUR HT pour une borne partagée (prise en charge à 50%, dossier à déposer obligatoirement avant le début des travaux, pavillons individuels non éligibles). Le crédit d'impôt pour l'installation d'une borne à domicile a été supprimé et n'est plus applicable depuis le 31 décembre 2026. Pour une installation neuve ou un remplacement, la TVA à 5,5% s'applique si l'installateur est qualifié IRVE et si le logement a plus de deux ans. Consultez notre article sur les <a href="prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge à domicile en 2026</a> pour une estimation complète.</p>
+<p>Sur les aides financières : si vous êtes en copropriété, la prime ADVENIR reste accessible en 2026, jusqu'à 1 000 € HT pour une borne individuelle et 1 660 € HT pour une borne partagée (prise en charge à 50%, dossier à déposer obligatoirement avant le début des travaux, pavillons individuels non éligibles). Le crédit d'impôt pour l'installation d'une borne à domicile a été supprimé et n'est plus applicable depuis le 31 décembre 2026. Pour une installation neuve ou un remplacement, la TVA à 5,5% s'applique si l'installateur est qualifié IRVE et si le logement a plus de deux ans. Consultez notre article sur les <a href="prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge à domicile en 2026</a> pour une estimation complète.</p>
 
-<h2 id="remplacement">Quand faut-il remplacer sa borne plutôt que la réparer ?</h2>
+<h2 id="remplacement">Quand faut-il remplacer sa borne plutôt que la réparer ?</h2>
 
-<p>La règle générale est simple : si le coût de réparation dépasse 40 à 50% du prix d'une borne neuve équivalente, le remplacement est économiquement préférable. Au-delà de dix ans, certains composants (relais, carte de contrôle) ne sont plus disponibles chez les fabricants.</p>
+<p>La règle générale est simple : si le coût de réparation dépasse 40 à 50% du prix d'une borne neuve équivalente, le remplacement est économiquement préférable. Au-delà de dix ans, certains composants (relais, carte de contrôle) ne sont plus disponibles chez les fabricants.</p>
 
-<p>Plusieurs situations rendent le remplacement incontournable :</p>
+<p>Plusieurs situations rendent le remplacement incontournable :</p>
 
 <ul>
   <li>La borne a été physiquement choquée (choc de voiture, chute) et le boîtier ou les connexions internes sont déformés.</li>
   <li>La borne n'est plus compatible avec les normes de communication actuelles et votre véhicule ne la reconnaît plus (rare avant dix ans, mais possible avec certains modèles anciens).</li>
-  <li>Vous souhaitez passer d'une puissance de 7,4 kW à 22 kW : il ne s'agit pas d'un réglage mais d'un changement de borne et très souvent d'un renforcement du circuit d'alimentation. Consultez notre article <a href="choisir-installateur-irve-certifie.html">comment choisir un installateur IRVE certifié</a> pour préparer ce projet.</li>
+  <li>Vous souhaitez passer d'une puissance de 7,4 kW à 22 kW : il ne s'agit pas d'un réglage mais d'un changement de borne et très souvent d'un renforcement du circuit d'alimentation. Consultez notre article <a href="choisir-installateur-irve-certifie.html">comment choisir un installateur IRVE certifié</a> pour préparer ce projet.</li>
   <li>La borne non connectée ne peut plus être pilotée ni programmée, et vous souhaitez bénéficier d'une charge intelligente (heures creuses, solaire).</li>
 </ul>
 
-<p>Un remplacement de borne en maison individuelle, avec circuit d'alimentation existant en bon état, est généralement compris entre 1 200 et 2 000 EUR TTC pour une borne 7,4 kW, pose et mise en service comprises. Si le tableau électrique ou le câble d'alimentation doit être repris, le coût augmente.</p>
+<p>Un remplacement de borne en maison individuelle, avec circuit d'alimentation existant en bon état, est généralement compris entre 1 200 et 2 000 € TTC pour une borne 7,4 kW, pose et mise en service comprises. Si le tableau électrique ou le câble d'alimentation doit être repris, le coût augmente.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
-<p>Une borne de recharge bien entretenue dure 10 à 15 ans sans incident majeur. L'essentiel repose sur trois piliers : une installation initiale par un professionnel qualifié IRVE, un contrôle visuel régulier de votre côté, et une révision professionnelle tous les deux à trois ans. Les pannes les plus coûteuses sont presque toujours évitables en détectant tôt les signes d'alerte, une connexion qui chauffe, un câble abîmé, un voyant inhabituel.</p>
+<p>Une borne de recharge bien entretenue dure 10 à 15 ans sans incident majeur. L'essentiel repose sur trois piliers : une installation initiale par un professionnel qualifié IRVE, un contrôle visuel régulier de votre côté, et une révision professionnelle tous les deux à trois ans. Les pannes les plus coûteuses sont presque toujours évitables en détectant tôt les signes d'alerte, une connexion qui chauffe, un câble abîmé, un voyant inhabituel.</p>
 
 <p>Pour savoir quelle borne correspond à votre usage et votre logement, ou pour estimer le budget d'un remplacement, notre simulateur gratuit vous guide en quelques minutes. Pour trouver un installateur qualifié IRVE près de chez vous, consultez notre annuaire de <a href="../partenaires.html">partenaires certifiés</a>.</p>
 
 <p><a href="../index.html#simulateur">Utiliser le simulateur gratuit</a></p></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#duree-vie">Combien de temps dure une borne de recharge à domicile ?</a></li><li><a href="#entretien-utilisateur">Que pouvez-vous vérifier vous-même et à quelle fréquence ?</a></li><li><a href="#maintenance-pro">Quelle maintenance confier à un électricien qualifié IRVE ?</a></li><li><a href="#pannes-courantes">Quelles sont les pannes les plus fréquentes et leurs causes ?</a></li><li><a href="#garantie">Quelle garantie couvre votre borne de recharge ?</a></li><li><a href="#remplacement">Quand faut-il remplacer sa borne plutôt que la réparer ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#duree-vie">Combien de temps dure une borne de recharge à domicile ?</a></li><li><a href="#entretien-utilisateur">Que pouvez-vous vérifier vous-même et à quelle fréquence ?</a></li><li><a href="#maintenance-pro">Quelle maintenance confier à un électricien qualifié IRVE ?</a></li><li><a href="#pannes-courantes">Quelles sont les pannes les plus fréquentes et leurs causes ?</a></li><li><a href="#garantie">Quelle garantie couvre votre borne de recharge ?</a></li><li><a href="#remplacement">Quand faut-il remplacer sa borne plutôt que la réparer ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

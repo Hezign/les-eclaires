@@ -259,6 +259,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -289,48 +294,48 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/borne-recharge-solaire-autoconsommation.jpg" alt="Voiture électrique rechargée sous des panneaux solaires en autoconsommation" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Recharge au quotidien</div>
-<h1 class="htitle">Borne solaire : recharger sa voiture avec ses panneaux</h1>
-<div class="hmeta"><span>17 aout 2026</span><span class="dot"></span><span>7 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Borne solaire : recharger sa voiture avec ses panneaux</h1>
+<div class="hmeta"><span>17 aout 2026</span><span class="dot"></span><span>7 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
-<main><div class="prose"><p>Produire son électricité chez soi et s'en servir pour recharger sa voiture électrique, l'idée est séduisante : moins de kWh achetés au réseau, une empreinte carbone réduite, et une facture qui baisse. En 2026, les installations photovoltaïques en autoconsommation se multiplient dans les maisons individuelles, et la question de la compatibilité avec une borne de recharge revient de plus en plus souvent.</p>
+<main><div class="prose"><p>Produire son électricité chez soi et s'en servir pour recharger sa voiture électrique, l'idée est séduisante : moins de kWh achetés au réseau, une empreinte carbone réduite, et une facture qui baisse. En 2026, les installations photovoltaïques en autoconsommation se multiplient dans les maisons individuelles, et la question de la compatibilité avec une borne de recharge revient de plus en plus souvent.</p>
 
 <p>Cet article vous explique comment fonctionne concrètement la recharge solaire, quelles bornes peuvent dialoguer avec vos panneaux, ce que ça coûte réellement une fois tout additionné, et si les aides disponibles s'appliquent à ce type de projet. Aucune promesse de rentabilité magique, uniquement des données vérifiées et des repères chiffrés pour 2026.</p>
 
 <p>Nous aborderons successivement le principe de l'autoconsommation appliqué à la mobilité électrique, le choix d'une borne compatible, les coûts d'installation, les aides mobilisables, et les précautions à prendre avant de se lancer.</p>
 
-<h2 id="principe-recharge-solaire">Comment fonctionne la recharge solaire en autoconsommation ?</h2>
+<h2 id="principe-recharge-solaire">Comment fonctionne la recharge solaire en autoconsommation ?</h2>
 
 <p>La recharge solaire consiste à piloter la borne de recharge pour qu'elle consomme en priorité l'énergie produite par vos panneaux photovoltaïques, plutôt que celle du réseau. La borne mesure en temps réel le surplus de production et adapte la puissance de charge en conséquence.</p>
 
-<p>Dans une installation photovoltaïque classique en autoconsommation totale, votre onduleur produit du courant alternatif qui alimente d'abord vos équipements. Ce qui reste, le surplus, part vers le réseau ou, si vous avez une batterie, s'y stocke. Le problème avec une borne de recharge ordinaire, c'est qu'elle tire une puissance fixe, par exemple 7,4 kW en continu, sans tenir compte de ce que vos panneaux produisent à l'instant T. Résultat : si vos panneaux ne produisent que 2 kW, vous achetez les 5,4 kW manquants au réseau.</p>
+<p>Dans une installation photovoltaïque classique en autoconsommation totale, votre onduleur produit du courant alternatif qui alimente d'abord vos équipements. Ce qui reste, le surplus, part vers le réseau ou, si vous avez une batterie, s'y stocke. Le problème avec une borne de recharge ordinaire, c'est qu'elle tire une puissance fixe, par exemple 7,4 kW en continu, sans tenir compte de ce que vos panneaux produisent à l'instant T. Résultat : si vos panneaux ne produisent que 2 kW, vous achetez les 5,4 kW manquants au réseau.</p>
 
-<p>Une borne dite "compatible photovoltaïque" ou "solar-ready" règle ce problème. Elle intègre, ou se connecte à, un système de gestion de l'énergie (souvent appelé HEMS ou EMS) qui surveille la production solaire et module la puissance de charge entre un minimum (généralement 1,4 kW, soit 6 A monophasé) et le maximum de la borne. Cette modulation dynamique permet d'absorber l'excédent solaire sans rien gaspiller.</p>
+<p>Une borne dite "compatible photovoltaïque" ou "solar-ready" règle ce problème. Elle intègre, ou se connecte à, un système de gestion de l'énergie (souvent appelé HEMS ou EMS) qui surveille la production solaire et module la puissance de charge entre un minimum (généralement 1,4 kW, soit 6 A monophasé) et le maximum de la borne. Cette modulation dynamique permet d'absorber l'excédent solaire sans rien gaspiller.</p>
 
 <ul>
-  <li><strong>Mode "pur solaire" :</strong> la borne ne charge que lorsqu'il y a un surplus suffisant. La charge est lente les jours nuageux ou le matin/soir, mais gratuite.</li>
-  <li><strong>Mode "hybride" :</strong> la borne utilise le solaire disponible et complète avec le réseau si la voiture en a besoin rapidement.</li>
-  <li><strong>Mode "planifié" :</strong> combinaison avec les heures creuses tarifaires, pour un coût minimal garanti.</li>
+  <li><strong>Mode "pur solaire" :</strong> la borne ne charge que lorsqu'il y a un surplus suffisant. La charge est lente les jours nuageux ou le matin/soir, mais gratuite.</li>
+  <li><strong>Mode "hybride" :</strong> la borne utilise le solaire disponible et complète avec le réseau si la voiture en a besoin rapidement.</li>
+  <li><strong>Mode "planifié" :</strong> combinaison avec les heures creuses tarifaires, pour un coût minimal garanti.</li>
 </ul>
 
-<h2 id="bornes-compatibles-photovoltaique">Quelles bornes sont compatibles avec des panneaux solaires ?</h2>
+<h2 id="bornes-compatibles-photovoltaique">Quelles bornes sont compatibles avec des panneaux solaires ?</h2>
 
 <p>Toutes les bornes ne sont pas capables de moduler leur puissance. Pour être compatible avec une installation photovoltaïque, une borne doit impérativement accepter la variation de puissance (charge dynamique) et disposer d'une connectivité permettant au système de gestion de l'énergie de la piloter.</p>
 
-<p>Les critères techniques à vérifier sur la fiche produit :</p>
+<p>Les critères techniques à vérifier sur la fiche produit :</p>
 
 <ul>
-  <li><strong>Charge dynamique (Dynamic Load Management) :</strong> la borne ajuste sa puissance de 1,4 kW à son maximum selon le signal reçu.</li>
-  <li><strong>Connectivité :</strong> Wi-Fi, Ethernet ou Modbus TCP pour communiquer avec l'onduleur ou le compteur de production.</li>
+  <li><strong>Charge dynamique (Dynamic Load Management) :</strong> la borne ajuste sa puissance de 1,4 kW à son maximum selon le signal reçu.</li>
+  <li><strong>Connectivité :</strong> Wi-Fi, Ethernet ou Modbus TCP pour communiquer avec l'onduleur ou le compteur de production.</li>
   <li><strong>Protocole OCPP 1.6 ou 2.0.1 :</strong> utile si vous souhaitez intégrer la borne dans un écosystème domotique élargi.</li>
-  <li><strong>Compatibilité avec votre marque d'onduleur :</strong> certaines bornes fonctionnent mieux en écosystème fermé (même fabricant borne/onduleur).</li>
+  <li><strong>Compatibilité avec votre marque d'onduleur :</strong> certaines bornes fonctionnent mieux en écosystème fermé (même fabricant borne/onduleur).</li>
 </ul>
 
 <p>En pratique, les fabricants proposant des solutions intégrées borne/onduleur facilitent le paramétrage. Certains onduleurs peuvent aussi piloter une borne tierce via une pince ampèremétrique placée sur le tableau électrique, sans nécessiter une borne d'une marque spécifique. La pince mesure l'import/export du compteur et transmet l'information à la borne.</p>
 
-<p>Côté puissance, une borne 7,4 kW monophasée est le standard le plus répandu pour un pavillon. Une borne 22 kW triphasée offre plus de flexibilité mais nécessite un abonnement triphasé et une installation électrique adaptée. Pour le pilotage solaire, la puissance maximale importe moins que la finesse de la modulation basse (le minimum de 1,4 kW est souvent le facteur limitant par temps couvert).</p>
+<p>Côté puissance, une borne 7,4 kW monophasée est le standard le plus répandu pour un pavillon. Une borne 22 kW triphasée offre plus de flexibilité mais nécessite un abonnement triphasé et une installation électrique adaptée. Pour le pilotage solaire, la puissance maximale importe moins que la finesse de la modulation basse (le minimum de 1,4 kW est souvent le facteur limitant par temps couvert).</p>
 
-<h2 id="cout-installation-borne-solaire">Combien coûte une installation borne plus panneaux solaires ?</h2>
+<h2 id="cout-installation-borne-solaire">Combien coûte une installation borne plus panneaux solaires ?</h2>
 
 <p>Il faut budgéter séparément les panneaux photovoltaïques et la borne de recharge, même si les deux chantiers peuvent être conduits simultanément pour mutualiser certains frais.</p>
 
@@ -343,37 +348,37 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   </thead>
   <tbody>
     <tr>
-      <td>Borne 7,4 kW compatible photovoltaïque</td>
-      <td>1 200 à 2 000 EUR</td>
+      <td>Borne 7,4 kW compatible photovoltaïque</td>
+      <td>1 200 à 2 000 €</td>
     </tr>
     <tr>
-      <td>Borne 22 kW compatible photovoltaïque</td>
-      <td>2 500 à 3 500 EUR</td>
+      <td>Borne 22 kW compatible photovoltaïque</td>
+      <td>2 500 à 3 500 €</td>
     </tr>
     <tr>
       <td>Installation panneaux solaires 3 kWc (maison)</td>
-      <td>7 000 à 10 000 EUR environ</td>
+      <td>7 000 à 10 000 € environ</td>
     </tr>
     <tr>
       <td>Installation panneaux solaires 6 kWc (maison)</td>
-      <td>12 000 à 18 000 EUR environ</td>
+      <td>12 000 à 18 000 € environ</td>
     </tr>
     <tr>
-      <td>Batterie de stockage (optionnelle, 5 à 10 kWh)</td>
-      <td>4 000 à 10 000 EUR environ</td>
+      <td>Batterie de stockage (optionnelle, 5 à 10 kWh)</td>
+      <td>4 000 à 10 000 € environ</td>
     </tr>
   </tbody>
 </table></div>
 
 <p>Ces fourchettes sont des repères. Le prix final dépend de la surface de toiture disponible, de l'orientation, de la distance entre le tableau électrique et l'emplacement de la borne, et de la complexité du câblage. Demandez toujours plusieurs devis détaillés.</p>
 
-<p>Sur la borne de recharge, la TVA à taux réduit de 5,5 % s'applique si votre logement a plus de deux ans et si l'installateur est qualifié IRVE (Qualifelec, AFNOR ou Qualit'EnR). Cette qualification est obligatoire au-delà de 3,7 kW : vérifiez-la sur le devis et la facture avant de signer.</p>
+<p>Sur la borne de recharge, la TVA à taux réduit de 5,5 % s'applique si votre logement a plus de deux ans et si l'installateur est qualifié IRVE (Qualifelec, AFNOR ou Qualit'EnR). Cette qualification est obligatoire au-delà de 3,7 kW : vérifiez-la sur le devis et la facture avant de signer.</p>
 
 <p>Découvrez le détail des tarifs selon les configurations dans notre article <a href="prix-borne-de-recharge-maison-2026.html">Prix d'une borne de recharge à la maison en 2026</a>.</p>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
@@ -384,34 +389,34 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <p>Voici ce qui reste mobilisable en 2026 :</p>
 
 <ul>
-  <li><strong>TVA à 5,5 % :</strong> automatiquement appliquée par l'installateur qualifié IRVE sur un logement de plus de deux ans. Cela représente un gain d'environ 12 points de TVA par rapport au taux normal de 20 %.</li>
-  <li><strong>Prime ADVENIR (copropriétés uniquement) :</strong> jusqu'à 1 000 EUR HT pour une borne individuelle en copropriété, 1 660 EUR HT pour une borne partagée, avec une prise en charge à 50 %. Le dossier doit impérativement être validé avant le début des travaux. Les pavillons individuels ne sont pas éligibles à ADVENIR.</li>
-  <li><strong>Obligation d'achat pour le surplus solaire :</strong> si vous produisez plus que vous ne consommez, EDF OA rachète le surplus à un tarif réglementé. La recharge en autoconsommation réduit ce surplus exporté mais maximise votre économie sur la facture réseau.</li>
-  <li><strong>MaPrimeRénov' et primes CEE :</strong> elles concernent les panneaux solaires selon votre situation fiscale et la puissance installée. Elles sont distinctes de la borne de recharge.</li>
+  <li><strong>TVA à 5,5 % :</strong> automatiquement appliquée par l'installateur qualifié IRVE sur un logement de plus de deux ans. Cela représente un gain d'environ 12 points de TVA par rapport au taux normal de 20 %.</li>
+  <li><strong>Prime ADVENIR (copropriétés uniquement) :</strong> jusqu'à 1 000 € HT pour une borne individuelle en copropriété, 1 660 € HT pour une borne partagée, avec une prise en charge à 50 %. Le dossier doit impérativement être validé avant le début des travaux. Les pavillons individuels ne sont pas éligibles à ADVENIR.</li>
+  <li><strong>Obligation d'achat pour le surplus solaire :</strong> si vous produisez plus que vous ne consommez, EDF OA rachète le surplus à un tarif réglementé. La recharge en autoconsommation réduit ce surplus exporté mais maximise votre économie sur la facture réseau.</li>
+  <li><strong>MaPrimeRénov' et primes CEE :</strong> elles concernent les panneaux solaires selon votre situation fiscale et la puissance installée. Elles sont distinctes de la borne de recharge.</li>
 </ul>
 
-<p>En résumé, pour une maison individuelle, seule la TVA à 5,5 % s'applique directement à la borne. Les aides sur les panneaux photovoltaïques sont traitées par un autre dispositif et relèvent d'une démarche séparée.</p>
+<p>En résumé, pour une maison individuelle, seule la TVA à 5,5 % s'applique directement à la borne. Les aides sur les panneaux photovoltaïques sont traitées par un autre dispositif et relèvent d'une démarche séparée.</p>
 
-<h2 id="rentabilite-recharge-solaire">La recharge solaire est-elle vraiment rentable ?</h2>
+<h2 id="rentabilite-recharge-solaire">La recharge solaire est-elle vraiment rentable ?</h2>
 
-<p>La rentabilité dépend directement de votre usage : kilométrage annuel, heures de conduite, taille de l'installation solaire et tarif réseau de votre contrat. Elle ne peut pas se calculer de manière générique, mais quelques repères permettent d'évaluer le potentiel.</p>
+<p>La rentabilité dépend directement de votre usage : kilométrage annuel, heures de conduite, taille de l'installation solaire et tarif réseau de votre contrat. Elle ne peut pas se calculer de manière générique, mais quelques repères permettent d'évaluer le potentiel.</p>
 
-<p>Un véhicule électrique consomme en moyenne 15 à 20 kWh pour 100 km. Pour 15 000 km par an, il faut donc entre 2 250 et 3 000 kWh annuels. Une installation de 3 kWc en région bien ensoleillée produit environ 3 000 à 3 600 kWh par an. En théorie, une partie significative des besoins de recharge peut être couverte par le solaire, à condition que la voiture soit branchée pendant les heures de production, c'est-à-dire la journée.</p>
+<p>Un véhicule électrique consomme en moyenne 15 à 20 kWh pour 100 km. Pour 15 000 km par an, il faut donc entre 2 250 et 3 000 kWh annuels. Une installation de 3 kWc en région bien ensoleillée produit environ 3 000 à 3 600 kWh par an. En théorie, une partie significative des besoins de recharge peut être couverte par le solaire, à condition que la voiture soit branchée pendant les heures de production, c'est-à-dire la journée.</p>
 
-<p>C'est précisément le point critique : si vous partez au travail le matin et revenez le soir, la fenêtre de recharge coïncide mal avec la production solaire de midi. Dans ce cas, une batterie de stockage permet de décaler l'énergie produite le jour vers la recharge du soir, mais elle représente un investissement supplémentaire important (4 000 à 10 000 EUR TTC). La rentabilité globale du système doit intégrer ce coût.</p>
+<p>C'est précisément le point critique : si vous partez au travail le matin et revenez le soir, la fenêtre de recharge coïncide mal avec la production solaire de midi. Dans ce cas, une batterie de stockage permet de décaler l'énergie produite le jour vers la recharge du soir, mais elle représente un investissement supplémentaire important (4 000 à 10 000 € TTC). La rentabilité globale du système doit intégrer ce coût.</p>
 
 <p>En revanche, si vous télétravaillez, si votre voiture reste branchée en journée, ou si vous avez des modes de vie flexibles, le taux d'autoconsommation solaire pour la recharge peut être très élevé et le retour sur investissement s'améliore sensiblement.</p>
 
-<h2 id="installation-borne-solaire-precautions">Quelles précautions avant de faire installer une borne solaire ?</h2>
+<h2 id="installation-borne-solaire-precautions">Quelles précautions avant de faire installer une borne solaire ?</h2>
 
 <p>Coupler une borne de recharge à une installation photovoltaïque demande une coordination entre plusieurs corps de métier et plusieurs vérifications préalables pour éviter les mauvaises surprises.</p>
 
 <ul>
-  <li><strong>Vérifiez la capacité de votre abonnement électrique :</strong> une borne 7,4 kW ajoutée à une installation solaire peut provoquer des pics de consommation. Un abonnement d'au moins 9 kVA est recommandé, 12 kVA si vous avez d'autres équipements énergivores.</li>
-  <li><strong>Exigez la qualification IRVE sur le devis et la facture :</strong> elle est obligatoire pour toute installation au-delà de 3,7 kW. Sans elle, vous perdez le bénéfice de la TVA à 5,5 % et vous engagez votre responsabilité en cas d'incident.</li>
-  <li><strong>Vérifiez la compatibilité borne/onduleur avant l'achat :</strong> demandez une fiche de compatibilité écrite à votre installateur. Un bon pilotage solaire nécessite que les deux équipements puissent communiquer.</li>
-  <li><strong>Anticipez le passage de câbles :</strong> si la borne est dans un garage éloigné du tableau ou de l'onduleur, le câblage peut représenter une part non négligeable du coût. À faire estimer précisément.</li>
-  <li><strong>Prévenez votre assureur :</strong> une installation photovoltaïque modifie le risque déclaré. Certains contrats multirisque habitation doivent être mis à jour.</li>
+  <li><strong>Vérifiez la capacité de votre abonnement électrique :</strong> une borne 7,4 kW ajoutée à une installation solaire peut provoquer des pics de consommation. Un abonnement d'au moins 9 kVA est recommandé, 12 kVA si vous avez d'autres équipements énergivores.</li>
+  <li><strong>Exigez la qualification IRVE sur le devis et la facture :</strong> elle est obligatoire pour toute installation au-delà de 3,7 kW. Sans elle, vous perdez le bénéfice de la TVA à 5,5 % et vous engagez votre responsabilité en cas d'incident.</li>
+  <li><strong>Vérifiez la compatibilité borne/onduleur avant l'achat :</strong> demandez une fiche de compatibilité écrite à votre installateur. Un bon pilotage solaire nécessite que les deux équipements puissent communiquer.</li>
+  <li><strong>Anticipez le passage de câbles :</strong> si la borne est dans un garage éloigné du tableau ou de l'onduleur, le câblage peut représenter une part non négligeable du coût. À faire estimer précisément.</li>
+  <li><strong>Prévenez votre assureur :</strong> une installation photovoltaïque modifie le risque déclaré. Certains contrats multirisque habitation doivent être mis à jour.</li>
 </ul>
 
 <p>Consultez notre guide sur <a href="choisir-installateur-irve-certifie.html">comment choisir un installateur IRVE certifié</a> pour identifier les professionnels qui combinent compétences électriques et connaissance des systèmes photovoltaïques.</p>
@@ -420,21 +425,21 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
-<p>Coupler une borne de recharge à des panneaux solaires est techniquement faisable et potentiellement économique, à condition de bien choisir une borne compatible avec la charge dynamique, de vérifier la qualification IRVE de votre installateur (obligatoire au-delà de 3,7 kW), de profiter de la TVA à 5,5 % sur la pose, et de cadrer vos attentes de rentabilité selon votre usage réel. Le crédit d'impôt particuliers ayant été supprimé depuis le 31 décembre 2026, il ne faut plus compter sur cet avantage.</p>
+<p>Coupler une borne de recharge à des panneaux solaires est techniquement faisable et potentiellement économique, à condition de bien choisir une borne compatible avec la charge dynamique, de vérifier la qualification IRVE de votre installateur (obligatoire au-delà de 3,7 kW), de profiter de la TVA à 5,5 % sur la pose, et de cadrer vos attentes de rentabilité selon votre usage réel. Le crédit d'impôt particuliers ayant été supprimé depuis le 31 décembre 2026, il ne faut plus compter sur cet avantage.</p>
 
-<p>Pour affiner votre projet, trois ressources vous attendent :</p>
+<p>Pour affiner votre projet, trois ressources vous attendent :</p>
 
 <ul>
-  <li><a href="../index.html#simulateur">Le simulateur gratuit des Éclairés</a>, pour savoir quelle borne et quelle puissance correspondent à votre situation en 8 questions.</li>
+  <li><a href="../index.html#simulateur">Le simulateur gratuit des Éclairés</a>, pour savoir quelle borne et quelle puissance correspondent à votre situation en quelques questions.</li>
   <li><a href="prix-borne-de-recharge-maison-2026.html">Le guide des prix d'une borne de recharge à la maison en 2026</a>, pour comparer les fourchettes selon les configurations.</li>
   <li><a href="../partenaires.html">La liste des installateurs partenaires qualifiés IRVE</a>, pour demander des devis à des professionnels vérifiés.</li>
 </ul></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#principe-recharge-solaire">Comment fonctionne la recharge solaire en autoconsommation ?</a></li><li><a href="#bornes-compatibles-photovoltaique">Quelles bornes sont compatibles avec des panneaux solaires ?</a></li><li><a href="#cout-installation-borne-solaire">Combien coûte une installation borne plus panneaux solaires ?</a></li><li><a href="#aides-borne-solaire">Quelles aides financières pour une borne solaire en 2026 ?</a></li><li><a href="#rentabilite-recharge-solaire">La recharge solaire est-elle vraiment rentable ?</a></li><li><a href="#installation-borne-solaire-precautions">Quelles précautions avant de faire installer une borne solaire ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#principe-recharge-solaire">Comment fonctionne la recharge solaire en autoconsommation ?</a></li><li><a href="#bornes-compatibles-photovoltaique">Quelles bornes sont compatibles avec des panneaux solaires ?</a></li><li><a href="#cout-installation-borne-solaire">Combien coûte une installation borne plus panneaux solaires ?</a></li><li><a href="#aides-borne-solaire">Quelles aides financières pour une borne solaire en 2026 ?</a></li><li><a href="#rentabilite-recharge-solaire">La recharge solaire est-elle vraiment rentable ?</a></li><li><a href="#installation-borne-solaire-precautions">Quelles précautions avant de faire installer une borne solaire ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

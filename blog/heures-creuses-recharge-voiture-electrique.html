@@ -264,6 +264,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -294,51 +299,51 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/heures-creuses-recharge-voiture-electrique.jpg" alt="Bornes de recharge illuminées la nuit, recharger en heures creuses" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Recharge au quotidien</div>
-<h1 class="htitle">Recharge électrique : optimiser ses horaires pour payer moins</h1>
-<div class="hmeta"><span>31 août 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Recharge électrique : optimiser ses horaires pour payer moins</h1>
+<div class="hmeta"><span>31 août 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose"><p>Recharger sa voiture électrique à domicile coûte entre 2 et 4 fois moins cher la nuit qu'en pleine journée, à condition de programmer correctement sa borne. Pourtant, la majorité des propriétaires de véhicule électrique rechargent au hasard, sans jamais activer les heures creuses ni souscrire à une offre tarifaire adaptée. Ce guide vous explique concrètement comment identifier vos plages horaires les plus économiques, comment programmer votre borne ou votre voiture, et quelles offres énergie réduisent réellement la note en 2026.</p>
 
-<p>La facture de recharge à domicile dépend de trois variables : la puissance de votre borne, le prix du kWh que vous payez, et le moment où vous rechargez. Sur les deux premières, votre marge de manœuvre est limitée une fois l'installation faite. Sur la troisième, vous agissez dès ce soir, sans aucun investissement supplémentaire.</p>
+<p>La facture de recharge à domicile dépend de trois variables : la puissance de votre borne, le prix du kWh que vous payez, et le moment où vous rechargez. Sur les deux premières, votre marge de manœuvre est limitée une fois l'installation faite. Sur la troisième, vous agissez dès ce soir, sans aucun investissement supplémentaire.</p>
 
 <p>Nous verrons d'abord ce que sont les heures creuses et comment les repérer sur votre contrat, puis comment programmer la recharge automatiquement, quelles offres tarifaires dédiées aux véhicules électriques existent en 2026, comment combiner heures creuses et solaire, et enfin quelles erreurs évitent la plupart des conducteurs. À la fin, vous saurez exactement quoi faire dès ce soir.</p>
 
-<h2 id="heures-creuses-definition">Qu'est-ce que les heures creuses et comment les repérer sur mon contrat ?</h2>
+<h2 id="heures-creuses-definition">Qu'est-ce que les heures creuses et comment les repérer sur mon contrat ?</h2>
 
-<p>Les heures creuses sont des plages tarifaires durant lesquelles votre fournisseur d'énergie applique un prix du kWh réduit, généralement entre 20 et 40 % de moins que le tarif de base. Elles figurent sur votre contrat ou votre espace client en ligne, et leur activation nécessite d'avoir souscrit l'option heures pleines / heures creuses (HP/HC) auprès de votre fournisseur.</p>
+<p>Les heures creuses sont des plages tarifaires durant lesquelles votre fournisseur d'énergie applique un prix du kWh réduit, généralement entre 20 et 40 % de moins que le tarif de base. Elles figurent sur votre contrat ou votre espace client en ligne, et leur activation nécessite d'avoir souscrit l'option heures pleines / heures creuses (HP/HC) auprès de votre fournisseur.</p>
 
-<p>Concrètement, les plages varient selon les zones géographiques et les fournisseurs, mais elles se situent le plus souvent entre 22 h et 6 h la nuit, avec parfois une fenêtre supplémentaire en début d'après-midi (entre 12 h et 14 h selon les contrats). Pour connaître vos plages exactes :</p>
+<p>Concrètement, les plages varient selon les zones géographiques et les fournisseurs, mais elles se situent le plus souvent entre 22 h et 6 h la nuit, avec parfois une fenêtre supplémentaire en début d'après-midi (entre 12 h et 14 h selon les contrats). Pour connaître vos plages exactes :</p>
 
 <ul>
-  <li>Consultez votre espace client en ligne (rubrique « mon contrat » ou « mes tarifs »).</li>
-  <li>Regardez votre facture : les plages HC y sont indiquées en heures locales.</li>
-  <li>Appelez le service client de votre fournisseur : il peut vous communiquer les créneaux associés à votre compteur Linky.</li>
+  <li>Consultez votre espace client en ligne (rubrique « mon contrat » ou « mes tarifs »).</li>
+  <li>Regardez votre facture : les plages HC y sont indiquées en heures locales.</li>
+  <li>Appelez le service client de votre fournisseur : il peut vous communiquer les créneaux associés à votre compteur Linky.</li>
 </ul>
 
-<p>Le compteur Linky enregistre automatiquement la consommation par plage tarifaire, ce qui signifie que vous n'avez pas besoin d'un abonnement spécial : il suffit que l'option HP/HC soit activée sur votre contrat. Si elle ne l'est pas, la demande se fait en quelques minutes en ligne, et la mise à jour du compteur s'effectue à distance, sans intervention à domicile.</p>
+<p>Le compteur Linky enregistre automatiquement la consommation par plage tarifaire, ce qui signifie que vous n'avez pas besoin d'un abonnement spécial : il suffit que l'option HP/HC soit activée sur votre contrat. Si elle ne l'est pas, la demande se fait en quelques minutes en ligne, et la mise à jour du compteur s'effectue à distance, sans intervention à domicile.</p>
 
-<p>Un point souvent ignoré : les heures creuses ne sont pas forcément avantageuses si votre abonnement mensuel augmente en contrepartie. Faites le calcul comparatif avec votre consommation réelle, notamment en consultant votre historique de consommation sur l'espace client Enedis.</p>
+<p>Un point souvent ignoré : les heures creuses ne sont pas forcément avantageuses si votre abonnement mensuel augmente en contrepartie. Faites le calcul comparatif avec votre consommation réelle, notamment en consultant votre historique de consommation sur l'espace client Enedis.</p>
 
-<h3 id="heures-creuses-selon-ville">Les heures creuses sont-elles les mêmes partout en France ?</h3>
+<h3 id="heures-creuses-selon-ville">Les heures creuses sont-elles les mêmes partout en France ?</h3>
 
-<p>Non, et c'est une source fréquente de confusion. Les plages d'heures creuses ne sont pas fixées par votre fournisseur mais par Enedis, le gestionnaire du réseau, en fonction de la zone où se trouve votre compteur. Deux foyers voisins peuvent donc avoir des créneaux différents, et les horaires varient d'une commune à l'autre : les heures creuses à Annecy, à Aix-en-Provence ou à Lyon ne tombent pas forcément aux mêmes heures.</p>
+<p>Non, et c'est une source fréquente de confusion. Les plages d'heures creuses ne sont pas fixées par votre fournisseur mais par Enedis, le gestionnaire du réseau, en fonction de la zone où se trouve votre compteur. Deux foyers voisins peuvent donc avoir des créneaux différents, et les horaires varient d'une commune à l'autre : les heures creuses à Annecy, à Aix-en-Provence ou à Lyon ne tombent pas forcément aux mêmes heures.</p>
 
-<p>Concrètement, cela ne change rien à votre stratégie de recharge : l'objectif reste d'aligner la charge de votre véhicule sur vos plages HC réelles, quelles qu'elles soient. Vérifiez-les sur votre facture ou votre espace client Enedis (elles sont indiquées en heure locale pour votre point de livraison), puis programmez la recharge en conséquence, comme expliqué dans la section suivante. Ne vous fiez jamais aux horaires d'un voisin ou d'un forum : seuls les créneaux associés à votre compteur font foi.</p>
+<p>Concrètement, cela ne change rien à votre stratégie de recharge : l'objectif reste d'aligner la charge de votre véhicule sur vos plages HC réelles, quelles qu'elles soient. Vérifiez-les sur votre facture ou votre espace client Enedis (elles sont indiquées en heure locale pour votre point de livraison), puis programmez la recharge en conséquence, comme expliqué dans la section suivante. Ne vous fiez jamais aux horaires d'un voisin ou d'un forum : seuls les créneaux associés à votre compteur font foi.</p>
 
-<h2 id="programmer-recharge">Comment programmer la recharge automatiquement la nuit ?</h2>
+<h2 id="programmer-recharge">Comment programmer la recharge automatiquement la nuit ?</h2>
 
 <p>La programmation de la recharge peut se faire depuis la borne, depuis l'application de la voiture, ou depuis les deux à la fois. La méthode la plus fiable est de programmer directement depuis le véhicule, car elle est indépendante de la marque de borne.</p>
 
-<p>Voici les trois niveaux de programmation disponibles selon votre équipement :</p>
+<p>Voici les trois niveaux de programmation disponibles selon votre équipement :</p>
 
 <ul>
-  <li><strong>Depuis le véhicule :</strong> la quasi-totalité des voitures électriques récentes disposent d'une fonction « programmation de charge » dans les menus ou l'application constructeur (Tesla, Volkswagen ID., Renault, Peugeot...). Vous définissez une heure de début et une heure de fin. Le véhicule attend avant de démarrer la charge, même s'il est branché depuis 20 h.</li>
-  <li><strong>Depuis l'application de la borne :</strong> les bornes communicantes (Wallbox, Hager, Schneider, Delta Dore...) proposent une planification horaire dans leur application mobile. Vous pouvez définir des créneaux récurrents et même limiter la puissance selon l'heure.</li>
-  <li><strong>Depuis un boîtier de gestion d'énergie :</strong> certaines solutions (comme celles intégrées aux offres des fournisseurs d'énergie) pilotent la borne directement depuis le compteur Linky, en déclenchant la recharge automatiquement à l'entrée en heures creuses.</li>
+  <li><strong>Depuis le véhicule :</strong> la quasi-totalité des voitures électriques récentes disposent d'une fonction « programmation de charge » dans les menus ou l'application constructeur (Tesla, Volkswagen ID., Renault, Peugeot...). Vous définissez une heure de début et une heure de fin. Le véhicule attend avant de démarrer la charge, même s'il est branché depuis 20 h.</li>
+  <li><strong>Depuis l'application de la borne :</strong> les bornes communicantes (Wallbox, Hager, Schneider, Delta Dore...) proposent une planification horaire dans leur application mobile. Vous pouvez définir des créneaux récurrents et même limiter la puissance selon l'heure.</li>
+  <li><strong>Depuis un boîtier de gestion d'énergie :</strong> certaines solutions (comme celles intégrées aux offres des fournisseurs d'énergie) pilotent la borne directement depuis le compteur Linky, en déclenchant la recharge automatiquement à l'entrée en heures creuses.</li>
 </ul>
 
-<p>Si votre borne n'est pas communicante, une simple prise programmable (minuterie) peut suffire pour une prise renforcée, mais cette solution n'est pas recommandée pour des puissances supérieures à 3,7 kW. Pour comprendre la différence entre prise renforcée et borne dédiée, consultez notre article <a href="prise-renforcee-ou-borne-de-recharge.html">prise renforcée ou borne de recharge : que choisir ?</a>.</p>
+<p>Si votre borne n'est pas communicante, une simple prise programmable (minuterie) peut suffire pour une prise renforcée, mais cette solution n'est pas recommandée pour des puissances supérieures à 3,7 kW. Pour comprendre la différence entre prise renforcée et borne dédiée, consultez notre article <a href="prise-renforcee-ou-borne-de-recharge.html">prise renforcée ou borne de recharge : que choisir ?</a>.</p>
 
 <h2 id="offres-tarifaires-ve">Quelles offres tarifaires sont vraiment avantageuses pour recharger un véhicule électrique en 2026 ?</h2>
 
@@ -359,13 +364,13 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr>
       <td>EDF</td>
       <td>Tempo / Heures Creuses</td>
-      <td>22 h à 6 h (selon zone)</td>
+      <td>22 h à 6 h (selon zone)</td>
       <td>Tarif HC réglementé</td>
     </tr>
     <tr>
       <td>TotalEnergies</td>
       <td>Offre VE</td>
-      <td>23 h à 7 h</td>
+      <td>23 h à 7 h</td>
       <td>Tarif préférentiel nuit</td>
     </tr>
     <tr>
@@ -377,25 +382,25 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr>
       <td>OHM Énergie</td>
       <td>Forfait VE</td>
-      <td>00 h à 8 h</td>
+      <td>00 h à 8 h</td>
       <td>Parmi les plus bas du marché</td>
     </tr>
   </tbody>
 </table></div>
 
-<p>Attention : les tarifs exacts évoluent régulièrement et dépendent de votre puissance de raccordement. Comparez toujours en incluant l'abonnement mensuel dans le calcul total. Un tarif kWh très bas avec un abonnement élevé peut s'avérer moins intéressant qu'une offre standard si vous rechargez peu fréquemment. Pour aller plus loin sur le coût réel de la recharge à domicile, notre article sur le <a href="cout-recharge-electrique-domicile-2026.html">coût de la recharge électrique à domicile en 2026</a> détaille tous les paramètres à intégrer dans votre calcul.</p>
+<p>Attention : les tarifs exacts évoluent régulièrement et dépendent de votre puissance de raccordement. Comparez toujours en incluant l'abonnement mensuel dans le calcul total. Un tarif kWh très bas avec un abonnement élevé peut s'avérer moins intéressant qu'une offre standard si vous rechargez peu fréquemment. Pour aller plus loin sur le coût réel de la recharge à domicile, notre article sur le <a href="cout-recharge-electrique-domicile-2026.html">coût de la recharge électrique à domicile en 2026</a> détaille tous les paramètres à intégrer dans votre calcul.</p>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
-<h2 id="solaire-heures-creuses">Peut-on combiner recharge solaire et heures creuses pour réduire encore plus la facture ?</h2>
+<h2 id="solaire-heures-creuses">Peut-on combiner recharge solaire et heures creuses pour réduire encore plus la facture ?</h2>
 
-<p>Oui, et c'est la combinaison la plus rentable à long terme : produire sa propre électricité le jour pour couvrir les autres usages, et recharger la nuit en heures creuses pour profiter des tarifs réduits. Ces deux stratégies ne sont pas contradictoires, elles se complètent.</p>
+<p>Oui, et c'est la combinaison la plus rentable à long terme : produire sa propre électricité le jour pour couvrir les autres usages, et recharger la nuit en heures creuses pour profiter des tarifs réduits. Ces deux stratégies ne sont pas contradictoires, elles se complètent.</p>
 
-<p>Si vous disposez de panneaux photovoltaïques, la logique optimale est la suivante :</p>
+<p>Si vous disposez de panneaux photovoltaïques, la logique optimale est la suivante :</p>
 
 <ul>
   <li>En semaine, rechargez en journée si vous êtes à la maison et que la production solaire est suffisante. Cela évite de tirer du réseau et réduit votre consommation nette.</li>
@@ -405,51 +410,51 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Cette combinaison est particulièrement pertinente pour les maisons individuelles avec une consommation kilométrique élevée. Notre article dédié à la <a href="borne-recharge-solaire-autoconsommation.html">recharge solaire et autoconsommation</a> détaille le matériel et les configurations possibles selon votre installation.</p>
 
-<h2 id="economiser-sans-changer-borne">Peut-on économiser sur la recharge sans changer de borne ni de voiture ?</h2>
+<h2 id="economiser-sans-changer-borne">Peut-on économiser sur la recharge sans changer de borne ni de voiture ?</h2>
 
-<p>Absolument. Trois actions simples, sans investissement, peuvent réduire votre coût de recharge de 20 à 35 % dès le mois prochain. Elles concernent le contrat électrique, les habitudes de branchement et le niveau de charge cible.</p>
+<p>Absolument. Trois actions simples, sans investissement, peuvent réduire votre coût de recharge de 20 à 35 % dès le mois prochain. Elles concernent le contrat électrique, les habitudes de branchement et le niveau de charge cible.</p>
 
-<p>Voici les actions à mener en priorité :</p>
-
-<ul>
-  <li><strong>Activer l'option HP/HC sur votre contrat :</strong> si elle n'est pas encore activée, faites la demande en ligne auprès de votre fournisseur. Gratuit, sans déplacement.</li>
-  <li><strong>Limiter la charge à 80 % en usage quotidien :</strong> les batteries lithium se dégradent moins vite et la recharge jusqu'à 80 % est significativement plus rapide que les derniers 20 %. Vous rechargez plus souvent mais moins longtemps, ce qui facilite la programmation horaire.</li>
-  <li><strong>Brancher dès l'arrivée, démarrer en heures creuses :</strong> ne branchez pas juste avant minuit. Branchez dès 19 h et laissez le véhicule ou la borne décider de l'heure de démarrage selon la programmation définie.</li>
-  <li><strong>Vérifier la pression des pneus régulièrement :</strong> une sous-pression de 0,3 bar augmente la consommation de 1 à 2 %. Moins vous consommez en roulant, moins vous avez besoin de recharger.</li>
-</ul>
-
-<h2 id="erreurs-courantes">Quelles erreurs font perdre de l'argent aux propriétaires de VE sans qu'ils s'en rendent compte ?</h2>
-
-<p>La plus coûteuse est de ne jamais avoir vérifié si l'option heures creuses était activée sur son contrat. Des milliers de conducteurs paient le kWh plein tarif toute la nuit alors qu'ils rechargent entre 23 h et 6 h.</p>
-
-<p>Les autres erreurs fréquentes :</p>
+<p>Voici les actions à mener en priorité :</p>
 
 <ul>
-  <li><strong>Programmer la fin de charge à 6 h exactement :</strong> si la coupure des heures creuses intervient à 6 h 02 selon votre compteur, les dernières minutes de charge sont facturées au tarif heure pleine. Vérifiez l'heure exacte de bascule sur votre contrat.</li>
-  <li><strong>Utiliser une prise standard (2,3 kW) pour une grande batterie :</strong> recharger un SUV électrique de 75 kWh sur une prise standard prend plus de 30 heures. Il faut une borne ou au minimum une prise renforcée pour être compatible avec une programmation nocturne courte.</li>
-  <li><strong>Oublier de mettre à jour la programmation après l'heure d'été ou d'hiver :</strong> la bascule horaire décale les plages creuses d'une heure. Si votre borne est programmée en heure fixe plutôt qu'en plage HC, vous pouvez rater une partie du créneau avantageux.</li>
-  <li><strong>Comparer les offres uniquement sur le prix kWh :</strong> un abonnement mensuel plus élevé peut annuler l'économie sur le kWh si vous rechargez peu (moins de 800 à 1 000 km par mois).</li>
+  <li><strong>Activer l'option HP/HC sur votre contrat :</strong> si elle n'est pas encore activée, faites la demande en ligne auprès de votre fournisseur. Gratuit, sans déplacement.</li>
+  <li><strong>Limiter la charge à 80 % en usage quotidien :</strong> les batteries lithium se dégradent moins vite et la recharge jusqu'à 80 % est significativement plus rapide que les derniers 20 %. Vous rechargez plus souvent mais moins longtemps, ce qui facilite la programmation horaire.</li>
+  <li><strong>Brancher dès l'arrivée, démarrer en heures creuses :</strong> ne branchez pas juste avant minuit. Branchez dès 19 h et laissez le véhicule ou la borne décider de l'heure de démarrage selon la programmation définie.</li>
+  <li><strong>Vérifier la pression des pneus régulièrement :</strong> une sous-pression de 0,3 bar augmente la consommation de 1 à 2 %. Moins vous consommez en roulant, moins vous avez besoin de recharger.</li>
 </ul>
 
-<p>Si vous envisagez de faire installer une borne communicante pour automatiser tout cela, vérifiez que l'installateur possède une qualification IRVE (Qualifelec, AFNOR ou Qualit'EnR) : elle est obligatoire au-delà de 3,7 kW, et seule une pose réalisée par un professionnel qualifié IRVE vous permet de bénéficier de la TVA à 5,5 % si votre logement a plus de 2 ans. Notre guide pour <a href="choisir-installateur-irve-certifie.html">choisir un installateur IRVE certifié</a> vous aide à poser les bonnes questions avant de signer un devis. Vous pouvez également consulter notre annuaire sur <a href="../partenaires.html">Les Éclairés partenaires</a> pour trouver un professionnel qualifié près de chez vous.</p>
+<h2 id="erreurs-courantes">Quelles erreurs font perdre de l'argent aux propriétaires de VE sans qu'ils s'en rendent compte ?</h2>
+
+<p>La plus coûteuse est de ne jamais avoir vérifié si l'option heures creuses était activée sur son contrat. Des milliers de conducteurs paient le kWh plein tarif toute la nuit alors qu'ils rechargent entre 23 h et 6 h.</p>
+
+<p>Les autres erreurs fréquentes :</p>
+
+<ul>
+  <li><strong>Programmer la fin de charge à 6 h exactement :</strong> si la coupure des heures creuses intervient à 6 h 02 selon votre compteur, les dernières minutes de charge sont facturées au tarif heure pleine. Vérifiez l'heure exacte de bascule sur votre contrat.</li>
+  <li><strong>Utiliser une prise standard (2,3 kW) pour une grande batterie :</strong> recharger un SUV électrique de 75 kWh sur une prise standard prend plus de 30 heures. Il faut une borne ou au minimum une prise renforcée pour être compatible avec une programmation nocturne courte.</li>
+  <li><strong>Oublier de mettre à jour la programmation après l'heure d'été ou d'hiver :</strong> la bascule horaire décale les plages creuses d'une heure. Si votre borne est programmée en heure fixe plutôt qu'en plage HC, vous pouvez rater une partie du créneau avantageux.</li>
+  <li><strong>Comparer les offres uniquement sur le prix kWh :</strong> un abonnement mensuel plus élevé peut annuler l'économie sur le kWh si vous rechargez peu (moins de 800 à 1 000 km par mois).</li>
+</ul>
+
+<p>Si vous envisagez de faire installer une borne communicante pour automatiser tout cela, vérifiez que l'installateur possède une qualification IRVE (Qualifelec, AFNOR ou Qualit'EnR) : elle est obligatoire au-delà de 3,7 kW, et seule une pose réalisée par un professionnel qualifié IRVE vous permet de bénéficier de la TVA à 5,5 % si votre logement a plus de 2 ans. Notre guide pour <a href="choisir-installateur-irve-certifie.html">choisir un installateur IRVE certifié</a> vous aide à poser les bonnes questions avant de signer un devis. Vous pouvez également consulter notre annuaire sur <a href="../partenaires.html">Les Éclairés partenaires</a> pour trouver un professionnel qualifié près de chez vous.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
 <p>Optimiser les horaires de recharge est l'action la plus rapide et la moins coûteuse pour réduire sa facture électrique liée au véhicule électrique. En activant l'option heures creuses, en programmant votre charge via le véhicule ou la borne, et en choisissant une offre tarifaire adaptée, vous pouvez économiser entre 200 et 400 euros par an selon votre kilométrage, sans changer de matériel.</p>
 
-<p>Pour aller plus loin dans l'optimisation de votre installation :</p>
+<p>Pour aller plus loin dans l'optimisation de votre installation :</p>
 
 <ul>
-  <li>Calculez votre économie potentielle avec le <a href="../index.html#simulateur">simulateur gratuit Les Éclairés</a> en 8 questions.</li>
-  <li>Comparez les puissances 7 kW et 22 kW pour savoir si une borne plus puissante vous ferait gagner en flexibilité horaire grâce à notre article <a href="7kw-ou-22kw-quelle-puissance.html">7 kW ou 22 kW : quelle puissance choisir pour sa borne ?</a>.</li>
+  <li>Calculez votre économie potentielle avec le <a href="../index.html#simulateur">simulateur gratuit Les Éclairés</a> en quelques questions.</li>
+  <li>Comparez les puissances 7 kW et 22 kW pour savoir si une borne plus puissante vous ferait gagner en flexibilité horaire grâce à notre article <a href="7kw-ou-22kw-quelle-puissance.html">7 kW ou 22 kW : quelle puissance choisir pour sa borne ?</a>.</li>
   <li>Si vous êtes locataire ou en copropriété, consultez notre article sur le <a href="droit-prise-copropriete.html">droit à la prise en copropriété</a> pour connaître vos droits avant toute démarche.</li>
 </ul></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#heures-creuses-definition">Qu'est-ce que les heures creuses et comment les repérer sur mon contrat ?</a></li><li><a href="#programmer-recharge">Comment programmer la recharge automatiquement la nuit ?</a></li><li><a href="#offres-tarifaires-ve">Quelles offres tarifaires sont vraiment avantageuses pour recharger un véhicule électrique en 2026 ?</a></li><li><a href="#solaire-heures-creuses">Peut-on combiner recharge solaire et heures creuses pour réduire encore plus la facture ?</a></li><li><a href="#economiser-sans-changer-borne">Peut-on économiser sur la recharge sans changer de borne ni de voiture ?</a></li><li><a href="#erreurs-courantes">Quelles erreurs font perdre de l'argent aux propriétaires de VE sans qu'ils s'en rendent compte ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#heures-creuses-definition">Qu'est-ce que les heures creuses et comment les repérer sur mon contrat ?</a></li><li><a href="#programmer-recharge">Comment programmer la recharge automatiquement la nuit ?</a></li><li><a href="#offres-tarifaires-ve">Quelles offres tarifaires sont vraiment avantageuses pour recharger un véhicule électrique en 2026 ?</a></li><li><a href="#solaire-heures-creuses">Peut-on combiner recharge solaire et heures creuses pour réduire encore plus la facture ?</a></li><li><a href="#economiser-sans-changer-borne">Peut-on économiser sur la recharge sans changer de borne ni de voiture ?</a></li><li><a href="#erreurs-courantes">Quelles erreurs font perdre de l'argent aux propriétaires de VE sans qu'ils s'en rendent compte ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

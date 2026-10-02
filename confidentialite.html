@@ -227,6 +227,11 @@ html,body{overflow-x:clip}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -259,11 +264,11 @@ html,body{overflow-x:clip}
 <div class="page has-toc">
   <div class="page-tag">RGPD</div>
   <h1>Politique de confidentialité</h1>
-  <p class="page-date">Dernière mise à jour : juin 2026</p>
+  <p class="page-date">Dernière mise à jour : juin 2026</p>
   <div class="legal-layout"><aside class="legal-toc" aria-label="Sommaire"><p class="legal-toc-title">Sommaire</p><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites"><span class="n">3</span><span>Finalités</span></a></li><li><a href="#base-legale"><span class="n">4</span><span>Base légale</span></a></li><li><a href="#duree-de-conservation"><span class="n">5</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">6</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">7</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">8</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">9</span><span>Vos droits</span></a></li><li><a href="#cookies"><span class="n">10</span><span>Cookies</span></a></li><li><a href="#informations-sur-les-aides-gouvernementales"><span class="n">11</span><span>Informations sur les aides gouvernementales</span></a></li><li><a href="#modifications"><span class="n">12</span><span>Modifications</span></a></li></ol></aside>
   <div class="prose"><details class="legal-toc-mobile"><summary>Sommaire</summary><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites"><span class="n">3</span><span>Finalités</span></a></li><li><a href="#base-legale"><span class="n">4</span><span>Base légale</span></a></li><li><a href="#duree-de-conservation"><span class="n">5</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">6</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">7</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">8</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">9</span><span>Vos droits</span></a></li><li><a href="#cookies"><span class="n">10</span><span>Cookies</span></a></li><li><a href="#informations-sur-les-aides-gouvernementales"><span class="n">11</span><span>Informations sur les aides gouvernementales</span></a></li><li><a href="#modifications"><span class="n">12</span><span>Modifications</span></a></li></ol></details>
   <div class="info-box">
-      <p><strong>En résumé :</strong> nous collectons uniquement les données que vous nous fournissez volontairement. Nous ne les revendons jamais. Vous pouvez les supprimer à tout moment à <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
+      <p><strong>En résumé :</strong> nous collectons uniquement les données que vous nous fournissez volontairement. Nous ne les revendons jamais. Vous pouvez les supprimer à tout moment à <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
     </div>
 
     <h2 id="responsable-du-traitement">1. Responsable du traitement</h2>
@@ -276,9 +281,9 @@ html,body{overflow-x:clip}
 
     <h2 id="donnees-collectees">2. Données collectées</h2>
     <ul>
-      <li><strong>Via le simulateur IRVE :</strong> prénom, adresse email, numéro de téléphone, département de l'installation et réponses au questionnaire (jusqu'à 11 questions sur votre situation et votre projet).</li>
-      <li><strong>Via le formulaire partenaires :</strong> prénom, nom, email professionnel, téléphone, entreprise, zone, message.</li>
-      <li><strong>Données de navigation :</strong> adresse IP (anonymisée), pages vues, type d'appareil et de navigateur, données de fréquentation, via les cookies de mesure d'audience (avec votre consentement).</li>
+      <li><strong>Via le simulateur IRVE :</strong> prénom, adresse email, numéro de téléphone, département de l'installation et réponses au questionnaire (jusqu'à 11 questions sur votre situation et votre projet).</li>
+      <li><strong>Via le formulaire partenaires :</strong> prénom, nom, email professionnel, téléphone, entreprise, zone, message.</li>
+      <li><strong>Données de navigation :</strong> adresse IP (anonymisée), pages vues, type d'appareil et de navigateur, données de fréquentation, via les cookies de mesure d'audience (avec votre consentement).</li>
     </ul>
     <p>Nous ne collectons aucune donnée sensible et ne vous demandons jamais plus que le strict nécessaire.</p>
 
@@ -292,12 +297,12 @@ html,body{overflow-x:clip}
 
     <h2 id="base-legale">4. Base légale</h2>
     <ul>
-      <li><strong>Consentement :</strong> en soumettant un formulaire ou en acceptant les cookies de mesure d'audience, vous consentez au traitement correspondant.</li>
-      <li><strong>Intérêt légitime :</strong> sécurité du site et amélioration du service.</li>
+      <li><strong>Consentement :</strong> en soumettant un formulaire ou en acceptant les cookies de mesure d'audience, vous consentez au traitement correspondant.</li>
+      <li><strong>Intérêt légitime :</strong> sécurité du site et amélioration du service.</li>
     </ul>
 
     <h2 id="duree-de-conservation">5. Durée de conservation</h2>
-    <p>Vos données de contact sont conservées <strong>3 ans</strong> à compter de votre dernier contact. Les données de navigation sont conservées <strong>13 mois maximum</strong>. Au-delà, elles sont supprimées ou anonymisées.</p>
+    <p>Vos données de contact sont conservées <strong>3 ans</strong> à compter de votre dernier contact. Les données de navigation sont conservées <strong>13 mois maximum</strong>. Au-delà, elles sont supprimées ou anonymisées.</p>
 
     <h2 id="destinataires-et-sous-traitants">6. Destinataires et sous-traitants</h2>
     <p>Pour fonctionner, le site s'appuie sur des prestataires techniques (sous-traitants au sens du RGPD) et des destinataires. Vos données ne sont <strong>jamais vendues ni louées</strong>. Chaque prestataire n'accède qu'aux données strictement nécessaires à sa mission, et reste soumis à sa propre politique de confidentialité.</p>
@@ -324,13 +329,13 @@ html,body{overflow-x:clip}
       <li><strong>Droit d'opposition</strong> · <strong>Droit à la portabilité</strong> · <strong>Droit à la limitation</strong></li>
       <li><strong>Droit de retirer votre consentement</strong> à tout moment</li>
     </ul>
-    <p>Pour exercer ces droits&nbsp;: <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a> - réponse sous 30 jours.<br>
+    <p>Pour exercer ces droits&nbsp;: <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a> - réponse sous 30 jours.<br>
     Vous pouvez également saisir la <strong>CNIL</strong>&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a></p>
 
     <h2 id="cookies">10. Cookies</h2>
     <ul>
-      <li><strong>Cookies nécessaires :</strong> mémorisation de votre choix de consentement.</li>
-      <li><strong>Cookies de mesure d'audience (Google Analytics 4) :</strong> cookies <code>_ga</code> / <code>_ga_*</code> déposés uniquement après votre consentement. Vous pouvez le refuser ou le retirer à tout moment via le bandeau cookies.</li>
+      <li><strong>Cookies nécessaires :</strong> mémorisation de votre choix de consentement.</li>
+      <li><strong>Cookies de mesure d'audience (Google Analytics 4) :</strong> cookies <code>_ga</code> / <code>_ga_*</code> déposés uniquement après votre consentement. Vous pouvez le refuser ou le retirer à tout moment via le bandeau cookies.</li>
     </ul>
 
     <h2 id="informations-sur-les-aides-gouvernementales">11. Informations sur les aides gouvernementales</h2>
@@ -367,7 +372,7 @@ html,body{overflow-x:clip}
         <h4>Informations</h4>
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
-          <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/confidentialite.html" aria-current="page">Confidentialité</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>

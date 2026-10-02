@@ -459,6 +459,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -493,7 +498,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="breadcrumb"><a href="/">Accueil</a> › <span>Bornes par ville</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Guides locaux IRVE · France entière</div>
   <h1 class="city-h1">Bornes de recharge,<br><span style="white-space:nowrap">ville par ville</span></h1>
-  <p class="city-sub">Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.</p>
+  <p class="city-sub">Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.</p>
   <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
 </div>
 
@@ -585,10 +590,10 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     </div>
   </div>
   </div>
-  <p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>
+  <p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>
   <div class="cta-box">
-    <h3>Votre ville n'est pas listée ?</h3>
-    <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
+    <h3>Votre ville n'est pas listée ?</h3>
+    <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
     <a href="/simulateur" class="btn-vert">Démarrer le simulateur <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </div>

@@ -260,6 +260,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -290,29 +295,29 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/logiciel-gestion-installateur-irve.jpg" alt="Installateur IRVE consultant un logiciel de gestion de chantier sur tablette" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Espace pro</div>
-<h1 class="htitle">Quel logiciel de gestion pour installateur IRVE ?</h1>
-<div class="hmeta"><span>14 septembre 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Quel logiciel de gestion pour installateur IRVE ?</h1>
+<div class="hmeta"><span>14 septembre 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose">
 <p class="lead">Entre les devis, les dossiers Enedis, la facturation, le SAV et la supervision des bornes posées, un installateur IRVE jongle avec plusieurs métiers. Le bon logiciel, ou la bonne combinaison, change tout. Voici comment s'y retrouver en 2026.</p>
 
-<h2 id="besoin">De quel logiciel un installateur IRVE a-t-il vraiment besoin ?</h2>
-<p>Il faut distinguer deux familles d'outils, souvent confondues : le <strong>logiciel de gestion d'entreprise</strong> (devis, chantiers, facturation, SAV) et le <strong>logiciel de supervision des bornes</strong> (pilotage à distance, refacturation de l'énergie). La plupart des installateurs ont besoin des deux, mais pour des raisons différentes.</p>
+<h2 id="besoin">De quel logiciel un installateur IRVE a-t-il vraiment besoin ?</h2>
+<p>Il faut distinguer deux familles d'outils, souvent confondues : le <strong>logiciel de gestion d'entreprise</strong> (devis, chantiers, facturation, SAV) et le <strong>logiciel de supervision des bornes</strong> (pilotage à distance, refacturation de l'énergie). La plupart des installateurs ont besoin des deux, mais pour des raisons différentes.</p>
 <p>Le premier fait tourner votre activité au quotidien. Le second est un service que vous vendez à vos clients après la pose, et une source de revenu récurrent.</p>
 
-<h2 id="gestion">Logiciel de gestion : devis, chantiers et facturation</h2>
-<p>C'est le socle : centraliser les devis, suivre les chantiers et éditer les factures conformes (mention IRVE, TVA à 5,5 % ou 20 %). Quelques solutions du marché orientées métier :</p>
+<h2 id="gestion">Logiciel de gestion : devis, chantiers et facturation</h2>
+<p>C'est le socle : centraliser les devis, suivre les chantiers et éditer les factures conformes (mention IRVE, TVA à 5,5 % ou 20 %). Quelques solutions du marché orientées métier :</p>
 <ul>
   <li><strong>Hélios</strong> : pensé pour l'IRVE, avec devis bornes pour particuliers et copropriétés, gestion des dossiers Enedis et facturation.</li>
   <li><strong>Technic-Soft (Service 9000)</strong> : GMAO et SAV pour installateurs et mainteneurs, suivi du parc, maintenance préventive et contrats avec garantie de rétablissement.</li>
-  <li><strong>Logiciels de gestion généralistes</strong> (CRM ou ERP du bâtiment) : valables si votre activité IRVE reste une part d'une entreprise d'électricité plus large.</li>
+  <li><strong>Logiciels de gestion généralistes</strong> (CRM ou ERP du bâtiment) : valables si votre activité IRVE reste une part d'une entreprise d'électricité plus large.</li>
 </ul>
-<p>Le bon réflexe : vérifier que l'outil gère la mention IRVE et le bon taux de TVA sur les documents, deux points de contrôle des dossiers d'aides.</p>
+<p>Le bon réflexe : vérifier que l'outil gère la mention IRVE et le bon taux de TVA sur les documents, deux points de contrôle des dossiers d'aides.</p>
 
-<div class="ctamid"><h3>Vous êtes installateur qualifié IRVE ?</h3><p>Recevez des demandes de particuliers et copropriétés qualifiées en amont.</p><a href="../partenaires.html">Rejoindre le réseau Les Éclairés</a></div>
+<div class="ctamid"><h3>Vous êtes installateur qualifié IRVE ?</h3><p>Recevez des demandes de particuliers et copropriétés qualifiées en amont.</p><a href="../partenaires.html">Rejoindre le réseau Les Éclairés</a></div>
 
-<h2 id="supervision">Logiciel de supervision : piloter et refacturer les bornes</h2>
+<h2 id="supervision">Logiciel de supervision : piloter et refacturer les bornes</h2>
 <p>La supervision est un logiciel qui dialogue avec les bornes installées (via le protocole OCPP) pour les piloter, mesurer la consommation au kWh et automatiser la refacturation. C'est ce qui permet à une copropriété ou une entreprise de répartir les coûts entre résidents, salariés ou centres de coûts.</p>
 <ul>
   <li><strong>Refacturation automatique</strong> de l'énergie consommée, à l'usager ou au centre de coûts.</li>
@@ -321,7 +326,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </ul>
 <p>Des acteurs comme Chargekeeper ou Greenspot proposent des offres de supervision, y compris des licences pensées pour les installateurs qui veulent revendre le service. En copropriété, la supervision est souvent la contrepartie logique du <a href="financement-infrastructure-collective-copropriete-advenir-2026.html">financement de l'infrastructure collective</a>.</p>
 
-<h2 id="prioriser">Gestion ou supervision : quelles fonctions prioriser ?</h2>
+<h2 id="prioriser">Gestion ou supervision : quelles fonctions prioriser ?</h2>
 <p>Les deux familles ne répondent pas aux mêmes besoins. Ce tableau aide à ne pas payer pour des fonctions qui ne servent pas votre modèle.</p>
 <div class="table-wrap"><table>
   <thead><tr><th>Besoin</th><th>Type d'outil</th></tr></thead>
@@ -335,7 +340,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </table></div>
 
 <h2 id="choisir">Comment choisir la bonne solution en 2026 ?</h2>
-<p>Réponse courte : partez de vos chantiers types, pas de la liste de fonctions. Quelques critères qui font vraiment la différence :</p>
+<p>Réponse courte : partez de vos chantiers types, pas de la liste de fonctions. Quelques critères qui font vraiment la différence :</p>
 <ul>
   <li><strong>Compatibilité OCPP</strong> pour la supervision, afin de ne pas être enfermé sur une seule marque de borne.</li>
   <li><strong>Gestion des dossiers ADVENIR et Enedis</strong> intégrée, pour gagner du temps sur l'administratif.</li>
@@ -343,22 +348,22 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <li><strong>Module SAV et maintenance</strong>, car un parc installé se pilote dans la durée.</li>
   <li><strong>Tarif et modèle</strong> (licence unique, abonnement, part revendable au client).</li>
 </ul>
-<p>Enfin, un outil ne remplace pas la qualification : c'est elle qui rend vos chantiers éligibles aux aides. Si le sujet vous concerne, voyez comment <a href="devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
+<p>Enfin, un outil ne remplace pas la qualification : c'est elle qui rend vos chantiers éligibles aux aides. Si le sujet vous concerne, voyez comment <a href="devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
 
 <h2 id="faq">Questions fréquentes</h2>
-<h3>Un installateur IRVE a-t-il besoin d'un logiciel de supervision ?</h3>
+<h3>Un installateur IRVE a-t-il besoin d'un logiciel de supervision ?</h3>
 <p>Pas pour poser une borne, mais c'est indispensable dès qu'il faut piloter et refacturer l'énergie, notamment en copropriété et en entreprise. C'est aussi un service récurrent à revendre.</p>
-<h3>Qu'est-ce que le protocole OCPP ?</h3>
+<h3>Qu'est-ce que le protocole OCPP ?</h3>
 <p>C'est un standard ouvert de communication entre les bornes et les plateformes de supervision. Choisir une solution compatible OCPP évite d'être verrouillé sur une seule marque de matériel.</p>
-<h3>Un logiciel gère-t-il les dossiers ADVENIR ?</h3>
+<h3>Un logiciel gère-t-il les dossiers ADVENIR ?</h3>
 <p>Certains logiciels métier IRVE intègrent le montage des dossiers d'aides et Enedis. Le dépôt ADVENIR reste toutefois fait par le bénéficiaire ou l'opérateur, avant les travaux.</p>
 </div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#besoin">De quel logiciel un installateur IRVE a-t-il besoin ?</a></li><li><a href="#gestion">Logiciel de gestion : devis, chantiers, facturation</a></li><li><a href="#supervision">Logiciel de supervision : piloter et refacturer</a></li><li><a href="#prioriser">Gestion ou supervision : quoi prioriser ?</a></li><li><a href="#choisir">Comment choisir la bonne solution en 2026 ?</a></li><li><a href="#faq">Questions fréquentes</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#besoin">De quel logiciel un installateur IRVE a-t-il besoin ?</a></li><li><a href="#gestion">Logiciel de gestion : devis, chantiers, facturation</a></li><li><a href="#supervision">Logiciel de supervision : piloter et refacturer</a></li><li><a href="#prioriser">Gestion ou supervision : quoi prioriser ?</a></li><li><a href="#choisir">Comment choisir la bonne solution en 2026 ?</a></li><li><a href="#faq">Questions fréquentes</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

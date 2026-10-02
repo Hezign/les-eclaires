@@ -349,6 +349,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -383,7 +388,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="breadcrumb"><a href="/">Accueil</a> › <a href="/villes">Bornes par ville</a> › <span>Vannes</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Guide gratuit · Morbihan (56)</div>
   <h1 class="city-h1">Installer une borne de recharge<br><span style="white-space:nowrap">à Vannes</span></h1>
-  <p class="city-sub">Vous résidez à Vannes ou dans le golfe du Morbihan et vous souhaitez installer une borne de recharge ? On vous guide gratuitement. Maison à Arradon, appartement au centre ou résidence à Séné : on trouve la borne adaptée.</p>
+  <p class="city-sub">Vous résidez à Vannes ou dans le golfe du Morbihan et vous souhaitez installer une borne de recharge ? On vous guide gratuitement. Maison à Arradon, appartement au centre ou résidence à Séné : on trouve la borne adaptée.</p>
   <a href="/simulateur" class="btn-primary">Démarrer le simulateur gratuit <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
 </div>
 
@@ -395,18 +400,18 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="info-grid">
     <div class="info-card">
       <h4>TVA à taux réduit</h4>
-      <span class="amount">5,5 %</span>
-      <p>Au lieu de 20 %, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</p>
+      <span class="amount">5,5 %</span>
+      <p>Au lieu de 20 %, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</p>
     </div>
     <div class="info-card">
       <h4>Prime ADVENIR (copropriété)</h4>
-      <span class="amount">1 000 € HT</span>
-      <p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1 660 € HT en borne partagée), depuis la revalorisation du 1er avril 2026. La demande se fait avant les travaux.</p>
+      <span class="amount">1 000 € HT</span>
+      <p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1 660 € HT en borne partagée), depuis la revalorisation du 1er avril 2026. La demande se fait avant les travaux.</p>
     </div>
     <div class="info-card">
       <h4>Budget moyen constaté</h4>
-      <span class="amount">1 200 à 2 000 €</span>
-      <p>Pour une borne 7,4 kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
+      <span class="amount">1 200 à 2 000 €</span>
+      <p>Pour une borne 7,4 kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
     </div>
     <div class="info-card">
       <h4>Délai d'installation</h4>
@@ -417,7 +422,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 
   <span class="section-tag">Spécificités locales</span>
   <h2 class="section-h2">L'installation de bornes à Vannes</h2>
-  <p class="section-lead">Nichée au fond du golfe du Morbihan, Vannes séduit par son cadre de vie et connaît une croissance résidentielle marquée, avec un habitat majoritairement pavillonnaire autour de l'agglomération. Le réseau de bornes publiques s'y étend progressivement ; la recharge à domicile demeure toutefois la solution la plus simple et la plus économique pour les maisons de Séné, Arradon, Saint-Avé ou Ploeren. Le réseau d'installateurs certifiés IRVE du Morbihan couvre bien le bassin vannetais, avec des délais d'intervention maîtrisés.</p>
+  <p class="section-lead">Nichée au fond du golfe du Morbihan, Vannes séduit par son cadre de vie et connaît une croissance résidentielle marquée, avec un habitat majoritairement pavillonnaire autour de l'agglomération. Le réseau de bornes publiques s'y étend progressivement ; la recharge à domicile demeure toutefois la solution la plus simple et la plus économique pour les maisons de Séné, Arradon, Saint-Avé ou Ploeren. Le réseau d'installateurs certifiés IRVE du Morbihan couvre bien le bassin vannetais, avec des délais d'intervention maîtrisés.</p>
 
   <div class="areas-section">
     <h4>Zones couvertes</h4>
@@ -425,8 +430,8 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   </div>
 
   <div class="copro-box">
-    <h3>Vous êtes en copropriété ou syndic à Vannes ?</h3>
-    <p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes à installer. On accompagne les conseils syndicaux et les syndics de A à Z : droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>
+    <h3>Vous êtes en copropriété ou syndic à Vannes ?</h3>
+    <p>Équiper une copropriété, c'est souvent plusieurs dizaines de bornes à installer. On accompagne les conseils syndicaux et les syndics de A à Z : droit à la prise, prime ADVENIR collective, infrastructure évolutive.</p>
     <a href="/copropriete" class="btn-vert">Bornes en copropriété <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 
@@ -440,20 +445,20 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <p class="steps-free"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>100&nbsp;% gratuit pour vous.</strong> On est rémunérés par l'installateur, pas par vous.</span></p>
 
   <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Borne de recharge à Vannes : vos questions</h2>
+  <h2 class="section-h2">Borne de recharge à Vannes : vos questions</h2>
   <div class="faq-city">
-    <details><summary>Combien coûte l'installation d'une borne de recharge à Vannes ?</summary><div><p>Pour une maison individuelle à Vannes, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie.</p></div></details>
-    <details><summary>Quelles aides puis-je obtenir à Vannes ?</summary><div><p>À Vannes, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible.</p></div></details>
-    <details><summary>Puis-je installer une borne en copropriété à Vannes ?</summary><div><p>Oui. Que vous soyez propriétaire ou locataire à Vannes, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href="/copropriete">En savoir plus sur les bornes en copropriété</a>.</p></div></details>
-    <details><summary>Combien de temps prend l'installation à Vannes ?</summary><div><p>Pour une maison avec un tableau électrique récent à Vannes, comptez 2 à 4 semaines entre la prise de contact et l'installation. En copropriété, les démarches administratives rallongent un peu le délai.</p></div></details>
-    <details><summary>Quelle puissance de borne choisir ?</summary><div><p>Une borne de 7,4&nbsp;kW suffit dans la grande majorité des cas : elle recharge votre véhicule en une nuit. Une puissance supérieure (11 ou 22&nbsp;kW) se justifie pour plusieurs véhicules ou un usage professionnel. Le simulateur vous recommande la puissance adaptée.</p></div></details>
-    <details><summary>Le service Les Éclairés est-il gratuit ?</summary><div><p>Oui, à Vannes comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous.</p></div></details>
+    <details><summary>Combien coûte l'installation d'une borne de recharge à Vannes ?</summary><div><p>Pour une maison individuelle à Vannes, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie.</p></div></details>
+    <details><summary>Quelles aides puis-je obtenir à Vannes ?</summary><div><p>À Vannes, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible.</p></div></details>
+    <details><summary>Puis-je installer une borne en copropriété à Vannes ?</summary><div><p>Oui. Que vous soyez propriétaire ou locataire à Vannes, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href="/copropriete">En savoir plus sur les bornes en copropriété</a>.</p></div></details>
+    <details><summary>Combien de temps prend l'installation à Vannes ?</summary><div><p>Pour une maison avec un tableau électrique récent à Vannes, comptez 2 à 4 semaines entre la prise de contact et l'installation. En copropriété, les démarches administratives rallongent un peu le délai.</p></div></details>
+    <details><summary>Quelle puissance de borne choisir ?</summary><div><p>Une borne de 7,4&nbsp;kW suffit dans la grande majorité des cas : elle recharge votre véhicule en une nuit. Une puissance supérieure (11 ou 22&nbsp;kW) se justifie pour plusieurs véhicules ou un usage professionnel. Le simulateur vous recommande la puissance adaptée.</p></div></details>
+    <details><summary>Le service Les Éclairés est-il gratuit ?</summary><div><p>Oui, à Vannes comme partout en France, le simulateur et nos conseils sont 100&nbsp;% gratuits et sans engagement. Nous sommes rémunérés par l'installateur partenaire, jamais par vous.</p></div></details>
   </div>
 
   <div class="related"><span class="rl">Autres villes en Bretagne</span><a href="/villes/borne-recharge-rennes.html">Rennes</a></div>
 
   <div class="cta-box">
-    <h3>Prêt à installer votre borne à Vannes ?</h3>
+    <h3>Prêt à installer votre borne à Vannes ?</h3>
     <p>Répondez à quelques questions simples et recevez votre recommandation personnalisée. Gratuit, immédiat, sans engagement.</p>
     <a href="/simulateur" class="btn-vert">Démarrer le simulateur <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>

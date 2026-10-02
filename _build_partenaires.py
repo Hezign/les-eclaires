@@ -369,3 +369,6 @@ def build():
 
 if __name__ == '__main__':
     build()
+    import _typo, _ds_shared
+    for f in ['partenaires.html']:
+        _ds_shared.apply(f); _typo.apply(f)

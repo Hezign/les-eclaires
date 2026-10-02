@@ -207,6 +207,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -240,7 +245,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <svg class="nf-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z"/></svg>
     <div class="nf-code">404</div>
     <h1 class="nf-title">Cette page a disparu dans la nature</h1>
-    <p class="nf-sub">Le lien est peut-être erroné ou la page a été déplacée. Pas de panique : retrouvez l'essentiel ci-dessous.</p>
+    <p class="nf-sub">Le lien est peut-être erroné ou la page a été déplacée. Pas de panique : retrouvez l'essentiel ci-dessous.</p>
     <div class="nf-actions">
       <a class="nf-btn primary" href="/">Retour à l'accueil</a>
       <a class="nf-btn ghost" href="/#simulateur">Lancer le simulateur</a>

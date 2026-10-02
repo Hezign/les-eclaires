@@ -74,6 +74,10 @@ def apply(path):
     # Composants partagés (bouton, kicker, FAQ, espacements) hors accueil
     import _ds_shared
     _ds_shared.apply(path)
+    # Typographie française (espaces insécables, €, CTA) hors accueil
+    if path != 'index.html':
+        import _typo
+        _typo.apply(path)
     return True
 
 

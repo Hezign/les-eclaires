@@ -354,6 +354,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -388,7 +393,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="breadcrumb"><a href="/">Accueil</a> › <span>Copropriété</span></div>
   <div class="city-badge"><span class="badge-dot"></span>Syndics &amp; conseils syndicaux · Étude gratuite</div>
   <h1 class="city-h1">Des bornes de recharge<br><span style="white-space:nowrap">pour votre copropriété</span></h1>
-  <p class="city-sub">Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble - souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.</p>
+  <p class="city-sub">Équiper une copropriété en bornes de recharge, c'est anticiper la demande des résidents et valoriser l'immeuble - souvent plusieurs dizaines de points de charge. On accompagne les syndics et les conseils syndicaux de A à Z : droit à la prise, prime ADVENIR, infrastructure collective évolutive.</p>
   <a href="#contact-copro" class="btn-primary">Étudier mon projet copropriété <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
 </div>
 
@@ -399,8 +404,8 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <p class="section-lead">La demande de recharge explose, et le cadre légal pousse les copropriétés à s'équiper. Anticiper, c'est éviter l'urgence et les surcoûts.</p>
   <div class="info-grid">
     <div class="info-card"><h4>Valorisation des lots</h4><p>Une place équipée (ou pré-équipée) d'une borne devient un vrai argument à la vente comme à la location.</p></div>
-    <div class="info-card"><h4>Une infrastructure mutualisée</h4><p>On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût.</p></div>
-    <div class="info-card"><h4>Jusqu'à 1 000 € HT / point</h4><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div>
+    <div class="info-card"><h4>Une infrastructure mutualisée</h4><p>On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût.</p></div>
+    <div class="info-card"><h4>Jusqu'à 1 000 € HT / point</h4><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div>
     <div class="info-card"><h4>Un seul interlocuteur</h4><p>On cadre le projet, on mobilise un installateur certifié IRVE et on vous accompagne jusqu'au vote en AG.</p></div>
   </div>
 
@@ -418,7 +423,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <div class="info-card"><h4>1. Vous nous décrivez la copro</h4><p>Nombre de lots, type de parking, année de construction, projet individuel ou collectif.</p></div>
     <div class="info-card"><h4>2. On cadre le projet</h4><p>On définit l'infrastructure adaptée, le budget, les aides mobilisables et le déroulé jusqu'à l'AG.</p></div>
     <div class="info-card"><h4>3. Mise en relation</h4><p>On vous met en relation avec un installateur certifié IRVE habitué aux copropriétés de votre taille.</p></div>
-    <div class="info-card"><h4>4. Installation</h4><p>L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins.</p></div>
+    <div class="info-card"><h4>4. Installation</h4><p>L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins.</p></div>
   </div>
 
   <span class="section-tag" id="contact-copro">Parlons de votre copropriété</span>
@@ -441,18 +446,18 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
       <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>
       <button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
     </div>
-    <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>
+    <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>
   </div>
 
   <span class="section-tag">Questions fréquentes</span>
-  <h2 class="section-h2">Bornes en copropriété : vos questions</h2>
+  <h2 class="section-h2">Bornes en copropriété : vos questions</h2>
   <div class="faq-city">
-    <details><summary>Qui peut lancer un projet de bornes en copropriété ?</summary><div><p>N'importe quel copropriétaire peut demander l'installation d'une borne pour son usage (droit à la prise). Pour un projet collectif couvrant tout le parking, c'est le conseil syndical et le syndic qui pilotent, après un vote en assemblée générale.</p></div></details>
-    <details><summary>Qu'est-ce que le droit à la prise ?</summary><div><p>Le droit à la prise permet à tout occupant (propriétaire ou locataire) d'installer à ses frais une borne sur sa place de stationnement, sans avoir besoin de l'accord de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime.</p></div></details>
-    <details><summary>Combien coûte l'installation de bornes en copropriété ?</summary><div><p>Cela dépend du nombre de points de charge et de l'infrastructure à poser. Le coût par borne baisse fortement quand on équipe plusieurs places en même temps, surtout en posant une infrastructure collective évolutive. La prime ADVENIR réduit nettement la facture.</p></div></details>
-    <details><summary>Qu'est-ce que la prime ADVENIR en copropriété ?</summary><div><p>ADVENIR est une aide qui finance l'installation de bornes en copropriété : jusqu'à 1 000 € HT par point de charge (borne individuelle) ou 1 660 € HT (borne partagée) depuis la revalorisation du 1er avril 2026, et une part importante de l'infrastructure collective. La demande doit être faite avant le début des travaux.</p></div></details>
-    <details><summary>Faut-il un vote en assemblée générale ?</summary><div><p>Pour une installation individuelle au titre du droit à la prise, non. Pour une infrastructure collective (qui équipe l'ensemble du parking), oui : le projet est inscrit à l'ordre du jour et voté en assemblée générale.</p></div></details>
-    <details><summary>Combien de temps prend un projet en copropriété ?</summary><div><p>Comptez généralement de quelques semaines à quelques mois selon la taille de la copropriété et le calendrier des assemblées générales. On vous aide à cadrer le projet pour éviter les allers-retours.</p></div></details>
+    <details><summary>Qui peut lancer un projet de bornes en copropriété ?</summary><div><p>N'importe quel copropriétaire peut demander l'installation d'une borne pour son usage (droit à la prise). Pour un projet collectif couvrant tout le parking, c'est le conseil syndical et le syndic qui pilotent, après un vote en assemblée générale.</p></div></details>
+    <details><summary>Qu'est-ce que le droit à la prise ?</summary><div><p>Le droit à la prise permet à tout occupant (propriétaire ou locataire) d'installer à ses frais une borne sur sa place de stationnement, sans avoir besoin de l'accord de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime.</p></div></details>
+    <details><summary>Combien coûte l'installation de bornes en copropriété ?</summary><div><p>Cela dépend du nombre de points de charge et de l'infrastructure à poser. Le coût par borne baisse fortement quand on équipe plusieurs places en même temps, surtout en posant une infrastructure collective évolutive. La prime ADVENIR réduit nettement la facture.</p></div></details>
+    <details><summary>Qu'est-ce que la prime ADVENIR en copropriété ?</summary><div><p>ADVENIR est une aide qui finance l'installation de bornes en copropriété : jusqu'à 1 000 € HT par point de charge (borne individuelle) ou 1 660 € HT (borne partagée) depuis la revalorisation du 1er avril 2026, et une part importante de l'infrastructure collective. La demande doit être faite avant le début des travaux.</p></div></details>
+    <details><summary>Faut-il un vote en assemblée générale ?</summary><div><p>Pour une installation individuelle au titre du droit à la prise, non. Pour une infrastructure collective (qui équipe l'ensemble du parking), oui : le projet est inscrit à l'ordre du jour et voté en assemblée générale.</p></div></details>
+    <details><summary>Combien de temps prend un projet en copropriété ?</summary><div><p>Comptez généralement de quelques semaines à quelques mois selon la taille de la copropriété et le calendrier des assemblées générales. On vous aide à cadrer le projet pour éviter les allers-retours.</p></div></details>
   </div>
 
 </div>

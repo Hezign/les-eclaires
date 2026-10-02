@@ -283,6 +283,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -315,61 +320,61 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <div id="pgbar"></div>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/7kw-ou-22kw-quelle-puissance.jpg" alt="Recharge d'une voiture électrique sur une borne en garage : choisir la bonne puissance" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Choisir & installer</div>
-<h1 class="htitle">7,4 kW ou 22 kW : quelle puissance choisir pour votre borne ?</h1>
-<div class="hmeta"><span>15 janvier 2026</span><span class="dot"></span><span>2 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">7,4 kW ou 22 kW : quelle puissance choisir pour votre borne ?</h1>
+<div class="hmeta"><span>15 janvier 2026</span><span class="dot"></span><span>2 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose">
 
-    <p>C'est la question que tout le monde se pose au moment de choisir sa borne. La réponse honnête : <strong>ça dépend de votre véhicule, de votre installation électrique et de vos habitudes.</strong></p>
+    <p>C'est la question que tout le monde se pose au moment de choisir sa borne. La réponse honnête : <strong>ça dépend de votre véhicule, de votre installation électrique et de vos habitudes.</strong></p>
 
     <h2 id="comprendre-ce-que-signifie-la-puissance-d-une-borne">Comprendre ce que signifie la puissance d'une borne</h2>
     <p>La puissance (en kW) détermine la vitesse de charge. Plus elle est élevée, plus la charge est rapide.</p>
-    <p><strong>Exemple concret</strong> avec une batterie de 60 kWh (Renault Mégane E-Tech, Peugeot e-208...) :</p>
+    <p><strong>Exemple concret</strong> avec une batterie de 60 kWh (Renault Mégane E-Tech, Peugeot e-208...) :</p>
     <ul>
-      <li>Borne 7,4 kW : charge complète en environ <strong>8 heures</strong> (parfait pour une nuit)</li>
-      <li>Borne 22 kW : charge complète en environ <strong>3 heures</strong></li>
+      <li>Borne 7,4 kW : charge complète en environ <strong>8 heures</strong> (parfait pour une nuit)</li>
+      <li>Borne 22 kW : charge complète en environ <strong>3 heures</strong></li>
     </ul>
 
-    <h2 id="pourquoi-une-borne-22-kw-ne-rechargera-pas-forcement-3x-plus">Pourquoi une borne 22 kW ne rechargera pas forcément 3x plus vite</h2>
+    <h2 id="pourquoi-une-borne-22-kw-ne-rechargera-pas-forcement-3x-plus">Pourquoi une borne 22 kW ne rechargera pas forcément 3x plus vite</h2>
     <p>Votre voiture a aussi un <strong>chargeur embarqué</strong> qui limite la puissance qu'elle peut accepter en courant alternatif (AC).</p>
     <div class="table-wrap"><table>
       <tr><th>Véhicule</th><th>Chargeur embarqué max</th></tr>
-      <tr><td>Renault ZOE</td><td>22 kW</td></tr>
-      <tr><td>Tesla Model 3</td><td>11 kW</td></tr>
-      <tr><td>Peugeot e-208</td><td>7,4 kW</td></tr>
-      <tr><td>Volkswagen ID.3</td><td>11 kW</td></tr>
-      <tr><td>BMW iX3</td><td>11 kW</td></tr>
-      <tr><td>Dacia Spring</td><td>6,6 kW</td></tr>
+      <tr><td>Renault ZOE</td><td>22 kW</td></tr>
+      <tr><td>Tesla Model 3</td><td>11 kW</td></tr>
+      <tr><td>Peugeot e-208</td><td>7,4 kW</td></tr>
+      <tr><td>Volkswagen ID.3</td><td>11 kW</td></tr>
+      <tr><td>BMW iX3</td><td>11 kW</td></tr>
+      <tr><td>Dacia Spring</td><td>6,6 kW</td></tr>
     </table></div>
-    <p>Si votre véhicule accepte 7,4 kW maximum, une borne 22 kW ne vous apportera <strong>strictement rien de plus</strong>.</p>
+    <p>Si votre véhicule accepte 7,4 kW maximum, une borne 22 kW ne vous apportera <strong>strictement rien de plus</strong>.</p>
 
     <h2 id="les-3-questions-a-se-poser">Les 3 questions à se poser</h2>
-    <p><strong>1. Quel est le chargeur embarqué de votre véhicule ?</strong><br>Vérifiez "Puissance de charge AC maximale" dans la fiche technique. C'est le plafond réel.</p>
-    <p><strong>2. Combien de temps avez-vous pour charger ?</strong><br>Si vous chargez la nuit (8 à 10h disponibles), une borne 7,4 kW est largement suffisante pour la plupart des usages quotidiens.</p>
-    <p><strong>3. Quelle est la capacité de votre installation électrique ?</strong><br>Une borne 22 kW triphasée nécessite un branchement triphasé (pas toujours disponible en résidentiel) et un tableau dimensionné en conséquence.</p>
+    <p><strong>1. Quel est le chargeur embarqué de votre véhicule ?</strong><br>Vérifiez "Puissance de charge AC maximale" dans la fiche technique. C'est le plafond réel.</p>
+    <p><strong>2. Combien de temps avez-vous pour charger ?</strong><br>Si vous chargez la nuit (8 à 10h disponibles), une borne 7,4 kW est largement suffisante pour la plupart des usages quotidiens.</p>
+    <p><strong>3. Quelle est la capacité de votre installation électrique ?</strong><br>Une borne 22 kW triphasée nécessite un branchement triphasé (pas toujours disponible en résidentiel) et un tableau dimensionné en conséquence.</p>
 
     <h2 id="le-tableau-recapitulatif">Le tableau récapitulatif</h2>
     <div class="table-wrap"><table>
       <tr><th>Situation</th><th>Borne recommandée</th></tr>
-      <tr><td>Maison individuelle, usage quotidien</td><td><strong>7,4 kW</strong></td></tr>
-      <tr><td>Copropriété, usage quotidien</td><td><strong>7,4 kW</strong></td></tr>
-      <tr><td>Entreprise, flotte légère</td><td><strong>7,4 à 11 kW</strong></td></tr>
-      <tr><td>Entreprise, flotte intensive</td><td><strong>22 kW</strong></td></tr>
-      <tr><td>Parking public, rotation rapide</td><td><strong>22 kW minimum</strong></td></tr>
+      <tr><td>Maison individuelle, usage quotidien</td><td><strong>7,4 kW</strong></td></tr>
+      <tr><td>Copropriété, usage quotidien</td><td><strong>7,4 kW</strong></td></tr>
+      <tr><td>Entreprise, flotte légère</td><td><strong>7,4 à 11 kW</strong></td></tr>
+      <tr><td>Entreprise, flotte intensive</td><td><strong>22 kW</strong></td></tr>
+      <tr><td>Parking public, rotation rapide</td><td><strong>22 kW minimum</strong></td></tr>
     </table></div>
 
     <h2 id="notre-recommandation-pour-80-des-cas">Notre recommandation pour 80% des cas</h2>
-    <p>Pour un usage résidentiel standard : une borne <strong>7,4 kW monophasée</strong> est la solution optimale. Elle est compatible avec tous les véhicules, simple à installer, suffisante pour charger la nuit, moins chère (voir le <a href="/blog/prix-borne-de-recharge-maison-2026.html">budget réel d'une borne maison</a>) et éligible à la prime ADVENIR en copropriété. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
-    <p>La borne 22 kW n'a de sens que si votre véhicule peut l'absorber ET que vous avez des contraintes de temps réelles.</p>
+    <p>Pour un usage résidentiel standard : une borne <strong>7,4 kW monophasée</strong> est la solution optimale. Elle est compatible avec tous les véhicules, simple à installer, suffisante pour charger la nuit, moins chère (voir le <a href="/blog/prix-borne-de-recharge-maison-2026.html">budget réel d'une borne maison</a>) et éligible à la prime ADVENIR en copropriété. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
+    <p>La borne 22 kW n'a de sens que si votre véhicule peut l'absorber ET que vous avez des contraintes de temps réelles.</p>
 
   </div>
-<div class="ctafin"><h2>Votre projet de borne, en clair.</h2><p>Répondez à 6 questions et obtenez une recommandation personnalisée gratuite.</p>
+<div class="ctafin"><h2>Votre projet de borne, en clair.</h2><p>Répondez à quelques questions et obtenez une recommandation personnalisée gratuite.</p>
 <a href="/simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="/partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#comprendre-ce-que-signifie-la-puissance-d-une-borne">Comprendre ce que signifie la puissance d'une borne</a></li><li><a href="#pourquoi-une-borne-22-kw-ne-rechargera-pas-forcement-3x-plus">Pourquoi une borne 22 kW ne rechargera pas forcément 3x plus vite</a></li><li><a href="#les-3-questions-a-se-poser">Les 3 questions à se poser</a></li><li><a href="#le-tableau-recapitulatif">Le tableau récapitulatif</a></li><li><a href="#notre-recommandation-pour-80-des-cas">Notre recommandation pour 80% des cas</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="/simulateur">Simulateur gratuit →</a><a href="/partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#comprendre-ce-que-signifie-la-puissance-d-une-borne">Comprendre ce que signifie la puissance d'une borne</a></li><li><a href="#pourquoi-une-borne-22-kw-ne-rechargera-pas-forcement-3x-plus">Pourquoi une borne 22 kW ne rechargera pas forcément 3x plus vite</a></li><li><a href="#les-3-questions-a-se-poser">Les 3 questions à se poser</a></li><li><a href="#le-tableau-recapitulatif">Le tableau récapitulatif</a></li><li><a href="#notre-recommandation-pour-80-des-cas">Notre recommandation pour 80% des cas</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="/simulateur">Simulateur gratuit →</a><a href="/partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 
 <footer>

@@ -263,6 +263,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -293,54 +298,54 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/prise-renforcee-ou-borne-de-recharge.jpg" alt="Main tenant un câble de recharge : prise renforcée ou borne ?" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Choisir & installer</div>
-<h1 class="htitle">Prise renforcée ou borne de recharge : que choisir en 2026 ?</h1>
-<div class="hmeta"><span>4 août 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Prise renforcée ou borne de recharge : que choisir en 2026 ?</h1>
+<div class="hmeta"><span>4 août 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
-<main><div class="prose"><p>Avant d'installer de quoi recharger chez soi, une question revient toujours : faut-il une simple prise renforcée ou une vraie borne de recharge ? Les deux fonctionnent, mais ne jouent pas dans la même catégorie. Voici comment trancher en 2026.</p>
+<main><div class="prose"><p>Avant d'installer de quoi recharger chez soi, une question revient toujours : faut-il une simple prise renforcée ou une vraie borne de recharge ? Les deux fonctionnent, mais ne jouent pas dans la même catégorie. Voici comment trancher en 2026.</p>
 
-<h2 id="difference">Prise renforcée ou borne : quelle différence ?</h2>
-<p>La prise renforcée est une prise domestique améliorée qui délivre environ 3,2 kW en toute sécurité. La borne de recharge (wallbox) est un équipement dédié, de 7,4 kW à 22 kW, avec protections intégrées et pilotage. En clair : la prise dépanne, la borne équipe.</p>
+<h2 id="difference">Prise renforcée ou borne : quelle différence ?</h2>
+<p>La prise renforcée est une prise domestique améliorée qui délivre environ 3,2 kW en toute sécurité. La borne de recharge (wallbox) est un équipement dédié, de 7,4 kW à 22 kW, avec protections intégrées et pilotage. En clair : la prise dépanne, la borne équipe.</p>
 
-<h2 id="prix">Combien coûte chaque solution ?</h2>
+<h2 id="prix">Combien coûte chaque solution ?</h2>
 <p>La prise renforcée est la moins chère à l'achat, la borne est plus complète pour un budget maîtrisé. Voici les fourchettes constatées en 2026, pose comprise.</p>
 <div class="table-wrap"><table>
 <tr><th>Solution</th><th>Prix installé (TTC)</th><th>Puissance</th></tr>
-<tr><td>Prise renforcée</td><td><span data-aide="prix_indicatifs_ttc.prise_renforcee" data-aide-fmt="range_eur">500 à 1 000 €</span></td><td>~3,2 kW</td></tr>
-<tr><td>Borne 7,4 kW</td><td><span data-aide="prix_indicatifs_ttc.borne_7_4_kw" data-aide-fmt="range_eur">1 200 à 2 000 €</span></td><td>7,4 kW</td></tr>
-<tr><td>Borne 22 kW (triphasé)</td><td><span data-aide="prix_indicatifs_ttc.borne_22_kw" data-aide-fmt="range_eur">2 500 à 3 500 €</span></td><td>22 kW</td></tr>
+<tr><td>Prise renforcée</td><td><span data-aide="prix_indicatifs_ttc.prise_renforcee" data-aide-fmt="range_eur">500 à 1 000 €</span></td><td>~3,2 kW</td></tr>
+<tr><td>Borne 7,4 kW</td><td><span data-aide="prix_indicatifs_ttc.borne_7_4_kw" data-aide-fmt="range_eur">1 200 à 2 000 €</span></td><td>7,4 kW</td></tr>
+<tr><td>Borne 22 kW (triphasé)</td><td><span data-aide="prix_indicatifs_ttc.borne_22_kw" data-aide-fmt="range_eur">2 500 à 3 500 €</span></td><td>22 kW</td></tr>
 </table></div>
-<p>Attention à la TVA, elle n'est pas la même selon la solution. La <strong>borne de recharge</strong> bénéficie de la TVA réduite à <strong><span data-aide="tva.borne_recharge.taux" data-aide-fmt="pct">5,5 %</span></strong> (article 278-0 bis N du CGI) pour une pose par un professionnel qualifié IRVE dans un logement de plus de deux ans. La <strong>prise renforcée</strong>, qui n'est pas une borne IRVE, relève elle du taux intermédiaire de <strong><span data-aide="tva.prise_renforcee.taux" data-aide-fmt="pct">10 %</span></strong> applicable aux travaux d'amélioration, pas des 5,5 %. Le détail est dans notre <a href="/blog/prix-borne-de-recharge-maison-2026.html">guide du prix d'une borne maison en 2026</a>.</p>
+<p>Attention à la TVA, elle n'est pas la même selon la solution. La <strong>borne de recharge</strong> bénéficie de la TVA réduite à <strong><span data-aide="tva.borne_recharge.taux" data-aide-fmt="pct">5,5 %</span></strong> (article 278-0 bis N du CGI) pour une pose par un professionnel qualifié IRVE dans un logement de plus de deux ans. La <strong>prise renforcée</strong>, qui n'est pas une borne IRVE, relève elle du taux intermédiaire de <strong><span data-aide="tva.prise_renforcee.taux" data-aide-fmt="pct">10 %</span></strong> applicable aux travaux d'amélioration, pas des 5,5 %. Le détail est dans notre <a href="/blog/prix-borne-de-recharge-maison-2026.html">guide du prix d'une borne maison en 2026</a>.</p>
 
-<h2 id="vitesse">Quelle vitesse de recharge pour chacune ?</h2>
-<p>La borne recharge environ deux fois plus vite que la prise renforcée. Sur une batterie de 50 kWh, comptez une nuit complète avec une prise renforcée, contre une demi-nuit avec une borne 7,4 kW.</p>
+<h2 id="vitesse">Quelle vitesse de recharge pour chacune ?</h2>
+<p>La borne recharge environ deux fois plus vite que la prise renforcée. Sur une batterie de 50 kWh, comptez une nuit complète avec une prise renforcée, contre une demi-nuit avec une borne 7,4 kW.</p>
 <ul>
-<li>Prise renforcée (3,2 kW) : environ 15 km d'autonomie récupérés par heure.</li>
-<li>Borne 7,4 kW : environ 35 à 40 km d'autonomie récupérés par heure.</li>
+<li>Prise renforcée (3,2 kW) : environ 15 km d'autonomie récupérés par heure.</li>
+<li>Borne 7,4 kW : environ 35 à 40 km d'autonomie récupérés par heure.</li>
 </ul>
-<p>Pour aller plus loin sur le choix de la puissance, lisez <a href="/blog/7kw-ou-22kw-quelle-puissance.html">7,4 kW ou 22 kW : quelle puissance choisir</a>.</p>
+<p>Pour aller plus loin sur le choix de la puissance, lisez <a href="/blog/7kw-ou-22kw-quelle-puissance.html">7,4 kW ou 22 kW : quelle puissance choisir</a>.</p>
 
-<div class="ctamid"><h3>Prise ou borne : le simulateur tranche pour vous</h3><p>8 questions sur votre véhicule et vos habitudes, et vous savez quelle solution vous convient.</p><a href="../index.html#simulateur">Démarrer le simulateur →</a></div>
+<div class="ctamid"><h3>Prise ou borne : le simulateur tranche pour vous</h3><p>Quelques questions sur votre véhicule et vos habitudes, et vous savez quelle solution vous convient.</p><a href="../index.html#simulateur">Démarrer le simulateur →</a></div>
 
-<h2 id="securite">Sécurité et aides : un avantage à la borne</h2>
-<p>La borne intègre ses propres protections et communique avec le réseau, ce qui la rend plus sûre pour une recharge quotidienne longue. Côté aides, seule la borne ouvre droit à la prime ADVENIR en copropriété (jusqu'à 1 000 € HT par point de charge pour une borne individuelle, barème revalorisé au 1er avril 2026).</p>
+<h2 id="securite">Sécurité et aides : un avantage à la borne</h2>
+<p>La borne intègre ses propres protections et communique avec le réseau, ce qui la rend plus sûre pour une recharge quotidienne longue. Côté aides, seule la borne ouvre droit à la prime ADVENIR en copropriété (jusqu'à 1 000 € HT par point de charge pour une borne individuelle, barème revalorisé au 1er avril 2026).</p>
 <p>La prise renforcée, elle, n'est pas éligible à ces aides. C'est une solution d'appoint, pas un équipement subventionné.</p>
 
-<h2 id="pourqui">Pour qui chaque solution est-elle faite ?</h2>
+<h2 id="pourqui">Pour qui chaque solution est-elle faite ?</h2>
 <ul>
 <li><strong>La prise renforcée convient</strong> aux hybrides rechargeables, aux petits rouleurs et aux budgets serrés qui roulent peu chaque jour.</li>
-<li><strong>La borne s'impose</strong> pour une voiture 100 % électrique à grande batterie, un usage quotidien, ou un projet en copropriété qui vise la prime ADVENIR.</li>
+<li><strong>La borne s'impose</strong> pour une voiture 100 % électrique à grande batterie, un usage quotidien, ou un projet en copropriété qui vise la prime ADVENIR.</li>
 </ul>
 
 <h2 id="reco">Notre recommandation</h2>
-<p>Pour la grande majorité des conducteurs en 100 % électrique, la borne 7,4 kW est le meilleur compromis : rapide, sûre, éligible aux aides en copropriété, pour un surcoût limité face à la prise renforcée. Cette dernière garde tout son sens pour un usage léger ou en hybride rechargeable.</p>
-<p>Le coût de la recharge elle-même est un autre sujet : voyez notre article sur le <a href="/blog/cout-recharge-electrique-domicile-2026.html">coût de la recharge à domicile</a>.</p></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<p>Pour la grande majorité des conducteurs en 100 % électrique, la borne 7,4 kW est le meilleur compromis : rapide, sûre, éligible aux aides en copropriété, pour un surcoût limité face à la prise renforcée. Cette dernière garde tout son sens pour un usage léger ou en hybride rechargeable.</p>
+<p>Le coût de la recharge elle-même est un autre sujet : voyez notre article sur le <a href="/blog/cout-recharge-electrique-domicile-2026.html">coût de la recharge à domicile</a>.</p></div>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#difference">Prise renforcée ou borne : la différence</a></li><li><a href="#prix">Combien coûte chaque solution</a></li><li><a href="#vitesse">Quelle vitesse de recharge</a></li><li><a href="#securite">Sécurité et aides</a></li><li><a href="#pourqui">Pour qui chaque solution</a></li><li><a href="#reco">Notre recommandation</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#difference">Prise renforcée ou borne : la différence</a></li><li><a href="#prix">Combien coûte chaque solution</a></li><li><a href="#vitesse">Quelle vitesse de recharge</a></li><li><a href="#securite">Sécurité et aides</a></li><li><a href="#pourqui">Pour qui chaque solution</a></li><li><a href="#reco">Notre recommandation</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

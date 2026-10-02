@@ -283,6 +283,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -315,43 +320,43 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <div id="pgbar"></div>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/guide-prime-advenir-2026.jpg" alt="Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Aides & prix</div>
-<h1 class="htitle">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</h1>
-<div class="hmeta"><span>1er mars 2026</span><span class="dot"></span><span>3 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</h1>
+<div class="hmeta"><span>1er mars 2026</span><span class="dot"></span><span>3 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose">
 
     <p>La prime ADVENIR est aujourd'hui <strong>l'aide principale</strong> pour financer l'installation d'une borne de recharge en France. Portée par l'AVERE-France et financée par EDF, elle couvre une partie significative des coûts selon votre situation.</p>
 
-    <h2 id="qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</h2>
+    <h2 id="qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</h2>
     <p>ADVENIR est un programme national de soutien au déploiement de l'infrastructure de recharge de véhicule électrique (IRVE). Il est opéré par l'AVERE-France et financé par EDF dans le cadre des Certificats d'Économies d'Énergie (CEE).</p>
     <p>Concrètement, ADVENIR rembourse une partie du coût de votre installation selon des plafonds définis par type de site.</p>
 
-    <h2 id="qui-peut-en-beneficier">Qui peut en bénéficier ?</h2>
-    <p><strong>Copropriétaires et syndicats de copropriété</strong><br>Aide jusqu'à <strong><span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> par point de charge</strong> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée (barèmes revalorisés le 1er avril 2026). Les pavillons en habitat individuel ne sont pas éligibles.</p>
+    <h2 id="qui-peut-en-beneficier">Qui peut en bénéficier ?</h2>
+    <p><strong>Copropriétaires et syndicats de copropriété</strong><br>Aide jusqu'à <strong><span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> par point de charge</strong> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée (barèmes revalorisés le 1er avril 2026). Les pavillons en habitat individuel ne sont pas éligibles.</p>
     <p><strong>Entreprises et flottes (T2A)</strong><br>Bornes sur site d'entreprise pour salariés ou clients. Aide jusqu'à 50% du coût plafonné.</p>
     <p><strong>Parkings ouverts au public (P4/P5)</strong><br>Aide variable selon le nombre de points et la puissance installée.</p>
 
     <h2 id="quels-sont-les-montants-de-la-prime-advenir-en-2026">Quels sont les montants de la prime ADVENIR en&nbsp;2026&nbsp;?</h2>
-    <p>Depuis le 1er avril 2026, les montants en <a href="/copropriete">copropriété</a> ont été revalorisés : jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée et <span data-aide="advenir.copropriete.infrastructure_collective.montant_ht">12 500 € HT</span> pour une infrastructure collective jusqu'à 100 places (<strong>+ <span data-aide="advenir.copropriete.infrastructure_collective.majoration_par_place_au_dela_ht">125 € HT</span> par place au-delà</strong>). Deux surprimes s'ajoutent en 2026 pour les parkings extérieurs : jusqu'à <strong><span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span></strong> de travaux de voirie et réseaux (VRD, + <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> par place extérieure au-delà de 100) et jusqu'à <strong><span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></strong> pour la création d'un point de livraison dédié aux bornes partagées. L'aide couvre 50 % du coût des travaux, dans la limite de ces plafonds.</p>
+    <p>Depuis le 1er avril 2026, les montants en <a href="/copropriete">copropriété</a> ont été revalorisés : jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée et <span data-aide="advenir.copropriete.infrastructure_collective.montant_ht">12 500 € HT</span> pour une infrastructure collective jusqu'à 100 places (<strong>+ <span data-aide="advenir.copropriete.infrastructure_collective.majoration_par_place_au_dela_ht">125 € HT</span> par place au-delà</strong>). Deux surprimes s'ajoutent en 2026 pour les parkings extérieurs : jusqu'à <strong><span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span></strong> de travaux de voirie et réseaux (VRD, + <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> par place extérieure au-delà de 100) et jusqu'à <strong><span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></strong> pour la création d'un point de livraison dédié aux bornes partagées. L'aide couvre 50 % du coût des travaux, dans la limite de ces plafonds.</p>
     <div class="table-wrap"><table>
       <tr><th>Type de projet (copropriété)</th><th>Aide maximale (depuis le 01/04/2026)</th></tr>
-      <tr><td>Borne individuelle en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> / point</td></tr>
-      <tr><td>Borne partagée en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> / point</td></tr>
-      <tr><td>Infrastructure collective (colonne électrique)</td><td>Jusqu'à <span data-aide="advenir.copropriete.infrastructure_collective.montant_ht">12 500 € HT</span> (jusqu'à 100 places, + <span data-aide="advenir.copropriete.infrastructure_collective.majoration_par_place_au_dela_ht">125 € HT</span> / place au-delà)</td></tr>
-      <tr><td>Surprime travaux de voirie (VRD, parking extérieur)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span> (+ <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> / place ext. au-delà de 100)</td></tr>
-      <tr><td>Surprime point de livraison dédié (bornes partagées)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></td></tr>
-      <tr><td>Taux de prise en charge</td><td>50 % du coût des travaux</td></tr>
+      <tr><td>Borne individuelle en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> / point</td></tr>
+      <tr><td>Borne partagée en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> / point</td></tr>
+      <tr><td>Infrastructure collective (colonne électrique)</td><td>Jusqu'à <span data-aide="advenir.copropriete.infrastructure_collective.montant_ht">12 500 € HT</span> (jusqu'à 100 places, + <span data-aide="advenir.copropriete.infrastructure_collective.majoration_par_place_au_dela_ht">125 € HT</span> / place au-delà)</td></tr>
+      <tr><td>Surprime travaux de voirie (VRD, parking extérieur)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span> (+ <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> / place ext. au-delà de 100)</td></tr>
+      <tr><td>Surprime point de livraison dédié (bornes partagées)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></td></tr>
+      <tr><td>Taux de prise en charge</td><td>50 % du coût des travaux</td></tr>
     </table></div>
-    <blockquote><p>Points de vigilance : les pavillons en habitat individuel ne sont pas éligibles à ADVENIR. Le dossier doit être validé <strong>avant</strong> le début des travaux, et le projet voté en assemblée générale après le 1er avril 2026 pour bénéficier de ces barèmes. Plafonds officiels sur <a href="https://www.advenir.mobi" target="_blank" rel="noopener">advenir.mobi</a>.</p></blockquote>
+    <blockquote><p>Points de vigilance : les pavillons en habitat individuel ne sont pas éligibles à ADVENIR. Le dossier doit être validé <strong>avant</strong> le début des travaux, et le projet voté en assemblée générale après le 1er avril 2026 pour bénéficier de ces barèmes. Plafonds officiels sur <a href="https://www.advenir.mobi" target="_blank" rel="noopener">advenir.mobi</a>.</p></blockquote>
 
-    <h2 id="comment-faire-la-demande">Comment faire la demande ?</h2>
+    <h2 id="comment-faire-la-demande">Comment faire la demande ?</h2>
     <p><strong>1. Choisir un installateur certifié IRVE</strong><br>Condition sine qua non. Votre installateur doit être titulaire de la qualification IRVE (P1, P2 ou P3). C'est lui qui constitue généralement le dossier ADVENIR.</p>
     <p><strong>2. Faire la demande avant l'installation</strong><br>La demande ADVENIR doit être faite <strong>avant</strong> le début des travaux. Sans dossier préalable, vous ne pouvez plus en bénéficier.</p>
     <p><strong>3. Recevoir le remboursement</strong><br>Après validation et réception de la facture acquittée, le remboursement est versé sous 4 à 8 semaines.</p>
 
     <h2 id="peut-on-cumuler-advenir-avec-le-credit-d-impot-en-2026">Peut-on cumuler ADVENIR avec le crédit d'impôt en&nbsp;2026&nbsp;?</h2>
-    <p><strong>Non, plus en 2026.</strong> Le crédit d'impôt pour l'installation d'une borne chez les particuliers n'a pas été reconduit après le 31 décembre 2025 : il ne faut donc plus le compter dans <a href="/blog/prix-borne-de-recharge-maison-2026.html">votre budget</a>. Reste mobilisable en maison individuelle : la TVA à taux réduit de 5,5 % sur une installation réalisée par un professionnel qualifié IRVE, dans un logement de plus de deux ans.</p>
+    <p><strong>Non, plus en 2026.</strong> Le crédit d'impôt pour l'installation d'une borne chez les particuliers n'a pas été reconduit après le 31 décembre 2025 : il ne faut donc plus le compter dans <a href="/blog/prix-borne-de-recharge-maison-2026.html">votre budget</a>. Reste mobilisable en maison individuelle : la TVA à taux réduit de 5,5 % sur une installation réalisée par un professionnel qualifié IRVE, dans un logement de plus de deux ans.</p>
 
     <h2 id="ce-qu-advenir-ne-couvre-pas">Ce qu'ADVENIR ne couvre pas</h2>
     <ul>
@@ -361,12 +366,12 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     </ul>
 
   </div>
-<div class="ctafin"><h2>Votre projet de borne, en clair.</h2><p>Répondez à 6 questions et obtenez une recommandation personnalisée gratuite.</p>
+<div class="ctafin"><h2>Votre projet de borne, en clair.</h2><p>Répondez à quelques questions et obtenez une recommandation personnalisée gratuite.</p>
 <a href="/simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="/partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</a></li><li><a href="#qui-peut-en-beneficier">Qui peut en bénéficier ?</a></li><li><a href="#quels-sont-les-montants-de-la-prime-advenir-en-2026">Quels sont les montants de la prime ADVENIR en 2026 ?</a></li><li><a href="#comment-faire-la-demande">Comment faire la demande ?</a></li><li><a href="#peut-on-cumuler-advenir-avec-le-credit-d-impot-en-2026">Peut-on cumuler ADVENIR avec le crédit d'impôt en 2026 ?</a></li><li><a href="#ce-qu-advenir-ne-couvre-pas">Ce qu'ADVENIR ne couvre pas</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="/simulateur">Simulateur gratuit →</a><a href="/partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</a></li><li><a href="#qui-peut-en-beneficier">Qui peut en bénéficier ?</a></li><li><a href="#quels-sont-les-montants-de-la-prime-advenir-en-2026">Quels sont les montants de la prime ADVENIR en 2026 ?</a></li><li><a href="#comment-faire-la-demande">Comment faire la demande ?</a></li><li><a href="#peut-on-cumuler-advenir-avec-le-credit-d-impot-en-2026">Peut-on cumuler ADVENIR avec le crédit d'impôt en 2026 ?</a></li><li><a href="#ce-qu-advenir-ne-couvre-pas">Ce qu'ADVENIR ne couvre pas</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="/simulateur">Simulateur gratuit →</a><a href="/partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 
 <footer>

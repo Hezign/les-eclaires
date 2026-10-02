@@ -267,6 +267,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -297,17 +302,17 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/prix-borne-de-recharge-maison-2026.jpg" alt="Femme et sa voiture électrique devant une borne de recharge à la maison" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Aides & prix</div>
-<h1 class="htitle">Borne de recharge à la maison : quel prix total faut-il vraiment prévoir en 2026 ?</h1>
-<div class="hmeta"><span>25 juin 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Borne de recharge à la maison : quel prix total faut-il vraiment prévoir en 2026 ?</h1>
+<div class="hmeta"><span>25 juin 2026</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
-<main><div class="prose"><p>Vous venez d'acquérir un véhicule électrique, ou vous y pensez sérieusement. Et très vite, la question de la <strong>recharge à domicile</strong> s'impose. C'est logique : recharger chez soi, c'est pratique, économique et confortable. Mais combien ça coûte vraiment ? Entre les devis qui varient du simple au triple et les aides dont on parle partout sans toujours bien les expliquer, il est facile de se perdre.</p>
+<main><div class="prose"><p>Vous venez d'acquérir un véhicule électrique, ou vous y pensez sérieusement. Et très vite, la question de la <strong>recharge à domicile</strong> s'impose. C'est logique : recharger chez soi, c'est pratique, économique et confortable. Mais combien ça coûte vraiment ? Entre les devis qui varient du simple au triple et les aides dont on parle partout sans toujours bien les expliquer, il est facile de se perdre.</p>
 
 <p>Le <strong>prix d'une borne de recharge à la maison</strong> ne se résume pas au tarif affiché sur une fiche produit. Il y a le matériel, bien sûr, mais aussi la pose, les travaux électriques éventuels, les démarches administratives si vous êtes en copropriété, et parfois quelques surprises sur l'installation elle-même. Sans une vision d'ensemble, le budget peut facilement déraper de plusieurs centaines d'euros.</p>
 
 <p>Ce guide a été conçu pour vous donner une image complète et honnête du <strong>coût total d'une wallbox en 2026</strong>. Nous allons décomposer chaque poste de dépense, vous présenter les aides auxquelles vous avez droit, et vous donner des fourchettes réalistes pour budgéter sereinement votre projet. Aucune mauvaise surprise, c'est la promesse de ce tour d'horizon.</p>
 
-<h2 id="prix-borne-recharge-maison-fourchettes">Le prix d'une borne de recharge à la maison : les grandes fourchettes</h2>
+<h2 id="prix-borne-recharge-maison-fourchettes">Le prix d'une borne de recharge à la maison : les grandes fourchettes</h2>
 <p>Avant d'entrer dans le détail, voici un aperçu des budgets selon votre situation. Ces chiffres incluent le matériel et la pose, dans des configurations courantes.</p>
 <div class="table-wrap"><table>
   <thead>
@@ -320,58 +325,58 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <tbody>
     <tr>
       <td>Maison individuelle, tableau conforme, câblage court</td>
-      <td>800 € à 1 400 €</td>
-      <td>Wallbox 7,4 kW + pose simple</td>
+      <td>800 € à 1 400 €</td>
+      <td>Wallbox 7,4 kW + pose simple</td>
     </tr>
     <tr>
       <td>Maison individuelle, travaux électriques nécessaires</td>
-      <td>1 400 € à 2 500 €</td>
+      <td>1 400 € à 2 500 €</td>
       <td>Wallbox + mise aux normes + câblage long</td>
     </tr>
     <tr>
       <td>Appartement avec parking privatif</td>
-      <td>1 000 € à 2 000 €</td>
+      <td>1 000 € à 2 000 €</td>
       <td>Wallbox + démarches syndic + pose</td>
     </tr>
     <tr>
       <td>Copropriété avec droit à la prise (DAP)</td>
-      <td>1 500 € à 3 000 €</td>
+      <td>1 500 € à 3 000 €</td>
       <td>Wallbox + installation dédiée + infrastructure</td>
     </tr>
   </tbody>
 </table></div>
 <p>Ces fourchettes sont des points de départ. Votre situation réelle peut se situer en dessous ou au-dessus selon plusieurs facteurs que nous allons détailler.</p>
 
-<h2 id="cout-wallbox-particulier-materiel">Le coût du matériel : choisir la bonne wallbox</h2>
+<h2 id="cout-wallbox-particulier-materiel">Le coût du matériel : choisir la bonne wallbox</h2>
 <p>La <strong>wallbox</strong>, ou borne de recharge individuelle, est le cœur de votre installation. Son prix varie selon sa <a href="7kw-ou-22kw-quelle-puissance.html">puissance</a>, ses fonctionnalités et sa marque. En 2026, le marché est mature et l'offre est large.</p>
 <ul>
-  <li><strong>Wallbox 3,7 kW</strong> : entre 200 € et 400 €. Suffisante si vous roulez peu (moins de 40 km par jour). La recharge est lente mais économique la nuit.</li>
-  <li><strong>Wallbox 7,4 kW</strong> : entre 350 € et 700 €. C'est la puissance la plus répandue et la plus polyvalente. Elle recharge une batterie de 60 kWh en une nuit.</li>
-  <li><strong>Wallbox 11 kW ou 22 kW</strong> : entre 600 € et 1 200 €. Nécessite un abonnement triphasé. Utile si vous rechargez plusieurs véhicules ou si vous avez une grande batterie.</li>
+  <li><strong>Wallbox 3,7 kW</strong> : entre 200 € et 400 €. Suffisante si vous roulez peu (moins de 40 km par jour). La recharge est lente mais économique la nuit.</li>
+  <li><strong>Wallbox 7,4 kW</strong> : entre 350 € et 700 €. C'est la puissance la plus répandue et la plus polyvalente. Elle recharge une batterie de 60 kWh en une nuit.</li>
+  <li><strong>Wallbox 11 kW ou 22 kW</strong> : entre 600 € et 1 200 €. Nécessite un abonnement triphasé. Utile si vous rechargez plusieurs véhicules ou si vous avez une grande batterie.</li>
 </ul>
-<p>Les modèles connectés (avec application, programmation, suivi de consommation) coûtent en moyenne <strong>100 à 200 € de plus</strong> que les versions basiques. C'est un investissement souvent rentable pour optimiser votre consommation sur les heures creuses.</p>
-<p>Parmi les marques courantes en France : Schneider Electric, Legrand, Wallbox, Hager, Webasto, Delta Dore. Toutes proposent des modèles compatibles avec les aides d'État sous réserve de certification IRVE. Pour les départager selon votre usage, consultez notre <a href="comparatif-marques-borne-recharge-2026.html">comparatif des marques de borne de recharge</a>.</p>
-<p>Au-delà du prix d'achat, pensez au coût de possession dans la durée : notre guide sur la <a href="entretien-duree-vie-borne-recharge-domicile.html">durée de vie et l'entretien d'une borne de recharge</a> détaille ce qui préserve votre installation et limite les pannes.</p>
+<p>Les modèles connectés (avec application, programmation, suivi de consommation) coûtent en moyenne <strong>100 à 200 € de plus</strong> que les versions basiques. C'est un investissement souvent rentable pour optimiser votre consommation sur les heures creuses.</p>
+<p>Parmi les marques courantes en France : Schneider Electric, Legrand, Wallbox, Hager, Webasto, Delta Dore. Toutes proposent des modèles compatibles avec les aides d'État sous réserve de certification IRVE. Pour les départager selon votre usage, consultez notre <a href="comparatif-marques-borne-recharge-2026.html">comparatif des marques de borne de recharge</a>.</p>
+<p>Au-delà du prix d'achat, pensez au coût de possession dans la durée : notre guide sur la <a href="entretien-duree-vie-borne-recharge-domicile.html">durée de vie et l'entretien d'une borne de recharge</a> détaille ce qui préserve votre installation et limite les pannes.</p>
 
-<h2 id="installation-borne-electrique-maison-pose">Le coût de la pose : ce que facture l'installateur IRVE</h2>
+<h2 id="installation-borne-electrique-maison-pose">Le coût de la pose : ce que facture l'installateur IRVE</h2>
 <p>Le prix de la <strong>pose d'une borne de recharge</strong> dépend directement de votre configuration électrique et de la distance entre votre tableau et l'emplacement de stationnement. C'est souvent là que les surprises apparaissent.</p>
 <ul>
-  <li><strong>Pose simple</strong> (tableau accessible, câblage court, moins de 10 mètres) : 300 € à 500 €.</li>
-  <li><strong>Pose avec câblage moyen</strong> (10 à 30 mètres, passage en gaine) : 500 € à 900 €.</li>
-  <li><strong>Pose avec câblage long ou compliqué</strong> (plus de 30 mètres, traversée de murs, sous-sol) : 900 € à 1 500 €.</li>
+  <li><strong>Pose simple</strong> (tableau accessible, câblage court, moins de 10 mètres) : 300 € à 500 €.</li>
+  <li><strong>Pose avec câblage moyen</strong> (10 à 30 mètres, passage en gaine) : 500 € à 900 €.</li>
+  <li><strong>Pose avec câblage long ou compliqué</strong> (plus de 30 mètres, traversée de murs, sous-sol) : 900 € à 1 500 €.</li>
 </ul>
-<p>À cela peuvent s'ajouter des frais supplémentaires :</p>
+<p>À cela peuvent s'ajouter des frais supplémentaires :</p>
 <ul>
-  <li><strong>Mise aux normes du tableau électrique</strong> : 200 € à 800 € si votre tableau est vétuste ou sous-dimensionné.</li>
-  <li><strong>Ajout d'un disjoncteur différentiel</strong> : 80 € à 150 €.</li>
-  <li><strong>Système de délestage</strong> (pour éviter de dépasser la puissance souscrite) : 150 € à 400 €.</li>
+  <li><strong>Mise aux normes du tableau électrique</strong> : 200 € à 800 € si votre tableau est vétuste ou sous-dimensionné.</li>
+  <li><strong>Ajout d'un disjoncteur différentiel</strong> : 80 € à 150 €.</li>
+  <li><strong>Système de délestage</strong> (pour éviter de dépasser la puissance souscrite) : 150 € à 400 €.</li>
 </ul>
 <p>L'installateur doit obligatoirement être certifié <strong>IRVE (Infrastructure de Recharge de Véhicule Électrique)</strong> pour que vous puissiez bénéficier des aides. Demandez toujours ce justificatif avant de signer un devis. Notre guide pour <a href="choisir-installateur-irve-certifie.html">choisir un installateur IRVE certifié</a> liste les vérifications à faire.</p>
 
-<div class="ctamid"><h3>Vous ne savez pas quelle solution choisir ?</h3><p>Simulateur gratuit en 8 questions.</p><a href="../index.html#simulateur">Utiliser le simulateur gratuit</a></div>
+<div class="ctamid"><h3>Vous ne savez pas quelle solution choisir ?</h3><p>Simulateur gratuit en quelques questions.</p><a href="../index.html#simulateur">Utiliser le simulateur gratuit</a></div>
 
 <h2 id="aide-installation-borne-recharge-2026">Les aides disponibles en 2026 : ce que vous pouvez déduire</h2>
-<p>Bonne nouvelle : plusieurs dispositifs existent pour réduire significativement votre reste à charge. En 2026, le paysage a changé : le crédit d'impôt pour les particuliers n'a pas été reconduit, mais la TVA réduite à 5,5 % et certaines aides locales restent mobilisables, et la prime ADVENIR en copropriété a même été revalorisée au 1er avril 2026. Voici un tour d'horizon clair.</p>
+<p>Bonne nouvelle : plusieurs dispositifs existent pour réduire significativement votre reste à charge. En 2026, le paysage a changé : le crédit d'impôt pour les particuliers n'a pas été reconduit, mais la TVA réduite à 5,5 % et certaines aides locales restent mobilisables, et la prime ADVENIR en copropriété a même été revalorisée au 1er avril 2026. Voici un tour d'horizon clair.</p>
 <div class="table-wrap"><table>
   <thead>
     <tr>
@@ -387,36 +392,36 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Dispositif non reconduit après le 31 décembre 2025. À ne plus compter dans votre budget.</td>
     </tr>
     <tr>
-      <td>TVA à taux réduit (5,5 %)</td>
+      <td>TVA à taux réduit (5,5 %)</td>
       <td>Réduction sur la facture main-d'œuvre</td>
-      <td>Logement de plus de 2 ans, travaux liés à l'habitation</td>
+      <td>Logement de plus de 2 ans, travaux liés à l'habitation</td>
     </tr>
     <tr>
       <td>Aides locales (régions, métropoles)</td>
-      <td>100 € à 500 € selon territoire</td>
+      <td>100 € à 500 € selon territoire</td>
       <td>Variable, vérifier auprès de votre collectivité</td>
     </tr>
     <tr>
       <td>Aide employeur (AVANTAGE IRVE)</td>
-      <td>Jusqu'à 50 % du coût selon accord entreprise</td>
+      <td>Jusqu'à 50 % du coût selon accord entreprise</td>
       <td>Salarié avec véhicule professionnel ou personnel électrique</td>
     </tr>
   </tbody>
 </table></div>
-<p>La <strong>TVA réduite à 5,5 %</strong> est aujourd'hui l'avantage le plus simple à obtenir : elle s'applique directement sur votre facture dès lors que la pose est réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans, que vous soyez propriétaire ou locataire. Le crédit d'impôt pour les particuliers, lui, n'existe plus depuis le 31 décembre 2025 : il ne faut plus le compter dans votre budget.</p>
+<p>La <strong>TVA réduite à 5,5 %</strong> est aujourd'hui l'avantage le plus simple à obtenir : elle s'applique directement sur votre facture dès lors que la pose est réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans, que vous soyez propriétaire ou locataire. Le crédit d'impôt pour les particuliers, lui, n'existe plus depuis le 31 décembre 2025 : il ne faut plus le compter dans votre budget.</p>
 <p>Pensez également à vérifier les offres de votre <strong>fournisseur d'énergie</strong> : EDF, Engie, TotalEnergies et d'autres proposent des packages installation avec des tarifs négociés et parfois des avances sur aides.</p>
 
 <h2 id="cas-particulier-copropriete">Le cas particulier de la copropriété</h2>
 <p>Si vous habitez en appartement avec un parking en copropriété, la situation est différente. Vous bénéficiez du <a href="droit-prise-copropriete.html"><strong>droit à la prise</strong></a>, un dispositif légal qui vous permet d'installer une borne individuelle sans avoir à obtenir le vote favorable de l'assemblée générale. Mais cela ne veut pas dire que c'est simple ni gratuit.</p>
 <ul>
-  <li><strong>Notification au syndic</strong> : obligatoire, avec un délai de réponse de 3 mois. Le syndic peut s'y opposer uniquement pour des raisons techniques sérieuses.</li>
-  <li><strong>Étude technique</strong> : souvent demandée par le syndic, elle coûte entre 200 € et 500 €. Ces frais sont parfois à votre charge.</li>
-  <li><strong>Infrastructure collective</strong> : si la copropriété décide de pré-équiper le parking, vous participez au financement collectif. Cela peut représenter 500 € à 2 000 € selon la taille de l'immeuble.</li>
-  <li><strong>Compteur individuel</strong> : vous devrez faire poser un compteur Linky dédié à votre borne, ce qui engendre des frais supplémentaires d'environ 200 à 400 €.</li>
+  <li><strong>Notification au syndic</strong> : obligatoire, avec un délai de réponse de 3 mois. Le syndic peut s'y opposer uniquement pour des raisons techniques sérieuses.</li>
+  <li><strong>Étude technique</strong> : souvent demandée par le syndic, elle coûte entre 200 € et 500 €. Ces frais sont parfois à votre charge.</li>
+  <li><strong>Infrastructure collective</strong> : si la copropriété décide de pré-équiper le parking, vous participez au financement collectif. Cela peut représenter 500 € à 2 000 € selon la taille de l'immeuble.</li>
+  <li><strong>Compteur individuel</strong> : vous devrez faire poser un compteur Linky dédié à votre borne, ce qui engendre des frais supplémentaires d'environ 200 à 400 €.</li>
 </ul>
-<p>En copropriété, prévoyez donc un budget global de <strong>1 500 € à 3 000 €</strong> pour une installation complète et conforme, avant aides.</p>
+<p>En copropriété, prévoyez donc un budget global de <strong>1 500 € à 3 000 €</strong> pour une installation complète et conforme, avant aides.</p>
 
-<h2 id="budget-reel-simulation">Simulation budgétaire réelle : exemples concrets</h2>
+<h2 id="budget-reel-simulation">Simulation budgétaire réelle : exemples concrets</h2>
 <p>Pour vous aider à vous projeter, voici deux exemples de budgets réels, avant et après aides, dans des situations courantes en 2026.</p>
 <div class="table-wrap"><table>
   <thead>
@@ -428,60 +433,60 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   </thead>
   <tbody>
     <tr>
-      <td>Wallbox 7,4 kW connectée</td>
-      <td>550 €</td>
-      <td>550 €</td>
+      <td>Wallbox 7,4 kW connectée</td>
+      <td>550 €</td>
+      <td>550 €</td>
     </tr>
     <tr>
       <td>Pose et câblage</td>
-      <td>650 €</td>
-      <td>750 €</td>
+      <td>650 €</td>
+      <td>750 €</td>
     </tr>
     <tr>
       <td>Mise aux normes tableau</td>
-      <td>300 €</td>
+      <td>300 €</td>
       <td>-</td>
     </tr>
     <tr>
       <td>Étude technique / compteur dédié</td>
       <td>-</td>
-      <td>350 €</td>
+      <td>350 €</td>
     </tr>
     <tr>
       <td><strong>Total avant aides</strong></td>
-      <td><strong>1 500 €</strong></td>
-      <td><strong>1 650 €</strong></td>
+      <td><strong>1 500 €</strong></td>
+      <td><strong>1 650 €</strong></td>
     </tr>
     <tr>
       <td>Aide locale estimée</td>
-      <td>- 200 €</td>
-      <td>- 200 €</td>
+      <td>- 200 €</td>
+      <td>- 200 €</td>
     </tr>
     <tr>
       <td><strong>Reste à charge estimé</strong></td>
-      <td><strong>1 300 €</strong></td>
-      <td><strong>1 450 €</strong></td>
+      <td><strong>1 300 €</strong></td>
+      <td><strong>1 450 €</strong></td>
     </tr>
   </tbody>
 </table></div>
 <p>Ces chiffres sont des estimations moyennes. Votre reste à charge réel dépend de votre tranche d'imposition, de votre localisation et des offres de votre installateur. Dans tous les cas, <strong>une borne de recharge à domicile est rentable dès la première année</strong> si vous comparez le coût du kWh domestique aux tarifs des bornes publiques.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
-<p>Vous avez maintenant une vision complète et réaliste du <strong>prix d'une borne de recharge à la maison en 2026</strong>. Matériel, pose, travaux éventuels, aides disponibles : rien ne devrait vous surprendre au moment de recevoir vos devis. La prochaine étape, c'est de passer à l'action avec méthode. Voici ce que nous vous conseillons :</p>
+<p>Vous avez maintenant une vision complète et réaliste du <strong>prix d'une borne de recharge à la maison en 2026</strong>. Matériel, pose, travaux éventuels, aides disponibles : rien ne devrait vous surprendre au moment de recevoir vos devis. La prochaine étape, c'est de passer à l'action avec méthode. Voici ce que nous vous conseillons :</p>
 <ul>
   <li><strong>Faites établir au moins 3 devis</strong> par des installateurs certifiés IRVE dans votre secteur, pour comparer les tarifs et les prestations.</li>
-  <li><strong>Vérifiez la conformité de votre tableau électrique</strong> avant de vous engager : demandez un diagnostic à l'installateur lors de sa visite.</li>
+  <li><strong>Vérifiez la conformité de votre tableau électrique</strong> avant de vous engager : demandez un diagnostic à l'installateur lors de sa visite.</li>
   <li><strong>Renseignez-vous auprès de votre collectivité locale</strong> pour connaître les aides spécifiques à votre région ou métropole en 2026.</li>
   <li><strong>Si vous êtes en copropriété</strong>, envoyez votre notification au syndic par lettre recommandée avec accusé de réception pour démarrer le délai officiel.</li>
-  <li><strong>Vérifiez la TVA à 5,5 %</strong> sur votre devis : elle s'applique si la pose est réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</li>
+  <li><strong>Vérifiez la TVA à 5,5 %</strong> sur votre devis : elle s'applique si la pose est réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans.</li>
   <li><strong>Utilisez notre simulateur gratuit</strong> pour identifier la configuration la plus adaptée à votre logement et à vos habitudes de conduite.</li>
 </ul></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#prix-borne-recharge-maison-fourchettes">Le prix d'une borne de recharge à la maison : les grandes fourchettes</a></li><li><a href="#cout-wallbox-particulier-materiel">Le coût du matériel : choisir la bonne wallbox</a></li><li><a href="#installation-borne-electrique-maison-pose">Le coût de la pose : ce que facture l'installateur IRVE</a></li><li><a href="#aide-installation-borne-recharge-2026">Les aides disponibles en 2026 : ce que vous pouvez déduire</a></li><li><a href="#cas-particulier-copropriete">Le cas particulier de la copropriété</a></li><li><a href="#budget-reel-simulation">Simulation budgétaire réelle : exemples concrets</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#prix-borne-recharge-maison-fourchettes">Le prix d'une borne de recharge à la maison : les grandes fourchettes</a></li><li><a href="#cout-wallbox-particulier-materiel">Le coût du matériel : choisir la bonne wallbox</a></li><li><a href="#installation-borne-electrique-maison-pose">Le coût de la pose : ce que facture l'installateur IRVE</a></li><li><a href="#aide-installation-borne-recharge-2026">Les aides disponibles en 2026 : ce que vous pouvez déduire</a></li><li><a href="#cas-particulier-copropriete">Le cas particulier de la copropriété</a></li><li><a href="#budget-reel-simulation">Simulation budgétaire réelle : exemples concrets</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

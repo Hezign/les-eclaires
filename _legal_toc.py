@@ -134,3 +134,6 @@ def build(path):
 if __name__ == '__main__':
     for p in (sys.argv[1:] or PAGES):
         build(p)
+    import _typo, _ds_shared
+    for f in (sys.argv[1:] or PAGES):
+        _ds_shared.apply(f); _typo.apply(f)

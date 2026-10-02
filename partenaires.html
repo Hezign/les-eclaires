@@ -287,6 +287,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
@@ -328,7 +333,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   </div>
   <ul class="pt-chips">
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>1 demande = 1 seul installateur</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Transmise sous 24 h</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Transmise sous 24 h</li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Sans abonnement ni volume minimum</li>
   </ul>
 </div></section>
@@ -337,12 +342,12 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="pt-wrap">
     <span class="pt-kicker">Ce que vous recevez</span>
     <h2 class="pt-h2">Des demandes prêtes à traiter</h2>
-    <p class="pt-lead">Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.</p>
+    <p class="pt-lead">Pas une simple liste de contacts : un projet déjà cadré, adressé à vous seul, sur les zones et les types de chantiers que vous choisissez.</p>
     <div class="pt-grid">
-      <div class="pt-card"><span class="n">01</span><h3>Un projet déjà cadré</h3><p>Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler.</p></div>
+      <div class="pt-card"><span class="n">01</span><h3>Un projet déjà cadré</h3><p>Le client a complété notre simulateur : type de logement ou de site, puissance recommandée, budget estimatif, aides mobilisables et délai souhaité. Vous savez de quoi il retourne avant d'appeler.</p></div>
       <div class="pt-card"><span class="n">02</span><h3>Une demande exclusive</h3><p>Chaque demande n'est transmise qu'à un seul installateur. Pas de mise en concurrence avec dix autres artisans sur le même contact.</p></div>
-      <div class="pt-card"><span class="n">03</span><h3>Transmise sous 24 h</h3><p>Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté.</p></div>
-      <div class="pt-card"><span class="n">04</span><h3>Votre zone, vos projets</h3><p>Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités.</p></div>
+      <div class="pt-card"><span class="n">03</span><h3>Transmise sous 24 h</h3><p>Par e-mail, au plus tard 24 heures après la demande, avec les coordonnées du client et son accord pour être recontacté.</p></div>
+      <div class="pt-card"><span class="n">04</span><h3>Votre zone, vos projets</h3><p>Vous déclarez vos départements ou communes et les projets que vous traitez : particuliers, copropriétés, entreprises, collectivités.</p></div>
     </div>
   </div>
 </section>
@@ -364,8 +369,8 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <h2 class="pt-h2">Nous trouvons le client, vous faites le chantier</h2>
     <p class="pt-lead">Le périmètre est clair dès le départ.</p>
     <div class="pt-roles">
-      <div class="pt-role us"><h3>Les Éclairés</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Attire et informe les porteurs de projet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Qualifie la demande grâce au simulateur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recueille le consentement du client</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Vous transmet la demande sous 24 h</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Remplace ou rembourse une demande invalide</span></li></ul></div>
-      <div class="pt-role you"><h3>Vous</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recontactez le client sous 48 h ouvrées</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Établissez votre devis, à vos prix</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Réalisez l'installation</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Gardez seul la relation commerciale</span></li></ul></div>
+      <div class="pt-role us"><h3>Les Éclairés</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Attire et informe les porteurs de projet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Qualifie la demande grâce au simulateur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recueille le consentement du client</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Vous transmet la demande sous 24 h</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Remplace ou rembourse une demande invalide</span></li></ul></div>
+      <div class="pt-role you"><h3>Vous</h3><ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Recontactez le client sous 48 h ouvrées</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Établissez votre devis, à vos prix</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Réalisez l'installation</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Gardez seul la relation commerciale</span></li></ul></div>
     </div>
     <p class="pt-note">Les Éclairés n'intervient ni dans le devis, ni dans le contrat, ni dans les travaux.</p>
   </div>
@@ -376,10 +381,10 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <div>
       <span class="pt-kicker">Tarifs</span>
       <h2 class="pt-h2">Vous payez uniquement les demandes reçues</h2>
-      <p class="pt-lead" style="margin-bottom:0">Un forfait fixe par demande, selon le type de projet. Il ne dépend pas de la signature du chantier : aucune commission sur vos devis.</p>
+      <p class="pt-lead" style="margin-bottom:0">Un forfait fixe par demande, selon le type de projet. Il ne dépend pas de la signature du chantier : aucune commission sur vos devis.</p>
     </div>
     <div class="pt-price">
-      <ul class="pt-list" style="margin-bottom:24px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Une facture récapitulative à la fin du mois, payable à 30 jours</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Aucun abonnement, aucun volume minimum</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Demande invalide non facturée : coordonnées fausses, injoignable après 3 tentatives, doublon ou hors zone</span></li></ul>
+      <ul class="pt-list" style="margin-bottom:24px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Une facture récapitulative à la fin du mois, payable à 30 jours</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Aucun abonnement, aucun volume minimum</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Demande invalide non facturée : coordonnées fausses, injoignable après 3 tentatives, doublon ou hors zone</span></li></ul>
       <p>La grille tarifaire vous est présentée lors du <strong>premier échange</strong>.</p>
       <a class="pt-btn pt-btn-main" href="#candidature">Demander la grille <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
@@ -390,10 +395,10 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="pt-wrap pt-split">
     <div>
       <span class="pt-kicker">Prérequis</span>
-      <h2 class="pt-h2">Qui peut rejoindre le réseau ?</h2>
-      <p class="pt-lead" style="margin-bottom:0">Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés. Pas encore qualifié ? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
+      <h2 class="pt-h2">Qui peut rejoindre le réseau ?</h2>
+      <p class="pt-lead" style="margin-bottom:0">Nous recommandons nos partenaires à des particuliers et à des gestionnaires qui nous font confiance. Le réseau est donc réservé aux professionnels qualifiés. Pas encore qualifié ? Lisez notre guide <a class="pt-inline" href="/blog/devenir-installateur-agree-advenir.html">devenir installateur agréé ADVENIR</a>.</p>
     </div>
-    <ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Qualification IRVE</strong> en cours de validité, obligatoire pour poser une borne de plus de 3,7 kW</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Assurance responsabilité civile professionnelle</strong> et, selon vos travaux, garantie décennale à jour</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Entreprise immatriculée</strong> (SIRET)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Engagement de réactivité</strong> : recontacter chaque client sous 48 h ouvrées</span></li></ul>
+    <ul class="pt-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Qualification IRVE</strong> en cours de validité, obligatoire pour poser une borne de plus de 3,7 kW</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Assurance responsabilité civile professionnelle</strong> et, selon vos travaux, garantie décennale à jour</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Entreprise immatriculée</strong> (SIRET)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Engagement de réactivité</strong> : recontacter chaque client sous 48 h ouvrées</span></li></ul>
   </div>
 </section>
 
@@ -403,9 +408,9 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <h2 class="pt-h2">De la candidature aux premières demandes</h2>
     <p class="pt-lead">Quatre étapes, sans paperasse inutile.</p>
     <ol class="pt-steps">
-      <li><span class="n">ÉTAPE 1</span><h3>Candidature</h3><p>Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification.</p></li>
-      <li><span class="n">ÉTAPE 2</span><h3>Premier échange</h3><p>On vous rappelle sous 48 h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire.</p></li>
-      <li><span class="n">ÉTAPE 3</span><h3>Contrat partenaire</h3><p>Un contrat simple fixe les règles : exclusivité de chaque demande, tarifs, facturation mensuelle, contestation.</p></li>
+      <li><span class="n">ÉTAPE 1</span><h3>Candidature</h3><p>Le formulaire ci-dessous, en deux minutes : entreprise, zone, qualification.</p></li>
+      <li><span class="n">ÉTAPE 2</span><h3>Premier échange</h3><p>On vous rappelle sous 48 h ouvrées pour préciser vos zones, vos types de projets, et vous présenter la grille tarifaire.</p></li>
+      <li><span class="n">ÉTAPE 3</span><h3>Contrat partenaire</h3><p>Un contrat simple fixe les règles : exclusivité de chaque demande, tarifs, facturation mensuelle, contestation.</p></li>
       <li><span class="n">ÉTAPE 4</span><h3>Premières demandes</h3><p>Dès que votre zone est paramétrée, les demandes vous arrivent par e-mail.</p></li>
     </ol>
   </div>
@@ -415,7 +420,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="pt-wrap">
     <span class="pt-kicker">Candidature</span>
     <h2 class="pt-h2">Candidater au réseau</h2>
-    <p class="pt-lead">Indiquez votre entreprise, vos zones et votre qualification. Nous revenons vers vous sous 48 h ouvrées.</p>
+    <p class="pt-lead">Indiquez votre entreprise, vos zones et votre qualification. Nous revenons vers vous sous 48 h ouvrées.</p>
     <div class="form-card">
     <div id="formWrap">
       <div class="form-grid">
@@ -479,7 +484,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
       <div class="s-check">
         <svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
-      <h3>Candidature reçue !</h3>
+      <h3>Candidature reçue !</h3>
       <p>Nous reviendrons vers vous sous 48h ouvrées.<br>En attendant, n'hésitez pas à nous écrire à <a href="mailto:contact@leseclaires.fr" style="color:var(--c-vert)">contact@leseclaires.fr</a></p>
     </div>
   </div></div>
@@ -490,8 +495,8 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="pt-wrap">
     <span class="pt-kicker">Questions fréquentes</span>
     <h2 class="pt-h2">Les questions des installateurs</h2>
-    <div class="pt-faq" style="margin-top:32px"><details><summary>Combien coûte une demande ?</summary><p>Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange.</p></details><details><summary>La même demande est-elle envoyée à d'autres installateurs ?</summary><p>Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux.</p></details><details><summary>Suis-je engagé sur un volume ?</summary><p>Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance.</p></details><details><summary>Que se passe-t-il si le client est injoignable ?</summary><p>Une demande aux coordonnées fausses, injoignable après trois tentatives documentées, en doublon ou hors de votre zone n'est pas facturée. Il suffit de la contester par e-mail avant de régler la facture du mois : elle est remplacée ou fait l'objet d'un avoir.</p></details><details><summary>Les Éclairés intervient-il dans mes devis ou mes chantiers ?</summary><p>Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée.</p></details><details><summary>Faut-il être qualifié IRVE ?</summary><p>Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature.</p></details></div>
-    <p class="pt-note">Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
+    <div class="pt-faq" style="margin-top:32px"><details><summary>Combien coûte une demande ?</summary><p>Un forfait fixe par demande, qui dépend du type de projet (particulier, entreprise, copropriété, collectivité). Pas d'abonnement, pas de commission sur vos chantiers. La grille complète vous est présentée lors du premier échange.</p></details><details><summary>La même demande est-elle envoyée à d'autres installateurs ?</summary><p>Non. Chaque demande n'est transmise qu'à un seul installateur partenaire. Plusieurs partenaires peuvent couvrir une même zone, mais un client donné n'est adressé qu'à l'un d'entre eux.</p></details><details><summary>Suis-je engagé sur un volume ?</summary><p>Non. Vous ne payez que les demandes valides reçues dans le mois, sans minimum. En contrepartie, nous ne garantissons pas de volume. Le contrat partenaire est conclu pour 12 mois et se résilie avec 30 jours de préavis avant l'échéance.</p></details><details><summary>Que se passe-t-il si le client est injoignable ?</summary><p>Une demande aux coordonnées fausses, injoignable après trois tentatives documentées, en doublon ou hors de votre zone n'est pas facturée. Il suffit de la contester par e-mail avant de régler la facture du mois : elle est remplacée ou fait l'objet d'un avoir.</p></details><details><summary>Les Éclairés intervient-il dans mes devis ou mes chantiers ?</summary><p>Non. Vous fixez vos prix, établissez votre devis et réalisez l'installation. Notre rôle s'arrête à la transmission de la demande qualifiée.</p></details><details><summary>Faut-il être qualifié IRVE ?</summary><p>Oui. La qualification IRVE est obligatoire pour installer une borne de recharge de plus de 3,7 kW, et c'est une condition pour rejoindre le réseau. Si vous êtes en cours de qualification, indiquez-le dans votre candidature.</p></details></div>
+    <p class="pt-note">Une autre question ? Écrivez-nous à <a class="pt-inline" href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
   </div>
 </section>
 <!--/partner-body-->
@@ -501,11 +506,11 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <div class="pt-wrap">
     <span class="pt-kicker">Ressources installateurs</span>
     <h2 class="pt-h2">Pour aller plus loin</h2>
-    <p class="pt-lead">Nos guides pour les professionnels de la recharge : qualification, outils et développement de votre activité.</p>
+    <p class="pt-lead">Nos guides pour les professionnels de la recharge : qualification, outils et développement de votre activité.</p>
     <div class="pt-res">
       <a href="/blog/devenir-installateur-agree-advenir.html"><strong>Devenir installateur agréé ADVENIR</strong><span>Qualification IRVE, conditions et démarches pour rendre vos chantiers éligibles.</span><em>Lire le guide →</em></a>
       <a href="/blog/choisir-installateur-irve-certifie.html"><strong>Reconnaître un installateur IRVE certifié</strong><span>Ce que vérifient les particuliers avant de signer un devis.</span><em>Lire le guide →</em></a>
-      <a href="/blog/logiciel-gestion-installateur-irve.html"><strong>Quel logiciel pour un installateur IRVE&nbsp;?</strong><span>Gestion de chantier ou supervision des bornes : les fonctions à prioriser.</span><em>Lire le guide →</em></a>
+      <a href="/blog/logiciel-gestion-installateur-irve.html"><strong>Quel logiciel pour un installateur IRVE&nbsp;?</strong><span>Gestion de chantier ou supervision des bornes : les fonctions à prioriser.</span><em>Lire le guide →</em></a>
       <a href="/blog/trouver-installateur-borne-recharge-pres-de-chez-soi.html"><strong>Se faire trouver par les particuliers</strong><span>Comment un client cherche un installateur de borne près de chez lui.</span><em>Lire le guide →</em></a>
     </div>
   </div>
@@ -520,7 +525,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
         <ul>
           <li><a href="/simulateur">Simulateur IRVE</a></li>
           <li><a href="/copropriete">Bornes en copropriété</a></li>
-          <li><a href="/partenaires.html">Devenir partenaire</a></li>
+          <li><a href="/partenaires.html" aria-current="page">Devenir partenaire</a></li>
           <li><a href="/#histoire">Notre histoire</a></li>
         </ul>
       </div>

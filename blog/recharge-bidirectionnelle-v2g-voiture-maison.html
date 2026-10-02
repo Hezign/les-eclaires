@@ -259,6 +259,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -289,8 +294,8 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/recharge-bidirectionnelle-v2g-voiture-maison.jpg" alt="Voiture électrique devant une maison, recharge bidirectionnelle V2G" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Recharge au quotidien</div>
-<h1 class="htitle">Recharge bidirectionnelle V2G : votre voiture alimente votre maison</h1>
-<div class="hmeta"><span>10 aout 2026</span><span class="dot"></span><span>7 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Recharge bidirectionnelle V2G : votre voiture alimente votre maison</h1>
+<div class="hmeta"><span>10 aout 2026</span><span class="dot"></span><span>7 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
 <main><div class="prose"><p>Imaginez rentrer chez vous le soir, brancher votre voiture électrique et, au lieu de simplement la recharger, la voir alimenter votre maison pendant les heures de pointe ou lors d'une coupure de courant. Ce scénario, longtemps cantonné aux laboratoires de recherche, devient une réalité accessible en France en 2026 grâce à la recharge bidirectionnelle V2G (Vehicle to Grid) et V2H (Vehicle to Home).</p>
@@ -299,29 +304,29 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Nous aborderons successivement le fonctionnement technique simplifié, les modèles de voitures et bornes disponibles sur le marché français, les conditions d'installation, les coûts réels, les aides mobilisables, et enfin les limites concrètes à connaître avant de vous lancer.</p>
 
-<h2 id="v2g-definition">Qu'est-ce que la recharge bidirectionnelle V2G et V2H exactement ?</h2>
+<h2 id="v2g-definition">Qu'est-ce que la recharge bidirectionnelle V2G et V2H exactement ?</h2>
 
 <p>La recharge bidirectionnelle permet à votre véhicule électrique de renvoyer de l'énergie stockée dans sa batterie, soit vers le réseau électrique national (V2G, Vehicle to Grid), soit directement vers votre logement (V2H, Vehicle to Home). En pratique, votre voiture devient une batterie domestique sur roues.</p>
 
-<p>Une borne de recharge classique ne fait circuler le courant que dans un sens : du réseau vers la batterie du véhicule. Une borne bidirectionnelle intègre un convertisseur capable d'inverser ce flux. Lorsque votre véhicule est branché et que la logique de pilotage le décide (prix de l'électricité bas pour charger, prix haut pour décharger), l'énergie contenue dans la batterie du véhicule est injectée dans votre installation domestique ou dans le réseau public.</p>
+<p>Une borne de recharge classique ne fait circuler le courant que dans un sens : du réseau vers la batterie du véhicule. Une borne bidirectionnelle intègre un convertisseur capable d'inverser ce flux. Lorsque votre véhicule est branché et que la logique de pilotage le décide (prix de l'électricité bas pour charger, prix haut pour décharger), l'énergie contenue dans la batterie du véhicule est injectée dans votre installation domestique ou dans le réseau public.</p>
 
 <ul>
-  <li><strong>V2G (Vehicle to Grid) :</strong> l'énergie retourne vers le réseau de distribution. Cela nécessite un contrat spécifique avec votre fournisseur et une homologation de votre compteur Linky pour l'injection.</li>
-  <li><strong>V2H (Vehicle to Home) :</strong> l'énergie alimente directement votre maison, en complément ou en remplacement du réseau. Utile lors des coupures ou pour consommer votre propre production solaire.</li>
-  <li><strong>V2L (Vehicle to Load) :</strong> la voiture alimente des appareils branchés directement sur une prise intégrée au véhicule (sans borne dédiée). Certains modèles comme le Hyundai Ioniq 5 ou le Kia EV6 proposent déjà cette fonction.</li>
+  <li><strong>V2G (Vehicle to Grid) :</strong> l'énergie retourne vers le réseau de distribution. Cela nécessite un contrat spécifique avec votre fournisseur et une homologation de votre compteur Linky pour l'injection.</li>
+  <li><strong>V2H (Vehicle to Home) :</strong> l'énergie alimente directement votre maison, en complément ou en remplacement du réseau. Utile lors des coupures ou pour consommer votre propre production solaire.</li>
+  <li><strong>V2L (Vehicle to Load) :</strong> la voiture alimente des appareils branchés directement sur une prise intégrée au véhicule (sans borne dédiée). Certains modèles comme le Hyundai Ioniq 5 ou le Kia EV6 proposent déjà cette fonction.</li>
 </ul>
 
 <p>En 2026, le V2H est la modalité la plus accessible pour les particuliers en France. Le V2G pur, avec injection rémunérée dans le réseau, reste encore limité à des programmes pilotes et à quelques offres commerciales naissantes.</p>
 
 <h2 id="vehicules-compatibles">Quels véhicules électriques sont compatibles avec la recharge bidirectionnelle en 2026 ?</h2>
 
-<p>Tous les véhicules électriques ne sont pas compatibles avec la recharge bidirectionnelle : la compatibilité dépend du type de chargeur embarqué et du protocole de communication. En 2026, la liste s'allonge mais reste encore limitée aux modèles récents.</p>
+<p>Tous les véhicules électriques ne sont pas compatibles avec la recharge bidirectionnelle : la compatibilité dépend du type de chargeur embarqué et du protocole de communication. En 2026, la liste s'allonge mais reste encore limitée aux modèles récents.</p>
 
-<p>La compatibilité V2G ou V2H repose sur deux normes principales :</p>
+<p>La compatibilité V2G ou V2H repose sur deux normes principales :</p>
 
 <ul>
-  <li><strong>CHAdeMO :</strong> norme japonaise, présente sur les anciens modèles Nissan Leaf et Nissan Ariya. C'est la norme historiquement la plus avancée pour la bidirectionnalité en Europe, mais elle est en recul commercial.</li>
-  <li><strong>ISO 15118-20 (CCS Combo 2) :</strong> norme européenne et standard d'avenir. Les constructeurs européens et coréens intègrent progressivement cette compatibilité sur leurs modèles 2026-2026.</li>
+  <li><strong>CHAdeMO :</strong> norme japonaise, présente sur les anciens modèles Nissan Leaf et Nissan Ariya. C'est la norme historiquement la plus avancée pour la bidirectionnalité en Europe, mais elle est en recul commercial.</li>
+  <li><strong>ISO 15118-20 (CCS Combo 2) :</strong> norme européenne et standard d'avenir. Les constructeurs européens et coréens intègrent progressivement cette compatibilité sur leurs modèles 2026-2026.</li>
 </ul>
 
 <div class="table-wrap"><table>
@@ -368,30 +373,30 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Avant d'investir dans une installation bidirectionnelle, vérifiez impérativement dans la fiche technique de votre véhicule que la fonction est activée (elle peut être présente matériellement mais désactivée logiciellement par le constructeur selon les marchés).</p>
 
-<h2 id="borne-bidirectionnelle">Quelle borne installer pour faire du V2G ou V2H à domicile ?</h2>
+<h2 id="borne-bidirectionnelle">Quelle borne installer pour faire du V2G ou V2H à domicile ?</h2>
 
-<p>Il ne suffit pas d'avoir un véhicule compatible : une borne bidirectionnelle spécifique est indispensable, et son installation doit être réalisée par un installateur qualifié IRVE. En 2026, l'offre de bornes bidirectionnelles résidentielles commence à se structurer en France.</p>
+<p>Il ne suffit pas d'avoir un véhicule compatible : une borne bidirectionnelle spécifique est indispensable, et son installation doit être réalisée par un installateur qualifié IRVE. En 2026, l'offre de bornes bidirectionnelles résidentielles commence à se structurer en France.</p>
 
 <p>Une borne bidirectionnelle résidentielle fonctionne généralement en courant continu (DC) pour la norme CHAdeMO, ou en courant alternatif (AC) pour la norme CCS ISO 15118-20. Les modèles DC sont plus coûteux mais permettent des échanges d'énergie plus rapides. Les modèles AC bidirectionnels sont moins chers et plus adaptés à un usage V2H quotidien.</p>
 
 <ul>
-  <li>Les bornes bidirectionnelles dépassent presque toujours 3,7 kW, ce qui rend la <strong>qualification IRVE obligatoire</strong> pour l'installateur (Qualifelec, AFNOR ou Qualit'EnR). Vérifiez la mention IRVE sur le devis et la facture.</li>
+  <li>Les bornes bidirectionnelles dépassent presque toujours 3,7 kW, ce qui rend la <strong>qualification IRVE obligatoire</strong> pour l'installateur (Qualifelec, AFNOR ou Qualit'EnR). Vérifiez la mention IRVE sur le devis et la facture.</li>
   <li>Une borne V2H AC peut être installée sur un tableau électrique standard sous réserve d'un bilan de puissance préalable réalisé par l'installateur.</li>
   <li>Pour le V2G avec injection réseau, une convention de raccordement avec Enedis et un contrat d'achat ou d'agrégation auprès d'un fournisseur partenaire sont nécessaires.</li>
   <li>Un système de pilotage (box domotique ou application dédiée) est généralement fourni avec la borne pour programmer les plages de charge et de décharge selon vos usages et les tarifs (heures creuses, etc.).</li>
 </ul>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
 <h2 id="cout-installation">Combien coûte une installation bidirectionnelle V2H à domicile en 2026 ?</h2>
 
-<p>Une installation bidirectionnelle résidentielle est sensiblement plus chère qu'une borne classique, en raison du coût de la borne elle-même et de la complexité de l'installation. Comptez entre 3 000 et 8 000 euros TTC selon la puissance et la configuration.</p>
+<p>Une installation bidirectionnelle résidentielle est sensiblement plus chère qu'une borne classique, en raison du coût de la borne elle-même et de la complexité de l'installation. Comptez entre 3 000 et 8 000 euros TTC selon la puissance et la configuration.</p>
 
-<p>À titre de comparaison, une <a href="prix-borne-de-recharge-maison-2026.html">borne de recharge classique 7,4 kW posée à domicile</a> coûte entre 1 200 et 2 000 euros TTC. L'écart avec une solution bidirectionnelle s'explique par :</p>
+<p>À titre de comparaison, une <a href="prix-borne-de-recharge-maison-2026.html">borne de recharge classique 7,4 kW posée à domicile</a> coûte entre 1 200 et 2 000 euros TTC. L'écart avec une solution bidirectionnelle s'explique par :</p>
 
 <ul>
   <li>Le coût de la borne bidirectionnelle elle-même (technologie plus complexe, onduleur intégré).</li>
@@ -400,7 +405,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <li>Le cas échéant, les frais de raccordement ou de modification du compteur pour l'injection V2G.</li>
 </ul>
 
-<p><strong>TVA à 5,5 %</strong> applicable si l'installateur est qualifié IRVE et que votre logement a plus de deux ans : cela s'applique aussi aux bornes bidirectionnelles, ce qui représente une économie significative sur des montants élevés.</p>
+<p><strong>TVA à 5,5 %</strong> applicable si l'installateur est qualifié IRVE et que votre logement a plus de deux ans : cela s'applique aussi aux bornes bidirectionnelles, ce qui représente une économie significative sur des montants élevés.</p>
 
 <p>Le <strong>crédit d'impôt pour les particuliers a été supprimé</strong> au 31 décembre 2026 et n'a pas été reconduit. Il ne peut donc plus être mobilisé pour ce type d'installation en 2026.</p>
 
@@ -409,10 +414,10 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <p>Les aides spécifiquement dédiées aux bornes bidirectionnelles restent rares en 2026, mais certains dispositifs généraux peuvent s'appliquer selon votre situation. Voici l'état des lieux complet.</p>
 
 <ul>
-  <li><strong>Prime ADVENIR (copropriétés uniquement) :</strong> si vous résidez en copropriété, la prime ADVENIR (barème du 01/04/2026) peut couvrir jusqu'à 50 % du coût d'une borne individuelle (plafond 1 000 euros HT) ou d'une borne partagée (plafond 1 660 euros HT). Les <strong>pavillons individuels ne sont pas éligibles</strong> à ADVENIR. Le dossier doit impérativement être validé avant le début des travaux.</li>
-  <li><strong>TVA à 5,5 % :</strong> applicable à la pose par un professionnel qualifié IRVE dans un logement de plus de deux ans. C'est le levier fiscal encore disponible pour tous les particuliers en maison individuelle ou en appartement.</li>
-  <li><strong>Aides des collectivités locales :</strong> certaines régions et métropoles proposent des subventions pour les solutions de stockage ou d'autoconsommation. Renseignez-vous auprès de votre mairie ou de votre région, car ces dispositifs varient fortement selon les territoires.</li>
-  <li><strong>Offres des agrégateurs (V2G) :</strong> dans le cadre du V2G avec injection réseau, certains opérateurs proposent une prise en charge partielle de l'installation en échange d'un contrat d'agrégation de flexibilité. Ces modèles économiques sont encore expérimentaux en France en 2026.</li>
+  <li><strong>Prime ADVENIR (copropriétés uniquement) :</strong> si vous résidez en copropriété, la prime ADVENIR (barème du 01/04/2026) peut couvrir jusqu'à 50 % du coût d'une borne individuelle (plafond 1 000 euros HT) ou d'une borne partagée (plafond 1 660 euros HT). Les <strong>pavillons individuels ne sont pas éligibles</strong> à ADVENIR. Le dossier doit impérativement être validé avant le début des travaux.</li>
+  <li><strong>TVA à 5,5 % :</strong> applicable à la pose par un professionnel qualifié IRVE dans un logement de plus de deux ans. C'est le levier fiscal encore disponible pour tous les particuliers en maison individuelle ou en appartement.</li>
+  <li><strong>Aides des collectivités locales :</strong> certaines régions et métropoles proposent des subventions pour les solutions de stockage ou d'autoconsommation. Renseignez-vous auprès de votre mairie ou de votre région, car ces dispositifs varient fortement selon les territoires.</li>
+  <li><strong>Offres des agrégateurs (V2G) :</strong> dans le cadre du V2G avec injection réseau, certains opérateurs proposent une prise en charge partielle de l'installation en échange d'un contrat d'agrégation de flexibilité. Ces modèles économiques sont encore expérimentaux en France en 2026.</li>
 </ul>
 
 <p>Pour identifier tous les dispositifs auxquels vous pouvez prétendre, consultez notre <a href="../partenaires.html">annuaire de partenaires installateurs qualifiés IRVE</a> : ils réalisent un bilan des aides mobilisables lors du devis.</p>
@@ -421,31 +426,31 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>La recharge bidirectionnelle offre des perspectives réelles d'économies et d'autonomie énergétique, mais elle comporte des contraintes techniques et économiques qui méritent d'être examinées honnêtement avant tout investissement.</p>
 
-<p><strong>Les avantages concrets :</strong></p>
+<p><strong>Les avantages concrets :</strong></p>
 
 <ul>
   <li>Réduction de la facture électrique en arbitrant entre heures creuses (charge) et heures pleines (décharge vers le logement).</li>
   <li>Continuité d'alimentation en cas de coupure de courant (mode ilotage, selon la borne et l'installation).</li>
-  <li>Valorisation d'une production solaire en autoconsommation : la batterie du véhicule absorbe le surplus photovoltaïque en journée et le restitue le soir.</li>
+  <li>Valorisation d'une production solaire en autoconsommation : la batterie du véhicule absorbe le surplus photovoltaïque en journée et le restitue le soir.</li>
   <li>Participation à la flexibilité du réseau électrique (V2G), avec une rémunération potentielle encore en structuration en France.</li>
 </ul>
 
-<p><strong>Les limites à ne pas ignorer :</strong></p>
+<p><strong>Les limites à ne pas ignorer :</strong></p>
 
 <ul>
-  <li>L'impact sur la durée de vie de la batterie du véhicule reste un sujet débattu : des cycles de charge et décharge supplémentaires peuvent accélérer son vieillissement. Certains constructeurs couvrent cet usage dans leur garantie, d'autres non. Vérifiez les conditions de garantie batterie de votre modèle.</li>
-  <li>Le retour sur investissement d'une installation V2H complète est long (souvent au-delà de 7 à 10 ans selon l'usage), sauf si couplé à une installation solaire.</li>
-  <li>La voiture doit être disponible et branchée pour jouer ce rôle de batterie domestique : incompatible avec un usage quotidien intensif du véhicule.</li>
-  <li>Le cadre réglementaire du V2G avec injection réseau n'est pas encore pleinement stabilisé en France : les contrats d'achat et d'agrégation restent des offres pionnières.</li>
+  <li>L'impact sur la durée de vie de la batterie du véhicule reste un sujet débattu : des cycles de charge et décharge supplémentaires peuvent accélérer son vieillissement. Certains constructeurs couvrent cet usage dans leur garantie, d'autres non. Vérifiez les conditions de garantie batterie de votre modèle.</li>
+  <li>Le retour sur investissement d'une installation V2H complète est long (souvent au-delà de 7 à 10 ans selon l'usage), sauf si couplé à une installation solaire.</li>
+  <li>La voiture doit être disponible et branchée pour jouer ce rôle de batterie domestique : incompatible avec un usage quotidien intensif du véhicule.</li>
+  <li>Le cadre réglementaire du V2G avec injection réseau n'est pas encore pleinement stabilisé en France : les contrats d'achat et d'agrégation restent des offres pionnières.</li>
 </ul>
 
 <p>Pour les personnes souhaitant comparer la solution bidirectionnelle avec une installation plus classique, notre article sur le <a href="prise-renforcee-ou-borne-de-recharge.html">choix entre prise renforcée et borne de recharge</a> donne une base utile pour comprendre les différents niveaux d'équipement.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
-<p>La recharge bidirectionnelle V2G et V2H est une technologie réelle et accessible en 2026, à condition de réunir trois éléments : un véhicule compatible (Nissan Leaf, Ariya, Renault 5 E-Tech, VW ID.7 selon options), une borne bidirectionnelle installée par un professionnel qualifié IRVE, et un cadre contractuel adapté si vous souhaitez injecter sur le réseau. Le coût reste élevé (3 000 à 8 000 euros TTC selon la configuration), la TVA à 5,5 % s'applique, mais le crédit d'impôt particuliers a été supprimé fin 2026. En copropriété, la prime ADVENIR peut couvrir une partie du coût.</p>
+<p>La recharge bidirectionnelle V2G et V2H est une technologie réelle et accessible en 2026, à condition de réunir trois éléments : un véhicule compatible (Nissan Leaf, Ariya, Renault 5 E-Tech, VW ID.7 selon options), une borne bidirectionnelle installée par un professionnel qualifié IRVE, et un cadre contractuel adapté si vous souhaitez injecter sur le réseau. Le coût reste élevé (3 000 à 8 000 euros TTC selon la configuration), la TVA à 5,5 % s'applique, mais le crédit d'impôt particuliers a été supprimé fin 2026. En copropriété, la prime ADVENIR peut couvrir une partie du coût.</p>
 
-<p>Avant de vous lancer, trois actions concrètes :</p>
+<p>Avant de vous lancer, trois actions concrètes :</p>
 
 <ul>
   <li>Vérifiez dans la documentation de votre véhicule si la fonction bidirectionnelle est bien activée (pas seulement présente).</li>
@@ -453,13 +458,13 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <li>Utilisez notre simulateur pour évaluer votre situation de départ et identifier la solution de recharge la plus adaptée à votre logement et votre usage.</li>
 </ul>
 
-<p><a href="../index.html#simulateur">Lancer le simulateur gratuit en 8 questions</a></p></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<p><a href="../index.html#simulateur">Lancer le simulateur gratuit en quelques questions</a></p></div>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#v2g-definition">Qu'est-ce que la recharge bidirectionnelle V2G et V2H exactement ?</a></li><li><a href="#vehicules-compatibles">Quels véhicules électriques sont compatibles avec la recharge bidirectionnelle en 2026 ?</a></li><li><a href="#borne-bidirectionnelle">Quelle borne installer pour faire du V2G ou V2H à domicile ?</a></li><li><a href="#cout-installation">Combien coûte une installation bidirectionnelle V2H à domicile en 2026 ?</a></li><li><a href="#aides-disponibles">Existe-t-il des aides pour financer une borne bidirectionnelle en 2026 ?</a></li><li><a href="#avantages-limites">Quels sont les vrais avantages et les limites concrètes du V2G en 2026 ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#v2g-definition">Qu'est-ce que la recharge bidirectionnelle V2G et V2H exactement ?</a></li><li><a href="#vehicules-compatibles">Quels véhicules électriques sont compatibles avec la recharge bidirectionnelle en 2026 ?</a></li><li><a href="#borne-bidirectionnelle">Quelle borne installer pour faire du V2G ou V2H à domicile ?</a></li><li><a href="#cout-installation">Combien coûte une installation bidirectionnelle V2H à domicile en 2026 ?</a></li><li><a href="#aides-disponibles">Existe-t-il des aides pour financer une borne bidirectionnelle en 2026 ?</a></li><li><a href="#avantages-limites">Quels sont les vrais avantages et les limites concrètes du V2G en 2026 ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

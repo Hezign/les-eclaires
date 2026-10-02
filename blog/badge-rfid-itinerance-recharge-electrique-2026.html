@@ -259,6 +259,11 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
+/* Finitions */
+@media(min-width:861px){footer .footer-cities-list{column-count:3}}
+footer a[aria-current="page"]{color:var(--c-ink);font-weight:600;pointer-events:none}
+.btt{font-family:var(--ff-h)}
+.form-card label{text-transform:none;letter-spacing:0;font-size:13px}
 @media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head><body>
@@ -289,23 +294,23 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/badge-rfid-itinerance-recharge-electrique-2026.jpg" alt="Automobiliste rechargeant sa voiture à une borne publique en itinérance" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
 <div class="badge">Recharge au quotidien</div>
-<h1 class="htitle">Badge RFID et itinérance : recharger partout en France</h1>
-<div class="hmeta"><span>13 aout 2026</span><span class="dot"></span><span>5 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+<h1 class="htitle">Badge RFID et itinérance : recharger partout en France</h1>
+<div class="hmeta"><span>13 aout 2026</span><span class="dot"></span><span>5 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
 </div></div>
 <div class="layout">
-<main><div class="prose"><p>Vous venez d'acquérir votre premier véhicule électrique et, après quelques semaines, la question se pose inévitablement : comment recharger loin de chez vous, sur une borne publique qui n'appartient pas à votre opérateur habituel ? La réponse tient souvent dans un objet de la taille d'une carte bancaire, le badge RFID de recharge, mais encore faut-il savoir lequel choisir et comment il fonctionne réellement.</p>
+<main><div class="prose"><p>Vous venez d'acquérir votre premier véhicule électrique et, après quelques semaines, la question se pose inévitablement : comment recharger loin de chez vous, sur une borne publique qui n'appartient pas à votre opérateur habituel ? La réponse tient souvent dans un objet de la taille d'une carte bancaire, le badge RFID de recharge, mais encore faut-il savoir lequel choisir et comment il fonctionne réellement.</p>
 
 <p>Cet article vous explique concrètement ce qu'est l'itinérance de recharge, comment les badges RFID permettent d'accéder à plusieurs réseaux avec un seul identifiant, quels tarifs attendre en 2026 et quelles sont les vraies différences entre les offres disponibles sur le marché français.</p>
 
 <p>Nous aborderons successivement le principe du badge RFID et de l'itinérance, les principaux opérateurs et réseaux accessibles, les grilles tarifaires, les pièges à éviter et enfin les alternatives (applications mobiles, cartes bancaires) pour que vous puissiez recharger partout en France sans mauvaise surprise.</p>
 
-<h2 id="badge-rfid-definition">Qu'est-ce qu'un badge RFID de recharge et comment fonctionne-t-il ?</h2>
+<h2 id="badge-rfid-definition">Qu'est-ce qu'un badge RFID de recharge et comment fonctionne-t-il ?</h2>
 
 <p>Un badge RFID de recharge est une carte sans contact qui stocke un identifiant unique (le <em>contract ID</em>) permettant à une borne publique de vous reconnaître et de démarrer une session de charge. Il suffit de l'approcher du lecteur de la borne pendant une à deux secondes.</p>
 
-<p>Derrière ce geste simple se cache un protocole standardisé, l'OCPI (Open Charge Point Interface), qui permet à différents réseaux de bornes de communiquer entre eux. Concrètement, votre badge est émis par un opérateur de mobilité (appelé eMSP, pour e-Mobility Service Provider). Cet opérateur a signé des accords d'itinérance avec d'autres réseaux de bornes (les CPO, Charge Point Operators). Résultat : votre badge unique peut fonctionner sur des bornes qui n'appartiennent pas à votre opérateur, exactement comme votre carte SIM passe d'un opérateur téléphonique à l'autre à l'étranger.</p>
+<p>Derrière ce geste simple se cache un protocole standardisé, l'OCPI (Open Charge Point Interface), qui permet à différents réseaux de bornes de communiquer entre eux. Concrètement, votre badge est émis par un opérateur de mobilité (appelé eMSP, pour e-Mobility Service Provider). Cet opérateur a signé des accords d'itinérance avec d'autres réseaux de bornes (les CPO, Charge Point Operators). Résultat : votre badge unique peut fonctionner sur des bornes qui n'appartiennent pas à votre opérateur, exactement comme votre carte SIM passe d'un opérateur téléphonique à l'autre à l'étranger.</p>
 
-<p>En France, le protocole Gireve centralise une grande partie de ces échanges de données entre opérateurs. Le réseau de bornes publiques françaises dépasse aujourd'hui les 150 000 points de charge (chiffre AVERE-France 2026), et la majorité d'entre eux sont accessibles via itinérance, à condition de disposer d'un badge ou d'une application compatible.</p>
+<p>En France, le protocole Gireve centralise une grande partie de ces échanges de données entre opérateurs. Le réseau de bornes publiques françaises dépasse aujourd'hui les 150 000 points de charge (chiffre AVERE-France 2026), et la majorité d'entre eux sont accessibles via itinérance, à condition de disposer d'un badge ou d'une application compatible.</p>
 
 <ul>
   <li>Le badge est fourni par votre eMSP (constructeur auto, fournisseur d'énergie, opérateur dédié).</li>
@@ -316,9 +321,9 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="reseaux-compatibles">Quels réseaux de bornes sont accessibles avec un badge itinérance en 2026 ?</h2>
 
-<p>La couverture dépend directement des accords signés par votre eMSP : certains badges ouvrent 80 % du réseau public français, d'autres plafonnent à 50 %. Il est donc essentiel de vérifier la liste des réseaux compatibles avant de souscrire.</p>
+<p>La couverture dépend directement des accords signés par votre eMSP : certains badges ouvrent 80 % du réseau public français, d'autres plafonnent à 50 %. Il est donc essentiel de vérifier la liste des réseaux compatibles avant de souscrire.</p>
 
-<p>Voici les principaux réseaux de bornes publiques en France et leur niveau d'accessibilité via itinérance :</p>
+<p>Voici les principaux réseaux de bornes publiques en France et leur niveau d'accessibilité via itinérance :</p>
 
 <div class="table-wrap"><table>
   <thead>
@@ -331,7 +336,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   <tbody>
     <tr>
       <td>Ionity</td>
-      <td>Haute puissance (150-350 kW)</td>
+      <td>Haute puissance (150-350 kW)</td>
       <td>Oui, via la plupart des eMSP</td>
     </tr>
     <tr>
@@ -341,7 +346,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     </tr>
     <tr>
       <td>Izivia (EDF)</td>
-      <td>AC 7-22 kW, quelques DC</td>
+      <td>AC 7-22 kW, quelques DC</td>
       <td>Oui, bien couvert</td>
     </tr>
     <tr>
@@ -362,64 +367,64 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   </tbody>
 </table></div>
 
-<p>Attention aux réseaux de collectivités locales : certains ne sont pas encore intégrés à Gireve et restent accessibles uniquement via leur propre badge ou application. Vérifiez la carte de couverture de votre eMSP avant un long trajet.</p>
+<p>Attention aux réseaux de collectivités locales : certains ne sont pas encore intégrés à Gireve et restent accessibles uniquement via leur propre badge ou application. Vérifiez la carte de couverture de votre eMSP avant un long trajet.</p>
 
-<h2 id="tarifs-badge">Combien coûte l'utilisation d'un badge de recharge en itinérance ?</h2>
+<h2 id="tarifs-badge">Combien coûte l'utilisation d'un badge de recharge en itinérance ?</h2>
 
 <p>Les tarifs varient fortement selon l'eMSP choisi et le réseau de borne utilisé. En itinérance, l'eMSP applique généralement ses propres prix, qui peuvent différer des tarifs affichés directement sur la borne.</p>
 
-<p>Les modèles de tarification les plus courants en 2026 sont les suivants :</p>
+<p>Les modèles de tarification les plus courants en 2026 sont les suivants :</p>
 
 <ul>
-  <li><strong>Abonnement mensuel fixe</strong> (entre 5 et 15 EUR TTC/mois) avec un tarif kWh réduit, adapté aux gros rouleurs qui rechargent régulièrement hors domicile.</li>
+  <li><strong>Abonnement mensuel fixe</strong> (entre 5 et 15 € TTC/mois) avec un tarif kWh réduit, adapté aux gros rouleurs qui rechargent régulièrement hors domicile.</li>
   <li><strong>Sans abonnement (pay-as-you-go)</strong> : prix au kWh ou à la minute plus élevé, sans engagement. Pratique pour une utilisation occasionnelle.</li>
   <li><strong>Forfaits constructeurs</strong> : certains constructeurs (Renault avec Mobilize, Volkswagen avec We Charge, etc.) proposent des badges intégrés à l'achat ou à la location du véhicule, souvent avec un crédit de recharge inclus les premières années.</li>
 </ul>
 
 <blockquote>
-  <strong>Point de vigilance :</strong> en itinérance, le prix affiché sur la borne n'est pas forcément celui que vous payez. C'est le tarif de votre eMSP qui s'applique. Comparez toujours les grilles tarifaires réseau par réseau avant de vous abonner.
+  <strong>Point de vigilance :</strong> en itinérance, le prix affiché sur la borne n'est pas forcément celui que vous payez. C'est le tarif de votre eMSP qui s'applique. Comparez toujours les grilles tarifaires réseau par réseau avant de vous abonner.
 </blockquote>
 
-<p>À titre indicatif, les prix moyens constatés en France pour une recharge rapide DC via itinérance se situent entre 0,40 et 0,75 EUR TTC par kWh selon le réseau et l'opérateur. Les bornes AC lentes ou semi-rapides sont généralement moins chères, entre 0,25 et 0,45 EUR TTC par kWh.</p>
+<p>À titre indicatif, les prix moyens constatés en France pour une recharge rapide DC via itinérance se situent entre 0,40 et 0,75 € TTC par kWh selon le réseau et l'opérateur. Les bornes AC lentes ou semi-rapides sont généralement moins chères, entre 0,25 et 0,45 € TTC par kWh.</p>
 
-<h3 id="badge-sans-commission">Existe-t-il un badge de recharge sans commission d'itinérance ?</h3>
+<h3 id="badge-sans-commission">Existe-t-il un badge de recharge sans commission d'itinérance ?</h3>
 
-<p>C'est la question que se posent beaucoup de conducteurs de VE : peut-on recharger en itinérance sans payer de commission par-dessus le prix affiché sur la borne ? La réponse dépend entièrement de l'eMSP (l'émetteur du badge). Trois cas de figure coexistent en 2026 :</p>
+<p>C'est la question que se posent beaucoup de conducteurs de VE : peut-on recharger en itinérance sans payer de commission par-dessus le prix affiché sur la borne ? La réponse dépend entièrement de l'eMSP (l'émetteur du badge). Trois cas de figure coexistent en 2026 :</p>
 
 <ul>
-  <li><strong>Badge au prix opérateur (sans commission d'itinérance) :</strong> l'eMSP facture exactement le tarif du réseau, sans majoration. C'est le modèle le plus transparent, généralement associé à un abonnement mensuel qui rémunère le service à la place de la commission.</li>
-  <li><strong>Badge avec commission d'itinérance :</strong> l'émetteur ajoute une marge (souvent 0,05 à 0,20 EUR TTC par kWh, ou un forfait fixe par session) dès que vous rechargez hors de son propre réseau. C'est le modèle le plus fréquent avec les badges « gratuits » sans abonnement.</li>
-  <li><strong>Forfait constructeur :</strong> le crédit de recharge inclus masque la commission les premières années, mais celle-ci réapparaît une fois le crédit épuisé.</li>
+  <li><strong>Badge au prix opérateur (sans commission d'itinérance) :</strong> l'eMSP facture exactement le tarif du réseau, sans majoration. C'est le modèle le plus transparent, généralement associé à un abonnement mensuel qui rémunère le service à la place de la commission.</li>
+  <li><strong>Badge avec commission d'itinérance :</strong> l'émetteur ajoute une marge (souvent 0,05 à 0,20 € TTC par kWh, ou un forfait fixe par session) dès que vous rechargez hors de son propre réseau. C'est le modèle le plus fréquent avec les badges « gratuits » sans abonnement.</li>
+  <li><strong>Forfait constructeur :</strong> le crédit de recharge inclus masque la commission les premières années, mais celle-ci réapparaît une fois le crédit épuisé.</li>
 </ul>
 
-<p>Pour un badge réellement sans commission, privilégiez un eMSP qui affiche la mention « prix opérateur » ou « tarif réseau » dans ses conditions générales, et fuyez les badges gratuits qui se rattrapent sur chaque recharge. Le bon arbitrage dépend de votre kilométrage : au-delà de quelques recharges publiques par mois, un abonnement sans commission devient vite plus rentable qu'un badge gratuit surtaxé.</p>
+<p>Pour un badge réellement sans commission, privilégiez un eMSP qui affiche la mention « prix opérateur » ou « tarif réseau » dans ses conditions générales, et fuyez les badges gratuits qui se rattrapent sur chaque recharge. Le bon arbitrage dépend de votre kilométrage : au-delà de quelques recharges publiques par mois, un abonnement sans commission devient vite plus rentable qu'un badge gratuit surtaxé.</p>
 
 <div class="ctamid">
-  <h3>Vous ne savez pas quelle solution choisir ?</h3>
-  <p>Notre simulateur analyse votre situation en 8 questions, gratuitement.</p>
+  <h3>Vous ne savez pas quelle solution choisir ?</h3>
+  <p>Notre simulateur analyse votre situation en quelques questions, gratuitement.</p>
   <a href="../index.html#simulateur">Utiliser le simulateur gratuit</a>
 </div>
 
-<h2 id="choisir-badge">Comment choisir le bon badge de recharge pour votre usage ?</h2>
+<h2 id="choisir-badge">Comment choisir le bon badge de recharge pour votre usage ?</h2>
 
 <p>Le meilleur badge est celui dont le réseau de partenaires correspond à vos trajets habituels et dont le modèle tarifaire colle à votre fréquence de recharge. Un conducteur qui recharge essentiellement à domicile n'a pas les mêmes besoins qu'un professionnel itinérant.</p>
 
-<p>Posez-vous ces quatre questions avant de souscrire :</p>
+<p>Posez-vous ces quatre questions avant de souscrire :</p>
 
 <ol>
-  <li><strong>Où roulez-vous surtout ?</strong> En ville, sur autoroute, en zone rurale ? Vérifiez la carte de couverture du badge sur votre zone de déplacement.</li>
-  <li><strong>À quelle fréquence rechargez-vous hors domicile ?</strong> Moins d'une fois par semaine, un badge sans abonnement est souvent suffisant. Au-delà, un abonnement mensuel devient rentable.</li>
-  <li><strong>Votre constructeur propose-t-il déjà un badge ?</strong> Si oui, commencez par évaluer sa couverture avant d'en ouvrir un second.</li>
-  <li><strong>Avez-vous besoin de la haute puissance (100 kW et plus) ?</strong> Tous les badges ne donnent pas accès aux bornes haute puissance ou appliquent une majoration tarifaire importante.</li>
+  <li><strong>Où roulez-vous surtout ?</strong> En ville, sur autoroute, en zone rurale ? Vérifiez la carte de couverture du badge sur votre zone de déplacement.</li>
+  <li><strong>À quelle fréquence rechargez-vous hors domicile ?</strong> Moins d'une fois par semaine, un badge sans abonnement est souvent suffisant. Au-delà, un abonnement mensuel devient rentable.</li>
+  <li><strong>Votre constructeur propose-t-il déjà un badge ?</strong> Si oui, commencez par évaluer sa couverture avant d'en ouvrir un second.</li>
+  <li><strong>Avez-vous besoin de la haute puissance (100 kW et plus) ?</strong> Tous les badges ne donnent pas accès aux bornes haute puissance ou appliquent une majoration tarifaire importante.</li>
 </ol>
 
-<p>Si vous installez ou envisagez d'installer une borne à domicile (7,4 kW, entre 1 200 et 2 000 EUR TTC pose comprise), la recharge publique devient alors un complément occasionnel plutôt qu'une nécessité quotidienne. Dans ce cas, un badge sans abonnement est largement suffisant. Consultez notre article sur les <a href="prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge à la maison en 2026</a> pour comparer les options.</p>
+<p>Si vous installez ou envisagez d'installer une borne à domicile (7,4 kW, entre 1 200 et 2 000 € TTC pose comprise), la recharge publique devient alors un complément occasionnel plutôt qu'une nécessité quotidienne. Dans ce cas, un badge sans abonnement est largement suffisant. Consultez notre article sur les <a href="prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge à la maison en 2026</a> pour comparer les options.</p>
 
-<h2 id="alternatives-badge">L'application mobile et la carte bancaire remplacent-elles le badge RFID ?</h2>
+<h2 id="alternatives-badge">L'application mobile et la carte bancaire remplacent-elles le badge RFID ?</h2>
 
 <p>Les applications mobiles et le paiement par carte bancaire sans contact sont de plus en plus répandus sur les bornes récentes, mais le badge RFID reste plus fiable dans les zones à mauvaise couverture réseau mobile. Les trois modes d'accès coexistent en 2026 sans qu'aucun ne soit universellement supérieur.</p>
 
-<p>Voici les avantages et limites de chaque option :</p>
+<p>Voici les avantages et limites de chaque option :</p>
 
 <div class="table-wrap"><table>
   <thead>
@@ -448,39 +453,39 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
   </tbody>
 </table></div>
 
-<p>La réglementation européenne AFIR impose depuis 2026 que les nouvelles bornes publiques de forte puissance (50 kW et plus) acceptent obligatoirement le paiement par carte bancaire sans contact. Cette obligation monte progressivement en puissance pour couvrir toutes les bornes d'ici 2027. En attendant, le badge reste la solution la plus polyvalente pour les trajets en dehors de votre zone de confort habituelle.</p>
+<p>La réglementation européenne AFIR impose depuis 2026 que les nouvelles bornes publiques de forte puissance (50 kW et plus) acceptent obligatoirement le paiement par carte bancaire sans contact. Cette obligation monte progressivement en puissance pour couvrir toutes les bornes d'ici 2027. En attendant, le badge reste la solution la plus polyvalente pour les trajets en dehors de votre zone de confort habituelle.</p>
 
-<h2 id="pieges-itinerance">Quels sont les pièges à éviter avec l'itinérance de recharge ?</h2>
+<h2 id="pieges-itinerance">Quels sont les pièges à éviter avec l'itinérance de recharge ?</h2>
 
-<p>Le principal piège est de croire que "badge itinérance" signifie automatiquement "accès à 100 % des bornes françaises". La réalité est plus nuancée et quelques précautions évitent de mauvaises surprises.</p>
+<p>Le principal piège est de croire que "badge itinérance" signifie automatiquement "accès à 100 % des bornes françaises". La réalité est plus nuancée et quelques précautions évitent de mauvaises surprises.</p>
 
 <ul>
-  <li><strong>Vérifier les exclusions de réseau :</strong> certains eMSP excluent explicitement des CPO de leur offre itinérance (souvent les réseaux haute puissance comme Ionity, facturés séparément).</li>
-  <li><strong>Attention aux surcoûts d'itinérance :</strong> certains opérateurs ajoutent une majoration de 0,10 à 0,20 EUR TTC par kWh dès que vous rechargez hors de leur propre réseau. Lisez les conditions générales.</li>
-  <li><strong>Ne pas confondre kWh et minutes :</strong> quelques réseaux facturent encore à la minute sur leurs bornes AC. Selon la puissance de votre voiture, ce modèle peut être très défavorable.</li>
-  <li><strong>Badge perdu ou volé :</strong> signalez-le immédiatement à votre eMSP pour bloquer l'identifiant. La procédure est rapide mais une session démarrée avant le blocage reste à votre charge.</li>
-  <li><strong>Recharge en copropriété :</strong> si vous vivez en immeuble, le badge itinérance ne remplace pas une solution de recharge privative en bas de chez vous. Consultez notre page sur la <a href="/copropriete">recharge en copropriété</a> pour connaître les aides disponibles (notamment ADVENIR, jusqu'à 1 000 EUR HT pour une borne individuelle ou 1 660 EUR HT pour une borne partagée, prise en charge à 50 %, dossier obligatoirement déposé avant travaux).</li>
+  <li><strong>Vérifier les exclusions de réseau :</strong> certains eMSP excluent explicitement des CPO de leur offre itinérance (souvent les réseaux haute puissance comme Ionity, facturés séparément).</li>
+  <li><strong>Attention aux surcoûts d'itinérance :</strong> certains opérateurs ajoutent une majoration de 0,10 à 0,20 € TTC par kWh dès que vous rechargez hors de leur propre réseau. Lisez les conditions générales.</li>
+  <li><strong>Ne pas confondre kWh et minutes :</strong> quelques réseaux facturent encore à la minute sur leurs bornes AC. Selon la puissance de votre voiture, ce modèle peut être très défavorable.</li>
+  <li><strong>Badge perdu ou volé :</strong> signalez-le immédiatement à votre eMSP pour bloquer l'identifiant. La procédure est rapide mais une session démarrée avant le blocage reste à votre charge.</li>
+  <li><strong>Recharge en copropriété :</strong> si vous vivez en immeuble, le badge itinérance ne remplace pas une solution de recharge privative en bas de chez vous. Consultez notre page sur la <a href="/copropriete">recharge en copropriété</a> pour connaître les aides disponibles (notamment ADVENIR, jusqu'à 1 000 € HT pour une borne individuelle ou 1 660 € HT pour une borne partagée, prise en charge à 50 %, dossier obligatoirement déposé avant travaux).</li>
 </ul>
 
-<p>Pour choisir un installateur qualifié si vous installez une borne à domicile, rapprochez-vous d'un professionnel certifié Qualifelec, AFNOR ou Qualit'EnR avec mention IRVE : cette qualification est obligatoire au-delà de 3,7 kW. Retrouvez nos partenaires vérifiés sur notre <a href="../partenaires.html">annuaire d'installateurs IRVE</a>.</p>
+<p>Pour choisir un installateur qualifié si vous installez une borne à domicile, rapprochez-vous d'un professionnel certifié Qualifelec, AFNOR ou Qualit'EnR avec mention IRVE : cette qualification est obligatoire au-delà de 3,7 kW. Retrouvez nos partenaires vérifiés sur notre <a href="../partenaires.html">annuaire d'installateurs IRVE</a>.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>
 
 <p>Le badge RFID avec itinérance est aujourd'hui le moyen le plus simple et le plus fiable pour recharger votre véhicule électrique sur n'importe quelle borne publique en France. Choisissez votre eMSP en fonction de votre zone de déplacement principale, de votre fréquence de recharge hors domicile et du modèle tarifaire (abonnement ou pay-as-you-go) qui correspond à votre usage réel.</p>
 
-<p>Pour aller plus loin :</p>
+<p>Pour aller plus loin :</p>
 
 <ul>
   <li>Utilisez notre <a href="../index.html#simulateur">simulateur gratuit</a> pour identifier la solution de recharge adaptée à votre profil (domicile, copropriété, usage mixte).</li>
   <li>Comparez les offres de nos <a href="../partenaires.html">installateurs IRVE partenaires</a> si vous souhaitez installer une borne à domicile en complément de votre badge itinérance.</li>
   <li>Consultez notre guide complet sur les <a href="prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge à la maison en 2026</a> pour budgéter votre installation privée.</li>
 </ul></div>
-<div class="ctafin"><h2>Votre projet, simplement.</h2><p>8 questions. Une recommandation gratuite et personnalisée.</p>
+<div class="ctafin"><h2>Votre projet, simplement.</h2><p>Quelques questions. Une recommandation gratuite et personnalisée.</p>
 <a href="../index.html#simulateur" class="bg">Démarrer le simulateur →</a>
 <a href="../partenaires.html" class="bd">Trouver un installateur</a></div></main>
 <aside class="sidebar">
-<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#badge-rfid-definition">Qu'est-ce qu'un badge RFID de recharge et comment fonctionne-t-il ?</a></li><li><a href="#reseaux-compatibles">Quels réseaux de bornes sont accessibles avec un badge itinérance en 2026 ?</a></li><li><a href="#tarifs-badge">Combien coûte l'utilisation d'un badge de recharge en itinérance ?</a></li><li><a href="#choisir-badge">Comment choisir le bon badge de recharge pour votre usage ?</a></li><li><a href="#alternatives-badge">L'application mobile et la carte bancaire remplacent-elles le badge RFID ?</a></li><li><a href="#pieges-itinerance">Quels sont les pièges à éviter avec l'itinérance de recharge ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
-<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#badge-rfid-definition">Qu'est-ce qu'un badge RFID de recharge et comment fonctionne-t-il ?</a></li><li><a href="#reseaux-compatibles">Quels réseaux de bornes sont accessibles avec un badge itinérance en 2026 ?</a></li><li><a href="#tarifs-badge">Combien coûte l'utilisation d'un badge de recharge en itinérance ?</a></li><li><a href="#choisir-badge">Comment choisir le bon badge de recharge pour votre usage ?</a></li><li><a href="#alternatives-badge">L'application mobile et la carte bancaire remplacent-elles le badge RFID ?</a></li><li><a href="#pieges-itinerance">Quels sont les pièges à éviter avec l'itinérance de recharge ?</a></li><li><a href="#prochaine-etape">La prochaine étape, c'est la vôtre.</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="../index.html#simulateur">Simulateur gratuit →</a><a href="../partenaires.html" class="s">Trouver un installateur</a></div>
 </aside></div>
 <footer>
   <div class="footer-top">

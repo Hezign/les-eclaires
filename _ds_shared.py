@@ -46,6 +46,11 @@ CSS = f'''<style id="ds-shared">
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{{line-height:1.08}}
 .city-body h2{{line-height:1.15}}
+/* Finitions */
+@media(min-width:861px){{footer .footer-cities-list{{column-count:3}}}}
+footer a[aria-current="page"]{{color:var(--c-ink);font-weight:600;pointer-events:none}}
+.btt{{font-family:var(--ff-h)}}
+.form-card label{{text-transform:none;letter-spacing:0;font-size:13px}}
 @media(max-width:640px){{.hero-city h1 br{{display:none}}.hero-city h1 span{{white-space:normal!important}}}}
 </style>'''
 
@@ -71,6 +76,12 @@ def apply(path):
     o = s
     s = re.sub(r'<style id="ds-shared">.*?</style>\n?', '', s, flags=re.S)
     s = s.replace('</head>', CSS + '\n</head>', 1)
+    # La page courante n'est plus un lien vers elle-même dans le footer
+    f = s.find('<footer')
+    if f != -1:
+        href = '/' + path.replace(os.sep, '/')
+        foot = re.sub(r'<a href="' + re.escape(href) + r'">', f'<a href="{href}" aria-current="page">', s[f:])
+        s = s[:f] + foot
     if s != o:
         open(path, 'w', encoding='utf-8').write(s)
         return True
