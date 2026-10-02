@@ -223,6 +223,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -277,7 +285,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p><strong>Important :</strong> les dotations régionales sont annuelles et peuvent être épuisées en cours d'année. Les montants et conditions ci-dessous sont indicatifs et doivent être confirmés auprès de chaque organisme avant d'engager des travaux.</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Région / collectivité</th>
@@ -318,7 +326,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>nouvelle-aquitaine.fr</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Les régions font évoluer leurs programmes chaque année budgétaire. Consultez le portail officiel de votre région et demandez à votre installateur qualifié IRVE s'il connaît les dispositifs locaux en cours : les professionnels du terrain sont souvent les mieux informés des enveloppes disponibles.</p>
 
@@ -359,7 +367,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Voici un exemple de cumul pour une copropriété installant une borne partagée :</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Dispositif</th>
@@ -389,7 +397,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>À vérifier auprès de la collectivité</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Pour les maisons individuelles, ADVENIR n'est pas accessible, mais la TVA à 5,5 % reste acquise si les conditions sont remplies. Les aides régionales et locales constituent alors le principal levier complémentaire à activer. Rapprochez-vous d'un installateur référencé sur notre <a href="../partenaires.html">annuaire de partenaires IRVE certifiés</a> pour qu'il vous aide à monter les dossiers d'aide.</p>
 

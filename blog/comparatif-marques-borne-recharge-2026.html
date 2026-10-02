@@ -225,6 +225,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -283,7 +291,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 <h3>Zaptec, le champion du collectif</h3>
 <p>Spécialiste scandinave, Zaptec propose le Go pour le résidentiel et le Pro pour le collectif, avec un équilibrage de charge et de phase particulièrement abouti. C'est la marque pensée pour équiper des parkings entiers en mutualisant l'infrastructure. Pour qui : les copropriétés et les immeubles.</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Marque</th><th>Profil</th><th>Point fort</th><th>Idéale pour</th></tr></thead>
   <tbody>
     <tr><td>Wallbox</td><td>Spécialiste</td><td>Design, app, V2G</td><td>Maison connectée</td></tr>
@@ -292,7 +300,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr><td>Hager</td><td>Électricien</td><td>Intégration tableau</td><td>Installation soignée</td></tr>
     <tr><td>Zaptec</td><td>Spécialiste</td><td>Équilibrage collectif</td><td>Copropriété</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <div class="ctamid">
   <h3>Quelle borne pour votre projet ?</h3>

@@ -224,6 +224,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -287,7 +295,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="prioriser">Gestion ou supervision : quelles fonctions prioriser ?</h2>
 <p>Les deux familles ne répondent pas aux mêmes besoins. Ce tableau aide à ne pas payer pour des fonctions qui ne servent pas votre modèle.</p>
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Besoin</th><th>Type d'outil</th></tr></thead>
   <tbody>
     <tr><td>Éditer devis et factures conformes IRVE</td><td>Gestion d'entreprise</td></tr>
@@ -296,7 +304,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr><td>Piloter les bornes à distance (OCPP)</td><td>Supervision</td></tr>
     <tr><td>Refacturer l'énergie en copro ou entreprise</td><td>Supervision</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2 id="choisir">Comment choisir la bonne solution en 2026 ?</h2>
 <p>Réponse courte : partez de vos chantiers types, pas de la liste de fonctions. Quelques critères qui font vraiment la différence :</p>

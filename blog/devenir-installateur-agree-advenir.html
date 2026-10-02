@@ -224,6 +224,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -296,7 +304,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="baremes">Quels barèmes ADVENIR 2026 faut-il connaître ?</h2>
 <p>Le barème en vigueur depuis le 1er avril 2026 en copropriété est le suivant (montants HT, prise en charge de 50 %).</p>
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Type de projet</th><th>Aide maximale (HT)</th></tr></thead>
   <tbody>
     <tr><td>Borne individuelle en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 EUR HT</span> / point</td></tr>
@@ -305,7 +313,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr><td>Surprime travaux de voirie (VRD, parking extérieur)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 EUR HT</span></td></tr>
     <tr><td>Surprime point de livraison dédié (bornes partagées)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 EUR HT</span></td></tr>
   </tbody>
-</table>
+</table></div>
 <p>Les pavillons individuels ne sont pas éligibles à ADVENIR : le programme vise les copropriétés et les bailleurs sociaux. Pour le détail complet des montants, voyez notre <a href="guide-prime-advenir-2026.html">guide de la prime ADVENIR 2026</a>.</p>
 
 <h2 id="generer-chantiers">Comment générer plus de chantiers IRVE une fois qualifié ?</h2>

@@ -31,31 +31,10 @@ a{color:inherit;text-decoration:none}
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;height:56px;width:calc(100% - 48px);max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(248,246,241,0.96);backdrop-filter:blur(24px) saturate(1.4);border:1px solid var(--c-border2);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
 .nav-logo{display:flex;align-items:center;gap:10px}.nav-logo img{height:28px;width:auto;border-radius:8px}.nav-logo span{font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--c-ink);letter-spacing:-0.03em}
 .nav-back{font-family:var(--ff-h);font-size:13.5px;font-weight:500;color:var(--c-muted);display:flex;align-items:center;gap:6px;transition:color .18s}.nav-back:hover{color:var(--c-ink)}
-.article-wrap{max-width:720px;margin:0 auto;padding:120px 48px 80px}
-.article-tag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--c-vert);margin-bottom:16px;display:flex;align-items:center;gap:8px}.article-tag::before{content:'';display:inline-block;width:12px;height:12px;background:var(--c-vert);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E") center/contain no-repeat}
-.article-title{font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.1;margin-bottom:12px}
-.article-date{font-size:13px;color:var(--c-muted);margin-bottom:48px}
-.article-hero{height:200px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:72px;margin-bottom:48px}
-.prose h2{font-family:var(--ff-h);font-size:22px;font-weight:700;margin:44px 0 14px;letter-spacing:-0.03em}
-.prose h3{font-family:var(--ff-h);font-size:17px;font-weight:600;margin:28px 0 10px}
-.prose p{font-size:15px;color:var(--c-mid);line-height:1.85;margin-bottom:18px;font-weight:300}
-.prose strong{font-weight:600;color:var(--c-ink)}
-.prose ul,.prose ol{margin:0 0 18px 24px}.prose li{font-size:15px;color:var(--c-mid);line-height:1.7;margin-bottom:8px;font-weight:300}
-.prose a{color:var(--c-vert);text-decoration:underline;text-decoration-color:rgba(0,194,126,.3)}.prose a:hover{text-decoration-color:var(--c-vert)}
-.prose blockquote{border-left:3px solid var(--c-vert);margin:28px 0;padding:14px 22px;background:var(--c-vert-bg);border-radius:0 12px 12px 0}
-.prose blockquote p{margin:0;font-style:italic}
-.prose hr{border:none;border-top:1px solid var(--c-border);margin:36px 0}
-.prose table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:14px;display:block;overflow-x:auto}
-.prose th{background:var(--c-bg2);font-family:var(--ff-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--c-muted);padding:10px 14px;text-align:left;border-bottom:1px solid var(--c-border2)}
-.prose td{padding:10px 14px;border-bottom:1px solid var(--c-border);color:var(--c-mid);font-weight:300}
-.article-cta{margin-top:64px;background:var(--c-band);border-radius:20px;padding:40px;text-align:center}
-.article-cta h3{font-family:var(--ff-h);font-size:22px;font-weight:800;color:#fff;margin-bottom:10px}
-.article-cta p{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:24px}
-.btn-cta{font-family:var(--ff-h);font-size:15px;font-weight:700;background:var(--c-vert);color:#0a0a09;padding:14px 28px;border-radius:var(--r-full);display:inline-block;text-decoration:none;transition:all .2s}.btn-cta:hover{background:#00F5A0;transform:translateY(-2px)}
 footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;background:var(--c-bg2)}
 .f-brand{display:flex;align-items:center;gap:10px}.f-brand img{height:22px;width:auto;border-radius:6px}.f-brand span{font-family:var(--ff-h);font-size:13px;font-weight:700;color:rgba(0,0,0,.4);letter-spacing:-0.03em}
 .f-links{display:flex;gap:24px}.f-links a{font-size:12px;color:var(--c-muted);transition:color .18s}.f-links a:hover{color:var(--c-ink)}
-@media(max-width:640px){nav{width:calc(100% - 24px);top:10px;padding:0 20px}.article-wrap{padding:100px 20px 60px}footer{flex-direction:column;padding:24px 20px}}body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
+@media(max-width:640px){nav{width:calc(100% - 24px);top:10px;padding:0 20px}footer{flex-direction:column;padding:24px 20px}}body{min-height:100vh;display:flex;flex-direction:column}footer{margin-top:auto}
   /* Footer riche (harmonisé sur tout le site) */
   footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 48px 0;margin-top:auto;display:block}
   .footer-top{max-width:984px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:48px;padding-bottom:40px}
@@ -157,9 +136,7 @@ nav.open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 nav.open .nav-burger span:nth-child(2){opacity:0}
 nav.open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
-/* dégage le contenu article sous le header + topbar */
-.article-wrap{padding-top:calc(var(--topbar-h) + 92px)!important}
-@media(max-width:640px){.article-wrap{padding-top:calc(var(--topbar-h) + 72px)!important}}
+@media(max-width:640px){}
 </style>
 <style id="theme-tokens">
 :root{--c-band:#000000;--c-menthe:#E6FFF5;--c-vert-txt:#007A50}
@@ -194,6 +171,92 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Prime ADVENIR 2026 : montants, conditions, démarches","description":"Prime ADVENIR 2026 : montants revalorisés en copropriété, conditions d'éligibilité et démarches pour financer l'installation de votre borne de recharge.","image":"https://leseclaires.fr/blog/img/guide-prime-advenir-2026.jpg","url":"https://leseclaires.fr/blog/guide-prime-advenir-2026.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://leseclaires.fr/blog/guide-prime-advenir-2026.html"},"datePublished":"2025-12-31","dateModified":"2025-12-31","author":{"@type":"Organization","name":"Les Éclairés","url":"https://leseclaires.fr/"},"publisher":{"@type":"Organization","name":"Les Éclairés","logo":{"@type":"ImageObject","url":"https://leseclaires.fr/favicon.png"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://leseclaires.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://leseclaires.fr/blog/"},{"@type":"ListItem","position":3,"name":"Prime ADVENIR 2026 : montants, conditions, démarches","item":"https://leseclaires.fr/blog/guide-prime-advenir-2026.html"}]}</script>
+<style id="article-base">
+#pgbar{position:fixed;top:0;left:0;height:3px;width:0%;background:#00C27E;z-index:999;border-radius:0 2px 2px 0}
+.hero{background:linear-gradient(160deg,#0d1a14 0%,#0f2b1e 60%,#1a3d2a 100%);padding:calc(var(--topbar-h) + 103px) 24px 72px;position:relative;overflow:hidden}
+.hero-in{max-width:760px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,194,126,.15);border:1px solid rgba(0,194,126,.3);color:#4dd9a0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:28px}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#00C27E;flex-shrink:0}
+.htitle{font-family:Schibsted Grotesk,sans-serif;font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.045em;color:#fff;margin-bottom:20px}
+.hmeta{display:flex;align-items:center;gap:14px;font-size:13px;color:rgba(255,255,255,.45);flex-wrap:wrap}
+.dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.3)}
+.layout{max-width:1100px;margin:0 auto;padding:56px 24px 80px;display:grid;grid-template-columns:minmax(0,1fr) 256px;gap:64px;align-items:start}
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:20px}
+.toc{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:24px}
+.toc h3{font-family:Schibsted Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#00C27E;margin-bottom:14px}
+.toc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.toc a{font-size:13px;color:#454B48;display:block;padding:5px 10px;border-radius:8px;border-left:2px solid transparent;transition:all .18s;line-height:1.4}
+.toc a:hover,.toc a.on{color:#00C27E;border-left-color:#00C27E;background:rgba(0,194,126,.06)}
+.scta{background:#000000;border-radius:16px;padding:24px;text-align:center}
+.scta p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:14px;font-weight:300}
+.scta a{display:block;background:#00C27E;color:#fff;font-family:Schibsted Grotesk,sans-serif;font-size:13px;font-weight:700;padding:10px;border-radius:999px;margin-bottom:8px}
+.scta a.s{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.prose p{font-size:16px;line-height:1.82;color:#3d3d38;margin-bottom:20px;font-weight:300}
+.prose strong{font-weight:600;color:#000000}
+.prose em{font-style:italic}
+.prose h2{font-family:Schibsted Grotesk,sans-serif;font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1.2;color:#000000;margin:52px 0 16px;border-top:2px solid #00C27E;padding-top:18px}
+.prose h3{font-family:Schibsted Grotesk,sans-serif;font-size:19px;font-weight:700;color:#000000;margin:32px 0 12px;letter-spacing:-.025em}
+.prose ul{list-style:none;margin:0 0 22px;padding:0}
+.prose ul li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid rgba(0,0,0,.05);font-size:15px;color:#3d3d38;font-weight:300}
+.prose ul li:last-child{border-bottom:none}
+.prose ul li::before{content:"";position:absolute;left:8px;top:50%;transform:translateY(-50%);width:7px;height:7px;border-radius:50%;background:#00C27E}
+.prose ol{list-style:decimal;margin:0 0 22px;padding-left:32px}
+.prose ol li{padding:4px 0;font-size:15px;color:#3d3d38;font-weight:300}
+.prose a{color:#00C27E;text-decoration:underline;text-decoration-color:rgba(0,194,126,.3)}
+.prose a:hover{text-decoration-color:#00C27E}
+.prose table{width:100%;border-collapse:collapse;margin:28px 0;border-radius:12px;overflow-x:auto;border:1px solid rgba(0,0,0,.08);font-size:14px;display:block}
+.prose th{background:#000000;color:#fff;font-family:Schibsted Grotesk,sans-serif;font-weight:700;padding:12px 16px;text-align:left;font-size:13px}
+.prose td{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.08);color:#454B48;font-weight:300}
+.prose tr:last-child td{border-bottom:none}
+.prose blockquote{border-left:3px solid #00C27E;padding:14px 20px;margin:24px 0;background:#fff;border-radius:0 12px 12px 0;color:#454B48;font-style:italic;font-weight:300}
+.prose .ctamid{background:linear-gradient(135deg,#0d1a14,#1a3d2a);border-radius:20px;padding:36px;margin:48px 0}
+.prose .ctamid h3{font-family:Schibsted Grotesk,sans-serif;font-size:19px;font-weight:800;color:#fff;margin-bottom:8px;border:none;padding:0}
+.prose .ctamid p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:18px;font-weight:300}
+.prose .ctamid a{display:inline-flex;background:#00C27E;color:#fff;font-family:Schibsted Grotesk,sans-serif;font-size:14px;font-weight:700;padding:11px 22px;border-radius:999px;text-decoration:none}
+.ctafin{background:#000000;border-radius:20px;padding:48px 40px;margin-top:56px;text-align:center}
+.ctafin h2{font-family:Schibsted Grotesk,sans-serif;font-size:24px;font-weight:800;color:#fff;margin-bottom:10px;border:none;padding:0}
+.ctafin p{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:26px;font-weight:300}
+.bg{display:inline-flex;background:#00C27E;color:#fff;font-family:Schibsted Grotesk,sans-serif;font-size:15px;font-weight:700;padding:14px 28px;border-radius:999px;margin:5px;text-decoration:none}
+.bd{display:inline-flex;background:rgba(255,255,255,.08);color:#fff;font-family:Schibsted Grotesk,sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:999px;border:1px solid rgba(255,255,255,.14);margin:5px;text-decoration:none}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}.sidebar{position:static}.toc{display:none}}
+@media(max-width:640px){.hero{padding:calc(var(--topbar-h) + 76px) 20px 48px}.htitle{font-size:28px}.layout{padding:36px 20px 56px}.ctafin{padding:36px 24px}}
+</style>
+<style id="article-da">
+:root{--ff-h:'Schibsted Grotesk',sans-serif;--ff-b:'Manrope',sans-serif;--c-bg:#F4F6F5;--c-bg2:#FFFFFF;--c-ink:#000000;--c-text:#1A1D1B;--c-mid:#454B48;--c-muted:#5C6560;--c-border:rgba(0,0,0,.08);--c-border2:rgba(0,0,0,.13);--c-vert:#00C27E;--c-vert-lt:#00F5A0;--c-vert-bg:rgba(0,194,126,.08);--c-vert-br:rgba(0,194,126,.22)}
+body{font-family:var(--ff-b);background:var(--c-bg);color:var(--c-text)}
+.toc{background:var(--c-bg2);border-color:var(--c-border)}
+.toc h3{color:var(--c-vert-txt)}
+.toc a{color:var(--c-mid)}
+.toc a:hover,.toc a.on{color:var(--c-vert-txt);border-left-color:var(--c-vert)}
+.scta,.ctafin,.prose .ctamid{background:var(--c-band)}
+.prose p,.prose ul li,.prose ol li{color:var(--c-mid);font-weight:400}
+.prose strong,.prose h2,.prose h3{color:var(--c-ink)}
+.prose .ctamid h3{color:#fff}
+.prose ul li{border-bottom-color:var(--c-border)}
+.prose a{color:var(--c-vert-txt);text-decoration-color:var(--c-vert-br)}
+.prose a:hover{text-decoration-color:var(--c-vert-txt)}
+.prose table{border-color:var(--c-border)}
+.prose th{background:var(--c-band)}
+.prose td{color:var(--c-mid);border-bottom-color:var(--c-border)}
+.prose blockquote{background:var(--c-bg2);color:var(--c-mid)}
+.scta a,.prose .ctamid a,.bg{background:var(--c-vert-lt);color:#000}
+.scta a.s{background:rgba(255,255,255,.08);color:#fff}
+footer{background:var(--c-bg);border-top-color:var(--c-border)}
+footer .footer-top{border-bottom-color:var(--c-border)}
+footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
+footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
+footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
+footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
+html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
+</style>
 </head>
 <body>
 <!-- TOPBAR PARTENAIRE -->
@@ -221,27 +284,29 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   <button class="theme-toggle" id="themeToggle" aria-label="Basculer clair/sombre" title="Thème clair/sombre"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-<div class="article-wrap">
-  <div class="article-tag">Guide</div>
-  <h1 class="article-title">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</h1>
-  <p class="article-date">1er mars 2026</p>
-  <div class="article-hero has-photo"><img src="/blog/img/guide-prime-advenir-2026.jpg" alt="Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)" loading="lazy" width="1200" height="480"></div>
-  <div class="prose">
+<div id="pgbar"></div>
+<div class="hero has-photo"><img class="hero-bg" src="/blog/img/guide-prime-advenir-2026.jpg" alt="Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
+<div class="badge">Guide</div>
+<h1 class="htitle">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</h1>
+<div class="hmeta"><span>1er mars 2026</span><span class="dot"></span><span>3 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>
+</div></div>
+<div class="layout">
+<main><div class="prose">
 
     <p>La prime ADVENIR est aujourd'hui <strong>l'aide principale</strong> pour financer l'installation d'une borne de recharge en France. Portée par l'AVERE-France et financée par EDF, elle couvre une partie significative des coûts selon votre situation.</p>
 
-    <h2>Qu'est-ce qu'ADVENIR exactement ?</h2>
+    <h2 id="qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</h2>
     <p>ADVENIR est un programme national de soutien au déploiement de l'infrastructure de recharge de véhicule électrique (IRVE). Il est opéré par l'AVERE-France et financé par EDF dans le cadre des Certificats d'Économies d'Énergie (CEE).</p>
     <p>Concrètement, ADVENIR rembourse une partie du coût de votre installation selon des plafonds définis par type de site.</p>
 
-    <h2>Qui peut en bénéficier ?</h2>
+    <h2 id="qui-peut-en-beneficier">Qui peut en bénéficier ?</h2>
     <p><strong>Copropriétaires et syndicats de copropriété</strong><br>Aide jusqu'à <strong><span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> par point de charge</strong> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée (barèmes revalorisés le 1er avril 2026). Les pavillons en habitat individuel ne sont pas éligibles.</p>
     <p><strong>Entreprises et flottes (T2A)</strong><br>Bornes sur site d'entreprise pour salariés ou clients. Aide jusqu'à 50% du coût plafonné.</p>
     <p><strong>Parkings ouverts au public (P4/P5)</strong><br>Aide variable selon le nombre de points et la puissance installée.</p>
 
-    <h2>Quels sont les montants de la prime ADVENIR en&nbsp;2026&nbsp;?</h2>
+    <h2 id="quels-sont-les-montants-de-la-prime-advenir-en-2026">Quels sont les montants de la prime ADVENIR en&nbsp;2026&nbsp;?</h2>
     <p>Depuis le 1er avril 2026, les montants en <a href="/copropriete">copropriété</a> ont été revalorisés : jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> pour une borne individuelle, <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> pour une borne partagée et <span data-aide="advenir.copropriete.infrastructure_collective.montant_ht">12 500 € HT</span> pour une infrastructure collective jusqu'à 100 places (<strong>+ <span data-aide="advenir.copropriete.infrastructure_collective.majoration_par_place_au_dela_ht">125 € HT</span> par place au-delà</strong>). Deux surprimes s'ajoutent en 2026 pour les parkings extérieurs : jusqu'à <strong><span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span></strong> de travaux de voirie et réseaux (VRD, + <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> par place extérieure au-delà de 100) et jusqu'à <strong><span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></strong> pour la création d'un point de livraison dédié aux bornes partagées. L'aide couvre 50 % du coût des travaux, dans la limite de ces plafonds.</p>
-    <table>
+    <div class="table-wrap"><table>
       <tr><th>Type de projet (copropriété)</th><th>Aide maximale (depuis le 01/04/2026)</th></tr>
       <tr><td>Borne individuelle en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_individuelle.montant_ht">1 000 € HT</span> / point</td></tr>
       <tr><td>Borne partagée en copropriété</td><td>Jusqu'à <span data-aide="advenir.copropriete.borne_partagee.montant_ht">1 660 € HT</span> / point</td></tr>
@@ -249,18 +314,18 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
       <tr><td>Surprime travaux de voirie (VRD, parking extérieur)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_vrd.montant_ht">8 000 € HT</span> (+ <span data-aide="advenir.copropriete.surprime_vrd.majoration_par_place_ext_au_dela_de_100_ht">80 € HT</span> / place ext. au-delà de 100)</td></tr>
       <tr><td>Surprime point de livraison dédié (bornes partagées)</td><td>Jusqu'à <span data-aide="advenir.copropriete.surprime_point_livraison.montant_ht">3 000 € HT</span></td></tr>
       <tr><td>Taux de prise en charge</td><td>50 % du coût des travaux</td></tr>
-    </table>
+    </table></div>
     <blockquote><p>Points de vigilance : les pavillons en habitat individuel ne sont pas éligibles à ADVENIR. Le dossier doit être validé <strong>avant</strong> le début des travaux, et le projet voté en assemblée générale après le 1er avril 2026 pour bénéficier de ces barèmes. Plafonds officiels sur <a href="https://www.advenir.mobi" target="_blank" rel="noopener">advenir.mobi</a>.</p></blockquote>
 
-    <h2>Comment faire la demande ?</h2>
+    <h2 id="comment-faire-la-demande">Comment faire la demande ?</h2>
     <p><strong>1. Choisir un installateur certifié IRVE</strong><br>Condition sine qua non. Votre installateur doit être titulaire de la qualification IRVE (P1, P2 ou P3). C'est lui qui constitue généralement le dossier ADVENIR.</p>
     <p><strong>2. Faire la demande avant l'installation</strong><br>La demande ADVENIR doit être faite <strong>avant</strong> le début des travaux. Sans dossier préalable, vous ne pouvez plus en bénéficier.</p>
     <p><strong>3. Recevoir le remboursement</strong><br>Après validation et réception de la facture acquittée, le remboursement est versé sous 4 à 8 semaines.</p>
 
-    <h2>Peut-on cumuler ADVENIR avec le crédit d'impôt en&nbsp;2026&nbsp;?</h2>
+    <h2 id="peut-on-cumuler-advenir-avec-le-credit-d-impot-en-2026">Peut-on cumuler ADVENIR avec le crédit d'impôt en&nbsp;2026&nbsp;?</h2>
     <p><strong>Non, plus en 2026.</strong> Le crédit d'impôt pour l'installation d'une borne chez les particuliers n'a pas été reconduit après le 31 décembre 2025 : il ne faut donc plus le compter dans <a href="/blog/prix-borne-de-recharge-maison-2026.html">votre budget</a>. Reste mobilisable en maison individuelle : la TVA à taux réduit de 5,5 % sur une installation réalisée par un professionnel qualifié IRVE, dans un logement de plus de deux ans.</p>
 
-    <h2>Ce qu'ADVENIR ne couvre pas</h2>
+    <h2 id="ce-qu-advenir-ne-couvre-pas">Ce qu'ADVENIR ne couvre pas</h2>
     <ul>
       <li>Le coût de la borne elle-même (uniquement l'installation)</li>
       <li>Les travaux de génie civil lourds (tranchées, voirie)</li>
@@ -268,12 +333,14 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     </ul>
 
   </div>
-  <div class="article-cta">
-  <h3>Votre projet de borne, en clair.</h3>
-  <p>Répondez à 6 questions et obtenez une recommandation personnalisée gratuite.</p>
-  <a href="../index.html#simulateur" class="btn-cta">Simuler mon projet →</a>
-</div>
-</div>
+<div class="ctafin"><h2>Votre projet de borne, en clair.</h2><p>Répondez à 6 questions et obtenez une recommandation personnalisée gratuite.</p>
+<a href="/simulateur" class="bg">Démarrer le simulateur →</a>
+<a href="/partenaires.html" class="bd">Trouver un installateur</a></div></main>
+<aside class="sidebar">
+<div class="toc"><h3>Sommaire</h3><ul id="tocl"><li><a href="#qu-est-ce-qu-advenir-exactement">Qu'est-ce qu'ADVENIR exactement ?</a></li><li><a href="#qui-peut-en-beneficier">Qui peut en bénéficier ?</a></li><li><a href="#quels-sont-les-montants-de-la-prime-advenir-en-2026">Quels sont les montants de la prime ADVENIR en 2026 ?</a></li><li><a href="#comment-faire-la-demande">Comment faire la demande ?</a></li><li><a href="#peut-on-cumuler-advenir-avec-le-credit-d-impot-en-2026">Peut-on cumuler ADVENIR avec le crédit d'impôt en 2026 ?</a></li><li><a href="#ce-qu-advenir-ne-couvre-pas">Ce qu'ADVENIR ne couvre pas</a></li></ul></div>
+<div class="scta"><p>Pas sûr de quelle borne vous avez besoin ?</p><a href="/simulateur">Simulateur gratuit →</a><a href="/partenaires.html" class="s">Trouver un installateur</a></div>
+</aside></div>
+
 <footer>
   <div class="footer-top">
     <div class="footer-cols">
@@ -325,6 +392,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
     <a class="footer-linkedin" href="https://www.linkedin.com/company/les-%C3%A9clair%C3%A9s/" target="_blank" rel="noopener" aria-label="LinkedIn Les Éclairés"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
   </div>
 </footer>
+<script>(function(){var b=document.getElementById("pgbar");var tl=document.querySelectorAll("#tocl a");window.addEventListener("scroll",function(){var s=document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(100,s/h*100):0)+"%";var hs=document.querySelectorAll(".prose h2[id]");var cur="";hs.forEach(function(x){if(window.scrollY>=x.offsetTop-90)cur=x.id;});tl.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur);});},{passive:true});})();</script>
   <script src="/cursor.js" defer></script>
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">

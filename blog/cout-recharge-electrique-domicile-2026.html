@@ -228,6 +228,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -284,7 +292,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>En juin 2026, le tarif réglementé de l'électricité (le fameux <strong>tarif bleu d'EDF</strong>) s'établit autour de <strong>0,2516 € TTC par kWh</strong> en heures pleines. Ce chiffre est la référence de base, mais ce n'est pas forcément ce que vous devriez payer si vous rechargez une voiture électrique.</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Type de tarif</th>
@@ -314,7 +322,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Oui, si vous êtes flexibles</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Ces chiffres vous montrent qu'il peut y avoir <strong>un écart de presque 40 %</strong> entre le tarif le plus cher et le plus économique. Sur une année entière de recharge, cela représente une différence de plusieurs centaines d'euros. Ça vaut la peine de comparer.</p>
 
@@ -322,7 +330,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Passons aux choses sérieuses. Voici une estimation du <strong>coût mensuel de recharge à domicile</strong> selon votre profil de conduite et votre tarif électrique. On prend comme base 1 000 km parcourus par mois et une consommation moyenne de 17 kWh/100 km, soit 170 kWh mensuels.</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Tarif appliqué</th>
@@ -357,7 +365,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>~320 €</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Pour comparaison, un véhicule thermique consommant 6 litres aux 100 km vous coûterait environ <strong>120 à 130 € par mois</strong> d'essence pour les mêmes kilomètres. L'économie réalisée avec la recharge à domicile est donc considérable, souvent <strong>70 à 80 % de moins</strong> sur le poste carburant.</p>
 

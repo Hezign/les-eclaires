@@ -223,6 +223,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -298,7 +306,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Il faut budgéter séparément les panneaux photovoltaïques et la borne de recharge, même si les deux chantiers peuvent être conduits simultanément pour mutualiser certains frais.</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Poste</th>
@@ -327,7 +335,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>4 000 à 10 000 EUR environ</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Ces fourchettes sont des repères. Le prix final dépend de la surface de toiture disponible, de l'orientation, de la distance entre le tableau électrique et l'emplacement de la borne, et de la complexité du câblage. Demandez toujours plusieurs devis détaillés.</p>
 

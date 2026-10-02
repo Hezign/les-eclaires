@@ -231,6 +231,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -273,7 +281,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="prix-borne-recharge-maison-fourchettes">Le prix d'une borne de recharge à la maison : les grandes fourchettes</h2>
 <p>Avant d'entrer dans le détail, voici un aperçu des budgets selon votre situation. Ces chiffres incluent le matériel et la pose, dans des configurations courantes.</p>
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Situation</th>
@@ -303,7 +311,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Wallbox + installation dédiée + infrastructure</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 <p>Ces fourchettes sont des points de départ. Votre situation réelle peut se situer en dessous ou au-dessus selon plusieurs facteurs que nous allons détailler.</p>
 
 <h2 id="cout-wallbox-particulier-materiel">Le coût du matériel : choisir la bonne wallbox</h2>
@@ -336,7 +344,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="aide-installation-borne-recharge-2026">Les aides disponibles en 2026 : ce que vous pouvez déduire</h2>
 <p>Bonne nouvelle : plusieurs dispositifs existent pour réduire significativement votre reste à charge. En 2026, le paysage a changé : le crédit d'impôt pour les particuliers n'a pas été reconduit, mais la TVA réduite à 5,5 % et certaines aides locales restent mobilisables, et la prime ADVENIR en copropriété a même été revalorisée au 1er avril 2026. Voici un tour d'horizon clair.</p>
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Aide</th>
@@ -366,7 +374,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Salarié avec véhicule professionnel ou personnel électrique</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 <p>La <strong>TVA réduite à 5,5 %</strong> est aujourd'hui l'avantage le plus simple à obtenir : elle s'applique directement sur votre facture dès lors que la pose est réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans, que vous soyez propriétaire ou locataire. Le crédit d'impôt pour les particuliers, lui, n'existe plus depuis le 31 décembre 2025 : il ne faut plus le compter dans votre budget.</p>
 <p>Pensez également à vérifier les offres de votre <strong>fournisseur d'énergie</strong> : EDF, Engie, TotalEnergies et d'autres proposent des packages installation avec des tarifs négociés et parfois des avances sur aides.</p>
 
@@ -382,7 +390,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="budget-reel-simulation">Simulation budgétaire réelle : exemples concrets</h2>
 <p>Pour vous aider à vous projeter, voici deux exemples de budgets réels, avant et après aides, dans des situations courantes en 2026.</p>
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Poste de dépense</th>
@@ -427,7 +435,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td><strong>1 450 €</strong></td>
     </tr>
   </tbody>
-</table>
+</table></div>
 <p>Ces chiffres sont des estimations moyennes. Votre reste à charge réel dépend de votre tranche d'imposition, de votre localisation et des offres de votre installateur. Dans tous les cas, <strong>une borne de recharge à domicile est rentable dès la première année</strong> si vous comparez le coût du kWh domestique aux tarifs des bornes publiques.</p>
 
 <h2 id="prochaine-etape">La prochaine étape, c'est la vôtre.</h2>

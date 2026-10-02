@@ -223,6 +223,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -284,7 +292,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Voici les principaux réseaux de bornes publiques en France et leur niveau d'accessibilité via itinérance :</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Réseau (CPO)</th>
@@ -324,7 +332,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Partiel selon les accords Gireve</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Attention aux réseaux de collectivités locales : certains ne sont pas encore intégrés à Gireve et restent accessibles uniquement via leur propre badge ou application. Vérifiez la carte de couverture de votre eMSP avant un long trajet.</p>
 
@@ -385,7 +393,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Voici les avantages et limites de chaque option :</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Mode d'accès</th>
@@ -410,7 +418,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Tarif ad hoc souvent plus élevé, pas disponible partout</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>La réglementation européenne AFIR impose depuis 2026 que les nouvelles bornes publiques de forte puissance (50 kW et plus) acceptent obligatoirement le paiement par carte bancaire sans contact. Cette obligation monte progressivement en puissance pour couvrir toutes les bornes d'ici 2027. En attendant, le badge reste la solution la plus polyvalente pour les trajets en dehors de votre zone de confort habituelle.</p>
 

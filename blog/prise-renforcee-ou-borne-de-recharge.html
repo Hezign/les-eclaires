@@ -227,6 +227,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -268,12 +276,12 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="prix">Combien coûte chaque solution ?</h2>
 <p>La prise renforcée est la moins chère à l'achat, la borne est plus complète pour un budget maîtrisé. Voici les fourchettes constatées en 2026, pose comprise.</p>
-<table>
+<div class="table-wrap"><table>
 <tr><th>Solution</th><th>Prix installé (TTC)</th><th>Puissance</th></tr>
 <tr><td>Prise renforcée</td><td><span data-aide="prix_indicatifs_ttc.prise_renforcee" data-aide-fmt="range_eur">500 à 1 000 €</span></td><td>~3,2 kW</td></tr>
 <tr><td>Borne 7,4 kW</td><td><span data-aide="prix_indicatifs_ttc.borne_7_4_kw" data-aide-fmt="range_eur">1 200 à 2 000 €</span></td><td>7,4 kW</td></tr>
 <tr><td>Borne 22 kW (triphasé)</td><td><span data-aide="prix_indicatifs_ttc.borne_22_kw" data-aide-fmt="range_eur">2 500 à 3 500 €</span></td><td>22 kW</td></tr>
-</table>
+</table></div>
 <p>Attention à la TVA, elle n'est pas la même selon la solution. La <strong>borne de recharge</strong> bénéficie de la TVA réduite à <strong><span data-aide="tva.borne_recharge.taux" data-aide-fmt="pct">5,5 %</span></strong> (article 278-0 bis N du CGI) pour une pose par un professionnel qualifié IRVE dans un logement de plus de deux ans. La <strong>prise renforcée</strong>, qui n'est pas une borne IRVE, relève elle du taux intermédiaire de <strong><span data-aide="tva.prise_renforcee.taux" data-aide-fmt="pct">10 %</span></strong> applicable aux travaux d'amélioration, pas des 5,5 %. Le détail est dans notre <a href="/blog/prix-borne-de-recharge-maison-2026.html">guide du prix d'une borne maison en 2026</a>.</p>
 
 <h2 id="vitesse">Quelle vitesse de recharge pour chacune ?</h2>

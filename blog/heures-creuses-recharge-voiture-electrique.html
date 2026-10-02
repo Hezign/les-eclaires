@@ -228,6 +228,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -310,7 +318,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <p>Les principales offres à comparer en 2026 :</p>
 
-<table>
+<div class="table-wrap"><table>
   <thead>
     <tr>
       <th>Fournisseur</th>
@@ -345,7 +353,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
       <td>Parmi les plus bas du marché</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <p>Attention : les tarifs exacts évoluent régulièrement et dépendent de votre puissance de raccordement. Comparez toujours en incluant l'abonnement mensuel dans le calcul total. Un tarif kWh très bas avec un abonnement élevé peut s'avérer moins intéressant qu'une offre standard si vous rechargez peu fréquemment. Pour aller plus loin sur le coût réel de la recharge à domicile, notre article sur le <a href="cout-recharge-electrique-domicile-2026.html">coût de la recharge électrique à domicile en 2026</a> détaille tous les paramètres à intégrer dans votre calcul.</p>
 

@@ -225,6 +225,14 @@ footer .footer-col h4,footer .footer-cities h4{color:var(--c-muted)}
 footer .footer-col li a,footer .footer-cities-list a{color:var(--c-mid)}
 footer .footer-col li a:hover,footer .footer-cities-list a:hover{color:var(--c-vert-txt)}
 footer .footer-bottom .f-brand-name{color:#08130d}
+/* Lot 2 : un seul axe de 984 px (comme le header/footer) pour le hero et le corps */
+.hero-in{max-width:984px}
+.htitle{max-width:860px}
+.layout{max-width:1032px}
+/* Tableaux pleine largeur, défilement horizontal dans un conteneur sur mobile */
+.prose .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--c-border);border-radius:12px;background:var(--c-bg2)}
+.prose .table-wrap table{display:table;width:100%;margin:0;border:none;border-radius:0;overflow:visible}
+.prose .table-wrap td{background:transparent}
 html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="dark"] .prose .ctamid{border:1px solid var(--c-border2)}
 </style>
 </head><body>
@@ -267,14 +275,14 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="concerne">Quels parkings sont concernés, et à quelle échéance ?</h2>
 <p>Les bâtiments non résidentiels (bureaux, commerces, industrie, établissements recevant du public) dotés d'un parking de plus de 20 emplacements sont concernés. Les bâtiments existants devaient disposer d'au moins une borne au 1er janvier 2025.</p>
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Situation</th><th>Obligation</th></tr></thead>
   <tbody>
     <tr><td>Bâtiment neuf ou en rénovation importante, parking de plus de 10 places</td><td>Pré-équipement d'une part significative des places, plus au moins une borne à la livraison</td></tr>
     <tr><td>Bâtiment tertiaire existant, parking de plus de 20 places</td><td>Au moins un point de recharge en service depuis le 1er janvier 2025</td></tr>
     <tr><td>Grand parking (plus de 200 places)</td><td>Obligations renforcées sur le nombre de points de charge</td></tr>
   </tbody>
-</table>
+</table></div>
 <p>Les seuils exacts et le quota de bornes dépendent de la taille précise du parking et de la date de construction du bâtiment. Un audit sur site permet de déterminer votre obligation réelle et d'éviter aussi bien la sous-conformité que le surdimensionnement. C'est le point de départ de tout projet sérieux.</p>
 
 <h2 id="sanctions">Que risque une entreprise qui ne se met pas en conformité ?</h2>
@@ -293,7 +301,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
 
 <h2 id="cout">Combien coûte l'installation de bornes en entreprise ?</h2>
 <p>Comptez à partir d'environ 1 200 à 2 000 € TTC par borne 7,4 kW, mais le coût par point de charge baisse fortement dès que l'on équipe plusieurs places, grâce à l'infrastructure mutualisée.</p>
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Poste</th><th>Rôle</th></tr></thead>
   <tbody>
     <tr><td>Bornes (7,4 à 22 kW)</td><td>Le matériel de recharge, selon l'usage et les véhicules</td></tr>
@@ -301,7 +309,7 @@ html[data-theme="dark"] .scta,html[data-theme="dark"] .ctafin,html[data-theme="d
     <tr><td>Pilotage de charge</td><td>Répartit la puissance disponible et évite de surdimensionner l'abonnement électrique</td></tr>
     <tr><td>Supervision et refacturation</td><td>Suit les consommations et permet de refacturer la recharge</td></tr>
   </tbody>
-</table>
+</table></div>
 <p>Le poste le plus stratégique n'est pas la borne, c'est le <strong>pilotage de charge</strong>. Sans lui, équiper plusieurs places obligerait à augmenter fortement la puissance souscrite, donc la facture d'électricité. Avec lui, on répartit intelligemment la puissance existante entre les véhicules. Pour situer les ordres de grandeur du matériel, notre analyse du <a href="/blog/prix-borne-de-recharge-maison-2026.html">prix d'une borne de recharge</a> donne les fourchettes par puissance.</p>
 
 <h2 id="etapes">Comment équiper le parking de son entreprise ?</h2>
