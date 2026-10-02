@@ -1,12 +1,10 @@
-<!DOCTYPE html><html lang="fr"><head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
-<script>
+<!DOCTYPE html><html lang="fr"><head><!-- Google Analytics : chargé seulement après consentement (_legal_global.py) -->
+<script id="ga-consent">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
-  try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
-  gtag('js', new Date());
-  gtag('config', 'G-ZXGFCVHHDM');
+  window.leLoadGA=function(){if(window.__leGA)return;window.__leGA=1;gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ZXGFCVHHDM',{cookie_expires:33696000});};
+  try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')window.leLoadGA();}catch(e){}
 </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Recharge bidirectionnelle V2G : voiture vers maison</title>
@@ -625,6 +623,7 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/cgu.html">Conditions d'utilisation</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
@@ -670,7 +669,7 @@ document.addEventListener('click',function(e){if(nav.classList.contains('open')&
 (function(){var CK='les-eclaires-cookie-v2';function el(i){return document.getElementById(i);}
 function showFab(){var f=el('cookieFab');if(f)f.classList.add('show');}
 function openC(){var b=el('cookieBanner');if(b)b.classList.add('show');var f=el('cookieFab');if(f)f.classList.remove('show');}
-function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
+function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(ok&&window.leLoadGA)window.leLoadGA();if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
 try{if(!localStorage.getItem(CK)){setTimeout(openC,1800);}else{showFab();}}catch(e){setTimeout(openC,1800);}
 var ba=el('btnAccept'),bd=el('btnDecline'),cf=el('cookieFab');
 if(ba)ba.addEventListener('click',function(){closeC(true);});

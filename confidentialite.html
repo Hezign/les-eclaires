@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
-<script>
+<!-- Google Analytics : chargé seulement après consentement (_legal_global.py) -->
+<script id="ga-consent">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZXGFCVHHDM');
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+  window.leLoadGA=function(){if(window.__leGA)return;window.__leGA=1;gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ZXGFCVHHDM',{cookie_expires:33696000});};
+  try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')window.leLoadGA();}catch(e){}
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -397,87 +395,72 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
 <div class="page has-toc">
   <div class="page-tag">RGPD</div>
   <h1>Politique de confidentialité</h1>
-  <p class="page-date">Dernière mise à jour : juin 2026</p>
-  <div class="legal-layout"><aside class="legal-toc" aria-label="Sommaire"><p class="legal-toc-title">Sommaire</p><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites"><span class="n">3</span><span>Finalités</span></a></li><li><a href="#base-legale"><span class="n">4</span><span>Base légale</span></a></li><li><a href="#duree-de-conservation"><span class="n">5</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">6</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">7</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">8</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">9</span><span>Vos droits</span></a></li><li><a href="#cookies"><span class="n">10</span><span>Cookies</span></a></li><li><a href="#informations-sur-les-aides-gouvernementales"><span class="n">11</span><span>Informations sur les aides gouvernementales</span></a></li><li><a href="#modifications"><span class="n">12</span><span>Modifications</span></a></li></ol></aside>
-  <div class="prose"><details class="legal-toc-mobile"><summary>Sommaire</summary><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites"><span class="n">3</span><span>Finalités</span></a></li><li><a href="#base-legale"><span class="n">4</span><span>Base légale</span></a></li><li><a href="#duree-de-conservation"><span class="n">5</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">6</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">7</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">8</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">9</span><span>Vos droits</span></a></li><li><a href="#cookies"><span class="n">10</span><span>Cookies</span></a></li><li><a href="#informations-sur-les-aides-gouvernementales"><span class="n">11</span><span>Informations sur les aides gouvernementales</span></a></li><li><a href="#modifications"><span class="n">12</span><span>Modifications</span></a></li></ol></details>
-  <div class="info-box">
-      <p><strong>En résumé :</strong> nous collectons uniquement les données que vous nous fournissez volontairement. Nous ne les revendons jamais. Vous pouvez les supprimer à tout moment à <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
-    </div>
-
-    <h2 id="responsable-du-traitement">1. Responsable du traitement</h2>
-    <p>Le responsable du traitement des données est&nbsp;:</p>
+  <p class="page-date">Dernière mise à jour : octobre 2026</p>
+  <div class="legal-layout"><aside class="legal-toc" aria-label="Sommaire"><p class="legal-toc-title">Sommaire</p><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites-et-bases-legales"><span class="n">3</span><span>Finalités et bases légales</span></a></li><li><a href="#duree-de-conservation"><span class="n">4</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">5</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">6</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">7</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">8</span><span>Vos droits</span></a></li><li><a href="#installateurs-si-nous-vous-avons-contacte"><span class="n">9</span><span>Installateurs : si nous vous avons contacté</span></a></li><li><a href="#cookies-et-traceurs"><span class="n">10</span><span>Cookies et traceurs</span></a></li><li><a href="#modifications"><span class="n">11</span><span>Modifications</span></a></li></ol></aside>
+  <div class="prose"><details class="legal-toc-mobile"><summary>Sommaire</summary><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites-et-bases-legales"><span class="n">3</span><span>Finalités et bases légales</span></a></li><li><a href="#duree-de-conservation"><span class="n">4</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">5</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">6</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">7</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">8</span><span>Vos droits</span></a></li><li><a href="#installateurs-si-nous-vous-avons-contacte"><span class="n">9</span><span>Installateurs : si nous vous avons contacté</span></a></li><li><a href="#cookies-et-traceurs"><span class="n">10</span><span>Cookies et traceurs</span></a></li><li><a href="#modifications"><span class="n">11</span><span>Modifications</span></a></li></ol></details>
+  
     <div class="info-box">
-      <p><strong>ELOI LAETITIA</strong> - Entrepreneur individuel (Les Éclairés)</p>
-      <p>SIREN&nbsp;: 104&nbsp;910&nbsp;187 · Saint-Étienne (Loire), France</p>
-      <p>Contact&nbsp;: <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a></p>
+      <p><strong>En résumé :</strong> nous collectons uniquement les données que vous nous fournissez. Votre demande n'est transmise qu'à <strong>un seul installateur partenaire</strong>, avec votre accord. Nous ne revendons jamais vos données. Vous pouvez les faire supprimer à tout moment à <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>.</p>
     </div>
-
+    <h2 id="responsable-du-traitement">1. Responsable du traitement</h2>
+    <div class="info-box">
+      <p><strong>Laetitia ELOI</strong>, entrepreneur individuel (enseigne « Les Éclairés »)</p>
+      <p>15 rue Jean-Baptiste Clément, 42000 Saint-Étienne · SIREN 104 910 187</p>
+      <p>Contact : <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a></p>
+    </div>
     <h2 id="donnees-collectees">2. Données collectées</h2>
     <ul>
-      <li><strong>Via le simulateur IRVE :</strong> prénom, adresse email, numéro de téléphone, département de l'installation et réponses au questionnaire (jusqu'à 11 questions sur votre situation et votre projet).</li>
-      <li><strong>Via le formulaire partenaires :</strong> prénom, nom, email professionnel, téléphone, entreprise, zone, message.</li>
-      <li><strong>Données de navigation :</strong> adresse IP (anonymisée), pages vues, type d'appareil et de navigateur, données de fréquentation, via les cookies de mesure d'audience (avec votre consentement).</li>
+      <li><strong>Simulateur :</strong> prénom, e-mail, téléphone, département et réponses au questionnaire sur votre logement, votre véhicule et votre projet.</li>
+      <li><strong>Formulaire copropriété :</strong> nom, rôle (syndic, conseil syndical, copropriétaire), nom ou adresse de la copropriété, nombre de lots, e-mail, téléphone, description du projet.</li>
+      <li><strong>Candidature partenaire :</strong> prénom, nom, e-mail professionnel, téléphone, entreprise, zone d'intervention, types de projets, qualification IRVE, message.</li>
+      <li><strong>Prospection des installateurs :</strong> coordonnées professionnelles d'entreprises du secteur IRVE (raison sociale, ville, téléphone, e-mail, site, qualification), issues de sources publiques (sites des entreprises, annuaires professionnels).</li>
+      <li><strong>Mesure d'audience :</strong> pages vues, type d'appareil et de navigateur, provenance, uniquement si vous acceptez les cookies de mesure d'audience.</li>
     </ul>
-    <p>Nous ne collectons aucune donnée sensible et ne vous demandons jamais plus que le strict nécessaire.</p>
-
-    <h2 id="finalites">3. Finalités</h2>
+    <p>Nous ne collectons aucune donnée sensible.</p>
+    <h2 id="finalites-et-bases-legales">3. Finalités et bases légales</h2>
     <ul>
-      <li>Vous transmettre votre récapitulatif IRVE personnalisé</li>
-      <li>Vous mettre en relation avec un installateur certifié IRVE</li>
-      <li>Traiter votre candidature partenaire</li>
-      <li>Mesurer et améliorer l'audience et la qualité du service (statistiques)</li>
+      <li><strong>Vous transmettre votre recommandation</strong> : exécution de votre demande.</li>
+      <li><strong>Transmettre votre demande à un installateur partenaire</strong> : votre consentement, donné en cliquant sur le bouton d'envoi après une information claire. Nous conservons la date et le contenu de chaque demande comme preuve de ce consentement.</li>
+      <li><strong>Étudier une candidature partenaire et préparer le contrat</strong> : mesures précontractuelles prises à votre demande.</li>
+      <li><strong>Prospecter les installateurs IRVE</strong> : notre intérêt légitime à développer notre réseau. Vous pouvez vous y opposer à tout moment, sans motif.</li>
+      <li><strong>Mesure d'audience</strong> : votre consentement.</li>
+      <li><strong>Sécurité du site et prévention des abus</strong> : notre intérêt légitime.</li>
     </ul>
-
-    <h2 id="base-legale">4. Base légale</h2>
+    <h2 id="duree-de-conservation">4. Durée de conservation</h2>
     <ul>
-      <li><strong>Consentement :</strong> en soumettant un formulaire ou en acceptant les cookies de mesure d'audience, vous consentez au traitement correspondant.</li>
-      <li><strong>Intérêt légitime :</strong> sécurité du site et amélioration du service.</li>
+      <li><strong>Demandes du simulateur et du formulaire copropriété</strong> : 3 ans à compter de votre dernier contact avec nous.</li>
+      <li><strong>Candidatures non retenues</strong> : 3 ans à compter du dernier contact. <strong>Partenaires sous contrat</strong> : durée du contrat, puis 5 ans (prescription) et 10 ans pour les pièces comptables.</li>
+      <li><strong>Prospects installateurs</strong> : 3 ans à compter du dernier contact.</li>
+      <li><strong>Données de mesure d'audience</strong> : 14 mois maximum dans Google Analytics.</li>
     </ul>
-
-    <h2 id="duree-de-conservation">5. Durée de conservation</h2>
-    <p>Vos données de contact sont conservées <strong>3 ans</strong> à compter de votre dernier contact. Les données de navigation sont conservées <strong>13 mois maximum</strong>. Au-delà, elles sont supprimées ou anonymisées.</p>
-
-    <h2 id="destinataires-et-sous-traitants">6. Destinataires et sous-traitants</h2>
-    <p>Pour fonctionner, le site s'appuie sur des prestataires techniques (sous-traitants au sens du RGPD) et des destinataires. Vos données ne sont <strong>jamais vendues ni louées</strong>. Chaque prestataire n'accède qu'aux données strictement nécessaires à sa mission, et reste soumis à sa propre politique de confidentialité.</p>
+    <h2 id="destinataires-et-sous-traitants">5. Destinataires et sous-traitants</h2>
+    <p>Vos données ne sont <strong>jamais vendues ni louées</strong>. Elles sont accessibles à l'équipe des Éclairés et, pour les seuls besoins du service, aux destinataires suivants.</p>
     <ul>
-      <li><strong>Installateurs partenaires</strong> (destinataires) - reçoivent les coordonnées et le projet uniquement pour la mise en relation que vous avez sollicitée.</li>
-      <li><strong>Web3Forms</strong> (acheminement des formulaires) - transmet le contenu des formulaires par email vers Les Éclairés. <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>n8n</strong> (automatisation interne) - orchestre le traitement des demandes (notifications et préparation de la mise en relation). <a href="https://n8n.io/legal/privacy/" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>Google Analytics 4</strong> (mesure d'audience) - statistiques de fréquentation, uniquement après consentement. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>Google Search Console</strong> (référencement) - données de recherche essentiellement agrégées, sans identification des visiteurs. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>LWS</strong> (hébergement) - héberge le site et conserve des journaux techniques de connexion. <a href="https://www.lws.fr/politique_confidentialite.php" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>Vercel</strong> (déploiement et diffusion / CDN) - distribue les pages du site via son réseau. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Installateur partenaire</strong> (destinataire) : un seul installateur certifié IRVE de votre secteur reçoit vos coordonnées et votre projet, uniquement si vous l'avez accepté. Il les utilise pour vous recontacter et vous faire un devis ; il devient alors responsable de ce traitement pour sa propre relation avec vous.</li>
+      <li><strong>Web3Forms</strong> (acheminement des formulaires par e-mail). <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Hostinger</strong> (serveur situé en France) : héberge nos outils internes d'automatisation (n8n) et de suivi des partenaires et prospects. <a href="https://www.hostinger.fr/politique-de-confidentialite" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>LWS</strong> (messagerie électronique et nom de domaine). <a href="https://www.lws.fr/" target="_blank" rel="noopener">Site ↗</a></li>
+      <li><strong>Vercel</strong> (hébergement et diffusion du site). <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Google Analytics 4</strong> (mesure d'audience, uniquement après votre accord). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Google Search Console</strong> (référencement) : données de recherche agrégées, sans identification des visiteurs.</li>
     </ul>
-    <p>Les Éclairés sélectionne des outils présentant des garanties conformes au RGPD. Toutefois, ces prestataires sont des sociétés tierces qui appliquent leurs propres traitements&nbsp;: Les Éclairés ne saurait être tenu responsable des usages réalisés par ces tiers au-delà du cadre convenu, ni du contenu de leurs politiques respectives. Nous vous invitons à les consulter.</p>
-
-    <h2 id="transferts-hors-union-europeenne">7. Transferts hors Union européenne</h2>
-    <p>Certains prestataires (notamment Google et Vercel) peuvent traiter des données en dehors de l'Union européenne, en particulier aux États-Unis. Ces transferts sont encadrés par des garanties appropriées&nbsp;: adhésion au <strong>Data Privacy Framework</strong> UE-États-Unis et/ou <strong>clauses contractuelles types</strong> de la Commission européenne.</p>
-
-    <h2 id="securite">8. Sécurité</h2>
-    <p>Le site est servi exclusivement en <strong>HTTPS</strong>. Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre tout accès, perte ou divulgation non autorisés.</p>
-
-    <h2 id="vos-droits">9. Vos droits</h2>
+    <h2 id="transferts-hors-union-europeenne">6. Transferts hors Union européenne</h2>
+    <p>Certains prestataires (notamment Google, Vercel et Web3Forms) peuvent traiter des données hors de l'Union européenne, en particulier aux États-Unis. Ces transferts sont encadrés par l'adhésion au Data Privacy Framework UE-États-Unis et/ou par les clauses contractuelles types de la Commission européenne.</p>
+    <h2 id="securite">7. Sécurité</h2>
+    <p>Le site est servi exclusivement en HTTPS. Les accès à nos outils internes sont protégés et réservés à l'équipe. La base de suivi des partenaires et des prospects est chiffrée.</p>
+    <h2 id="vos-droits">8. Vos droits</h2>
+    <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition, ainsi que du droit de retirer votre consentement à tout moment (sans remettre en cause les traitements déjà réalisés). Pour les exercer : <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a>. Réponse sous un mois.</p>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
+    <h2 id="installateurs-si-nous-vous-avons-contacte">9. Installateurs : si nous vous avons contacté</h2>
+    <p>Si vous êtes un professionnel de l'IRVE et que nous vous avons contacté, vos coordonnées professionnelles proviennent de sources publiques (site de votre entreprise, annuaires professionnels). Nous les utilisons uniquement pour vous présenter notre réseau de partenaires. Vous pouvez vous y opposer à tout moment en répondant à notre message ou à <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a> : vos données sont alors supprimées de nos fichiers de prospection.</p>
+    <h2 id="cookies-et-traceurs">10. Cookies et traceurs</h2>
     <ul>
-      <li><strong>Droit d'accès</strong> · <strong>Droit de rectification</strong> · <strong>Droit à l'effacement</strong></li>
-      <li><strong>Droit d'opposition</strong> · <strong>Droit à la portabilité</strong> · <strong>Droit à la limitation</strong></li>
-      <li><strong>Droit de retirer votre consentement</strong> à tout moment</li>
+      <li><strong>Préférences (sans consentement requis)</strong> : votre choix concernant les cookies et votre thème clair ou sombre, enregistrés dans votre navigateur.</li>
+      <li><strong>Mesure d'audience (Google Analytics 4)</strong> : le script de Google n'est chargé qu'après votre accord. Les cookies _ga et _ga_* sont alors déposés pour 13 mois maximum.</li>
     </ul>
-    <p>Pour exercer ces droits&nbsp;: <a href="mailto:contact@leseclaires.fr">contact@leseclaires.fr</a> - réponse sous 30 jours.<br>
-    Vous pouvez également saisir la <strong>CNIL</strong>&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a></p>
-
-    <h2 id="cookies">10. Cookies</h2>
-    <ul>
-      <li><strong>Cookies nécessaires :</strong> mémorisation de votre choix de consentement.</li>
-      <li><strong>Cookies de mesure d'audience (Google Analytics 4) :</strong> cookies <code>_ga</code> / <code>_ga_*</code> déposés uniquement après votre consentement. Vous pouvez le refuser ou le retirer à tout moment via le bandeau cookies.</li>
-    </ul>
-
-    <h2 id="informations-sur-les-aides-gouvernementales">11. Informations sur les aides gouvernementales</h2>
-    <p>Les informations publiées sur ce site concernant les aides de l'État (crédit d'impôt, prime ADVENIR, aides régionales ou locales, etc.) sont fournies <strong>à titre purement informatif</strong>, sur la base des dispositions réglementaires en vigueur au moment de leur rédaction.</p>
-    <p>Ces aides sont susceptibles d'évoluer à tout moment&nbsp;: montants, conditions d'éligibilité, modalités de demande ou suppression peuvent être modifiés par les pouvoirs publics sans préavis. Les Éclairés s'efforce de maintenir ces informations à jour, mais ne peut garantir leur exactitude ou leur exhaustivité à la date de consultation.</p>
-    <p>En conséquence, <strong>Les Éclairés ne saurait être tenu responsable</strong> d'erreurs, d'inexactitudes, d'omissions ou de tout préjudice résultant de l'utilisation des informations relatives aux aides financières publiées sur ce site. Pour toute décision financière, nous vous recommandons de vérifier les conditions en vigueur directement auprès des organismes compétents (ADEME, AVERE-France, Direction générale des finances publiques, etc.).</p>
-
-    <h2 id="modifications">12. Modifications</h2>
-    <p>Nous nous réservons le droit de modifier cette politique. La version en vigueur est celle affichée avec la date indiquée en haut de page.</p>
+    <p>Vous pouvez modifier votre choix à tout moment avec la bulle cookies en bas de l'écran.</p>
+    <h2 id="modifications">11. Modifications</h2>
+    <p>Cette politique peut évoluer. La version en vigueur est celle publiée sur cette page, avec sa date de mise à jour.</p>
 </div><!--/legal-layout--></div>
 </div>
 <footer>
@@ -545,7 +528,7 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
 (function(){var CK='les-eclaires-cookie-v2';function el(i){return document.getElementById(i);}
 function showFab(){var f=el('cookieFab');if(f)f.classList.add('show');}
 function openC(){var b=el('cookieBanner');if(b)b.classList.add('show');var f=el('cookieFab');if(f)f.classList.remove('show');}
-function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
+function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(ok&&window.leLoadGA)window.leLoadGA();if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
 try{if(!localStorage.getItem(CK)){setTimeout(openC,1800);}else{showFab();}}catch(e){setTimeout(openC,1800);}
 var ba=el('btnAccept'),bd=el('btnDecline'),cf=el('cookieFab');
 if(ba)ba.addEventListener('click',function(){closeC(true);});

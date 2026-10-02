@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
-<script>
+<!-- Google Analytics : chargé seulement après consentement (_legal_global.py) -->
+<script id="ga-consent">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
-  gtag('js', new Date());
-  gtag('config', 'G-ZXGFCVHHDM');
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+  window.leLoadGA=function(){if(window.__leGA)return;window.__leGA=1;gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ZXGFCVHHDM',{cookie_expires:33696000});};
+  try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')window.leLoadGA();}catch(e){}
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -229,6 +228,8 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
 <style>
 .copro-form{background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:36px;margin-bottom:48px}
 .copro-form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.copro-legal{font-size:12.5px;line-height:1.6;color:var(--c-muted);margin:4px 0 18px}
+.copro-legal a{color:var(--c-vert-txt);text-decoration:underline}
 .copro-form label{display:block;font-size:13px;font-weight:600;color:var(--c-mid);margin-bottom:6px}
 .copro-form input,.copro-form select,.copro-form textarea{width:100%;background:var(--c-bg);border:1px solid var(--c-border2);border-radius:var(--r-sm);padding:13px 15px;font-size:15px;font-family:var(--ff-b);color:var(--c-text);outline:none;box-sizing:border-box;transition:border-color .2s,box-shadow .2s}
 .copro-form input:focus,.copro-form select:focus,.copro-form textarea:focus{border-color:rgba(0,194,126,.5);box-shadow:0 0 0 3px rgba(0,194,126,.1)}
@@ -550,7 +551,7 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
         <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06…"></div>
       </div>
       <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>
-      <button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande {ARROW}</button>
+      <p class="copro-legal">En envoyant, vous acceptez que ces informations soient transmises à un seul installateur certifié IRVE partenaire, habitué aux copropriétés, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. <a href="/confidentialite.html">Confidentialité</a> · <a href="/cgu.html">Conditions d'utilisation</a>.</p><button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande {ARROW}</button>
     </div>
     <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>
   </div></div></section><section class="hs-sec hs-white" id="faq"><div class="hs-wrap hs-faq-grid"><div><span class="section-tag">Questions fréquentes</span><h2 class="hs-h2">Bornes en copropriété&nbsp;: vos questions</h2><p class="hs-lead">Les réponses aux questions que se posent syndics et conseils syndicaux.</p></div><div class="faq-city">    <details><summary>Qui peut lancer un projet de bornes en copropriété ?</summary><div><p>N'importe quel copropriétaire peut demander l'installation d'une borne pour son usage (droit à la prise). Pour un projet collectif couvrant tout le parking, c'est le conseil syndical et le syndic qui pilotent, après un vote en assemblée générale.</p></div></details>
@@ -625,7 +626,8 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
     var msg='NOUVEAU LEAD - Copropriété\n\n'+
       'Nom : '+nom+'\nRôle : '+(v('cRole')||'(non précisé)')+'\n'+
       'Copropriété : '+(v('cCopro')||'(non précisé)')+'\nNombre de lots : '+(v('cLots')||'(non précisé)')+'\n'+
-      'Email : '+email+'\nTéléphone : '+(v('cTel')||'(non renseigné)')+'\n\nProjet : '+(v('cMsg')||'(non précisé)');
+      'Email : '+email+'\nTéléphone : '+(v('cTel')||'(non renseigné)')+'\n\nProjet : '+(v('cMsg')||'(non précisé)')+
+      '\n\nConsentement : accepte la transmission à un installateur partenaire ('+new Date().toLocaleString('fr-FR')+')';
     try{
       var r=await fetch('https://api.web3forms.com/submit',{method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
@@ -658,7 +660,7 @@ document.addEventListener('click',function(e){if(nav.classList.contains('open')&
 (function(){var CK='les-eclaires-cookie-v2';function el(i){return document.getElementById(i);}
 function showFab(){var f=el('cookieFab');if(f)f.classList.add('show');}
 function openC(){var b=el('cookieBanner');if(b)b.classList.add('show');var f=el('cookieFab');if(f)f.classList.remove('show');}
-function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
+function closeC(ok){var b=el('cookieBanner');if(b)b.classList.remove('show');try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(ok&&window.leLoadGA)window.leLoadGA();if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}showFab();}
 try{if(!localStorage.getItem(CK)){setTimeout(openC,1800);}else{showFab();}}catch(e){setTimeout(openC,1800);}
 var ba=el('btnAccept'),bd=el('btnDecline'),cf=el('cookieFab');
 if(ba)ba.addEventListener('click',function(){closeC(true);});

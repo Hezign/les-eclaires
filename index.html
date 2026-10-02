@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM"></script>
-<script>
+<!-- Google Analytics : chargé seulement après consentement (_legal_global.py) -->
+<script id="ga-consent">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}catch(e){}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZXGFCVHHDM');
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+  window.leLoadGA=function(){if(window.__leGA)return;window.__leGA=1;gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZXGFCVHHDM';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-ZXGFCVHHDM',{cookie_expires:33696000});};
+  try{if(localStorage.getItem('les-eclaires-cookie-v2')==='y')window.leLoadGA();}catch(e){}
+</script>
+<script>
   // Helper de tracking (guardé) - utilisé par le simulateur et les CTA.
   // Respecte le refus de cookies (bannière : clé les-eclaires-cookie-v2, 'n' = refus).
   window.track = function(name, params){
@@ -1041,7 +1041,7 @@ function openCookie(){var b=gId('cookieBanner');if(b){b.style.display='';b.class
 function closeCookie(ok){
   var b=gId('cookieBanner');
   if(b){b.classList.remove('show');}
-  try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}
+  try{localStorage.setItem(CK,ok?'y':'n');}catch(e){}try{if(ok&&window.leLoadGA)window.leLoadGA();if(window.gtag)gtag('consent','update',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:ok?'granted':'denied'});}catch(e){}
   showCookieFab();
 }
 function initCookie(){
@@ -1197,7 +1197,7 @@ else{boot();}
           <div class="r"><div class="k">Charge</div><div class="v">1 nuit</div></div>
         </div>
         <div class="reco-row">
-          <span class="reco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <span class="reco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/></svg></span>
           <div><div class="k">Budget estimé (pose incluse)</div><div class="v">900 – 1 200 €</div></div>
           <div class="r"><div class="k">TVA</div><div class="v">5,5 %</div></div>
         </div>
@@ -1636,7 +1636,7 @@ else{boot();}
               </div>
               <p style="display:flex;align-items:center;gap:7px;margin:10px 2px 0;font-size:12.5px;line-height:1.5;color:var(--c-mid)">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                Votre email sert uniquement à vous envoyer votre récapitulatif et à vous mettre en relation. Aucune revente à des tiers. <a href="/confidentialite" style="color:var(--c-vert);text-decoration:underline">Confidentialité</a>.
+                En cliquant sur «&nbsp;Recevoir&nbsp;», vous acceptez que vos coordonnées et vos réponses soient transmises à <strong>un seul installateur certifié IRVE partenaire</strong> de votre secteur, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. Aucune revente à des tiers. <a href="/confidentialite" style="color:var(--c-vert-txt);text-decoration:underline">Confidentialité</a> · <a href="/cgu.html" style="color:var(--c-vert-txt);text-decoration:underline">Conditions d'utilisation</a>.
               </p>
             </div>
             <div class="success" id="okMsg">
@@ -1818,6 +1818,7 @@ else{boot();}
         <ul>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
+          <li><a href="/cgu.html">Conditions d'utilisation</a></li>
           <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
@@ -1940,6 +1941,7 @@ else{boot();}
             'Puissance':txt('rPow'),'Budget':txt('rBudget'),
             'Aide':txt('rAide'),'Délai':txt('rDelai'),
             'Questionnaire':(qa.length?qa.join('\n\n'):'(aucune réponse capturée)'),
+            'Consentement':'Accepte la transmission de ses coordonnées et de son projet à un installateur partenaire (clic sur Recevoir, '+new Date().toLocaleString('fr-FR')+', page '+location.pathname+')',
             message:report
           })
         });

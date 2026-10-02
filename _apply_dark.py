@@ -74,6 +74,9 @@ def apply(path):
     # Composants partagés (bouton, kicker, FAQ, espacements) hors accueil
     import _ds_shared
     _ds_shared.apply(path)
+    # GA après consentement, lien CGU, aucun dollar (toutes pages)
+    import _legal_global
+    _legal_global.apply(path)
     # Typographie française (espaces insécables, €, CTA) hors accueil
     if path != 'index.html':
         import _typo
