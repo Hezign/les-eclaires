@@ -54,7 +54,7 @@ for f in sorted(BLOG.glob("*.html")):
                 "datePublished": date, "dateModified": datemod,
                 "author": {"@type": "Organization", "name": "Les Éclairés", "url": f"{BASE}/"},
                 "publisher": {"@type": "Organization", "name": "Les Éclairés",
-                              "logo": {"@type": "ImageObject", "url": f"{BASE}/favicon.png"}},
+                              "logo": {"@type": "ImageObject", "url": f"{BASE}/logo-eclaires.png"}},
             }
             inserts.append(json.dumps(bp, ensure_ascii=False, separators=(",", ":")))
 

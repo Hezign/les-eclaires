@@ -86,7 +86,7 @@ DEFAULT_QUERIES = [
 COVER_CSS = """<style id="cover-css">
 .hero.has-photo{position:relative;isolation:isolate;margin-top:var(--topbar-h)}
 .hero.has-photo .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero.has-photo .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,12,.42) 0%,rgba(8,16,12,.5) 45%,rgba(8,16,12,.8) 100%)}
+.hero.has-photo .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,12,.7) 0%,rgba(8,16,12,.76) 45%,rgba(8,16,12,.9) 100%)}.hero.has-photo .hero-in{text-shadow:0 1px 14px rgba(0,0,0,.45)}
 .hero.has-photo .hero-in{position:relative;z-index:2}
 .article-hero.has-photo{height:auto;padding:0;overflow:hidden;border-radius:20px;background:#0d1a14}
 .article-hero.has-photo img{display:block;width:100%;height:340px;object-fit:cover;border-radius:20px}

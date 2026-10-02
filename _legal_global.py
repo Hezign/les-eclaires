@@ -55,6 +55,7 @@ FOOTER_TOP = """<div class="footer-top">
         <ul>
           <li><a href="/simulateur">Simulateur IRVE</a></li>
           <li><a href="/copropriete">Bornes en copropriété</a></li>
+          <li><a href="/entreprise">Bornes en entreprise</a></li>
           <li><a href="/partenaires.html">Devenir partenaire</a></li>
           <li><a href="/#histoire">Notre histoire</a></li>
         </ul>

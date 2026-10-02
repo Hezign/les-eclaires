@@ -203,7 +203,7 @@ def build_seo_block(a):
           "mainEntityOfPage":{"@type":"WebPage","@id":url},
           "datePublished":a["date"],"dateModified":a["date"],
           "author":{"@type":"Organization","name":"Les Éclairés","url":f"{BASE}/"},
-          "publisher":{"@type":"Organization","name":"Les Éclairés","logo":{"@type":"ImageObject","url":f"{BASE}/favicon.png"}}}
+          "publisher":{"@type":"Organization","name":"Les Éclairés","logo":{"@type":"ImageObject","url":f"{BASE}/logo-eclaires.png"}}}
     bc = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Accueil","item":f"{BASE}/"},
           {"@type":"ListItem","position":2,"name":"Blog","item":f"{BASE}/blog/"},

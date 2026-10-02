@@ -90,6 +90,9 @@ body += hs.section('<div class="copro-form">\n    <div id="cBox">\n      <div cl
 body += hs.faq_section("Questions fréquentes", "Bornes en copropriété&nbsp;: vos questions",
   "Les réponses aux questions que se posent syndics et conseils syndicaux.", faq_html)
 
+# Le formulaire est une chaîne non formatée : on y injecte la flèche ici
+body = body.replace('{ARROW}', ARROW)
+
 html=f'''<!DOCTYPE html>
 <html lang="fr">
 <head>

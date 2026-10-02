@@ -11,6 +11,7 @@ Les Éclairés est un guide indépendant dédié à l'installation de bornes de 
 - [Accueil](https://leseclaires.fr/) : présentation du guide indépendant IRVE et accès au simulateur
 - [Simulateur IRVE gratuit](https://leseclaires.fr/simulateur) : quelques questions, résultat immédiat (puissance, budget, aides, délai)
 - [Bornes de recharge en copropriété](https://leseclaires.fr/copropriete) : guide pour syndics et conseils syndicaux, droit à la prise, prime ADVENIR
+- [Bornes de recharge en entreprise et flottes](https://leseclaires.fr/entreprise) : obligations loi LOM, dimensionnement, pilotage de charge, aides et TVA
 - [Partenaires installateurs](https://leseclaires.fr/partenaires.html) : rejoindre le réseau d'installateurs certifiés IRVE
 
 ## Blog / Guides

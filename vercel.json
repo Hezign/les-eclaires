@@ -25,6 +25,10 @@
       "destination": "/copropriete.html"
     },
     {
+      "source": "/entreprise",
+      "destination": "/entreprise.html"
+    },
+    {
       "source": "/villes",
       "destination": "/villes.html"
     }

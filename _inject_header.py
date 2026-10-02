@@ -17,7 +17,7 @@ NAV_BLOG = (_NAV_FULL
 TOPBAR = '''<!-- TOPBAR PARTENAIRE -->
 <div class="topbar" id="topbar">
   <a class="tb-link" href="/partenaires.html">
-    <svg class="tb-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z"/></svg>
+    <svg class="tb-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.27 2L19.27 2Q22.17 2 20.12 4.05L13.42 10.76Q12.08 12.09 13.97 12.09L19.08 12.09Q21.86 12.09 19.9 14.06L13.91 20.04Q11.95 22 11.95 19.22L11.95 13.45Q11.95 12.19 10.69 12.19L4.73 12.19Q1.83 12.19 3.88 10.14L11.84 2.18Q12.02 2 12.27 2Z"/></svg>
     <span class="tb-txt"><strong>Vous &#234;tes installateur IRVE&nbsp;?</strong> Recevez des demandes qualifi&#233;es, sans prospecter.</span>
   </a>
   <button class="tb-close" aria-label="Fermer le bandeau" onclick="this.closest('.topbar').classList.add('hidden');document.body.classList.add('tb-off')">&times;</button>

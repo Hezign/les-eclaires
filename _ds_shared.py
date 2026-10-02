@@ -15,7 +15,7 @@ import os
 import re
 
 BOLT = ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E"
-        "%3Cpath d='M13 2L4 13.5h6.2L9 22l9-12.5h-6.2L13 2z'/%3E%3C/svg%3E\") center/contain no-repeat")
+        "%3Cpath d='M12.27 2L19.27 2Q22.17 2 20.12 4.05L13.42 10.76Q12.08 12.09 13.97 12.09L19.08 12.09Q21.86 12.09 19.9 14.06L13.91 20.04Q11.95 22 11.95 19.22L11.95 13.45Q11.95 12.19 10.69 12.19L4.73 12.19Q1.83 12.19 3.88 10.14L11.84 2.18Q12.02 2 12.27 2Z'/%3E%3C/svg%3E\") center/contain no-repeat")
 CHEVRON = ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' "
            "stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E"
            "%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\") center/contain no-repeat")
