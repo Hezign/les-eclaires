@@ -662,14 +662,22 @@ footer{border-top:1px solid var(--c-border);background:var(--c-bg);padding:48px 
 .simp-step p{font-size:14px;line-height:1.65;color:var(--c-muted);font-weight:300;margin:0}
 
 /* Bandeau confiance */
-.simp-trust{padding:0 0 80px}
-.simp-trust-box{background:var(--c-band);border-radius:var(--r-xl);padding:44px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.simp-trust-item .n{font-family:var(--ff-h);font-size:40px;font-weight:800;letter-spacing:-.05em;color:var(--c-vert-lt);line-height:1;margin-bottom:8px}
-.simp-trust-item p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.72);margin:0;font-weight:300}
+/* Après la bande noire des étapes : bande blanche de chiffres, séparateurs fins (plus de carte noire isolée) */
+.simp-trust{padding:0;background:var(--c-bg2);border-bottom:1px solid var(--c-border)}
+.simp-trust .sw{padding-top:56px;padding-bottom:56px}
+.simp-trust-box{background:none;border-radius:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.simp-trust-item{padding:0 32px;border-left:1px solid var(--c-border)}
+.simp-trust-item:first-child{padding-left:0;border-left:none}
+.simp-trust-item .n{font-family:var(--ff-h);font-size:44px;font-weight:800;letter-spacing:-.05em;color:var(--c-ink);line-height:1;margin-bottom:10px}
+.simp-trust-item p{font-size:14.5px;line-height:1.6;color:var(--c-mid);margin:0;font-weight:400}
+/* Haut de page : pas de double marge entre l'accroche et le simulateur */
+.simp-hero .sw{padding-top:0;padding-bottom:8px}
+#simulateur>.sw{padding-top:24px}
 
 @media(max-width:860px){
   .simp-grid{grid-template-columns:1fr 1fr}
-  .simp-trust-box{grid-template-columns:1fr;gap:24px;padding:32px 26px}
+  .simp-trust-box{grid-template-columns:1fr;gap:24px}
+  .simp-trust-item{padding:0;border-left:none}
 }
 @media(max-width:520px){
   .simp-grid{grid-template-columns:1fr}
@@ -736,8 +744,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 .faq-city details>div,.pt-faq details p{padding:0 24px 20px;font-size:15px;line-height:1.8;color:var(--c-mid)}
 .faq-city details>div a{color:var(--c-vert-txt)}
 /* Espace commun entre le header et le début du contenu */
-.hero-city,.page,.nf-wrap,.blog-wrap,.pt-hero{padding-top:calc(var(--topbar-h,40px) + 120px)}
-.simp-hero{padding-top:calc(var(--topbar-h,40px) + 100px)}
+.hero-city,.page,.simp-hero,.nf-wrap,.blog-wrap,.pt-hero{padding-top:calc(var(--topbar-h,40px) + 120px)}
 @media(max-width:640px){.hero-city,.page,.simp-hero,.nf-wrap,.blog-wrap,.pt-hero{padding-top:calc(var(--topbar-h,40px) + 100px)!important}}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
