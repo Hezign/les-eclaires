@@ -105,7 +105,7 @@ CODE = {
  'nice':'06','lille':'59',
 }
 # Villes phares affichées dans le footer (le reste via la page hub /villes)
-FLAGSHIP = ['aix-en-provence','lyon','nice','lille','nantes','bordeaux','toulouse','marseille']
+FLAGSHIP = ['aix-en-provence','annecy','lyon','nantes','bordeaux','montpellier','toulouse','rennes']
 REGION_ORDER = ["Auvergne-Rhône-Alpes","Nouvelle-Aquitaine","Occitanie",
   "Provence-Alpes-Côte d'Azur","Pays de la Loire","Bretagne","Grand Est",
   "Centre-Val de Loire","Île-de-France","Hauts-de-France","Corse"]
