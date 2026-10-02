@@ -32,9 +32,18 @@ EXTRA_CSS = '''<style>
 .breadcrumb{font-size:13px;color:var(--c-muted);margin-bottom:18px}
 .breadcrumb a{color:var(--c-muted);text-decoration:none}.breadcrumb a:hover{color:var(--c-vert)}
 .breadcrumb span{color:var(--c-text)}
-.copro-box{background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-xl);padding:32px;margin:8px 0 48px}
-.copro-box h3{font-family:var(--ff-h);font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--c-ink);margin:0 0 10px}
-.copro-box p{font-size:15px;line-height:1.65;color:var(--c-text);margin:0 0 18px}
+.copro-box{background:var(--c-band);border-radius:var(--r-xl);padding:36px;margin:8px 0 56px}
+.copro-box h3{font-family:var(--ff-h);font-size:22px;font-weight:800;letter-spacing:-.03em;color:#fff;margin:0 0 10px}
+.copro-box p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.72);margin:0 0 22px;max-width:640px}
+.info-grid.steps-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
+.steps-free{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--c-mid);margin:0 0 56px}
+.steps-free strong{color:var(--c-ink)}
+.steps-free svg{width:18px;height:18px;color:var(--c-vert-txt);flex-shrink:0}
+.related{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 48px}
+.related .rl{font-size:14px;color:var(--c-muted);margin-right:4px}
+.city-body .related a{display:inline-flex;padding:8px 16px;border-radius:999px;background:var(--c-bg2);border:1px solid var(--c-border);color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:14px;text-decoration:none;transition:border-color .2s}
+.city-body .related a:hover{border-color:var(--c-vert-br);color:var(--c-vert-txt)}
+@media(max-width:860px){.info-grid.steps-3{grid-template-columns:minmax(0,1fr)}}
 .faq-city{margin-bottom:48px}
 .faq-city details{border:1px solid var(--c-border);border-radius:var(--r-lg);margin-bottom:12px;background:var(--c-bg2);overflow:hidden}
 .faq-city summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:var(--ff-h);font-weight:700;font-size:16px;color:var(--c-ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
@@ -176,12 +185,12 @@ AIDE_CARDS = '''  <div class="info-grid">
     </div>
   </div>'''
 
-STEPS = '''  <div class="info-grid">
+STEPS = '''  <div class="info-grid steps-3">
     <div class="info-card"><h4>1. Simulateur gratuit</h4><p>Répondez à quelques questions simples sur votre logement et votre véhicule. Vous recevez immédiatement une recommandation personnalisée.</p></div>
     <div class="info-card"><h4>2. Mise en relation</h4><p>On vous met en contact avec un électricien certifié IRVE dans votre secteur. Un seul contact, pas une liste à éplucher.</p></div>
     <div class="info-card"><h4>3. Installation</h4><p>Vous savez exactement ce que vous allez payer et les aides que vous allez toucher avant que les travaux commencent.</p></div>
-    <div class="info-card"><h4>100 % gratuit pour vous</h4><p>Le simulateur et les conseils sont entièrement gratuits. On est rémunérés par l'installateur, pas par vous.</p></div>
-  </div>'''
+  </div>
+  <p class="steps-free"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>100&nbsp;% gratuit pour vous.</strong> On est rémunérés par l'installateur, pas par vous.</span></p>'''
 
 def faq_block(name, dept, loc):
     qa = [
@@ -209,8 +218,8 @@ def related(slug):
     reg = REGION[slug]
     sibs = [(sl,lb) for sl,lb in ALL_CITIES if sl!=slug and REGION.get(sl)==reg][:4]
     if not sibs: return ''
-    links = ', '.join(f'<a href="/villes/borne-recharge-{sl}.html">{lb}</a>' for sl,lb in sibs)
-    return f'  <p class="related">Autres villes en {reg} : {links}.</p>\n'
+    links = ''.join(f'<a href="/villes/borne-recharge-{sl}.html">{lb}</a>' for sl,lb in sibs)
+    return f'  <div class="related"><span class="rl">Autres villes en {reg}</span>{links}</div>\n'
 
 # ---------------- Données des 17 villes ----------------
 CITIES = [
@@ -448,14 +457,19 @@ def copro_box(name):
 '''
 
 HUB_CSS = '''<style>
-.villes-region{margin-bottom:44px}
-.villes-region h2{font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;margin:0 0 18px;color:var(--c-ink)}
-.villes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.villes-grid a{display:block;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:16px 18px;text-decoration:none;color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:15px;letter-spacing:-.02em;transition:border-color .2s,transform .2s,box-shadow .2s}
-.villes-grid a:hover{border-color:var(--c-vert-br);transform:translateY(-2px);box-shadow:var(--shadow-card)}
-.villes-grid a span{display:block;font-size:12.5px;color:var(--c-muted);font-weight:400;font-family:var(--ff-b);margin-top:3px}
-@media(max-width:700px){.villes-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:460px){.villes-grid{grid-template-columns:1fr}}
+.villes-search{display:block;position:relative;max-width:440px;margin:8px 0 32px}
+.villes-search input{width:100%;font:inherit;font-size:15px;padding:14px 18px 14px 46px;border-radius:999px;border:1px solid var(--c-border2);background:var(--c-bg2);color:var(--c-text);outline:none}
+.villes-search input:focus{border-color:var(--c-vert-br);box-shadow:0 0 0 3px var(--c-vert-bg)}
+.villes-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--c-muted)}
+.villes-regions{columns:3 280px;column-gap:16px;margin-bottom:48px}
+.villes-region{break-inside:avoid;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:20px 22px;margin:0 0 16px}
+.villes-region h2{font-family:var(--ff-h);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;color:var(--c-muted)}
+.villes-grid{display:flex;flex-direction:column}
+.villes-grid a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--c-border);text-decoration:none;color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:16px;letter-spacing:-.02em;transition:color .2s}
+.villes-grid a:first-child{border-top:none}
+.villes-grid a:hover{color:var(--c-vert-txt)}
+.villes-grid a span{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:400;color:var(--c-muted)}
+.villes-empty{display:none;color:var(--c-mid);margin:0 0 48px}
 </style>'''
 
 def build_hub():
@@ -474,8 +488,8 @@ def build_hub():
             pos+=1
             item_ld.append({"@type":"ListItem","position":pos,"name":f"Borne de recharge {lb}",
                             "url":f"https://leseclaires.fr/villes/borne-recharge-{sl}.html"})
-            cards+=f'      <a href="/villes/borne-recharge-{sl}.html">Borne de recharge {lb}<span>{reg} · {CODE[sl]}</span></a>\n'
-        sections+=f'  <div class="villes-region">\n    <h2>{reg}</h2>\n    <div class="villes-grid">\n{cards}    </div>\n  </div>\n\n'
+            cards+=f'      <a href="/villes/borne-recharge-{sl}.html" aria-label="Borne de recharge {lb}">{lb}<span>{CODE[sl]}</span></a>\n'
+        sections+=f'  <div class="villes-region">\n    <h2>{reg}</h2>\n    <div class="villes-grid">\n{cards}    </div>\n  </div>\n'
     graph={"@context":"https://schema.org","@graph":[
       {"@type":"CollectionPage","name":"Bornes de recharge par ville","description":desc,"url":url},
       {"@type":"ItemList","itemListElement":item_ld},
@@ -528,7 +542,13 @@ def build_hub():
 </div>
 
 <div class="city-body">
-{sections}  <div class="cta-box">
+  <span class="section-tag">{pos} villes</span>
+  <h2 class="section-h2">Trouvez le guide de votre ville</h2>
+  <label class="villes-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="villeQ" placeholder="Rechercher une ville ou un département" aria-label="Rechercher une ville ou un département"></label>
+  <div class="villes-regions">
+{sections}  </div>
+  <p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>
+  <div class="cta-box">
     <h3>Votre ville n'est pas listée ?</h3>
     <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
     <a href="/simulateur" class="btn-vert">Démarrer le simulateur {ARROW}</a>
@@ -537,6 +557,13 @@ def build_hub():
 
 {footer()}
   <script src="/cursor.js" defer></script>
+<script>(function(){{var q=document.getElementById('villeQ');if(!q)return;
+function n(t){{return t.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase();}}
+q.addEventListener('input',function(){{var v=n(q.value.trim()),any=false;
+document.querySelectorAll('.villes-region').forEach(function(r){{var vis=0;
+r.querySelectorAll('.villes-grid a').forEach(function(a){{var ok=!v||n(a.textContent+' '+r.querySelector('h2').textContent).indexOf(v)>-1;a.style.display=ok?'':'none';if(ok)vis++;}});
+r.style.display=vis?'':'none';if(vis)any=true;}});
+document.getElementById('villeEmpty').style.display=any?'none':'block';}});}})();</script>
 </body>
 </html>
 '''

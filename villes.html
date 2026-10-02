@@ -301,9 +301,18 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
 .breadcrumb{font-size:13px;color:var(--c-muted);margin-bottom:18px}
 .breadcrumb a{color:var(--c-muted);text-decoration:none}.breadcrumb a:hover{color:var(--c-vert)}
 .breadcrumb span{color:var(--c-text)}
-.copro-box{background:var(--c-vert-bg);border:1px solid var(--c-vert-br);border-radius:var(--r-xl);padding:32px;margin:8px 0 48px}
-.copro-box h3{font-family:var(--ff-h);font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--c-ink);margin:0 0 10px}
-.copro-box p{font-size:15px;line-height:1.65;color:var(--c-text);margin:0 0 18px}
+.copro-box{background:var(--c-band);border-radius:var(--r-xl);padding:36px;margin:8px 0 56px}
+.copro-box h3{font-family:var(--ff-h);font-size:22px;font-weight:800;letter-spacing:-.03em;color:#fff;margin:0 0 10px}
+.copro-box p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.72);margin:0 0 22px;max-width:640px}
+.info-grid.steps-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
+.steps-free{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--c-mid);margin:0 0 56px}
+.steps-free strong{color:var(--c-ink)}
+.steps-free svg{width:18px;height:18px;color:var(--c-vert-txt);flex-shrink:0}
+.related{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 48px}
+.related .rl{font-size:14px;color:var(--c-muted);margin-right:4px}
+.city-body .related a{display:inline-flex;padding:8px 16px;border-radius:999px;background:var(--c-bg2);border:1px solid var(--c-border);color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:14px;text-decoration:none;transition:border-color .2s}
+.city-body .related a:hover{border-color:var(--c-vert-br);color:var(--c-vert-txt)}
+@media(max-width:860px){.info-grid.steps-3{grid-template-columns:minmax(0,1fr)}}
 .faq-city{margin-bottom:48px}
 .faq-city details{border:1px solid var(--c-border);border-radius:var(--r-lg);margin-bottom:12px;background:var(--c-bg2);overflow:hidden}
 .faq-city summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:var(--ff-h);font-weight:700;font-size:16px;color:var(--c-ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
@@ -323,14 +332,19 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
 @media(max-width:520px){.footer-cities-list{column-count:1}}
 </style>
 <style>
-.villes-region{margin-bottom:44px}
-.villes-region h2{font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;margin:0 0 18px;color:var(--c-ink)}
-.villes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.villes-grid a{display:block;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:16px 18px;text-decoration:none;color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:15px;letter-spacing:-.02em;transition:border-color .2s,transform .2s,box-shadow .2s}
-.villes-grid a:hover{border-color:var(--c-vert-br);transform:translateY(-2px);box-shadow:var(--shadow-card)}
-.villes-grid a span{display:block;font-size:12.5px;color:var(--c-muted);font-weight:400;font-family:var(--ff-b);margin-top:3px}
-@media(max-width:700px){.villes-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:460px){.villes-grid{grid-template-columns:1fr}}
+.villes-search{display:block;position:relative;max-width:440px;margin:8px 0 32px}
+.villes-search input{width:100%;font:inherit;font-size:15px;padding:14px 18px 14px 46px;border-radius:999px;border:1px solid var(--c-border2);background:var(--c-bg2);color:var(--c-text);outline:none}
+.villes-search input:focus{border-color:var(--c-vert-br);box-shadow:0 0 0 3px var(--c-vert-bg)}
+.villes-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--c-muted)}
+.villes-regions{columns:3 280px;column-gap:16px;margin-bottom:48px}
+.villes-region{break-inside:avoid;background:var(--c-bg2);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:20px 22px;margin:0 0 16px}
+.villes-region h2{font-family:var(--ff-h);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;color:var(--c-muted)}
+.villes-grid{display:flex;flex-direction:column}
+.villes-grid a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--c-border);text-decoration:none;color:var(--c-ink);font-family:var(--ff-h);font-weight:700;font-size:16px;letter-spacing:-.02em;transition:color .2s}
+.villes-grid a:first-child{border-top:none}
+.villes-grid a:hover{color:var(--c-vert-txt)}
+.villes-grid a span{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:400;color:var(--c-muted)}
+.villes-empty{display:none;color:var(--c-mid);margin:0 0 48px}
 </style>
 <style>
 .hero-city{max-width:1080px}
@@ -485,99 +499,94 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 </div>
 
 <div class="city-body">
+  <span class="section-tag">27 villes</span>
+  <h2 class="section-h2">Trouvez le guide de votre ville</h2>
+  <label class="villes-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="villeQ" placeholder="Rechercher une ville ou un département" aria-label="Rechercher une ville ou un département"></label>
+  <div class="villes-regions">
   <div class="villes-region">
     <h2>Auvergne-Rhône-Alpes</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-annecy.html">Borne de recharge Annecy<span>Auvergne-Rhône-Alpes · 74</span></a>
-      <a href="/villes/borne-recharge-chambery.html">Borne de recharge Chambéry<span>Auvergne-Rhône-Alpes · 73</span></a>
-      <a href="/villes/borne-recharge-clermont-ferrand.html">Borne de recharge Clermont-Ferrand<span>Auvergne-Rhône-Alpes · 63</span></a>
-      <a href="/villes/borne-recharge-grenoble.html">Borne de recharge Grenoble<span>Auvergne-Rhône-Alpes · 38</span></a>
-      <a href="/villes/borne-recharge-lyon.html">Borne de recharge Lyon<span>Auvergne-Rhône-Alpes · 69</span></a>
-      <a href="/villes/borne-recharge-saint-etienne.html">Borne de recharge Saint-Étienne<span>Auvergne-Rhône-Alpes · 42</span></a>
-      <a href="/villes/borne-recharge-valence.html">Borne de recharge Valence<span>Auvergne-Rhône-Alpes · 26</span></a>
+      <a href="/villes/borne-recharge-annecy.html" aria-label="Borne de recharge Annecy">Annecy<span>74</span></a>
+      <a href="/villes/borne-recharge-chambery.html" aria-label="Borne de recharge Chambéry">Chambéry<span>73</span></a>
+      <a href="/villes/borne-recharge-clermont-ferrand.html" aria-label="Borne de recharge Clermont-Ferrand">Clermont-Ferrand<span>63</span></a>
+      <a href="/villes/borne-recharge-grenoble.html" aria-label="Borne de recharge Grenoble">Grenoble<span>38</span></a>
+      <a href="/villes/borne-recharge-lyon.html" aria-label="Borne de recharge Lyon">Lyon<span>69</span></a>
+      <a href="/villes/borne-recharge-saint-etienne.html" aria-label="Borne de recharge Saint-Étienne">Saint-Étienne<span>42</span></a>
+      <a href="/villes/borne-recharge-valence.html" aria-label="Borne de recharge Valence">Valence<span>26</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Nouvelle-Aquitaine</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-bordeaux.html">Borne de recharge Bordeaux<span>Nouvelle-Aquitaine · 33</span></a>
-      <a href="/villes/borne-recharge-la-rochelle.html">Borne de recharge La Rochelle<span>Nouvelle-Aquitaine · 17</span></a>
-      <a href="/villes/borne-recharge-niort.html">Borne de recharge Niort<span>Nouvelle-Aquitaine · 79</span></a>
-      <a href="/villes/borne-recharge-pau.html">Borne de recharge Pau<span>Nouvelle-Aquitaine · 64</span></a>
-      <a href="/villes/borne-recharge-poitiers.html">Borne de recharge Poitiers<span>Nouvelle-Aquitaine · 86</span></a>
+      <a href="/villes/borne-recharge-bordeaux.html" aria-label="Borne de recharge Bordeaux">Bordeaux<span>33</span></a>
+      <a href="/villes/borne-recharge-la-rochelle.html" aria-label="Borne de recharge La Rochelle">La Rochelle<span>17</span></a>
+      <a href="/villes/borne-recharge-niort.html" aria-label="Borne de recharge Niort">Niort<span>79</span></a>
+      <a href="/villes/borne-recharge-pau.html" aria-label="Borne de recharge Pau">Pau<span>64</span></a>
+      <a href="/villes/borne-recharge-poitiers.html" aria-label="Borne de recharge Poitiers">Poitiers<span>86</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Occitanie</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-montpellier.html">Borne de recharge Montpellier<span>Occitanie · 34</span></a>
-      <a href="/villes/borne-recharge-toulouse.html">Borne de recharge Toulouse<span>Occitanie · 31</span></a>
+      <a href="/villes/borne-recharge-montpellier.html" aria-label="Borne de recharge Montpellier">Montpellier<span>34</span></a>
+      <a href="/villes/borne-recharge-toulouse.html" aria-label="Borne de recharge Toulouse">Toulouse<span>31</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Provence-Alpes-Côte d'Azur</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-aix-en-provence.html">Borne de recharge Aix-en-Provence<span>Provence-Alpes-Côte d'Azur · 13</span></a>
-      <a href="/villes/borne-recharge-marseille.html">Borne de recharge Marseille<span>Provence-Alpes-Côte d'Azur · 13</span></a>
-      <a href="/villes/borne-recharge-nice.html">Borne de recharge Nice<span>Provence-Alpes-Côte d'Azur · 06</span></a>
+      <a href="/villes/borne-recharge-aix-en-provence.html" aria-label="Borne de recharge Aix-en-Provence">Aix-en-Provence<span>13</span></a>
+      <a href="/villes/borne-recharge-marseille.html" aria-label="Borne de recharge Marseille">Marseille<span>13</span></a>
+      <a href="/villes/borne-recharge-nice.html" aria-label="Borne de recharge Nice">Nice<span>06</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Pays de la Loire</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-angers.html">Borne de recharge Angers<span>Pays de la Loire · 49</span></a>
-      <a href="/villes/borne-recharge-nantes.html">Borne de recharge Nantes<span>Pays de la Loire · 44</span></a>
+      <a href="/villes/borne-recharge-angers.html" aria-label="Borne de recharge Angers">Angers<span>49</span></a>
+      <a href="/villes/borne-recharge-nantes.html" aria-label="Borne de recharge Nantes">Nantes<span>44</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Bretagne</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-rennes.html">Borne de recharge Rennes<span>Bretagne · 35</span></a>
-      <a href="/villes/borne-recharge-vannes.html">Borne de recharge Vannes<span>Bretagne · 56</span></a>
+      <a href="/villes/borne-recharge-rennes.html" aria-label="Borne de recharge Rennes">Rennes<span>35</span></a>
+      <a href="/villes/borne-recharge-vannes.html" aria-label="Borne de recharge Vannes">Vannes<span>56</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Grand Est</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-metz.html">Borne de recharge Metz<span>Grand Est · 57</span></a>
-      <a href="/villes/borne-recharge-strasbourg.html">Borne de recharge Strasbourg<span>Grand Est · 67</span></a>
+      <a href="/villes/borne-recharge-metz.html" aria-label="Borne de recharge Metz">Metz<span>57</span></a>
+      <a href="/villes/borne-recharge-strasbourg.html" aria-label="Borne de recharge Strasbourg">Strasbourg<span>67</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Centre-Val de Loire</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-tours.html">Borne de recharge Tours<span>Centre-Val de Loire · 37</span></a>
+      <a href="/villes/borne-recharge-tours.html" aria-label="Borne de recharge Tours">Tours<span>37</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Île-de-France</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-paris.html">Borne de recharge Paris<span>Île-de-France · 75</span></a>
+      <a href="/villes/borne-recharge-paris.html" aria-label="Borne de recharge Paris">Paris<span>75</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Hauts-de-France</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-lille.html">Borne de recharge Lille<span>Hauts-de-France · 59</span></a>
+      <a href="/villes/borne-recharge-lille.html" aria-label="Borne de recharge Lille">Lille<span>59</span></a>
     </div>
   </div>
-
   <div class="villes-region">
     <h2>Corse</h2>
     <div class="villes-grid">
-      <a href="/villes/borne-recharge-corse.html">Borne de recharge Corse<span>Corse · 2A/2B</span></a>
+      <a href="/villes/borne-recharge-corse.html" aria-label="Borne de recharge Corse">Corse<span>2A/2B</span></a>
     </div>
   </div>
-
+  </div>
+  <p class="villes-empty" id="villeEmpty">Pas encore de guide pour cette ville : le simulateur couvre toute la France.</p>
   <div class="cta-box">
     <h3>Votre ville n'est pas listée ?</h3>
     <p>Pas d'inquiétude : on couvre toute la France. Lancez le simulateur, on vous met en relation avec un installateur certifié près de chez vous.</p>
@@ -637,6 +646,13 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
   </div>
 </footer>
   <script src="/cursor.js" defer></script>
+<script>(function(){var q=document.getElementById('villeQ');if(!q)return;
+function n(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+q.addEventListener('input',function(){var v=n(q.value.trim()),any=false;
+document.querySelectorAll('.villes-region').forEach(function(r){var vis=0;
+r.querySelectorAll('.villes-grid a').forEach(function(a){var ok=!v||n(a.textContent+' '+r.querySelector('h2').textContent).indexOf(v)>-1;a.style.display=ok?'':'none';if(ok)vis++;});
+r.style.display=vis?'':'none';if(vis)any=true;});
+document.getElementById('villeEmpty').style.display=any?'none':'block';});})();</script>
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
   <p>&#x1F36A; <strong>Cookies</strong> : On utilise des cookies pour analyser l'audience et am&#233;liorer votre exp&#233;rience. Aucune donn&#233;e n'est revendue &#224; des tiers.</p>
