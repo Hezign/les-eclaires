@@ -86,3 +86,6 @@ if __name__ == '__main__':
     for f in targets:
         normalize(f)
     print(f"{len(targets)} article(s) normalisé(s) sur la DA + header")
+    # Catégories normalisées + index du blog (filtres, dates complètes)
+    import _blog_index
+    _blog_index.badges(); _blog_index.build()

@@ -114,10 +114,34 @@ CSS = '''<style id="partner-css">
 .pt-faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--c-muted);flex:none}
 .pt-faq details[open] summary::after{content:"\\2212"}
 .pt-faq details p{margin:0;padding:0 22px 20px;font-size:15px;color:var(--c-mid);line-height:1.7}
+.pt-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pt-res a{display:flex;flex-direction:column;gap:8px;background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:24px 26px;text-decoration:none;transition:border-color .2s,transform .2s}
+.pt-res a:hover{border-color:var(--c-vert-br);transform:translateY(-2px)}
+.pt-res strong{font-family:var(--ff-h);font-size:18px;font-weight:700;letter-spacing:-.025em;color:var(--c-ink)}
+.pt-res span{font-size:14.5px;line-height:1.6;color:var(--c-mid)}
+.pt-res em{font-style:normal;font-family:var(--ff-h);font-weight:700;font-size:14px;color:var(--c-vert-txt);margin-top:4px}
+@media(max-width:640px){.pt-res{grid-template-columns:minmax(0,1fr)}}
 .pt-sec a.pt-inline{color:var(--c-vert-txt);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:960px){.pt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.pt-split{grid-template-columns:minmax(0,1fr);gap:32px}}
 @media(max-width:640px){.pt-wrap{padding:0 20px}.pt-hero{padding:calc(var(--topbar-h,0px) + 100px) 0 56px}.pt-sec,.pt-form-sec{padding:64px 0}.pt-grid,.pt-roles,.pt-steps{grid-template-columns:minmax(0,1fr)}.pt-card,.pt-role,.pt-price{padding:24px}.pt-form-sec .form-card{padding:24px}}
 </style>'''
+
+
+RES = '''<!--partner-res-->
+<section class="pt-sec alt">
+  <div class="pt-wrap">
+    <span class="pt-kicker">Ressources installateurs</span>
+    <h2 class="pt-h2">Pour aller plus loin</h2>
+    <p class="pt-lead">Nos guides pour les professionnels de la recharge : qualification, outils et développement de votre activité.</p>
+    <div class="pt-res">
+      <a href="/blog/devenir-installateur-agree-advenir.html"><strong>Devenir installateur agréé ADVENIR</strong><span>Qualification IRVE, conditions et démarches pour rendre vos chantiers éligibles.</span><em>Lire le guide →</em></a>
+      <a href="/blog/choisir-installateur-irve-certifie.html"><strong>Reconnaître un installateur IRVE certifié</strong><span>Ce que vérifient les particuliers avant de signer un devis.</span><em>Lire le guide →</em></a>
+      <a href="/blog/logiciel-gestion-installateur-irve.html"><strong>Quel logiciel pour un installateur IRVE&nbsp;?</strong><span>Gestion de chantier ou supervision des bornes : les fonctions à prioriser.</span><em>Lire le guide →</em></a>
+      <a href="/blog/trouver-installateur-borne-recharge-pres-de-chez-soi.html"><strong>Se faire trouver par les particuliers</strong><span>Comment un client cherche un installateur de borne près de chez lui.</span><em>Lire le guide →</em></a>
+    </div>
+  </div>
+</section>
+<!--/partner-res-->'''
 
 
 def li(items, dark=False):
@@ -308,10 +332,15 @@ def build():
     start = s.find('<!--partner-body-->')
     if start == -1:
         start = s.find('<div class="page">')
-    end = s.find('<section style="background:var(--c-bg2);border-top:1px solid var(--c-border)">')
+    end = s.find('<!--partner-res-->')
+    if end == -1:
+        end = s.find('<section style="background:var(--c-bg2);border-top:1px solid var(--c-border)">')
     if start == -1 or end == -1 or end < start:
         raise SystemExit('structure inattendue')
     s = s[:start] + body(form_inner) + '\n' + s[end:]
+    s = re.sub(r'<!--partner-res-->.*?<!--/partner-res-->', lambda m: RES, s, count=1, flags=re.S)
+    s = re.sub(r'<section style="background:var\(--c-bg2\);border-top:1px solid var\(--c-border\)">.*?</section>',
+               lambda m: RES, s, count=1, flags=re.S)
 
     # Validation + envoi de la qualification
     s = s.replace("var fp=v('fp'),fn=v('fn'),fe=v('fe'),fc=v('fc'),ft=v('ft'),fz=v('fz'),fm=v('fm');",

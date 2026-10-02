@@ -206,6 +206,21 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 .blog-card:hover .bc-media img{transform:scale(1.04)}
 @media(max-width:640px){.blog-card .bc-media{margin:-28px -28px 18px}}
 </style>
+<style id="blog-index-css">
+.blog-wrap{max-width:1032px;width:100%;box-sizing:border-box}
+.blog-head{text-align:left;max-width:720px;margin:0 0 36px}
+.blog-head h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.045em}
+.blog-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px}
+.blog-filters button{font:inherit;font-family:var(--ff-h);font-size:14px;font-weight:700;letter-spacing:-.01em;padding:9px 16px;border-radius:999px;border:1px solid var(--c-border2);background:var(--c-bg2);color:var(--c-ink);cursor:pointer;transition:border-color .2s,background .2s}
+.blog-filters button:hover{border-color:var(--c-vert-br)}
+.blog-filters button[aria-pressed="true"]{background:var(--c-band);border-color:var(--c-band);color:#fff}
+html[data-theme="dark"] .blog-filters button[aria-pressed="true"]{background:var(--c-vert-lt);border-color:var(--c-vert-lt);color:#05231a}
+.blog-filters .n{opacity:.55;font-weight:500;margin-left:6px}
+.bc-tag{color:var(--c-vert-txt)}
+.bc-more{color:var(--c-vert-txt)}
+.blog-card[hidden]{display:none}
+@media(max-width:640px){.blog-filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -24px 28px;padding:0 24px 4px;scrollbar-width:none}.blog-filters::-webkit-scrollbar{display:none}.blog-filters button{flex:none}}
+</style>
 <style id="ds-shared">
 /* Bouton principal unique (référence : .btn-primary de l'accueil) */
 .btn-primary,.btn-vert,.btn-submit,.nf-btn.primary,.pt-btn-main{background:var(--c-vert-lt);color:#0a0a09;font-family:var(--ff-h);font-weight:700;letter-spacing:-.02em;border:none}
@@ -232,7 +247,7 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 /* Interlignes des titres (hérités du texte = 1,6 : trop lâches) */
 .hero-city h1,.page h1,.page-title,.city-body h2,.blog-head h1,.nf-wrap h1{line-height:1.08}
 .city-body h2{line-height:1.15}
-@media(max-width:640px){.hero-city h1 br{display:none}}
+@media(max-width:640px){.hero-city h1 br{display:none}.hero-city h1 span{white-space:normal!important}}
 </style>
 </head>
 <body>
@@ -263,137 +278,139 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
 </nav>
   <div class="blog-wrap">
     <div class="blog-head">
+      <span class="section-tag">Le blog</span>
       <h1>Le blog des bornes de recharge</h1>
       <p>Guides indépendants et sans jargon pour installer votre borne, comprendre les aides et faire les bons choix.</p>
     </div>
+    <div class="blog-filters" role="group" aria-label="Filtrer par catégorie"><button type="button" aria-pressed="true" data-cat="">Tous<span class="n">23</span></button><button type="button" aria-pressed="false" data-cat="choisir-installer">Choisir & installer<span class="n">7</span></button><button type="button" aria-pressed="false" data-cat="aides-prix">Aides & prix<span class="n">4</span></button><button type="button" aria-pressed="false" data-cat="copropriete">Copropriété<span class="n">4</span></button><button type="button" aria-pressed="false" data-cat="entreprise">Entreprise<span class="n">1</span></button><button type="button" aria-pressed="false" data-cat="recharge-au-quotidien">Recharge au quotidien<span class="n">4</span></button><button type="button" aria-pressed="false" data-cat="espace-pro">Espace pro<span class="n">3</span></button></div>
     <div class="blog-grid">
-          <a class="blog-card" href="/blog/delestage-gestion-charge-borne-recharge.html">
+          <a class="blog-card" data-cat="choisir-installer" href="/blog/delestage-gestion-charge-borne-recharge.html">
           <div class="bc-media"><img src="/blog/img/delestage-gestion-charge-borne-recharge-card.jpg" alt="Tableau électrique et disjoncteurs protégeant une installation de recharge" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Installer une borne de recharge</span>
-          <span class="bc-date">1 octobre 2026</span>
+          <span class="bc-tag">Choisir & installer</span>
+          <span class="bc-date">1er octobre 2026</span>
           <h2>Délestage et gestion de charge : protéger son installation IRVE</h2>
           <p>Délestage borne de recharge : comprendre la gestion de charge pour protéger votre installation IRVE. Guide indépendant et gratuit.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
 
-          <a class="blog-card" href="/blog/zaptec-ou-hager-borne-copropriete.html">
+          <a class="blog-card" data-cat="copropriete" href="/blog/zaptec-ou-hager-borne-copropriete.html">
           <div class="bc-media"><img src="/blog/img/zaptec-ou-hager-borne-copropriete-card.jpg" alt="Voitures électriques en recharge dans le parking souterrain d'une copropriété" loading="lazy" width="640" height="420"></div>
           <span class="bc-tag">Copropriété</span>
           <span class="bc-date">24 septembre 2026</span>
           <h2>Borne de recharge en copropriété : Zaptec ou Hager, laquelle choisir ?</h2>
           <p>Zaptec ou Hager en copropriété : comparatif indépendant pour choisir la meilleure borne de recharge. Guide gratuit 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
 
-          <a class="blog-card" href="/blog/logiciel-gestion-installateur-irve.html">
+          <a class="blog-card" data-cat="espace-pro" href="/blog/logiciel-gestion-installateur-irve.html">
           <div class="bc-media"><img src="/blog/img/logiciel-gestion-installateur-irve-card.jpg" alt="Installateur IRVE consultant un logiciel de gestion de chantier sur tablette" loading="lazy" width="640" height="420"></div>
           <span class="bc-tag">Espace pro</span>
-          <span class="bc-date">Septembre 2026</span>
+          <span class="bc-date">14 septembre 2026</span>
           <h2>Quel logiciel de gestion pour installateur IRVE ?</h2>
           <p>Logiciel de gestion pour installateur IRVE : gestion d'entreprise ou supervision des bornes, quelles fonctions prioriser et comment choisir en 2026.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-          <a class="blog-card" href="/blog/devenir-installateur-agree-advenir.html">
+          <a class="blog-card" data-cat="espace-pro" href="/blog/devenir-installateur-agree-advenir.html">
           <div class="bc-media"><img src="/blog/img/devenir-installateur-agree-advenir-card.jpg" alt="Bornes de recharge pour voitures électriques sur un parking, le métier d'installateur agréé ADVENIR" loading="lazy" width="640" height="420"></div>
           <span class="bc-tag">Espace pro</span>
-          <span class="bc-date">Septembre 2026</span>
+          <span class="bc-date">14 septembre 2026</span>
           <h2>Devenir installateur agréé ADVENIR : conditions et démarches</h2>
           <p>Installateur agréé ADVENIR : la qualification IRVE, les conditions, les démarches et les barèmes 2026 pour rendre vos chantiers éligibles.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/financement-infrastructure-collective-copropriete-advenir-2026.html">
+          <a class="blog-card" data-cat="copropriete" href="/blog/financement-infrastructure-collective-copropriete-advenir-2026.html">
           <div class="bc-media"><img src="/blog/img/financement-infrastructure-collective-copropriete-advenir-2026-card.jpg" alt="Poignée de main scellant le financement d'une infrastructure de recharge en copropriété" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Copropriété & Recharge</span>
+          <span class="bc-tag">Copropriété</span>
           <span class="bc-date">3 septembre 2026</span>
           <h2>Infrastructure collective copropriété : quelles aides en 2026 ?</h2>
           <p>Financement infrastructure collective copropriété : toutes les aides disponibles en 2026. Guide gratuit et indépendant pour financer votre projet.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/heures-creuses-recharge-voiture-electrique.html">
+          <a class="blog-card" data-cat="recharge-au-quotidien" href="/blog/heures-creuses-recharge-voiture-electrique.html">
           <div class="bc-media"><img src="/blog/img/heures-creuses-recharge-voiture-electrique-card.jpg" alt="Bornes de recharge illuminées la nuit, recharger en heures creuses" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Recharge électrique</span>
+          <span class="bc-tag">Recharge au quotidien</span>
           <span class="bc-date">31 août 2026</span>
           <h2>Recharge électrique : optimiser ses horaires pour payer moins</h2>
           <p>Heures creuses recharge voiture électrique : conseils gratuits pour optimiser vos horaires et réduire votre facture. Guide indépendant 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/trouver-installateur-borne-recharge-pres-de-chez-soi.html">
+          <a class="blog-card" data-cat="choisir-installer" href="/blog/trouver-installateur-borne-recharge-pres-de-chez-soi.html">
           <div class="bc-media"><img src="/blog/img/trouver-installateur-borne-recharge-pres-de-chez-soi-card.jpg" alt="Technicien souriant avec sa camionnette et sa caisse à outils, installateur près de chez soi" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Installation & IRVE</span>
+          <span class="bc-tag">Choisir & installer</span>
           <span class="bc-date">28 août 2026</span>
           <h2>IRVE en ville : trouver un installateur borne près de chez soi</h2>
           <p>Installateur borne de recharge près de chez moi : trouvez un pro certifié IRVE en ville. Comparatif gratuit et indépendant 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/aides-regionales-borne-recharge-2026.html">
+          <a class="blog-card" data-cat="aides-prix" href="/blog/aides-regionales-borne-recharge-2026.html">
           <div class="bc-media"><img src="/blog/img/aides-regionales-borne-recharge-2026-card.jpg" alt="Couple calculant le budget d'installation d'une borne de recharge à domicile" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Aides & Subventions</span>
-          <span class="bc-date">27 aout 2026</span>
+          <span class="bc-tag">Aides & prix</span>
+          <span class="bc-date">27 août 2026</span>
           <h2>Aides régionales pour l'installation d'une borne de recharge en 2026</h2>
           <p>Aides régionales borne de recharge 2026 : découvrez toutes les subventions disponibles gratuitement selon votre région pour financer votre installation.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/recharge-immeuble-ancien-copropriete.html">
+          <a class="blog-card" data-cat="copropriete" href="/blog/recharge-immeuble-ancien-copropriete.html">
           <div class="bc-media"><img src="/blog/img/recharge-immeuble-ancien-copropriete-card.jpg" alt="Voiture électrique stationnée devant un immeuble ancien en copropriété" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Recharge à domicile</span>
-          <span class="bc-date">24 aout 2026</span>
+          <span class="bc-tag">Copropriété</span>
+          <span class="bc-date">24 août 2026</span>
           <h2>Recharge en immeuble ancien : solutions et démarches</h2>
           <p>Recharge immeuble ancien : découvrez les solutions adaptées et les démarches gratuites pour installer une borne en copropriété dès 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/entretien-duree-vie-borne-recharge-domicile.html">
+          <a class="blog-card" data-cat="choisir-installer" href="/blog/entretien-duree-vie-borne-recharge-domicile.html">
           <div class="bc-media"><img src="/blog/img/entretien-duree-vie-borne-recharge-domicile-card.jpg" alt="Main vérifiant l'écran d'une borne de recharge lors de son entretien" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Borne de recharge à domicile</span>
-          <span class="bc-date">20 aout 2026</span>
+          <span class="bc-tag">Choisir & installer</span>
+          <span class="bc-date">20 août 2026</span>
           <h2>Entretien et durée de vie d'une borne de recharge à domicile</h2>
           <p>Durée de vie borne de recharge : découvrez nos conseils d'entretien gratuits pour prolonger votre installation à domicile et éviter les pannes en 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/borne-recharge-solaire-autoconsommation.html">
+          <a class="blog-card" data-cat="recharge-au-quotidien" href="/blog/borne-recharge-solaire-autoconsommation.html">
           <div class="bc-media"><img src="/blog/img/borne-recharge-solaire-autoconsommation-card.jpg" alt="Voiture électrique rechargée sous des panneaux solaires en autoconsommation" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Mobilité électrique</span>
-          <span class="bc-date">17 aout 2026</span>
+          <span class="bc-tag">Recharge au quotidien</span>
+          <span class="bc-date">17 août 2026</span>
           <h2>Borne solaire : recharger sa voiture avec ses panneaux</h2>
           <p>Borne recharge solaire autoconsommation : utilisez vos panneaux pour recharger gratuitement votre voiture. Guide complet 2026 pour une mobilité 100 % verte.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/badge-rfid-itinerance-recharge-electrique-2026.html">
+          <a class="blog-card" data-cat="recharge-au-quotidien" href="/blog/badge-rfid-itinerance-recharge-electrique-2026.html">
           <div class="bc-media"><img src="/blog/img/badge-rfid-itinerance-recharge-electrique-2026-card.jpg" alt="Automobiliste rechargeant sa voiture à une borne publique en itinérance" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Recharge électrique</span>
-          <span class="bc-date">13 aout 2026</span>
+          <span class="bc-tag">Recharge au quotidien</span>
+          <span class="bc-date">13 août 2026</span>
           <h2>Badge RFID et itinérance : recharger partout en France</h2>
           <p>Badge recharge itinérance : accédez gratuitement à des milliers de bornes en France en 2026. Découvrez comment le badge RFID simplifie vos trajets en électrique</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/recharge-bidirectionnelle-v2g-voiture-maison.html">
+          <a class="blog-card" data-cat="recharge-au-quotidien" href="/blog/recharge-bidirectionnelle-v2g-voiture-maison.html">
           <div class="bc-media"><img src="/blog/img/recharge-bidirectionnelle-v2g-voiture-maison-card.jpg" alt="Voiture électrique devant une maison, recharge bidirectionnelle V2G" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Mobilité électrique</span>
-          <span class="bc-date">10 aout 2026</span>
+          <span class="bc-tag">Recharge au quotidien</span>
+          <span class="bc-date">10 août 2026</span>
           <h2>Recharge bidirectionnelle V2G : votre voiture alimente votre maison</h2>
           <p>Recharge bidirectionnelle V2G : découvrez gratuitement comment votre voiture électrique peut alimenter votre maison et réduire votre facture d'énergie en 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-          <a class="blog-card" href="/blog/comparatif-marques-borne-recharge-2026.html">
+          <a class="blog-card" data-cat="choisir-installer" href="/blog/comparatif-marques-borne-recharge-2026.html">
           <div class="bc-media"><img src="/blog/img/comparatif-marques-borne-recharge-2026-card.jpg" alt="Borne de recharge murale affichant sa puissance, comparatif des marques" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Comparatif</span>
+          <span class="bc-tag">Choisir & installer</span>
           <span class="bc-date">7 août 2026</span>
           <h2>Comparatif des marques de borne de recharge 2026</h2>
           <p>Wallbox, Legrand, Schneider, Hager, Zaptec : points forts, pour qui, et comment choisir la borne adaptée à votre usage.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-          <a class="blog-card" href="/blog/borne-recharge-entreprise-loi-lom-2026.html">
+          <a class="blog-card" data-cat="entreprise" href="/blog/borne-recharge-entreprise-loi-lom-2026.html">
           <div class="bc-media"><img src="/blog/img/borne-recharge-entreprise-loi-lom-2026-card.jpg" alt="Flotte de voitures électriques en recharge sur le parking d'une entreprise" loading="lazy" width="640" height="420"></div>
           <span class="bc-tag">Entreprise</span>
           <span class="bc-date">7 août 2026</span>
@@ -401,56 +418,56 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
           <p>Vos obligations avec la loi LOM, les échéances, les aides ADVENIR et comment équiper le parking de votre société en 2026.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-          <a class="blog-card" href="/blog/installation-borne-recharge-locataire.html">
+          <a class="blog-card" data-cat="choisir-installer" href="/blog/installation-borne-recharge-locataire.html">
           <div class="bc-media"><img src="/blog/img/installation-borne-recharge-locataire-card.jpg" alt="Personne rechargeant sa voiture électrique à une borne, en tant que locataire" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Recharge électrique</span>
-          <span class="bc-date">7 aout 2026</span>
+          <span class="bc-tag">Choisir & installer</span>
+          <span class="bc-date">7 août 2026</span>
           <h2>Installer une borne de recharge en tant que locataire : vos droits</h2>
           <p>Installation borne recharge locataire : découvrez vos droits, les démarches gratuites et comment obtenir l'accord de votre bailleur facilement en 2026.</p>
-          <span class="bc-more">Lire l article →</span>
+          <span class="bc-more">Lire l'article →</span>
         </a>
 
-        <a class="blog-card" href="/blog/prix-borne-de-recharge-maison-2026.html">
+        <a class="blog-card" data-cat="aides-prix" href="/blog/prix-borne-de-recharge-maison-2026.html">
           <div class="bc-media"><img src="/blog/img/prix-borne-de-recharge-maison-2026-card.jpg" alt="Femme et sa voiture électrique devant une borne de recharge à la maison" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Prix</span>
-          <span class="bc-date">Mis à jour août 2026</span>
+          <span class="bc-tag">Aides & prix</span>
+          <span class="bc-date">25 juin 2026</span>
           <h2>Prix d'une borne de recharge maison en 2026</h2>
           <p>Matériel, pose IRVE, TVA 5,5 %, aides réelles après la suppression du crédit d'impôt : le budget complet par puissance, avec des exemples chiffrés.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/cout-recharge-electrique-domicile-2026.html">
+        <a class="blog-card" data-cat="aides-prix" href="/blog/cout-recharge-electrique-domicile-2026.html">
           <div class="bc-media"><img src="/blog/img/cout-recharge-electrique-domicile-2026-card.jpg" alt="Voiture électrique en charge sur une borne murale à domicile" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Coût</span>
-          <span class="bc-date">2026</span>
+          <span class="bc-tag">Aides & prix</span>
+          <span class="bc-date">22 juin 2026</span>
           <h2>Recharge à domicile : combien ça coûte vraiment ?</h2>
           <p>Prix du kWh, calcul du coût mensuel, heures creuses : ce que vous paierez réellement pour recharger votre voiture électrique chez vous.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/choisir-installateur-irve-certifie.html">
+        <a class="blog-card" data-cat="espace-pro" href="/blog/choisir-installateur-irve-certifie.html">
           <div class="bc-media"><img src="/blog/img/choisir-installateur-irve-certifie-card.jpg" alt="Installateur IRVE certifié raccordant une borne de recharge" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Guide</span>
-          <span class="bc-date">Août 2026</span>
+          <span class="bc-tag">Espace pro</span>
+          <span class="bc-date">4 août 2026</span>
           <h2>Installateur IRVE : comment bien choisir</h2>
           <p>Qualification obligatoire, vérification Qualifelec et AFNOR, devis et aides : la méthode pour choisir un poseur de borne fiable en 2026.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/prise-renforcee-ou-borne-de-recharge.html">
+        <a class="blog-card" data-cat="choisir-installer" href="/blog/prise-renforcee-ou-borne-de-recharge.html">
           <div class="bc-media"><img src="/blog/img/prise-renforcee-ou-borne-de-recharge-card.jpg" alt="Main tenant un câble de recharge : prise renforcée ou borne ?" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Comparatif</span>
-          <span class="bc-date">Août 2026</span>
+          <span class="bc-tag">Choisir & installer</span>
+          <span class="bc-date">4 août 2026</span>
           <h2>Prise renforcée ou borne de recharge ?</h2>
           <p>Prix, vitesse de charge, sécurité et aides comparés en 2026 pour choisir la solution adaptée à votre véhicule et à votre budget.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/guide-prime-advenir-2026.html">
+        <a class="blog-card" data-cat="aides-prix" href="/blog/guide-prime-advenir-2026.html">
           <div class="bc-media"><img src="/blog/img/guide-prime-advenir-2026-card.jpg" alt="Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Aides</span>
+          <span class="bc-tag">Aides & prix</span>
           <span class="bc-date">1er mars 2026</span>
           <h2>Prime ADVENIR 2026 : le guide complet</h2>
           <p>Montants, conditions d'éligibilité, démarches ADVENIR 2026 : tout ce qu'il faut savoir sur l'aide principale pour installer une borne de recharge en France.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/droit-prise-copropriete.html">
+        <a class="blog-card" data-cat="copropriete" href="/blog/droit-prise-copropriete.html">
           <div class="bc-media"><img src="/blog/img/droit-prise-copropriete-card.jpg" alt="Places réservées et borne de recharge dans le parking d'une copropriété" loading="lazy" width="640" height="420"></div>
           <span class="bc-tag">Copropriété</span>
           <span class="bc-date">10 février 2026</span>
@@ -458,9 +475,9 @@ html[data-theme="dark"] .theme-toggle .sun{display:none}
           <p>La loi vous donne le droit d'installer une borne IRVE (Infrastructure de Recharge de Véhicule Électrique) en copropriété. En pratique, le syndic peut bloquer. Voici comment naviguer sereinement.</p>
           <span class="bc-more">Lire l'article →</span>
         </a>
-        <a class="blog-card" href="/blog/7kw-ou-22kw-quelle-puissance.html">
+        <a class="blog-card" data-cat="choisir-installer" href="/blog/7kw-ou-22kw-quelle-puissance.html">
           <div class="bc-media"><img src="/blog/img/7kw-ou-22kw-quelle-puissance-card.jpg" alt="Recharge d'une voiture électrique sur une borne en garage : choisir la bonne puissance" loading="lazy" width="640" height="420"></div>
-          <span class="bc-tag">Technique</span>
+          <span class="bc-tag">Choisir & installer</span>
           <span class="bc-date">15 janvier 2026</span>
           <h2>7,4 kW ou 22 kW : quelle puissance ?</h2>
           <p>La puissance de votre borne IRVE dépend de votre véhicule, de votre installation électrique et de vos habitudes. On démêle tout sans jargon.</p>
@@ -548,5 +565,9 @@ if(bd)bd.addEventListener('click',function(){closeC(false);});
 if(cf)cf.addEventListener('click',openC);})();
 </script>
 <script>/*theme-toggle-js*/document.addEventListener("click",function(e){var b=e.target.closest("#themeToggle");if(!b)return;var r=document.documentElement,n=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("les-eclaires-theme",n)}catch(e){}});</script>
+<script id="blog-index-js">(function(){var f=document.querySelector('.blog-filters');if(!f)return;
+f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var c=b.getAttribute('data-cat');
+f.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+document.querySelectorAll('.blog-card').forEach(function(a){a.hidden=!!c&&a.getAttribute('data-cat')!==c;});});})();</script>
 </body>
 </html>
