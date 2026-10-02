@@ -24,7 +24,7 @@ GA = '''<!-- Google tag (gtag.js) -->
   gtag('config', 'G-ZXGFCVHHDM');
 </script>'''
 
-PRELOADER = '<div id="preloader" role="status" aria-label="Chargement"><div class="pl-logo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.27 2L19.27 2Q22.17 2 20.12 4.05L13.42 10.76Q12.08 12.09 13.97 12.09L19.08 12.09Q21.86 12.09 19.9 14.06L13.91 20.04Q11.95 22 11.95 19.22L11.95 13.45Q11.95 12.19 10.69 12.19L4.73 12.19Q1.83 12.19 3.88 10.14L11.84 2.18Q12.02 2 12.27 2Z"/></svg></div><span class="pl-name">Les Éclairés</span><div class="pl-bar"><i></i></div></div>'
+PRELOADER = '<div id="preloader" role="status" aria-label="Chargement"><img class="pl-hz pl-hz-l" src="/logo-eclaires-horizontal.png" alt="Les Éclairés" width="220" height="34"><img class="pl-hz pl-hz-d" src="/logo-eclaires-horizontal-blanc.png" alt="" aria-hidden="true" width="220" height="34"><div class="pl-bar"><i></i></div></div>'
 
 ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
 

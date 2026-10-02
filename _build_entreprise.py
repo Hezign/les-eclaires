@@ -8,7 +8,7 @@ from _build_villes import (GA, FAVICON, FONTS, CSS, EXTRA_CSS, UNIFORM, PRELOADE
 
 URL = "https://leseclaires.fr/entreprise"
 DESC = ("Bornes de recharge en entreprise et pour les flottes : obligations loi LOM, "
-        "dimensionnement, pilotage de charge, prime ADVENIR et TVA récupérable. "
+        "dimensionnement, pilotage de charge, aides 2026 et TVA récupérable. "
         "Mise en relation gratuite avec un installateur certifié IRVE.")
 
 FORM_CSS = '''<style>
@@ -36,13 +36,13 @@ FAQ = [
  ("Combien coûte l'installation de bornes en entreprise ?",
   "Comptez à partir d'environ 1&nbsp;200 à 2&nbsp;000&nbsp;€&nbsp;TTC par borne 7,4&nbsp;kW. Le coût par point de charge baisse fortement dès que l'on équipe plusieurs places, grâce à une infrastructure mutualisée et au pilotage de charge."),
  ("Quelles aides pour une borne de recharge en entreprise ?",
-  "La prime ADVENIR finance une partie de l'installation sur un parking privé à usage des salariés ou des flottes, à condition que le dossier soit validé avant le début des travaux. Pour une entreprise assujettie à la TVA, la TVA sur l'investissement est récupérable, et le matériel est amortissable. Le crédit d'impôt des particuliers ne concerne pas les sociétés."),
+  "En 2026, la prime ADVENIR ne finance plus les bornes installées sur un parking privé d'entreprise pour les salariés ou une flotte de véhicules légers. Elle reste ouverte pour l'habitat collectif, la voirie publique et les poids lourds. Pour une entreprise assujettie à la TVA, la TVA sur l'investissement est récupérable, et le matériel est amortissable. Le crédit d'impôt des particuliers ne concerne pas les sociétés."),
  ("À quoi sert le pilotage de charge ?",
   "Il répartit la puissance électrique disponible entre les véhicules en charge. Sans lui, équiper plusieurs places obligerait à augmenter fortement la puissance souscrite, donc l'abonnement. Avec lui, on équipe davantage de places sur la même alimentation."),
  ("Peut-on refacturer la recharge aux salariés ou aux visiteurs ?",
   "Oui. Une solution de supervision mesure la consommation de chaque borne et permet de refacturer l'électricité selon la politique de l'entreprise. C'est un point à cadrer dès la conception du projet."),
  ("Faut-il un installateur certifié IRVE ?",
-  "Oui. La qualification IRVE est obligatoire au-delà de 3,7&nbsp;kW et elle conditionne la prime ADVENIR. Elle doit figurer sur le devis comme sur la facture. Nous vous mettons en relation avec un installateur certifié IRVE."),
+  "Oui. La qualification IRVE est obligatoire au-delà de 3,7&nbsp;kW. Elle doit figurer sur le devis comme sur la facture. Nous vous mettons en relation avec un installateur certifié IRVE."),
 ]
 faq_html = '\n'.join(f'    <details><summary>{q}</summary><div><p>{a}</p></div></details>' for q,a in FAQ)
 import re as _re
@@ -62,7 +62,7 @@ jsonld='<script type="application/ld+json">\n'+json.dumps(graph,ensure_ascii=Fal
 import _home_sections as hs
 _card = hs.reco_card("Votre projet entreprise", "Gratuit",
     [("scale", "Loi LOM (parking de plus de 20 places)", "1 borne minimum", "Depuis le", "1er&nbsp;janv. 2025"),
-     ("percent", "Prime ADVENIR", "Avant travaux", "TVA", "Récupérable*"),
+     ("percent", "TVA sur l'investissement", "Récupérable*", "Matériel", "Amortissable"),
      ("users", "Mise en relation", "1 installateur", "Qualification", "Certifié IRVE")],
     'Réponse <b style="color:var(--c-vert-lt)">sous 24 à 48&nbsp;h</b> · *si votre entreprise est assujettie')
 body = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Entreprise et flotte</span>',
@@ -75,12 +75,12 @@ body = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Entreprise et flotte</s
 body += hs.section(hs.top_cards([
     ("bolt", "Dimensionner juste", "", "Combien de véhicules aujourd'hui, combien demain&nbsp;? On équipe pour la trajectoire de votre flotte, pas seulement pour l'instant présent."),
     ("clock", "Pilotage de charge", "", "La puissance disponible est répartie entre les véhicules&nbsp;: plus de places équipées sans exploser l'abonnement électrique."),
-    ("euro", "Un coût net maîtrisé", "", "Prime ADVENIR, TVA récupérable pour les entreprises assujetties, matériel amortissable&nbsp;: le coût réel est bien inférieur au devis."),
+    ("euro", "Un coût net maîtrisé", "", "TVA récupérable pour les entreprises assujetties et matériel amortissable&nbsp;: le coût réel est inférieur au montant du devis."),
     ("building", "Infrastructure évolutive", "", "Une alimentation mutualisée posée une fois&nbsp;: les bornes suivantes s'ajoutent sans rouvrir le parking."),
   ]), tone='menthe', tag="Ce qui compte", h2="Les 4 clés d'un projet entreprise réussi",
   lead="Le poste le plus stratégique n'est pas la borne, c'est l'infrastructure et le pilotage de charge. C'est là que se jouent le budget et l'évolutivité.")
 body += hs.section('<div class="hs-split"><div class="hs-prose"><p>' + "La loi d'orientation des mobilités (LOM) impose aux bâtiments non résidentiels dotés d'un parking de plus de 20 places au moins un point de recharge en service depuis le 1er janvier 2025. Les bâtiments neufs ou en rénovation importante (parking de plus de 10 places) doivent pré-équiper une part significative des places, et les grands parkings (plus de 200 places) ont des obligations renforcées." + '</p><p>' + "Les seuils exacts dépendent de la taille du parking et de la date de construction. Un audit sur site évite à la fois la sous-conformité et le surdimensionnement." + ' <a href="/blog/borne-recharge-entreprise-loi-lom-2026.html">Le détail de la loi LOM en 2026</a>.</p></div><div>'
-  + '<div class="hs-box"><h3>' + hs.icon("percent", 20) + 'Prime ADVENIR</h3><p>Elle finance une partie des bornes installées sur un parking privé à usage des salariés ou des flottes. Le dossier doit être validé <b>avant</b> les travaux. <a href="/blog/guide-prime-advenir-2026.html">Notre guide ADVENIR 2026</a>.</p></div>'
+  + '<div class="hs-box"><h3>' + hs.icon("percent", 20) + 'Prime ADVENIR&nbsp;: plus pour les parkings d\'entreprise</h3><p>Depuis 2026, ADVENIR ne finance plus les bornes réservées aux salariés ou aux flottes de véhicules légers sur parking privé. Elle reste ouverte pour l\'habitat collectif, la voirie publique et les poids lourds (<a href="https://advenir.mobi/" target="_blank" rel="noopener">advenir.mobi</a>).</p></div>'
   + '<div class="hs-box hs-box-dark"><h3>Pas sûr de votre obligation&nbsp;?</h3><p>Décrivez votre site, on vous oriente et on vous met en relation avec un installateur qui réalisera l\'audit.</p><a href="#contact-entreprise" class="btn-primary">Parler de mon projet ' + hs.ARROW + '</a></div>'
   + '</div></div>', tone='white', tag="Le cadre légal", h2="Loi LOM&nbsp;: ce que votre entreprise doit savoir", sid="obligations")
 body += hs.section(hs.steps([
@@ -105,7 +105,7 @@ html=f'''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Borne de recharge entreprise &amp; flotte : loi LOM, aides | Les Éclairés</title>
 <meta name="description" content="{DESC}">
-<meta name="keywords" content="borne recharge entreprise, borne recharge flotte, IRVE entreprise, loi LOM borne parking, prime ADVENIR entreprise, pilotage de charge">
+<meta name="keywords" content="borne recharge entreprise, borne recharge flotte, IRVE entreprise, loi LOM borne parking, pilotage de charge">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{URL}">
 <meta property="og:type" content="website">

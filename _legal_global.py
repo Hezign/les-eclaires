@@ -47,26 +47,35 @@ EURO = '<path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/>'
 
 CGU_LI = '<li><a href="/cgu.html">Conditions d\'utilisation</a></li>'
 
-# Footer unique du site (référence : accueil, liste validée par Harry le 02/10/2026).
+# Footer unique du site (référence : accueil, refonte SEO 02/10/2026 : Solutions par cible + guides piliers).
 FOOTER_TOP = """<div class="footer-top">
+    <style>@media(min-width:901px){.footer-cols{grid-template-columns:repeat(4,1fr)}}</style>
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>Le service</h4>
+        <h4>Solutions</h4>
         <ul>
-          <li><a href="/simulateur">Simulateur IRVE</a></li>
+          <li><a href="/simulateur">Particuliers : le simulateur</a></li>
           <li><a href="/copropriete">Bornes en copropriété</a></li>
           <li><a href="/entreprise">Bornes en entreprise</a></li>
-          <li><a href="/partenaires.html">Devenir partenaire</a></li>
-          <li><a href="/#histoire">Notre histoire</a></li>
+          <li><a href="/villes">Installateurs par ville</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Ressources</h4>
+        <h4>Guides pratiques</h4>
         <ul>
-          <li><a href="/blog/">Blog IRVE</a></li>
-          <li><a href="https://advenir.mobi/" target="_blank" rel="noopener">Prime ADVENIR ↗</a></li>
-          <li><a href="https://www.avere-france.org/" target="_blank" rel="noopener">AVERE-France ↗</a></li>
-          <li><a href="https://www.qualifelec.fr/" target="_blank" rel="noopener">Qualifelec ↗</a></li>
+          <li><a href="/blog/prix-borne-de-recharge-maison-2026.html">Prix d'une borne à la maison</a></li>
+          <li><a href="/blog/guide-prime-advenir-2026.html">Prime ADVENIR 2026</a></li>
+          <li><a href="/blog/droit-prise-copropriete.html">Droit à la prise</a></li>
+          <li><a href="/blog/borne-recharge-entreprise-loi-lom-2026.html">Loi LOM en entreprise</a></li>
+          <li><a href="/blog/"><strong>Tous les guides →</strong></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Les Éclairés</h4>
+        <ul>
+          <li><a href="/#histoire">Notre histoire</a></li>
+          <li><a href="/partenaires.html">Devenir installateur partenaire</a></li>
+          <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -75,7 +84,6 @@ FOOTER_TOP = """<div class="footer-top">
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
           <li><a href="/cgu.html">Conditions d'utilisation</a></li>
-          <li><a href="mailto:contact@leseclaires.fr">Nous écrire</a></li>
         </ul>
       </div>
     </div>
@@ -96,7 +104,7 @@ FOOTER_TOP = """<div class="footer-top">
   </div>"""
 
 FOOTER_BOTTOM = """<div class="footer-bottom">
-    <span class="footer-brand-group" style="display:inline-flex;align-items:center;gap:10px"><img class="footer-bottom-logo" src="/logo-eclaires.svg" alt="Les Éclairés" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0"><span class="f-brand-name">Les Éclairés</span></span>
+    <span class="footer-brand-group" style="display:inline-flex;align-items:center;gap:10px"><img class="footer-bottom-logo logo-l" src="/logo-eclaires-blanc.svg" alt="Les Éclairés" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0"><img class="footer-bottom-logo logo-d" src="/logo-eclaires.svg" alt="" aria-hidden="true" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0"><span class="f-brand-name">Les Éclairés</span></span>
     <span class="footer-legal">© 2026 Les Éclairés · Comprendre, choisir, installer.</span>
     <a class="footer-linkedin" href="https://www.linkedin.com/company/les-%C3%A9clair%C3%A9s/" target="_blank" rel="noopener" aria-label="LinkedIn Les Éclairés"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
   </div>"""

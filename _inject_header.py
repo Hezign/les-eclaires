@@ -76,7 +76,7 @@ nav{position:fixed;top:calc(var(--topbar-h) + 12px);left:50%;transform:translate
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px;margin-left:4px}
 .nav-burger span{display:block;width:24px;height:2px;background:var(--c-ink);border-radius:2px;transition:transform .25s,opacity .2s}
 @media(max-width:600px){.btn-nav{display:none}}
-@media(max-width:820px){
+@media(max-width:1080px){
 .nav-links{display:none}
 .nav-burger{display:flex}
 nav.open .nav-links{display:flex;flex-direction:column;align-items:stretch;gap:2px;position:absolute;top:calc(100% + 12px);left:0;right:0;background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:20px;padding:14px;box-shadow:0 16px 44px rgba(0,0,0,.14)}
@@ -148,6 +148,31 @@ def upgrade_nav(path):
     return True
 
 
+def sync_nav(path):
+    """Aligne le menu d'une page déjà injectée sur celui de l'accueil + marque la page courante."""
+    try:
+        s = open(path, encoding='utf-8').read()
+    except FileNotFoundError:
+        return False
+    if 'class="nav-links"' not in s:
+        return False
+    url = '/' + path.replace('.html', '') if path.count('/') == 0 else '/' + path
+    nav = NAV_BLOG
+    for href in ('/simulateur', '/copropriete', '/entreprise', '/villes', '/partenaires.html'):
+        if url in (href, href.replace('.html', '')):
+            nav = nav.replace(f'<a href="{href}">', f'<a href="{href}" aria-current="page">', 1)
+    if path.startswith('blog/'):
+        nav = nav.replace('<a href="/blog/">', '<a href="/blog/" aria-current="page">', 1)
+    if path.startswith('villes/'):
+        nav = nav.replace('<a href="/villes">', '<a href="/villes" aria-current="page">', 1)
+    o = s
+    s = re.sub(r'<nav>.*?</nav>', lambda m: nav, s, count=1, flags=re.S)
+    if s != o:
+        open(path, 'w', encoding='utf-8').write(s)
+        return True
+    return False
+
+
 if __name__ == '__main__':
     import glob
     pages = ['partenaires.html', 'confidentialite.html', 'mentions-legales.html',
@@ -157,3 +182,5 @@ if __name__ == '__main__':
         if inject_file(f):
             n += 1
     print(f"{n} pages injectées (topbar + cookie + header complet)")
+    m = sum(sync_nav(f) for f in pages + ['entreprise.html', 'cgu.html'])
+    print(f"{m} menus synchronisés")

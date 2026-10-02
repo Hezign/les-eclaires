@@ -47,9 +47,9 @@ def normalize(path):
         s = re.sub(pat, rep, s, flags=re.IGNORECASE)
     # Logo base64 -> SVG hébergé
     s = re.sub(r'<img class="nav-logo-img" src="data:[^"]*"[^>]*>',
-               '<img class="nav-logo-img" src="/logo-eclaires.svg" alt="Les Éclairés" width="30" height="30">', s)
+               '<style>.logo-d{display:none!important}html[data-theme="dark"] .logo-l{display:none!important}html[data-theme="dark"] .logo-d{display:block!important}</style><img class="nav-logo-img logo-l" src="/logo-eclaires-blanc.svg" alt="Les Éclairés" width="30" height="30"><img class="nav-logo-img logo-d" src="/logo-eclaires.svg" alt="" aria-hidden="true" width="30" height="30">', s)
     s = re.sub(r'<img class="footer-bottom-logo" src="data:[^"]*"[^>]*>',
-               '<img class="footer-bottom-logo" src="/logo-eclaires.svg" alt="Les Éclairés" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0">', s)
+               '<img class="footer-bottom-logo logo-l" src="/logo-eclaires-blanc.svg" alt="Les Éclairés" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0"><img class="footer-bottom-logo logo-d" src="/logo-eclaires.svg" alt="" aria-hidden="true" width="24" height="24" style="height:24px;width:auto;border-radius:6px;display:block;flex-shrink:0">', s)
     # Footer : séparateur retiré + LinkedIn + texte foncé
     s = s.replace('padding-bottom:40px;border-bottom:1px solid var(--c-border)}', 'padding-bottom:40px}')
     s = s.replace('footer .footer-bottom .f-brand-name{font-family:var(--ff-h);font-size:16px;font-weight:800;color:#fff;letter-spacing:-0.04em}',
