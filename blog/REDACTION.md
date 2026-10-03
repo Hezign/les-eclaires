@@ -59,7 +59,7 @@ Tout JSON-LD doit être un JSON valide (à parser avant écriture).
 - Sous chaque H2, une réponse autoportante de 2 lignes max EN PREMIER, avant le
   développement (fragment extrait par Google et les IA).
 - Classes du gabarit : `.prose`, `<table>`, `<blockquote>`.
-- Un CTA milieu d'article : `<div class="ctamid">...<a href="../index.html#simulateur">...</a></div>`.
+- Un CTA milieu d'article : `<div class="ctamid">...<a href="/simulateur">...</a></div>`.
 - Maillage interne obligatoire : lien vers le simulateur, `/partenaires.html`, et 1 a 2
   autres articles pertinents (pilier prix, 7/22 kW, copropriété...).
 - `%%TOC_ITEMS%%` liste exactement les `id` des H2.
@@ -73,7 +73,24 @@ Tout JSON-LD doit être un JSON valide (à parser avant écriture).
   individuelle, 1 660 EUR HT borne partagee, 12 500 EUR HT infrastructure collective,
   prise en charge 50 %. Pavillons individuels NON eligibles. Dossier valide AVANT travaux.
 - TVA 5,5 % (au lieu de 20 %) : pose par pro qualifie IRVE, logement de plus de 2 ans.
-- Prix indicatifs (TTC, pose comprise) : borne 7,4 kW environ 1 200 a 2 000 EUR ;
+- ADVENIR en 2026 (verifie sur advenir.mobi le 03/10/2026) : OUVERT pour l'habitat collectif
+  (copropriete), la voirie publique, les poids lourds et autocars, la Corse et l'Outre-mer.
+  FERME pour les parkings prives d'entreprise (salaries, flottes de vehicules legers) et pour
+  les maisons individuelles. Porte par l'Avere-France, finance par les certificats d'economies
+  d'energie (CEE). JAMAIS ecrire « finance par EDF » ni « aide de l'Etat ».
+  ADVENIR couvre 50 % du cout HT fourniture ET installation (la borne est couverte), dans la
+  limite des plafonds.
+- Droit a la prise : cree par la loi Grenelle II (2010, decret n° 2011-873 du 25 juillet 2011),
+  renforce par la loi LOM (2019) ; articles L. 113-16 et L. 113-17 du Code de la construction
+  et de l'habitation. JAMAIS « loi ELAN ». Le bailleur ou le syndic a 3 MOIS pour s'opposer,
+  uniquement pour un motif serieux et legitime, en saisissant le tribunal judiciaire. Pas de
+  vote en AG pour une installation individuelle. Delai realiste total : 3 a 4 mois.
+- Loi LOM, batiments non residentiels existants avec parking de plus de 20 places : depuis le
+  1er janvier 2025, un point de recharge par tranche de 20 places, dont un accessible PMR.
+- Credit d'impot borne (75 %, plafond 500 EUR par borne) : supprime, non reconduit apres le
+  31/12/2025. Ne JAMAIS ecrire « 31 decembre 2026 ».
+- Prix indicatifs (TTC, pose comprise, source unique data/aides.json) : borne 7,4 kW environ
+  1 200 a 2 000 EUR ;
   22 kW environ 2 500 a 3 500 EUR ; prise renforcee environ 500 a 1 000 EUR.
 - Qualification IRVE obligatoire au-dela de 3,7 kW (Qualifelec, AFNOR, Qualit'EnR),
   mention IRVE sur le devis ET la facture.

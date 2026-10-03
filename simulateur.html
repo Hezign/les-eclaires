@@ -308,6 +308,22 @@ body.tb-off nav{top:16px}
 .lead-block h4{font-family:var(--ff-h);font-size:17px;font-weight:700;letter-spacing:-0.03em;margin-bottom:5px;color:var(--c-ink)}
 .lead-block>p{font-size:14px;color:var(--c-muted);font-weight:300;margin-bottom:20px}
 .form-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px}
+#fBox .form-row{grid-template-columns:1fr 1fr;align-items:start;gap:14px 12px}
+#fBox .btn-sub{grid-column:1/-1;justify-self:start;min-height:46px}
+.ff{display:flex;flex-direction:column;gap:6px;min-width:0;text-align:left}
+.ff label{font-size:13px;font-weight:600;color:var(--c-mid)}
+.ff .form-in{width:100%;box-sizing:border-box}
+.ff .form-in[aria-invalid="true"]{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.ff-err{font-size:12.5px;line-height:1.4;color:#C0392B;min-height:0}
+.ff-err:empty{display:none}
+html[data-theme="dark"] .ff-err,html[data-theme="dark"] .ff-fail{color:#FF8A80}
+.ff-fail{margin:12px 0 0;padding:10px 14px;border-radius:10px;background:rgba(192,57,43,.08);color:#C0392B;font-size:13.5px;line-height:1.5;text-align:left}
+.ff-consent{display:grid;grid-template-columns:auto 1fr;gap:8px;margin:12px 2px 0;font-size:12.5px;line-height:1.55;color:var(--c-mid);text-align:left}
+.ff-consent svg{margin-top:3px;color:var(--c-vert-txt,var(--c-vert-txt))}
+.ff-consent p{margin:0}
+.sim-opt:focus-visible,.q-label:focus-visible{outline:2px solid var(--c-ink);outline-offset:3px}
+.q-label:focus{outline:none}
+@media(max-width:560px){#fBox .form-row{grid-template-columns:1fr}#fBox .btn-sub{justify-self:stretch}}
 .form-in{background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:var(--r-sm);padding:12px 15px;font-size:14px;font-family:var(--ff-b);color:var(--c-text);outline:none;transition:border-color .2s,box-shadow .2s}
 .form-in::placeholder{color:rgba(0,0,0,.28)}
 .form-in:focus{border-color:rgba(0,194,126,.5);box-shadow:0 0 0 3px rgba(0,194,126,.1)}
@@ -1202,7 +1218,7 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
           </div>
           <div class="metrics">
             <div class="metric"><div class="m-label">Puissance recommandée</div><div class="m-val v" id="rPow">7,4 kW</div></div>
-            <div class="metric"><div class="m-label">Budget estimé</div><div class="m-val j" id="rBudget">800 à 2 000 €</div></div>
+            <div class="metric"><div class="m-label">Budget estimé</div><div class="m-val j" id="rBudget">1 200 à 2 000 €</div></div>
             <div class="metric"><div class="m-label">Aide disponible</div><div class="m-val v" id="rAide">TVA réduite 5,5 %</div></div>
             <div class="metric"><div class="m-label">Délai estimé</div><div class="m-val" id="rDelai">2 à 4 semaines</div></div>
           </div>
@@ -1210,18 +1226,21 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
           <div class="lead-block">
             <h4>Recevoir votre récapitulatif détaillé</h4>
             <p>Et être mis en relation avec un installateur certifié IRVE sélectionné pour votre projet.</p>
-            <div id="fBox">
+            <form id="fBox" novalidate onsubmit="return false">
               <div class="form-row">
-                <input type="text"  class="form-in" id="fP" placeholder="Prénom">
-                <input type="email" class="form-in" id="fE" placeholder="Email">
-                <input type="tel"   class="form-in" id="fT" placeholder="Téléphone">
-                <button class="btn-sub" onclick="submitForm()">Recevoir →</button>
+                <div class="ff"><label for="fP">Prénom</label><input type="text" class="form-in" id="fP" autocomplete="given-name" aria-describedby="fP-err"><span class="ff-err" id="fP-err" role="alert"></span></div>
+                <div class="ff"><label for="fE">Email</label><input type="email" class="form-in" id="fE" autocomplete="email" inputmode="email" aria-describedby="fE-err"><span class="ff-err" id="fE-err" role="alert"></span></div>
+                <div class="ff"><label for="fT">Téléphone</label><input type="tel" class="form-in" id="fT" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" aria-describedby="fT-err"><span class="ff-err" id="fT-err" role="alert"></span></div>
+                <div class="ff"><label for="fCP">Code postal du lieu d'installation</label><input type="text" class="form-in" id="fCP" autocomplete="postal-code" inputmode="numeric" maxlength="5" placeholder="69000" aria-describedby="fCP-err"><span class="ff-err" id="fCP-err" role="alert"></span></div>
+                <button type="submit" class="btn-sub">Recevoir →</button>
               </div>
-              <p style="display:flex;align-items:center;gap:7px;margin:10px 2px 0;font-size:12.5px;line-height:1.5;color:var(--c-mid)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                En cliquant sur «&nbsp;Recevoir&nbsp;», vous acceptez que vos coordonnées et vos réponses soient transmises à <strong>un seul installateur certifié IRVE partenaire</strong> de votre secteur, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. Aucune revente à des tiers. <a href="/confidentialite" style="color:var(--c-vert-txt);text-decoration:underline">Confidentialité</a> · <a href="/cgu.html" style="color:var(--c-vert-txt);text-decoration:underline">Conditions d'utilisation</a>.
-              </p>
-            </div>
+              <input type="checkbox" name="botcheck" id="fBot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+              <p class="ff-fail" id="fFail" role="alert" hidden></p>
+              <div class="ff-consent">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <p>En cliquant sur «&nbsp;Recevoir&nbsp;», vous acceptez que vos coordonnées et vos réponses soient transmises à <strong>un seul installateur certifié IRVE partenaire</strong> de votre secteur, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. Aucune revente à des tiers. <a href="/confidentialite" style="color:var(--c-vert-txt);text-decoration:underline">Confidentialité</a> · <a href="/cgu.html" style="color:var(--c-vert-txt);text-decoration:underline">Conditions d'utilisation</a>.</p>
+              </div>
+            </form>
             <div class="success" id="okMsg">
               <div class="s-check"><svg viewBox="0 0 24 24" fill="none" stroke="#00C27E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
               <h4>Vous êtes désormais Éclairé !</h4>
@@ -1352,7 +1371,7 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
       <div class="footer-col">
         <h4>Solutions</h4>
         <ul>
-          <li><a href="/simulateur">Particuliers : le simulateur</a></li>
+          <li><a href="/simulateur">Particuliers : le simulateur</a></li>
           <li><a href="/copropriete">Bornes en copropriété</a></li>
           <li><a href="/entreprise">Bornes en entreprise</a></li>
           <li><a href="/villes">Installateurs par ville</a></li>
@@ -1447,7 +1466,7 @@ function reco(){
   if(profil==='Maison individuelle'){
     r.title='Profil : installation résidentielle';
     r.pow = nbLo>1 ? '7,4 à 11 kW' : '7,4 kW';
-    var lo=700, hi=1500;
+    var lo=1200, hi=2000; // base = data/aides.json prix_indicatifs_ttc.borne_7_4_kw
     if(nbLo>1){ lo+=500; hi+=1200; }
     if(tabAncien){ lo+=250; hi+=750; r.notes.push('Tableau ancien : une mise aux normes du tableau électrique est à prévoir.'); }
     else if(tabInconnu){ hi+=400; r.notes.push('État du tableau à confirmer : un installateur le vérifie gratuitement avant devis.'); }
@@ -1479,9 +1498,9 @@ function reco(){
     var pLo=1800, pHi=4000;
     var lo=pLo*nbLo, hi=pHi*Math.min(nbHi, nbLo>=20?10:nbHi);
     r.budget = nbLo>=6 ? ('à partir de '+fmtEur(pLo*nbLo)+' (sur étude)') : range(lo,hi);
-    r.aide='ADVENIR pro + TVA récupérable';
-    r.aides.push('Prime ADVENIR (bornes pour flotte, salariés ou clients).');
-    r.aides.push('TVA récupérable et installation amortissable comptablement.');
+    r.aide='TVA récupérable + amortissement';
+    r.aides.push('TVA récupérable (entreprise assujettie) et installation amortissable comptablement.');
+    r.aides.push('En 2026, la prime ADVENIR ne finance plus les bornes de parking privé d’entreprise pour les salariés ou une flotte de véhicules légers (seuls les poids lourds et autocars restent éligibles).');
     r.notes.push('Un pilotage de charge (load balancing) est recommandé pour éviter de renforcer l’abonnement électrique.');
     r.delai = nbLo>=6 ? '8 à 16 semaines' : '4 à 8 semaines';
   }
@@ -1489,8 +1508,8 @@ function reco(){
     r.title='Profil : infrastructure ouverte au public';
     r.pow='22 à 50 kW';
     r.budget='Étude personnalisée (5 000 à 30 000 € indicatif)';
-    r.aide='ADVENIR ouvert au public';
-    r.aides.push('Prime ADVENIR « ouvert au public », montant selon la puissance et le nombre de points.');
+    r.aide='ADVENIR voirie publique';
+    r.aides.push('Prime ADVENIR « voirie publique » pour les bornes installées sur la voirie par une collectivité : conditions et montants à vérifier sur advenir.mobi selon votre projet.');
     r.aides.push('Programmes régionaux et appels à projets (AMI) selon la collectivité.');
     r.notes.push('Une étude de puissance et un raccordement Enedis dédié sont généralement nécessaires.');
     r.delai='3 à 6 mois';
@@ -1511,9 +1530,9 @@ function reco(){
     s='Vous pouvez installer une borne '+r.pow+(brand?' pour votre '+brand:'')+' au titre du droit à la prise, sans attendre une décision collective. La prime ADVENIR réduit nettement la facture.';
   } else if(profil==='Entreprise'){
     var flotte = (nb==='1 véhicule')?'votre véhicule':('votre flotte'+(nb?' ('+nb+' véhicules)':''));
-    s='Pour '+flotte+', une infrastructure '+r.pow+' avec pilotage de charge est recommandée. La prime ADVENIR et la récupération de TVA allègent l’investissement.';
+    s='Pour '+flotte+', une infrastructure '+r.pow+' avec pilotage de charge est recommandée. La récupération de TVA et l’amortissement allègent l’investissement.';
   } else {
-    s='Ce projet d’infrastructure ouverte au public nécessite une étude de puissance dédiée. La borne '+r.pow+' est adaptée à cet usage, avec les aides ADVENIR correspondantes.';
+    s='Ce projet d’infrastructure ouverte au public nécessite une étude de puissance dédiée. La borne '+r.pow+' est adaptée à cet usage ; sur la voirie publique, une prime ADVENIR peut s’appliquer.';
   }
   r.sub=s;
   return r;
@@ -1562,11 +1581,11 @@ function advance(s){
   var order=seq(), idx=order.indexOf(s);
   if(idx>=0){ window.track('simulateur_step',{step_number:idx+1}); }
   if(idx<0 || idx>=order.length-1){ saveState(); showResult(); return; }
-  showStep(order[idx+1]); saveState();
+  showStep(order[idx+1]); saveState(); focusQ(order[idx+1]);
 }
 function goBack(){
   var order=seq(), idx=order.indexOf(curStep);
-  if(idx>0){ showStep(order[idx-1]); saveState(); }
+  if(idx>0){ showStep(order[idx-1]); saveState(); syncPressed(gId('q'+order[idx-1])); focusQ(order[idx-1]); }
 }
 function showResult(){
   for(var k=0;k<=10;k++){ var q=gId('q'+k); if(q) q.classList.remove('active'); }
@@ -1586,17 +1605,22 @@ function showResult(){
     det.innerHTML=h;
   }
   var el=gId('simRes'); el.classList.add('active');
+  var rt=gId('rTitle'); if(rt){ rt.setAttribute('tabindex','-1'); try{ rt.focus({preventScroll:true}); }catch(e){} }
   var bk=gId('simBack'); if(bk) bk.style.display='none';
   window.track('simulateur_complete',{profil:r.title});
   clearState();
   setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
 }
-function submitForm(){
-  var p=gId('fP').value.trim(),e=gId('fE').value.trim();
-  if(!p){gId('fP').style.borderColor='rgba(220,50,50,.5)';return;}
-  if(!e){gId('fE').style.borderColor='rgba(220,50,50,.5)';return;}
-  gId('fBox').style.display='none';
-  gId('okMsg').classList.add('show');
+function submitForm(){ /* l'envoi réel est géré par le script Web3Forms en bas de page (événement submit du formulaire) */ }
+function focusQ(s){
+  var q=gId('q'+s); if(!q) return;
+  var l=q.querySelector('.q-label'); if(!l) return;
+  l.setAttribute('tabindex','-1');
+  try{ l.focus({preventScroll:true}); }catch(e){ l.focus(); }
+}
+function syncPressed(q){
+  if(!q) return;
+  q.querySelectorAll('.sim-opt').forEach(function(o){ o.setAttribute('aria-pressed', o.classList.contains('sel')?'true':'false'); });
 }
 function bindSim(){
   document.querySelectorAll('.sim-opt').forEach(function(el){
@@ -1604,14 +1628,19 @@ function bindSim(){
     if(oc){ var m=oc.match(/pick.this,([0-9]+),'([^']+)'./); if(m) val=m[2]; el.removeAttribute('onclick'); }
     if(val==null){ var t=el.querySelector('.opt-title'); val=t?t.textContent.trim():''; }
     el.setAttribute('data-val',val);
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-pressed', el.classList.contains('sel')?'true':'false');
     el.addEventListener('click',function(){
       var parent=el.closest('.sim-q'); if(!parent) return;
       var step=parseInt(parent.id.replace('q',''));
       pick(el,step,el.getAttribute('data-val'));
+      syncPressed(parent);
+    });
+    el.addEventListener('keydown',function(ev){
+      if(ev.key==='Enter'||ev.key===' '||ev.key==='Spacebar'){ ev.preventDefault(); el.click(); }
     });
   });
-  var sb=document.querySelector('.btn-sub');
-  if(sb){sb.removeAttribute('onclick');sb.addEventListener('click',submitForm);}
 }
 function reapplySel(){
   for(var s=0;s<=10;s++){
@@ -1628,7 +1657,7 @@ function resetSim(){
   document.querySelectorAll('.sim-opt.sel').forEach(function(o){o.classList.remove('sel');});
   var dep=gId('depInstall'); if(dep) dep.value='';
   var res=gId('simRes'); if(res) res.classList.remove('active');
-  var fb=gId('fBox'); if(fb) fb.style.display='';
+  var fb=gId('fBox'); if(fb){ fb.style.display=''; }
   var ok=gId('okMsg'); if(ok) ok.classList.remove('show');
   var rp=gId('simReprise'); if(rp) rp.style.display='none';
   applyProfile(); showStep(0);
@@ -1761,16 +1790,40 @@ else{boot();}
   function gid(id){return document.getElementById(id);}
   function txt(id){var e=gid(id);return e?(e.textContent||'').trim():'';}
   function val(id){var e=gid(id);return e?(e.value||'').trim():'';}
+  var RULES={
+    fP:function(v){return v?'':'Indiquez votre prénom.';},
+    fE:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)?'':'Indiquez une adresse email valide (exemple : nom@domaine.fr).';},
+    fT:function(v){return /^(?:\+33|0033|0)[1-9]\d{8}$/.test(v.replace(/[\s.\-]/g,''))?'':'Indiquez un numéro de téléphone français valide (10 chiffres) : l\'installateur vous rappelle dessus.';},
+    fCP:function(v){return /^\d{5}$/.test(v)?'':'Indiquez le code postal du lieu d\'installation (5 chiffres).';}
+  };
+  function check(id){
+    var el=gid(id), err=gid(id+'-err'); if(!el) return true;
+    var msg=RULES[id](val(id));
+    if(msg){ el.setAttribute('aria-invalid','true'); if(err) err.textContent=msg; return false; }
+    el.removeAttribute('aria-invalid'); if(err) err.textContent=''; return true;
+  }
   function setup(){
-    var btn=document.querySelector('.btn-sub'); if(!btn) return;
-    var b=btn.cloneNode(true); b.removeAttribute('onclick'); btn.parentNode.replaceChild(b,btn);
+    var form=gid('fBox'); if(!form || form.getAttribute('data-bound')) return;
+    form.setAttribute('data-bound','1');
+    var b=form.querySelector('.btn-sub'); if(b) b.removeAttribute('onclick');
+    Object.keys(RULES).forEach(function(id){
+      var el=gid(id); if(!el) return;
+      el.addEventListener('blur',function(){ if(el.getAttribute('aria-invalid')) check(id); });
+      el.addEventListener('input',function(){ if(el.getAttribute('aria-invalid')) check(id); });
+    });
     var sent=false;
-    b.addEventListener('click', async function(){
-      var p=val('fP'), e=val('fE'), t=val('fT');
-      if(!p){gid('fP').style.borderColor='rgba(220,50,50,.5)';return;}
-      if(!e){gid('fE').style.borderColor='rgba(220,50,50,.5)';return;}
+    form.addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      var fail=gid('fFail'); if(fail){ fail.hidden=true; fail.textContent=''; }
+      var firstBad=null;
+      Object.keys(RULES).forEach(function(id){ if(!check(id) && !firstBad) firstBad=gid(id); });
+      if(firstBad){ firstBad.focus(); return; }
+      var p=val('fP'), e=val('fE'), t=val('fT'), cp=val('fCP');
+      var src=(document.referrer||'accès direct')+' | '+location.pathname+location.search;
+      // Anti-spam : champ invisible, rempli uniquement par les robots
+      var bot=gid('fBot'); if(bot && bot.checked){ form.style.display='none'; if(gid('okMsg')) gid('okMsg').classList.add('show'); return; }
       if(sent) return; sent=true;
-      var label=b.textContent; b.textContent='Envoi...'; b.disabled=true;
+      var label=b?b.textContent:''; if(b){ b.textContent='Envoi...'; b.disabled=true; }
       // Capture détaillée : chaque question + sa réponse (titre & précision), point par point.
       var qList=document.querySelectorAll('.sim-q');
       var qa=[], answered=0;
@@ -1800,7 +1853,9 @@ else{boot();}
         'CONTACT\n'+
         '   • Prénom    : '+p+'\n'+
         '   • Email     : '+e+'\n'+
-        '   • Téléphone : '+(t||'(non renseigné)')+'\n\n'+
+        '   • Téléphone : '+t+'\n'+
+        '   • Code postal : '+cp+'\n'+
+        '   • Source    : '+src+'\n\n'+
         sep+'\n'+
         'RECOMMANDATION PERSONNALISÉE\n'+
         '   • Profil               : '+txt('rTitle')+'\n'+
@@ -1818,8 +1873,8 @@ else{boot();}
         var res=await fetch('https://api.web3forms.com/submit',{
           method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
           body:JSON.stringify({
-            access_key:KEY, subject:'Lead simulateur IRVE - '+p, from_name:'Simulateur Les Éclairés',
-            name:p, email:e, replyto:e, 'Téléphone':t,
+            access_key:KEY, subject:'Lead simulateur IRVE - '+p+' ('+cp+')', from_name:'Simulateur Les Éclairés',
+            name:p, email:e, replyto:e, 'Téléphone':t, 'Code postal':cp, 'Source':src, botcheck:'',
             'Profil':txt('rTitle'),'Synthèse':txt('rSub'),
             'Puissance':txt('rPow'),'Budget':txt('rBudget'),
             'Aide':txt('rAide'),'Délai':txt('rDelai'),
@@ -1830,18 +1885,18 @@ else{boot();}
         });
         var data=await res.json();
         if(data && data.success){
-          if(gid('fBox')) gid('fBox').style.display='none';
+          form.style.display='none';
           if(gid('okMsg')) gid('okMsg').classList.add('show');
-          window.track('lead_submit',{profil:txt('rTitle')});
+          if(window.track) window.track('lead_submit',{profil:txt('rTitle'),segment:'simulateur'});
         } else { throw new Error('w3f'); }
       }catch(err){
-        sent=false; b.disabled=false; b.textContent=label||'Recevoir →';
-        alert("Une erreur est survenue. Réessayez ou écrivez-nous à contact@leseclaires.fr.");
+        sent=false; if(b){ b.disabled=false; b.textContent=label||'Recevoir →'; }
+        if(fail){ fail.textContent="L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous à contact@leseclaires.fr."; fail.hidden=false; }
       }
     });
   }
-  if(document.readyState==='complete') setup();
-  else window.addEventListener('load', setup);
+  if(document.readyState!=='loading') setup();
+  else document.addEventListener('DOMContentLoaded', setup);
 })();
 </script>
 <script>/*theme-toggle-js*/document.addEventListener("click",function(e){var b=e.target.closest("#themeToggle");if(!b)return;var r=document.documentElement,n=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("les-eclaires-theme",n)}catch(e){}});</script>

@@ -244,6 +244,14 @@ footer{border-top:1px solid var(--c-border);padding:32px 48px;display:flex;align
 @media(max-width:560px){.copro-form .row{grid-template-columns:1fr}}
 </style>
 <style>
+.copro-form .ferr{display:block;font-size:12.5px;line-height:1.4;color:#C0392B;margin-top:6px}
+.copro-form .ferr:empty{display:none}
+.copro-form [aria-invalid="true"]{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.copro-fail{margin:0 0 16px;padding:10px 14px;border-radius:10px;background:rgba(192,57,43,.08);color:#C0392B;font-size:13.5px;line-height:1.5}
+html[data-theme="dark"] .copro-form .ferr,html[data-theme="dark"] .copro-fail{color:#FF8A80}
+.copro-form .hp{position:absolute;left:-9999px;opacity:0}
+</style>
+<style>
 .hero-city{max-width:1080px}
 .city-body{max-width:1080px}
 .hero-city,.city-body{width:100%}
@@ -539,22 +547,16 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
     <div class="hs-hero-card"><div class="hs-reco"><div class="hs-reco-head"><span class="t">Votre projet copropriété</span><span class="hs-reco-pill">Étude gratuite</span></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><div><div class="k">Prime ADVENIR (borne individuelle)</div><div class="v">1&nbsp;000&nbsp;€&nbsp;HT</div></div><div class="r"><div class="k">Borne partagée</div><div class="v">1&nbsp;660&nbsp;€&nbsp;HT</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg></span><div><div class="k">Droit à la prise</div><div class="v">Sans vote en AG</div></div><div class="r"><div class="k">Projet collectif</div><div class="v">Vote en AG</div></div></div><div class="hs-reco-row"><span class="hs-reco-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="k">Un seul interlocuteur</div><div class="v">Jusqu'à l'AG</div></div><div class="r"><div class="k">Installateur</div><div class="v">Certifié IRVE</div></div></div><div class="hs-reco-foot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.27 2L19.27 2Q22.17 2 20.12 4.05L13.42 10.76Q12.08 12.09 13.97 12.09L19.08 12.09Q21.86 12.09 19.9 14.06L13.91 20.04Q11.95 22 11.95 19.22L11.95 13.45Q11.95 12.19 10.69 12.19L4.73 12.19Q1.83 12.19 3.88 10.14L11.84 2.18Q12.02 2 12.27 2Z"/></svg><span>On revient vers vous <b style="color:var(--c-vert-lt)">sous 24 à 48&nbsp;h</b>, sans engagement</span></div></div></div>
   </div>
 </section><section class="hs-sec hs-menthe"><div class="hs-wrap"><span class="section-tag">Pourquoi maintenant</span><h2 class="hs-h2">Pourquoi équiper votre copropriété</h2><p class="hs-lead">La demande de recharge explose, et le cadre légal pousse les copropriétés à s'équiper. Anticiper, c'est éviter l'urgence et les surcoûts.</p><div class="hs-cards"><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><h3>Valorisation des lots</h3><p>Une place équipée (ou pré-équipée) d'une borne devient un vrai argument à la vente comme à la location.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.27 2L19.27 2Q22.17 2 20.12 4.05L13.42 10.76Q12.08 12.09 13.97 12.09L19.08 12.09Q21.86 12.09 19.9 14.06L13.91 20.04Q11.95 22 11.95 19.22L11.95 13.45Q11.95 12.19 10.69 12.19L4.73 12.19Q1.83 12.19 3.88 10.14L11.84 2.18Q12.02 2 12.27 2Z"/></svg></span><h3>Une infrastructure mutualisée</h3><p>On pose une fois une colonne montante évolutive : chaque résident peut ensuite se raccorder à moindre coût.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>Jusqu'à 1&nbsp;000&nbsp;€&nbsp;HT par point</h3><p>La prime ADVENIR finance une part importante des points de charge et de l'infrastructure collective.</p></div><div class="hs-card-top"><span class="hs-tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Un seul interlocuteur</h3><p>On cadre le projet, on mobilise un installateur certifié IRVE et on vous accompagne jusqu'au vote en AG.</p></div></div></div></section><section class="hs-sec hs-white" id="cadre"><div class="hs-wrap"><span class="section-tag">Le cadre légal</span><h2 class="hs-h2">Droit à la prise &amp; prime ADVENIR</h2><div class="hs-split"><div class="hs-prose"><p>Tout copropriétaire ou locataire peut faire installer une borne sur sa place de parking, à ses frais, sans accord préalable de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime. Pour un projet collectif couvrant tout le parking, un vote en AG est en revanche nécessaire - on vous aide à le préparer.</p></div><div><div class="hs-box"><h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Prime ADVENIR</h3><p>Jusqu'à 1&nbsp;000&nbsp;€&nbsp;HT par point de charge pour une borne individuelle (1&nbsp;660&nbsp;€&nbsp;HT en borne partagée). La demande se fait avant les travaux.</p></div><div class="hs-box hs-box-dark"><h3>Besoin d'un argumentaire pour l'AG&nbsp;?</h3><p>On cadre le projet collectif avec vous et on vous aide à préparer le vote.</p><a href="#contact-copro" class="btn-primary">Étudier mon projet <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></div></div></div></section><section class="hs-sec hs-band"><div class="hs-wrap"><span class="section-tag">Comment ça se passe</span><h2 class="hs-h2">Votre projet copropriété en 4 étapes</h2><div class="hs-steps"><div class="hs-step"><span class="hs-pill">ÉTAPE 01</span><h3>Vous nous décrivez la copro</h3><p>Nombre de lots, type de parking, année de construction, projet individuel ou collectif.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 02</span><h3>On cadre le projet</h3><p>On définit l'infrastructure adaptée, le budget, les aides mobilisables et le déroulé jusqu'à l'AG.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 03</span><h3>Mise en relation</h3><p>Avec un installateur certifié IRVE habitué aux copropriétés de votre taille.</p></div><div class="hs-step"><span class="hs-pill">ÉTAPE 04</span><h3>Installation</h3><p>L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins.</p></div></div></div></section><section class="hs-sec hs-menthe" id="contact-copro"><div class="hs-wrap"><span class="section-tag">Parlons de votre copropriété</span><h2 class="hs-h2">Demander une étude gratuite</h2><p class="hs-lead">Décrivez votre copropriété en quelques lignes. On revient vers vous sous 24 à 48 heures, sans engagement.</p><div class="copro-form">
-    <div id="cBox">
-      <div class="row">
-        <div><label for="cNom">Nom et prénom</label><input type="text" id="cNom" placeholder="Votre nom"></div>
-        <div><label for="cRole">Vous êtes</label><select id="cRole"><option value="" disabled selected>Sélectionnez…</option><option>Syndic professionnel</option><option>Syndic bénévole</option><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Autre</option></select></div>
-      </div>
-      <div class="row">
-        <div><label for="cCopro">Nom / adresse de la copropriété</label><input type="text" id="cCopro" placeholder="Résidence, ville"></div>
-        <div><label for="cLots">Nombre de lots</label><select id="cLots"><option value="" disabled selected>Sélectionnez…</option><option>Moins de 20</option><option>20 à 50</option><option>50 à 100</option><option>Plus de 100</option></select></div>
-      </div>
-      <div class="row">
-        <div><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="vous@exemple.fr"></div>
-        <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06…"></div>
-      </div>
-      <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>
-      <p class="copro-legal">En envoyant, vous acceptez que ces informations soient transmises à un seul installateur certifié IRVE partenaire, habitué aux copropriétés, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. <a href="/confidentialite.html">Confidentialité</a> · <a href="/cgu.html">Conditions d'utilisation</a>.</p><button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-    </div>
+    <form id="cBox" novalidate onsubmit="return false">
+      <div class="row"><div><label for="cNom">Nom et prénom</label><input type="text" id="cNom" placeholder="Votre nom" autocomplete="name" aria-describedby="cNom-err"><span class="ferr" id="cNom-err" role="alert"></span></div><div><label for="cRole">Vous êtes</label><select id="cRole" aria-describedby="cRole-err"><option value="" disabled selected>Sélectionnez…</option><option>Syndic professionnel</option><option>Syndic bénévole</option><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Autre</option></select><span class="ferr" id="cRole-err" role="alert"></span></div></div>
+      <div class="row"><div><label for="cCopro">Nom / adresse de la copropriété</label><input type="text" id="cCopro" placeholder="Résidence, rue" aria-describedby="cCopro-err"><span class="ferr" id="cCopro-err" role="alert"></span></div><div><label for="cCP">Code postal</label><input type="text" id="cCP" placeholder="69003" autocomplete="postal-code" inputmode="numeric" maxlength="5" aria-describedby="cCP-err"><span class="ferr" id="cCP-err" role="alert"></span></div></div>
+      <div class="row"><div><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="vous@exemple.fr" autocomplete="email" aria-describedby="cEmail-err"><span class="ferr" id="cEmail-err" role="alert"></span></div><div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" aria-describedby="cTel-err"><span class="ferr" id="cTel-err" role="alert"></span></div></div>
+      <div class="row"><div><label for="cLots">Nombre de lots</label><select id="cLots" aria-describedby="cLots-err"><option value="" disabled selected>Sélectionnez…</option><option>Moins de 20</option><option>20 à 50</option><option>50 à 100</option><option>Plus de 100</option></select><span class="ferr" id="cLots-err" role="alert"></span></div><div><label for="cPlaces">Places à équiper (estimation)</label><input type="text" id="cPlaces" placeholder="Ex. : 12" inputmode="numeric" aria-describedby="cPlaces-err"><span class="ferr" id="cPlaces-err" role="alert"></span></div></div>
+      <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, échéance, projet individuel ou collectif…"></textarea><span class="ferr" id="cMsg-err" role="alert"></span></div></div>
+      <input type="checkbox" class="hp" id="cBot" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="copro-fail" id="cFail" role="alert" hidden></p>
+      <p class="copro-legal">En envoyant, vous acceptez que ces informations soient transmises à un seul installateur certifié IRVE partenaire, habitué aux copropriétés, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l'installateur. <a href="/confidentialite.html">Confidentialité</a> · <a href="/cgu.html">Conditions d'utilisation</a>.</p><button class="btn-vert" id="cSubmit" type="submit">Envoyer ma demande <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </form>
     <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>
   </div></div></section><section class="hs-sec hs-white" id="faq"><div class="hs-wrap hs-faq-grid"><div><span class="section-tag">Questions fréquentes</span><h2 class="hs-h2">Bornes en copropriété&nbsp;: vos questions</h2><p class="hs-lead">Les réponses aux questions que se posent syndics et conseils syndicaux.</p></div><div class="faq-city">    <details><summary>Qui peut lancer un projet de bornes en copropriété ?</summary><div><p>N'importe quel copropriétaire peut demander l'installation d'une borne pour son usage (droit à la prise). Pour un projet collectif couvrant tout le parking, c'est le conseil syndical et le syndic qui pilotent, après un vote en assemblée générale.</p></div></details>
     <details><summary>Qu'est-ce que le droit à la prise ?</summary><div><p>Le droit à la prise permet à tout occupant (propriétaire ou locataire) d'installer à ses frais une borne sur sa place de stationnement, sans avoir besoin de l'accord de l'assemblée générale. Le syndic ne peut s'y opposer que pour un motif sérieux et légitime.</p></div></details>
@@ -626,30 +628,52 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   <script src="/cursor.js" defer></script>
 <script>
 (function(){
-  var KEY='1109c206-cadd-4010-a0c1-cf832975b2fa';
+  var CFG={"title": "NOUVEAU LEAD - Copropriété", "subject": "Lead copropriété", "from": "Copropriété Les Éclairés", "segment": "Copropriété", "lines": [["Nom", "cNom"], ["Rôle", "cRole"], ["Copropriété", "cCopro"], ["Code postal", "cCP"], ["Nombre de lots", "cLots"], ["Places à équiper", "cPlaces"], ["Email", "cEmail"], ["Téléphone", "cTel"], ["Projet", "cMsg"]], "key": "1109c206-cadd-4010-a0c1-cf832975b2fa"};
   function g(id){return document.getElementById(id);}
   function v(id){var e=g(id);return e?(e.value||'').trim():'';}
-  var b=g('cSubmit'); if(!b) return; var sent=false;
-  b.addEventListener('click', async function(){
+  var RULES={
+    cNom:function(x){return x?'':'Indiquez votre nom.';},
+    cEmail:function(x){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x)?'':'Indiquez une adresse email valide (exemple : nom@domaine.fr).';},
+    cTel:function(x){return /^(?:\+33|0033|0)[1-9]\d{8}$/.test(x.replace(/[\s.\-]/g,''))?'':'Indiquez un numéro de téléphone français valide (10 chiffres).';},
+    cCP:function(x){return /^\d{5}$/.test(x)?'':'Indiquez le code postal du site (5 chiffres).';}
+  };
+  function check(id){
+    var el=g(id), err=g(id+'-err'); if(!el) return true;
+    var msg=RULES[id](v(id));
+    if(msg){ el.setAttribute('aria-invalid','true'); if(err) err.textContent=msg; return false; }
+    el.removeAttribute('aria-invalid'); if(err) err.textContent=''; return true;
+  }
+  var form=g('cBox'), b=g('cSubmit'); if(!form) return; var sent=false;
+  Object.keys(RULES).forEach(function(id){
+    var el=g(id); if(!el) return;
+    el.addEventListener('input',function(){ if(el.getAttribute('aria-invalid')) check(id); });
+  });
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    var fail=g('cFail'); if(fail){ fail.hidden=true; fail.textContent=''; }
+    var firstBad=null;
+    Object.keys(RULES).forEach(function(id){ if(g(id) && !check(id) && !firstBad) firstBad=g(id); });
+    if(firstBad){ firstBad.focus(); return; }
+    var bot=g('cBot'); if(bot && bot.checked){ form.style.display='none'; g('cOk').classList.add('show'); return; }
+    if(sent) return; sent=true; var label=b.innerHTML; b.textContent='Envoi…'; b.disabled=true;
     var nom=v('cNom'), email=v('cEmail');
-    if(!nom){g('cNom').style.borderColor='rgba(220,50,50,.5)';return;}
-    if(!email){g('cEmail').style.borderColor='rgba(220,50,50,.5)';return;}
-    if(sent) return; sent=true; b.textContent='Envoi…'; b.disabled=true;
-    var msg='NOUVEAU LEAD - Copropriété\n\n'+
-      'Nom : '+nom+'\nRôle : '+(v('cRole')||'(non précisé)')+'\n'+
-      'Copropriété : '+(v('cCopro')||'(non précisé)')+'\nNombre de lots : '+(v('cLots')||'(non précisé)')+'\n'+
-      'Email : '+email+'\nTéléphone : '+(v('cTel')||'(non renseigné)')+'\n\nProjet : '+(v('cMsg')||'(non précisé)')+
+    var src=(document.referrer||'accès direct')+' | '+location.pathname+location.search;
+    var msg=CFG.title+'\n\n'+CFG.lines.map(function(l){return l[0]+' : '+(v(l[1])||'(non précisé)');}).join('\n')+
+      '\nSource : '+src+
       '\n\nConsentement : accepte la transmission à un installateur partenaire ('+new Date().toLocaleString('fr-FR')+')';
     try{
       var r=await fetch('https://api.web3forms.com/submit',{method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
-        body:JSON.stringify({access_key:KEY,subject:'Lead copropriété - '+nom,from_name:'Copropriété Les Éclairés',
-          name:nom,email:email,replyto:email,message:msg})});
+        body:JSON.stringify({access_key:CFG.key,subject:CFG.subject+' - '+nom+' ('+v('cCP')+')',from_name:CFG.from,
+          name:nom,email:email,replyto:email,'Téléphone':v('cTel'),'Code postal':v('cCP'),'Source':src,botcheck:'',message:msg})});
       var d=await r.json();
-      if(d&&d.success){g('cBox').style.display='none';g('cOk').classList.add('show');}
-      else throw new Error('w3f');
-    }catch(e){sent=false;b.disabled=false;b.textContent='Envoyer ma demande';
-      alert("Une erreur est survenue. Réessayez ou écrivez-nous à contact@leseclaires.fr.");}
+      if(d&&d.success){
+        if(window.gtag)gtag('event','lead_submit',{profil:CFG.segment,segment:CFG.segment});
+        form.style.display='none'; g('cOk').classList.add('show');
+      } else throw new Error('w3f');
+    }catch(e){ sent=false; b.disabled=false; b.innerHTML=label;
+      if(fail){ fail.textContent="L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous à contact@leseclaires.fr."; fail.hidden=false; fail.scrollIntoView({block:'center'}); }
+    }
   });
 })();
 </script>

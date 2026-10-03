@@ -174,7 +174,7 @@ AIDE_CARDS = '''  <div class="info-grid">
       <p>Par point de charge pour une borne individuelle en copropriété (jusqu'à 1 660 € HT en borne partagée), depuis la revalorisation du 1er avril 2026. La demande se fait avant les travaux.</p>
     </div>
     <div class="info-card">
-      <h4>Budget moyen constaté</h4>
+      <h4>Budget indicatif (pose comprise)</h4>
       <span class="amount">1 200 à 2 000 €</span>
       <p>Pour une borne 7,4 kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026.</p>
     </div>
@@ -195,9 +195,9 @@ STEPS = '''  <div class="info-grid steps-3">
 def faq_block(name, dept, loc):
     qa = [
      (f"Combien coûte l'installation d'une borne de recharge {loc} ?",
-      f"Pour une maison individuelle {loc}, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ tout compris pour une borne 7,4&nbsp;kW (matériel et pose), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie."),
+      f"Pour une maison individuelle {loc}, comptez en général entre 1&nbsp;200 et 2&nbsp;000&nbsp;€ pour une borne 7,4&nbsp;kW, matériel et pose compris (davantage si le tableau électrique est à refaire), avec une TVA réduite à 5,5&nbsp;%. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026. En copropriété, le budget dépend du nombre de points de charge, et la prime ADVENIR en finance une partie."),
      (f"Quelles aides puis-je obtenir {loc} ?",
-      f"À {name}, les aides dépendent de votre situation : la prime ADVENIR en copropriété ou en entreprise (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible."),
+      f"À {name}, les aides dépendent de votre situation : la prime ADVENIR en copropriété (revalorisée en 2026), la TVA réduite à 5,5&nbsp;% en maison individuelle, et d'éventuelles aides locales. Le crédit d'impôt pour les particuliers n'a pas été reconduit en 2026. Le simulateur vous indique en quelques clics celles auxquelles vous êtes éligible."),
      (f"Puis-je installer une borne en copropriété {loc} ?",
       f"Oui. Que vous soyez propriétaire ou locataire {loc}, le «&nbsp;droit à la prise&nbsp;» vous permet d'installer une borne sur votre place de parking. La prime ADVENIR peut financer une grande partie d'un projet collectif. <a href=\"/copropriete\">En savoir plus sur les bornes en copropriété</a>."),
      (f"Combien de temps prend l'installation {loc} ?",
@@ -302,7 +302,7 @@ CITIES = [
    zones="Lille, Villeneuve-d'Ascq, Roubaix, Tourcoing, Lambersart, Marcq-en-Barœul, La Madeleine, Wattignies, Hellemmes"),
  dict(slug='lyon', name='Lyon', dept='Rhône', code='69', in_dept='dans le Rhône',
    sub="Vous habitez Lyon ou dans la métropole du Rhône et vous voulez installer une borne de recharge chez vous ? On vous guide pas à pas, gratuitement. Que vous soyez en maison à Caluire, en appartement à la Part-Dieu ou en entreprise à Gerland, on trouve la bonne solution.",
-   local="Lyon compte parmi les villes françaises les plus engagées dans la mobilité électrique. La Métropole de Lyon propose des aides complémentaires aux dispositifs nationaux et déploie une zone à faibles émissions qui accélère le passage à l'électrique. Le réseau d'installateurs certifiés IRVE dans le Rhône est très dense, ce qui permet des délais d'intervention rapides. L'Ouest lyonnais (Tassin, Francheville, Chaponost, Brignais, Taluyers) concentre un habitat pavillonnaire particulièrement adapté à la recharge à domicile.",
+   local="Lyon compte parmi les villes françaises les plus engagées dans la mobilité électrique. La Métropole de Lyon déploie une zone à faibles émissions qui accélère le passage à l'électrique. Le réseau d'installateurs certifiés IRVE dans le Rhône est très dense, ce qui permet des délais d'intervention rapides. L'Ouest lyonnais (Tassin, Francheville, Chaponost, Brignais, Taluyers) concentre un habitat pavillonnaire particulièrement adapté à la recharge à domicile.",
    zones="Lyon 1er à 9e, Villeurbanne, Caluire-et-Cuire, Vénissieux, Saint-Priest, Bron, Décines-Charpieu, Tassin-la-Demi-Lune, Francheville, Sainte-Foy-lès-Lyon, Écully, Chaponost"),
  dict(slug='paris', name='Paris', dept='Paris', code='75', in_dept='à Paris et en petite couronne',
    sub="Vous habitez Paris ou la petite couronne et vous voulez installer une borne de recharge chez vous ? On vous guide gratuitement. Appartement dans un immeuble haussmannien, place en parking souterrain ou pavillon en proche banlieue : on trouve la solution adaptée à votre copropriété comme à votre véhicule.",
@@ -353,7 +353,7 @@ def city_body(c, name, slug, dept, code, loc, faq_html):
     out += hs.section(hs.top_cards([
         ("percent", "TVA à taux réduit", "5,5&nbsp;%", "Au lieu de 20&nbsp;%, pour une installation réalisée par un professionnel qualifié IRVE dans un logement de plus de deux ans."),
         ("building", "Prime ADVENIR (copropriété)", "1&nbsp;000&nbsp;€&nbsp;HT", "Par point de charge pour une borne individuelle en copropriété (jusqu'à 1&nbsp;660&nbsp;€&nbsp;HT en borne partagée), depuis le 1er avril 2026. La demande se fait avant les travaux."),
-        ("euro", "Budget moyen constaté", "1&nbsp;200 à 2&nbsp;000&nbsp;€", "Pour une borne 7,4&nbsp;kW en maison individuelle, pose comprise. Le crédit d'impôt pour les particuliers n'existe plus depuis 2026."),
+        ("euro", "Budget indicatif", "1&nbsp;200 à 2&nbsp;000&nbsp;€", "Pour une borne 7,4&nbsp;kW en maison individuelle, pose comprise (davantage si le tableau électrique est à refaire). Le crédit d'impôt pour les particuliers n'existe plus depuis 2026."),
         ("calendar", "Délai d'installation", "2 à 4 semaines", "Pour une maison avec tableau électrique récent. En copropriété, les démarches peuvent prendre un peu plus de temps."),
       ]), tone='menthe', tag="Ce qu'il faut savoir", h2=f"Les aides disponibles {loc}",
         lead="Plusieurs aides peuvent financer une grande partie de votre installation. Voici les principales.", sid="aides")
@@ -504,7 +504,7 @@ def build_hub():
     import _home_sections as hs
     hub_body = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Bornes par ville</span>',
         badge="Guides locaux IRVE · France entière", h1="Bornes de recharge, <em>ville par ville</em>",
-        lead="Aides locales, prix constatés, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.",
+        lead="Aides locales, prix indicatifs, installateurs certifiés IRVE et délais : retrouvez nos guides dédiés à votre ville. Et où que vous soyez en France, le simulateur vous donne une recommandation personnalisée en quelques minutes.",
         ctas=[("/simulateur", "Démarrer le simulateur gratuit", "primary"), ("#guides", "Trouver ma ville", "ghost")],
         mini=[(str(pos), "guides locaux"), ("48&nbsp;h", "pour être recontacté"), ("100&nbsp;%", "indépendant")])
     hub_body += hs.section(

@@ -68,8 +68,10 @@ CONFIDENTIALITE = f'''
     </div>
     <h2>2. Données collectées</h2>
     <ul>
-      <li><strong>Simulateur :</strong> prénom, e-mail, téléphone, département et réponses au questionnaire sur votre logement, votre véhicule et votre projet.</li>
-      <li><strong>Formulaire copropriété :</strong> nom, rôle (syndic, conseil syndical, copropriétaire), nom ou adresse de la copropriété, nombre de lots, e-mail, téléphone, description du projet.</li>
+      <li><strong>Simulateur :</strong> prénom, e-mail, téléphone, code postal du lieu d'installation, département et réponses au questionnaire sur votre logement, votre véhicule et votre projet.</li>
+      <li><strong>Formulaire copropriété :</strong> nom, rôle (syndic, conseil syndical, copropriétaire), nom ou adresse de la copropriété, code postal, nombre de lots et de places à équiper, e-mail, téléphone, description du projet.</li>
+      <li><strong>Formulaire entreprise :</strong> nom, entreprise, code postal du site, nombre de places de parking, usage principal, e-mail, téléphone, description du projet.</li>
+      <li><strong>Origine de la demande :</strong> pour chaque formulaire, la page du site depuis laquelle vous envoyez la demande et, le cas échéant, l'adresse du site qui vous y a conduit.</li>
       <li><strong>Candidature partenaire :</strong> prénom, nom, e-mail professionnel, téléphone, entreprise, zone d'intervention, types de projets, qualification IRVE, message.</li>
       <li><strong>Prospection des installateurs :</strong> coordonnées professionnelles d'entreprises du secteur IRVE (raison sociale, ville, téléphone, e-mail, site, qualification), issues de sources publiques (sites des entreprises, annuaires professionnels).</li>
       <li><strong>Mesure d'audience :</strong> pages vues, type d'appareil et de navigateur, provenance, uniquement si vous acceptez les cookies de mesure d'audience.</li>
@@ -86,7 +88,7 @@ CONFIDENTIALITE = f'''
     </ul>
     <h2>4. Durée de conservation</h2>
     <ul>
-      <li><strong>Demandes du simulateur et du formulaire copropriété</strong> : 3 ans à compter de votre dernier contact avec nous.</li>
+      <li><strong>Demandes du simulateur et des formulaires copropriété et entreprise</strong> : 3 ans à compter de votre dernier contact avec nous.</li>
       <li><strong>Candidatures non retenues</strong> : 3 ans à compter du dernier contact. <strong>Partenaires sous contrat</strong> : durée du contrat, puis 5 ans (prescription) et 10 ans pour les pièces comptables.</li>
       <li><strong>Prospects installateurs</strong> : 3 ans à compter du dernier contact.</li>
       <li><strong>Données de mesure d'audience</strong> : 14 mois maximum dans Google Analytics.</li>

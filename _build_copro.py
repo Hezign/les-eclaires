@@ -85,13 +85,23 @@ body += hs.section(hs.steps([
     ("Mise en relation", "Avec un installateur certifié IRVE habitué aux copropriétés de votre taille."),
     ("Installation", "L'infrastructure est posée ; chaque résident peut ensuite se raccorder simplement, au fil de ses besoins."),
   ]), tone='band', tag="Comment ça se passe", h2="Votre projet copropriété en 4 étapes")
-body += hs.section('<div class="copro-form">\n    <div id="cBox">\n      <div class="row">\n        <div><label for="cNom">Nom et prénom</label><input type="text" id="cNom" placeholder="Votre nom"></div>\n        <div><label for="cRole">Vous êtes</label><select id="cRole"><option value="" disabled selected>Sélectionnez…</option><option>Syndic professionnel</option><option>Syndic bénévole</option><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Autre</option></select></div>\n      </div>\n      <div class="row">\n        <div><label for="cCopro">Nom / adresse de la copropriété</label><input type="text" id="cCopro" placeholder="Résidence, ville"></div>\n        <div><label for="cLots">Nombre de lots</label><select id="cLots"><option value="" disabled selected>Sélectionnez…</option><option>Moins de 20</option><option>20 à 50</option><option>50 à 100</option><option>Plus de 100</option></select></div>\n      </div>\n      <div class="row">\n        <div><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="vous@exemple.fr"></div>\n        <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" placeholder="06…"></div>\n      </div>\n      <div class="row"><div class="full"><label for="cMsg">Votre projet (facultatif)</label><textarea id="cMsg" placeholder="Type de parking, nombre de places à équiper, échéance…"></textarea></div></div>\n      <p class="copro-legal">En envoyant, vous acceptez que ces informations soient transmises à un seul installateur certifié IRVE partenaire, habitué aux copropriétés, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l\'installateur. <a href="/confidentialite.html">Confidentialité</a> · <a href="/cgu.html">Conditions d\'utilisation</a>.</p><button class="btn-vert" id="cSubmit" type="button">Envoyer ma demande {ARROW}</button>\n    </div>\n    <div class="copro-ok" id="cOk"><h4>Demande bien reçue !</h4><p>On revient vers vous sous 24 à 48 heures ouvrées.</p></div>\n  </div>', tone='menthe', tag="Parlons de votre copropriété", h2="Demander une étude gratuite",
+import _form_shared as fs
+_FORM_ROWS = [
+    [fs.field('cNom','Nom et prénom',placeholder='Votre nom',autocomplete='name'), fs.field('cRole','Vous êtes',options=['Syndic professionnel','Syndic bénévole','Membre du conseil syndical','Copropriétaire','Autre'])],
+    [fs.field('cCopro','Nom / adresse de la copropriété',placeholder='Résidence, rue'), fs.field('cCP','Code postal',placeholder='69003',autocomplete='postal-code',inputmode='numeric',extra=' maxlength="5"')],
+    [fs.field('cEmail','Email',kind='email',placeholder='vous@exemple.fr',autocomplete='email'), fs.field('cTel','Téléphone',kind='tel',placeholder='06 12 34 56 78',autocomplete='tel',inputmode='tel')],
+    [fs.field('cLots','Nombre de lots',options=['Moins de 20','20 à 50','50 à 100','Plus de 100']), fs.field('cPlaces','Places à équiper (estimation)',placeholder='Ex. : 12',inputmode='numeric')],
+    [fs.field('cMsg','Votre projet (facultatif)',kind='textarea',placeholder='Type de parking, échéance, projet individuel ou collectif…')],
+  ]
+body += hs.section(fs.form_html(_FORM_ROWS, 'En envoyant, vous acceptez que ces informations soient transmises à un seul installateur certifié IRVE partenaire, habitué aux copropriétés, qui vous recontactera. Service gratuit&nbsp;: Les Éclairés est rémunéré par l\'installateur. <a href="/confidentialite.html">Confidentialité</a> · <a href="/cgu.html">Conditions d\'utilisation</a>.', ARROW), tone='menthe', tag="Parlons de votre copropriété", h2="Demander une étude gratuite",
   lead="Décrivez votre copropriété en quelques lignes. On revient vers vous sous 24 à 48 heures, sans engagement.", sid="contact-copro")
 body += hs.faq_section("Questions fréquentes", "Bornes en copropriété&nbsp;: vos questions",
   "Les réponses aux questions que se posent syndics et conseils syndicaux.", faq_html)
 
 # Le formulaire est une chaîne non formatée : on y injecte la flèche ici
 body = body.replace('{ARROW}', ARROW)
+
+FORM_JS = fs.form_js(title='NOUVEAU LEAD - Copropriété', subject='Lead copropriété', from_name='Copropriété Les Éclairés', segment='Copropriété', lines=[['Nom','cNom'],['Rôle','cRole'],['Copropriété','cCopro'],['Code postal','cCP'],['Nombre de lots','cLots'],['Places à équiper','cPlaces'],['Email','cEmail'],['Téléphone','cTel'],['Projet','cMsg']])
 
 html=f'''<!DOCTYPE html>
 <html lang="fr">
@@ -118,6 +128,7 @@ html=f'''<!DOCTYPE html>
 {CSS}
 {EXTRA_CSS}
 {FORM_CSS}
+{fs.CSS}
 {UNIFORM}
 <noscript><style>#preloader{{display:none!important}}</style></noscript>
 </head>
@@ -131,35 +142,7 @@ html=f'''<!DOCTYPE html>
 {body}
 {footer()}
   <script src="/cursor.js" defer></script>
-<script>
-(function(){{
-  var KEY='1109c206-cadd-4010-a0c1-cf832975b2fa';
-  function g(id){{return document.getElementById(id);}}
-  function v(id){{var e=g(id);return e?(e.value||'').trim():'';}}
-  var b=g('cSubmit'); if(!b) return; var sent=false;
-  b.addEventListener('click', async function(){{
-    var nom=v('cNom'), email=v('cEmail');
-    if(!nom){{g('cNom').style.borderColor='rgba(220,50,50,.5)';return;}}
-    if(!email){{g('cEmail').style.borderColor='rgba(220,50,50,.5)';return;}}
-    if(sent) return; sent=true; b.textContent='Envoi…'; b.disabled=true;
-    var msg='NOUVEAU LEAD - Copropriété\\n\\n'+
-      'Nom : '+nom+'\\nRôle : '+(v('cRole')||'(non précisé)')+'\\n'+
-      'Copropriété : '+(v('cCopro')||'(non précisé)')+'\\nNombre de lots : '+(v('cLots')||'(non précisé)')+'\\n'+
-      'Email : '+email+'\\nTéléphone : '+(v('cTel')||'(non renseigné)')+'\\n\\nProjet : '+(v('cMsg')||'(non précisé)')+
-      '\\n\\nConsentement : accepte la transmission à un installateur partenaire ('+new Date().toLocaleString('fr-FR')+')';
-    try{{
-      var r=await fetch('https://api.web3forms.com/submit',{{method:'POST',
-        headers:{{'Content-Type':'application/json',Accept:'application/json'}},
-        body:JSON.stringify({{access_key:KEY,subject:'Lead copropriété - '+nom,from_name:'Copropriété Les Éclairés',
-          name:nom,email:email,replyto:email,message:msg}})}});
-      var d=await r.json();
-      if(d&&d.success){{g('cBox').style.display='none';g('cOk').classList.add('show');}}
-      else throw new Error('w3f');
-    }}catch(e){{sent=false;b.disabled=false;b.textContent='Envoyer ma demande';
-      alert("Une erreur est survenue. Réessayez ou écrivez-nous à contact@leseclaires.fr.");}}
-  }});
-}})();
-</script>
+{FORM_JS}
 </body>
 </html>
 '''

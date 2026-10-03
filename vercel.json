@@ -35,6 +35,16 @@
   ],
   "redirects": [
     {
+      "source": "/partenaires",
+      "destination": "/partenaires.html",
+      "permanent": true
+    },
+    {
+      "source": "/villes/",
+      "destination": "/villes",
+      "permanent": true
+    },
+    {
       "source": "/blog/borne-recharge-chambery-installateur-aides-2026.html",
       "destination": "/villes/borne-recharge-chambery.html",
       "permanent": true

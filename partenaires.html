@@ -526,23 +526,23 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
       <div class="form-grid">
         <div>
           <label for="fp">Prénom *</label>
-          <input type="text" class="form-in" id="fp" placeholder="Jean">
+          <input type="text" class="form-in" id="fp" placeholder="Jean" autocomplete="given-name">
         </div>
         <div>
           <label for="fn">Nom *</label>
-          <input type="text" class="form-in" id="fn" placeholder="Dupont">
+          <input type="text" class="form-in" id="fn" placeholder="Dupont" autocomplete="family-name">
         </div>
         <div>
           <label for="fe">Email professionnel *</label>
-          <input type="email" class="form-in" id="fe" placeholder="jean@entreprise.fr">
+          <input type="email" class="form-in" id="fe" placeholder="jean@entreprise.fr" autocomplete="email">
         </div>
         <div>
-          <label for="ft">Téléphone</label>
-          <input type="tel" class="form-in" id="ft" placeholder="06 00 00 00 00">
+          <label for="ft">Téléphone *</label>
+          <input type="tel" class="form-in" id="ft" placeholder="06 00 00 00 00" autocomplete="tel" inputmode="tel">
         </div>
         <div class="form-full">
           <label for="fc">Nom de l'entreprise *</label>
-          <input type="text" class="form-in" id="fc" placeholder="Électricité Dupont">
+          <input type="text" class="form-in" id="fc" placeholder="Électricité Dupont" autocomplete="organization">
         </div>
         <div>
           <label for="fz">Zone d'intervention *</label>
@@ -572,8 +572,9 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
           <textarea class="form-in" id="fm" placeholder="Présentez votre activité, vos certifications, vos zones de prédilection..."></textarea>
         </div>
       </div>
+      <input type="checkbox" id="fbot" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
       <p class="form-legal">* Champs obligatoires · Vos données servent uniquement à étudier votre candidature et à préparer un éventuel contrat partenaire. Elles ne sont jamais revendues. <a href="/confidentialite.html" style="color:var(--c-vert-txt)">Politique de confidentialité</a>.</p>
-      <button class="btn-submit" id="btnSubmit">
+      <button class="btn-submit" id="btnSubmit" type="button">
         Envoyer ma candidature
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </button>
@@ -673,41 +674,64 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
 </footer>
 
 <script>
-document.getElementById('btnSubmit').addEventListener('click', async function () {
-  function v(id){var e=document.getElementById(id);return e?e.value.trim():'';}
-  var fp=v('fp'),fn=v('fn'),fe=v('fe'),fc=v('fc'),ft=v('ft'),fz=v('fz'),fm=v('fm'),fq=v('fq');
-  var ft2el=document.getElementById('ft2'); var ft2=ft2el?ft2el.value:'';
-  var ok=true;
-  [['fp',fp],['fe',fe],['fc',fc],['fz',fz]].forEach(function(p){
-    var el=document.getElementById(p[0]);
-    if(!p[1]){el.style.borderColor='rgba(220,50,50,.5)';ok=false;} else el.style.borderColor='';
-  });
-  if(!ok) return;
-  var btn=document.getElementById('btnSubmit');
-  btn.textContent='Envoi en cours...'; btn.disabled=true;
-  var err=document.getElementById('errMsg'); if(err) err.classList.remove('show');
-  try{
-    var res=await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({
-        access_key:'1109c206-cadd-4010-a0c1-cf832975b2fa',
-        subject:'Candidature partenaire '+fp+' '+fn+' ('+fc+')',
-        from_name:'Site Les Éclairés',
-        name:fp+' '+fn, email:fe, replyto:fe,
-        'Téléphone':ft, 'Entreprise':fc, 'Zone':fz, 'Type':ft2, 'Qualification IRVE':fq, 'Message':fm
-      })
-    });
-    var data=await res.json();
-    if(data && data.success){
-      document.getElementById('formWrap').style.display='none';
-      document.getElementById('successWrap').classList.add('show');
-    } else { throw new Error('web3forms'); }
-  }catch(e){
-    btn.textContent='Envoyer ma candidature'; btn.disabled=false;
-    if(err) err.classList.add('show');
+(function(){
+  function g(id){return document.getElementById(id);}
+  function v(id){var e=g(id);return e?e.value.trim():'';}
+  var RULES={
+    fp:function(x){return x?'':'Indiquez votre prénom.';},
+    fn:function(x){return x?'':'Indiquez votre nom.';},
+    fe:function(x){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x)?'':'Indiquez une adresse email valide.';},
+    ft:function(x){return /^(?:\+33|0033|0)[1-9]\d{8}$/.test(x.replace(/[\s.\-]/g,''))?'':'Indiquez un numéro de téléphone français valide (10 chiffres).';},
+    fc:function(x){return x?'':'Indiquez le nom de votre entreprise.';},
+    fz:function(x){return x?'':'Indiquez votre zone d\'intervention (départements ou communes).';}
+  };
+  function errEl(id){
+    var e=g(id+'-err'); if(e) return e;
+    e=document.createElement('span'); e.id=id+'-err'; e.setAttribute('role','alert');
+    e.style.cssText='display:block;font-size:12.5px;line-height:1.4;color:#C0392B;margin-top:6px';
+    g(id).insertAdjacentElement('afterend',e); g(id).setAttribute('aria-describedby',e.id); return e;
   }
-});
+  function check(id){
+    var el=g(id); if(!el) return true; var msg=RULES[id](v(id)), e=errEl(id);
+    if(msg){ el.setAttribute('aria-invalid','true'); el.style.borderColor='#C0392B'; e.textContent=msg; e.style.display='block'; return false; }
+    el.removeAttribute('aria-invalid'); el.style.borderColor=''; e.textContent=''; e.style.display='none'; return true;
+  }
+  var btn=g('btnSubmit'); if(!btn) return; var label=btn.innerHTML, sent=false;
+  Object.keys(RULES).forEach(function(id){ var el=g(id); if(el) el.addEventListener('input',function(){ if(el.getAttribute('aria-invalid')) check(id); }); });
+  btn.addEventListener('click', async function(){
+    var firstBad=null;
+    Object.keys(RULES).forEach(function(id){ if(!check(id) && !firstBad) firstBad=g(id); });
+    if(firstBad){ firstBad.focus(); return; }
+    var bot=g('fbot'); if(bot && bot.checked){ g('formWrap').style.display='none'; g('successWrap').classList.add('show'); return; }
+    if(sent) return; sent=true;
+    var fp=v('fp'),fn=v('fn'),fe=v('fe'),fc=v('fc'),ft=v('ft'),fz=v('fz'),fm=v('fm'),fq=v('fq'),ft2=v('ft2');
+    btn.textContent='Envoi en cours...'; btn.disabled=true;
+    var err=g('errMsg'); if(err) err.classList.remove('show');
+    try{
+      var res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify({
+          access_key:'1109c206-cadd-4010-a0c1-cf832975b2fa',
+          subject:'Candidature partenaire '+fp+' '+fn+' ('+fc+')',
+          from_name:'Site Les Éclairés',
+          name:fp+' '+fn, email:fe, replyto:fe, botcheck:'',
+          'Téléphone':ft, 'Entreprise':fc, 'Zone':fz, 'Type':ft2, 'Qualification IRVE':fq, 'Message':fm,
+          'Source':(document.referrer||'accès direct')+' | '+location.pathname+location.search
+        })
+      });
+      var data=await res.json();
+      if(data && data.success){
+        if(window.gtag)gtag('event','partner_apply',{zone:fz});
+        g('formWrap').style.display='none';
+        g('successWrap').classList.add('show');
+      } else { throw new Error('web3forms'); }
+    }catch(e){
+      sent=false; btn.innerHTML=label; btn.disabled=false;
+      if(err) err.classList.add('show');
+    }
+  });
+})();
 </script>
   <script src="/cursor.js" defer></script>
 <!-- COOKIE BANNER -->
