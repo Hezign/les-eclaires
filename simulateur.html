@@ -908,6 +908,15 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   .hs-reco{padding:18px}
 }
 </style>
+<style id="bc-css">
+.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
+.breadcrumb.bc a{color:inherit;text-decoration:none}
+.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
+.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
+.hero .breadcrumb.bc a:hover{color:#fff}
+.hero .breadcrumb.bc span[aria-current]{color:#fff}
+</style>
 </head>
 <body>
 
@@ -998,7 +1007,8 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
 <section class="simp-hero">
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="sw">
-    <div class="simp-badge"><span class="badge-dot"></span>Gratuit · Sans inscription · Résultat immédiat</div>
+    <!--bc--><div class="breadcrumb bc" role="navigation" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Simulateur</span></div><!--/bc-->
+<div class="simp-badge"><span class="badge-dot"></span>Gratuit · Sans inscription · Résultat immédiat</div>
     <h1>Simulateur IRVE&nbsp;: votre projet de <span class="hl">borne de recharge</span>, clair en 3 minutes.</h1>
     <p class="lead">Répondez à quelques questions simples. On vous dit exactement quelle borne installer, combien ça coûte vraiment, les aides auxquelles vous avez droit et le délai d'installation. Sans jargon, sans engagement.</p>
     <ul class="simp-points">

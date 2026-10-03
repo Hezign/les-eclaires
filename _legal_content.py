@@ -200,6 +200,9 @@ if __name__ == '__main__':
     for p, prose in PAGES.items():
         write(p, prose)
         _legal_toc.build(p)
+    import _breadcrumbs
+    for p in PAGES:
+        _breadcrumbs.apply(p)
     import _ds_shared, _typo
     for p in PAGES:
         _ds_shared.apply(p)

@@ -398,6 +398,15 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   .hs-reco{padding:18px}
 }
 </style>
+<style id="bc-css">
+.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
+.breadcrumb.bc a{color:inherit;text-decoration:none}
+.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
+.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
+.hero .breadcrumb.bc a:hover{color:#fff}
+.hero .breadcrumb.bc span[aria-current]{color:#fff}
+</style>
 </head><body>
 <!-- TOPBAR PARTENAIRE -->
 <div class="topbar" id="topbar">
@@ -482,6 +491,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&li.classLis
 if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</script>
 </nav>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/devenir-installateur-agree-advenir.jpg" alt="Bornes de recharge pour voitures électriques sur un parking, le métier d'installateur agréé ADVENIR" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
+<!--bc--><div class="breadcrumb bc" role="navigation" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><a href="/blog/">Guides</a><span aria-hidden="true">›</span><span aria-current="page">Devenir installateur agréé ADVENIR : conditions et démarches</span></div><!--/bc-->
 <div class="badge">Espace pro</div>
 <h1 class="htitle">Devenir installateur agréé ADVENIR : conditions et démarches</h1>
 <div class="hmeta"><span>14 septembre 2026</span><span class="dot"></span><span>7 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>

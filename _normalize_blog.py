@@ -89,3 +89,7 @@ if __name__ == '__main__':
     # Catégories normalisées + index du blog (filtres, dates complètes)
     import _blog_index
     _blog_index.badges(); _blog_index.build()
+    # Fil d'Ariane (articles + accueil du blog)
+    import _breadcrumbs
+    for f in targets + ['blog/index.html']:
+        _breadcrumbs.apply(f)

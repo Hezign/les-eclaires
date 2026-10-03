@@ -422,6 +422,15 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   .hs-reco{padding:18px}
 }
 </style>
+<style id="bc-css">
+.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
+.breadcrumb.bc a{color:inherit;text-decoration:none}
+.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
+.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
+.hero .breadcrumb.bc a:hover{color:#fff}
+.hero .breadcrumb.bc span[aria-current]{color:#fff}
+</style>
 </head>
 <body>
 <!-- TOPBAR PARTENAIRE -->
@@ -508,6 +517,7 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
 </nav>
 <div id="pgbar"></div>
 <div class="hero has-photo"><img class="hero-bg" src="/blog/img/guide-prime-advenir-2026.jpg" alt="Signature d'un dossier d'aide pour l'installation d'une borne de recharge (prime ADVENIR)" loading="eager" fetchpriority="high" width="1400" height="620"><span class="hero-scrim"></span><div class="hero-in">
+<!--bc--><div class="breadcrumb bc" role="navigation" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><a href="/blog/">Guides</a><span aria-hidden="true">›</span><span aria-current="page">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</span></div><!--/bc-->
 <div class="badge">Aides & prix</div>
 <h1 class="htitle">Qu'est-ce que la prime ADVENIR ? Le guide complet 2026</h1>
 <div class="hmeta"><span>1er mars 2026</span><span class="dot"></span><span>3 min de lecture</span><span class="dot"></span><span>Les Éclairés</span></div>

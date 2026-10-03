@@ -341,6 +341,8 @@ _apply_dark.apply('simulateur.html')
 # Menu (page courante) et footer communs, durables après régénération
 import _legal_global
 _inject_header.sync_nav('simulateur.html'); _legal_global.apply('simulateur.html')
+import _breadcrumbs
+_breadcrumbs.apply('simulateur.html')
 print("simulateur.html écrit :", len(html), "octets")
 # sanity
 for tag in ['id="simulateur-start"','function pick','var KEY=','faq-q','simp-hero']:

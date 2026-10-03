@@ -167,7 +167,7 @@ def body(form_inner):
          ("bolt", "Puissance recommandée", "Borne 7,4&nbsp;kW", "Délai souhaité", "Indiqué"),
          ("euro", "Budget et aides", "Estimés", "Accord client", "Recueilli")],
         'Transmise <b style="color:var(--c-vert-lt)">à vous seul, sous 24&nbsp;h</b>, par e-mail')
-    HERO = hs.hero(badge="Réseau installateurs IRVE",
+    HERO = hs.hero(crumbs='<a href="/">Accueil</a> › <span>Installateurs IRVE</span>', badge="Réseau installateurs IRVE",
         h1="Devenir partenaire <em>installateur IRVE</em>",
         lead="Recevez des demandes de pose qualifiées sur votre zone, sans prospecter. Chaque demande vient d'un particulier, d'une copropriété, d'une entreprise ou d'une collectivité qui a déjà fait sa simulation, et elle n'est transmise qu'à vous.",
         ctas=[("#candidature", "Candidater", "primary"), ("#prerequis", "Voir les prérequis", "ghost")],

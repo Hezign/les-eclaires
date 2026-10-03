@@ -366,6 +366,16 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   .hs-reco{padding:18px}
 }
 </style>
+<style id="bc-css">
+.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
+.breadcrumb.bc a{color:inherit;text-decoration:none}
+.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
+.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
+.hero .breadcrumb.bc a:hover{color:#fff}
+.hero .breadcrumb.bc span[aria-current]{color:#fff}
+</style>
+<script type="application/ld+json" id="bc-ld">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://leseclaires.fr/"}, {"@type": "ListItem", "position": 2, "name": "Confidentialité", "item": "https://leseclaires.fr/confidentialite.html"}]}</script>
 </head>
 <body>
 <!-- TOPBAR PARTENAIRE -->
@@ -451,7 +461,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&li.classLis
 if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</script>
 </nav>
 <div class="page has-toc">
-  <div class="page-tag">RGPD</div>
+  <!--bc--><div class="breadcrumb bc" role="navigation" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Confidentialité</span></div><!--/bc-->
+<div class="page-tag">RGPD</div>
   <h1>Politique de confidentialité</h1>
   <p class="page-date">Dernière mise à jour : octobre 2026</p>
   <div class="legal-layout"><aside class="legal-toc" aria-label="Sommaire"><p class="legal-toc-title">Sommaire</p><ol><li><a href="#responsable-du-traitement"><span class="n">1</span><span>Responsable du traitement</span></a></li><li><a href="#donnees-collectees"><span class="n">2</span><span>Données collectées</span></a></li><li><a href="#finalites-et-bases-legales"><span class="n">3</span><span>Finalités et bases légales</span></a></li><li><a href="#duree-de-conservation"><span class="n">4</span><span>Durée de conservation</span></a></li><li><a href="#destinataires-et-sous-traitants"><span class="n">5</span><span>Destinataires et sous-traitants</span></a></li><li><a href="#transferts-hors-union-europeenne"><span class="n">6</span><span>Transferts hors Union européenne</span></a></li><li><a href="#securite"><span class="n">7</span><span>Sécurité</span></a></li><li><a href="#vos-droits"><span class="n">8</span><span>Vos droits</span></a></li><li><a href="#installateurs-si-nous-vous-avons-contacte"><span class="n">9</span><span>Installateurs : si nous vous avons contacté</span></a></li><li><a href="#cookies-et-traceurs"><span class="n">10</span><span>Cookies et traceurs</span></a></li><li><a href="#modifications"><span class="n">11</span><span>Modifications</span></a></li></ol></aside>
