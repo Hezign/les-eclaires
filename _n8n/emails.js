@@ -103,6 +103,25 @@ function mailClient(d) {
   };
 }
 
+/* Bloc « à qui transmettre » : partenaire signé dans le département, ou à recruter */
+function blocPartenaire(d) {
+  var lieu = d.dept ? d.dept + (has(d.deptNom) ? ' (' + esc(d.deptNom) + ')' : '') : 'ce secteur';
+  var liste = d.partenaires || [];
+  if (liste.length) {
+    var rows = liste.map(function (p) {
+      return '<tr><td style="padding:6px 0;font-family:' + FB + ';font-size:15px;color:' + C.noir + ';"><strong>' + esc(p.nom) + '</strong>'
+        + (has(p.contact) ? ' · ' + esc(p.contact) : '')
+        + (has(p.email) ? ' · <a href="mailto:' + esc(p.email) + '" style="color:' + C.vertTxt + ';">' + esc(p.email) + '</a>' : '') + '</td></tr>';
+    }).join('');
+    return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 0;background:' + C.noir + ';border-radius:16px;"><tr><td style="padding:18px 20px;">'
+      + '<div style="font-family:' + FM + ';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:' + C.vert + ';margin-bottom:6px;">À transmettre · partenaire dans le ' + lieu + '</div>'
+      + '<table role="presentation" cellpadding="0" cellspacing="0" border="0">' + rows.replace(new RegExp(C.noir, 'g'), '#FFFFFF').replace(new RegExp(C.vertTxt, 'g'), C.vert) + '</table></td></tr></table>';
+  }
+  return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 0;background:#FFFFFF;border:2px solid ' + C.noir + ';border-radius:16px;"><tr><td style="padding:16px 20px;">'
+    + '<div style="font-family:' + FM + ';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:' + C.noir + ';margin-bottom:6px;">À recruter · aucun partenaire dans le ' + lieu + '</div>'
+    + '<div style="font-family:' + FB + ';font-size:15px;line-height:1.55;color:' + C.gris + ';">Contactez des installateurs certifiés IRVE du ' + lieu + ' avec cette demande concrète. Dans Kalend, filtrez les installateurs sur ce département.</div></td></tr></table>';
+}
+
 /* ---------- Notification interne (demande client) ---------- */
 function mailInterne(d) {
   var qui = has(d.prenom) ? d.prenom : d.nom;
@@ -120,11 +139,12 @@ function mailInterne(d) {
   } else {
     corps += card('Projet', (d.champs || []).filter(function (c) { return ['Email', 'Téléphone', 'Nom', 'Code postal'].indexOf(c[0]) === -1; }));
   }
-  var blocks = contact + corps
+  var blocks = blocPartenaire(d) + contact + corps
     + button('Répondre à ' + (qui || 'ce contact'), 'mailto:' + esc(d.email) + '?subject=' + encodeURIComponent('Votre projet de borne de recharge - Les Éclairés'))
     + para('<span style="font-size:13px;">Origine : ' + esc(d.source || 'non précisée') + '<br>Consentement : ' + esc(d.consentement || 'transmission à un installateur partenaire acceptée') + '</span>');
   return {
-    subject: 'Nouvelle demande ' + LIB[d.type].toLowerCase() + ' - ' + (qui || '') + (has(d.cp) ? ' (' + d.cp + ')' : ''),
+    subject: 'Nouvelle demande ' + LIB[d.type].toLowerCase() + ' - ' + (qui || '') + (has(d.cp) ? ' (' + d.cp + ')' : '')
+      + ((d.partenaires || []).length ? ' · partenaire : ' + d.partenaires[0].nom : ' · à recruter'),
     html: layout({
       preheader: (d.profil || LIB[d.type]) + (has(d.cp) ? ' · ' + d.cp : ''),
       tag: 'Nouvelle demande · ' + LIB[d.type],
