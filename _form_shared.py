@@ -46,13 +46,23 @@ def form_html(rows, legal, arrow):
 
 def form_js(*, title, subject, from_name, segment, lines, key='1109c206-cadd-4010-a0c1-cf832975b2fa'):
     """lines = [(libellé, id)] repris dans le message, dans l'ordre. Champs contrôlés : cNom, cEmail, cTel, cCP."""
-    cfg = json.dumps({'title': title, 'subject': subject, 'from': from_name, 'segment': segment,
+    kind = {'Copropriété': 'copropriete', 'Entreprise': 'entreprise'}[segment]
+    cfg = json.dumps({'title': title, 'subject': subject, 'from': from_name, 'segment': segment, 'type': kind,
                       'lines': lines, 'key': key}, ensure_ascii=False)
     return '''<script>
 (function(){
   var CFG=''' + cfg + ''';
   function g(id){return document.getElementById(id);}
   function v(id){var e=g(id);return e?(e.value||'').trim():'';}
+  /* Envoi principal : n8n (mails en français à la DA). Secours : Web3Forms si n8n ne répond pas. */
+  async function leN8n(payload){
+    try{
+      var c=new AbortController(), to=setTimeout(function(){c.abort();},9000);
+      var r=await fetch('https://n8n.srv1212149.hstgr.cloud/webhook/leseclaires-demande',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:c.signal});
+      clearTimeout(to); if(!r.ok) return false;
+      var j=await r.json(); return !!(j&&j.success);
+    }catch(e){ return false; }
+  }
   var RULES={
     cNom:function(x){return x?'':'Indiquez votre nom.';},
     cEmail:function(x){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(x)?'':'Indiquez une adresse email valide (exemple : nom@domaine.fr).';},
@@ -84,11 +94,16 @@ def form_js(*, title, subject, from_name, segment, lines, key='1109c206-cadd-401
       '\\nSource : '+src+
       '\\n\\nConsentement : accepte la transmission à un installateur partenaire ('+new Date().toLocaleString('fr-FR')+')';
     try{
+      var d={success:await leN8n({type:CFG.type,nom:nom,email:email,tel:v('cTel'),cp:v('cCP'),source:src,
+        champs:CFG.lines.map(function(l){return [l[0],v(l[1])];}),
+        consentement:'Transmission à un installateur partenaire acceptée ('+new Date().toLocaleString('fr-FR')+', page '+location.pathname+')'})};
+      if(!d.success){
       var r=await fetch('https://api.web3forms.com/submit',{method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify({access_key:CFG.key,subject:CFG.subject+' - '+nom+' ('+v('cCP')+')',from_name:CFG.from,
           name:nom,email:email,replyto:email,'Téléphone':v('cTel'),'Code postal':v('cCP'),'Source':src,botcheck:'',message:msg})});
-      var d=await r.json();
+      d=await r.json();
+      }
       if(d&&d.success){
         if(window.gtag)gtag('event','lead_submit',{profil:CFG.segment,segment:CFG.segment});
         form.style.display='none'; g('cOk').classList.add('show');

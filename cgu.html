@@ -198,6 +198,16 @@ html,body{overflow-x:clip}
 }
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
+<style id="bc-css">
+.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
+.breadcrumb.bc a{color:inherit;text-decoration:none}
+.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
+.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
+.hero .breadcrumb.bc a:hover{color:#fff}
+.hero .breadcrumb.bc span[aria-current]{color:#fff}
+</style>
+<script type="application/ld+json" id="bc-ld">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://leseclaires.fr/"}, {"@type": "ListItem", "position": 2, "name": "Conditions d'utilisation", "item": "https://leseclaires.fr/cgu.html"}]}</script>
 <style id="ds-shared">
 /* Bouton principal unique (référence : .btn-primary de l'accueil) */
 .btn-primary,.btn-vert,.btn-submit,.nf-btn.primary,.pt-btn-main{background:var(--c-vert-lt);color:#0a0a09;font-family:var(--ff-h);font-weight:700;letter-spacing:-.02em;border:none}
@@ -364,16 +374,6 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
   .hs-reco{padding:18px}
 }
 </style>
-<style id="bc-css">
-.breadcrumb.bc{font-size:13px;line-height:1.5;color:var(--c-muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:0 6px;min-width:0}
-.breadcrumb.bc a{color:inherit;text-decoration:none}
-.breadcrumb.bc a:hover{color:var(--c-vert-txt,#007A50);text-decoration:underline}
-.breadcrumb.bc span[aria-current]{color:var(--c-text,var(--c-ink));max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.hero .breadcrumb.bc{color:rgba(255,255,255,.72);margin-bottom:20px}
-.hero .breadcrumb.bc a:hover{color:#fff}
-.hero .breadcrumb.bc span[aria-current]{color:#fff}
-</style>
-<script type="application/ld+json" id="bc-ld">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://leseclaires.fr/"}, {"@type": "ListItem", "position": 2, "name": "Conditions d'utilisation", "item": "https://leseclaires.fr/cgu.html"}]}</script>
 </head>
 <body>
 <!-- TOPBAR PARTENAIRE -->

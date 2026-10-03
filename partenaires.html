@@ -735,6 +735,15 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
 (function(){
   function g(id){return document.getElementById(id);}
   function v(id){var e=g(id);return e?e.value.trim():'';}
+  /* Envoi principal : n8n (mails en français à la DA). Secours : Web3Forms si n8n ne répond pas. */
+  async function leN8n(payload){
+    try{
+      var c=new AbortController(), to=setTimeout(function(){c.abort();},9000);
+      var r=await fetch('https://n8n.srv1212149.hstgr.cloud/webhook/leseclaires-demande',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:c.signal});
+      clearTimeout(to); if(!r.ok) return false;
+      var j=await r.json(); return !!(j&&j.success);
+    }catch(e){ return false; }
+  }
   var RULES={
     fp:function(x){return x?'':'Indiquez votre prénom.';},
     fn:function(x){return x?'':'Indiquez votre nom.';},
@@ -766,6 +775,9 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
     btn.textContent='Envoi en cours...'; btn.disabled=true;
     var err=g('errMsg'); if(err) err.classList.remove('show');
     try{
+      var data={success:await leN8n({type:'partenaire',prenom:fp,nom:fn,email:fe,tel:ft,entreprise:fc,zone:fz,types:ft2,qualification:fq,message:fm,
+        source:(document.referrer||'accès direct')+' | '+location.pathname+location.search})};
+      if(!data.success){
       var res=await fetch('https://api.web3forms.com/submit',{
         method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
@@ -778,7 +790,8 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
           'Source':(document.referrer||'accès direct')+' | '+location.pathname+location.search
         })
       });
-      var data=await res.json();
+      data=await res.json();
+      }
       if(data && data.success){
         if(window.gtag)gtag('event','partner_apply',{zone:fz});
         g('formWrap').style.display='none';

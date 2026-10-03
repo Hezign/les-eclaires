@@ -1859,6 +1859,15 @@ else{boot();}
   function gid(id){return document.getElementById(id);}
   function txt(id){var e=gid(id);return e?(e.textContent||'').trim():'';}
   function val(id){var e=gid(id);return e?(e.value||'').trim():'';}
+  /* Envoi principal : n8n (mails en français à la DA). Secours : Web3Forms si n8n ne répond pas. */
+  async function leN8n(payload){
+    try{
+      var c=new AbortController(), to=setTimeout(function(){c.abort();},9000);
+      var r=await fetch('https://n8n.srv1212149.hstgr.cloud/webhook/leseclaires-demande',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:c.signal});
+      clearTimeout(to); if(!r.ok) return false;
+      var j=await r.json(); return !!(j&&j.success);
+    }catch(e){ return false; }
+  }
   var RULES={
     fP:function(v){return v?'':'Indiquez votre prénom.';},
     fE:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)?'':'Indiquez une adresse email valide (exemple : nom@domaine.fr).';},
@@ -1939,6 +1948,11 @@ else{boot();}
         sep+'\n'+
         'Lead généré via le simulateur en ligne · leseclaires.fr';
       try{
+        var data={success:await leN8n({type:'simulateur',prenom:p,email:e,tel:t,cp:cp,source:src,
+          profil:txt('rTitle'),synthese:txt('rSub'),puissance:txt('rPow'),budget:txt('rBudget'),aide:txt('rAide'),delai:txt('rDelai'),
+          questionnaire:(qa.length?qa.join('\n\n'):''),
+          consentement:'Transmission à un installateur partenaire acceptée (clic sur Recevoir, '+new Date().toLocaleString('fr-FR')+', page '+location.pathname+')'})};
+        if(!data.success){
         var res=await fetch('https://api.web3forms.com/submit',{
           method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
           body:JSON.stringify({
@@ -1952,7 +1966,8 @@ else{boot();}
             message:report
           })
         });
-        var data=await res.json();
+        data=await res.json();
+        }
         if(data && data.success){
           form.style.display='none';
           if(gid('okMsg')) gid('okMsg').classList.add('show');

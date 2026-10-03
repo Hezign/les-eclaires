@@ -96,8 +96,8 @@ CONFIDENTIALITE = f'''
     <p>Vos données ne sont <strong>jamais vendues ni louées</strong>. Elles sont accessibles à l'équipe des Éclairés et, pour les seuls besoins du service, aux destinataires suivants.</p>
     <ul>
       <li><strong>Installateur partenaire</strong> (destinataire) : un seul installateur certifié IRVE de votre secteur reçoit vos coordonnées et votre projet, uniquement si vous l'avez accepté. Il les utilise pour vous recontacter et vous faire un devis ; il devient alors responsable de ce traitement pour sa propre relation avec vous.</li>
-      <li><strong>Web3Forms</strong> (acheminement des formulaires par e-mail). <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
-      <li><strong>Hostinger</strong> (serveur situé en France) : héberge nos outils internes d'automatisation (n8n) et de suivi des partenaires et prospects. <a href="https://www.hostinger.fr/politique-de-confidentialite" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Web3Forms</strong> (acheminement de secours des formulaires par e-mail, utilisé seulement si notre outil principal est indisponible). <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
+      <li><strong>Hostinger</strong> (serveur situé en France) : héberge nos outils internes d'automatisation (n8n), qui reçoivent vos demandes et envoient les e-mails de confirmation, ainsi que le suivi des partenaires et prospects. <a href="https://www.hostinger.fr/politique-de-confidentialite" target="_blank" rel="noopener">Politique ↗</a></li>
       <li><strong>LWS</strong> (messagerie électronique et nom de domaine). <a href="https://www.lws.fr/" target="_blank" rel="noopener">Site ↗</a></li>
       <li><strong>Vercel</strong> (hébergement et diffusion du site). <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Politique ↗</a></li>
       <li><strong>Google Analytics 4</strong> (mesure d'audience, uniquement après votre accord). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique ↗</a></li>
