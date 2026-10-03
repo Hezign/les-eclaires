@@ -84,6 +84,7 @@ FOOTER_TOP = """<div class="footer-top">
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
           <li><a href="/cgu.html">Conditions d'utilisation</a></li>
+          <li><a href="#cookies" id="cookieFab" role="button">Gérer les cookies</a></li>
         </ul>
       </div>
     </div>

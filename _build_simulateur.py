@@ -54,14 +54,8 @@ s_close = src.index('</script>', k) + len('</script>')
 report_js = src[s_open:s_close]
 
 # Cookie + back-to-top (petits blocs, réécrits)
-cookie = '''<div class="cookie-banner" id="cookieBanner">
-  <p>&#x1F36A; <strong>Cookies</strong> : On utilise des cookies pour analyser l'audience et améliorer votre expérience. Aucune donnée n'est revendue à des tiers.</p>
-  <div class="cookie-btns">
-    <button class="cookie-accept" id="btnAccept">Accepter</button>
-    <button class="cookie-decline" id="btnDecline">Refuser</button>
-  </div>
-</div>
-<button class="cookie-fab" id="cookieFab" aria-label="Préférences cookies" title="Préférences cookies">&#x1F36A;</button>'''
+import _inject_header
+cookie = _inject_header.COOKIE  # bandeau cookies : source unique
 
 btt = '''<button class="btt" id="btt" aria-label="Retour en haut">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -344,6 +338,9 @@ html = f'''<!DOCTYPE html>
 open('simulateur.html', 'w', encoding='utf-8').write(html)
 import _apply_dark
 _apply_dark.apply('simulateur.html')
+# Menu (page courante) et footer communs, durables après régénération
+import _legal_global
+_inject_header.sync_nav('simulateur.html'); _legal_global.apply('simulateur.html')
 print("simulateur.html écrit :", len(html), "octets")
 # sanity
 for tag in ['id="simulateur-start"','function pick','var KEY=','faq-q','simp-hero']:

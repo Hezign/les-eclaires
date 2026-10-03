@@ -24,14 +24,14 @@ TOPBAR = '''<!-- TOPBAR PARTENAIRE -->
 </div>'''
 
 COOKIE = '''<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>&#x1F36A; <strong>Cookies</strong> : On utilise des cookies pour analyser l'audience et am&#233;liorer votre exp&#233;rience. Aucune donn&#233;e n'est revendue &#224; des tiers.</p>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookies">
+  <div class="ck-head"><span class="ck-ico"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span><strong>Mesure d'audience</strong></div>
+  <p>Nous utilisons des cookies pour compter les visites et am&#233;liorer le site. Aucune donn&#233;e n'est revendue. <a href="/confidentialite.html">En savoir plus</a></p>
   <div class="cookie-btns">
-    <button class="cookie-accept" id="btnAccept">Accepter</button>
-    <button class="cookie-decline" id="btnDecline">Refuser</button>
+    <button class="cookie-decline" id="btnDecline" type="button">Refuser</button>
+    <button class="cookie-accept" id="btnAccept" type="button">Accepter</button>
   </div>
-</div>
-<button class="cookie-fab" id="cookieFab" aria-label="Pr&#233;f&#233;rences cookies" title="Pr&#233;f&#233;rences cookies">&#x1F36A;</button>'''
+</div>'''
 
 CSS_COMMON = '''<style>
 /* Topbar partenaire + cookies (injecté) */

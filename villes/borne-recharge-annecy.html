@@ -528,11 +528,26 @@ html[data-theme="dark"] .nav-burger span{background:#fff}
     <img class="nav-logo-img logo-l" src="/logo-eclaires-blanc.svg" alt="Les Éclairés" width="30" height="30"><img class="nav-logo-img logo-d" src="/logo-eclaires.svg" alt="" aria-hidden="true" width="30" height="30">
     <span class="nav-logo-text">Les Éclairés</span>
   </a>
+  <style id="ck-css">#cookieBanner{background:var(--c-bg2,#fff);color:var(--c-mid,#5C6560);border:1px solid var(--c-border2,#DDE3E0);border-radius:20px;padding:20px;max-width:340px;box-shadow:0 18px 50px rgba(0,0,0,.14)}
+.ck-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ck-ico{width:32px;height:32px;border-radius:10px;background:var(--c-vert-bg,#E6FFF5);color:#007A50;display:grid;place-items:center;flex:none}
+#cookieBanner strong{font-family:var(--ff-h);font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--c-ink,#000)}
+#cookieBanner p{font-size:13.5px;line-height:1.55;margin:0 0 16px;color:var(--c-mid,#5C6560)}
+#cookieBanner p a{color:var(--c-vert-txt,#007A50);text-decoration:underline;text-underline-offset:2px}
+#cookieBanner .cookie-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#cookieBanner .cookie-accept,#cookieBanner .cookie-decline{min-height:44px;border-radius:999px;font-family:var(--ff-h);font-size:14px;font-weight:700;padding:0 16px;cursor:pointer;transition:transform .15s,background .15s}
+#cookieBanner .cookie-accept{background:#00F5A0;color:#000;border:1px solid #00F5A0}
+#cookieBanner .cookie-decline{background:transparent;color:var(--c-ink,#000);border:1px solid var(--c-ink,#000)}
+#cookieBanner .cookie-accept:hover,#cookieBanner .cookie-decline:hover{transform:translateY(-1px)}
+#cookieBanner button:focus-visible{outline:2px solid var(--c-ink,#000);outline-offset:3px}
+html[data-theme="dark"] .ck-ico{background:rgba(0,245,160,.12);color:#00F5A0}
+html[data-theme="dark"] #cookieBanner{box-shadow:0 18px 50px rgba(0,0,0,.5)}
+@media(max-width:640px){#cookieBanner{left:12px;right:12px;bottom:12px;max-width:none}}</style>
   <ul class="nav-links">
     <li class="has-sub">
       <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="navSub">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
       <ul class="sub" id="navSub">
-        <li><a href="/simulateur">Particuliers<small>Maison ou appartement : le simulateur</small></a></li>
+        <li><a href="/simulateur">Particuliers<small>Maison ou appartement</small></a></li>
         <li><a href="/copropriete">Copropriété<small>Syndics et conseils syndicaux</small></a></li>
         <li><a href="/entreprise">Entreprise<small>Parkings et flottes</small></a></li>
       </ul>
@@ -609,6 +624,7 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/confidentialite.html">Confidentialité</a></li>
           <li><a href="/cgu.html">Conditions d'utilisation</a></li>
+          <li><a href="#cookies" id="cookieFab" role="button">Gérer les cookies</a></li>
         </ul>
       </div>
     </div>
@@ -635,14 +651,14 @@ if(li.querySelector('[aria-current="page"]'))li.classList.add('current');})();</
 </footer>
   <script src="/cursor.js" defer></script>
 <!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>&#x1F36A; <strong>Cookies</strong> : On utilise des cookies pour analyser l'audience et am&#233;liorer votre exp&#233;rience. Aucune donn&#233;e n'est revendue &#224; des tiers.</p>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookies">
+  <div class="ck-head"><span class="ck-ico"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span><strong>Mesure d'audience</strong></div>
+  <p>Nous utilisons des cookies pour compter les visites et am&#233;liorer le site. Aucune donn&#233;e n'est revendue. <a href="/confidentialite.html">En savoir plus</a></p>
   <div class="cookie-btns">
-    <button class="cookie-accept" id="btnAccept">Accepter</button>
-    <button class="cookie-decline" id="btnDecline">Refuser</button>
+    <button class="cookie-decline" id="btnDecline" type="button">Refuser</button>
+    <button class="cookie-accept" id="btnAccept" type="button">Accepter</button>
   </div>
 </div>
-<button class="cookie-fab" id="cookieFab" aria-label="Pr&#233;f&#233;rences cookies" title="Pr&#233;f&#233;rences cookies">&#x1F36A;</button>
 <script>
 (function(){var nav=document.querySelector('nav');var b=document.getElementById('navBurger');if(!nav||!b)return;
 function close(){nav.classList.remove('open');b.setAttribute('aria-expanded','false');}
