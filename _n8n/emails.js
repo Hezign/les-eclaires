@@ -117,9 +117,30 @@ function blocPartenaire(d) {
       + '<div style="font-family:' + FM + ';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:' + C.vert + ';margin-bottom:6px;">À transmettre · partenaire dans le ' + lieu + '</div>'
       + '<table role="presentation" cellpadding="0" cellspacing="0" border="0">' + rows.replace(new RegExp(C.noir, 'g'), '#FFFFFF').replace(new RegExp(C.vertTxt, 'g'), C.vert) + '</table></td></tr></table>';
   }
+  var ETAPES = { a_contacter: 'à contacter', contacte: 'déjà contacté', discussion: 'en discussion', rdv: 'rendez-vous prévu' };
+  var pros = d.prospects || [];
+  var reste = (d.kalendTotal || 0) - Math.min(pros.length, 8) - (d.partenaires || []).length;
+  var corps;
+  if (pros.length) {
+    corps = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' + pros.slice(0, 8).map(function (p) {
+      var etape = ETAPES[p.etape] || p.etape || '';
+      var quand = has(p.dernier_contact) ? ' le ' + String(p.dernier_contact).split('-').reverse().join('/') : '';
+      return '<tr><td style="padding:8px 0;border-top:1px solid ' + C.ligne + ';font-family:' + FB + ';font-size:14.5px;line-height:1.5;color:' + C.noir + ';">'
+        + '<strong>' + esc(p.nom) + '</strong>' + (has(p.ville) ? ' · ' + esc(p.ville) : '')
+        + (etape ? ' <span style="color:' + C.gris + ';">· ' + esc(etape) + esc(quand) + '</span>' : '') + '<br>'
+        + (has(p.email) ? '<a href="mailto:' + esc(p.email) + '" style="color:' + C.vertTxt + ';">' + esc(p.email) + '</a>' : '<span style="color:' + C.gris + ';">pas d\'email</span>')
+        + (has(p.telephone) ? ' · <a href="tel:' + esc(String(p.telephone).replace(/[^\d+]/g, '')) + '" style="color:' + C.vertTxt + ';">' + esc(p.telephone) + '</a>' : '')
+        + '</td></tr>';
+    }).join('') + '</table>'
+      + (reste > 0 ? '<div style="margin-top:8px;font-family:' + FB + ';font-size:13px;color:' + C.gris + ';">Et ' + reste + ' autre(s) dans Kalend.</div>' : '');
+  } else {
+    corps = '<div style="font-family:' + FB + ';font-size:15px;line-height:1.55;color:' + C.gris + ';">'
+      + (d.kalendOk ? 'Aucun installateur du ' + lieu + ' dans Kalend pour l\'instant. Il faut en chercher (annuaires Qualifelec et AFNOR Certification).'
+        : 'Contactez des installateurs certifiés IRVE du ' + lieu + ' avec cette demande concrète. Dans Kalend, filtrez les installateurs sur ce département.') + '</div>';
+  }
   return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 0;background:#FFFFFF;border:2px solid ' + C.noir + ';border-radius:16px;"><tr><td style="padding:16px 20px;">'
-    + '<div style="font-family:' + FM + ';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:' + C.noir + ';margin-bottom:6px;">À recruter · aucun partenaire dans le ' + lieu + '</div>'
-    + '<div style="font-family:' + FB + ';font-size:15px;line-height:1.55;color:' + C.gris + ';">Contactez des installateurs certifiés IRVE du ' + lieu + ' avec cette demande concrète. Dans Kalend, filtrez les installateurs sur ce département.</div></td></tr></table>';
+    + '<div style="font-family:' + FM + ';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:' + C.noir + ';margin-bottom:8px;">À recruter · aucun partenaire dans le ' + lieu + (pros.length ? ' · ' + (d.kalendTotal || pros.length) + ' installateur(s) à contacter' : '') + '</div>'
+    + corps + '</td></tr></table>';
 }
 
 /* ---------- Notification interne (demande client) ---------- */
