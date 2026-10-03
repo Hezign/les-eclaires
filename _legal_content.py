@@ -26,7 +26,6 @@ MENTIONS = f'''
       <p><strong>Immatriculation :</strong> RCS Saint-Étienne, le 11/05/2026</p>
       <p><strong>Code NAF / APE :</strong> 6312Z (Exploitation de portails internet)</p>
       <p><strong>TVA :</strong> non applicable, article 293 B du CGI</p>
-      <p><strong>Téléphone :</strong> <a href="tel:+33637252592">06 37 25 25 92</a></p>
       <p><strong>E-mail :</strong> {MAIL}</p>
     </div>
     <h2>2. Directrice de la publication</h2>
