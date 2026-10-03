@@ -432,6 +432,8 @@ html[data-theme="dark"] .hs-cta{border:1px solid var(--c-border2)}
 .nav-links .sub a{display:block;padding:10px 12px;border-radius:10px;font-size:14px;color:var(--c-ink)}
 .nav-links .sub a small{display:block;font-size:12.5px;color:var(--c-muted);font-weight:400;margin-top:2px}
 .nav-links .sub a:hover,.nav-links .sub a:focus-visible{background:var(--c-vert-bg);outline:none}
+@media(min-width:1081px){.nav-links>li>a,.sub-toggle{display:inline-flex;align-items:center;padding:8px 12px;margin:0 -12px;border-radius:10px;transition:background .18s,color .18s}
+  .nav-links>li>a:hover,.nav-links>li>a:focus-visible,.sub-toggle:hover,.has-sub:hover .sub-toggle,.has-sub.open .sub-toggle{background:var(--c-vert-bg);color:var(--c-ink);outline:none}}
 html[data-theme="dark"] .nav-burger span{background:#fff}
 @media(max-width:1080px){nav .btn-nav{margin-left:auto}
   .nav-links .sub{display:block;position:static;min-width:0;padding:0;border:0;box-shadow:none;background:none}
